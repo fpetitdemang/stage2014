@@ -1,0 +1,8 @@
+Defini un template et propose un modele qui decrit comment les données sont encodées dans une page en utilisant un template. Presente un algorithme qui prend en entre un enssemble de template de page, en sortie extrait les valeurs encodé dans la page.
+
+We formally define a template, and propose a
+model that describes how values are encoded into pages using a
+template. We present an algorithm that takes, as input, a set of
+template-generated pages, deduces the unknown template used to
+generate the pages, and extracts, as output, the values encoded in
+the pages

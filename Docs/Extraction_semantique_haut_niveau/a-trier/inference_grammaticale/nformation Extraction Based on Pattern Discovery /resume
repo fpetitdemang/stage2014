@@ -1,0 +1,8 @@
+In this paper,
+we propose IEPAD, a system that automatically discovers
+extraction rules from Web pages. The system can automatically
+identify record boundary by repeated pattern mining and multiple
+sequence alignment. The discovery of repeated patterns are
+realized through a data structure call
+PAT trees
+.
