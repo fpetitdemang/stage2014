@@ -1,0 +1,4 @@
+www contient une source d'informations semi-structurees. Chaque information décrit d'un point de vue différent. Presente une méthode pour unifier les différents points de vue d'une information.
+Ici propose une méthode de génération d'extraction de wrapper en utilisant une méthode d'inference gramaticale qui reconnait certaine structure générique à partir d'exemple.
+
+Etat de l'art interessant
