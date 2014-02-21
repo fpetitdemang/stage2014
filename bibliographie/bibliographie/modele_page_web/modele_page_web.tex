@@ -1,0 +1,59 @@
+\section{Modèle de page web}
+\subsection{Introduction}
+\paragraph{}
+Un modèle est une abstraction du système étudier suivant un point de vue. Par exemple une carte routière est une abstraction d'un réseau routier, il existe plusieurs type de carte suivant ce que l'on veut étudier (chemin pédestre, chemin routier etc). L’intérêt d'un modèle est de mieux comprendre un système.\\
+\enquote{Pour un observateur A, M est un modèle de l'objet O, si M aide A à répondre aux questions qu'il pose sur O} (Minsky)\\
+Dans le cadre de notre sujet, on souhaite à terme l’adaptation d'une page web. Ici le système étudié est une page web.
+\paragraph{}
+Nous nous intéressons à un méta-modèle qui puisse décrire la structure, ainsi que le comportement et les propriétés des différents objets constitutifs d'une page web afin d'en exprimer un modèle.
+Le méta-modèle doit fournir un langage assez riche pour permettre d'identifier les objets que souhaite modifier un utilisateur dans notre page web. 
+\paragraph{} 
+Nous avons étudié 3 support à la réalisation d'un méta-modèles pouvant décrire les objets constitutif d'une page web : HTML 4, HTML 5 et la norme ARIA. 
+\subsection{HTML 4}
+\paragraph{Généralité}
+HTML 4 est un langage permettant de représenter les données sur le web. C'est le langage standard actuelle des pages web. Les données décrite peuvent être de type texte, ou plus généralement de type multimédia. Il permet de structurer le contenu et d'inclure une mise en page.
+\\
+HTML 4 définit des types d' éléments qui représentent des structures ou des comportements voulut dans une page web. Il permet de décrire trois composant principaux :
+\begin{itemize}
+\item Le contenu textuel : paragraphe, titre (beaucoup de balise de présentation)
+\item Les liens hypertextes
+\item Les images, objets etc..
+\end{itemize}
+
+\paragraph{Structuration générique}
+HTML propose un mécanisme générique pour la structuration des documents web. Ce mécanisme gravite autour des éléments de type en bloc, en ligne et leurs identifiants respective : id et classe.
+
+\subparagraph{id et class}
+Chaque élément peut se voir attribuer un identifiant ou une classe d'appartenance.\\ 
+\\
+Id assigne un nom à un élément. Ce nom est unique dans le document. Il possède plusieurs rôles dans HTML : 
+\begin{itemize}
+\item sélecteur dans une feuille de style
+\item ancre cible dans lien hypertexte
+\item etc...
+\end{itemize}
+L'attribut class, au contraire, assigne un ou plusieurs noms de classe à un élément. Un nom de classe peut être partagé par plusieurs instances d'éléments. L'attribut class a plusieurs rôles dans HTML :
+\begin{itemize}
+\item comme sélecteur dans une feuille de style (quand l'auteur souhaite assigner une information de style à un ensemble d'éléments) .
+\item pour un traitement universel par les agents utilisateurs.
+\end{itemize}
+
+
+\subparagraph{En bloc et en ligne}
+Certains éléments , qui peuvent apparaître dans l'élément BODY, sont dits être de niveau « bloc » tandis que d'autres sont dits de niveau « en-ligne » (aussi connu comme sous le nom « niveau texte »). La distinction se fondent sur plusieurs notions :
+\begin{itemize}
+\item Le modèle de contenu : les éléments de bloc peuvent contenir des éléments en-ligne et d'autres éléments de bloc. Les éléments en-ligne ne peuvent contenir que des données et d'autres éléments en-ligne. L'idée inhérente à cette distinction structurelle, c'est que les éléments de bloc créent des structures « plus grandes » que les éléments en-ligne.
+\item Le formatage : les éléments de bloc sont formatés différemment des éléments en-ligne. En général, les éléments de bloc commencent sur une nouvelle ligne, et non les éléments en-ligne.
+\end{itemize}
+
+
+\subparagraph{Le regroupement des éléments}
+Les éléments <div> et <span> utilisé conjointement avec les attributs id et classe sont au cœur du mécanisme générique de structuration d'un document.
+Ces éléments définissent le contenu comme étant en-ligne (SPAN) ou de bloc (DIV) mais n'imposent aucune autre expression de présentation sur le contenu. La sémantique de ces balises est neutre, elle ne fournit aucune informations, il n' y a aucune information sur l'usage que son auteur en fait.
+
+
+\subsection{HTML 5}
+\subsection{ARIA}
+\subsection{Discussion}
+HTML 4 fournit quelque idiome pour structurer les éléments d'un document. Il fournit un langage riche pour décrire les éléments de type texte et les hyperliens, mais un langage peu adapter pour décrire la structure d'une page web, dans le contexte actuel de l'exploitation de ses dernières. En effet le contenu décrit dans les pages web actuelles est très hétérogène.
+HTML 4 n'est pas un support assez riche pour être le support d'un méta-modèle exprimant le modèle d'une page web.

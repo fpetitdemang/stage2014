@@ -1,0 +1,813 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\begin_modules
+theorems-starred
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pagenumbering{roman} 
+\backslash
+pagestyle{fancyplain} 
+\backslash
+thispagestyle{empty} 
+\backslash
+noindent 
+\backslash
+begin{center} 
+\backslash
+large{
+\backslash
+texttt{Académie de Montpellier}}
+\backslash
+
+\backslash
+ 
+\backslash
+Large{
+\backslash
+texttt{Université Montpellier II}}
+\backslash
+
+\backslash
+ 
+\backslash
+large{
+\backslash
+texttt{Sciences et Techniques du Languedoc}}
+\backslash
+
+\backslash
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\backslash
+Huge{
+\backslash
+textbf{Étude Bibliographique de Master 2
+\backslash
+
+\backslash
+}}  
+\backslash
+vspace{1.0cm} %
+\backslash
+Huge{
+\backslash
+textbf{MASTER 2}} 
+\backslash
+normalsize 
+\backslash
+begin{center} 
+\backslash
+vspace{1.0cm} effectuée au Laboratoire d'Informatique de Robotique
+\backslash
+
+\backslash
+ et de Micro-électronique de Montpellier 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{2mm} %
+\backslash
+Large{
+\backslash
+textbf{franck PETITDEMANGE}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{0.1cm} 
+\backslash
+normalsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{3mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+large{Spécialité} : 
+\backslash
+textbf{AIGLE}
+\backslash
+
+\backslash
+ %
+\backslash
+Large{Formation Doctorale} : 
+\backslash
+textbf{Informatique}
+\backslash
+
+\backslash
+ %
+\backslash
+large{{
+\backslash
+'E}cole Doctorale} : 
+\backslash
+textbf{Information, Structures, Systèmes} 
+\backslash
+vspace{1.0cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+LARGE{
+\backslash
+textbf{Personnalisation de page web}} 
+\backslash
+vspace{2mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}   par 
+\backslash
+textbf{Franck~PETITDEMANGE} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{2mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{4cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Mars 2014}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{0.5cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+Sous la direction de 
+\backslash
+textbf{Marianne~HUCHARD, Michel~MEYNARD, Yoann~BONAVERO}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{5mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+begin{table}[hbt] %
+\backslash
+begin{center} %
+\backslash
+begin{tabular}{ l l l} %Messieurs & {
+\backslash
+em } & Rapporteurs
+\backslash
+
+\backslash
+ %& {
+\backslash
+em } & 
+\backslash
+
+\backslash
+ %& {
+\backslash
+em } & 
+\backslash
+
+\backslash
+ %
+\backslash
+
+\backslash
+ %Messieurs& {
+\backslash
+em } & Examinateurs 
+\backslash
+
+\backslash
+ %& {
+\backslash
+em } & 
+\backslash
+
+\backslash
+ %& {
+\backslash
+em } & 
+\backslash
+
+\backslash
+ %
+\backslash
+
+\backslash
+ %Monsieur & {
+\backslash
+em Evripidis BAMPIS} &  Directeur de thèse
+\backslash
+
+\backslash
+ %& {
+\backslash
+em  X} & 
+\backslash
+
+\backslash
+ %
+\backslash
+end{tabular} %
+\backslash
+end{center} %
+\backslash
+end{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+vspace{.7cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Section
+Modele de page web
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+Un modèle est une abstraction du système étudier suivant un point de vue.
+ Par exemple une carte routière est une abstraction d'un réseau routier,
+ il existe plusieurs type de carte suivant ce que l'on veut étudier (chemin
+ pédestre, chemin routier etc).
+ L’intérêt d'un modèle est de mieux comprendre un système.
+ 
+\end_layout
+
+\begin_layout Standard
+« Pour un observateur A, M est un modèle de l'objet O, si M aide A à répondre
+ aux questions qu'il pose sur O » (Minsky) 
+\end_layout
+
+\begin_layout Standard
+Dans le cadre de notre sujet, on souhaite à terme l’adaptation d'une page
+ web.
+ Ici le système étudié est une page web.
+ Une page web possède le rôle d'affichage d'un contenu structuré et mise
+ en forme.
+ Le contenu peut être de type texte, image, vidéo et la mise en page reflète
+ la structure logique de la page.
+ Le WC3 décrit une page web comme une ressource identifié par un uri.
+ Chaque ressource est considéré comme une unité d'information.
+ Cependant dans la conception contemporaine des pages, celle-ci peut encore
+ être découpé en unité d'information.
+ Ainsi une page est une composition d'élément graphique.
+ Par exemple, une page est composé d'un menu de navigation, d'une entête,
+ d'un pied de page, de formulaire et de widget (composant graphique).
+ Chacun de ces éléments possède un type, un état et des propriétés.
+ Le type correspond à la nature de celui-ci.
+ Il représente ce qu'un utilisateur attend de ce dernier.
+ Certain objet fournissent une interaction avec l'utilisateur qui est susceptibl
+e de modifier l'état d'un objet.
+ Par exemple certain menu cache les différents liens de navigations, au
+ moment ou l'utilisateur survole le menu celui-ci affiche les différents
+ liens.
+ Les objets possèdent également un ensemble de propriétés, quelque fois
+ intrinsèque à leur type.
+ Par exemple un formulaire possède des champs de saisie.
+ D'autre propriétés peuvent être la couleur et la police du texte, la hauteur,
+ la largeur, et la position d'une objets dans le page.
+ 
+\end_layout
+
+\begin_layout Subsection
+HTML 4
+\end_layout
+
+\begin_layout Standard
+HTML 4 est un langage permettant de représenter les données sur le web.
+ C'est le langage standard actuelle des pages web.
+ Les données décrite peuvent être de type texte, ou plus généralement de
+ type multimédia.
+ Il permet de structurer le contenu et d'inclure une mise en page.
+\end_layout
+
+\begin_layout Standard
+HTML 4 définit des types d’éléments qui représente des structures ou des
+ comportement voulu dans une page web.
+ HTML 4 permet de décrire trois composant principaux : 
+\end_layout
+
+\begin_layout Enumerate
+Le contenu textuel : paragraphe, titre (beaucoup de balise de présentation)
+ 
+\end_layout
+
+\begin_layout Enumerate
+Les liens hypertextes 
+\end_layout
+
+\begin_layout Enumerate
+Les images, objets etc..
+\end_layout
+
+\begin_layout Paragraph
+Structuration générique
+\end_layout
+
+\begin_layout Standard
+HTML propose un mécanisme générique pour la structuration des documents
+ web.
+ Ce mécanisme gravite autour des éléments de type en bloc, en ligne et leurs
+ identifiants respective : id et classe.
+\end_layout
+
+\begin_layout Subparagraph
+id et class
+\end_layout
+
+\begin_layout Standard
+Chaque élément peut se voir attribuer un identifiant ou une classe d'appartenanc
+e.
+ 
+\end_layout
+
+\begin_layout Standard
+id assigne un nom à un élément.
+ Ce nom doit être unique dans le document.
+ Il possède plusieurs rôle dans HTML : 
+\end_layout
+
+\begin_layout Itemize
+sélecteur dans une feuille de style 
+\end_layout
+
+\begin_layout Itemize
+ancre cible dans lien hypertexte 
+\end_layout
+
+\begin_layout Itemize
+etc...
+\end_layout
+
+\begin_layout Standard
+class, au contraire, assigne un ou plusieurs noms de classe à un élément
+ ; on peut dire de l'élément qu'il appartient à ces classes.
+ Un nom de classe peut être partagé par plusieurs instances d'éléments.
+ L'attribut class a plusieurs rôles dans HTML : 
+\end_layout
+
+\begin_layout Itemize
+comme sélecteur dans une feuille de style (quand l'auteur souhaite assigner
+ une information de style à un ensemble d'éléments) .
+ 
+\end_layout
+
+\begin_layout Itemize
+pour un traitement universel par les agents utilisateurs.
+\end_layout
+
+\begin_layout Subparagraph
+En bloc et en ligne
+\end_layout
+
+\begin_layout Standard
+Certains éléments , qui peuvent apparaître dans l'élément BODY, sont dits
+ être de niveau « bloc » tandis que d'autres sont dits de niveau « en-ligne »
+ (aussi connu comme sous le nom « niveau texte »).
+ La distinction se fondent sur plusieurs notions : 
+\end_layout
+
+\begin_layout Itemize
+Le modèle de contenu : les éléments de bloc peuvent contenir des éléments
+ en-ligne et d'autres éléments de bloc.
+ Les éléments en-ligne ne peuvent contenir que des données et d'autres éléments
+ en-ligne.
+ L'idée inhérente à cette distinction structurelle, c'est que les éléments
+ de bloc créent des structures « plus grandes » que les éléments en-ligne.
+ 
+\end_layout
+
+\begin_layout Itemize
+Le formatage : les éléments de bloc sont formatés différemment des éléments
+ en-ligne.
+ En général, les éléments de bloc commencent sur une nouvelle ligne, et
+ non les éléments en-ligne.
+ 
+\end_layout
+
+\begin_layout Subparagraph
+Le regroupement des éléments
+\end_layout
+
+\begin_layout Standard
+Les éléments <div> et <span> utilisé conjointement avec les attributs id
+ et classe sont au cœur du mécanisme générique de structuration d'un document.
+ Ces éléments définissent le contenu comme étant en-ligne (SPAN) ou de bloc
+ (DIV) mais n'imposent aucune autre expression de présentation sur le contenu.
+ La sémantique de ces balises est neutre, elle ne fournit aucune informations,
+ il n' y a aucune information sur l'usage que son auteur en fait.
+\end_layout
+
+\begin_layout Subsection
+HTML 5
+\end_layout
+
+\begin_layout Standard
+HTML 5 étend HTML 4 en amenant de nouveaux éléments.
+ Ces éléments ajoutent une valeur sémantique aux structures de HTML 4.
+ HTML 5 spécifie sont modèle de structure générique par une catégorisation
+ des éléments d'une page.
+\end_layout
+
+\begin_layout Subsection
+ARIA
+\end_layout
+
+\begin_layout Subsection
+Discussion
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+HTML 4 fournit quelque idiome pour structurer les éléments d'un document.
+ Il fournit un langage riche pour décrire les éléments de type texte et
+ les hyperliens, mais un langage peu adapter pour décrire la structure d'une
+ page web, dans le contexte actuel de l'exploitation de ses dernières.
+ En effet le contenu décrit dans les pages web actuelles est très hétérogène.
+ HTML 4 n'est pas un support assez riche pour être le support d'un méta-modèle
+ exprimant le modèle d'une page web.
+\end_layout
+
+\begin_layout Standard
+Ces balises balises répondent à un besoin précis de structuration du document.
+ Elle reflète le contenu d'une page web contemporaine.
+ Contrairement à HTML 4, la sémantique de la structure et les relations
+ des éléments est définit de manière explicite.
+ 
+\end_layout
+
+\begin_layout Section
+Detection d'objet
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+Dans le cadre de notre sujet on explore différentes pistes pour la détection
+ d'objet type définit à priori.
+ Ses problèmes sont étudiés dans le domaine de la recherche d'information
+ (RI).
+\end_layout
+
+\begin_layout Subsection
+Tree pattern matching
+\end_layout
+
+\begin_layout Standard
+Une approche de RI est la comparaison d'arbre.
+ Cette approche est apparenté aux problématiques de correspondance de motif
+ dans les structures arborescente (tree pattern matching).
+ De manière analogue aux problèmes de correspondance de motif dans une chaîne
+ de caractères (string pattern matching) qui prend entrée un motif puis
+ un texte et qui produit en sortie la localisation d'une sous-chaîne de
+ caractères du texte en entrée correspondant aux motifs recherchés.
+ Dans le tree pattern matching, le motif et le texte sont des structures
+ arborescentes.
+ Le problème de recherche de motif (pattern matching) consiste à trouver
+ tous les sous-arbres du texte isomorphe avec le pattern en entrée.
+ Dans la littérature on trouve plusieurs mesures de distance entre deux
+ arbres utiles à la comparaison d'arbre.
+ 
+\end_layout
+
+\begin_layout Standard
+La distance entre deux arbres est calculée par la plus petite ou la moins
+ coûteuse séquence d'opération élémentaire (insertion, substitution et suppressi
+on) qui permet la transformation d'un arbre vers un autre.
+ Notons 
+\begin_inset Formula $\Lambda$
+\end_inset
+
+ un noeud vide.
+ Une opération d'édition est ecrit 
+\begin_inset Formula $b\rightarrow c$
+\end_inset
+
+ , ou b et c sont soit un noeud, soit 
+\begin_inset Formula $\Lambda$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $b\rightarrow c$
+\end_inset
+
+ est une opération de substition si 
+\begin_inset Formula $b\neq\Lambda$
+\end_inset
+
+ et 
+\begin_inset Formula $c\neq\Lambda$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Itemize
+une opération de suppression si 
+\begin_inset Formula $b\neq\Lambda\doteq c$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Itemize
+et une opération d'insertion si 
+\begin_inset Formula $b=\Lambda\neq c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour exprimer la séquence d'opération élémentaire qui transforme l'arbre,
+ on utilise un mapping introduit 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tree-to-tree"
+
+\end_inset
+
+.
+ Un mapping établie une correspondance un-à-un entre les nœuds deux arbres
+ ordonnés qui préservent l'ordre des nœuds.
+ 
+\end_layout
+
+\begin_layout Definition*
+Un Mapping de l'arbre T1 vers l'arbre T2 est un ensemble de paire ordonnée
+ d'entier (i, j), 
+\begin_inset Formula $1\leqslant i\leqslant n1$
+\end_inset
+
+, 
+\begin_inset Formula $1\leq j\leq n2$
+\end_inset
+
+, satisfaisant les conditions suivantes, pour tous 
+\begin_inset Formula $(i1,j1),(i2,j2)\in M$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+i1=i2 si et seulement si, j1=j2;
+\end_layout
+
+\begin_layout Itemize
+t1[i1] est à droite de t1[i2], si est seulement si, t2[j1] est à gauche
+ de t2[j2];
+\end_layout
+
+\begin_layout Itemize
+t1[i1] est un ancêtre de t1[i2] si et seulement si, t2[j1] est un ancêtre
+ de t2[j2];
+\end_layout
+
+\begin_layout Standard
+Soit M un mapping entre les arbres T1 et T2 décrivant des opérations de
+ modification.
+ S est l'ensemble de pair 
+\begin_inset Formula $(i,j)\in M$
+\end_inset
+
+, D l'ensemble des nœuds T1[i] n'ayant pas de paire 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $(i,j)\in M$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ , et I l'ensemble des nœuds T2[j] n'ayant pas de paire 
+\begin_inset Formula $(i,j)\in M$
+\end_inset
+
+.
+ Le coût du mapping est donné par 
+\begin_inset Formula $|S|p+|I|q+|D|r$
+\end_inset
+
+| , ou p est le coût des substitution non identique, q est le coût des insertion
+s (1), r est le coût d'une suppression (1), le coût des substitution identique
+ est 0.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibliographie/biblio"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
