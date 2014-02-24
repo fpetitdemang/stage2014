@@ -1,13 +1,16 @@
-@article{Bottom-UpDistance,
-  title={An Efficient Bottom-Up Distance between Trees},
-  author={Gabriel Valiente},
+
+
+@article{HTML_4,
+  title={HTML 4.01 Specification},
+  author={W3C},
   %journal={},
   %volume={10},
   %number={3},
-  %pages={263--282},
-  year={2001},
-  publisher={IEEE Computer Science Press}
+  %pages={1245-1262},
+  year={1999},
+  publisher={HTML Specification}
 }
+
 
 @article{tree-to-tree,
   title={The tree-to-Tree Correction Problem},

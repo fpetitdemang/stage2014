@@ -575,14 +575,7 @@ HTML 4
 \end_layout
 
 \begin_layout Standard
-HTML 4 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "HTML_4"
-
-\end_inset
-
- est un langage permettant de structurer les données sur le web.
+HTML 4 est un langage permettant de structurer les données sur le web.
  C'est le langage standard actuelle des pages web.
  Les données décritent peuvent être de type texte, ou plus généralement
  de type multimédia.
@@ -711,8 +704,6 @@ HTML 5
 \end_layout
 
 \begin_layout Standard
-
-\emph on
 HTML 5 étend HTML 4 en amenant de nouveaux éléments.
  Ces éléments ajoutent une valeur sémantique aux structures de HTML 4.
  HTML 5 spécifie sont modèle de structure générique par une catégorisation
@@ -729,15 +720,18 @@ Discussion
 \end_layout
 
 \begin_layout Paragraph
-
-\emph on
 HTML 4
 \end_layout
 
 \begin_layout Standard
+HTML 4 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HTML_4"
 
-\emph on
-HTML 4 fournit quelque idiome pour structurer les éléments d'un document.
+\end_inset
+
+ fournit quelque idiome pour structurer les éléments d'un document.
  Il fournit un langage riche pour décrire les éléments de type texte et
  les hyperliens, mais un langage peu adapter pour décrire la structure d'une
  page web, dans le contexte actuel de l'exploitation de ses dernières.
@@ -749,14 +743,10 @@ HTML 4 fournit quelque idiome pour structurer les éléments d'un document.
 \end_layout
 
 \begin_layout Paragraph
-
-\emph on
 HTML 5
 \end_layout
 
 \begin_layout Standard
-
-\emph on
 Ces balises balises répondent à un besoin de structuration du document possedant
  des données hétérogènes.
  Contrairement à HTML 4, la sémantique de la structure et les relations
@@ -765,8 +755,6 @@ Ces balises balises répondent à un besoin de structuration du document posseda
 \end_layout
 
 \begin_layout Paragraph
-
-\emph on
 ARIA
 \end_layout
 
@@ -835,7 +823,7 @@ Dans le cadre de notre sujet on explore différentes pistes pour la détection
  d'objet type définit à priori.
  La contrainte imposée par le web est la diversité des structures ayant
  la même fonction.
- On émet l'hypothèse que les structures proches ont la même fonction
+ On emet l'hypothèse que les structures proches ont la même fonction 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Comparing_multiple_RNA_secondary"
@@ -858,21 +846,17 @@ Ces problèmes sont étudiés dans le domaine de la recherche d'information
 
 \begin_layout Standard
 Une approche est la comparaison d'arbre.
- Cette approche dans la RI consiste à trouver tous les sous-arbres isomorphe
- avec le pattern en entrée.
- Pour faire la comparaison entre deux structures, on utilise le concept
- de distance entre deux arbres.
-\end_layout
-
-\begin_layout Definition
-La distance entre deux arbres est calculée par la plus petite ou la moins
- coûteuse séquence d'opération d'édition (substitution, suppression et insertion
-) qui permet la transformation d'un arbre vers un autre.
- 
+ La recherche de motif (pattern matching) consiste à trouver tous les sous-arbre
+s isomorphe avec le pattern en entrée.
+ Pour déterminer faire le comparaison entre deux structures, on utilise
+ le concept de distance entre deux arbres.
 \end_layout
 
 \begin_layout Standard
-Notons 
+La distance entre deux arbres est calculée par la plus petite ou la moins
+ coûteuse séquence d'opération élémentaire (insertion, substitution et suppressi
+on) qui permet la transformation d'un arbre vers un autre.
+ Notons 
 \begin_inset Formula $\Lambda$
 \end_inset
 
@@ -936,12 +920,8 @@ key "tree-to-tree"
 \end_layout
 
 \begin_layout Definition*
-Un Mapping 
-\begin_inset Formula $M$
-\end_inset
-
- de l'arbre T1 vers l'arbre T2 est un ensemble de paire ordonnée d'entier
- (i, j), 
+Un Mapping de l'arbre T1 vers l'arbre T2 est un ensemble de paire ordonnée
+ d'entier (i, j), 
 \begin_inset Formula $1\leqslant i\leqslant n1$
 \end_inset
 
@@ -970,7 +950,7 @@ t1[i1] est un ancêtre de t1[i2] si et seulement si, t2[j1] est un ancêtre
  de t2[j2] (preservation de l'ordre des ancêtres);
 \end_layout
 
-\begin_layout Definition*
+\begin_layout Standard
 Soit M un mapping entre les arbres T1 et T2 décrivant des opérations de
  modification.
  S est l'ensemble de pair 
@@ -1025,10 +1005,10 @@ Quatre mesures de distances
 \end_layout
 
 \begin_layout Standard
-Plusieurs mesures de distance existent, chacune d'elle mettant en avant
- certaine propriétés fonctionnelles d'une structure.
+Plusieurs mesure de distance existe, chacune d'elle mettant en avant certaine
+ propriétés fonctionnelles.
  Ces mesures de distance imposent des contraintes sur le mapping.
- Dans la littérature en recense principalement 4 mesures : Distance de modificat
+ Dans la litterature en recense principalement 4 mesures : Distance de modificat
 ion, distance d'alignement, distance de sous-arbre isolé, distance descendante.
 \end_layout
 
@@ -1037,7 +1017,7 @@ Distance de modification
 \end_layout
 
 \begin_layout Standard
-C'est le coût minimum du mapping d'un arbre T1 vers T2.
+C'est le coût minimum de transformation d'un arbre T1 vers T2.
  
 \end_layout
 
@@ -1046,10 +1026,8 @@ Distance d'alignement
 \end_layout
 
 \begin_layout Standard
-Coût minimum du mapping n'ayant que des opérations d'insertion de nœud pour
- que T1 et T2 soit isomorphe.
- Principalement utile pour connaître le coût de recouvrement entre deux
- arbres.
+Coût minimum d'insertion de nœud pour que T1 soit isomorphe T2.
+ Utile pour connaître le cout de recouvrement entre deux arbre
 \end_layout
 
 \begin_layout Subparagraph
@@ -1058,9 +1036,10 @@ Distance de sous-arbre isolé
 
 \begin_layout Standard
 La distance est obtenu en imposant sur le mapping la contrainte que deux
- sous-arbres disjoints de T1 doivent être mappés à deux sous-arbres disjoints
+ sous-arbres disjoint de T1 doivent être mappé à deux sous-arbres disjoint
  de T2.
- S'avère très utile dans le comparaison d'arbre de classification
+ Cette structures de mappage s'avère très utile dans le comparaison d'arbre
+ de classification
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Takana"
@@ -1068,21 +1047,18 @@ key "Takana"
 \end_inset
 
 .
- Elle correspond au côut minimum du mapping de sous-arbres isolés de T1
- vers T2.
+ Elle correspond au côut minimum du mapping de sous-arbre isolé de T1 vers
+ T2.
 \end_layout
 
 \begin_layout Subparagraph
-
-\emph on
 Distance descendante
 \end_layout
 
 \begin_layout Standard
-
-\emph on
 Utilisé pour trouver la plus grande sous-strucucture commune entre deux
- arbres (...)
+ arbres.
+ 
 \end_layout
 
 \begin_layout Paragraph
@@ -1097,11 +1073,8 @@ key "tree-to-tree"
 \end_inset
 
  propose un algorithme de programmation dynamique pour résoudre la question
- de distance d'arbre en temps séquentiel 
-\begin_inset Formula $O(|T1|\times|T2|\times min(depth(T1),leaves(T1))\times min(depth(T2),leaves(T2)))$
-\end_inset
-
- .
+ de distance d'arbre en temps séquentiel O(I Tll x IT2l x min (depth( Tt),
+ leaves( T)) x min (depth(T2), leaves(T2))) .
 \end_layout
 
 \begin_layout Subsection
@@ -1113,9 +1086,9 @@ Discution
 \end_layout
 
 \begin_layout Standard
-Dans le cadre de notre problématique, il est intéressant d'utiliser la distance
- de modification entre la structure d'un objet définit à priori et une structure
- extraite d'une page web.
+Dans le cadre de notre problématique, il est interessant d'utiliser la distance
+ de modification entre un objet définit à priori et une structure extraite
+ d'une page web.
  Par exemple, si nous souhaitons connaître le rôle d'un objet extrait d'une
  page, on peut le comparer à la collection d'objet définit à priori et détermine
 r de quel objet il est le plus proche.
