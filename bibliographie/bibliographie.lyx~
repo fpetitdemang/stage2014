@@ -71,7 +71,7 @@ theorems-starred
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -216,7 +216,8 @@ vspace{1.0cm}
 \backslash
 LARGE{
 \backslash
-textbf{Personnalisation de page web}} 
+textbf{Personnalisation de page web : Application à l'amélioration de l'accessib
+ilité du web}} 
 \backslash
 vspace{2mm}
 \end_layout
@@ -387,8 +388,62 @@ newpage
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tableofcontents
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Introduction
+Introduction et motivation
+\end_layout
+
+\begin_layout Standard
+Le sujet du stage s'inscrit dans le contexte de personnalisation d'un page
+ web.
+ L'objectif visé est de fournir des méthodes et des outils afin d'adapter
+ une page suivant les souhaits d'un utilisateur.
+ La première problématique est la restructuration d'une page web.
+ La seconde problèmatique est la définition d'un protocole d'acquisition
+ et d'apprentissage automatique de ces souhaits.
+\end_layout
+
+\begin_layout Standard
+La conception des pages web s'articule autour : d'un langage pour décrire
+ la structure du document (HTML) et d'un langage pour décrire la mise en
+ forme du document (CSS).
+ Les pages sont constituées d'élements hétérogènes : une page est consitutée
+ d'un contenu principal, d'un menu de navigation, de publicité, etc...
+ Chacun de ces elements representent une sous-structure de la page.
+ Lorsqu'on regarde une page web depuis un navigateur, on constate que ces
+ elements sont structurés de façon sémantique, ils sont organisés selon
+ leur sens.
+ La difficulté dans la tâche de d'extraction de la structure d'une page
+ est dû au manque d'expressivité de HTML.
+ En effet, la norme actuelle de HTML (HTML 4), ne fournit pas de moyen de
+ délimiter les éléments du document en fonction de leur sémantique.
+ Par exemple, on ne peut pas delimiter de manière explicite la structure
+ d'un menu dans une page avec ce langage.
+ L'information de la structure d'une page est explicitée dans la mise en
+ page à travers l'utilisation de police, de couleur ou plus généralement
+ d'élement visuel pour caractériser les contenus qui ont la même signification.
 \end_layout
 
 \begin_layout Section
@@ -399,9 +454,18 @@ Modele de page web
 Introduction
 \end_layout
 
+\begin_layout Paragraph
+Modèle
+\end_layout
+
+\begin_layout Definition
+Un modèle est une représentation simplifié d'une partie du monde.
+ C'est une abstraction du système étudier suivant un point de vue.
+ 
+\end_layout
+
 \begin_layout Standard
-Un modèle est une abstraction du système étudier suivant un point de vue.
- Par exemple une carte routière est une abstraction d'un réseau routier,
+Par exemple une carte routière est une abstraction d'un réseau routier,
  il existe plusieurs type de carte suivant ce que l'on veut étudier (chemin
  pédestre, chemin routier etc).
  L’intérêt d'un modèle est de mieux comprendre un système.
@@ -413,6 +477,15 @@ Un modèle est une abstraction du système étudier suivant un point de vue.
  aux questions qu'il pose sur O » (Minsky) 
 \end_layout
 
+\begin_layout Paragraph
+Métamodèle
+\end_layout
+
+\begin_layout Definition
+Pour exprimer un modèle, nous avons besoin de pouvoir exprimer ces concepts.Un
+ métamodèle, c'est un modèle qui fournir un langage pour exprimer un modèle.
+\end_layout
+
 \begin_layout Standard
 Dans le cadre de notre sujet, on souhaite à terme l’adaptation d'une page
  web.
@@ -421,14 +494,22 @@ Dans le cadre de notre sujet, on souhaite à terme l’adaptation d'une page
  en forme.
  Le contenu peut être de type texte, image, vidéo et la mise en page reflète
  la structure logique de la page.
- Le WC3 décrit une page web comme une ressource identifié par un uri.
+ 
+\end_layout
+
+\begin_layout Standard
+Le WC3 décrit une page web comme une ressource identifié par un uri.
  Chaque ressource est considéré comme une unité d'information.
  Cependant dans la conception contemporaine des pages, celle-ci peut encore
  être découpé en unité d'information.
  Ainsi une page est une composition d'élément graphique.
  Par exemple, une page est composé d'un menu de navigation, d'une entête,
- d'un pied de page, de formulaire et de widget (composant graphique).
- Chacun de ces éléments possède un type, un état et des propriétés.
+ d'un pied de page, de formulaire et de widget.
+ 
+\end_layout
+
+\begin_layout Standard
+Chacun de ces éléments possède un type, un état et des propriétés.
  Le type correspond à la nature de celui-ci.
  Il représente ce qu'un utilisateur attend de ce dernier.
  Certain objet fournissent une interaction avec l'utilisateur qui est susceptibl
@@ -449,11 +530,12 @@ HTML 4
 \end_layout
 
 \begin_layout Standard
-HTML 4 est un langage permettant de représenter les données sur le web.
+HTML 4 est un langage permettant de structurer les données sur le web.
  C'est le langage standard actuelle des pages web.
  Les données décrite peuvent être de type texte, ou plus généralement de
  type multimédia.
- Il permet de structurer le contenu et d'inclure une mise en page.
+ Il permet de structurer le contenu et d'inclure des élements de mise en
+ page.
 \end_layout
 
 \begin_layout Standard
@@ -512,10 +594,6 @@ ancre cible dans lien hypertexte
 
 \begin_layout Itemize
 etc...
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Standard
@@ -581,6 +659,13 @@ Les éléments <div> et <span> utilisé conjointement avec les attributs id
 HTML 5
 \end_layout
 
+\begin_layout Standard
+HTML 5 étend HTML 4 en amenant de nouveaux éléments.
+ Ces éléments ajoutent une valeur sémantique aux structures de HTML 4.
+ HTML 5 spécifie sont modèle de structure générique par une catégorisation
+ des éléments d'une page.
+\end_layout
+
 \begin_layout Subsection
 ARIA
 \end_layout
@@ -589,14 +674,56 @@ ARIA
 Discussion
 \end_layout
 
+\begin_layout Paragraph
+HTML 4
+\end_layout
+
 \begin_layout Standard
 HTML 4 fournit quelque idiome pour structurer les éléments d'un document.
  Il fournit un langage riche pour décrire les éléments de type texte et
  les hyperliens, mais un langage peu adapter pour décrire la structure d'une
  page web, dans le contexte actuel de l'exploitation de ses dernières.
- En effet le contenu décrit dans les pages web actuelles est très hétérogène.
+ En effet le contenu décrit dans les pages web actuelles est très hétérogène,
+ HTML 4 net permet pas de delimiter de manière explicite la structure sémantique
+ d'une page.
  HTML 4 n'est pas un support assez riche pour être le support d'un méta-modèle
  exprimant le modèle d'une page web.
+\end_layout
+
+\begin_layout Paragraph
+HTML 5
+\end_layout
+
+\begin_layout Standard
+Ces balises balises répondent à un besoin précis de structuration du document.
+ Elle reflète le contenu d'une page web contemporaine.
+ Contrairement à HTML 4, la sémantique de la structure et les relations
+ des éléments est définit de manière explicite.
+ 
+\end_layout
+
+\begin_layout Paragraph
+ARIA
+\end_layout
+
+\begin_layout Section
+Extraction structure 
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Approche segmentation visuelle
+\end_layout
+
+\begin_layout Subsection
+Approche stochastique
+\end_layout
+
+\begin_layout Subsection
+Discution
 \end_layout
 
 \begin_layout Section
@@ -610,8 +737,13 @@ Introduction
 \begin_layout Standard
 Dans le cadre de notre sujet on explore différentes pistes pour la détection
  d'objet type définit à priori.
- Ses problèmes sont étudiés dans le domaine de la recherche d'information
- (RI).
+ La contrainte imposée par le web est la diversité des structures ayant
+ la même fonctions.
+ On peut emettre l'hypothèse que les structure proche ont la même fonction
+ [citer article biologie].Ainsi la solution doit prendre en compte cette
+ diversité.
+ (reflexion : ici structure.
+ prend pas en compte la mise en forme et le comportement)
 \end_layout
 
 \begin_layout Subsection
@@ -619,20 +751,15 @@ Tree pattern matching
 \end_layout
 
 \begin_layout Standard
-Une approche de RI est la comparaison d'arbre.
- Cette approche est apparenté aux problématiques de correspondance de motif
+Ses problèmes sont étudiés dans le domaine de la recherche d'information
+ (RI).
+ Une premiere approche est la comparaison d'arbre.
+ Cette approche est apparentée aux problématiques de correspondance de motif
  dans les structures arborescente (tree pattern matching).
- De manière analogue aux problèmes de correspondance de motif dans une chaîne
- de caractères (string pattern matching) qui prend entrée un motif puis
- un texte et qui produit en sortie la localisation d'une sous-chaîne de
- caractères du texte en entrée correspondant aux motifs recherchés.
- Dans le tree pattern matching, le motif et le texte sont des structures
- arborescentes.
- Le problème de recherche de motif (pattern matching) consiste à trouver
- tous les sous-arbres du texte isomorphe avec le pattern en entrée.
- Dans la littérature on trouve plusieurs mesures de distance entre deux
- arbres utiles à la comparaison d'arbre.
- 
+ La recherche de motif (pattern matching) consiste à trouver tous les sous-arbre
+s isomorphe avec le pattern en entrée.
+ Pour déterminer faire le comparaison entre deux structures, on utilise
+ le concept de distance entre deux arbres.
 \end_layout
 
 \begin_layout Standard
@@ -689,7 +816,7 @@ et une opération d'insertion si
 
 \begin_layout Standard
 Pour exprimer la séquence d'opération élémentaire qui transforme l'arbre,
- on utilise un mapping introduit 
+ on utilise le concept de mapping, introduit 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "tree-to-tree"
@@ -697,8 +824,8 @@ key "tree-to-tree"
 \end_inset
 
 .
- Un mapping établie une correspondance un-à-un entre les nœuds deux arbres
- ordonnés qui préservent l'ordre des nœuds.
+ Un mapping établie une correspondance un-à-un entre les nœuds de deux arbres
+ ordonnés et qui préservent l'ordre des nœuds.
  
 \end_layout
 
@@ -720,17 +847,17 @@ Un Mapping de l'arbre T1 vers l'arbre T2 est un ensemble de paire ordonnée
 \end_layout
 
 \begin_layout Itemize
-i1=i2 si et seulement si, j1=j2;
+i1=i2 si et seulement si, j1=j2 (one-to-one condition);
 \end_layout
 
 \begin_layout Itemize
 t1[i1] est à droite de t1[i2], si est seulement si, t2[j1] est à gauche
- de t2[j2];
+ de t2[j2] (preservation de l'ordre des noeuds frères);
 \end_layout
 
 \begin_layout Itemize
 t1[i1] est un ancêtre de t1[i2] si et seulement si, t2[j1] est un ancêtre
- de t2[j2];
+ de t2[j2] (preservation de l'ordre des ancêtres);
 \end_layout
 
 \begin_layout Standard
@@ -781,6 +908,106 @@ Soit M un mapping entre les arbres T1 et T2 décrivant des opérations de
 s (1), r est le coût d'une suppression (1), le coût des substitution identique
  est 0.
  
+\end_layout
+
+\begin_layout Paragraph*
+Quatre mesures de distances 
+\end_layout
+
+\begin_layout Standard
+Plusieurs mesure de distance existe, chacune d'elle mettant en avant certaine
+ propriétés fonctionnelles.
+ Ces mesures de distance imposent des contraintes sur le mapping.
+ Dans la litterature en recense principalement 4 mesures : Distance de modificat
+ion, distance d'alignement, distance de sous-arbre isolé, distance descendante.
+\end_layout
+
+\begin_layout Subparagraph
+Distance de modification
+\end_layout
+
+\begin_layout Standard
+C'est le coût minimum de transformation d'un arbre T1 vers T2.
+ 
+\end_layout
+
+\begin_layout Subparagraph
+Distance d'alignement
+\end_layout
+
+\begin_layout Standard
+Coût minimum d'insertion de nœud pour que T1 soit isomorphe T2.
+ Utile pour connaître le cout de recouvrement entre deux arbre
+\end_layout
+
+\begin_layout Subparagraph
+Distance de sous-arbre isolé
+\end_layout
+
+\begin_layout Standard
+La distance est obtenu en imposant sur le mapping la contrainte que deux
+ sous-arbres disjoint de T1 doivent être mappé à deux sous-arbres disjoint
+ de T2.
+ Cette structures de mappage s'avère très utile dans le comparaison d'arbre
+ de classification
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Takana"
+
+\end_inset
+
+.
+ Elle correspond au côut minimum du mapping de sous-arbre isolé de T1 vers
+ T2.
+\end_layout
+
+\begin_layout Subparagraph
+Distance descendante
+\end_layout
+
+\begin_layout Standard
+Utilisé pour trouver la plus grande sous-strucucture commune entre deux
+ arbres.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Algorithmes
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tree-to-tree"
+
+\end_inset
+
+ propose un algorithme de programmation dynamique pour résoudre la question
+ de distance d'arbre en temps séquentiel O(I Tll x IT2l x min (depth( Tt),
+ leaves( T)) x min (depth(T2), leaves(T2))) .
+\end_layout
+
+\begin_layout Subsection
+Arbre de décision
+\end_layout
+
+\begin_layout Subsection
+Discution
+\end_layout
+
+\begin_layout Standard
+Dans le cadre de notre problématique, il est interessant d'utiliser la distance
+ de modification entre un objet définit à priori et une structure extraite
+ d'une page web.
+ Par exemple, si nous souhaitons connaître le rôle d'un objet extrait d'une
+ page, on peut le comparer à la collection d'objet définit à priori et détermine
+r de quel objet il est le plus proche.
+ Cette distance à un rôle d'indice de similarité.
+ 
+\end_layout
+
+\begin_layout Section
+Conclusion
 \end_layout
 
 \begin_layout Standard

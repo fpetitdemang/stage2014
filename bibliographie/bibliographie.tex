@@ -1,0 +1,350 @@
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ \theoremstyle{definition}
+ \newtheorem*{defn*}{\protect\definitionname}
+
+\makeatother
+
+\usepackage{babel}
+  \providecommand{\definitionname}{Definition}
+
+\begin{document}
+%\pagenumbering{roman} \pagestyle{fancyplain} \thispagestyle{empty} \noindent \begin{center} \large{\texttt{Académie de Montpellier}}\\ \Large{\texttt{Université Montpellier II}}\\ \large{\texttt{Sciences et Techniques du Languedoc}}\\ \end{center}
+\vspace{1cm}
+\begin{center} \Huge{\textbf{Étude Bibliographique de Master 2\\}}  \vspace{1.0cm} %\Huge{\textbf{MASTER 2}} \normalsize \begin{center} \vspace{1.0cm} effectuée au Laboratoire d'Informatique de Robotique\\ et de Micro-électronique de Montpellier \end{center}
+\vspace{2mm} %\Large{\textbf{franck PETITDEMANGE}}
+\vspace{0.1cm} \normalsize
+\vspace{3mm}
+\large{Spécialité} : \textbf{AIGLE}\\ %\Large{Formation Doctorale} : \textbf{Informatique}\\ %\large{{\'E}cole Doctorale} : \textbf{Information, Structures, Systèmes} \vspace{1.0cm}
+\LARGE{\textbf{Personnalisation de page web}} \vspace{2mm}
+\begin{center}   par \textbf{Franck~PETITDEMANGE} \end{center}
+\vspace{2mm}
+\vspace{4cm}
+\textbf{Mars 2014}\\
+\vspace{0.5cm}
+Sous la direction de \textbf{Marianne~HUCHARD, Michel~MEYNARD, Yoann~BONAVERO}
+\vspace{5mm}
+%\begin{table}[hbt] %\begin{center} %\begin{tabular}{ l l l} %Messieurs & {\em } & Rapporteurs\\ %& {\em } & \\ %& {\em } & \\ %\\ %Messieurs& {\em } & Examinateurs \\ %& {\em } & \\ %& {\em } & \\ %\\ %Monsieur & {\em Evripidis BAMPIS} &  Directeur de thèse\\ %& {\em  X} & \\ %\end{tabular} %\end{center} %\end{table}
+%\vspace{.7cm}
+\end{center}
+\newpage
+
+\tableofcontents
+\newpage
+
+
+\section{Introduction}
+
+Le sujet du stage s'inscrit dans le contexte de personnalisation d'un
+page web. L'objectif visé est de fournir des méthodes et outils afin
+d'adapter une page suivant le profil d'un utilisateur. Plusieurs sous
+objectifs peuvent être extrait. 
+
+Dans un premier temps nous souhaitons acquérir des connaissances sur
+les objets de la page que nous souhaitons modifier. Par exemple, un
+bloc de texte ou un menu. La question de recherche relève de la recherche
+de motifs dans un arbre DOM d'une page web. 
+
+La difficulté principale est dû au langage de description des pages
+web. En effet, c'est un format de donnée semi-structuré qui ne répond
+à aucun modèle définit à priori. Le langage ne fournit qu'un mécanisme
+de structuration générique. /{*}EXPLIQUER structuration générique{*}/
+La structure des pages web et les relations entre les objets deviennent
+alors implicites. Elle ne sont connu que par son concepteur. Les elements
+du langage ne permettent pas délimiter clairement les contenus qui
+sont sémantiquements liés, de definir le rôle de l'objet dans la page
+et la relations qu'il peut avoir avec les autres. 
+
+La première problématique est donc de regrouper les elements qui enssemble
+ont une signification, de comprendre leurs signification et la relation
+qu'ils peuvent avoir avec les autres.
+
+\emph{Dans un second temps, nous voulons récuperer les souhaits de
+transformation des objets dans une page web. L'acquisition, la représentation
+et le stockage des souhaits de personnalisation de l'utilisateur.
+Dans cette partie on cherchera à définir un protocole et une interface
+d'acquisition des souhaits. La question de recherche consistera à
+étudier diverses approches dont une approche d'acquisition et d'apprentissage
+à partir d'exemples.} 
+
+
+\section{Modele de page web}
+
+
+\subsection{Introduction}
+
+
+\paragraph{Modèle}
+\begin{defn*}
+Un modèle est une représentation simplifié d'une partie du monde.
+C'est une abstraction du système étudier suivant un point de vue. 
+\end{defn*}
+Par exemple une carte routière est une abstraction d'un réseau routier,
+il existe plusieurs type de carte suivant ce que l'on veut étudier
+(chemin pédestre, chemin routier etc). L\textquoteright{}intérêt d'un
+modèle est de mieux comprendre un système. 
+
+« Pour un observateur A, M est un modèle de l'objet O, si M aide A
+à répondre aux questions qu'il pose sur O » (Minsky) 
+
+
+\paragraph{Métamodèle}
+\begin{defn*}
+Pour exprimer un modèle, nous avons besoin de pouvoir exprimer ces
+concepts.Un métamodèle, c'est un modèle qui fournir un langage pour
+exprimer un modèle.
+\end{defn*}
+Dans le cadre de notre sujet, on souhaite à terme l\textquoteright{}adaptation
+d'une page web. Ici le système étudié est une page web. Une page web
+possède le rôle d'affichage d'un contenu structuré et mise en forme.
+Le contenu peut être de type texte, image, vidéo et la mise en page
+reflète la structure logique de la page. 
+
+Le WC3 décrit une page web comme une ressource identifié par un uri.
+Chaque ressource est considéré comme une unité d'information. Cependant
+dans la conception contemporaine des pages, celle-ci peut encore être
+découpé en unité d'information. Ainsi une page est une composition
+d'élément graphique. Par exemple, une page est composé d'un menu de
+navigation, d'une entête, d'un pied de page, de formulaire et de widget. 
+
+Chacun de ces éléments possède un type, un état et des propriétés.
+Le type correspond à la nature de celui-ci. Il représente ce qu'un
+utilisateur attend de ce dernier. Certain objet fournissent une interaction
+avec l'utilisateur qui est susceptible de modifier l'état d'un objet.
+Par exemple certain menu cache les différents liens de navigations,
+au moment ou l'utilisateur survole le menu celui-ci affiche les différents
+liens. Les objets possèdent également un ensemble de propriétés, quelque
+fois intrinsèque à leur type. Par exemple un formulaire possède des
+champs de saisie. D'autre propriétés peuvent être la couleur et la
+police du texte, la hauteur, la largeur, et la position d'une objets
+dans le page. 
+
+
+\subsection{HTML 4}
+
+HTML 4 est un langage permettant de représenter les données sur le
+web. C'est le langage standard actuelle des pages web. Les données
+décrite peuvent être de type texte, ou plus généralement de type multimédia.
+Il permet de structurer le contenu et d'inclure une mise en page.
+
+HTML 4 définit des types d\textquoteright{}éléments qui représente
+des structures ou des comportement voulu dans une page web. HTML 4
+permet de décrire trois composant principaux : 
+\begin{enumerate}
+\item Le contenu textuel : paragraphe, titre (beaucoup de balise de présentation) 
+\item Les liens hypertextes 
+\item Les images, objets etc..
+\end{enumerate}
+
+\paragraph{Structuration générique}
+
+HTML propose un mécanisme générique pour la structuration des documents
+web. Ce mécanisme gravite autour des éléments de type en bloc, en
+ligne et leurs identifiants respective : id et classe.
+
+
+\subparagraph{id et class}
+
+Chaque élément peut se voir attribuer un identifiant ou une classe
+d'appartenance. 
+
+id assigne un nom à un élément. Ce nom doit être unique dans le document.
+Il possède plusieurs rôle dans HTML : 
+\begin{itemize}
+\item sélecteur dans une feuille de style 
+\item ancre cible dans lien hypertexte 
+\item etc...
+\end{itemize}
+class, au contraire, assigne un ou plusieurs noms de classe à un élément
+; on peut dire de l'élément qu'il appartient à ces classes. Un nom
+de classe peut être partagé par plusieurs instances d'éléments. L'attribut
+class a plusieurs rôles dans HTML : 
+\begin{itemize}
+\item comme sélecteur dans une feuille de style (quand l'auteur souhaite
+assigner une information de style à un ensemble d'éléments) . 
+\item pour un traitement universel par les agents utilisateurs.
+\end{itemize}
+
+\subparagraph{En bloc et en ligne}
+
+Certains éléments , qui peuvent apparaître dans l'élément BODY, sont
+dits être de niveau « bloc » tandis que d'autres sont dits de niveau
+« en-ligne » (aussi connu comme sous le nom « niveau texte »). La
+distinction se fondent sur plusieurs notions : 
+\begin{itemize}
+\item Le modèle de contenu : les éléments de bloc peuvent contenir des éléments
+en-ligne et d'autres éléments de bloc. Les éléments en-ligne ne peuvent
+contenir que des données et d'autres éléments en-ligne. L'idée inhérente
+à cette distinction structurelle, c'est que les éléments de bloc créent
+des structures « plus grandes » que les éléments en-ligne. 
+\item Le formatage : les éléments de bloc sont formatés différemment des
+éléments en-ligne. En général, les éléments de bloc commencent sur
+une nouvelle ligne, et non les éléments en-ligne. 
+\end{itemize}
+
+\subparagraph{Le regroupement des éléments}
+
+Les éléments <div> et <span> utilisé conjointement avec les attributs
+id et classe sont au c½ur du mécanisme générique de structuration
+d'un document. Ces éléments définissent le contenu comme étant en-ligne
+(SPAN) ou de bloc (DIV) mais n'imposent aucune autre expression de
+présentation sur le contenu. La sémantique de ces balises est neutre,
+elle ne fournit aucune informations, il n' y a aucune information
+sur l'usage que son auteur en fait.
+
+
+\subsection{HTML 5}
+
+HTML 5 étend HTML 4 en amenant de nouveaux éléments. Ces éléments
+ajoutent une valeur sémantique aux structures de HTML 4. HTML 5 spécifie
+sont modèle de structure générique par une catégorisation des éléments
+d'une page.
+
+
+\subsection{ARIA}
+
+
+\subsection{Discussion}
+
+
+
+HTML 4 fournit quelque idiome pour structurer les éléments d'un document.
+Il fournit un langage riche pour décrire les éléments de type texte
+et les hyperliens, mais un langage peu adapter pour décrire la structure
+d'une page web, dans le contexte actuel de l'exploitation de ses dernières.
+En effet le contenu décrit dans les pages web actuelles est très hétérogène.
+HTML 4 n'est pas un support assez riche pour être le support d'un
+méta-modèle exprimant le modèle d'une page web.
+
+Ces balises balises répondent à un besoin précis de structuration
+du document. Elle reflète le contenu d'une page web contemporaine.
+Contrairement à HTML 4, la sémantique de la structure et les relations
+des éléments est définit de manière explicite. 
+
+
+\section{Detection d'objets}
+
+
+\subsection{Introduction}
+
+Dans le cadre de notre sujet on explore différentes pistes pour la
+détection d'objet type définit à priori. La contrainte imposée par
+le web est la diversité des structures ayant la même fonctions . Ainsi
+la solution doit prendre en compte cette diversité. (reflexion : ici
+structure. prend pas en compte la mise en forme et le comportement)
+
+
+\subsection{Tree pattern matching}
+
+Ses problèmes sont étudiés dans le domaine de la recherche d'information
+(RI). Une premiere approche est la comparaison d'arbre. Cette approche
+est apparentée aux problématiques de correspondance de motif dans
+les structures arborescente (tree pattern matching). La recherche
+de motif (pattern matching) consiste à trouver tous les sous-arbres
+isomorphe avec le pattern en entrée. Pour déterminer faire le comparaison
+entre deux structures, on utilise le concept de distance entre deux
+arbres.
+
+La distance entre deux arbres est calculée par la plus petite ou la
+moins coûteuse séquence d'opération élémentaire (insertion, substitution
+et suppression) qui permet la transformation d'un arbre vers un autre.
+Notons $\Lambda$ un noeud vide. Une opération d'édition est ecrit
+$b\rightarrow c$ , ou b et c sont soit un noeud, soit $\Lambda$
+. 
+\begin{itemize}
+\item $b\rightarrow c$ est une opération de substition si $b\neq\Lambda$
+et $c\neq\Lambda$, 
+\item une opération de suppression si $b\neq\Lambda\doteq c$, 
+\item et une opération d'insertion si $b=\Lambda\neq c$
+\end{itemize}
+Pour exprimer la séquence d'opération élémentaire qui transforme l'arbre,
+on utilise le concept de mapping, introduit \cite{tree-to-tree}.
+Un mapping établie une correspondance un-à-un entre les n½uds de deux
+arbres ordonnés et qui préservent l'ordre des n½uds. 
+\begin{defn*}
+Un Mapping de l'arbre T1 vers l'arbre T2 est un ensemble de paire
+ordonnée d'entier (i, j), $1\leqslant i\leqslant n1$, $1\leq j\leq n2$,
+satisfaisant les conditions suivantes, pour tous $(i1,j1),(i2,j2)\in M$:\end{defn*}
+\begin{itemize}
+\item i1=i2 si et seulement si, j1=j2 (one-to-one condition);
+\item t1{[}i1{]} est à droite de t1{[}i2{]}, si est seulement si, t2{[}j1{]}
+est à gauche de t2{[}j2{]} (preservation de l'ordre des noeuds frères);
+\item t1{[}i1{]} est un ancêtre de t1{[}i2{]} si et seulement si, t2{[}j1{]}
+est un ancêtre de t2{[}j2{]} (preservation de l'ordre des ancêtres);
+\end{itemize}
+Soit M un mapping entre les arbres T1 et T2 décrivant des opérations
+de modification. S est l'ensemble de pair $(i,j)\in M$, D l'ensemble
+des n½uds T1{[}i{]} n'ayant pas de paire $(i,j)\in M$ , et I l'ensemble
+des n½uds T2{[}j{]} n'ayant pas de paire $(i,j)\in M$. Le coût du
+mapping est donné par $|S|p+|I|q+|D|r$| , ou p est le coût des substitution
+non identique, q est le coût des insertions (1), r est le coût d'une
+suppression (1), le coût des substitution identique est 0. 
+
+
+\paragraph*{Quatre mesures de distances }
+
+Plusieurs mesure de distance existe, chacune d'elle mettant en avant
+certaine propriétés fonctionnelles. Ces mesures de distance imposent
+des contraintes sur le mapping. Dans la litterature en recense principalement
+4 mesures : Distance de modification, distance d'alignement, distance
+de sous-arbre isolé, distance descendante.
+
+
+\subparagraph{Distance de modification}
+
+C'est le coût minimum de transformation d'un arbre T1 vers T2. 
+
+
+\subparagraph{Distance d'alignement}
+
+Coût minimum d'insertion de n½ud pour que T1 soit isomorphe T2. Utile
+pour connaître le cout de recouvrement entre deux arbre
+
+
+\subparagraph{Distance de sous-arbre isolé}
+
+La distance est obtenu en imposant sur le mapping la contrainte que
+deux sous-arbres disjoint de T1 doivent être mappé à deux sous-arbres
+disjoint de T2. Cette structures de mappage s'avère très utile dans
+le comparaison d'arbre de classification\cite{Takana}. Elle correspond
+au côut minimum du mapping de sous-arbre isolé de T1 vers T2.
+
+
+\subparagraph{Distance descendante}
+
+Utilisé pour trouver la plus grande sous-strucucture commune entre
+deux arbres. 
+
+
+\paragraph{Algorithmes}
+
+\cite{tree-to-tree} propose un algorithme de programmation dynamique
+pour résoudre la question de distance d'arbre en temps séquentiel
+O(I Tll x IT2l x min (depth( Tt), leaves( T)) x min (depth(T2), leaves(T2)))
+.
+
+
+\paragraph{Discussion}
+
+Dans le cadre de notre problématique, il est interessant d'utiliser
+la distance de modification entre un objet définit à priori et une
+structure extraite d'une page web. Par exemple, si nous souhaitons
+connaître le rôle d'un objet extrait d'une page, on peut le comparer
+à la collection d'objet définit à priori et déterminer de quel objet
+il est le plus proche. Cette distance à un rôle d'indice de similarité. 
+
+
+\section{Conclusion}
+
+\bibliographystyle{plain}
+\bibliography{bibliographie/biblio}
+
+\end{document}

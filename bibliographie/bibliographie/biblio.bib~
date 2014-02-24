@@ -19,3 +19,14 @@
   year={1979},
   publisher={Journal of the Association for Computing Machmery}
 }
+
+@article{Takana,
+  title={The Tree-to-Tree editing distance problem},
+  author={E. Takana, K. Takana},
+  %journal={},
+  %volume={10},
+  %number={3},
+  pages={221--241},
+  year={1998},
+  publisher={Int. J. Pattern Recognition Artif. Intell. 2}
+}
