@@ -831,43 +831,46 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Dans le cadre de notre sujet on explore différentes pistes pour la détection
- d'objet type définit à priori.
- La contrainte imposée par le web est la diversité des structures ayant
- la même fonction.
- On émet l'hypothèse que les structures proches ont la même fonction
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Comparing_multiple_RNA_secondary"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-Tree pattern matching
+On s'interesse ici au sens des sous-structures recupérés dans la phase d'extract
+ion.
+ Plus précisement on veut savoir à quel element de notre méta-modèle correspond
+ la sous-structure.
+ On veut faire correspondre les sous-structures aux elements de notre méta-modèl
+e.
 \end_layout
 
 \begin_layout Standard
-Ces problèmes sont étudiés dans le domaine de la recherche d'information
- (RI).
- Ce domaine étudie la manière de retrouver des informations dans un corpus.
- 
+L'environnement web impose certaine contraintes sur notamment l'évolution
+ des structures de données, mais également la diversité des arcthitecutes
+ d'un site à l'autre.
+ Cependant on peut constater qu'avec l'utilisation massive de 
+\end_layout
+
+\begin_layout Standard
+La section précendente décrit un moyen d'extraire la structure d'une page.
+ On obtient une structure semantique de la page.
+ On s'interesse à reconnaitre les éléments de cette structure suivant des
+ elements de notre modèles.
+\end_layout
+
+\begin_layout Standard
+La contrainte imposée par le web est la diversité des structures ayant la
+ même fonction.
+\end_layout
+
+\begin_layout Subsection
+Wrapper
+\end_layout
+
+\begin_layout Subsection
+Tree-to-tree distance
 \end_layout
 
 \begin_layout Standard
 Une approche est la comparaison d'arbre.
- Cette approche dans la RI consiste à trouver tous les sous-arbres isomorphe
- avec le pattern en entrée.
- Pour faire la comparaison entre deux structures, on utilise le concept
- de distance entre deux arbres.
-\end_layout
-
-\begin_layout Definition
-La distance entre deux arbres est calculée par la plus petite ou la moins
- coûteuse séquence d'opération d'édition (substitution, suppression et insertion
-) qui permet la transformation d'un arbre vers un autre.
+ Cette approche consiste à trouver la plus petite ou la moins coûteuse séquence
+ d'opération d'édition (substitution, suppression et insertion) qui permet
+ la transformation d'un arbre vers un autre.
  
 \end_layout
 
@@ -1050,6 +1053,7 @@ Coût minimum du mapping n'ayant que des opérations d'insertion de nœud pour
  que T1 et T2 soit isomorphe.
  Principalement utile pour connaître le coût de recouvrement entre deux
  arbres.
+ Utile pour faire ressortir les régions homologue ou similaire d'une structure.
 \end_layout
 
 \begin_layout Subparagraph
@@ -1110,6 +1114,10 @@ Arbre de décision
 
 \begin_layout Subsection
 Discution
+\end_layout
+
+\begin_layout Subparagraph
+Tree-to-tree distance
 \end_layout
 
 \begin_layout Standard

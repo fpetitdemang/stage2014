@@ -831,43 +831,33 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Dans le cadre de notre sujet on explore différentes pistes pour la détection
- d'objet type définit à priori.
- La contrainte imposée par le web est la diversité des structures ayant
- la même fonction.
- On émet l'hypothèse que les structures proches ont la même fonction
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Comparing_multiple_RNA_secondary"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-Tree pattern matching
+On s'interesse ici au sens des sous-structures recupérés dans la phase d'extract
+ion.
+ Plus précisement on veut savoir à quel element de notre méta-modèle correspond
+ la sous-structure.
 \end_layout
 
 \begin_layout Standard
-Ces problèmes sont étudiés dans le domaine de la recherche d'information
- (RI).
- Ce domaine étudie la manière de retrouver des informations dans un corpus.
- 
+La section précendente décrit un moyen d'extraire la structure d'une page.
+ On obtient une structure semantique de la page.
+ On s'interesse à reconnaitre les éléments de cette structure suivant des
+ elements de notre modèles.
+\end_layout
+
+\begin_layout Standard
+La contrainte imposée par le web est la diversité des structures ayant la
+ même fonction.
+\end_layout
+
+\begin_layout Subsection
+Tree-to-tree distance
 \end_layout
 
 \begin_layout Standard
 Une approche est la comparaison d'arbre.
- Cette approche dans la RI consiste à trouver tous les sous-arbres isomorphe
- avec le pattern en entrée.
- Pour faire la comparaison entre deux structures, on utilise le concept
- de distance entre deux arbres.
-\end_layout
-
-\begin_layout Definition
-La distance entre deux arbres est calculée par la plus petite ou la moins
- coûteuse séquence d'opération d'édition (substitution, suppression et insertion
-) qui permet la transformation d'un arbre vers un autre.
+ Cette approche consiste à trouver la plus petite ou la moins coûteuse séquence
+ d'opération d'édition (substitution, suppression et insertion) qui permet
+ la transformation d'un arbre vers un autre.
  
 \end_layout
 
@@ -1050,6 +1040,7 @@ Coût minimum du mapping n'ayant que des opérations d'insertion de nœud pour
  que T1 et T2 soit isomorphe.
  Principalement utile pour connaître le coût de recouvrement entre deux
  arbres.
+ Utile pour faire ressortir les régions homologue ou similaire d'une structure.
 \end_layout
 
 \begin_layout Subparagraph
@@ -1098,7 +1089,7 @@ key "tree-to-tree"
 
  propose un algorithme de programmation dynamique pour résoudre la question
  de distance d'arbre en temps séquentiel 
-\begin_inset Formula $O(|T1|x|T2|xmin(depth(T1),leaves(T1))xmin(depth(T2),leaves(T2)))$
+\begin_inset Formula $O(|T1|\times|T2|\times min(depth(T1),leaves(T1))\times min(depth(T2),leaves(T2)))$
 \end_inset
 
  .
@@ -1110,6 +1101,10 @@ Arbre de décision
 
 \begin_layout Subsection
 Discution
+\end_layout
+
+\begin_layout Subparagraph
+Tree-to-tree distance
 \end_layout
 
 \begin_layout Standard
