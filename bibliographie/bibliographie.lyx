@@ -533,14 +533,12 @@ Dans le cadre de notre sujet, on souhaite à terme l’adaptation d'une page
 Une page web possède le rôle d'affichage d'un contenu structuré et mise
  en forme.
  Le contenu peut être de type texte, image, vidéo, etc.
- Le WC3 décrit une page web comme une ressource.
- Chaque ressource étant une unité d'information.
- Cependant dans la conception contemporaine des pages, celle-ci peut encore
- être découpé en unité d'information.
- Ainsi on peut voir une page comme une composition d'élément graphique apportant
- chacun une information.
+ On peut voir une page comme une composition d'élément graphique agencé
+ dans l'espace de la page et apportant une information.
  Par exemple, une page est composé d'un menu de navigation, d'une entête,
- d'un pied de page, de formulaire et de widget.
+ d'un pied de page, de formulaire et de widget (on entend par widget des
+ éléments de contrôle, comme des barres de progression, des selecteurs de
+ couleurs, etc).
  Chacun de ces éléments possède un type, un état et des propriétés.
  
 \end_layout
@@ -592,7 +590,7 @@ key "HTML_4"
 
 \begin_layout Standard
 HTML 4 définit des types d’éléments qui représente des structures ou des
- comportement voulu dans une page web.
+ comportements vouluent dans une page web.
  HTML 4 permet de décrire trois composant principaux : 
 \end_layout
 
@@ -614,8 +612,8 @@ Structuration générique
 \end_layout
 
 \begin_layout Standard
-HTML propose un mécanisme générique pour la structuration des documents
- web.
+HTML 4 propose un mécanisme générique pour la composition du contenu formant
+ la structure des pages web.
  Ce mécanisme gravite autour des éléments de type en bloc, en ligne et leurs
  identifiants respective : id et classe.
 \end_layout
@@ -694,7 +692,7 @@ Le formatage : les éléments de bloc sont formatés différemment des élémen
 \end_layout
 
 \begin_layout Subparagraph
-Le regroupement des éléments
+Regroupement des éléments
 \end_layout
 
 \begin_layout Standard
@@ -711,13 +709,98 @@ HTML 5
 \end_layout
 
 \begin_layout Standard
+HTML 5 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HTML_5"
 
-\emph on
-HTML 5 étend HTML 4 en amenant de nouveaux éléments.
- Ces éléments ajoutent une valeur sémantique aux structures de HTML 4.
- HTML 5 spécifie sont modèle de structure générique par une catégorisation
- des éléments d'une page.
- (...)
+\end_inset
+
+ étend HTML 4 en amenant de nouveaux éléments.
+ La norme HTML 4 est toujours rétroactive, cependant quelques éléments ont
+ été dépréciés, particulièrement les balises de mise en forme.
+ Cette nouvelle spécification de HTML n'est pas encore aux rangs de standard.
+ HTML 5 tend à combler le fosser dans description des pages web.
+ HTML 5 remplace la structure générique de HTML 4 par un nouveau modele
+ de contenu, catégorisant les données elements et leur inclusion.
+ Apporte de nouvelles balises de structurations amiolrant le regroupement
+ sémantique des éléments.
+\end_layout
+
+\begin_layout Paragraph
+Structuration 
+\end_layout
+
+\begin_layout Standard
+HTML 5 propose toujours le même mécanisme générique de HTML 4 (éléments
+ de type en bloc, en ligne et leurs identifiants respective : id et classe).
+ HTML 5 propose une catégorisation des éléments spécifiant chacun un modèle
+ de contenu.
+\end_layout
+
+\begin_layout Subparagraph
+Catégorisation
+\end_layout
+
+\begin_layout Standard
+Suivant l'inclusion les éléments peuvent avoir une sémantique différente.
+ (cf : article alsacreation)
+\end_layout
+
+\begin_layout Itemize
+Metadata content :
+\end_layout
+
+\begin_layout Itemize
+Flow content :
+\end_layout
+
+\begin_layout Itemize
+Sectioning content :
+\end_layout
+
+\begin_layout Itemize
+Heading content :
+\end_layout
+
+\begin_layout Itemize
+Phrasing content :
+\end_layout
+
+\begin_layout Itemize
+Embedded content :
+\end_layout
+
+\begin_layout Itemize
+Interactive content :
+\end_layout
+
+\begin_layout Paragraph
+Regroupement des éléments
+\end_layout
+
+\begin_layout Itemize
+Section :
+\end_layout
+
+\begin_layout Itemize
+Article :
+\end_layout
+
+\begin_layout Itemize
+nav :
+\end_layout
+
+\begin_layout Itemize
+aside :
+\end_layout
+
+\begin_layout Itemize
+header :
+\end_layout
+
+\begin_layout Itemize
+footer :
 \end_layout
 
 \begin_layout Subsection
@@ -748,6 +831,11 @@ HTML 4 fournit quelque idiome pour structurer les éléments d'un document.
  exprimant le modèle d'une page web suivant nos besoins.
 \end_layout
 
+\begin_layout Standard
+Id et class permette la strucuturation sémantique, à défault des balises
+ de regroupement <div> et <span> 
+\end_layout
+
 \begin_layout Paragraph
 
 \emph on
@@ -761,7 +849,7 @@ Ces balises balises répondent à un besoin de structuration du document posseda
  des données hétérogènes.
  Contrairement à HTML 4, la sémantique de la structure et les relations
  des éléments est définit de manière explicite.
- 
+ Repose moins sur l'utilisation des id et class
 \end_layout
 
 \begin_layout Paragraph

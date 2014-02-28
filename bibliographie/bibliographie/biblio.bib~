@@ -1,4 +1,13 @@
-
+@article{Comparing_multiple_RNA_secondary,
+  title={Comparing multiple RNA secondary structures using tree comparisons},
+  author={Bruc A.Shapiro, Kaizhong Zhang},
+  %journal={},
+  %volume={},
+  %number={},
+  pages={309-318},
+  year={1990},
+  publisher={CABIOS}
+}
 
 @article{HTML_4,
   title={HTML 4.01 Specification},
