@@ -569,8 +569,9 @@ Dans le cadre de notre sujet, on souhaite à terme l’adaptation d'une page
  Ici le système étudié est une page web.
  Il est important d'en cerner les concepts intrinsèques.
  L'objectif étant de concevoir un méta-modele suffisament riche à l'expression
- d'un modèle conforme à la représentation qu'un utilisateur à d'une page,
- afin d'en faciliter l'expression de transformation.
+ d'un modèle conforme à l'intention de son auteur.
+ Mais aussi à la représentation qu'un utilisateur à d'une page, afin d'en
+ faciliter l'expression de transformation.
 \end_layout
 
 \begin_layout Standard
@@ -867,7 +868,7 @@ key "HTML_5"
  La norme HTML 4 est toujours rétroactive, cependant quelques éléments ont
  été dépréciés, particulièrement les élements de mise en forme.
  HTML 5 remplace la structure générique de HTML 4 par un nouveau modèle.
- Ce modèle amène de nouveaux élements apportent une sémantique standard
+ Ce modèle amène de nouveaux élements qui apportent une sémantique standard
  à la structure d'une page.
  
 \end_layout
@@ -881,122 +882,17 @@ Structuration
 \end_layout
 
 \begin_layout Standard
-HTML 5 propose toujours le même mécanisme générique de HTML 4 (éléments
- de type en bloc, en ligne et leurs identifiants respective : id et classe).
- HTML 5 propose une catégorisation des éléments spécifiant chacun un modèle
- de contenu, c'est à dire les règles définissant le type de contenu qu'il
- peut avoir.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Catégories des éléments HTML 5
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-includegraphics[width=10cm]{img/contenthtml5.png}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+Les nouveaux élements de HTML 5 spécifie donc une sémantique standard :
 \end_layout
 
 \begin_layout Itemize
-Metadata content (contenu de meta-données) : catégorie des elements qui
- modifient le comportement ou la présentation du document, insèrent des
- liens vers d'autres documents ou comportent des informations sur la structure
- même des données.
+Section : permet de définir explicitement les sections d'un document et
+ un environnement 
 \end_layout
 
 \begin_layout Itemize
-Flow content (contenu de flux) : catégorie principale, regroupe la quasi-totalit
-é des éléments disponibles en HTML5 
-\end_layout
-
-\begin_layout Itemize
-Sectioning content (contenu sectionnant) : catégorie des éléments qui créent
- une section dans le plan d'un document, définit la portée contextuelle
- des éléments
-\end_layout
-
-\begin_layout Itemize
-Heading content (contenu de titre) : définit le titre d'un contenu
-\end_layout
-
-\begin_layout Itemize
-Phrasing content (contenu phrasé) : catégorie qui regroupe les elements
- définissant du texte
-\end_layout
-
-\begin_layout Itemize
-Embedded content (contenu integré) : contient tous les éléments qui appel
- des ressources externe au document
-\end_layout
-
-\begin_layout Itemize
-Interactive content (contenu interactif) : regroupe les éléments conçuent
- pour une interaction avec l'utilisateur
-\end_layout
-
-\begin_layout Paragraph
-Regroupement des éléments
-\end_layout
-
-\begin_layout Standard
-HTML 5 apporte de nouveaux élements permettant de mieux définir la structure
- sémantique d'un document.
- Une sémantique accompagne la composition des elements.
- Par exemple, quand un élément <article> est imbriqué dans un autre élement
- <article>, cette dernière représente un article relatif à l'élément contenant,
- comme un commentaire.
- Un élement <adress> dans un élement <article> est compris comme l'adresse
- de l'auteur de l'article.
-\end_layout
-
-\begin_layout Itemize
-Section : permet de définir les grandes sections d'un document 
-\end_layout
-
-\begin_layout Itemize
-Article : représente un contenu autonome dans une page
+Article : représente un contenu autonome dans une page, facile l'inclusion
+ de plusieurs sous document
 \end_layout
 
 \begin_layout Itemize
@@ -1103,18 +999,18 @@ Les rôles permettent d'identifier la fonction de chaque elements d'une interfac
 \end_layout
 
 \begin_layout Itemize
-Widget Roles : référence d'un ensemble de widget (alertdialog, button, slider,
- scrollbar, menu, etc)
+Widget Roles : référence d'un ensemble de widget préfinis (alertdialog,
+ button, slider, scrollbar, menu, etc)
 \end_layout
 
 \begin_layout Itemize
 Document Structure Roles : décrit les structures qui organisent un document
- (article, definition, heading, ect)
+ (article, definition, entête, ect)
 \end_layout
 
 \begin_layout Itemize
-Landmark Roles : décrit les régions principales d'un document (main, navigation,
- search, etc)
+Landmark Roles : décrit les régions principales d'une interface graphique
+ (main, navigation, search, etc)
 \end_layout
 
 \begin_layout Paragraph
@@ -1137,7 +1033,10 @@ qui peut prendre trois propriétés suivant l'interaction avec l'utilisateur
 \emph on
 true - false - mixed
 \emph default
- 
+ .
+ Aria prévoit même un systeme d'annotation pour les objets ayant des comportemen
+ts asynchrones.
+ Par exmple, on peut annoter qu'un element se met à jour de manière autonome.
 \end_layout
 
 \begin_layout Standard
@@ -1157,62 +1056,96 @@ Discussion
 \end_layout
 
 \begin_layout Paragraph
-
-\emph on
 HTML 4
 \end_layout
 
 \begin_layout Standard
+fourni un mécanisme de structuration générique pour la publication de document
+ sur le web.
+ Ce support semble ne pas être assez riche à la description d'une page web.
+ En effet, ce dernier pose plusieurs problèmes :
+\end_layout
 
-\emph on
-HTML 4 fournit quelque idiome pour structurer les éléments d'un document.
- Il fournit un langage riche pour décrire les éléments de type texte et
- les hyperliens, mais un langage peu adapter pour décrire la structure d'une
- page web, dans le contexte actuel de l'exploitation de ses dernières.
- En effet le contenu décrit dans les pages web actuelles est très hétérogène,
- HTML 4 net permet pas de delimiter de manière explicite la structure sémantique
- d'une page.
- HTML 4 n'est pas un support assez riche pour être le support d'un méta-modèle
- exprimant le modèle d'une page web suivant nos besoins.
+\begin_layout Itemize
+Une page possède un contenu hétérogène.
+ Plusieurs document peuvent être décrit dans le page.
+ Il n'y pas de moyen de délimiter le contour d'un document de manière explicite
+ dans une page.
+\end_layout
+
+\begin_layout Itemize
+Une page possède un contenu possiblement non linéaire.
+ Impossible de l'exprimer.
+\end_layout
+
+\begin_layout Itemize
+Un page web contient des élements qui ne sont pas en rapport avec le contenu
+ d'un document, mais plûtot avec le site web.
+ Typiquement un menu de navigation, un logo etc...
+ Il n'est pas possible de le modéliser explicitement.
+ 
 \end_layout
 
 \begin_layout Standard
-Id et class permette la strucuturation sémantique, à défault des balises
- de regroupement <div> et <span> 
-\end_layout
-
-\begin_layout Standard
 
 \emph on
-HTML 4 repose sur le notion de section et sous section.
- Le mécanisme reposant sur les division <div> ne permet pas de structurer
- le document de façon hierarchique mais ne donne pas un sens aux elements.
- Pour le conception d'un modéle on peut connaitre la struture d'un document
- mais on ne connaît pas les rôles associés aux documents.
  
 \end_layout
 
 \begin_layout Paragraph
-
-\emph on
 HTML 5
 \end_layout
 
 \begin_layout Standard
+apporte des améliorations par rapport aux points précédents : 
+\end_layout
 
-\emph on
-Ces balises balises répondent à un besoin de structuration du document possedant
- des données hétérogènes.
- Contrairement à HTML 4, la sémantique de la structure et les relations
- des éléments est définit de manière explicite.
- Repose moins sur l'utilisation des id et class.
- On connait mieux le rôle des élément entre eux.
+\begin_layout Itemize
+Les élements section permettent de délimiter et d'exprimer explicitement
+ les grandes zones d'une page, et leur offre un environnement contextuel.
+ Cependant on ne connaît toujours pas le rôle qu'un auteur associe à section.
+\end_layout
+
+\begin_layout Itemize
+On peut modéliser qu'un contenu n'est pas linéaire
+\end_layout
+
+\begin_layout Itemize
+On peut modéliser certain élement propre au site web tel qu'un menu, un
+ logo etc.
 \end_layout
 
 \begin_layout Paragraph
 
 \emph on
-ARIA
+ARIA 
+\end_layout
+
+\begin_layout Standard
+semble posséder de bonnes caractèristiques pour être le support d'un méta-modèle.
+ HTML est un langage de publication de document, il décrit la structuration
+ hiérarchique d'un document.
+ Il présente des vacuités pour décrire tout le contenu que peut représenter
+ une page web.
+ Notamment avec le developpement des élements graphiques appelés widget.
+ Ceux-ci possède un comportement dynamique et possède protocole de communication
+ asynchrone, non décrit par HTML.
+ ARIA est capable : 
+\end_layout
+
+\begin_layout Itemize
+de modéliser la description d'un document avec une sémantique standarts
+ et riche (inclus les élements de sémantique de HTML 5), 
+\end_layout
+
+\begin_layout Itemize
+de modéliser la structure d'une page avec une sémantique standarts et riche,
+ 
+\end_layout
+
+\begin_layout Itemize
+de modéliser la structure et le comportement des widget avec une sémantique
+ standarts et riche.
 \end_layout
 
 \begin_layout Standard
