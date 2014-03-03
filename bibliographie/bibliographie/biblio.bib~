@@ -9,6 +9,40 @@
   publisher={CABIOS}
 }
 
+@article{Extr_content_struc_visual_representation,
+  title={Extracting Content Structure for Web Pages based on Visual Representation},
+  author={Deng Cai,Shipeng Yu,Ji-Rong Wen, Wei-Ying Ma},
+  %journal={},
+  %volume={},
+  %number={},
+  %pages={309-318},
+  year={2003},
+  publisher={Springer Lecture Notes in Computer Science}
+}
+
+@article{mod_stochastique,
+  title={Modele probabiliste pour l extraction de structures dans les documents semi-structures : Application aux documents},
+  author={Guillaume Wisniewski, Ludovic Denoyer, Francis Maes, Patrick Gallinari},
+  %journal={},
+  %volume={},
+  %number={},
+  %pages={309-318},
+  year={2006},
+  publisher={CORIA}
+}
+
+
+@article{ARIA,
+  title={Accessible Rich Internet Applications},
+  author={W3C},
+  %journal={},
+  %volume={10},
+  %number={3},
+  %pages={1245-1262},
+  year={2014},
+  publisher={W3C}
+}
+
 @article{HTML_4,
   title={HTML 4.01 Specification},
   author={W3C},
@@ -17,6 +51,17 @@
   %number={3},
   %pages={1245-1262},
   year={1999},
+  publisher={W3C}
+}
+
+@article{HTML_5,
+  title={HTML 5 Specification},
+  author={W3C},
+  %journal={},
+  %volume={10},
+  %number={3},
+  %pages={1245-1262},
+  year={2015},
   publisher={HTML Specification}
 }
 
