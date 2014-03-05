@@ -471,7 +471,8 @@ ration d'une page web.
  de ces dernières.
  A partir de cette représentation on veut lui appliquer des transformations,
  puis générer une nouvelle page conforme aux transformations.
- 
+ Capitalisation des souhaits de transformation, independante de la representatio
+n sous jacente de l'interface.
 \end_layout
 
 \begin_layout Standard
@@ -635,8 +636,6 @@ key "HTML_4"
 
  est un langage permettant la publication de contenu sur le web.
  C'est le langage standard actuelle des pages web.
- Les données décritent peuvent être de type texte, ou plus généralement
- de type multimédia.
  Il permet de structurer le contenu et d'inclure des élements de mise en
  page.
  Le contenu est organisé de manière hierarchique en le découpant en section
@@ -1174,101 +1173,15 @@ Introduction
 
 \begin_layout Standard
 L'extraction est la première phase du processus de restructuration.
- On peut la décrire comme le processus de décourverte des éléments qui composent
- un tout.
+ On peut la décrire comme le processus de décourverte des éléments d'un
+ tout.
  Ici on veut récuperer la structure d'une page web.
- On veut extraire la structure d'une page web suivant le point de vu de
- notre méta-modele, c'est à dire découvrir les élements d'une page conforme
- aux élements de notre méta-modele.
- Le méta-modèle refletant le point de vu du lecteur de contenu, on peut
- également dire que l'on veut découvrir les éléments conforme au point de
- vu de l'utilisateur.
-\end_layout
-
-\begin_layout Standard
-La difficulté de ce processus, comme soulevé dans l'introduction, provient
- du manque de sémantique des élements du langage de la norme actuelle de
- HTML (HTML 4), ainsi que le detournement des éléments syntaxiques dans
- la conception des pages par leur auteur.
-\end_layout
-
-\begin_layout Standard
-HTML 4 utilise la notion de section et sous-section d'un document pour décrire
- sa structure.
- Une section est définit par un element de division <DIV> avec des elements
- d'entête (<h1>, <h2>, <h3>, ...).
- La relation de ces elements de division et d' entete conduisent à la structure
- du document.
-\end_layout
-
-\begin_layout Itemize
-<DIV> définit une section mais à une valeur sémantique neutre.
- La valeur sémantique n'est connu que par son auteur au travers l'attribution
- de classe d'appartemence.
- Ces classes permettent d'associer une mise en forme aux élements.
- Il n'y a pas de contrainte sur l'imbrication des balises.
- On ne peut pas savoir si elles representent une section, une sous-section.
-\end_layout
-
-\begin_layout Itemize
-Chaque section correspond à une partie d'un document.
- Ces parties ne décrivent pas systematiquement un contenu linéaire.
- Par exemple on peut trouver des blocs correspondant à des publicités, sans
- rapport avec la section parent.
+ Les éléments à extraire de la page correspondent aux différentes brique
+ d'information que souhaite transmettre l'auteur de la page.
+ On veut extraire une structure conforme aux élements d'un méta-modele définit
+ à priori.
+ Le méta-modele refletant l'intention de l'auteur de transmettre une information.
  
-\end_layout
-
-\begin_layout Itemize
-Chaque section représentent une partie du document, cependant certaine section
- contiennent pas d' informations en rapport avec le contenu du document
- mais sur le site web.
- C'est le cas des menus, des logos, etc...
- 
-\end_layout
-
-\begin_layout Standard
-En effet, le mécanisme de structuracturation des pages est trop générique,
- ce qui le rend ambiguie la sémantique des elements.
- Ce mécanisme repose en parti sur l'élement <DIV> qui permet de diviser
- le document, la sémantique de cet element est neutre, on ne connait pas
- la signification de cette division.
- De plus il n y'a pas de restiction dans les imbrications des élements <DIV>
- ce qui rend difficile de connaître les limites sémantiques.
- 
-\end_layout
-
-\begin_layout Standard
-L' ambiguité syntaxique Le processus d'extraction est rendu compliqué par
- les mécanisme trop générique et le détournement qui est fait de la syntaxe
- des élements du langage.
- 
-\end_layout
-
-\begin_layout Standard
-Le mécanisme de structuration générique proposé par HTML 4 est bien adapté
- la description d'une structure hierarhcique dans document mais peu à un
- contenu heterogène.
- On ne pas identifier le rôle des différents élements dans la structure.
-\end_layout
-
-\begin_layout Standard
-La mauvaise utilisation des balises.
- Par exemple, la balise <div> (dans le spécification de HTML 4) est utilisé
- pour divisé la structure du document de manière hierarchique, or en pratique
- elle est également utilisé pour appliquer un style de mise en forme sur
- un ensemble d'élement.
- La balise <hr> est un autre exemple de dérive.
-\end_layout
-
-\begin_layout Standard
-Il est en résulte que la structure sous jacente peut ne pas être représentatif
- de l'intention de l'auteur du document.
- En d'autre terme la représentation visuelle peut ne pas être coherente
- avec la structure sous-jacente.
- Quelques approches (citer quelques articles) Nous traitons ici d'une approche
- par segmention visuel, une segmentation basé sur l'interpretation qu'un
- humain à d'une page au travers d'un navigateur internet.
- Puis nous parlemenrons d'une approche basé sur un modèle probabilistique.
 \end_layout
 
 \begin_layout Subsection
@@ -1284,29 +1197,308 @@ key "Extr_content_struc_visual_representation"
 \end_inset
 
  présente un algorithme de partitionnement basé sur les élements de mise
- en forme des documents web.
- L'algorithme pourcourt le DOM de la page web et partitionne l'arbre suivant
- des heuristiques prenants en compte le type de noeud rencontré, les noeuds
- frère et parent.
-\end_layout
-
-\begin_layout Subsection
-Approche stochastique
+ en forme des pages web.
+ Le partionnement extrait une structure qui regroupe les elements d'une
+ page semantiquement proche en bloc.
+ Le postulat est que les éléments d'une page possédant des caractéristiques
+ de mise en forme proche, tels que la police, la couleur, la taille, sont
+ sémantiquement proche.
 \end_layout
 
 \begin_layout Standard
-L'approche proposé par les auteurs 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "mod_stochastique"
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=300px]{img/VIPS-partionnement.jpg}
+\end_layout
 
 \end_inset
 
- jjjj
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Exemple de partionnement, (a) page (b) DOM de la page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'algorithme exploite le DOM
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Document Object Model
+\end_layout
+
+\end_inset
+
+ de la page web.
+ Le DOM est une API pour les documents HTML (ou plus généralement XML) .
+ Il fournit une représentation arborescente d'un document et les moyens
+ d'acceder à son contenu et sa mise en forme.
+ 
+\end_layout
+
+\begin_layout Standard
+Le processus de segmentation, figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{vips-process}
+\end_layout
+
+\end_inset
+
+, se décompose en trois phases : un processus d'extraction de blocs, un
+ processus de detection de séparateur et un processus de reconstruction.
+ 
+\end_layout
+
+\begin_layout Standard
+Le processus d'extaction détecte les éléments du niveau courant du DOM succeptib
+le de former un contenu cohérent.
+ Cette détection repose sur des séparateurs explicites : on sais que certains
+ elements délimitent le contour d'un contenu (par exemple les balises <DIV>).
+ Mais également sur une fonction de distance visuelle comparant les noeuds
+ parents et frères du noeud courant : une balise <DIV> à de plus de grande
+ chance de délimiter un contenu sémantiquement différent du noeud parent
+ si la couleur de fond est différente de celle du noeud parent.
+ Pour chaque noeud l'algorithme vérifie si il forme un bloc ou non.
+ Si oui il associe un degre de cohérence au bloc.
+ Ce dégre de cohérence est un indicateur de l'importance sémantique du bloc.
+ Si non, il est appliqué le même processus aux enfants du noeud.
+ Quand tous les noeuds du bloc courant sont extraits, ils sont mis dans
+ un pool.
+ 
+\end_layout
+
+\begin_layout Standard
+Des séparateurs entre les blocs sont ensuite detectés.
+ L'algorithme dététecte ici des séparateurs implicites, n'apparaîsant pas
+ dans la structure HTML.
+ Les séparateurs implicite sont les espaces entre les blocs d'une pool.
+ Un poid est attribué à chaque séparateur suivant sont importance (par exemple,
+ plus l'espacement entre deux blocs est grand, plus le poid sera elevé).
+ Ce poid est un indicateur différence sémantique entre blocs adjacent.
+ Plus le poid du séparateur est élevé en deux blocs, plus leur contenu sera
+ sémantiquement éloigné.
+\end_layout
+
+\begin_layout Standard
+Une construction hierachique des blocs est crée.
+ Cette construction hierachique repose sur le degre de coherence attribué
+ à chaque bloc.
+ 
+\end_layout
+
+\begin_layout Standard
+Pour chaque nouveau bloc de la structure hierarchique construite, l'algorithme
+ teste le degre de cohérence attribué par rapport à un seuil de cohérence
+ définit.
+ Ce seuil est définit suivant la granularité de la structure que l'on veut
+ en sortie de l'algorithme.
+ Si le degres de cohérence est pas supérieur au seuil de cohérence, le bloc
+ est de nouveau partionné.
+ La structure finale est construite après que tous les blocs soit traités.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=300px]{img/VIPS-processus.jpg}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Algorithme de segmentation 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{vips-process}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Discution
+Similarité de séquence
+\end_layout
+
+\begin_layout Standard
+L'un des postulats de base en bioinformatique est qu'une séquence génomique
+ similaire donne une protéine présentant la même fonction.
+ En d'autre terme, des séquences ayant des similitudes (syntaxiques) est
+ un signe de proximité fonctionnelle.
+ Appliqué à une page web, cela signifie que par exemple la structure (syntaxique
+) d'un menu d'une page web A est similaire à la structure syntaxique d'une
+ page web B.
+ Il semble cohérent d'appliquer ce postulat à une page web.
+ En effet la publication de contenu sur le web se standardise par l'intermédiare
+ des scripts générant des pages de manière automatique et standardisé (Wordpress
+, joomla, etc).
+ Afin d'obtenir un bon référencement, les moteurs de recherche insite les
+ auteurs de pages web d'adoper une conception standard dans la conception
+ des pages web.
+ En construisant une séquence représentative d'un élement de notre méta-modèle,
+ il devrait être possible de determiner la fonction d'une sequence d'une
+ page web.
+ Les bioinformaticiens utilisent le concept d'alignement pour déterminer
+ la similarité de deux séquences, en d'autre terme pour savoir il elle possède
+ la même fonction.
+\end_layout
+
+\begin_layout Definition
+L' alignement est la mise en correspondance de deux séquences.
+ Soit deux sequences X1:n et Y1:m à valeur dans le même alphabet fini 
+\begin_inset Formula $\Lambda$
+\end_inset
+
+.
+ Un alignement c'est une correspondance entre les lettres de la premiere
+ séquence et celles de la deuxieme, sans en changer l'ordre, et en autorisant
+ eventuellement des « trous ».
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+G A A T C _ T G A C
+\end_layout
+
+\begin_layout Plain Layout
+C A _ _ C G T _ A _
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Alignement possible des sequences 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+X1=GAATCTGAC,Y1=CACGTA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1315,9 +1507,46 @@ status open
 
 \begin_layout Plain Layout
 
+~
+\backslash
 
 \backslash
-newpage
+
+\end_layout
+
+\end_inset
+
+La mise en correspondance repose sur trois types d'opérations élementaires
+ : la substitution, l'insertion, deletion.
+ Plusieurs combinaisons d'alignements existent.
+ Lorsque l'on souhaite comparer la similitude de deux sequences, la meilleur
+ solution est celle qui minimise le nombre d' opérations d'insertions et
+ de deletions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=300px]{img/operation_alignement_sequence.jpg}
 \end_layout
 
 \end_inset
@@ -1325,52 +1554,95 @@ newpage
 
 \end_layout
 
-\begin_layout Section
-Detection d'objet
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+opérations d'alignements
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il existe deux types d'alignements : local et global.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+L'alignement global 
+\end_layout
+
+\begin_layout Standard
+L'alignement global est conçu pour comparer des séquences sur toute leur
+ longueur.
+ Un méthode optimale pour trouver un alignement global maximal de chaîne
+ de caractères est l'algorithme de Needleman-Wunsch 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Needleman"
+
+\end_inset
+
+.
+ La méthode de segmentation visuelle (section précedente) semble pouvoir
+ extraire et regrouper les éléments sémantiquements proche d'une page.
+ L'inconvénient est que l'on ne connait pas la signification de ses élements.
+ Une approche serait de construire une séquence reprensentative d'un élement
+ de notre méta-modèle et de comparer les sequences extraites d'une page
+ aux sequences associée au méta-modèle.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+L'alignement local 
+\end_layout
+
+\begin_layout Standard
+L'alignement local est conçu pour rechercher dans la séquence A des régions
+ semblables à la séquence B (ou à des parties de la séquence B).
+ Une méthode pour trouver un alignement local maximal de chaîne de caractères
+ est l'algorithme de Smith & Waterman 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Smith"
+
+\end_inset
+
+.
+ Cette approche ne necessite pas d'extraire de sequences dans le une page.
+ On peut comparer directement une sequence du meta-modele à la page pour
+ trouver la zone qui correspond.
+\end_layout
+
+\begin_layout Subsubsection
+Discusion
+\end_layout
+
+\begin_layout Standard
+Soit on utilise le processus de segmentation visuelle et et fait correspondre
+ les elements de meta-model.
+ Soit cherche directement les elemetns sequence du metamodele dans le page.
 \end_layout
 
 \begin_layout Subsection
-Introduction
+Similarité d'arbre
 \end_layout
 
 \begin_layout Standard
-On s'interesse ici au sens des sous-structures recupérés dans la phase d'extract
-ion.
- Plus précisement on veut savoir à quel element de notre méta-modèle correspond
- la sous-structure.
- On veut faire correspondre les sous-structures aux elements de notre méta-modèl
-e.
-\end_layout
-
-\begin_layout Standard
-L'environnement web impose certaine contraintes sur notamment l'évolution
- des structures de données, mais également la diversité des arcthitecutes
- d'un site à l'autre.
- Cependant on peut constater qu'avec l'utilisation massive de 
-\end_layout
-
-\begin_layout Standard
-La section précendente décrit un moyen d'extraire la structure d'une page.
- On obtient une structure semantique de la page.
- On s'interesse à reconnaitre les éléments de cette structure suivant des
- elements de notre modèles.
-\end_layout
-
-\begin_layout Standard
-La contrainte imposée par le web est la diversité des structures ayant la
- même fonction.
-\end_layout
-
-\begin_layout Subsection
-Wrapper
-\end_layout
-
-\begin_layout Subsection
-Tree-to-tree distance
-\end_layout
-
-\begin_layout Standard
-Une approche est la comparaison d'arbre.
+Une approche autre approche dans l'etude de similarité de structure est
+ la comparaison d'arbre.
  Cette approche consiste à trouver la plus petite ou la moins coûteuse séquence
  d'opération d'édition (substitution, suppression et insertion) qui permet
  la transformation d'un arbre vers un autre.
@@ -1427,7 +1699,7 @@ et une opération d'insertion si
 \end_layout
 
 \begin_layout Standard
-Pour exprimer la séquence d'opération élémentaire qui transforme l'arbre,
+Pour exprimer une séquence d'opération élémentaire qui transforme l'arbre,
  on utilise le concept de mapping, introduit 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1439,6 +1711,24 @@ key "tree-to-tree"
  Un mapping établie une correspondance un-à-un entre les nœuds de deux arbres
  ordonnés et qui préservent l'ordre des nœuds.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition*
@@ -1474,6 +1764,24 @@ t1[i1] est à droite de t1[i2], si est seulement si, t2[j1] est à gauche
 \begin_layout Itemize
 t1[i1] est un ancêtre de t1[i2] si et seulement si, t2[j1] est un ancêtre
  de t2[j2] (preservation de l'ordre des ancêtres);
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition*
@@ -1524,72 +1832,29 @@ Soit M un mapping entre les arbres T1 et T2 décrivant des opérations de
 s (1), r est le coût d'une suppression (1), le coût des substitution identique
  est 0.
  
-\end_layout
+\begin_inset ERT
+status open
 
-\begin_layout Paragraph*
-Quatre mesures de distances 
-\end_layout
+\begin_layout Plain Layout
 
-\begin_layout Standard
-Plusieurs mesures de distance existent, chacune d'elle mettant en avant
- certaine propriétés fonctionnelles d'une structure.
- Ces mesures de distance imposent des contraintes sur le mapping.
- Dans la littérature en recense principalement 4 mesures : Distance de modificat
-ion, distance d'alignement, distance de sous-arbre isolé, distance descendante.
-\end_layout
+~
+\backslash
 
-\begin_layout Subparagraph
-Distance de modification
-\end_layout
+\backslash
 
-\begin_layout Standard
-C'est le coût minimum du mapping d'un arbre T1 vers T2.
- 
 \end_layout
-
-\begin_layout Subparagraph
-Distance d'alignement
-\end_layout
-
-\begin_layout Standard
-Coût minimum du mapping n'ayant que des opérations d'insertion de nœud pour
- que T1 et T2 soit isomorphe.
- Principalement utile pour connaître le coût de recouvrement entre deux
- arbres.
- Utile pour faire ressortir les régions homologue ou similaire d'une structure.
-\end_layout
-
-\begin_layout Subparagraph
-Distance de sous-arbre isolé
-\end_layout
-
-\begin_layout Standard
-La distance est obtenu en imposant sur le mapping la contrainte que deux
- sous-arbres disjoints de T1 doivent être mappés à deux sous-arbres disjoints
- de T2.
- S'avère très utile dans le comparaison d'arbre de classification
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Takana"
 
 \end_inset
 
-.
- Elle correspond au côut minimum du mapping de sous-arbres isolés de T1
- vers T2.
-\end_layout
 
-\begin_layout Subparagraph
-
-\emph on
-Distance descendante
 \end_layout
 
 \begin_layout Standard
-
-\emph on
-Utilisé pour trouver la plus grande sous-strucucture commune entre deux
- arbres (...)
+Pour connaître la similarité entre deux structures, on veut calculer une
+ distance d'alignement.
+ C'est à dire trouver le coût minimum du mapping pour que T1 et T2 soit
+ isomorphe.
+ 
 \end_layout
 
 \begin_layout Paragraph
@@ -1597,6 +1862,7 @@ Algorithmes
 \end_layout
 
 \begin_layout Standard
+KUO-CHUNG TAI 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "tree-to-tree"
@@ -1612,26 +1878,7 @@ key "tree-to-tree"
 \end_layout
 
 \begin_layout Subsection
-Arbre de décision
-\end_layout
-
-\begin_layout Subsection
 Discution
-\end_layout
-
-\begin_layout Subparagraph
-Tree-to-tree distance
-\end_layout
-
-\begin_layout Standard
-Dans le cadre de notre problématique, il est intéressant d'utiliser la distance
- de modification entre la structure d'un objet définit à priori et une structure
- extraite d'une page web.
- Par exemple, si nous souhaitons connaître le rôle d'un objet extrait d'une
- page, on peut le comparer à la collection d'objet définit à priori et détermine
-r de quel objet il est le plus proche.
- Cette distance à un rôle d'indice de similarité.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1648,6 +1895,20 @@ newpage
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Construction de motif
+\end_layout
+
+\begin_layout Standard
+Certain elements de la section precendante repose sur la construction d'un
+ pattern de motif.
+ C'est à dire la construction d'une structure capable d'une correspondance
+ approximative.
+ represente les propriétés strucurelles.
+ Plusieurs approche : automatique, semi-automatique.
+ PAT-TREE, consensus de graphe, Modèle de Markov caché
 \end_layout
 
 \begin_layout Section
