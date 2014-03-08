@@ -3,13 +3,25 @@
 \documentclass[english]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
+\usepackage{float}
 \usepackage{amsthm}
 \usepackage{amssymb}
 
 \makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\providecommand{\algorithmname}{Algorithm}
+\floatname{algorithm}{\protect\algorithmname}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
  \theoremstyle{definition}
  \newtheorem*{defn*}{\protect\definitionname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{graphicx}
+\usepackage{listings}
 
 \makeatother
 
@@ -24,7 +36,7 @@
 \vspace{0.1cm} \normalsize
 \vspace{3mm}
 \large{Spécialité} : \textbf{AIGLE}\\ %\Large{Formation Doctorale} : \textbf{Informatique}\\ %\large{{\'E}cole Doctorale} : \textbf{Information, Structures, Systèmes} \vspace{1.0cm}
-\LARGE{\textbf{Personnalisation de page web}} \vspace{2mm}
+\LARGE{\textbf{Personnalisation de page web : application à l'amélioration de l'accessibilité du web}} \vspace{2mm}
 \begin{center}   par \textbf{Franck~PETITDEMANGE} \end{center}
 \vspace{2mm}
 \vspace{4cm}
@@ -41,39 +53,68 @@ Sous la direction de \textbf{Marianne~HUCHARD, Michel~MEYNARD, Yoann~BONAVERO}
 \newpage
 
 
-\section{Introduction}
+\section{Introduction et motivation}
 
-Le sujet du stage s'inscrit dans le contexte de personnalisation d'un
-page web. L'objectif visé est de fournir des méthodes et outils afin
-d'adapter une page suivant le profil d'un utilisateur. Plusieurs sous
-objectifs peuvent être extrait. 
+Le world wild web (www) est un reseau de ressource. La publication
+de ces ressources repose sur un langage universellement compréhensible
+et accepté par tous les ordinateurs : HTML, historiquement conçut
+pour faciliter l'échange d'article dans la communauté scientifique.
+La démocratisation du web à fait radicalement évoluer le contenu d'une
+page web, sans pour autant que le langage ne suivent ces évolutions.
+Ainsi les auteurs de page web ont détourné les pratiques de conception
+d'une page de manière anarchique. Ce manque d'homogénétité complique
+la compréhension du contenu publié sur le www par une machine. Faisant
+perdre la propriété universelle du web voulu par son créateur Tim
+Berners Lee : 
+\begin{quotation}
+``La puissance du Web réside dans son universalité. L'accès à tous,
+quel que soit son handicap est un aspect essentiel'' 
+\end{quotation}
+Ceci introduit la motivation de ce stage et les problématiques qui
+en découlent. 
 
-Dans un premier temps nous souhaitons acquérir des connaissances sur
-les objets de la page que nous souhaitons modifier. Par exemple, un
-bloc de texte ou un menu. La question de recherche relève de la recherche
-de motifs dans un arbre DOM d'une page web. 
+Le sujet du stage est la personnalisation des pages web. L'objectif
+est de fournir des méthodes et des outils afin d'adapter une page
+suivant les souhaits d'un lecteur. On s'interesse à une application
+pour l'amélioration de l'accessibilité des pages web pour les personnes
+en situation de handicap visuel. 
 
-La difficulté principale est dû au langage de description des pages
-web. En effet, c'est un format de donnée semi-structuré qui ne répond
-à aucun modèle définit à priori. Le langage ne fournit qu'un mécanisme
-de structuration générique. /{*}EXPLIQUER structuration générique{*}/
-La structure des pages web et les relations entre les objets deviennent
-alors implicites. Elle ne sont connu que par son concepteur. Les elements
-du langage ne permettent pas délimiter clairement les contenus qui
-sont sémantiquements liés, de definir le rôle de l'objet dans la page
-et la relations qu'il peut avoir avec les autres. 
+L'adaptation d'une page web implique notre première problématique
+: la restructuration d'une page web. On souhaite expérimenter une
+approche basée sur les méta-modèles. L'idée étant d'extraire la structure
+d'une page et d'en construire une représentation plus abstraite. Cela
+doit nous permettre de s'affranchir de la diversité de conception
+de ces dernières. A partir de cette représentation on veut lui appliquer
+des transformations, puis générer une nouvelle page conforme aux transformations. 
 
-La première problématique est donc de regrouper les elements qui enssemble
-ont une signification, de comprendre leurs signification et la relation
-qu'ils peuvent avoir avec les autres.
+La conception des pages web s'articule autour : d'un langage pour
+décrire la structure du document (HTML) et d'un langage pour décrire
+la mise en forme du document (CSS). Les pages sont constituées d\textquoteright{}éléments
+hétérogènes : une page est constituée d'un ou plusieurs contenu principal,
+d'un menu de navigation, de publicité, etc... Chacun de ces éléments
+représentent une sous-structure de la page. Lorsqu'on regarde une
+page web depuis un navigateur, on constate que ces éléments sont structurés
+de façon sémantique, ils sont organisés selon leur sens. La difficulté
+dans la tâche de d'extraction de la structure d'une page est dû au
+manque d'expressivité de HTML. En effet, la norme actuelle de HTML
+(HTML 4), ne fournit pas de moyen de délimiter les éléments du document
+en fonction de leur sémantique. Par exemple, on ne peut pas délimiter
+de manière explicite la structure d'un menu dans une page avec ce
+langage. Le constat est que l'information de la structure d'une page
+apparaît principalement dans la mise en page. La structure d'une page
+est explicitée à travers l'utilisation de police, de couleur ou plus
+généralement d\textquoteright{}élément visuel pour caractériser les
+contenus qui ont la même signification.
 
-\emph{Dans un second temps, nous voulons récuperer les souhaits de
-transformation des objets dans une page web. L'acquisition, la représentation
-et le stockage des souhaits de personnalisation de l'utilisateur.
-Dans cette partie on cherchera à définir un protocole et une interface
-d'acquisition des souhaits. La question de recherche consistera à
-étudier diverses approches dont une approche d'acquisition et d'apprentissage
-à partir d'exemples.} 
+La seconde problématique est la définition d'un protocole d'acquisition
+et d'apprentissage automatique des souhaits de personnalisation d'une
+page par le lecteur. On veut fournir au lecteur une interface permettant
+la modification d'une page. \emph{Un modèle peut être vu comme un
+langage de haut niveau pour décrire une page. L'idée étant d'exploité
+le modèle de page transformé par l'utilisateur pour en inférer des
+voeux de modification. L' atout dans l'utilisation de modèle permet
+une capitalisation des connaissances, indépendament du support technologique,
+du profil d'un utilisateur. }
 
 
 \section{Modele de page web}
@@ -84,178 +125,495 @@ d'acquisition des souhaits. La question de recherche consistera à
 
 \paragraph{Modèle}
 \begin{defn*}
-Un modèle est une représentation simplifié d'une partie du monde.
-C'est une abstraction du système étudier suivant un point de vue. 
-\end{defn*}
-Par exemple une carte routière est une abstraction d'un réseau routier,
+Un modèle est une représentation simplifié d'une partie d'un système.
+C'est une abstraction du système étudié suivant un point de vue. Par
+exemple une carte routière est une abstraction d'un réseau routier,
 il existe plusieurs type de carte suivant ce que l'on veut étudier
 (chemin pédestre, chemin routier etc). L\textquoteright{}intérêt d'un
-modèle est de mieux comprendre un système. 
-
-« Pour un observateur A, M est un modèle de l'objet O, si M aide A
-à répondre aux questions qu'il pose sur O » (Minsky) 
-
+modèle est de mieux comprendre un système.\end{defn*}
+\begin{quotation}
+``Pour un observateur A, M est un modèle de l'objet O, si M aide
+A à répondre aux questions qu'il pose sur O'' (Minsky) 
+\end{quotation}
 
 \paragraph{Métamodèle}
 \begin{defn*}
 Pour exprimer un modèle, nous avons besoin de pouvoir exprimer ces
-concepts.Un métamodèle, c'est un modèle qui fournir un langage pour
-exprimer un modèle.
+concepts. Un métamodèle, c'est un modèle qui fournit un langage pour
+exprimer un modèle. Littéralement, c'est un modèle de modèle.
 \end{defn*}
+Dans le cadre du sujet. On souhaite créer un méta-modele afin de concevoir
+un modèle de page web. Le metamodèle doit être suffisament expressif
+pour instancier un modèle de page web conforme à la vision qu'un lecteur
+peut avoir d'une page. Dans un premier temps on souhaite extraire
+la structure d'une page pour en contruire un modèle. L' avantage est
+d'en manipuler une representation independante de la diversité de
+conception des pages. Le deuxieme avantage est fournir langage de
+haut niveau pour decrire une page. On veut l'exploiter pour fournir
+à l'utilisateur un langage pour exprimer des transformations 
+
 Dans le cadre de notre sujet, on souhaite à terme l\textquoteright{}adaptation
-d'une page web. Ici le système étudié est une page web. Une page web
-possède le rôle d'affichage d'un contenu structuré et mise en forme.
-Le contenu peut être de type texte, image, vidéo et la mise en page
-reflète la structure logique de la page. 
+d'une page web. Ici le système étudié est une page web. Il est important
+d'en cerner les concepts intrinsèques. L'objectif étant de concevoir
+un méta-modele suffisament riche à l'expression d'un modèle conforme
+à l'intention de son auteur. Mais aussi à la représentation qu'un
+utilisateur à d'une page, afin d'en faciliter l'expression de transformation.
 
-Le WC3 décrit une page web comme une ressource identifié par un uri.
-Chaque ressource est considéré comme une unité d'information. Cependant
-dans la conception contemporaine des pages, celle-ci peut encore être
-découpé en unité d'information. Ainsi une page est une composition
-d'élément graphique. Par exemple, une page est composé d'un menu de
-navigation, d'une entête, d'un pied de page, de formulaire et de widget. 
+Une page web possède le rôle d'affichage d'un contenu structuré et
+mise en forme. On peut voir une page comme une composition d'élément
+graphique agencé dans l'espace de la page et apportant une information.
+Par exemple, une page est composé d'un menu de navigation, d'une entête,
+d'un pied de page, de formulaire et de widget (on entend par widget
+des éléments de contrôle, comme des barres de progression, des selecteurs
+de couleurs, etc). Chacun de ces éléments possède un type, un état
+et des propriétés. 
 
-Chacun de ces éléments possède un type, un état et des propriétés.
 Le type correspond à la nature de celui-ci. Il représente ce qu'un
-utilisateur attend de ce dernier. Certain objet fournissent une interaction
-avec l'utilisateur qui est susceptible de modifier l'état d'un objet.
-Par exemple certain menu cache les différents liens de navigations,
-au moment ou l'utilisateur survole le menu celui-ci affiche les différents
-liens. Les objets possèdent également un ensemble de propriétés, quelque
+utilisateur attend de ce dernier. Il est attendu d'un menu de navigation
+qu'il nous permette de naviguer dans les page du site web.
+
+Certain objet fournissent une interaction avec l'utilisateur qui est
+susceptible de modifier l'état d'un objet. Par exemple certain menu
+cache les différents liens de navigations, au moment où l'utilisateur
+survole le menu celui-ci affiche les différents liens. 
+
+Les objets possèdent également un ensemble de propriétés, quelque
 fois intrinsèque à leur type. Par exemple un formulaire possède des
 champs de saisie. D'autre propriétés peuvent être la couleur et la
 police du texte, la hauteur, la largeur, et la position d'une objets
 dans le page. 
 
+On s'interesse à un modèle capable de modéliser une page dans le but
+d'en abstraire la structure, les differents elements la composant,
+les relations entre ces éléments, leurs natures et leurs comportements.
+On propose d'étudier et de comparer le langage standart du publication
+de document sur le web, HTML, dans la norme HTML 4 et 5 mais aussi
+une toxonomie pour la description d'interface graphique ARIA.
+
 
 \subsection{HTML 4}
 
-HTML 4 est un langage permettant de représenter les données sur le
-web. C'est le langage standard actuelle des pages web. Les données
-décrite peuvent être de type texte, ou plus généralement de type multimédia.
-Il permet de structurer le contenu et d'inclure une mise en page.
+HTML 4 \cite{HTML_4} est un langage permettant la publication de
+contenu sur le web. C'est le langage standard actuelle des pages web.
+Il permet de structurer le contenu et d'associer une mise en forme
+aux contenu. Le contenu est organisé de manière hierarchique en le
+découpant en section et sous-section. 
 
-HTML 4 définit des types d\textquoteright{}éléments qui représente
-des structures ou des comportement voulu dans une page web. HTML 4
-permet de décrire trois composant principaux : 
-\begin{enumerate}
-\item Le contenu textuel : paragraphe, titre (beaucoup de balise de présentation) 
-\item Les liens hypertextes 
-\item Les images, objets etc..
-\end{enumerate}
 
 \paragraph{Structuration générique}
 
-HTML propose un mécanisme générique pour la structuration des documents
-web. Ce mécanisme gravite autour des éléments de type en bloc, en
-ligne et leurs identifiants respective : id et classe.
+HTML 4 propose un mécanisme générique pour la composition du contenu
+formant la structure des pages web. Ce mécanisme gravite autour des
+éléments de type <DIV> leurs identifiants respective : id et classe.
 
+
+\subparagraph{DIV}
+
+Signifiant division, est utilisé comme conteneur générique permettant
+d'organiser le contenu. Il est utilisé pour :
+\begin{itemize}
+\item regrouper les elements pour leur appliquer un style (une mise en forme
+particuliere).
+\item signaler un section ou ou sous-section. 
+\end{itemize}
 
 \subparagraph{id et class}
 
 Chaque élément peut se voir attribuer un identifiant ou une classe
-d'appartenance. 
+d'appartenance. \emph{id} assigne un nom à un élément. Ce nom est
+unique dans le document. \emph{class} au contraire, assigne un ou
+plusieurs noms de classe à un élément; on peut dire de l'élément qu'il
+appartient à ces classes. Un nom de classe peut être partagé par plusieurs
+instances d'éléments. Les identifiants et les classes sont des suites
+de caractères quelconque décidé arbitrairement par l'auteur du document.
 
-id assigne un nom à un élément. Ce nom doit être unique dans le document.
-Il possède plusieurs rôle dans HTML : 
-\begin{itemize}
-\item sélecteur dans une feuille de style 
-\item ancre cible dans lien hypertexte 
-\item etc...
-\end{itemize}
-class, au contraire, assigne un ou plusieurs noms de classe à un élément
-; on peut dire de l'élément qu'il appartient à ces classes. Un nom
-de classe peut être partagé par plusieurs instances d'éléments. L'attribut
-class a plusieurs rôles dans HTML : 
-\begin{itemize}
-\item comme sélecteur dans une feuille de style (quand l'auteur souhaite
-assigner une information de style à un ensemble d'éléments) . 
-\item pour un traitement universel par les agents utilisateurs.
-\end{itemize}
+~\\
 
-\subparagraph{En bloc et en ligne}
+Les éléments DIV utilisés conjointement avec les attributs id et classe
+sont au c½ur du mécanisme générique de structuration d'un document.
+DIV permet de divisé le contenu d'un document en section et sous-section
+pour décrire sa structure. Les elements DIV ayant une sémantique neutre,
+c'est l'auteur du contenu qui attribut (de manière arbitraire) un
+nom de \emph{class} ou un \emph{id}. Le but étant de définir une rôle
+au contenu ou une mise en forme. On note le caractère implicite de
+la structuration.
 
-Certains éléments , qui peuvent apparaître dans l'élément BODY, sont
-dits être de niveau « bloc » tandis que d'autres sont dits de niveau
-« en-ligne » (aussi connu comme sous le nom « niveau texte »). La
-distinction se fondent sur plusieurs notions : 
-\begin{itemize}
-\item Le modèle de contenu : les éléments de bloc peuvent contenir des éléments
-en-ligne et d'autres éléments de bloc. Les éléments en-ligne ne peuvent
-contenir que des données et d'autres éléments en-ligne. L'idée inhérente
-à cette distinction structurelle, c'est que les éléments de bloc créent
-des structures « plus grandes » que les éléments en-ligne. 
-\item Le formatage : les éléments de bloc sont formatés différemment des
-éléments en-ligne. En général, les éléments de bloc commencent sur
-une nouvelle ligne, et non les éléments en-ligne. 
-\end{itemize}
+\begin{algorithm}[H]
+\begin{lstlisting}[frame=single, language=html, caption={Exemple de structuration avec HTML 4}]
+<body>
+	<div id="header" ></div>
+	<div id="navigation_bar"/>
+	<div id="main_content">
+		<div class="article"></div>
+		<div class="article"></div>
+	</div>
+	<div id="footer"></div>
+</body>
+\end{lstlisting}
 
-\subparagraph{Le regroupement des éléments}
+\caption{Exemple d'attribution de rôle}
 
-Les éléments <div> et <span> utilisé conjointement avec les attributs
-id et classe sont au c½ur du mécanisme générique de structuration
-d'un document. Ces éléments définissent le contenu comme étant en-ligne
-(SPAN) ou de bloc (DIV) mais n'imposent aucune autre expression de
-présentation sur le contenu. La sémantique de ces balises est neutre,
-elle ne fournit aucune informations, il n' y a aucune information
-sur l'usage que son auteur en fait.
+
+\end{algorithm}
+
+
+\begin{algorithm}[H]
+\begin{lstlisting}[frame=single, language=html, caption={Exemple de structuration avec HTML 4}]
+<body>
+<div class="section" id="elephants-foret" > 
+	<h1>Les éléphants des forêts</h1> 
+	<p>Dans cette partie, nous abordons le sujet 
+moins connu des éléphants des forêts.</p>
+	<div class="sous-section" id="habitat-foret" > 
+	<h2>L'habitat</h2> 
+	<p>Les éléphants des forêts ne vivent pas 
+dans les arbres mais au milieu d'eux.</p>
+	</div> 
+</div>
+</body>
+\end{lstlisting}
+
+\caption{Exemple découpage en section et sous-section}
+
+
+\end{algorithm}
+
+
+\begin{figure}[H]
+\caption{Architecture page web HTML 4}
+
+
+\centering
+\includegraphics[width=300px]{img/architecture_Geekos_HTML4-294x300.jpg}
+
+\end{figure}
+
 
 
 \subsection{HTML 5}
 
-HTML 5 étend HTML 4 en amenant de nouveaux éléments. Ces éléments
-ajoutent une valeur sémantique aux structures de HTML 4. HTML 5 spécifie
-sont modèle de structure générique par une catégorisation des éléments
-d'une page.
+HTML 5 \cite{HTML_5} étend HTML 4. La norme HTML 4 est toujours rétroactive.
+HTML 5 remplace la structure générique de HTML 4 par un nouveau modèle.
+Ce modèle amène de nouveaux élements qui apportent une sémantique
+standard et explicite à la structure d'une page. 
+
+
+\paragraph{}
+
+
+\paragraph{Structuration }
+
+Les nouveaux élements de HTML 5 spécifie donc une sémantique standard
+:
+\begin{itemize}
+\item Section : represente une section générique dans un document, c'est
+à dire un regroupement de contenu par thématique.
+\item Article : représente un contenu autonome dans une page, facile l'inclusion
+de plusieurs sous document
+\item nav : représente une section de liens vers d'autre page ou des fragments
+de cette page
+\item aside : représente une section de la page dont le contenu est indirectement
+lié à ce qui l'entoure et qui pourrait être séparé de cet environnement
+\item header : représente un groupe d'introduction ou une aide à la navigation.
+Il peut contenir des éléments de titre, mais aussi d'autres éléments
+tels qu'un logo, un formulaire de recherche, etc.
+\item footer : représente le pied de page, ou de la section, ou de la racine
+de sectionnement la plus proche
+\end{itemize}
+\begin{figure}[H]
+
+
+\caption{Architecture HTML 5}
+
+
+\centering
+\includegraphics[width=300px]{img/architecture_Geekos_HTML5-293x300.jpg}
+
+\end{figure}
+
 
 
 \subsection{ARIA}
+
+ARIA (Acessible Rich Internet Application) \cite{ARIA} est la spécification
+d'une ontologie décrivant une interface graphique. Elle fournit des
+informations sur la structuration d'un document et décrit les élements
+qui composent l'interface au moyen d'un ensemble de rôles, d'états
+et de propriétés .
+
+
+\paragraph{Rôle }
+
+Les rôles permettent d'identifier la fonction de chaque elements d'une
+interface. Ils sont regroupé en trois catégories :
+\begin{itemize}
+\item Widget Roles : référence d'un ensemble de widget préfinis (alertdialog,
+button, slider, scrollbar, menu, etc)
+\item Document Structure Roles : décrit les structures qui organisent un
+document (article, definition, entête, ect)
+\item Landmark Roles : décrit les régions principales d'une interface graphique
+(main, navigation, search, etc)
+\end{itemize}
+
+\paragraph{Etats et propriétés}
+
+ARIA permet d'associer des états et propriétés à des wigets. 
+
+Un état est une configuration unique d'un objet. Par exemple, on peut
+définir l'état d'un bouton par l'état \emph{aria-checked }qui peut
+prendre trois propriétés suivant l'interaction avec l'utilisateur
+: \emph{true - false - mixed} . Aria prévoit même un systeme d'annotation
+pour les objets ayant des comportements asynchrones. Par exmple, on
+peut annoter qu'un element se met à jour de manière autonome.
+
+On peut associé un ensemble de propriété par exemple la valeur minimal
+ou maximal que l'on doit remplir dans un champs de saisit \emph{aria-valuemin,
+aria-valuemax.}
 
 
 \subsection{Discussion}
 
 
+\paragraph{HTML 4}
 
-HTML 4 fournit quelque idiome pour structurer les éléments d'un document.
-Il fournit un langage riche pour décrire les éléments de type texte
-et les hyperliens, mais un langage peu adapter pour décrire la structure
-d'une page web, dans le contexte actuel de l'exploitation de ses dernières.
-En effet le contenu décrit dans les pages web actuelles est très hétérogène.
-HTML 4 n'est pas un support assez riche pour être le support d'un
-méta-modèle exprimant le modèle d'une page web.
+fourni un mécanisme de structuration générique pour la publication
+de document sur le web. Ce support semble ne pas être assez riche
+à la description d'une page web. En effet, ce dernier pose plusieurs
+problèmes :
+\begin{itemize}
+\item Une page possède un contenu hétérogène. Plusieurs document peuvent
+être décrit dans le page. Il n'y pas de moyen de délimiter le contour
+d'un document de manière explicite dans une page.
+\item Une page possède un contenu possiblement non linéaire. Impossible
+de l'exprimer.
+\item Un page web contient des élements qui ne sont pas en rapport avec
+le contenu d'un document, mais plûtot avec le site web. Typiquement
+un menu de navigation, un logo etc... Il n'est pas possible de le
+modéliser explicitement. 
+\end{itemize}
+\emph{ }
 
-Ces balises balises répondent à un besoin précis de structuration
-du document. Elle reflète le contenu d'une page web contemporaine.
-Contrairement à HTML 4, la sémantique de la structure et les relations
-des éléments est définit de manière explicite. 
+
+\paragraph{HTML 5}
+
+apporte des améliorations par rapport aux points précédents : 
+\begin{itemize}
+\item Les élements section permettent de délimiter et d'exprimer explicitement
+les sections d'une page, et leur offre un environnement contextuel. 
+\item On peut modéliser qu'un contenu n'est pas linéaire
+\item On peut modéliser certain élement propre au site web tel qu'un menu,
+un logo etc.
+\end{itemize}
+
+\paragraph{\emph{ARIA }}
+
+semble posséder de bonnes caractèristiques pour être le support d'un
+méta-modèle. HTML est un langage de publication de document, il décrit
+la structuration hiérarchique d'un document. Il présente des vacuités
+pour décrire tout le contenu que peut représenter une page web. Notamment
+avec le developpement des élements graphiques appelés widget. Ceux-ci
+possède un comportement dynamique et possède protocole de communication
+asynchrone, non décrit par HTML. ARIA est capable : 
+\begin{itemize}
+\item de modéliser la description d'un document avec une sémantique standarts
+et riche (inclus les élements de sémantique de HTML 5), 
+\item de modéliser la structure d'une page avec une sémantique standarts
+et riche, 
+\item de modéliser la structure et le comportement des widget avec une sémantique
+standarts et riche.
+\end{itemize}
+\newpage
 
 
-\section{Detection d'objets}
+\section{Extraction structure }
 
 
 \subsection{Introduction}
 
-Dans le cadre de notre sujet on explore différentes pistes pour la
-détection d'objet type définit à priori. La contrainte imposée par
-le web est la diversité des structures ayant la même fonctions . Ainsi
-la solution doit prendre en compte cette diversité. (reflexion : ici
-structure. prend pas en compte la mise en forme et le comportement)
+L'extraction est la première phase du processus de restructuration.
+On peut la décrire comme le processus de décourverte des éléments
+d'un tout. Ici on veut récuperer les élements consitutifs d'une page
+web. Les éléments à extraire de la page correspondent aux différentes
+brique conforme aux élements d'un méta-modele définit à priori. La
+problématique est dû au langage de conception des pages web qui manque
+de sémantique, rendant un processus d'extraction automatique difficile.
 
 
-\subsection{Tree pattern matching}
+\subsection{Approche segmentation visuelle}
 
-Ses problèmes sont étudiés dans le domaine de la recherche d'information
-(RI). Une premiere approche est la comparaison d'arbre. Cette approche
-est apparentée aux problématiques de correspondance de motif dans
-les structures arborescente (tree pattern matching). La recherche
-de motif (pattern matching) consiste à trouver tous les sous-arbres
-isomorphe avec le pattern en entrée. Pour déterminer faire le comparaison
-entre deux structures, on utilise le concept de distance entre deux
-arbres.
+L'approche proposé par les auteurs \cite{Extr_content_struc_visual_representation}
+présente un algorithme de partitionnement basé sur les élements de
+mise en forme des pages web. Le partionnement extrait une structure
+qui regroupe les elements d'une page semantiquement proche en bloc.
+Le postulat est que les éléments d'une page possédant des caractéristiques
+de mise en forme proche, tels que la police, la couleur, la taille,
+sont sémantiquement proche.
 
-La distance entre deux arbres est calculée par la plus petite ou la
-moins coûteuse séquence d'opération élémentaire (insertion, substitution
-et suppression) qui permet la transformation d'un arbre vers un autre.
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/VIPS-partionnement.jpg}
+
+\caption{Exemple de partionnement, (a) page (b) DOM de la page}
+\end{figure}
+
+
+L'algorithme exploite le DOM%
+\footnote{Document Object Model%
+} de la page web. Le DOM est une API pour les documents HTML (ou plus
+généralement XML) . Il fournit une représentation arborescente d'un
+document et les moyens d'acceder à son contenu et sa mise en forme. 
+
+Le processus de segmentation, figure \ref{vips-process}, se décompose
+en trois phases : un processus d'extraction de blocs, un processus
+de detection de séparateur et un processus de reconstruction. 
+
+Le processus d'extaction détecte les éléments du niveau courant du
+DOM succeptible de former un contenu cohérent. Cette détection repose
+sur des séparateurs explicites : on sais que certains elements délimitent
+le contour d'un contenu (par exemple les balises <DIV>). Mais également
+sur une fonction de distance visuelle comparant les noeuds parents
+et frères du noeud courant : une balise <DIV> à de plus de grande
+chance de délimiter un contenu sémantiquement différent du noeud parent
+si la couleur de fond est différente de celle du noeud parent. Pour
+chaque noeud l'algorithme vérifie si il forme un bloc ou non. Si oui
+il associe un degre de cohérence au bloc. Ce dégre de cohérence est
+un indicateur de l'importance sémantique du bloc. Si non, il est appliqué
+le même processus aux enfants du noeud. Quand tous les noeuds du bloc
+courant sont extraits, ils sont mis dans un pool. 
+
+Des séparateurs entre les blocs sont ensuite detectés. L'algorithme
+dététecte ici des séparateurs implicites, n'apparaîsant pas dans la
+structure HTML. Les séparateurs implicite sont les espaces entre les
+blocs d'une pool. Un poid est attribué à chaque séparateur suivant
+sont importance (par exemple, plus l'espacement entre deux blocs est
+grand, plus le poid sera elevé). Ce poid est un indicateur différence
+sémantique entre blocs adjacent. Plus le poid du séparateur est élevé
+en deux blocs, plus leur contenu sera sémantiquement éloigné.
+
+Une construction hierachique des blocs est crée. Cette construction
+hierachique repose sur le degre de coherence attribué à chaque bloc. 
+
+Pour chaque nouveau bloc de la structure hierarchique construite,
+l'algorithme teste le degre de cohérence attribué par rapport à un
+seuil de cohérence définit. Ce seuil est définit suivant la granularité
+de la structure que l'on veut en sortie de l'algorithme. Si le degres
+de cohérence est pas supérieur au seuil de cohérence, le bloc est
+de nouveau partionné. La structure finale est construite après que
+tous les blocs soit traités. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/VIPS-processus.jpg}
+
+\caption{Algorithme de segmentation \label{vips-process}}
+\end{figure}
+
+
+
+\subsection{Similarité de séquence}
+
+L'un des postulats de base en bioinformatique est qu'une séquence
+génomique similaire donne une protéine présentant la même fonction.
+En d'autre terme, des séquences ayant des similitudes (syntaxiques)
+est un signe de proximité fonctionnelle. Appliqué à une page web,
+cela signifie que par exemple la structure (syntaxique) d'un menu
+d'une page web A est similaire à la structure syntaxique d'une page
+web B. Il semble cohérent d'appliquer ce postulat à une page web.
+En effet la publication de contenu sur le web se standardise par l'intermédiare
+des scripts générant des pages de manière automatique et standardisé
+(Wordpress, joomla, etc). Afin d'obtenir un bon référencement, les
+moteurs de recherche insite les auteurs de pages web d'adoper une
+conception standard dans la conception des pages web. En construisant
+une séquence représentative d'un élement de notre méta-modèle, il
+devrait être possible de determiner la fonction d'une sequence d'une
+page web. Les bioinformaticiens utilisent le concept d'alignement
+pour déterminer la similarité de deux séquences, en d'autre terme
+pour savoir il elle possède la même fonction.
+\begin{defn*}
+L' alignement est la mise en correspondance de deux séquences. Soit
+deux sequences X1:n et Y1:m à valeur dans le même alphabet fini $\Lambda$.
+Un alignement c'est une correspondance entre les lettres de la premiere
+séquence et celles de la deuxieme, sans en changer l'ordre, et en
+autorisant eventuellement des « trous ».
+\end{defn*}
+\begin{figure}[H]
+\centering
+
+G A A T C \_ T G A C
+
+C A \_ \_ C G T \_ A \_
+
+\caption{Alignement possible des sequences X1=GAATCTGAC,Y1=CACGTA}
+
+
+\end{figure}
+
+
+~\\La mise en correspondance repose sur trois types d'opérations
+élementaires : la substitution, l'insertion, deletion. Plusieurs combinaisons
+d'alignements existent. Lorsque l'on souhaite comparer la similitude
+de deux sequences, la meilleur solution est celle qui minimise le
+nombre d' opérations d'insertions et de deletions.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/operation_alignement_sequence.jpg}
+
+\caption{opérations d'alignements}
+
+
+\end{figure}
+
+
+Il existe deux types d'alignements : local et global. 
+
+
+\subsubsection{L'alignement global }
+
+L'alignement global est conçu pour comparer des séquences sur toute
+leur longueur. Un méthode optimale pour trouver un alignement global
+maximal de chaîne de caractères est l'algorithme de Needleman-Wunsch
+\cite{Needleman}. La méthode de segmentation visuelle (section précedente)
+semble pouvoir extraire et regrouper les éléments sémantiquements
+proche d'une page. L'inconvénient est que l'on ne connait pas la signification
+de ses élements. Une approche serait de construire une séquence reprensentative
+d'un élement de notre méta-modèle et de comparer les sequences extraites
+d'une page aux sequences associée au méta-modèle. 
+
+
+\subsubsection{L'alignement local }
+
+L'alignement local est conçu pour rechercher dans la séquence A des
+régions semblables à la séquence B (ou à des parties de la séquence
+B). Une méthode pour trouver un alignement local maximal de chaîne
+de caractères est l'algorithme de Smith \& Waterman \cite{Smith}.
+Cette approche ne necessite pas d'extraire de sequences dans le une
+page. On peut comparer directement une sequence du meta-modele à la
+page pour trouver la zone qui correspond.
+
+~\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=200px]{img/Global-local-alignment.png}
+
+\caption{Comparaison sequence d'alignement globale et locale\label{comp-align}}
+\end{figure}
+
+
+Comme on le voit dans la figure \ref{comp-align} l'alignement global
+tente d'aligner les séquences sur toute leur longueur, tandis que
+l'alignement local se focalise sur les zones de forte homologie.
+
+
+\subsection{Similarité d'arbre}
+
+Une approche autre approche dans l'etude de similarité de structure
+est la comparaison d'arbre. Cette approche consiste à trouver la plus
+petite ou la moins coûteuse séquence d'opération d'édition (substitution,
+suppression et insertion) qui permet la transformation d'un arbre
+vers un autre. 
+
 Notons $\Lambda$ un noeud vide. Une opération d'édition est ecrit
 $b\rightarrow c$ , ou b et c sont soit un noeud, soit $\Lambda$
 . 
@@ -265,12 +623,14 @@ et $c\neq\Lambda$,
 \item une opération de suppression si $b\neq\Lambda\doteq c$, 
 \item et une opération d'insertion si $b=\Lambda\neq c$
 \end{itemize}
-Pour exprimer la séquence d'opération élémentaire qui transforme l'arbre,
-on utilise le concept de mapping, introduit \cite{tree-to-tree}.
+Pour exprimer une séquence d'opération élémentaire qui transforme
+l'arbre, on utilise le concept de mapping, introduit \cite{tree-to-tree}.
 Un mapping établie une correspondance un-à-un entre les n½uds de deux
 arbres ordonnés et qui préservent l'ordre des n½uds. 
+
+~\\
 \begin{defn*}
-Un Mapping de l'arbre T1 vers l'arbre T2 est un ensemble de paire
+Un Mapping $M$ de l'arbre T1 vers l'arbre T2 est un ensemble de paire
 ordonnée d'entier (i, j), $1\leqslant i\leqslant n1$, $1\leq j\leq n2$,
 satisfaisant les conditions suivantes, pour tous $(i1,j1),(i2,j2)\in M$:\end{defn*}
 \begin{itemize}
@@ -280,69 +640,39 @@ est à gauche de t2{[}j2{]} (preservation de l'ordre des noeuds frères);
 \item t1{[}i1{]} est un ancêtre de t1{[}i2{]} si et seulement si, t2{[}j1{]}
 est un ancêtre de t2{[}j2{]} (preservation de l'ordre des ancêtres);
 \end{itemize}
+~\\
+\begin{defn*}
 Soit M un mapping entre les arbres T1 et T2 décrivant des opérations
 de modification. S est l'ensemble de pair $(i,j)\in M$, D l'ensemble
 des n½uds T1{[}i{]} n'ayant pas de paire $(i,j)\in M$ , et I l'ensemble
 des n½uds T2{[}j{]} n'ayant pas de paire $(i,j)\in M$. Le coût du
 mapping est donné par $|S|p+|I|q+|D|r$| , ou p est le coût des substitution
 non identique, q est le coût des insertions (1), r est le coût d'une
-suppression (1), le coût des substitution identique est 0. 
-
-
-\paragraph*{Quatre mesures de distances }
-
-Plusieurs mesure de distance existe, chacune d'elle mettant en avant
-certaine propriétés fonctionnelles. Ces mesures de distance imposent
-des contraintes sur le mapping. Dans la litterature en recense principalement
-4 mesures : Distance de modification, distance d'alignement, distance
-de sous-arbre isolé, distance descendante.
-
-
-\subparagraph{Distance de modification}
-
-C'est le coût minimum de transformation d'un arbre T1 vers T2. 
-
-
-\subparagraph{Distance d'alignement}
-
-Coût minimum d'insertion de n½ud pour que T1 soit isomorphe T2. Utile
-pour connaître le cout de recouvrement entre deux arbre
-
-
-\subparagraph{Distance de sous-arbre isolé}
-
-La distance est obtenu en imposant sur le mapping la contrainte que
-deux sous-arbres disjoint de T1 doivent être mappé à deux sous-arbres
-disjoint de T2. Cette structures de mappage s'avère très utile dans
-le comparaison d'arbre de classification\cite{Takana}. Elle correspond
-au côut minimum du mapping de sous-arbre isolé de T1 vers T2.
-
-
-\subparagraph{Distance descendante}
-
-Utilisé pour trouver la plus grande sous-strucucture commune entre
-deux arbres. 
-
-
-\paragraph{Algorithmes}
-
-\cite{tree-to-tree} propose un algorithme de programmation dynamique
-pour résoudre la question de distance d'arbre en temps séquentiel
-O(I Tll x IT2l x min (depth( Tt), leaves( T)) x min (depth(T2), leaves(T2)))
+suppression (1), le coût des substitution identique est 0. ~\\
+\end{defn*}
+Pour connaître la similarité entre deux structures, on veut calculer
+une distance d'alignement. C'est à dire trouver le coût minimum du
+mapping pour que T1 et T2 soit isomorphe. KUO-CHUNG TAI \cite{tree-to-tree}
+propose un algorithme de programmation dynamique pour résoudre la
+question de distance d'arbre en temps séquentiel $O(|T1|\times|T2|\times min(depth(T1),leaves(T1))\times min(depth(T2),leaves(T2)))$
 .
 
 
-\paragraph{Discussion}
+\subsection{Discution}
 
-Dans le cadre de notre problématique, il est interessant d'utiliser
-la distance de modification entre un objet définit à priori et une
-structure extraite d'une page web. Par exemple, si nous souhaitons
-connaître le rôle d'un objet extrait d'une page, on peut le comparer
-à la collection d'objet définit à priori et déterminer de quel objet
-il est le plus proche. Cette distance à un rôle d'indice de similarité. 
+\newpage
+
+
+\section{Construction de motif}
+
+\emph{Certain elements de la section precendante repose sur la construction
+d'un pattern. Plusieurs approche : PAT-TREE, consensus de graphe,
+Modèle de Markov caché}
 
 
 \section{Conclusion}
+
+\newpage
 
 \bibliographystyle{plain}
 \bibliography{bibliographie/biblio}
