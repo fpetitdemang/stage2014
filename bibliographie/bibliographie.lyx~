@@ -422,16 +422,17 @@ Introduction et motivation
 \begin_layout Standard
 Le world wild web (www) est un reseau de ressource.
  La publication de ces ressources repose sur un langage universellement
- compréhensible et accepté par tous les ordinateurs : HTML, historiquement
- conçut pour faciliter l'échange d'article dans la communauté scientifique.
- La démocratisation du web à fait radicalement évoluer le contenu d'une
- page web, sans pour autant que le langage ne suivent ces évolutions.
+ compréhensible et accepté par tous les ordinateurs : HTML.
+ Historiquement conçut pour faciliter l'échange d'article dans la communauté
+ scientifique.
+ La démocratisation du web a fait radicalement évoluer le contenu d'une
+ page web, sans pour autant que le langage ne suive ces évolutions.
  Ainsi les auteurs de page web ont détourné les pratiques de conception
  d'une page de manière anarchique.
  Ce manque d'homogénétité complique la compréhension du contenu publié sur
  le www par une machine.
- Faisant perdre la propriété universelle du web voulu par son créateur Tim
- Berners Lee : 
+ Ceci faisant perdre la propriété universelle du web voulu par son créateur
+ Tim Berners Lee : 
 \end_layout
 
 \begin_layout Quotation
@@ -452,7 +453,7 @@ Ceci introduit la motivation de ce stage et les problématiques qui en découlen
 \end_layout
 
 \begin_layout Standard
-Le sujet du stage est la personnalisation des pages web.
+Le sujet du stage est : la personnalisation des pages web.
  L'objectif est de fournir des méthodes et des outils afin d'adapter une
  page suivant les souhaits d'un lecteur.
  On s'interesse à une application pour l'amélioration de l'accessibilité
@@ -461,8 +462,8 @@ Le sujet du stage est la personnalisation des pages web.
 \end_layout
 
 \begin_layout Standard
-L'adaptation d'une page web implique notre première problématique : la restructu
-ration d'une page web.
+L'adaptation d'une page web implique notre problématique : la restructuration
+ d'une page web.
  On souhaite expérimenter une approche basée sur les méta-modèles.
  L'idée étant d'extraire la structure d'une page et d'en construire une
  représentation plus abstraite.
@@ -474,48 +475,59 @@ ration d'une page web.
 \end_layout
 
 \begin_layout Standard
-La conception des pages web s'articule autour : d'un langage pour décrire
- la structure du document (HTML) et d'un langage pour décrire la mise en
- forme du document (CSS).
- Les pages sont constituées d’éléments hétérogènes : une page est constituée
- d'un ou plusieurs contenu principal, d'un menu de navigation, de publicité,
- etc...
- Chacun de ces éléments représentent une sous-structure de la page.
- Lorsqu'on regarde une page web depuis un navigateur, on constate que ces
- éléments sont structurés de façon sémantique, ils sont organisés selon
- leur sens.
- La difficulté dans la tâche de d'extraction de la structure d'une page
- est dû au manque d'expressivité de HTML.
- En effet, la norme actuelle de HTML (HTML 4), ne fournit pas de moyen de
- délimiter les éléments du document en fonction de leur sémantique.
- Par exemple, on ne peut pas délimiter de manière explicite la structure
- d'un menu dans une page avec ce langage.
- Le constat est que l'information de la structure d'une page apparaît principale
-ment dans la mise en page.
- La structure d'une page est explicitée à travers l'utilisation de police,
- de couleur ou plus généralement d’élément visuel pour caractériser les
- contenus qui ont la même signification.
+Dans la section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Transformation-de-modèle"
+
+\end_inset
+
+ nous décrivons l'exploitation que nous souhaitons faire des modèles.
+ En section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Modele-de-page"
+
+\end_inset
+
+ nous étudions différents modèles de page en perspective de la création
+ d'un meta-modèle.
+ Puis en section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Extraction-de-structure"
+
+\end_inset
+
+ nous explorons différentes approches à l' extraction de la structure d'une
+ page web.
 \end_layout
 
 \begin_layout Standard
-La seconde problématique est la définition d'un protocole d'acquisition
- et d'apprentissage automatique des souhaits de personnalisation d'une page
- par le lecteur.
- On veut fournir au lecteur une interface permettant la modification d'une
- page.
- 
-\emph on
-Un modèle peut être vu comme un langage de haut niveau pour décrire une
- page.
- L'idée étant d'exploité le modèle de page transformé par l'utilisateur
- pour en inférer des voeux de modification.
- L' atout dans l'utilisation de modèle permet une capitalisation des connaissanc
-es, indépendament du support technologique, du profil d'un utilisateur.
- 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Transformation de modèle
+Exploitation des modèles
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Transformation-de-modèle"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition
@@ -560,7 +572,7 @@ Pour un observateur A, M est un modèle de l'objet O, si M aide A à répondre
 \begin_layout Standard
 La notion de modèle fait référence à un langage formel definissant les élements
  conceptuels du modèle : le méta-modèle.
- La syntaxe et la sémantique du modèle sont conforme à un méta modèle.
+ La syntaxe et la sémantique du modèle sont conformes à un méta modèle.
 \end_layout
 
 \begin_layout Definition
@@ -607,11 +619,11 @@ status open
 \begin_layout Standard
 Dans le cadre du sujet nous nous plaçons dans un contexte de restructuration
  d'une page.
- On souhaite constuire un modèle d'une page web à partir de cette dernière.
+ On souhaite construire un modèle d'une page web à partir de cette dernière.
  L'avantage est d'en manipuler une représentation independante de la diversité
  de conception des pages.
  En effet les élements, ou concepts, récurrents peuvent être structurés
- ou mise en forme de manière différente d'une page web à l'autre.
+ ou mises en forme de manière différente d'une page web à l'autre.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -621,23 +633,23 @@ key "tichelaar2000famix"
 
  présente une méthodologie similaire.
  Les auteurs souhaitent appliquer des traitements homologues sur des systemes
- orientés objets implémenter dans différentes plateforme (C++, Java, ADA,
+ orientés objets implémentés dans différentes plateformes (C++, Java, ADA,
  etc).
- Pour cela ils ont réalisés un meta-modèle de systeme objet dans le but
- d'effectuer des traitements independamment d'une representation sous-jacente.
+ Pour cela ils ont réalisé un meta-modèle de systeme objet dans le but d'effectu
+er des traitements independamment d'une representation sous-jacente.
  
 \end_layout
 
 \begin_layout Standard
-Nous voulons exploiter ce modèle de deux façon différentes.
+Nous voulons exploiter ce modèle de deux façons différentes.
  D'une part ce modèle doit nous servir de support pour appliquer un processus
  de transformation sur une page.
- Et d'autre part le modèle doit nous servir de support à l'extraction de
+ Et d'autre part le modèle doit nous servir de support à l'extraction des
  règles de transformation
 \emph on
 , 
 \emph default
-que nous de ne traiterons pas dans la bibliographie mais par la suite dans
+que nous ne traiterons pas dans la bibliographie mais par la suite dans
  le stage.
 \end_layout
 
@@ -661,10 +673,11 @@ key "Kleppe_et_al"
 \end_layout
 
 \begin_layout Definition
-C' est un ensemble de règles qui décrivent comment un modèle du langage
- source peut être transformé dans un modèle du langage cible.
- Elles sont la description de comment une ou plusieurs constructions d'un
- langage source peut être transformé dans un langage cible.
+Une transformation est donc un ensemble de règles qui décrivent comment
+ un modèle du langage source peut être transformé dans un modèle du langage
+ cible.
+ Plus précisement, elle est la description de comment une ou plusieurs construct
+ions d'un langage source peuvent être transformées dans un langage cible.
  Plusieurs approches pour la transformation de modèle existent 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -677,8 +690,8 @@ key "czarnecki2003classification"
 \end_layout
 
 \begin_layout Definition
-Suivant le langage du modèle source et du modèle cible, intervient un distinctio
-n (fig.
+Suivant le langage du modèle source et du modèle cible, intervient une distincti
+on (fig.
 \begin_inset ERT
 status open
 
@@ -694,7 +707,7 @@ ref{transfo_verticale_vs_horizontale}
 ).
  On parle de transformation endogène (rééchelonnement) lorsque les modèles
  sont exprimés dans le même langage.
- On parle de transformation exogène (translation)dans le cas contraire.
+ On parle de transformation exogène (translation) dans le cas contraire.
 \end_layout
 
 \begin_layout Definition
@@ -768,10 +781,6 @@ label{transfo_verticale_vs_horizontale}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -886,7 +895,7 @@ centering
 
 
 \backslash
-includegraphics[width=300px]{img/transformation_endogene.jpg}
+includegraphics[width=300px]{img/transformation_endogene_1.jpg}
 \end_layout
 
 \end_inset
@@ -924,8 +933,31 @@ label{transfo_endogene}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Modele de page web
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Modele-de-page"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -933,18 +965,27 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Ainsi les concepts décrit par le méta-modèle doivent comprendre les éléments,
- ou concept, d'une page que l'on souhaite transformer.
+Comme expliqué dans la section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Transformation-de-modèle"
+
+\end_inset
+
+, le meta-modèle est le support à l'expression de transformation.
+ Ainsi les concepts décrits par le méta-modèle doivent comprendre les éléments,
+ ou concepts que l'on souhaite transformer dans une page.
  Par exemple, si l'on souhaite modifier la couleur du texte de la bar de
- navigation, on doit pouvoir exprimer dans le modèle de page le concept
- de bar de navigation et concept de couleur.
+ navigation, on doit pouvoir exprimer dans la transformation le concept
+ de bar de navigation et le concept de couleur.
 \end_layout
 
 \begin_layout Standard
-On s'interesse à metamodèle proche de la vision qu'un lecteur peut avoir
- d'une page pour en exprimer des transformations representatif de ses souhaits.
- Pour cela on propose d'étudier et de comparer le langage standart de publicatio
-n de document sur le web, HTML, dans la norme 4 et 5 mais aussi une toxonomie
+On s'interesse à la conception d'un meta-modèle proche de la vision qu'un
+ lecteur peut avoir d'une page.
+ Le but étant d'exprimer des transformations conformes aux souhaits du lecteur.
+ On propose d'étudier et de comparer le langage standard de publication
+ de page sur le web, HTML, dans la norme 4 et 5 mais aussi une toxonomie
  pour la description d'interface graphique ARIA.
 \end_layout
 
@@ -961,9 +1002,8 @@ key "HTML_4"
 \end_inset
 
  est un langage permettant la publication de contenu sur le web.
- C'est le langage standard actuelle des pages web.
- Il permet de structurer le contenu et d'associer une mise en forme aux
- contenu.
+ C'est le langage standard actuel des pages web.
+ Il permet de structurer le contenu et de lui associer une mise en forme.
  Le contenu est organisé de manière hierarchique en le découpant en section
  et sous-section.
  
@@ -974,10 +1014,10 @@ Structuration générique
 \end_layout
 
 \begin_layout Standard
-HTML 4 propose un mécanisme générique pour la composition du contenu formant
+HTML 4 propose un mécanisme générique pour la composition de contenu formant
  la structure des pages web.
  Ce mécanisme gravite autour des éléments de type <DIV> leurs identifiants
- respective : id et classe.
+ respectives : id et classe.
 \end_layout
 
 \begin_layout Subparagraph
@@ -987,16 +1027,16 @@ DIV
 \begin_layout Standard
 Signifiant division, est utilisé comme conteneur générique permettant d'organise
 r le contenu.
- Il est utilisé pour :
+ Il est exploité pour :
 \end_layout
 
 \begin_layout Itemize
-regrouper les elements pour leur appliquer un style (une mise en forme particuli
-ere).
+regrouper les éléments pour leur appliquer un style (une mise en forme particuli
+ère).
 \end_layout
 
 \begin_layout Itemize
-signaler un section ou ou sous-section.
+signaler une section ou une sous-section.
  
 \end_layout
 
@@ -1017,11 +1057,10 @@ id
 \emph on
 class
 \emph default
- au contraire, assigne un ou plusieurs noms de classe à un élément; on peut
- dire de l'élément qu'il appartient à ces classes.
+ au contraire, assigne un ou plusieurs noms de classe à un élément.
  Un nom de classe peut être partagé par plusieurs instances d'éléments.
  Les identifiants et les classes sont des suites de caractères quelconque
- décidé arbitrairement par l'auteur du document.
+ décidées arbitrairement par l'auteur du document.
 \end_layout
 
 \begin_layout Standard
@@ -1045,9 +1084,22 @@ status open
 \begin_layout Standard
 Les éléments DIV utilisés conjointement avec les attributs id et classe
  sont au cœur du mécanisme générique de structuration d'un document.
- DIV permet de divisé le contenu d'un document en section et sous-section
- pour décrire sa structure.
- Les elements DIV ayant une sémantique neutre, c'est l'auteur du contenu
+ DIV permet de diviser le contenu d'un document en section et sous-section
+ (e.g figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{div_sectionnement}
+\end_layout
+
+\end_inset
+
+) pour décrire sa structure.
+ Les éléments DIV ayant une sémantique neutre, c'est l'auteur du contenu
  qui attribut (de manière arbitraire) un nom de 
 \emph on
 class
@@ -1056,8 +1108,29 @@ class
 \emph on
 id
 \emph default
-.
- Le but étant de définir une rôle au contenu ou une mise en forme.
+ (e.g figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{div_role}
+\end_layout
+
+\end_inset
+
+).
+ Le nom de 
+\emph on
+class
+\emph default
+ ou 
+\emph on
+id
+\emph default
+ définissant un rôle au contenu ou une mise en forme.
  On note le caractère implicite de la structuration.
 \end_layout
 
@@ -1066,7 +1139,7 @@ id
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1076,8 +1149,7 @@ status open
 
 
 \backslash
-begin{lstlisting}[frame=single, language=html, caption={Exemple de structuration
- avec HTML 4}]
+begin{lstlisting}[frame=single, language=html]
 \end_layout
 
 \begin_layout Plain Layout
@@ -1092,7 +1164,7 @@ begin{lstlisting}[frame=single, language=html, caption={Exemple de structuration
 
 \begin_layout Plain Layout
 
-	<div id="navigation_bar"/>
+	<div id="navigation_bar"><div/>
 \end_layout
 
 \begin_layout Plain Layout
@@ -1142,6 +1214,14 @@ end{lstlisting}
 
 \begin_layout Plain Layout
 Exemple d'attribution de rôle
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{div_role}
 \end_layout
 
 \end_inset
@@ -1149,7 +1229,8 @@ Exemple d'attribution de rôle
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
@@ -1173,8 +1254,7 @@ status open
 
 
 \backslash
-begin{lstlisting}[frame=single, language=html, caption={Exemple de structuration
- avec HTML 4}]
+begin{lstlisting}[frame=single, language=html]
 \end_layout
 
 \begin_layout Plain Layout
@@ -1253,7 +1333,20 @@ end{lstlisting}
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Exemple découpage en section et sous-section
+Exemple découpage en section et sous-section 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{div_sectionnement}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1275,7 +1368,7 @@ Exemple découpage en section et sous-section
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -1342,49 +1435,179 @@ key "HTML_5"
 \end_layout
 
 \begin_layout Paragraph
-
-\end_layout
-
-\begin_layout Paragraph
 Structuration 
 \end_layout
 
 \begin_layout Standard
-Les nouveaux élements de HTML 5 spécifie donc une sémantique standard :
+Les nouveaux élements de HTML 5 spécifient donc une sémantique standard
+ :
 \end_layout
 
 \begin_layout Itemize
-Section : represente une section générique dans un document, c'est à dire
+SECTION : représente une section générique dans un document, c'est à dire
  un regroupement de contenu par thématique.
 \end_layout
 
 \begin_layout Itemize
-Article : représente un contenu autonome dans une page, facile l'inclusion
- de plusieurs sous document
+ARTICLE : représente un contenu autonome dans une page, facilite l'inclusion
+ de plusieurs sous documents.
 \end_layout
 
 \begin_layout Itemize
-nav : représente une section de liens vers d'autre page ou des fragments
- de cette page
+NAV : représente une section de liens vers d'autres pages ou des fragments
+ de cette page.
 \end_layout
 
 \begin_layout Itemize
-aside : représente une section de la page dont le contenu est indirectement
- lié à ce qui l'entoure et qui pourrait être séparé de cet environnement
+ASIDE : représente une section de la page dont le contenu est indirectement
+ lié à ce qui l'entoure et qui pourrait être séparé de cet environnement.
 \end_layout
 
 \begin_layout Itemize
-header : représente un groupe d'introduction ou une aide à la navigation.
+HEADER : représente un groupe d'introduction ou une aide à la navigation.
  Il peut contenir des éléments de titre, mais aussi d'autres éléments tels
  qu'un logo, un formulaire de recherche, etc.
 \end_layout
 
 \begin_layout Itemize
-footer : représente le pied de page, ou de la section, ou de la racine de
- sectionnement la plus proche
+FOOTER : représente le pied de page, ou de la section, ou de la racine de
+ sectionnement la plus proche.
 \end_layout
 
 \begin_layout Standard
+La figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{html5_role}
+\end_layout
+
+\end_inset
+
+ montre un découpage explicite de la structure avec HTML 5 à contrario du
+ découpage implicite de HTML 4 montré dans la figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{div_role}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single, language=html]
+\end_layout
+
+\begin_layout Plain Layout
+
+<body>
+\end_layout
+
+\begin_layout Plain Layout
+
+	<header></header>
+\end_layout
+
+\begin_layout Plain Layout
+
+	<nav></nav>
+\end_layout
+
+\begin_layout Plain Layout
+
+	<section>
+\end_layout
+
+\begin_layout Plain Layout
+
+		<article></article>
+\end_layout
+
+\begin_layout Plain Layout
+
+		<article></article>
+\end_layout
+
+\begin_layout Plain Layout
+
+	</section>
+\end_layout
+
+\begin_layout Plain Layout
+
+	<footer></footer>
+\end_layout
+
+\begin_layout Plain Layout
+
+</body>
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Exemple d'attribution de rôle
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{html5_role}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Float figure
 placement H
 wide false
@@ -1452,9 +1675,9 @@ key "ARIA"
 \end_inset
 
  est la spécification d'une ontologie décrivant une interface graphique.
- Elle fournit des informations sur la structuration d'un document et décrit
- les élements qui composent l'interface au moyen d'un ensemble de rôles,
- d'états et de propriétés .
+ Elle fournit des informations sur la structuration d'un document et plus
+ généralement décrit les élements qui composent une interface au moyen d'un
+ ensemble de rôles, d'états et de propriétés .
 \end_layout
 
 \begin_layout Paragraph
@@ -1462,13 +1685,13 @@ Rôle
 \end_layout
 
 \begin_layout Standard
-Les rôles permettent d'identifier la fonction de chaque elements d'une interface.
- Ils sont regroupé en trois catégories :
+Les rôles permettent d'identifier la fonction de chaque élément d'une interface.
+ Ils sont regroupés en trois catégories :
 \end_layout
 
 \begin_layout Itemize
-Widget Roles : référence d'un ensemble de widget préfinis (alertdialog,
- button, slider, scrollbar, menu, etc)
+Widget Roles : référence un ensemble de widget préfinis (alertdialog, button,
+ slider, scrollbar, menu, etc)
 \end_layout
 
 \begin_layout Itemize
@@ -1486,12 +1709,10 @@ Etats et propriétés
 \end_layout
 
 \begin_layout Standard
-ARIA permet d'associer des états et propriétés à des wigets.
- 
-\end_layout
-
-\begin_layout Standard
-Un état est une configuration unique d'un objet.
+ARIA prend en compte l'aspect dynamique et interactif des éléments d'une
+ interface.
+ Elle permet d'associer des états et des propriétés aux éléments graphiques.
+ Un état est une configuration unique d'un objet.
  Par exemple, on peut définir l'état d'un bouton par l'état 
 \emph on
 aria-checked 
@@ -1504,12 +1725,12 @@ true - false - mixed
  .
  Aria prévoit même un systeme d'annotation pour les objets ayant des comportemen
 ts asynchrones.
- Par exmple, on peut annoter qu'un element se met à jour de manière autonome.
+ Par exemple, on peut annoter qu'un élément se met à jour de manière autonome.
 \end_layout
 
 \begin_layout Standard
-On peut associé un ensemble de propriété par exemple la valeur minimal ou
- maximal que l'on doit remplir dans un champs de saisit 
+On peut associer un ensemble de propriétés par exemple la valeur minimale
+ ou maximale que l'on doit remplir dans un champs de saisi 
 \emph on
 aria-valuemin, aria-valuemax.
 \end_layout
@@ -1518,97 +1739,42 @@ aria-valuemin, aria-valuemax.
 Discussion
 \end_layout
 
-\begin_layout Paragraph
-HTML 4
+\begin_layout Standard
+L'étude ci-dessus présente de manière sommaire les éléments de langage de
+ HTML 4, 5 et ARIA.
+ Au regard de notre problématique, nous pouvons voir quelques perspectives
+ à la conception d'un méta-modèle.
 \end_layout
 
 \begin_layout Standard
-fourni un mécanisme de structuration générique pour la publication de document
- sur le web.
- Ce support semble ne pas être assez riche à la description d'une page web.
- En effet, ce dernier pose plusieurs problèmes :
-\end_layout
-
-\begin_layout Itemize
-Une page possède un contenu hétérogène.
- Plusieurs document peuvent être décrit dans le page.
- Il n'y pas de moyen de délimiter le contour d'un document de manière explicite
- dans une page.
-\end_layout
-
-\begin_layout Itemize
-Une page possède un contenu possiblement non linéaire.
- Impossible de l'exprimer.
-\end_layout
-
-\begin_layout Itemize
-Un page web contient des élements qui ne sont pas en rapport avec le contenu
- d'un document, mais plûtot avec le site web.
- Typiquement un menu de navigation, un logo etc...
- Il n'est pas possible de le modéliser explicitement.
+HTML 4 fournit une sémantique riche pour décrire les élements textuels d'une
+ page et ses hyperliens.
+ En effet il y a pléthore d'éléments pour structurer un paragraphe.
+ Cependant le mécanisme de structuration fournit est trop générique et ambiguie.
  
 \end_layout
 
 \begin_layout Standard
+HTML 5 semble combler ces limites en apportant de nouveaux éléments lexicaux
+ amenant une sémantique plus riche sur la structure d'une page et ses élements.
+ La norme 5 introduit également des balises pour la description d'élément
+ propre à une page web comme des menus de navigation, bannière, logo, etc...
+\end_layout
 
+\begin_layout Standard
+La norme ARIA intégre plus d'élements pour décrire une page web et notament
+ une description du comportement des éléments d'une page web particulierement
+ utiles avec le développement des éléments graphiques appelés widget.
+\end_layout
+
+\begin_layout Standard
+Un méta-modèle basé sur la syntaxe de HTML 5 semble être un compromis intéressan
+t entre HTML 4 et ARIA.
+ 
 \emph on
+En effet HTML 4 est peu adapté à l'expression de transformation, alors que
+ ARIA est trop riche au regard de nos besoins.
  
-\end_layout
-
-\begin_layout Paragraph
-HTML 5
-\end_layout
-
-\begin_layout Standard
-apporte des améliorations par rapport aux points précédents : 
-\end_layout
-
-\begin_layout Itemize
-Les élements section permettent de délimiter et d'exprimer explicitement
- les sections d'une page, et leur offre un environnement contextuel.
- 
-\end_layout
-
-\begin_layout Itemize
-On peut modéliser qu'un contenu n'est pas linéaire
-\end_layout
-
-\begin_layout Itemize
-On peut modéliser certain élement propre au site web tel qu'un menu, un
- logo etc.
-\end_layout
-
-\begin_layout Paragraph
-
-\emph on
-ARIA 
-\end_layout
-
-\begin_layout Standard
-semble posséder de bonnes caractèristiques pour être le support d'un méta-modèle.
- HTML est un langage de publication de document, il décrit la structuration
- hiérarchique d'un document.
- Il présente des vacuités pour décrire tout le contenu que peut représenter
- une page web.
- Notamment avec le developpement des élements graphiques appelés widget.
- Ceux-ci possède un comportement dynamique et possède protocole de communication
- asynchrone, non décrit par HTML.
- ARIA est capable : 
-\end_layout
-
-\begin_layout Itemize
-de modéliser la description d'un document avec une sémantique standarts
- et riche (inclus les élements de sémantique de HTML 5), 
-\end_layout
-
-\begin_layout Itemize
-de modéliser la structure d'une page avec une sémantique standarts et riche,
- 
-\end_layout
-
-\begin_layout Itemize
-de modéliser la structure et le comportement des widget avec une sémantique
- standarts et riche.
 \end_layout
 
 \begin_layout Standard
@@ -1628,7 +1794,14 @@ newpage
 \end_layout
 
 \begin_layout Section
-Extraction de structure 
+Extraction de structure (Reconstruction d'architecture?)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Extraction-de-structure"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1639,11 +1812,43 @@ Introduction
 L'extraction est la première phase du processus de restructuration.
  On peut la décrire comme le processus de décourverte des éléments d'un
  tout.
- Ici on veut récuperer les élements consitutifs d'une page web.
- Les éléments à extraire de la page correspondent aux différentes brique
- conforme aux élements d'un méta-modele définit à priori.
- La problématique est dû au langage de conception des pages web qui manque
+ Les éléments à extraire de la page correspondent aux différentes briques
+ conformes aux éléments d'un méta-modèle de page définit à priori.
+ La problématique est dûe au langage de conception des pages web qui manque
  de sémantique, rendant un processus d'extraction automatique difficile.
+\end_layout
+
+\begin_layout Standard
+La conception des pages web s'articule autour : d'un langage pour décrire
+ la structure du document (HTML) et d'un langage pour décrire la mise en
+ forme du document (CSS).
+ Les pages sont constituées d’éléments hétérogènes : une page est constituée
+ d'un ou plusieurs contenu principal, d'un menu de navigation, de publicité,
+ etc...
+ Chacun de ces éléments représentent une sous-structure de la page.
+ Lorsqu'on regarde une page web depuis un navigateur, on constate que ces
+ éléments sont structurés de façon sémantique, ils sont organisés selon
+ leur sens.
+ La difficulté dans la tâche d'extraction de la structure d'une page est
+ dûe au manque d'expressivité du HTML.
+ En effet, la norme actuelle de HTML (HTML 4), ne fournit pas de moyen de
+ délimiter les éléments du document en fonction de leur sémantique.
+ Par exemple, on ne peut pas délimiter de manière explicite la structure
+ d'un menu dans une page avec ce langage.
+ Le constat est que l'information de la structure d'une page apparaît principale
+ment dans la mise en page.
+ La structure d'une page est explicitée à travers l'utilisation de police,
+ de couleur ou plus généralement d’éléments visuels pour caractériser les
+ contenus qui ont la même signification.
+\end_layout
+
+\begin_layout Standard
+Les approches étudiées dans la tâche d'extraction de la structure commence
+ par une phase de segmentation.
+ Cette étape permet de découper une page en région.
+ On peut ainsi délimiter son contenu de façon explicite.
+ Puis une phase de compréhension de contenu afin d'identifier le rôle de
+ chaque région dans une page.
 \end_layout
 
 \begin_layout Subsection
@@ -1655,20 +1860,33 @@ Approche segmentation visuelle
 \end_layout
 
 \begin_layout Standard
-L'approche proposé par les auteurs 
+L'approche proposée par les auteurs 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "cai2003extracting"
 
 \end_inset
 
- présente un algorithme de partitionnement basé sur les élements de mise
+ présente un algorithme de partitionnement basé sur les éléments de mise
  en forme des pages web.
- Le partionnement extrait une structure qui regroupe les elements d'une
- page semantiquement proche en bloc.
+ Le partionnement extrait une structure qui regroupe les éléments d'une
+ page sémantiquement proche en bloc (e.g figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{vips_partitionnement}
+\end_layout
+
+\end_inset
+
+).
  Le postulat est que les éléments d'une page possédant des caractéristiques
  de mise en forme proche, tels que la police, la couleur, la taille, sont
- sémantiquement proche.
+ sémantiquement proches.
 \end_layout
 
 \begin_layout Standard
@@ -1706,6 +1924,19 @@ includegraphics[width=300px]{img/VIPS-partionnement.jpg}
 
 \begin_layout Plain Layout
 Exemple de partionnement, (a) page (b) DOM de la page
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{vips_partitionnement}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1721,7 +1952,7 @@ Exemple de partionnement, (a) page (b) DOM de la page
 \begin_layout Standard
 L'algorithme exploite le DOM
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Document Object Model
@@ -1730,9 +1961,19 @@ Document Object Model
 \end_inset
 
  de la page web.
- Le DOM est une API pour les documents HTML (ou plus généralement XML) .
+ Le DOM est une API
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Application Programming Interface
+\end_layout
+
+\end_inset
+
+ pour les documents HTML (ou plus généralement XML) .
  Il fournit une représentation arborescente d'un document et les moyens
- d'acceder à son contenu et sa mise en forme.
+ d'accéder à son contenu et sa mise en forme.
  
 \end_layout
 
@@ -1751,22 +1992,22 @@ ref{vips-process}
 \end_inset
 
 , se décompose en trois phases : un processus d'extraction de blocs, un
- processus de detection de séparateur et un processus de reconstruction.
+ processus de détection de séparateur et un processus de reconstruction.
  
 \end_layout
 
 \begin_layout Standard
 Le processus d'extaction détecte les éléments du niveau courant du DOM succeptib
-le de former un contenu cohérent.
- Cette détection repose sur des séparateurs explicites : on sais que certains
- elements délimitent le contour d'un contenu (par exemple les balises <DIV>).
+les de former un contenu cohérent.
+ Cette détection repose sur des séparateurs explicites : on sait que certains
+ éléments délimitent le contour d'un contenu (par exemple les balises <DIV>).
  Mais également sur une fonction de distance visuelle comparant les noeuds
- parents et frères du noeud courant : une balise <DIV> à de plus de grande
- chance de délimiter un contenu sémantiquement différent du noeud parent
- si la couleur de fond est différente de celle du noeud parent.
- Pour chaque noeud l'algorithme vérifie si il forme un bloc ou non.
- Si oui il associe un degre de cohérence au bloc.
- Ce dégre de cohérence est un indicateur de l'importance sémantique du bloc.
+ parents et frères du noeud courant : une balise <DIV> a de grande chance
+ de délimiter un contenu sémantiquement différent du noeud parent si la
+ couleur de fond est différente de celle de ce dernier.
+ Pour chaque noeud, l'algorithme vérifie s'il forme un bloc ou non.
+ Si oui, il associe un degré de cohérence au bloc.
+ Ce degré de cohérence est un indicateur de l'importance sémantique du bloc.
  Si non, il est appliqué le même processus aux enfants du noeud.
  Quand tous les noeuds du bloc courant sont extraits, ils sont mis dans
  un pool.
@@ -1775,32 +2016,32 @@ le de former un contenu cohérent.
 
 \begin_layout Standard
 Des séparateurs entre les blocs sont ensuite detectés.
- L'algorithme dététecte ici des séparateurs implicites, n'apparaîsant pas
- dans la structure HTML.
- Les séparateurs implicite sont les espaces entre les blocs d'une pool.
- Un poid est attribué à chaque séparateur suivant sont importance (par exemple,
- plus l'espacement entre deux blocs est grand, plus le poid sera elevé).
- Ce poid est un indicateur différence sémantique entre blocs adjacent.
- Plus le poid du séparateur est élevé en deux blocs, plus leur contenu sera
- sémantiquement éloigné.
+ L'algorithme dététecte ici des séparateurs implicites, c'est à dire n'apparaîsa
+nt pas dans la structure HTML.
+ Les séparateurs implicites sont les espaces entre les blocs d'un pool.
+ Un poid est attribué à chaque séparateur suivant son importance (par exemple,
+ plus l'espacement entre deux blocs est grand, plus le poid sera élevé).
+ Ce poid est un indicateur de différence sémantique entre les blocs adjacents.
+ Plus le poid du séparateur est élevé entre deux blocs, plus leur contenu
+ sera sémantiquement éloigné.
 \end_layout
 
 \begin_layout Standard
-Une construction hierachique des blocs est crée.
- Cette construction hierachique repose sur le degre de coherence attribué
+Une construction hiérachique des blocs est crée.
+ Cette construction hiérachique repose sur le degré de cohérence attribué
  à chaque bloc.
  
 \end_layout
 
 \begin_layout Standard
-Pour chaque nouveau bloc de la structure hierarchique construite, l'algorithme
- teste le degre de cohérence attribué par rapport à un seuil de cohérence
- définit.
- Ce seuil est définit suivant la granularité de la structure que l'on veut
+Pour chaque nouveau bloc de la structure hiérarchique construite, l'algorithme
+ teste le degré de cohérence attribué par rapport à un seuil de cohérence
+ défini.
+ Ce seuil est défini suivant la granularité de la structure que l'on veut
  en sortie de l'algorithme.
- Si le degres de cohérence est pas supérieur au seuil de cohérence, le bloc
- est de nouveau partionné.
- La structure finale est construite après que tous les blocs soit traités.
+ Si le degré de cohérence n'est pas supérieur au seuil de cohérence, le
+ bloc est de nouveau partionné.
+ La structure finale est construite après que tous les blocs soient traités.
  
 \end_layout
 
@@ -1869,24 +2110,10 @@ Compréhension de contenu
 \end_layout
 
 \begin_layout Subsubsection
-Arbre de décision
+Analyse syntaxique
 \end_layout
 
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand cite
-key "chen2001function"
-
-\end_inset
-
- propose un modèle, FOM (Function-based object model), pour attribuer des
- rôles aux différents objets d'une page web.
- Ce modèle s’intéresse aux propriétés fonctionnelles des objets.
- Il spécifie également une approche automatique pour détecter la catégorie
- et les propriétés fonctionnelles d'un objet basé sur un arbre de décision.
-\end_layout
-
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Similarité de séquence
 \end_layout
 
@@ -1895,34 +2122,34 @@ L'un des postulats de base en bioinformatique est qu'une séquence génomique
  similaire donne une protéine présentant la même fonction.
  En d'autre terme, des séquences ayant des similitudes (syntaxiques) est
  un signe de proximité fonctionnelle.
- Appliqué à une page web, cela signifie que par exemple la structure (syntaxique
-) d'un menu d'une page web A est similaire à la structure syntaxique d'une
+ Appliqué à une page web, cela signifie que par exemple la structure syntaxique
+ d'un menu d'une page web A est similaire à la structure syntaxique d'une
  page web B.
  Il semble cohérent d'appliquer ce postulat à une page web.
- En effet la publication de contenu sur le web se standardise par l'intermédiare
- des scripts générant des pages de manière automatique et standardisé (Wordpress
-, joomla, etc).
- Afin d'obtenir un bon référencement, les moteurs de recherche insite les
- auteurs de pages web d'adoper une conception standard dans la conception
- des pages web.
- En construisant une séquence représentative d'un élement de notre méta-modèle,
- il devrait être possible de determiner la fonction d'une sequence d'une
- page web.
- Les bioinformaticiens utilisent le concept de coût d'alignement pour déterminer
- la similarité de deux séquences, en d'autre terme pour savoir il elle possède
- la même fonction.
+ En effet, la publication de contenu sur le web se standardise par l'intermédiar
+e des scripts.
+ Ceux-ci générent des pages de manière automatique et standardisée (Wordpress,
+ joomla, etc).
+ Afin d'obtenir un bon référencement, les moteurs de recherche insitent
+ les auteurs de page web d'adopter des normes de conception.
+ En construisant une séquence représentative d'un élément de notre méta-modèle,
+ il devrait être possible de déterminer la fonction d'un fragment de page
+ web.
+ Pour déterminer la similarité de deux séquences, les bioinformaticiens
+ utilisent le concept du coût d'alignement.
 \end_layout
 
 \begin_layout Definition
 L' alignement est la mise en correspondance de deux séquences.
- Soit deux sequences X1:n et Y1:m à valeur dans le même alphabet fini 
+ Soit deux séquences X1:n et Y1:m dont la valeur est définie dans le même
+ alphabet fini 
 \begin_inset Formula $\Lambda$
 \end_inset
 
 .
- Un alignement c'est une correspondance entre les lettres de la premiere
- séquence et celles de la deuxieme, sans en changer l'ordre, et en autorisant
- eventuellement des « trous ».
+ Un alignement est une correspondance entre les lettres de la première séquence
+ et celles de la deuxieme, sans en changer l'ordre, et en autorisant eventuellem
+ent des « trous ».
 \end_layout
 
 \begin_layout Standard
@@ -1980,10 +2207,6 @@ X1=GAATCTGAC,Y1=CACGTA
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2007,8 +2230,8 @@ status open
 La mise en correspondance repose sur trois types d'opérations élementaires
  : la substitution, l'insertion, deletion.
  Plusieurs combinaisons d'alignements existent.
- Lorsque l'on souhaite comparer la similitude de deux sequences, la meilleur
- solution est celle qui minimise le nombre d' opérations d'insertions et
+ Lorsque l'on souhaite comparer la similitude de deux séquences, la meilleure
+ solution est celle qui minimise le nombre d'opérations d'insertions et
  de deletions.
 \end_layout
 
@@ -2054,10 +2277,6 @@ opérations d'alignements
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2068,14 +2287,14 @@ Il existe deux types d'alignements : local et global.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 L'alignement global 
 \end_layout
 
 \begin_layout Standard
 L'alignement global est conçu pour comparer des séquences sur toute leur
  longueur.
- Un méthode optimale pour trouver un alignement global maximal de chaîne
+ Une méthode optimale pour trouver un alignement global maximal de chaîne
  de caractères est l'algorithme de Needleman-Wunsch 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2084,16 +2303,10 @@ key "needleman1970general"
 \end_inset
 
 .
- La méthode de segmentation visuelle (section précedente) semble pouvoir
- extraire et regrouper les éléments sémantiquements proche d'une page.
- L'inconvénient est que l'on ne connait pas la signification de ses élements.
- Une approche serait de construire une séquence reprensentative d'un élement
- de notre méta-modèle et de comparer les sequences extraites d'une page
- aux sequences associée au méta-modèle.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subparagraph
 L'alignement local 
 \end_layout
 
@@ -2109,9 +2322,7 @@ key "smith1981identification"
 \end_inset
 
 .
- Cette approche ne necessite pas d'extraire de sequences dans le une page.
- On peut comparer directement une sequence du meta-modele à la page pour
- trouver la zone qui correspond.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2137,7 +2348,7 @@ status open
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -2208,15 +2419,19 @@ ref{comp-align}
 
  l'alignement global tente d'aligner les séquences sur toute leur longueur,
  tandis que l'alignement local se focalise sur les zones de forte homologie.
+ L'alignement global est adapté à la comparaison de deux fragments de taille
+ approximativement égales.
+ Alors que l'alignement local, permet de faire correspondre un fragment
+ dans une plus grande séquence.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Similarité d'arbre
 \end_layout
 
 \begin_layout Standard
-Une approche autre approche dans l'etude de similarité de structure est
- la comparaison d'arbre.
+Une autre approche dans l'etude de similarité de structure est la comparaison
+ d'arbre.
  Cette approche consiste à trouver la plus petite ou la moins coûteuse séquence
  d'opération d'édition (substitution, suppression et insertion) qui permet
  la transformation d'un arbre vers un autre.
@@ -2229,11 +2444,11 @@ Notons
 \end_inset
 
  un noeud vide.
- Une opération d'édition est ecrit 
+ Une opération d'édition est écrite 
 \begin_inset Formula $b\rightarrow c$
 \end_inset
 
- , ou b et c sont soit un noeud, soit 
+ , où b et c sont soit un noeud, soit 
 \begin_inset Formula $\Lambda$
 \end_inset
 
@@ -2265,7 +2480,7 @@ une opération de suppression si
 \end_layout
 
 \begin_layout Itemize
-et une opération d'insertion si 
+une opération d'insertion si 
 \begin_inset Formula $b=\Lambda\neq c$
 \end_inset
 
@@ -2331,13 +2546,13 @@ i1=i2 si et seulement si, j1=j2 (one-to-one condition);
 \end_layout
 
 \begin_layout Itemize
-t1[i1] est à droite de t1[i2], si est seulement si, t2[j1] est à gauche
- de t2[j2] (preservation de l'ordre des noeuds frères);
+t1[i1] est à droite de t1[i2], si est seulement si, t2[j1] est à droite
+ de t2[j2] (préservation de l'ordre des noeuds frères);
 \end_layout
 
 \begin_layout Itemize
 t1[i1] est un ancêtre de t1[i2] si et seulement si, t2[j1] est un ancêtre
- de t2[j2] (preservation de l'ordre des ancêtres);
+ de t2[j2] (préservation de l'ordre des ancêtres);
 \end_layout
 
 \begin_layout Standard
@@ -2402,9 +2617,9 @@ Soit M un mapping entre les arbres T1 et T2 décrivant des opérations de
 \begin_inset Formula $|S|p+|I|q+|D|r$
 \end_inset
 
-| , ou p est le coût des substitution non identique, q est le coût des insertion
-s (1), r est le coût d'une suppression (1), le coût des substitution identique
- est 0.
+| , où p est le coût des substitutions non identiques, q est le coût des
+ insertions (1), r est le coût d'une suppression (1), le coût des substitutions
+ identiques est 0.
  
 \begin_inset ERT
 status open
@@ -2426,8 +2641,8 @@ status open
 \begin_layout Standard
 Pour connaître la similarité entre deux structures, on veut calculer une
  distance d'alignement.
- C'est à dire trouver le coût minimum du mapping pour que T1 et T2 soit
- isomorphe.
+ C'est à dire trouver le coût minimum du mapping pour que T1 et T2 soient
+ isomorphes.
  KUO-CHUNG TAI 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2443,16 +2658,96 @@ key "tai1979tree"
  .
 \end_layout
 
+\begin_layout Subsubsection
+Analyse fonctionnelle
+\end_layout
+
 \begin_layout Standard
+Pour connaître le rôle de chaque élement, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen2001function"
+
+\end_inset
+
+ propose une approche basée sur une analyse fonctionnelle de ces derniers.
+ Pour cela les auteurs proposent un modèle : Function-based object.
+ Ce modèle considère chaque élément d'une page comme un objet ayant des
+ propriétés,tel que la valeur de ces propriétés définit le rôle de l'objet.
+ Les principales propriétés sont basées sur la présentation (type de média,
+ agencement, etc), les hyperliens (le nombre d'hyperlien? vers où pointent
+ ils?), l'interaction avec l'utilisateur (uniquement affichage, soumission
+ de contenu?).
+ L'extraction des propriétés fonctionnelles sont faites principalement par
+ analyse de la nature des balises et les attributs associés aux balises.
+ Suivant la valeur des propriétes, les objets sont rangés dans différentes
+ catégories : objet de type informatif, de navigation, d'interaction, de
+ décoration, etc.
+ L'analyse de la catégorie d'un objet se fait au moyen d'un arbre de décision
+ (e.g figure 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-~
-\backslash
 
 \backslash
+ref{arbre_decision}
+\end_layout
+
+\end_inset
+
+).
+ Les principales catégories (rôle) des objets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=200px]{img/arbre_decision.jpg}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Exemple d'arbre de décision basique
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{arbre_decision}
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -2461,12 +2756,31 @@ status open
 
 \end_layout
 
-\begin_layout Standard
-Etant donnée une sous structure 
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Discution
+\end_layout
+
+\begin_layout Standard
+(alignement global) La méthode de segmentation visuelle (section précedente)
+ semble pouvoir extraire et regrouper les éléments sémantiquements proche
+ d'une page.
+ L'inconvénient est que l'on ne connait pas la signification de ses élements.
+ Une approche serait de construire une séquence reprensentative d'un élement
+ de notre méta-modèle et de comparer les sequences extraites d'une page
+ aux sequences associée au méta-modèle.
+ 
+\end_layout
+
+\begin_layout Standard
+(alignement local) Cette approche ne necessite pas d'extraire de sequences
+ dans le une page.
+ On peut comparer directement une sequence du meta-modele à la page pour
+ trouver la zone qui correspond.
 \end_layout
 
 \begin_layout Standard
@@ -2483,18 +2797,6 @@ newpage
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Construction de motif
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Certain elements de la section precendante repose sur la construction d'un
- pattern.
- Plusieurs approche : PAT-TREE, consensus de graphe, Modèle de Markov caché
 \end_layout
 
 \begin_layout Section
