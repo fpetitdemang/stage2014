@@ -6,6 +6,7 @@
 \begin_preamble
 \usepackage{graphicx}
 \usepackage{listings}
+\usepackage{framed}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -471,12 +472,16 @@ L'adaptation d'une page web implique notre problématique : la restructuration
  de ces dernières.
  A partir de cette représentation on veut lui appliquer des transformations,
  puis générer une nouvelle page conforme aux transformations.
- L'acquision de ces transformations se fera au travers d'un protocole d'extracti
-on des souhaits du lecteur que nous étudierons par la suite dans le stage.
+ 
+\color red
+L'acquision de ces transformations se fera au travers d'un protocole d'extractio
+n des souhaits du lecteur que nous étudierons par la suite dans le stage.
  
 \end_layout
 
 \begin_layout Standard
+
+\color red
 Dans la section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -862,8 +867,9 @@ label{transfo_endogene_vs_exogene}
 \end_layout
 
 \begin_layout Definition
-On distingue plusieurs transformations pour notre approche (voir figure
- 
+
+\color red
+On distingue plusieurs transformations pour notre approche (cf figure 
 \begin_inset ERT
 status open
 
@@ -877,7 +883,21 @@ ref{transfo_endogene}
 \end_inset
 
 ).
- Une première est une transformation horizontale et exogène.
+ Une première est une transformation horizontale et exogène (voir figure
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{transfo_endogene}
+\end_layout
+
+\end_inset
+
+ transformation 1).
  Cette étape correspond à la construction d'un modèle source de page à partir
  d'une page web.
  Ce processus est l'objet de la section 
@@ -900,7 +920,22 @@ reference "sec:Modele-de-page"
 \end_layout
 
 \begin_layout Definition
-Puis une transformation verticale et endogène.
+
+\color red
+Puis une transformation verticale et endogène (cf figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{transfo_endogene}
+\end_layout
+
+\end_inset
+
+ transformation 2).
  Cette étape sera étudié plus tard dans le stage.
  Elle intègre dans ces transformations les souhaits de personnalisation
  d'une page web par d'un utilisateur.
@@ -909,7 +944,24 @@ Puis une transformation verticale et endogène.
 \end_layout
 
 \begin_layout Definition
-Et pour finir un transformation horizontale et exogène qui vat nous 
+
+\color red
+Et pour finir un transformation horizontale et exogène (cf figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{transfo_endogene}
+\end_layout
+
+\end_inset
+
+ transformation 3) qui vat nous permettre de construire la page web consulté
+ par l'utilisateur suivant ses souhaits.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -946,7 +998,7 @@ includegraphics[width=300px]{img/transformation_endogene_1.jpg}
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Transformation endogène et horizontale 
+Processus de transformation 
 \begin_inset ERT
 status open
 
@@ -1043,9 +1095,124 @@ key "HTML_4"
  est un langage permettant la publication de contenu sur le web.
  C'est le langage standard actuel des pages web.
  Il permet de structurer le contenu et de lui associer une mise en forme.
- Le contenu est organisé de manière hierarchique en le découpant en section
+ Le contenu peut être du texte, des images, ou plus généralement du multimédia.
+ Ce contenu est organisé de manière hierarchique en le découpant en section
  et sous-section.
  
+\end_layout
+
+\begin_layout Paragraph
+
+\color red
+Contenu
+\end_layout
+
+\begin_layout Standard
+
+\color red
+Le contenu principal décrit dans les pages HTML 4 est un contenu textuel.
+ Il peut également contenir du multimédia comme des images, des videos et
+ applets (des programmes qui sont automatiquement chargés puis lancés sur
+ la machine de l'utilisateur).
+ L'inclusion de contenu mulimédia se fait par l'élément générique : <OBJECT>.
+ Il possède une collection d'attribut prédéfinit qui décrit l'objet inclus
+ dans la page.
+ Le principale étant 
+\emph on
+type 
+\emph default
+décrivant le type de contenu des données (e.g figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{balise_object}
+\end_layout
+
+\end_inset
+
+).
+ La valeur de ces attributs n'est pas prédéfinit.
+ Elle est interprété librement par la machine qui charge la page web.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single, language=html, ,linewidth=300px]
+\end_layout
+
+\begin_layout Plain Layout
+
+<OBJECT data="canyon.png" type="image/png">
+\end_layout
+
+\begin_layout Plain Layout
+
+	Ceci est une image
+\end_layout
+
+\begin_layout Plain Layout
+
+</OBJECT>
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Exemple contenu multimédia
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{balise_object}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -1064,8 +1231,8 @@ DIV
 \end_layout
 
 \begin_layout Standard
-Signifiant division, est utilisé comme conteneur générique permettant d'organise
-r le contenu.
+Signifiant division, est utilisé comme conteneur générique , il peut contenir
+ n'importe quel élément.
  Il est exploité pour :
 \end_layout
 
@@ -1138,7 +1305,7 @@ ref{div_sectionnement}
 \end_inset
 
 ) pour décrire sa structure.
- Les éléments DIV ayant une sémantique neutre, c'est l'auteur du contenu
+ Les éléments <DIV> ayant une sémantique neutre, c'est l'auteur du contenu
  qui attribut (de manière arbitraire) un nom de 
 \emph on
 class
@@ -1147,7 +1314,52 @@ class
 \emph on
 id
 \emph default
- (e.g figure 
+.
+
+\color red
+ L' 
+\emph on
+id
+\emph default
+ ou la 
+\emph on
+class
+\emph default
+ est associé à une mise en forme définit à priori.
+ La mise en forme est définit au travers d'un langage : CSS
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CSS"
+
+\end_inset
+
+ que l'on appele feuille de style.
+ CSS permet d'appliquer un ensemble de règle de style ou un agencement dans
+ l'espace de la page aux éléments.
+ Par exemple, l'auteur peut déclarer une classe 
+\begin_inset Quotes eld
+\end_inset
+
+aside
+\begin_inset Quotes erd
+\end_inset
+
+ est définir que les éléments appartenant à la classe 
+\begin_inset Quotes eld
+\end_inset
+
+aside
+\begin_inset Quotes erd
+\end_inset
+
+ doivent être placé sur le côté droit de la page avec un fond blanc.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\color red
+Ce mécanisme est illustré par la figure 
 \begin_inset ERT
 status open
 
@@ -1160,17 +1372,18 @@ ref{div_role}
 
 \end_inset
 
-).
- Le nom de 
+, les balises <DIV> découpent le contenu par thématique (entête, pied de
+ page, etc).
+ L'auteur associe à chaque <DIV> une 
 \emph on
 class
 \emph default
- ou 
+ ou un 
 \emph on
 id
 \emph default
- définissant un rôle au contenu ou une mise en forme.
- On note le caractère implicite de la structuration.
+ auquel s'applique une mise en page et une mise en forme définit par l'auteur
+ dans une feuille de style CSS.
 \end_layout
 
 \begin_layout Standard
@@ -1178,7 +1391,7 @@ id
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1188,7 +1401,7 @@ status open
 
 
 \backslash
-begin{lstlisting}[frame=single, language=html]
+begin{lstlisting}[frame=single, language=html, ,linewidth=300px]
 \end_layout
 
 \begin_layout Plain Layout
@@ -1203,12 +1416,17 @@ begin{lstlisting}[frame=single, language=html]
 
 \begin_layout Plain Layout
 
-	<div id="navigation_bar"><div/>
+	<div id="navigation_bar"></div>
 \end_layout
 
 \begin_layout Plain Layout
 
-	<div id="main_content">
+	<div class="aside"></div>
+\end_layout
+
+\begin_layout Plain Layout
+
+	<div class="section">
 \end_layout
 
 \begin_layout Plain Layout
@@ -1224,6 +1442,11 @@ begin{lstlisting}[frame=single, language=html]
 \begin_layout Plain Layout
 
 	</div>
+\end_layout
+
+\begin_layout Plain Layout
+
+	<div class="aside"></div>
 \end_layout
 
 \begin_layout Plain Layout
@@ -1249,10 +1472,30 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=300px]{img/architecture_Geekos_HTML4-294x300.jpg}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Exemple d'attribution de rôle
+Architecture page web HTML 4
 \begin_inset ERT
 status open
 
@@ -1283,7 +1526,7 @@ label{div_role}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1393,57 +1636,6 @@ label{div_sectionnement}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-includegraphics[width=300px]{img/architecture_Geekos_HTML4-294x300.jpg}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Architecture page web HTML 4
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -1461,12 +1653,35 @@ key "HTML_5"
 
 \end_inset
 
- étend HTML 4.
- La norme HTML 4 est toujours rétroactive.
- HTML 5 remplace la structure générique de HTML 4 par un nouveau modèle.
- Ce modèle amène de nouveaux élements qui apportent une sémantique standard
- et explicite à la structure d'une page.
+ étend HTML 4 en apportant de nouveaus éléments lexicaux.
+ Ces nouveaux élements
+\emph on
  
+\emph default
+apportent une sémantique standard et explicite à la structure d'une page
+ ainsi que le contenu.
+
+\emph on
+ 
+\end_layout
+
+\begin_layout Paragraph
+
+\color red
+Contenu
+\end_layout
+
+\begin_layout Standard
+
+\color red
+HTML 5 fournit de nouveaus éléments comme <VIDEO>, <AUDIO> avec un ensemble
+ d'attribut propre à chaque balise.
+ Les attributs spécifique permettent de renseigner l'état d'un élément.
+ Par exemple, la balise <AUDIO> possède un attribut spécifique 
+\emph on
+muted
+\emph default
+ indiquant si le son de l'élément audio est coupé ou non.
 \end_layout
 
 \begin_layout Paragraph
@@ -1537,7 +1752,8 @@ ref{div_role}
 
 \end_inset
 
-
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1555,7 +1771,7 @@ status open
 
 
 \backslash
-begin{lstlisting}[frame=single, language=html]
+begin{lstlisting}[frame=single, language=html, linewidth=300px]
 \end_layout
 
 \begin_layout Plain Layout
@@ -1595,6 +1811,11 @@ begin{lstlisting}[frame=single, language=html]
 
 \begin_layout Plain Layout
 
+	<aside></aside>
+\end_layout
+
+\begin_layout Plain Layout
+
 	<footer></footer>
 \end_layout
 
@@ -1608,6 +1829,22 @@ begin{lstlisting}[frame=single, language=html]
 
 \backslash
 end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=300px]{img/architecture_Geekos_HTML5-293x300.jpg}
 \end_layout
 
 \end_inset
@@ -1637,58 +1874,6 @@ label{html5_role}
 
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Architecture HTML 5
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-includegraphics[width=300px]{img/architecture_Geekos_HTML5-293x300.jpg}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1746,7 +1931,7 @@ Etats et propriétés
 \begin_layout Standard
 ARIA prend en compte l'aspect dynamique et interactif des éléments d'une
  interface.
- Elle permet d'associer des états et des propriétés aux éléments graphiques.
+ Elle permet d'associer des états et des propriétés aux éléments d'une interface.
  Un état est une configuration unique d'un objet.
  Par exemple, on peut définir l'état d'un bouton par l'état 
 \emph on
@@ -1758,16 +1943,25 @@ qui peut prendre trois propriétés suivant l'interaction avec l'utilisateur
 true - false - mixed
 \emph default
  .
- Aria prévoit même un systeme d'annotation pour les objets ayant des comportemen
-ts asynchrones.
- Par exemple, on peut annoter qu'un élément se met à jour de manière autonome.
+ Dans le cas d'une checkbox, 
+\emph on
+true
+\emph default
+ indique si la checkbox est coché, 
+\emph on
+false
+\emph default
+ si elle ne l'ai pas et 
+\emph on
+mixed
+\emph default
+ dans le cas d'un ensemble de checkbox indique que certaine sont cochés.
 \end_layout
 
 \begin_layout Standard
-On peut associer un ensemble de propriétés par exemple la valeur minimale
- ou maximale que l'on doit remplir dans un champs de saisi 
-\emph on
-aria-valuemin, aria-valuemax.
+Aria prévoit même un systeme d'annotation pour les objets ayant des comportement
+s asynchrones.
+ Par exemple, on peut annoter qu'un élément se met à jour de manière autonome.
 \end_layout
 
 \begin_layout Subsection
@@ -1775,7 +1969,7 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-L'étude ci-dessus présente de manière sommaire les éléments de langage de
+L'étude ci-dessus présente de manière sommaire les concepts de langage de
  HTML 4, 5 et ARIA.
  Au regard de notre problématique, nous pouvons voir quelques perspectives
  à la conception d'un méta-modèle.
@@ -1784,16 +1978,29 @@ L'étude ci-dessus présente de manière sommaire les éléments de langage de
 \begin_layout Standard
 HTML 4 fournit une sémantique riche pour décrire les élements textuels d'une
  page et ses hyperliens.
- En effet il y a pléthore d'éléments pour structurer un paragraphe.
  Cependant le mécanisme de structuration fournit est trop générique et ambiguie.
  
+\color red
+En effet, il n'est pas possible de délimiter explicitement les éléments
+ d'une page par thématique.
+ Le mécanisme d'imbrication hierarchise le contenu alors qu' un élément
+ n'est pas forcement sous-section de l'élément qui l'imbrique.
+ Un page web contient des éléments qui ne sont pas en rapport avec le contenu
+ d'un document, mais plûtot avec le site web (e.g menu de navigation, un
+ logo, etc).
 \end_layout
 
 \begin_layout Standard
 HTML 5 semble combler ces limites en apportant de nouveaux éléments lexicaux
- amenant une sémantique plus riche sur la structure d'une page et ses élements.
- La norme 5 introduit également des balises pour la description d'élément
- propre à une page web comme des menus de navigation, bannière, logo, etc...
+ amenant une sémantique plus riche et surtout standard sur la structure
+ d'une page et la nature du contenu.
+ 
+\color red
+Elle permet donc de modéliser les limites de chaque partie d'une page suivant
+ ça thématique (<SECTION>).
+ Elle permet de décrire un contenu non-linéaire (<ASIDE>).
+ Et introduit également des balises pour la description d'élément propre
+ à une page web comme des menus de navigation, bannière, logo, etc.
 \end_layout
 
 \begin_layout Standard
@@ -1805,11 +2012,75 @@ La norme ARIA intégre plus d'élements pour décrire une page web et notament
 \begin_layout Standard
 Un méta-modèle basé sur la syntaxe de HTML 5 semble être un compromis intéressan
 t entre HTML 4 et ARIA.
+ HTML 4 est peu adapté à l'expression de transformation reflétant l'intention
+ d'un lecteur et ARIA est trop riche au regard de nos besoins immédiats.
  
+\color red
+Les spécifications de HTML 4 sont disponible sous forme de DTD
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\color red
+Document Type Definition
+\end_layout
+
+\end_inset
+
+.
+ Une DTD est document décrivant la grammaire d'un langage.
+ Il est simple d'en construire un méta-modèle.
+ HTML 5 n'est pas encore au rang de standard, aucune DTD n'est encore disponible
+, seul une définition exaustive des éléments lexicaux et leurs fonctions
+ sont fournit par la W3C.
+ Il n'y pas de grammaire clairement spécifié.
+ La tâche de réalisation d'un méta-modèle semble complexe pour HTML 5.
+ Aria fournit lui un modèle UML
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\color red
+Unified Modeling Language
+\end_layout
+
+\end_inset
+
+.
+ UML est un langage de modélisation est un langage de modélisation graphique
+ à base de pictogrammes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\color red
+wikipédia
+\end_layout
+
+\end_inset
+
+.
+ Ce modèle UML est pour nous un méta-modèle directement exploitable.
+ Ainsi nous pourrions exploiter le modèle fournit par ARIA pour la construction
+ d'un méta-modèle.
+ Ce dernier serait restreint aux éléments de descriptions d'un document
+ (
 \emph on
-En effet HTML 4 est peu adapté à l'expression de transformation, alors que
- ARIA est trop riche au regard de nos besoins.
- 
+Document Structure Roles
+\emph default
+) et (
+\emph on
+Landmark Roles
+\emph default
+).
+ Suivant l'évolution de nos besoins de transformation nous pourrions facilement
+ intégrer d'autres aspects, notamment les widget et comportements asynchrones
+ des éléments d'une page.
+ Ce méta-modéle intégrera les éléments de HTML 4, en particulié ceux décrivant
+ le contenu textuel (e.g paragraphe).
 \end_layout
 
 \begin_layout Standard

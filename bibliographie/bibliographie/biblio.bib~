@@ -1,3 +1,9 @@
+@article{vieira2006fast,
+  title={A Fast and Robust Method for Web Page Template Detection and Removal},
+  author={Vieira, Karane and da Silva, Altigran S and Pinto, Nick and de Moura, Edleno S and Cavalcanti, Joao MB and Freire, Juliana},
+  year={2006}
+}
+
 @article{ducasse70software,
   title={Software Architecture Reconstruction: a Process-Oriented Taxonomy},
   author={Ducasse, St{\'e}phane and Pollet, Damien},
@@ -84,6 +90,13 @@
 }
 
 
+@ONLINE{CSS,
+  title={Cascading Style Sheets},
+  author={World Wide Web Consortium and others},
+  year={2010},
+  publisher={World Wide Web Consortium},
+  HOWPUBLISHED = {http://www.w3.org/WAI/intro/aria}
+}
 
 
 @ONLINE{ARIA,
@@ -91,7 +104,7 @@
   author={World Wide Web Consortium and others},
   year={2014},
   publisher={World Wide Web Consortium},
-  HOWPUBLISHED = {http://www.w3.org/WAI/intro/aria}
+  HOWPUBLISHED = {http://www.w3.org/Style/CSS}
 }
 
 
