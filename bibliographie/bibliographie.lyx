@@ -420,7 +420,7 @@ Introduction et motivation
 \end_layout
 
 \begin_layout Standard
-Le world wild web (www) est un reseau de ressource.
+Le World Wide Web (www) est un réseau de ressource.
  La publication de ces ressources repose sur un langage universellement
  compréhensible et accepté par tous les ordinateurs : HTML.
  Historiquement conçut pour faciliter l'échange d'article dans la communauté
@@ -471,6 +471,8 @@ L'adaptation d'une page web implique notre problématique : la restructuration
  de ces dernières.
  A partir de cette représentation on veut lui appliquer des transformations,
  puis générer une nouvelle page conforme aux transformations.
+ L'acquision de ces transformations se fera au travers d'un protocole d'extracti
+on des souhaits du lecteur que nous étudierons par la suite dans le stage.
  
 \end_layout
 
@@ -482,8 +484,8 @@ reference "sec:Transformation-de-modèle"
 
 \end_inset
 
- nous décrivons l'exploitation que nous souhaitons faire des modèles.
- En section 
+ nous précisons l'exploitation que nous souhaitons faire des modèles.
+ Puis en section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Modele-de-page"
@@ -492,15 +494,17 @@ reference "sec:Modele-de-page"
 
  nous étudions différents modèles de page en perspective de la création
  d'un meta-modèle.
- Puis en section 
+ La section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Extraction-de-structure"
 
 \end_inset
 
- nous explorons différentes approches à l' extraction de la structure d'une
+ présente plus en détail la problématique d'extraction de la structure d'une
  page web.
+ Elle présente également différentes approches traitant de la reconnaissance
+ de structure.
 \end_layout
 
 \begin_layout Standard
@@ -528,6 +532,13 @@ name "sec:Transformation-de-modèle"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Dans le cadre du sujet nous nous plaçons dans un contexte de restructuration
+ d'une page.
+ On souhaite construire un modèle d'une page web à partir de cette dernière.
+ Le modèle de cette page est construit depuis un méta-modèle.
 \end_layout
 
 \begin_layout Definition
@@ -617,11 +628,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Dans le cadre du sujet nous nous plaçons dans un contexte de restructuration
- d'une page.
- On souhaite construire un modèle d'une page web à partir de cette dernière.
- L'avantage est d'en manipuler une représentation independante de la diversité
- de conception des pages.
+L'avantage d'utiliser une telle construction est de manipuler une représentation
+ indépendante de la diversité de conception des éléments pages.
  En effet les élements, ou concepts, récurrents peuvent être structurés
  ou mises en forme de manière différente d'une page web à l'autre.
  
@@ -854,8 +862,8 @@ label{transfo_endogene_vs_exogene}
 \end_layout
 
 \begin_layout Definition
-Il semble que notre processus de restructuration s'incrive dans le cas d'une
- transformation endogène et horizontale (voir figure 
+On distingue plusieurs transformations pour notre approche (voir figure
+ 
 \begin_inset ERT
 status open
 
@@ -869,8 +877,41 @@ ref{transfo_endogene}
 \end_inset
 
 ).
- En effet, le modèle cible doit être conforme au méta-modèle et les deux
- modèles (cibles et sources) ont le même niveau d'abstraction.
+ Une première est une transformation horizontale et exogène.
+ Cette étape correspond à la construction d'un modèle source de page à partir
+ d'une page web.
+ Ce processus est l'objet de la section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Extraction-de-structure"
+
+\end_inset
+
+.
+ Le modèle construit est conforme à un méta-modèle intermedaire étudié dans
+ la section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Modele-de-page"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Puis une transformation verticale et endogène.
+ Cette étape sera étudié plus tard dans le stage.
+ Elle intègre dans ces transformations les souhaits de personnalisation
+ d'une page web par d'un utilisateur.
+ L'acquisition de ces transformations fera l'objet d'un protocol d'acquisition
+ des souhaits.
+\end_layout
+
+\begin_layout Definition
+Et pour finir un transformation horizontale et exogène qui vat nous permettre
+ de construire la page web consulté par l'utilisateur suivant ses souhaits.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1244,7 +1285,7 @@ label{div_role}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1368,19 +1409,7 @@ label{div_sectionnement}
 placement H
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Architecture page web HTML 4
-\end_layout
-
-\end_inset
-
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1406,6 +1435,14 @@ includegraphics[width=300px]{img/architecture_Geekos_HTML4-294x300.jpg}
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Architecture page web HTML 4
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
