@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_WQuzMLEXEeOJ4fIXNja9rg" type="EcoreTools" name="DefaultName2" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_eZMvILEXEeOJ4fIXNja9rg" type="1002">
+    <children xmi:type="notation:Node" xmi:id="_eZNWMLEXEeOJ4fIXNja9rg" type="4006"/>
+    <children xmi:type="notation:Node" xmi:id="_eZN9QLEXEeOJ4fIXNja9rg" type="5003">
+      <children xmi:type="notation:Node" xmi:id="_xl08ELEXEeOJ4fIXNja9rg" type="2003">
+        <children xmi:type="notation:Node" xmi:id="_xl2KMLEXEeOJ4fIXNja9rg" type="4002"/>
+        <children xmi:type="notation:Node" xmi:id="_xl2xQLEXEeOJ4fIXNja9rg" type="5004">
+          <children xmi:type="notation:Node" xmi:id="_6k-oYLEXEeOJ4fIXNja9rg" type="2001">
+            <element xmi:type="ecore:EAttribute" href="DefaultName2.ecore#//EPackageCSS/EClassBoite/margin-top"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_6k-oYbEXEeOJ4fIXNja9rg"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9lXQMLEXEeOJ4fIXNja9rg" type="2001">
+            <element xmi:type="ecore:EAttribute" href="DefaultName2.ecore#//EPackageCSS/EClassBoite/margin-rigth"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_9lXQMbEXEeOJ4fIXNja9rg"/>
+          </children>
+          <styles xmi:type="notation:DrawerStyle" xmi:id="_xl2xQbEXEeOJ4fIXNja9rg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_xl2xQrEXEeOJ4fIXNja9rg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_xl2xQ7EXEeOJ4fIXNja9rg"/>
+          <layoutConstraint xmi:type="notation:Ratio" xmi:id="_4O-aULEXEeOJ4fIXNja9rg" value="0.3707865168539326"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_xl3_YLEXEeOJ4fIXNja9rg" type="5005">
+          <styles xmi:type="notation:DrawerStyle" xmi:id="_xl3_YbEXEeOJ4fIXNja9rg"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_xl3_YrEXEeOJ4fIXNja9rg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_xl3_Y7EXEeOJ4fIXNja9rg"/>
+          <layoutConstraint xmi:type="notation:Ratio" xmi:id="_4O_BYLEXEeOJ4fIXNja9rg" value="0.5393258426966292"/>
+        </children>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_xl08EbEXEeOJ4fIXNja9rg" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+        <element xmi:type="ecore:EClass" href="DefaultName2.ecore#//EPackageCSS/EClassBoite"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xl08ErEXEeOJ4fIXNja9rg" x="59" y="86" width="219" height="180"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_eZN9QbEXEeOJ4fIXNja9rg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_eZN9QrEXEeOJ4fIXNja9rg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_eZN9Q7EXEeOJ4fIXNja9rg"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_eZMvIbEXEeOJ4fIXNja9rg" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
+    <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_eZMvIrEXEeOJ4fIXNja9rg"/>
+    <element xmi:type="ecore:EPackage" href="DefaultName2.ecore#//EPackageCSS"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eZMvI7EXEeOJ4fIXNja9rg" x="15" y="15" width="813" height="508"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_WQuzMbEXEeOJ4fIXNja9rg"/>
+  <element xmi:type="ecore:EPackage" href="DefaultName2.ecore#/"/>
+</notation:Diagram>

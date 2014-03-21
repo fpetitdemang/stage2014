@@ -1,3 +1,64 @@
+@inproceedings{chang2001iepad,
+  title={IEPAD: information extraction based on pattern discovery},
+  author={Chang, Chia-Hui and Lui, Shao-Chen},
+  booktitle={Proceedings of the 10th international conference on World Wide Web},
+  pages={681--688},
+  year={2001},
+  organization={ACM}
+}
+
+@article{wang2001finding,
+  title={Finding similar consensus between trees: an algorithm and a distance hierarchy},
+  author={Wang, Jason TL and Zhang, Kaizhong},
+  journal={Pattern Recognition},
+  volume={34},
+  number={1},
+  pages={127--137},
+  year={2001},
+  publisher={Elsevier}
+}
+
+@article{wisniewski2007modele,
+  title={Mod{\`e}le probabiliste pour l'extraction de structures dans les documents web},
+  author={Wisniewski, Guillaume and Maes, Francis and Denoyer, Ludovic},
+  journal={Document num{\'e}rique},
+  volume={10},
+  number={1},
+  pages={89--107},
+  year={2007},
+  publisher={Lavoisier}
+}
+@inproceedings{chang2001iepad,
+  title={IEPAD: information extraction based on pattern discovery},
+  author={Chang, Chia-Hui and Lui, Shao-Chen},
+  booktitle={Proceedings of the 10th international conference on World Wide Web},
+  pages={681--688},
+  year={2001},
+  organization={ACM}
+}
+
+@article{sobel1986multiple,
+  title={A multiple sequence alignment program},
+  author={Sobel, Eric and Martinez, Hugo M},
+  journal={Nucleic acids research},
+  volume={14},
+  number={1},
+  pages={363--374},
+  year={1986},
+  publisher={Oxford Univ Press}
+}
+
+@article{shapiro1990comparing,
+  title={Comparing multiple RNA secondary structures using tree comparisons},
+  author={Shapiro, Bruce A and Zhang, Kaizhong},
+  journal={Computer applications in the biosciences: CABIOS},
+  volume={6},
+  number={4},
+  pages={309--318},
+  year={1990},
+  publisher={Oxford Univ Press}
+}
+
 @article{vieira2006fast,
   title={A Fast and Robust Method for Web Page Template Detection and Removal},
   author={Vieira, Karane and da Silva, Altigran S and Pinto, Nick and de Moura, Edleno S and Cavalcanti, Joao MB and Freire, Juliana},
@@ -104,7 +165,7 @@
   author={World Wide Web Consortium and others},
   year={2014},
   publisher={World Wide Web Consortium},
-  HOWPUBLISHED = {http://www.w3.org/Style/CSS}
+  HOWPUBLISHED = {http://www.w3.org/Style/CSS/}
 }
 
 

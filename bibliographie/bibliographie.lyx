@@ -35,8 +35,8 @@ theorems-starred
 \paperfontsize default
 \spacing single
 \use_hyperref false
-\papersize default
-\use_geometry false
+\papersize custom
+\use_geometry true
 \use_amsmath 1
 \use_esint 1
 \use_mhchem 1
@@ -463,8 +463,8 @@ Le sujet du stage est : la personnalisation des pages web.
 \end_layout
 
 \begin_layout Standard
-L'adaptation d'une page web implique notre problématique : la restructuration
- d'une page web.
+L'adaptation d'une page web implique notre première problématique : la restructu
+ration d'une page web.
  On souhaite expérimenter une approche basée sur les méta-modèles.
  L'idée étant d'extraire la structure d'une page et d'en construire une
  représentation plus abstraite.
@@ -883,8 +883,7 @@ ref{transfo_endogene}
 \end_inset
 
 ).
- Une première est une transformation horizontale et exogène (voir figure
- 
+ Une première est une transformation horizontale et exogène (cf figure 
 \begin_inset ERT
 status open
 
@@ -898,8 +897,8 @@ ref{transfo_endogene}
 \end_inset
 
  transformation 1).
- Cette étape correspond à la construction d'un modèle source de page à partir
- d'une page web.
+ Cette étape correspond à la construction d'un modèle source de page depuis
+ une page web.
  Ce processus est l'objet de la section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -908,8 +907,8 @@ reference "sec:Extraction-de-structure"
 \end_inset
 
 .
- Le modèle construit est conforme à un méta-modèle intermedaire étudié dans
- la section 
+ Le modèle construit est conforme à un possible méta-modèle intermedaire
+ étudié dans la section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Modele-de-page"
@@ -917,12 +916,7 @@ reference "sec:Modele-de-page"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Definition
-
-\color red
-Puis une transformation verticale et endogène (cf figure 
+ Puis une transformation verticale et endogène (cf figure 
 \begin_inset ERT
 status open
 
@@ -941,12 +935,7 @@ ref{transfo_endogene}
  d'une page web par d'un utilisateur.
  L'acquisition de ces transformations fera l'objet d'un protocol d'acquisition
  des souhaits.
-\end_layout
-
-\begin_layout Definition
-
-\color red
-Et pour finir un transformation horizontale et exogène (cf figure 
+ Et pour finir un transformation horizontale et exogène (cf figure 
 \begin_inset ERT
 status open
 
@@ -959,7 +948,7 @@ ref{transfo_endogene}
 
 \end_inset
 
- transformation 3) qui vat nous permettre de construire la page web consulté
+ transformation 3) qui va nous permettre de construire la page web consulté
  par l'utilisateur suivant ses souhaits.
  
 \end_layout
@@ -1082,6 +1071,13 @@ On s'interesse à la conception d'un meta-modèle proche de la vision qu'un
 
 \begin_layout Subsection
 HTML 4
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:HTML-4"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1391,7 +1387,7 @@ id
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1526,7 +1522,7 @@ label{div_role}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1675,8 +1671,9 @@ Contenu
 
 \color red
 HTML 5 fournit de nouveaus éléments comme <VIDEO>, <AUDIO> avec un ensemble
- d'attribut propre à chaque balise.
- Les attributs spécifique permettent de renseigner l'état d'un élément.
+ d'attribut propre à chaque balise (à contrario de l'élément <OBJECT> de
+ HTML 4).
+ Les attributs spécifiques permettent de renseigner l'état d'un élément.
  Par exemple, la balise <AUDIO> possède un attribut spécifique 
 \emph on
 muted
@@ -1761,7 +1758,7 @@ ref{div_role}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -2079,27 +2076,11 @@ Landmark Roles
  intégrer d'autres aspects, notamment les widget et comportements asynchrones
  des éléments d'une page.
  Ce méta-modéle intégrera les éléments de HTML 4, en particulié ceux décrivant
- le contenu textuel (e.g paragraphe).
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-newpage
-\end_layout
-
-\end_inset
-
-
+ le contenu textuel non modélisé avec ARIA (e.g paragraphe).
 \end_layout
 
 \begin_layout Section
-Extraction de structure (Reconstruction d'architecture?)
+Extraction de structure
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Extraction-de-structure"
@@ -2114,19 +2095,39 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-L'extraction est la première phase du processus de restructuration.
- On peut la décrire comme le processus de décourverte des éléments d'un
- tout.
- Les éléments à extraire de la page correspondent aux différentes briques
- conformes aux éléments d'un méta-modèle de page définit à priori.
+L'extraction intègre le processus de transformation 1 de la figure
+\color red
+ 
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{transfo_endogene}
+\end_layout
+
+\end_inset
+
+
+\color red
+ 
+\color inherit
+.
+ On veut extraire les éléments de la structure d'un page qui correspondent
+ aux différentes briques conformes aux éléments d'un méta-modèle de page
+ définit à priori.
  La problématique est dûe au langage de conception des pages web qui manque
  de sémantique, rendant un processus d'extraction automatique difficile.
 \end_layout
 
 \begin_layout Standard
-La conception des pages web s'articule autour : d'un langage pour décrire
- la structure du document (HTML) et d'un langage pour décrire la mise en
- forme du document (CSS).
+En effet, La conception des pages web s'articule autour : d'un langage pour
+ décrire la structure du document (HTML) et d'un langage pour décrire la
+ mise en forme du document (CSS).
  Les pages sont constituées d’éléments hétérogènes : une page est constituée
  d'un ou plusieurs contenu principal, d'un menu de navigation, de publicité,
  etc...
@@ -2136,8 +2137,8 @@ La conception des pages web s'articule autour : d'un langage pour décrire
  leur sens.
  La difficulté dans la tâche d'extraction de la structure d'une page est
  dûe au manque d'expressivité du HTML.
- En effet, la norme actuelle de HTML (HTML 4), ne fournit pas de moyen de
- délimiter les éléments du document en fonction de leur sémantique.
+ La norme actuelle de HTML (HTML 4), ne fournit pas de moyen de délimiter
+ les éléments du document en fonction de leur sémantique.
  Par exemple, on ne peut pas délimiter de manière explicite la structure
  d'un menu dans une page avec ce langage.
  Le constat est que l'information de la structure d'une page apparaît principale
@@ -2148,20 +2149,63 @@ ment dans la mise en page.
 \end_layout
 
 \begin_layout Standard
-Les approches étudiées dans la tâche d'extraction de la structure commence
- par une phase de segmentation.
- Cette étape permet de découper une page en région.
- On peut ainsi délimiter son contenu de façon explicite.
- Puis une phase de compréhension de contenu afin d'identifier le rôle de
- chaque région dans une page.
+
+\color red
+Une approches étudiées dans la tâche d'extraction de la structure est un
+ processus de segmentation.
+ Ce dernier permet de découper une page en région, on peut ainsi délimiter
+ le contenu d'une page de façon explicite.
+ Nous avons étudié également des approches de reconnaissance de structure
+ syntaxique et fonctionnelle.
+ 
 \end_layout
 
 \begin_layout Subsection
 Segmentation de contenu
 \end_layout
 
+\begin_layout Standard
+
+\color red
+Comme présenté dans la section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:HTML-4"
+
+\end_inset
+
+ HTML 4 fournit une sémantique ambiguië avec la balise <DIV>.
+ On ne sait pas si elle délimite une section, sous-section ou si elle est
+ utilisé pour appliquer un style.
+ Le sens n'en est connu que par le concepteur de la page.
+ La compréhension de la struture d'une page est alors implicite.
+ Les auteurs de l'article 
+\begin_inset Quotes eld
+\end_inset
+
+Extracting content structure for web pages based on visual representation
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "cai2003extracting"
+
+\end_inset
+
+ propose une approche pour rendre explicite la structure de la page.
+\end_layout
+
 \begin_layout Subsubsection
 Approche segmentation visuelle
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Approche-segmentation-visuelle"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2414,6 +2458,39 @@ label{vips-process}
 Compréhension de contenu
 \end_layout
 
+\begin_layout Standard
+
+\color red
+La segmentation du contenu n'est pas suffisante dans le processus de transformat
+ion.
+ Pour construire notre modèle de page, nous avons besoin de faire correspondre
+ les éléments d'une page web aux éléments du méta-modèle intermédaire.
+ Comme soulevé dans la section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:HTML-4"
+
+\end_inset
+
+ la sémantique des éléments de structuration est neutre.
+ On ne connait pas le rôle des conteneurs génériques <DIV>.
+ On ne peut pas faire correspondre les éléments d'une page directement avec
+ les éléments de notres méta-modèle.
+\end_layout
+
+\begin_layout Standard
+
+\color red
+On propose d'étudier plusieurs approches pour reconnaître les sous-structures
+ composant une page.
+ Une première approche est une analyse syntaxique.
+ On s'interesse aux processus exploités en bioinformatique pour isoler des
+ structures dans des séquences génomiques et determiner quelles sont leurs
+ fonctions.
+ On s'intéresse également à une analyse fonctionnelle des structures en
+ s'interessant à leurs propriétés.
+\end_layout
+
 \begin_layout Subsubsection
 Analyse syntaxique
 \end_layout
@@ -2424,12 +2501,19 @@ Similarité de séquence
 
 \begin_layout Standard
 L'un des postulats de base en bioinformatique est qu'une séquence génomique
- similaire donne une protéine présentant la même fonction.
+ similaire donne une protéine présentant la même fonction
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Comparing_multiple_RNA_secondary"
+
+\end_inset
+
+.
  En d'autre terme, des séquences ayant des similitudes (syntaxiques) est
  un signe de proximité fonctionnelle.
  Appliqué à une page web, cela signifie que par exemple la structure syntaxique
- d'un menu d'une page web A est similaire à la structure syntaxique d'une
- page web B.
+ d'un menu d'une page web A est similaire à la structure syntaxique d'un
+ menu d'une page web B.
  Il semble cohérent d'appliquer ce postulat à une page web.
  En effet, la publication de contenu sur le web se standardise par l'intermédiar
 e des scripts 
@@ -2442,13 +2526,18 @@ key "vieira2006fast"
 .
  Ceux-ci générent des pages de manière automatique et standardisée (Wordpress,
  joomla, etc).
- Afin d'obtenir un bon référencement, les moteurs de recherche insitent
- les auteurs de page web d'adopter des normes de conception.
  En construisant une séquence représentative d'un élément de notre méta-modèle,
  il devrait être possible de déterminer la fonction d'un fragment de page
  web.
  Pour déterminer la similarité de deux séquences, les bioinformaticiens
- utilisent le concept du coût d'alignement.
+ utilisent le concept d'alignement
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sobel1986multiple"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Definition
@@ -2742,9 +2831,26 @@ Similarité d'arbre
 \end_layout
 
 \begin_layout Standard
-Une autre approche dans l'etude de similarité de structure est la comparaison
+
+\color blue
+Sur le web, une page web est accessible et manipulable sous la forme d'une
+ structure arborescente que l'on appel DOM (cf section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Approche-segmentation-visuelle"
+
+\end_inset
+
+).
+ Une autre approche dans l'étude de similarité de structure est la comparaison
  d'arbre.
- Cette approche consiste à trouver la plus petite ou la moins coûteuse séquence
+
+\color red
+ 
+\end_layout
+
+\begin_layout Standard
+Cette approche consiste à trouver la plus petite ou la moins coûteuse séquence
  d'opération d'édition (substitution, suppression et insertion) qui permet
  la transformation d'un arbre vers un autre.
  
@@ -2950,7 +3056,37 @@ status open
 
 \end_layout
 
+\begin_layout Definition*
+
+\color blue
+Plusieurs classes de mapping existent, la différence ce situe sur les restrictio
+ns des opérations autorisées dans le mapping.
+ Les quatres principales sont : distance d'alignement, distance de sous
+ arbre-isolé, distance ascendante, distance descendante 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wang2001finding"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "vieira2006fast"
+
+\end_inset
+
+ utilise un mapping de distance descendante pour isoler des sous-structures
+ communes entre plusieurs pages afin d'en identifier des patterns (motif
+ répresentatif d'une structure).
+ Cette approche semble intéressante pour partionner une page d'après suivant
+ méta-modèle intermédaire.
+\end_layout
+
 \begin_layout Standard
+
+\emph on
 Pour connaître la similarité entre deux structures, on veut calculer une
  distance d'alignement.
  C'est à dire trouver le coût minimum du mapping pour que T1 et T2 soient
@@ -2972,28 +3108,59 @@ key "tai1979tree"
 
 \begin_layout Subsubsection
 Analyse fonctionnelle
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Analyse-fonctionnelle"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Pour connaître le rôle de chaque élement, 
+L'article 
+\begin_inset Quotes eld
+\end_inset
+
+Function-based object model towards website adaptation
+\begin_inset Quotes erd
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "chen2001function"
 
 \end_inset
 
- propose une approche basée sur une analyse fonctionnelle de ces derniers.
- Pour cela les auteurs proposent un modèle : Function-based object.
- Ce modèle considère chaque élément d'une page comme un objet ayant des
- propriétés,tel que la valeur de ces propriétés définit le rôle de l'objet.
- Les principales propriétés sont basées sur la présentation (type de média,
- agencement, etc), les hyperliens (le nombre d'hyperlien? vers où pointent
- ils?), l'interaction avec l'utilisateur (uniquement affichage, soumission
- de contenu?).
+ propose une analyse des fonctions d'un élément d'une page.
+
+\color red
+ Cette approche repose sur une segmentation du contenu d'une page à priori
+ pour identifier chaque élément.
+ Cette segmentation est similaire celle de la section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Approche-segmentation-visuelle"
+
+\end_inset
+
+.
+ Les éléments isolés par cette segmentation sont vu comme des objets possédant
+ des proprités (type d'agencement, nombre d'hyperlien, etc).
+ Les auteurs proposent un modèle : Function-based object.
+ Ce modèle est une classification de chaque élément d'une page.
+ Cette classification ce fait sur la valeur des propriétés de chaque objet
+\color inherit
+.
+ Les principales propriétés spécifiés sont basées sur la présentation (type
+ de média, agencement, etc), les hyperliens (le nombre d'hyperlien? vers
+ où pointent ils?), l'interaction avec l'utilisateur (uniquement affichage,
+ soumission de contenu?).
  L'extraction des propriétés fonctionnelles sont faites principalement par
  analyse de la nature des balises et les attributs associés aux balises.
  Suivant la valeur des propriétes, les objets sont rangés dans différentes
- catégories : objet de type informatif, de navigation, d'interaction, de
+ catégories : objet de type informatif, de navigation, d'intéraction, de
  décoration, etc.
  L'analyse de la catégorie d'un objet se fait au moyen d'un arbre de décision
  (e.g figure 
@@ -3010,7 +3177,6 @@ ref{arbre_decision}
 \end_inset
 
 ).
- Les principales catégories (rôle) des objets.
 \end_layout
 
 \begin_layout Standard
@@ -3074,25 +3240,427 @@ label{arbre_decision}
 \end_layout
 
 \begin_layout Subsection
-Discution
+Discussion
 \end_layout
 
 \begin_layout Standard
-(alignement global) La méthode de segmentation visuelle (section précedente)
- semble pouvoir extraire et regrouper les éléments sémantiquements proche
- d'une page.
- L'inconvénient est que l'on ne connait pas la signification de ses élements.
- Une approche serait de construire une séquence reprensentative d'un élement
- de notre méta-modèle et de comparer les sequences extraites d'une page
- aux sequences associée au méta-modèle.
+L'alignement de séquence locale peut sembler une bonne approche.
+ On peut comparer directement une séquence du méta-modèle à la page pour
+ trouver la zone qui correspond.
+ Du point de vue de la compléxité, pour deux séquences de taille m et n
+ la compléxité de l'algorithme de Smith & Waterman est 
+\begin_inset Formula $\mathcal{O}(nm)$
+\end_inset
+
+.
+ A l'échelle d'une page web cela paraît raisonnable.
+ Aucune solution basé sur ce genre d'approche appliquée aux données du web
+ n'a été trouvé.
+ On peux cependant prendre en compte qu' une page web est fournit par les
+ navigateurs web sous la forme d'une structure arborescente.
+ Cette solution implique donc un prè-traitement (applatissement d'arbre).
+ Cette solution paraît efficace pour trouver un élément de notre méta-modèle,
+ mais trop complexe si l'on souhaite aligner tous les éléments de notre
+ méta-modèle dans une page.
+\end_layout
+
+\begin_layout Standard
+La similarité d'arbre paraît plus naturelle comme approche.
+ D'un point de vue compléxité, soit 
+\emph on
+T1
+\emph default
+ arbre de la page et 
+\emph on
+T2
+\emph default
+ l'arbre du métamodèle, et 
+\emph on
+d
+\emph default
+ un entier une distance définit, un mapping basé sur un distance descendante
+ à un coup théorique de 
+\begin_inset Formula $\mathcal{O}(d^{\text{²}}+|T1|+|T2|)$
+\end_inset
+
+.
+ La tailles des données en entrée rendent cette solution acceptable.
  
 \end_layout
 
 \begin_layout Standard
-(alignement local) Cette approche ne necessite pas d'extraire de sequences
- dans le une page.
- On peut comparer directement une sequence du meta-modele à la page pour
- trouver la zone qui correspond.
+Les deux approches présentent un inconvénient majeur, elles sont trop dépendante
+s de la répresentation sous-jacente des données.
+
+\emph on
+ 
+\emph default
+Les données publiées par HTML sont des formats de données semi-structurées
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wisniewski2007modele"
+
+\end_inset
+
+.
+ Il n'y a pas syntaxe formelle pour décrire un type de donnée.
+ Un menu peut être écrit avec différentes syntaxes (e.g figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{menu_html4}
+\end_layout
+
+\end_inset
+
+).
+ Cela compléxifie une solution basée sur une analyse syntaxique.
+ Une solution mise en oeuvre par 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chang2001iepad"
+
+\end_inset
+
+ est une translation des éléments d'une page vers une réprésentation plus
+ abstraite.
+ Suivant leur classe d'appartenance les balises sont remplacées par un type
+ plus générique (e.g figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{translation_balise}
+\end_layout
+
+\end_inset
+
+), par exemple les éléments <UL>, <OL>, <DL> sont différents type de liste,
+ ils seraient remplacés par un type plus générique <LISTS>.
+ Les solutions basé sur une analyse syntaxique recquiert la conception d'un
+ pattern.
+ La conception de ce genre de pattern et une opéation couteûse
+\begin_inset CommandInset citation
+LatexCommand cite
+key "vieira2006fast,chang2001iepad"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+L'approche par analyse fonctionnelle (section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Analyse-fonctionnelle"
+
+\end_inset
+
+) semble limiter les incovénients de l'analyse syntaxique.
+ D'après les résultats de l'expérimentation faite dans l'article, l'approche
+ fonctionne bien.
+ Les éléments de la page sont bien identifiés conformement au modèle définit.
+ Cependant le modèle est rustique et ne couvre pas tous nos besoins.
+ Les auteurs de l'approche décrivent leur méthodologie pour la conception
+ des différents objets du modèle.
+ Nous devrions pouvoir l'étendre facilement à nos besoins
+\color blue
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single, language=html, linewidth=350px]
+\end_layout
+
+\begin_layout Plain Layout
+
+<div class='menu'>     
+\end_layout
+
+\begin_layout Plain Layout
+
+	<ul>    
+\end_layout
+
+\begin_layout Plain Layout
+
+	<li><a href='#'>Home</a></li>     
+\end_layout
+
+\begin_layout Plain Layout
+
+	<li><a href='#'>About</a></li>     
+\end_layout
+
+\begin_layout Plain Layout
+
+	<li><a href='#'>Services</a></li>     
+\end_layout
+
+\begin_layout Plain Layout
+
+	<li><a href='#'>Contact</a></li>
+\end_layout
+
+\begin_layout Plain Layout
+
+</ul>
+\end_layout
+
+\begin_layout Plain Layout
+
+</div>
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single, language=html, linewidth=350px]
+\end_layout
+
+\begin_layout Plain Layout
+
+<div class='menu'>
+\end_layout
+
+\begin_layout Plain Layout
+
+<ul>    
+\end_layout
+
+\begin_layout Plain Layout
+
+	<li><a href='#'>Home</a></li>     
+\end_layout
+
+\begin_layout Plain Layout
+
+	<li><a href='#'>About</a></li>     
+\end_layout
+
+\begin_layout Plain Layout
+
+	<li><a href='#'>Services</a></li>     
+\end_layout
+
+\begin_layout Plain Layout
+
+	<li><a href='#'>Contact</a></li>
+\end_layout
+
+\begin_layout Plain Layout
+
+</ul>
+\end_layout
+
+\begin_layout Plain Layout
+
+</div>
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single, language=html, linewidth=350px]
+\end_layout
+
+\begin_layout Plain Layout
+
+<div class='menu'>       
+\end_layout
+
+\begin_layout Plain Layout
+
+	<a href='#'>Home</a>     
+\end_layout
+
+\begin_layout Plain Layout
+
+	<a href='#'>About</a>     
+\end_layout
+
+\begin_layout Plain Layout
+
+	<a href='#'>Services</a>     
+\end_layout
+
+\begin_layout Plain Layout
+
+	<a href='#'>Contact</a>
+\end_layout
+
+\begin_layout Plain Layout
+
+</div>
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Exemple de conception de menu
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{menu_html4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=300px]{img/translation_balise.jpg}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Classification balise
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{translation_balise}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3112,7 +3680,46 @@ newpage
 \end_layout
 
 \begin_layout Section
-Conclusion
+Conclusion et futurs travaux
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+Cette étude bibliographique nous permis de cerner les avantages d'un processus
+ dirigé par les modèles.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+Au travers de l'étude d'un possible support à la réalisation d'un méta-modèle,
+ nous avons synthétisé les principaux concepts des langages de publication
+ sur le web.
+ Cette partie était necessaire à la compréhenion des langages de publication
+ de contenu sur le web et leur futur évolution.
+ Ce travail à également été l'amorce pour cerner la difficulté du traitement
+ compréhension automatique du contenu dans cet environnement.
+ Nous en avons isolé les principales difficutés.
+ Ceci nous à permis d'étudier des solutions existantes et explorer d'autres
+ pistes possibles à l'extraction de structure d'intêret.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+La suite des travaux vont se diriger vers la réalisation d'un méta-modèle,
+ puis le processus de transformation d'une page web pour qu'elle soit conforme
+ à ce méta-modèle.
+ Et pour finir l'étude et la réalisation d'un protocole d'acquisition des
+ souhaits de personnalisation d'une page.
+ Ce protocole présente un grand intêret pour nous puisque c'est grâce à
+ cette partie que nous souhaitons rendre le web plus accessible aux personnes
+ en situation de handicap.
+ En leur mettant à disposition un outil capable d'adapter le contenu d'une
+ page web de façon personnalisé.
 \end_layout
 
 \begin_layout Standard

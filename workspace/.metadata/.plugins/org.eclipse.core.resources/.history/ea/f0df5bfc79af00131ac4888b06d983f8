@@ -1,0 +1,452 @@
+/**
+ */
+package defaultname;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Package</b> for the model.
+ * It contains accessors for the meta objects to represent
+ * <ul>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
+ * </ul>
+ * <!-- end-user-doc -->
+ * @see defaultname.DefaultnameFactory
+ * @model kind="package"
+ * @generated
+ */
+public interface DefaultnamePackage extends EPackage {
+	/**
+	 * The package name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNAME = "defaultname";
+
+	/**
+	 * The package namespace URI.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_URI = "http://defaultname/1.0";
+
+	/**
+	 * The package namespace name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_PREFIX = "defaultname";
+
+	/**
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	DefaultnamePackage eINSTANCE = defaultname.impl.DefaultnamePackageImpl.init();
+
+	/**
+	 * The meta object id for the '{@link defaultname.impl.HTMLElementImpl <em>HTML Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see defaultname.impl.HTMLElementImpl
+	 * @see defaultname.impl.DefaultnamePackageImpl#getHTMLElement()
+	 * @generated
+	 */
+	int HTML_ELEMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HTML_ELEMENT__VALUE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HTML_ELEMENT__CHILDREN = 1;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HTML_ELEMENT__PARENT = 2;
+
+	/**
+	 * The number of structural features of the '<em>HTML Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HTML_ELEMENT_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link defaultname.impl.FRAMEImpl <em>FRAME</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see defaultname.impl.FRAMEImpl
+	 * @see defaultname.impl.DefaultnamePackageImpl#getFRAME()
+	 * @generated
+	 */
+	int FRAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Src</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__SRC = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Marginwidth</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__MARGINWIDTH = 2;
+
+	/**
+	 * The feature id for the '<em><b>Marginheight</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__MARGINHEIGHT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Scrolling</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__SCROLLING = 4;
+
+	/**
+	 * The feature id for the '<em><b>Noresize</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__NORESIZE = 5;
+
+	/**
+	 * The number of structural features of the '<em>FRAME</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME_FEATURE_COUNT = 6;
+
+	/**
+	 * The meta object id for the '{@link defaultname.impl.NOFRAMEImpl <em>NOFRAME</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see defaultname.impl.NOFRAMEImpl
+	 * @see defaultname.impl.DefaultnamePackageImpl#getNOFRAME()
+	 * @generated
+	 */
+	int NOFRAME = 2;
+
+	/**
+	 * The number of structural features of the '<em>NOFRAME</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOFRAME_FEATURE_COUNT = 0;
+
+
+	/**
+	 * Returns the meta object for class '{@link defaultname.HTMLElement <em>HTML Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>HTML Element</em>'.
+	 * @see defaultname.HTMLElement
+	 * @generated
+	 */
+	EClass getHTMLElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link defaultname.HTMLElement#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see defaultname.HTMLElement#getValue()
+	 * @see #getHTMLElement()
+	 * @generated
+	 */
+	EAttribute getHTMLElement_Value();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link defaultname.HTMLElement#getChildren <em>Children</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Children</em>'.
+	 * @see defaultname.HTMLElement#getChildren()
+	 * @see #getHTMLElement()
+	 * @generated
+	 */
+	EReference getHTMLElement_Children();
+
+	/**
+	 * Returns the meta object for the container reference '{@link defaultname.HTMLElement#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent</em>'.
+	 * @see defaultname.HTMLElement#getParent()
+	 * @see #getHTMLElement()
+	 * @generated
+	 */
+	EReference getHTMLElement_Parent();
+
+	/**
+	 * Returns the meta object for class '{@link defaultname.FRAME <em>FRAME</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>FRAME</em>'.
+	 * @see defaultname.FRAME
+	 * @generated
+	 */
+	EClass getFRAME();
+
+	/**
+	 * Returns the meta object for the attribute '{@link defaultname.FRAME#getSrc <em>Src</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Src</em>'.
+	 * @see defaultname.FRAME#getSrc()
+	 * @see #getFRAME()
+	 * @generated
+	 */
+	EAttribute getFRAME_Src();
+
+	/**
+	 * Returns the meta object for the attribute '{@link defaultname.FRAME#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see defaultname.FRAME#getName()
+	 * @see #getFRAME()
+	 * @generated
+	 */
+	EAttribute getFRAME_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link defaultname.FRAME#getMarginwidth <em>Marginwidth</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Marginwidth</em>'.
+	 * @see defaultname.FRAME#getMarginwidth()
+	 * @see #getFRAME()
+	 * @generated
+	 */
+	EAttribute getFRAME_Marginwidth();
+
+	/**
+	 * Returns the meta object for the attribute '{@link defaultname.FRAME#getMarginheight <em>Marginheight</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Marginheight</em>'.
+	 * @see defaultname.FRAME#getMarginheight()
+	 * @see #getFRAME()
+	 * @generated
+	 */
+	EAttribute getFRAME_Marginheight();
+
+	/**
+	 * Returns the meta object for the attribute '{@link defaultname.FRAME#getScrolling <em>Scrolling</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Scrolling</em>'.
+	 * @see defaultname.FRAME#getScrolling()
+	 * @see #getFRAME()
+	 * @generated
+	 */
+	EAttribute getFRAME_Scrolling();
+
+	/**
+	 * Returns the meta object for the attribute '{@link defaultname.FRAME#getNoresize <em>Noresize</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Noresize</em>'.
+	 * @see defaultname.FRAME#getNoresize()
+	 * @see #getFRAME()
+	 * @generated
+	 */
+	EAttribute getFRAME_Noresize();
+
+	/**
+	 * Returns the meta object for class '{@link defaultname.NOFRAME <em>NOFRAME</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>NOFRAME</em>'.
+	 * @see defaultname.NOFRAME
+	 * @generated
+	 */
+	EClass getNOFRAME();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	DefaultnameFactory getDefaultnameFactory();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Defines literals for the meta objects that represent
+	 * <ul>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
+	 * </ul>
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link defaultname.impl.HTMLElementImpl <em>HTML Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see defaultname.impl.HTMLElementImpl
+		 * @see defaultname.impl.DefaultnamePackageImpl#getHTMLElement()
+		 * @generated
+		 */
+		EClass HTML_ELEMENT = eINSTANCE.getHTMLElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HTML_ELEMENT__VALUE = eINSTANCE.getHTMLElement_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HTML_ELEMENT__CHILDREN = eINSTANCE.getHTMLElement_Children();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HTML_ELEMENT__PARENT = eINSTANCE.getHTMLElement_Parent();
+
+		/**
+		 * The meta object literal for the '{@link defaultname.impl.FRAMEImpl <em>FRAME</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see defaultname.impl.FRAMEImpl
+		 * @see defaultname.impl.DefaultnamePackageImpl#getFRAME()
+		 * @generated
+		 */
+		EClass FRAME = eINSTANCE.getFRAME();
+
+		/**
+		 * The meta object literal for the '<em><b>Src</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__SRC = eINSTANCE.getFRAME_Src();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__NAME = eINSTANCE.getFRAME_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Marginwidth</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__MARGINWIDTH = eINSTANCE.getFRAME_Marginwidth();
+
+		/**
+		 * The meta object literal for the '<em><b>Marginheight</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__MARGINHEIGHT = eINSTANCE.getFRAME_Marginheight();
+
+		/**
+		 * The meta object literal for the '<em><b>Scrolling</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__SCROLLING = eINSTANCE.getFRAME_Scrolling();
+
+		/**
+		 * The meta object literal for the '<em><b>Noresize</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FRAME__NORESIZE = eINSTANCE.getFRAME_Noresize();
+
+		/**
+		 * The meta object literal for the '{@link defaultname.impl.NOFRAMEImpl <em>NOFRAME</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see defaultname.impl.NOFRAMEImpl
+		 * @see defaultname.impl.DefaultnamePackageImpl#getNOFRAME()
+		 * @generated
+		 */
+		EClass NOFRAME = eINSTANCE.getNOFRAME();
+
+	}
+
+} //DefaultnamePackage

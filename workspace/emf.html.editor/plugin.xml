@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated UML -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="uml.presentation.UmlModelWizardID"
+            name="%_UI_UmlModelWizard_label"
+            class="uml.presentation.UmlModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UmlModelFile.gif">
+         <description>%_UI_UmlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated UML -->
+      <editor
+            id="uml.presentation.UmlEditorID"
+            name="%_UI_UmlEditor_label"
+            icon="icons/full/obj16/UmlModelFile.gif"
+            extensions="uml"
+            class="uml.presentation.UmlEditor"
+            contributorClass="uml.presentation.UmlActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

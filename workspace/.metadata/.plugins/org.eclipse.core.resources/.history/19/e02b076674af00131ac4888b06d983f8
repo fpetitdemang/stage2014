@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="defaultname" nsURI="http://defaultname/1.0" nsPrefix="defaultname">
+    <eClassifiers xsi:type="ecore:EClass" name="HTML">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="head" ordered="false"
+          lowerBound="1" eType="#/0/HEAD" containment="true" eOpposite="#/0/HEAD/html"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false"
+          lowerBound="1" eType="#/0/BODY" containment="true" eOpposite="#/0/BODY/html"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BODY" eSuperTypes="#/0/HTMLElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="background" ordered="false"
+          unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bgcolor" ordered="false"
+          unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false"
+          unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="link" ordered="false"
+          unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="alink" ordered="false"
+          unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="vlink" ordered="false"
+          unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bodyElements" ordered="false"
+          upperBound="-1" eType="#/0/BODYElement" containment="true" eOpposite="#/0/BODYElement/body"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="html" ordered="false"
+          lowerBound="1" eType="#/0/HTML" eOpposite="#/0/HTML/body"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BODYElement" abstract="true" eSuperTypes="#/0/HTMLElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false"
+          lowerBound="1" eType="#/0/BODY" eOpposite="#/0/BODY/bodyElements"/>
+    </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HTMLElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+
+  <eClassifiers xsi:type="ecore:EClass" name="HEAD" eSuperTypes="#/0/HTMLElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="headElements" ordered="false"
+          upperBound="-1" eType="#/0/HEADElement" containment="true" eOpposite="#/0/HEADElement/head"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="html" ordered="false"
+          lowerBound="1" eType="#/0/HTML" eOpposite="#/0/HTML/head"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HEADElement" abstract="true" eSuperTypes="#/0/HTMLElement">
+   <eStructuralFeatures xsi:type="ecore:EReference" name="head" ordered="false"
+          lowerBound="1" eType="#/0/HEAD" eOpposite="#/0/HEAD/headElements"/>
+    </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FRAME">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="src" ordered="false" unique="false"
+        lowerBound="1" eType="#//PrimitiveTypes/String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" unique="false"
+        lowerBound="1" eType="#//PrimitiveTypes/String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="marginwidth" ordered="false"
+        unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="marginheight" ordered="false"
+        unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scrolling" ordered="false"
+        unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noresize" ordered="false"
+        unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NOFRAME"/>
+  <eSubpackages name="PrimitiveTypes" nsURI="html.primitivetype" nsPrefix="prim">
+    <eClassifiers xsi:type="ecore:EDataType" name="Boolean" instanceTypeName="Boolean"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="String" instanceTypeName="String"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceTypeName="Integer"/>
+  </eSubpackages>
+</ecore:EPackage>

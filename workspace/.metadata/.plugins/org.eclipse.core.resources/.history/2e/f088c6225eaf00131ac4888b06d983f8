@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="defaultname" nsURI="http://defaultname/1.0" nsPrefix="defaultname">
+    <eClassifiers xsi:type="ecore:EClass" name="FRAME">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="src" ordered="false"
+          unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="marginwidth" ordered="false"
+          unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="marginheight" ordered="false"
+          unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="scrolling" ordered="false"
+          unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="noresize" ordered="false"
+          unique="false" lowerBound="1" eType="#//PrimitiveTypes/String"/>
+    </eClassifiers>
+  
+  
+  <eClassifiers xsi:type="ecore:EClass" name="NOFRAME"/>
+  <eSubpackages name="PrimitiveTypes" nsURI="html.primitivetype" nsPrefix="prim">
+    <eClassifiers xsi:type="ecore:EDataType" name="Boolean"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="String"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Integer"/>
+  </eSubpackages>
+  <eSubpackages name="EPackage0">
+
+  </eSubpackages>
+</ecore:EPackage>

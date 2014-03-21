@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_9zGZ4K9ZEeOujN5VUy0xQQ" type="EcoreTools" name="DefaultName" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_f_3TQK9cEeOujN5VUy0xQQ" type="1002">
+    <children xmi:type="notation:Node" xmi:id="_f_4hYK9cEeOujN5VUy0xQQ" type="4006"/>
+    <children xmi:type="notation:Node" xmi:id="_f_4hYa9cEeOujN5VUy0xQQ" type="5003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_f_4hYq9cEeOujN5VUy0xQQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_f_4hY69cEeOujN5VUy0xQQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_f_4hZK9cEeOujN5VUy0xQQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_f_3TQa9cEeOujN5VUy0xQQ" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
+    <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_f_3TQq9cEeOujN5VUy0xQQ"/>
+    <element xmi:type="ecore:EPackage" href="DefaultName.ecore#//PrimitiveTypes"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f_3TQ69cEeOujN5VUy0xQQ" x="130" y="15" width="273" height="187"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_UBxUIK9dEeOujN5VUy0xQQ" type="1002">
+    <children xmi:type="notation:Node" xmi:id="_UBx7MK9dEeOujN5VUy0xQQ" type="4006"/>
+    <children xmi:type="notation:Node" xmi:id="_UBx7Ma9dEeOujN5VUy0xQQ" type="5003">
+      <children xmi:type="notation:Node" xmi:id="_U9A0YK9dEeOujN5VUy0xQQ" type="2003">
+        <children xmi:type="notation:Node" xmi:id="_U9BbcK9dEeOujN5VUy0xQQ" type="4002"/>
+        <children xmi:type="notation:Node" xmi:id="_U9Bbca9dEeOujN5VUy0xQQ" type="5004">
+          <children xmi:type="notation:Node" xmi:id="_ZRGfwK9dEeOujN5VUy0xQQ" type="2001">
+            <element xmi:type="ecore:EAttribute" href="DefaultName.ecore#//EPackage0/frame/src"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_ZRGfwa9dEeOujN5VUy0xQQ"/>
+          </children>
+          <styles xmi:type="notation:DrawerStyle" xmi:id="_U9Bbcq9dEeOujN5VUy0xQQ"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_U9Bbc69dEeOujN5VUy0xQQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_U9BbdK9dEeOujN5VUy0xQQ"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_U9CCgK9dEeOujN5VUy0xQQ" type="5005">
+          <styles xmi:type="notation:DrawerStyle" xmi:id="_U9CCga9dEeOujN5VUy0xQQ"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_U9CCgq9dEeOujN5VUy0xQQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_U9CCg69dEeOujN5VUy0xQQ"/>
+        </children>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_U9A0Ya9dEeOujN5VUy0xQQ" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+        <element xmi:type="ecore:EClass" href="DefaultName.ecore#//EPackage0/frame"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9A0Yq9dEeOujN5VUy0xQQ" x="30" y="11" width="158" height="125"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_UBx7Mq9dEeOujN5VUy0xQQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UBx7M69dEeOujN5VUy0xQQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UBx7NK9dEeOujN5VUy0xQQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_UBxUIa9dEeOujN5VUy0xQQ" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
+    <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_UBxUIq9dEeOujN5VUy0xQQ"/>
+    <element xmi:type="ecore:EPackage" href="DefaultName.ecore#//EPackage0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UBxUI69dEeOujN5VUy0xQQ" x="10" y="125" width="225" height="257"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_9zKEQK9ZEeOujN5VUy0xQQ"/>
+  <element xmi:type="ecore:EPackage" href="DefaultName.ecore#/"/>
+</notation:Diagram>

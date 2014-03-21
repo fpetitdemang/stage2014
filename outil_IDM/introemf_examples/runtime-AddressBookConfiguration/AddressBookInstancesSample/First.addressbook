@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addressbook:AddressBook xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:addressbook="http://addressbook/1.0" name="Mon Carnet d'Adresses">
+  <contains firstName="Mickael" familyName="BARON" age="35">
+    <location number="5" street="Rue des Javaistes"/>
+  </contains>
+  <contains firstName="John" familyName="AARON" age="14"/>
+</addressbook:AddressBook>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="1134" localization="plugin" name="%pluginName" project="emf.html" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1135" class="uml.provider.UMLEditPlugin$Implementation" localization="plugin" name="%pluginName" project="emf.html.edit" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1136" localization="plugin" name="%pluginName" project="emf.html.tests" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1137" localization="OSGI-INF/l10n/bundle" name="test" project="test"/>
+	<bundle bundleID="1138" class="uml.presentation.UMLEditorPlugin$Implementation" localization="plugin" name="%pluginName" project="emf.html.editor" provider="%providerName">
+		<library name="."/>
+	</bundle>
+</map>

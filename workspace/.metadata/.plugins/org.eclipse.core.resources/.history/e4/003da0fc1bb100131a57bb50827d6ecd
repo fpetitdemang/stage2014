@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="defaultname2" nsURI="http://defaultname2/1.0" nsPrefix="defaultname2">
+  <eSubpackages name="EPackage0"/>
+  <eSubpackages name="EPackageCSS">
+    <eClassifiers xsi:type="ecore:EClass" name="EClassBoite">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="margin-top"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="margin-rigth"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="margin-left"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="margin-bottom"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="padding-top"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="padding-rigth"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="padding-left"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="padding-bottom"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="border-top-width"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="border-right-width"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="border-bottom-width"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="border-left-width"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="border-top-color"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="border-right-color"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="border-bottom-width-color"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="border-left-color"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="border-top-style"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="border-right-style"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="border-bottom-style"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="border-left-style"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EClassText">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text-indent"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

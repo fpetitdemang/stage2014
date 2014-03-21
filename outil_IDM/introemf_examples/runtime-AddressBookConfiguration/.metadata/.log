@@ -1,0 +1,228 @@
+!SESSION 2012-01-21 13:33:14.006 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_18
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data D:\workspacePersoModeling/runtime-AddressBookConfiguration -dev file:D:/workspacePersoModeling/.metadata/.plugins/org.eclipse.pde.core/AddressBookConfiguration/dev.properties -os win32 -ws win32 -arch x86 -consoleLog
+
+!ENTRY org.eclipse.osgi 2 0 2012-01-21 13:33:19.799
+!MESSAGE One or more bundles are not resolved because the following root constraints are not resolved:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.799
+!MESSAGE Bundle reference:file:/C:/eclipseModelling/plugins/org.w3c.dom.svg_1.1.0.v200806040011.jar was not resolved.
+!SUBENTRY 2 org.w3c.dom.svg 2 0 2012-01-21 13:33:19.799
+!MESSAGE Missing required bundle org.w3c.dom.smil_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.799
+!MESSAGE Bundle reference:file:/C:/eclipseModelling/plugins/org.apache.batik.bridge_1.6.0.v200805290154.jar was not resolved.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.799
+!MESSAGE Missing required bundle org.apache.batik.ext.awt_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.800
+!MESSAGE Missing required bundle org.apache.batik.css_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.800
+!MESSAGE Missing required bundle org.apache.batik.dom.svg_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.800
+!MESSAGE Missing required bundle org.apache.batik.parser_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.800
+!MESSAGE Missing required bundle org.apache.batik.xml_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.800
+!MESSAGE Missing required bundle org.w3c.dom.svg_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.800
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.800
+!MESSAGE Missing required bundle org.apache.batik.dom_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.800
+!MESSAGE Missing required bundle org.apache.batik.util.gui_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.801
+!MESSAGE Bundle reference:file:/C:/eclipseModelling/plugins/org.apache.batik.css_1.6.0.v200805290154.jar was not resolved.
+!SUBENTRY 2 org.apache.batik.css 2 0 2012-01-21 13:33:19.801
+!MESSAGE Missing required bundle org.w3c.dom.svg_0.0.0.
+!SUBENTRY 2 org.apache.batik.css 2 0 2012-01-21 13:33:19.801
+!MESSAGE Missing required bundle org.w3c.css.sac_0.0.0.
+!SUBENTRY 2 org.apache.batik.css 2 0 2012-01-21 13:33:19.801
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.801
+!MESSAGE Bundle reference:file:/C:/eclipseModelling/plugins/org.apache.batik.dom_1.6.0.v200805290154.jar was not resolved.
+!SUBENTRY 2 org.apache.batik.dom 2 0 2012-01-21 13:33:19.801
+!MESSAGE Missing required bundle org.apache.batik.css_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom 2 0 2012-01-21 13:33:19.801
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom 2 0 2012-01-21 13:33:19.802
+!MESSAGE Missing required bundle org.w3c.css.sac_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom 2 0 2012-01-21 13:33:19.802
+!MESSAGE Missing required bundle org.apache.batik.xml_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.802
+!MESSAGE Bundle reference:file:/C:/eclipseModelling/plugins/org.apache.batik.svggen_1.6.0.v200805290154.jar was not resolved.
+!SUBENTRY 2 org.apache.batik.svggen 2 0 2012-01-21 13:33:19.802
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.svggen 2 0 2012-01-21 13:33:19.802
+!MESSAGE Missing required bundle org.apache.batik.ext.awt_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.802
+!MESSAGE Bundle reference:file:/C:/eclipseModelling/plugins/org.apache.batik.parser_1.6.0.v200805290154.jar was not resolved.
+!SUBENTRY 2 org.apache.batik.parser 2 0 2012-01-21 13:33:19.802
+!MESSAGE Missing required bundle org.w3c.dom.svg_0.0.0.
+!SUBENTRY 2 org.apache.batik.parser 2 0 2012-01-21 13:33:19.803
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.parser 2 0 2012-01-21 13:33:19.803
+!MESSAGE Missing required bundle org.apache.batik.xml_0.0.0.
+!SUBENTRY 2 org.apache.batik.parser 2 0 2012-01-21 13:33:19.803
+!MESSAGE Missing required bundle org.apache.batik.ext.awt_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.803
+!MESSAGE Bundle reference:file:/C:/eclipseModelling/plugins/org.apache.batik.xml_1.6.0.v200805290154.jar was not resolved.
+!SUBENTRY 2 org.apache.batik.xml 2 0 2012-01-21 13:33:19.803
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.803
+!MESSAGE Bundle reference:file:/C:/eclipseModelling/plugins/org.apache.batik.transcoder_1.6.0.v200805290154.jar was not resolved.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.803
+!MESSAGE Missing required bundle org.w3c.dom.svg_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.803
+!MESSAGE Missing required bundle org.apache.batik.dom_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.804
+!MESSAGE Missing required bundle org.apache.batik.bridge_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.804
+!MESSAGE Missing required bundle org.apache.batik.dom.svg_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.804
+!MESSAGE Missing required bundle org.apache.batik.xml_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.804
+!MESSAGE Missing required bundle org.apache.batik.ext.awt_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.804
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.804
+!MESSAGE Missing required bundle org.apache.batik.svggen_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.804
+!MESSAGE Bundle reference:file:/C:/eclipseModelling/plugins/org.apache.batik.ext.awt_1.6.0.v200805290154.jar was not resolved.
+!SUBENTRY 2 org.apache.batik.ext.awt 2 0 2012-01-21 13:33:19.804
+!MESSAGE Missing required bundle org.apache.batik.util.gui_0.0.0.
+!SUBENTRY 2 org.apache.batik.ext.awt 2 0 2012-01-21 13:33:19.804
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.805
+!MESSAGE Bundle reference:file:/C:/eclipseModelling/plugins/org.apache.batik.util_1.6.0.v200805290154.jar was not resolved.
+!SUBENTRY 2 org.apache.batik.util 2 0 2012-01-21 13:33:19.805
+!MESSAGE Missing required bundle org.apache.batik.util.gui_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.805
+!MESSAGE Bundle reference:file:/C:/eclipseModelling/plugins/org.apache.batik.dom.svg_1.6.0.v200805290154.jar was not resolved.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.805
+!MESSAGE Missing required bundle org.apache.batik.dom_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.805
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.805
+!MESSAGE Missing required bundle org.w3c.dom.smil_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.805
+!MESSAGE Missing required bundle org.apache.batik.parser_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.805
+!MESSAGE Missing required bundle org.w3c.dom.svg_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.806
+!MESSAGE Missing required bundle org.apache.batik.css_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.806
+!MESSAGE Missing required bundle org.w3c.css.sac_0.0.0.
+
+!ENTRY org.eclipse.osgi 2 0 2012-01-21 13:33:19.817
+!MESSAGE The following is a complete list of bundles which are not resolved, see the prior log entry for the root cause if it exists:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.817
+!MESSAGE Bundle org.apache.batik.bridge_1.6.0.v200805290154 [134] was not resolved.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.818
+!MESSAGE Missing required bundle org.apache.batik.css_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.818
+!MESSAGE Missing required bundle org.apache.batik.dom_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.818
+!MESSAGE Missing required bundle org.apache.batik.dom.svg_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.818
+!MESSAGE Missing required bundle org.apache.batik.ext.awt_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.818
+!MESSAGE Missing required bundle org.apache.batik.parser_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.818
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.818
+!MESSAGE Missing required bundle org.apache.batik.util.gui_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.818
+!MESSAGE Missing required bundle org.apache.batik.xml_0.0.0.
+!SUBENTRY 2 org.apache.batik.bridge 2 0 2012-01-21 13:33:19.819
+!MESSAGE Missing required bundle org.w3c.dom.svg_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.819
+!MESSAGE Bundle org.apache.batik.css_1.6.0.v200805290154 [136] was not resolved.
+!SUBENTRY 2 org.apache.batik.css 2 0 2012-01-21 13:33:19.819
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.css 2 0 2012-01-21 13:33:19.819
+!MESSAGE Missing required bundle org.w3c.css.sac_0.0.0.
+!SUBENTRY 2 org.apache.batik.css 2 0 2012-01-21 13:33:19.819
+!MESSAGE Missing required bundle org.w3c.dom.svg_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.819
+!MESSAGE Bundle org.apache.batik.dom_1.6.0.v200805290154 [137] was not resolved.
+!SUBENTRY 2 org.apache.batik.dom 2 0 2012-01-21 13:33:19.819
+!MESSAGE Missing required bundle org.apache.batik.css_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom 2 0 2012-01-21 13:33:19.819
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom 2 0 2012-01-21 13:33:19.820
+!MESSAGE Missing required bundle org.apache.batik.xml_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom 2 0 2012-01-21 13:33:19.820
+!MESSAGE Missing required bundle org.w3c.css.sac_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.820
+!MESSAGE Bundle org.apache.batik.dom.svg_1.6.0.v200805290154 [140] was not resolved.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.820
+!MESSAGE Missing required bundle org.apache.batik.css_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.820
+!MESSAGE Missing required bundle org.apache.batik.dom_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.820
+!MESSAGE Missing required bundle org.apache.batik.parser_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.820
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.820
+!MESSAGE Missing required bundle org.w3c.css.sac_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.820
+!MESSAGE Missing required bundle org.w3c.dom.smil_0.0.0.
+!SUBENTRY 2 org.apache.batik.dom.svg 2 0 2012-01-21 13:33:19.821
+!MESSAGE Missing required bundle org.w3c.dom.svg_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.821
+!MESSAGE Bundle org.apache.batik.ext.awt_1.6.0.v200805290154 [142] was not resolved.
+!SUBENTRY 2 org.apache.batik.ext.awt 2 0 2012-01-21 13:33:19.821
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.ext.awt 2 0 2012-01-21 13:33:19.821
+!MESSAGE Missing required bundle org.apache.batik.util.gui_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.821
+!MESSAGE Bundle org.apache.batik.parser_1.6.0.v200805290154 [144] was not resolved.
+!SUBENTRY 2 org.apache.batik.parser 2 0 2012-01-21 13:33:19.821
+!MESSAGE Missing required bundle org.apache.batik.ext.awt_0.0.0.
+!SUBENTRY 2 org.apache.batik.parser 2 0 2012-01-21 13:33:19.821
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.parser 2 0 2012-01-21 13:33:19.821
+!MESSAGE Missing required bundle org.apache.batik.xml_0.0.0.
+!SUBENTRY 2 org.apache.batik.parser 2 0 2012-01-21 13:33:19.822
+!MESSAGE Missing required bundle org.w3c.dom.svg_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.822
+!MESSAGE Bundle org.apache.batik.svggen_1.6.0.v200805290154 [147] was not resolved.
+!SUBENTRY 2 org.apache.batik.svggen 2 0 2012-01-21 13:33:19.822
+!MESSAGE Missing required bundle org.apache.batik.ext.awt_0.0.0.
+!SUBENTRY 2 org.apache.batik.svggen 2 0 2012-01-21 13:33:19.822
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.822
+!MESSAGE Bundle org.apache.batik.transcoder_1.6.0.v200805290154 [149] was not resolved.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.822
+!MESSAGE Missing required bundle org.apache.batik.bridge_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.822
+!MESSAGE Missing required bundle org.apache.batik.dom_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.822
+!MESSAGE Missing required bundle org.apache.batik.dom.svg_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.823
+!MESSAGE Missing required bundle org.apache.batik.ext.awt_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.823
+!MESSAGE Missing required bundle org.apache.batik.svggen_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.823
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.823
+!MESSAGE Missing required bundle org.apache.batik.xml_0.0.0.
+!SUBENTRY 2 org.apache.batik.transcoder 2 0 2012-01-21 13:33:19.823
+!MESSAGE Missing required bundle org.w3c.dom.svg_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.823
+!MESSAGE Bundle org.apache.batik.util_1.6.0.v200805290154 [152] was not resolved.
+!SUBENTRY 2 org.apache.batik.util 2 0 2012-01-21 13:33:19.823
+!MESSAGE Missing required bundle org.apache.batik.util.gui_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.823
+!MESSAGE Bundle org.apache.batik.xml_1.6.0.v200805290154 [155] was not resolved.
+!SUBENTRY 2 org.apache.batik.xml 2 0 2012-01-21 13:33:19.823
+!MESSAGE Missing required bundle org.apache.batik.util_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2012-01-21 13:33:19.823
+!MESSAGE Bundle org.w3c.dom.svg_1.1.0.v200806040011 [774] was not resolved.
+!SUBENTRY 2 org.w3c.dom.svg 2 0 2012-01-21 13:33:19.824
+!MESSAGE Missing required bundle org.w3c.dom.smil_0.0.0.
+
+!ENTRY org.eclipse.ui 4 4 2012-01-21 13:34:50.687
+!MESSAGE Invalid preference page path: XML Syntax

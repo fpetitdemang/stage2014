@@ -1,0 +1,70 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: bibliographie.aux
+The style file: plain.bst
+Database file #1: bibliographie/biblio.bib
+You're missing a field name---line 95 of file bibliographie/biblio.bib
+ :   
+ :   %volume={},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--entry type for "CSS" isn't style-file defined
+--line 134 of file bibliographie/biblio.bib
+Warning--entry type for "ARIA" isn't style-file defined
+--line 143 of file bibliographie/biblio.bib
+Warning--entry type for "HTML_4" isn't style-file defined
+--line 152 of file bibliographie/biblio.bib
+Warning--entry type for "HTML_5" isn't style-file defined
+--line 160 of file bibliographie/biblio.bib
+Warning--I'm ignoring HTML_5's extra "publisher" field
+--line 165 of file bibliographie/biblio.bib
+You're missing a field name---line 184 of file bibliographie/biblio.bib
+ :   
+ :   %journal={},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty year in Comparing_multiple_RNA_secondary
+Warning--can't use both volume and number fields in czarnecki2003classification
+Warning--empty journal in Kleppe_et_al
+Warning--empty journal in vieira2006fast
+You've used 18 entries,
+            2118 wiz_defined-function locations,
+            606 strings with 6741 characters,
+and the built_in function-call counts, 6263 in all, are:
+= -- 632
+> -- 282
+< -- 6
++ -- 114
+- -- 92
+* -- 404
+:= -- 1010
+add.period$ -- 58
+call.type$ -- 18
+change.case$ -- 96
+chr.to.int$ -- 0
+cite$ -- 22
+duplicate$ -- 236
+empty$ -- 501
+format.name$ -- 92
+if$ -- 1340
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 14
+newline$ -- 93
+num.names$ -- 36
+pop$ -- 119
+preamble$ -- 1
+purify$ -- 78
+quote$ -- 0
+skip$ -- 190
+stack$ -- 0
+substring$ -- 388
+swap$ -- 63
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 72
+warning$ -- 4
+while$ -- 63
+width$ -- 20
+write$ -- 195
+(There were 2 error messages)

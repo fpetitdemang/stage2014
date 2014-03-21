@@ -1,0 +1,104 @@
+\begin{thebibliography}{10}
+
+\bibitem{Comparing_multiple_RNA_secondary}
+Kaizhong~Zhang Bruc~A.Shapiro.
+\newblock Comparing multiple rna secondary structures using tree comparisons.
+\newblock {\em CABIOS}.
+
+\bibitem{cai2003extracting}
+Deng Cai, Shipeng Yu, Ji-Rong Wen, and Wei-Ying Ma.
+\newblock Extracting content structure for web pages based on visual
+  representation.
+\newblock In {\em Web Technologies and Applications}, pages 406--417. Springer,
+  2003.
+
+\bibitem{chang2001iepad}
+Chia-Hui Chang and Shao-Chen Lui.
+\newblock Iepad: information extraction based on pattern discovery.
+\newblock In {\em Proceedings of the 10th international conference on World
+  Wide Web}, pages 681--688. ACM, 2001.
+
+\bibitem{chen2001function}
+Jinlin Chen, Baoyao Zhou, Jin Shi, Hongjiang Zhang, and Qiu Fengwu.
+\newblock Function-based object model towards website adaptation.
+\newblock In {\em Proceedings of the 10th international conference on World
+  Wide Web}, pages 587--596. ACM, 2001.
+
+\bibitem{HTML_4}
+World Wide~Web Consortium et~al.
+\newblock Html 4.01 specification.
+\newblock http://www.w3.org/TR/REC-html40/, 1999.
+
+\bibitem{CSS}
+World Wide~Web Consortium et~al.
+\newblock Cascading style sheets.
+\newblock http://www.w3.org/WAI/intro/aria, 2010.
+
+\bibitem{ARIA}
+World Wide~Web Consortium et~al.
+\newblock Accessible rich internet applications 1.0.
+\newblock http://www.w3.org/Style/CSS/, 2014.
+
+\bibitem{HTML_5}
+World Wide~Web Consortium et~al.
+\newblock Html 5 specification.
+\newblock http://www.w3.org/TR/html5/, 2014.
+
+\bibitem{czarnecki2003classification}
+Krzysztof Czarnecki and Simon Helsen.
+\newblock Classification of model transformation approaches.
+\newblock In {\em Proceedings of the 2nd OOPSLA Workshop on Generative
+  Techniques in the Context of the Model Driven Architecture}, volume~45, pages
+  1--17, 2003.
+
+\bibitem{Kleppe_et_al}
+Anneke~G Kleppe, Jos~B Warmer, and Wim Bast.
+\newblock Mda explained: the model driven architecture: practice and promise.
+\newblock 2003.
+
+\bibitem{needleman1970general}
+Saul~B Needleman and Christian~D Wunsch.
+\newblock A general method applicable to the search for similarities in the
+  amino acid sequence of two proteins.
+\newblock {\em Journal of molecular biology}, 48(3):443--453, 1970.
+
+\bibitem{shapiro1990comparing}
+Bruce~A Shapiro and Kaizhong Zhang.
+\newblock Comparing multiple rna secondary structures using tree comparisons.
+\newblock {\em Computer applications in the biosciences: CABIOS},
+  6(4):309--318, 1990.
+
+\bibitem{smith1981identification}
+Temple~F Smith and Michael~S Waterman.
+\newblock Identification of common molecular subsequences.
+\newblock {\em Journal of molecular biology}, 147(1):195--197, 1981.
+
+\bibitem{sobel1986multiple}
+Eric Sobel and Hugo~M Martinez.
+\newblock A multiple sequence alignment program.
+\newblock {\em Nucleic acids research}, 14(1):363--374, 1986.
+
+\bibitem{tai1979tree}
+Kuo-Chung Tai.
+\newblock The tree-to-tree correction problem.
+\newblock {\em Journal of the ACM (JACM)}, 26(3):422--433, 1979.
+
+\bibitem{tichelaar2000famix}
+Sander Tichelaar, St{\'e}phane Ducasse, and Serge Demeyer.
+\newblock Famix and xmi.
+\newblock In {\em Reverse Engineering, 2000. Proceedings. Seventh Working
+  Conference on}, pages 296--298. IEEE, 2000.
+
+\bibitem{vieira2006fast}
+Karane Vieira, Altigran~S da~Silva, Nick Pinto, Edleno~S de~Moura, Joao~MB
+  Cavalcanti, and Juliana Freire.
+\newblock A fast and robust method for web page template detection and removal.
+\newblock 2006.
+
+\bibitem{wisniewski2007modele}
+Guillaume Wisniewski, Francis Maes, and Ludovic Denoyer.
+\newblock Mod{\`e}le probabiliste pour l'extraction de structures dans les
+  documents web.
+\newblock {\em Document num{\'e}rique}, 10(1):89--107, 2007.
+
+\end{thebibliography}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<addressbook:AddressBook xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:addressbook="http://addressbook/1.0" xsi:schemaLocation="http://addressbook/1.0 model/addressbook.ecore">
+  <contains firstName="Mickael" familyName="BARON" age="35">
+    <location number="5" street="rue de Javaistes"/>
+  </contains>
+</addressbook:AddressBook>

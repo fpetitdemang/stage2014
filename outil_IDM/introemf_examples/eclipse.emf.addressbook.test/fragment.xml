@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="org.eclipse.emf.transaction.editingDomains">
+      <editingDomain
+            factory="eclipse.emf.addressbook.model.test.AddressBookTransactionalEditingDomainFactory"
+            id="eclipse.emf.addressbook.test.editingDomainId">
+      </editingDomain>
+   </extension>
+   <extension point="org.eclipse.emf.transaction.listeners">
+      <listener class="eclipse.emf.addressbook.model.test.AddressBookResourceSetListener">
+         <editingDomain id="eclipse.emf.addressbook.test.editingDomainId">
+         </editingDomain>
+      </listener>
+   </extension>
+
+</fragment>

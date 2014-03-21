@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: eclipse.emf.addressbook.test;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: eclipse.emf.addressbook;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.junit;bundle-version="4.8.2",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.7.0",
+ org.eclipse.emf.transaction;bundle-version="1.4.0",
+ org.eclipse.emf.edit.ui;bundle-version="2.7.0"

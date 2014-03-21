@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/emf.html/src" modelPluginID="emf.html" modelName="Html"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>DefaultName.ecore</foreignModel>
+  <genPackages prefix="Defaultname" disposableProviderFactory="true" ecorePackage="DefaultName.ecore#/">
+    <genClasses ecoreClass="DefaultName.ecore#//HTML">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DefaultName.ecore#//HTML/head"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DefaultName.ecore#//HTML/body"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//HTMLElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//HTMLElement/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DefaultName.ecore#//HTMLElement/children"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DefaultName.ecore#//HTMLElement/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//HEAD">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DefaultName.ecore#//HEAD/headElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DefaultName.ecore#//HEAD/html"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DefaultName.ecore#//HEADElement">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DefaultName.ecore#//HEADElement/head"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//LINK">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//LINK/rel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//LINK/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//LINK/ahref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//LINK/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//TITLE"/>
+    <genClasses ecoreClass="DefaultName.ecore#//BODY">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//BODY/background"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//BODY/bgcolor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//BODY/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//BODY/link"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//BODY/alink"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//BODY/vlink"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DefaultName.ecore#//BODY/bodyElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DefaultName.ecore#//BODY/html"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DefaultName.ecore#//BODYElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DefaultName.ecore#//BODYElement/body"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//H1"/>
+    <genClasses ecoreClass="DefaultName.ecore#//H2"/>
+    <genClasses ecoreClass="DefaultName.ecore#//H3"/>
+    <genClasses ecoreClass="DefaultName.ecore#//H4"/>
+    <genClasses ecoreClass="DefaultName.ecore#//EM"/>
+    <genClasses ecoreClass="DefaultName.ecore#//STRONG"/>
+    <genClasses ecoreClass="DefaultName.ecore#//B"/>
+    <genClasses ecoreClass="DefaultName.ecore#//I"/>
+    <genClasses ecoreClass="DefaultName.ecore#//TT"/>
+    <genClasses ecoreClass="DefaultName.ecore#//PRE"/>
+    <genClasses ecoreClass="DefaultName.ecore#//BIG"/>
+    <genClasses ecoreClass="DefaultName.ecore#//SMALL"/>
+    <genClasses ecoreClass="DefaultName.ecore#//SUB"/>
+    <genClasses ecoreClass="DefaultName.ecore#//SUP"/>
+    <genClasses ecoreClass="DefaultName.ecore#//STRIKE"/>
+    <genClasses ecoreClass="DefaultName.ecore#//FONT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FONT/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FONT/face"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FONT/size"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//IMG">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//IMG/src"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//IMG/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//IMG/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//IMG/alt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//IMG/align"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//IMG/vspace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//IMG/hspace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//IMG/ismap"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//IMG/usemap"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//IMG/border"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//BR">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//BR/clear"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//MAP"/>
+    <genClasses ecoreClass="DefaultName.ecore#//AREA">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//AREA/shape"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//AREA/coords"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//AREA/ahref"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//STYLE"/>
+    <genClasses ecoreClass="DefaultName.ecore#//EMBED">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//EMBED/src"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//EMBED/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//EMBED/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//EMBED/align"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//EMBED/vspace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//EMBED/hspace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//EMBED/border"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//NOEMBED"/>
+    <genClasses ecoreClass="DefaultName.ecore#//SPAN">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//SPAN/style"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//A">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//A/ahref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//A/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//A/id"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//DIV">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//DIV/align"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//P"/>
+    <genClasses image="false" ecoreClass="DefaultName.ecore#//TABLEElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TABLEElement/bgcolor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TABLEElement/background"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//TABLE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TABLE/border"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TABLE/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TABLE/cellspacing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TABLE/cellpadding"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DefaultName.ecore#//TABLE/trs"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//TR">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TR/valign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TR/align"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DefaultName.ecore#//TR/table"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DefaultName.ecore#//TR/tds"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//TD">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TD/colspan"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TD/rowspan"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TD/valign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TD/align"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TD/width"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference DefaultName.ecore#//TD/tr"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//TH"/>
+    <genClasses ecoreClass="DefaultName.ecore#//FORM">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FORM/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FORM/method"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//INPUT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//INPUT/align"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//INPUT/maxlength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//INPUT/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//INPUT/checked"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//INPUT/src"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//INPUT/inputValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//INPUT/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//INPUT/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//TEXTAREA">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TEXTAREA/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TEXTAREA/rows"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//TEXTAREA/cols"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//SELECT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//SELECT/multiple"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//SELECT/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//SELECT/name"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//OPTION">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//OPTION/selected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//OPTION/optionValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="DefaultName.ecore#//ListElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//ListElement/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//OL">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//OL/start"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//UL"/>
+    <genClasses ecoreClass="DefaultName.ecore#//LI">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//LI/liValue"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//DL"/>
+    <genClasses ecoreClass="DefaultName.ecore#//DT"/>
+    <genClasses ecoreClass="DefaultName.ecore#//DD"/>
+    <genClasses ecoreClass="DefaultName.ecore#//APPLET">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//APPLET/applet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//APPLET/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//APPLET/src"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//APPLET/align"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//APPLET/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//APPLET/height"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//PARAM">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//PARAM/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//PARAM/paramValue"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//OBJECT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//OBJECT/classid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//OBJECT/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//OBJECT/data"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//OBJECT/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//OBJECT/standby"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//FRAMESET">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FRAMESET/rows"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FRAMESET/cols"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FRAMESET/framespacing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FRAMESET/frameborder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FRAMESET/border"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//FRAME">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FRAME/src"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FRAME/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FRAME/marginwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FRAME/marginheight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FRAME/scrolling"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DefaultName.ecore#//FRAME/noresize"/>
+    </genClasses>
+    <genClasses ecoreClass="DefaultName.ecore#//NOFRAME"/>
+    <genClasses ecoreClass="DefaultName.ecore#//IFRAME"/>
+    <nestedGenPackages prefix="PrimitiveTypes" disposableProviderFactory="true" ecorePackage="DefaultName.ecore#//PrimitiveTypes">
+      <genDataTypes ecoreDataType="DefaultName.ecore#//PrimitiveTypes/Boolean"/>
+      <genDataTypes ecoreDataType="DefaultName.ecore#//PrimitiveTypes/String"/>
+      <genDataTypes ecoreDataType="DefaultName.ecore#//PrimitiveTypes/Integer"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

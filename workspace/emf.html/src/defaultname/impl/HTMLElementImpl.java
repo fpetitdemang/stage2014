@@ -1,0 +1,314 @@
+/**
+ */
+package defaultname.impl;
+
+import defaultname.DefaultnamePackage;
+import defaultname.HTMLElement;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>HTML Element</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link defaultname.impl.HTMLElementImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link defaultname.impl.HTMLElementImpl#getChildren <em>Children</em>}</li>
+ *   <li>{@link defaultname.impl.HTMLElementImpl#getParent <em>Parent</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class HTMLElementImpl extends EObjectImpl implements HTMLElement {
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected Object value;
+
+	/**
+	 * The cached value of the '{@link #getChildren() <em>Children</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChildren()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<HTMLElement> children;
+
+	/**
+	 * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParent()
+	 * @generated
+	 * @ordered
+	 */
+	protected HTMLElement parent;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HTMLElementImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DefaultnamePackage.Literals.HTML_ELEMENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Object getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(Object newValue) {
+		Object oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DefaultnamePackage.HTML_ELEMENT__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<HTMLElement> getChildren() {
+		if (children == null) {
+			children = new EObjectWithInverseResolvingEList<HTMLElement>(HTMLElement.class, this, DefaultnamePackage.HTML_ELEMENT__CHILDREN, DefaultnamePackage.HTML_ELEMENT__PARENT);
+		}
+		return children;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HTMLElement getParent() {
+		if (parent != null && parent.eIsProxy()) {
+			InternalEObject oldParent = (InternalEObject)parent;
+			parent = (HTMLElement)eResolveProxy(oldParent);
+			if (parent != oldParent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DefaultnamePackage.HTML_ELEMENT__PARENT, oldParent, parent));
+			}
+		}
+		return parent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HTMLElement basicGetParent() {
+		return parent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetParent(HTMLElement newParent, NotificationChain msgs) {
+		HTMLElement oldParent = parent;
+		parent = newParent;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DefaultnamePackage.HTML_ELEMENT__PARENT, oldParent, newParent);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParent(HTMLElement newParent) {
+		if (newParent != parent) {
+			NotificationChain msgs = null;
+			if (parent != null)
+				msgs = ((InternalEObject)parent).eInverseRemove(this, DefaultnamePackage.HTML_ELEMENT__CHILDREN, HTMLElement.class, msgs);
+			if (newParent != null)
+				msgs = ((InternalEObject)newParent).eInverseAdd(this, DefaultnamePackage.HTML_ELEMENT__CHILDREN, HTMLElement.class, msgs);
+			msgs = basicSetParent(newParent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DefaultnamePackage.HTML_ELEMENT__PARENT, newParent, newParent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DefaultnamePackage.HTML_ELEMENT__CHILDREN:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildren()).basicAdd(otherEnd, msgs);
+			case DefaultnamePackage.HTML_ELEMENT__PARENT:
+				if (parent != null)
+					msgs = ((InternalEObject)parent).eInverseRemove(this, DefaultnamePackage.HTML_ELEMENT__CHILDREN, HTMLElement.class, msgs);
+				return basicSetParent((HTMLElement)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DefaultnamePackage.HTML_ELEMENT__CHILDREN:
+				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+			case DefaultnamePackage.HTML_ELEMENT__PARENT:
+				return basicSetParent(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DefaultnamePackage.HTML_ELEMENT__VALUE:
+				return getValue();
+			case DefaultnamePackage.HTML_ELEMENT__CHILDREN:
+				return getChildren();
+			case DefaultnamePackage.HTML_ELEMENT__PARENT:
+				if (resolve) return getParent();
+				return basicGetParent();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DefaultnamePackage.HTML_ELEMENT__VALUE:
+				setValue(newValue);
+				return;
+			case DefaultnamePackage.HTML_ELEMENT__CHILDREN:
+				getChildren().clear();
+				getChildren().addAll((Collection<? extends HTMLElement>)newValue);
+				return;
+			case DefaultnamePackage.HTML_ELEMENT__PARENT:
+				setParent((HTMLElement)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DefaultnamePackage.HTML_ELEMENT__VALUE:
+				setValue((Object)null);
+				return;
+			case DefaultnamePackage.HTML_ELEMENT__CHILDREN:
+				getChildren().clear();
+				return;
+			case DefaultnamePackage.HTML_ELEMENT__PARENT:
+				setParent((HTMLElement)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DefaultnamePackage.HTML_ELEMENT__VALUE:
+				return value != null;
+			case DefaultnamePackage.HTML_ELEMENT__CHILDREN:
+				return children != null && !children.isEmpty();
+			case DefaultnamePackage.HTML_ELEMENT__PARENT:
+				return parent != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (value: ");
+		result.append(value);
+		result.append(')');
+		return result.toString();
+	}
+
+} //HTMLElementImpl
