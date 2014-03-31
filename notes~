@@ -1,0 +1,17 @@
+remarques :
+ execution dynamique de la page -> comment peut il est pris en compte dans les changements du DOM (a priori? a posterio?)  
+
+
+intervention yoann
+
+differentes contraintes (entre deux elements) : 
+	- taille -> générale
+	- contrast de couleur/luminaence
+	- proximité de contexte originale
+
+extraction de la couleur d'une image??
+
+fonction objective = preference
+
+
+

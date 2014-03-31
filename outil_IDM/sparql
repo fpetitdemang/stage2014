@@ -1,0 +1,1371 @@
+{
+  "head": {
+    "vars": [ "x" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#math" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#math" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#math" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#range" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#range" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#range" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#range" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#range" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#range" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#range" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#link" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#link" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#link" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#link" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#link" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#link" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#definition" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#definition" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#definition" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#command" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#command" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#command" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#command" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#scrollbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#scrollbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#scrollbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#scrollbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#scrollbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#scrollbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#scrollbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#scrollbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#scrollbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#dialog" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#dialog" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#dialog" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#search" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#search" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#search" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#banner" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#banner" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#banner" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#list" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#list" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#list" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#list" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#list" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#list" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#list" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#status" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#status" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#alertdialog" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#alertdialog" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#alertdialog" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#alertdialog" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#alertdialog" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#sectionhead" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#sectionhead" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#sectionhead" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#sectionhead" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#sectionhead" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#requiredState" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#requiredState" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#requiredState" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#requiredState" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#document" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#document" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#document" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#document" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#document" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#directory" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#directory" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#directory" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#directory" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#directory" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tabpanel" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tabpanel" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tabpanel" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#marquee" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#marquee" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menu" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menu" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menu" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menu" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menu" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menu" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menu" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menu" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menu" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menu" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menu" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#form" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#form" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#form" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#form" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#listitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#region" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#region" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#region" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#region" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#region" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#radiogroup" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#radiogroup" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#radiogroup" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#radiogroup" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#radiogroup" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#columnheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#columnheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#columnheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#columnheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#columnheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#columnheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#columnheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#columnheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#columnheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#supportedState" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#supportedState" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#supportedState" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#spinbutton" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#spinbutton" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#spinbutton" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#spinbutton" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#spinbutton" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#spinbutton" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#spinbutton" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#spinbutton" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#slider" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#slider" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#slider" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#slider" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#slider" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#slider" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#slider" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#slider" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#presentation" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#presentation" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#application" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#application" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#application" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#application" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#progressbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#progressbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#progressbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemcheckbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemcheckbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemcheckbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemcheckbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemcheckbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemcheckbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemcheckbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#nameFrom" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#nameFrom" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#nameFrom" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#navigation" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#navigation" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#navigation" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#navigation" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#button" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#button" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#button" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#button" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#button" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#button" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#button" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#button" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#childrenArePresentational" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#childrenArePresentational" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#childrenArePresentational" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#childrenArePresentational" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#select" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#select" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#select" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#select" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#select" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#combobox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#combobox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#combobox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#combobox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#combobox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#combobox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#combobox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#combobox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#combobox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#combobox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menubar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menubar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menubar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#input" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#input" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#input" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#input" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#widget" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#widget" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#toolbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#toolbar" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#toolbar" }
+      } ,
+      {
+        "x": { "type": "bnode" , "value": "b0" }
+      } ,
+      {
+        "x": { "type": "bnode" , "value": "b0" }
+      } ,
+      {
+        "x": { "type": "bnode" , "value": "b0" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#mustContain" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#mustContain" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#mustContain" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#roletype" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#treeitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#treeitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#treeitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#treeitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#treeitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#treeitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#treeitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#article" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#article" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#article" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#article" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#article" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#alert" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#alert" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#alert" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#alert" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tooltip" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tooltip" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tablist" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tablist" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tablist" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tablist" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tablist" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tablist" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tablist" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#treegrid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#treegrid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#treegrid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#treegrid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#treegrid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#radio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#radio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#radio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#radio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#radio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#radio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#textbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#textbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#textbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#textbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#textbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#textbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#textbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#textbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#textbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#textbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#textbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#section" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#section" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#section" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#section" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#section" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#section" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#section" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#section" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#gridcell" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#gridcell" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#gridcell" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#gridcell" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#gridcell" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#gridcell" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#gridcell" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#gridcell" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#gridcell" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#gridcell" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#grid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#grid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#grid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#grid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#grid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#grid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#grid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#grid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#grid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#grid" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#checkbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#checkbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#checkbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#checkbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#checkbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#checkbox" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#contentinfo" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#contentinfo" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#contentinfo" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#scope" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#scope" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#scope" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#complementary" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#complementary" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#complementary" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#window" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#window" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#window" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#window" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#structure" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#structure" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemradio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemradio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemradio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemradio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemradio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemradio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitemradio" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#baseConcept" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#baseConcept" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#baseConcept" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#baseConcept" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tab" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tab" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tab" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tab" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tab" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tab" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tab" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#separator" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#separator" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#separator" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#separator" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#separator" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#separator" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowgroup" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowgroup" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowgroup" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowgroup" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowgroup" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowgroup" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowgroup" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#note" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#note" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#note" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#option" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#option" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#option" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#option" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#option" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#option" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#option" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#option" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#option" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#option" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#main" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#main" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#main" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#composite" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#composite" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#composite" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#composite" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tree" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tree" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tree" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tree" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tree" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tree" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#tree" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#row" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#timer" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#timer" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#timer" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#group" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#group" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#group" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#group" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#group" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#menuitem" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#heading" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#heading" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#heading" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#heading" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#heading" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#heading" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#heading" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#heading" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#heading" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#heading" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#log" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#log" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#log" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#landmark" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#landmark" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#landmark" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#landmark" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#img" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#img" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#img" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#img" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#img" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowheader" }
+      } ,
+      {
+        "x": { "type": "uri" , "value": "http://www.w3.org/WAI/ARIA/Schemata/aria-1#rowheader" }
+      }
+    ]
+  }
+}

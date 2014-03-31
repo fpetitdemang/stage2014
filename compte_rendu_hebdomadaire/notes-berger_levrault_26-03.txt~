@@ -1,0 +1,22 @@
+remarques :
+ execution dynamique de la page -> comment peut il est pris en compte dans les changements du DOM (a priori? a posterio?)  
+
+
+intervention yoann
+
+differentes contraintes (entre deux elements) : 
+	- taille -> générale
+	- contrast de couleur/luminaence
+	- proximité de contexte originale
+
+extraction de la couleur d'une image??
+
+
+segmentation page à l'aide d'algo de reconnaissance d'image, est ce que l'on peut accéder/traité directement les pixels du navigateurs
+
+fonction objective = preference
+blanc et noir des niveaux de gris
+
+-> prise en compte du respect de la hierarchie de l'information dans le calcule dans les contraintes
+
+prochaine réunion mi-mai 

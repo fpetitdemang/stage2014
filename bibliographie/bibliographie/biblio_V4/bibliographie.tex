@@ -1,0 +1,1036 @@
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[french]{article}
+\usepackage[T1]{fontenc}
+ \usepackage[french]{babel}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose}
+\usepackage{color}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{glossaries}
+\makeglossaries
+
+
+\usepackage[babel=true]{csquotes}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ \theoremstyle{definition}
+ \newtheorem*{defn*}{\protect\definitionname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{framed}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Pour introduire des commentaires
+
+\newcommand{\nb}[2]{
+    \fbox{\bfseries\sffamily\scriptsize#1}
+    {\sf\small\textit{#2}}
+}
+
+\newcommand\cn[1]{\nb{MM}{#1}}
+\newcommand\mh[1]{\nb{MH}{#1}}
+\newcommand\mm[1]{\nb{MM}{#1}}
+\newcommand\yb[1]{\nb{YB}{#1}}
+\newcommand\xd[1]{\nb{YB}{#1}}
+\newcommand\flb[1]{\nb{FP}{#1}}
+
+\makeatother
+
+\usepackage{babel}
+\usepackage{fancyheadings}
+\providecommand{\definitionname}{Definition}
+
+\begin{document}
+%\pagenumbering{roman}
+\pagestyle{fancyplain}
+\thispagestyle{empty}
+\noindent
+\begin{center}
+\large{\texttt{Académie de Montpellier}}\\
+\Large{\texttt{Université Montpellier II}}\\
+\large{\texttt{Sciences et Techniques du Languedoc}}\\
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\Huge{{ÉTUDE BIBLIOGRAPHIQUE DE\\}}
+ \vspace{1.0cm}
+\Huge{\textbf{STAGE RECHERCHE MASTER M2}}
+\normalsize
+\begin{center}
+\vspace{1.0cm}
+
+effectuée au Laboratoire d'Informatique de Robotique\\
+et de Micro-électronique de Montpellier
+\end{center}
+
+\vspace{2mm}
+%\Large{\textbf{prénom NOM}}
+
+\vspace{0.1cm}
+\normalsize
+
+\vspace{3mm}
+
+\large{Spécialité} : \textbf{AIGLE}\\
+%\Large{Formation Doctorale} : \textbf{Informatique}\\
+%\large{{\'E}cole Doctorale} : \textbf{Information, Structures, Systèmes}
+\vspace{1.0cm}
+
+\LARGE{\textbf{Personnalisation de page web : application à l'amélioration de l'accessibilité du web}}
+\vspace{2mm}
+
+\begin{center}
+  par \textbf{franck~PETITDEMANGE}
+\end{center}
+
+\vspace{2mm}
+
+
+
+\vspace{2cm}
+
+Date : \textbf{17 mars 2014}
+
+\vspace{0.5cm}
+
+Sous la direction de \textbf{Marianne~HUCHARD, Michel~MEYNARD, Yoann~BONAVERO}
+
+\vspace{5mm}
+
+%\begin{table}[hbt]
+%\begin{center}
+%\begin{tabular}{ l l l}
+%Messieurs & {\em } & Rapporteurs\\
+%& {\em } & \\
+%& {\em } & \\
+%\\
+%Messieurs& {\em } & Examinateurs \\
+%& {\em } & \\
+%& {\em } & \\
+%\\
+%Monsieur & {\em Evripidis BAMPIS} &  Directeur de thèse\\
+%& {\em  X} & \\
+%\end{tabular}
+%\end{center}
+%\end{table}
+
+%\vspace{.7cm}
+
+
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction et motivations}
+
+Le World Wide Web (www) est un réseau de ressources. Leur publication repose sur un langage universellement compréhensible
+et accepté par tous les ordinateurs : HTML. Historiquement conçu 
+pour faciliter l'échange d'articles dans la communauté scientifique,
+ la démocratisation du web a fait radicalement évoluer le contenu d'une
+page web, sans pour autant que le langage ne suive cette évolution.
+Ainsi, les auteurs de pages web ont détourné les pratiques de conception
+d'une page de manière anarchique. Ce manque d'homogénéité complique
+la compréhension du contenu publié sur le web par une machine. Ceci
+faisant perdre la propriété universelle de la toile voulue par son créateur
+Tim Berners Lee : 
+\begin{quotation}
+\og La puissance du web réside dans son universalité. L'accès à tous,
+quel que soit son handicap est un aspect essentiel \fg{}
+\end{quotation}
+Cette question d'universalité sous-tend la motivation de ce stage et les problématiques qui
+en découlent. 
+
+Nous nous intéressons à  la personnalisation des pages web. L'objectif
+est de fournir des méthodes et des outils afin d'adapter une page
+suivant les souhaits d'un lecteur. Nous nous focalisons plus particulièrement sur une application
+permettant l'amélioration de l'accessibilité des pages web pour les personnes
+en situation de handicap visuel. Certains défauts de vision impliquent une restriction du champ visuel et des difficultés à voir certains contrastes. La consultation d'une page devient difficile puisqu'elle se limite à un fragment. De plus des informations peuvent devenir illisibles du fait d'une mauvaise combinaison de couleurs. L'outil doit acquérir des informations sur le profil du lecteur et, par exemple  isoler et mettre en avant la barre de navigation de la page avec un contraste adapté au profil du lecteur. Cela nécessite de reconnaître la barre de navigation comme un élément manipulable en tant que tel.
+
+L'adaptation d'une page web implique notre première problématique
+qui est la restructuration d'une page web. Nous souhaitons expérimenter une
+approche de restructuration basée sur les méta-modèles et les transformations de modèles. 
+L'idée étant d'extraire la structure
+d'une page et d'en construire une représentation plus abstraite. Cela
+doit nous permettre de nous affranchir de la diversité de conception
+de ces dernières et des langages utilisés (versions d'HTML, CSS, etc.). 
+A partir de cette représentation nous voulons appliquer
+des transformations, puis générer une nouvelle page conforme aux besoins du lecteur.
+L'une des problématiques du stage portera également sur l'acquisition des souhaits d'un lecteur au travers d'exemples de ces transformations, exemples eux-mêmes décrits dans cette représentation abstraite.
+Dans la section \ref{sec:Transformation-de-mod=0000E8le},
+nous précisons l'exploitation que nous souhaitons faire des modèles.
+Puis, en section \ref{sec:Modele-de-page}, nous étudions différents
+méta-modèles de page en vue de la création d'un nouveau. La
+section \ref{sec:Extraction-de-structure} présente plus en détail
+la problématique d'extraction de structures dans une page web  et différentes solutions. Lors du stage, l'un des objectifs consistera à adapter ou à concevoir une technique d'extraction de telles structures pour alimenter la représentation abstraite à partir de pages concrètes.
+\newpage
+
+
+\section{Éléments sur l'Ingénierie Dirigée par les Modèles\label{sec:Transformation-de-mod=0000E8le}}
+
+Dans le cadre de ce sujet, nous nous plaçons dans un contexte de restructuration (d'adaptation) 
+d'une page web. Nous souhaitons définir cette restructuration à un niveau d'abstraction plus élevé, et pour cela il nous faudra construire un modèle (plus abstrait, avec plus de sémantique) d'une page web à partir
+de cette dernière. Un modèle de page se construit conformément à un méta-modèle. Nous donnons dans cette section les définitions nécessaires à la compréhension de l'approche traitée du point de vue de l'Ingénierie Dirigée par les Modèles.
+
+\begin{defn*}
+\enquote{Un modèle est une description d'une partie d'un système écrit dans
+un langage formel}\cite{Kleppe_et_al}
+
+C'est une représentation simplifiée d'une partie d'un système, une
+abstraction du système étudié suivant un point de vue. Par exemple,
+une carte routière présente un plan suivant le point de vue du réseau routier, il existe
+plusieurs types de carte suivant ce que l'on veut étudier (chemin
+pédestre, chemin routier etc).\end{defn*}\enquote{Pour un observateur A, M est un modèle de l'objet O, si M aide
+A à répondre aux questions qu'il pose sur O} (Minsky) 
+~\\ 
+~\\
+La notion de modèle fait référence à un langage formel définissant
+les éléments conceptuels du modèle : le méta-modèle. La syntaxe et
+la sémantique du modèle sont conformes à un méta modèle.
+\begin{defn*}
+\enquote{Un méta-modèle est un modèle qui définit un langage formel pour
+exprimer un modèle}\cite{Kleppe_et_al}
+\end{defn*}
+Littéralement, c'est un modèle de modèle.
+
+~\\
+
+L'avantage d'utiliser un méta-modèle est de manipuler une
+représentation indépendante de la diversité de conception des éléments d'une page. 
+En effet, les éléments ou concepts récurrents peuvent être
+structurés ou mis en forme de manière différente d'une page web
+à l'autre. \cite{tichelaar2000famix} présente une méthodologie similaire à l'approche que nous voulons mettre en \oe uvre.
+Les auteurs souhaitent appliquer des traitements homologues sur des
+systèmes orientés objets implémentés dans différentes plateformes
+(C++, Java, ADA, etc). Pour cela, ils ont réalisé un méta-modèle de
+système objet dans le but d'effectuer des traitements indépendamment
+d'une représentation sous-jacente (du code source écrit dans un langage spécifique). 
+
+Nous voulons exploiter ce modèle (et son méta-modèle) de deux façons différentes. D'une
+part ils doivent nous servir de support pour appliquer un processus
+de transformation sur une page. D'autre part,  ils doivent nous
+servir de support à l'extraction de règles de transformation à partir d'exemples. Ce dernier point est traité dans \cite{saada2013}, nous comptons l'aborder techniquement par la suite dans le stage.
+\begin{defn*}
+\enquote{Une transformation est la génération automatique d'un modèle cible
+depuis un modèle source selon une transformation définie}\cite{Kleppe_et_al} 
+
+Une transformation est donc un programme, parfois donné sous forme d'un ensemble de règles qui décrivent comment un modèle du langage source peut être transformé dans un modèle du
+langage cible. Plus précisément, elle est la description de la manière dont 
+une ou plusieurs constructions d'un langage source peuvent être transformées
+dans un langage cible. Plusieurs approches pour la transformation
+de modèle existent \cite{czarnecki2003classification}. 
+
+Suivant le langage du modèle source et du modèle cible, intervient
+une distinction (\emph{cf.} figure \ref{transfo_endogene_vs_exogene}). On
+parle de transformation endogène (rééchelonnement) lorsque les modèles
+sont exprimés dans le même langage. On parle de transformation exogène
+(traduction) dans le cas contraire.
+
+Il s'agit de transformation horizontale quand les modèles source et
+cible possèdent le même niveau d'abstraction. Lorsque ce n'est pas
+le cas, il s'agit de transformation verticale (\emph{cf.} figure \ref{transfo_verticale_vs_horizontale}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/endogene_vs_exogene.jpg}
+
+\caption{Transformation endogène et exogène \label{transfo_endogene_vs_exogene}}
+
+
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/transfo_verticale_vs_horizontale.jpg}
+
+\caption{Transformation horizontale et verticale \label{transfo_verticale_vs_horizontale}}
+\end{figure}
+
+
+On distingue plusieurs transformations pour notre
+approche (\emph{cf.} figure \ref{transfo_endogene}). Une première est une
+transformation verticale et exogène (\emph{cf.} figure \ref{transfo_endogene}
+transformation 1). Cette étape correspond à la construction d'un modèle
+source de page depuis une page web. Ce processus est l'objet de la
+section \ref{sec:Extraction-de-structure}. Le modèle construit est
+conforme à un possible méta-modèle intermédiaire étudié dans la section
+\ref{sec:Modele-de-page} et que nous approfondirons lors du stage. Puis une transformation horizontale et endogène
+(\emph{cf.} figure \ref{transfo_endogene} transformation 2). Cette étape
+sera étudiée plus tard dans le stage. Elle intègre dans ses transformations
+les souhaits de personnalisation d'une page web par un utilisateur.
+L'acquisition de ces transformations fera l'objet d'un protocole d'acquisition
+des souhaits. Et pour finir, on retrouve une transformation verticale et exogène
+(\emph{cf.} figure \ref{transfo_endogene} transformation 3) qui va nous permettre
+de construire la page web consultée par l'utilisateur suivant ses souhaits. 
+\end{defn*}
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/transformation_endogene_1.jpg}
+
+\caption{Processus de transformation \label{transfo_endogene}}
+\end{figure}
+
+
+
+
+\section{Méta-modèle de page web\label{sec:Modele-de-page}}
+
+\subsection{Introduction}
+
+Comme expliqué dans la section \ref{sec:Transformation-de-mod=0000E8le},
+les méta-modèles sont le support à l'expression de transformations. Ainsi, dans notre cas, 
+les concepts décrits par le méta-modèle doivent comprendre les éléments,
+ou concepts que l'on souhaite transformer dans une page. Par exemple,
+si l'on souhaite modifier la couleur du texte de la barre de navigation,
+on doit pouvoir exprimer dans la transformation le concept de barre 
+de navigation et le concept de couleur.
+
+On s'intéresse à la conception d'un méta-modèle proche de la représentation
+qu'un lecteur peut avoir d'une page. Le but étant d'exprimer des transformations
+conformes aux souhaits du lecteur. On propose d'étudier et de comparer
+le langage standard de publication de page sur le web, HTML, dans
+les normes 4 et 5 mais aussi une taxonomie pour la description d'interface
+graphique ARIA.
+
+
+\subsection{HTML 4\label{sub:HTML-4}}
+
+HTML 4 \cite{HTML_4} est un langage permettant la publication de
+contenu sur le web. C'est le langage standard actuel des pages web.
+Il permet de structurer le contenu et de lui associer une mise en
+forme. Le contenu peut être du texte, des images, ou plus généralement
+du multimédia. Ce contenu est organisé de manière hiérarchique en
+le découpant en section et sous-section. 
+
+
+\paragraph{Contenu}
+
+Le contenu principal décrit dans les pages HTML 4
+est un contenu textuel. Il peut également contenir du multimédia comme
+des images, des vidéos et applets (des programmes qui sont automatiquement
+chargés puis lancés sur la machine de l'utilisateur). L'inclusion
+de contenu multimédia se fait par l'élément générique : <OBJECT>. Il
+possède une collection d'attributs prédéfinis qui décrivent l'objet inclus
+dans la page. Le principal étant \emph{type }décrivant
+le type de contenu des données (\emph{e.g.} figure \ref{balise_object}). La valeur de ces attributs n'est pas prédéfinie. Elle est interprétée 
+librement par la machine qui charge la page web. 
+
+\begin{figure}[H]
+\lstset{
+  basicstyle=\footnotesize, frame=tb,
+  xleftmargin=.2\textwidth, xrightmargin=.2\textwidth
+}
+\begin{lstlisting}[frame=single, language=html,]
+<object data="data/test.mpg" type="video/mpeg">
+	Ceci est une vidéo
+</object>
+\end{lstlisting}
+\caption{Exemple contenu multimédia\label{balise_object}}
+\end{figure}
+
+
+\paragraph{Structuration générique}
+
+HTML 4 propose un mécanisme générique pour la composition de contenu
+formant la structure des pages web. Ce mécanisme gravite autour des
+éléments de type <DIV> et de leurs attributs respectifs : \emph{id} et \emph{class}.
+
+
+\subparagraph{DIV}
+
+Signifiant division, la balise DIV est utilisée comme conteneur générique, il peut
+contenir n'importe quel élément. Il est exploité pour :
+\begin{itemize}
+\item regrouper les éléments pour leur appliquer un style (une mise en forme
+particulière).
+\item signaler une section ou une sous-section. 
+\end{itemize}
+
+\subparagraph{id et class}
+
+Chaque élément peut se voir attribuer un identifiant ou une classe
+d'appartenance. \emph{id} assigne un nom à un élément. Ce nom est
+unique dans le document. \emph{class} au contraire, assigne un ou
+plusieurs noms de classe à un élément. Un nom de classe peut être
+partagé par plusieurs instances d'éléments. Les identifiants et les
+classes sont des suites de caractères quelconques décidées arbitrairement
+par l'auteur du document.
+
+~\\
+
+Les éléments DIV utilisés conjointement avec les attributs \emph{id} et \emph{class}
+sont au c\oe ur du mécanisme générique de structuration d'un document.
+DIV permet de diviser le contenu d'un document en sections et sous-sections 
+(\emph{e.g.} figure \ref{div_sectionnement}) pour décrire sa structure. Les
+balises <DIV> ayant une sémantique neutre, c'est l'auteur du contenu
+qui attribue (de manière arbitraire) un nom de \emph{class} ou un
+\emph{id}. L'\emph{id}
+ou la \emph{class} est associé à
+une mise en forme définie a priori. La mise en forme est définie au
+travers d'un langage : CSS\cite{CSS} que l'on appelle feuille de style.
+CSS permet d'appliquer un ensemble de règles de style ou un agencement des éléments
+dans l'espace de la page. Par exemple, l'auteur peut
+déclarer une classe ``aside'' et définir que les éléments appartenant
+à la classe ``aside'' doivent être placés sur le côté droit de la
+page avec un fond blanc. Ce mécanisme est illustré par la figure \ref{div_role}. L'auteur associe à chaque <DIV> une 
+\emph{class}
+ou un \emph{id} auquel s'applique
+une mise en page et une mise en forme définies par l'auteur dans une
+feuille de style CSS.
+
+\begin{figure}[htb]
+\lstset{
+  basicstyle=\footnotesize, frame=tb,
+  xleftmargin=.25\textwidth, xrightmargin=.25\textwidth
+}
+\begin{lstlisting}[frame=single, language=html]
+<body>
+	<div id="header" ></div>
+	<div id="navigation_bar"></div>
+	<div class="aside"></div>
+	<div class="section">
+		<div class="article"></div>
+		<div class="article"></div>
+	</div>
+	<div class="aside"></div>
+	<div id="footer"></div>
+</body>
+\end{lstlisting}
+
+\centering
+\includegraphics[width=0.5\linewidth]{img/architecture_Geekos_HTML4-294x300.jpg}
+
+\caption{Architecture page web HTML 4\label{div_role}}
+\end{figure}
+
+
+\begin{figure}[htb]
+\lstset{
+  basicstyle=\footnotesize, frame=tb,
+  xleftmargin=.15\textwidth, xrightmargin=.15\textwidth
+}
+\begin{lstlisting}[frame=single, language=html]
+<body>
+<div class="section" id="elephants-foret" >
+	<h1>Les éléphants des forêts</h1> 
+	<p>Dans cette partie, nous abordons le sujet 
+moins connu des éléphants des forêts.</p>
+	<div class="sous-section" id="habitat-foret" > 
+	<h2>L'habitat</h2> 
+	<p>Les éléphants des forêts ne vivent pas 
+dans les arbres mais au milieu d'eux.</p>
+	</div> 
+</div>
+</body>
+\end{lstlisting}
+
+\caption{Exemple découpage en sections et sous-sections \label{div_sectionnement}}
+\end{figure}
+
+
+
+\subsection{HTML 5}
+
+HTML 5 \cite{HTML_5} étend HTML 4 en apportant de nouveaux éléments
+lexicaux. Ces nouveaux éléments\emph{ }apportent une sémantique standard
+et explicite à la structure d'une page ainsi qu'aux contenus.
+
+
+\paragraph{Contenu}
+
+HTML 5 fournit de nouveaux éléments comme <VIDEO>,
+<AUDIO> avec un ensemble d'attributs propres à chaque balise (a contrario
+de l'élément <OBJECT> de HTML 4). Les attributs spécifiques permettent
+de renseigner l'état d'un élément. Par exemple, la balise <AUDIO>
+possède un attribut spécifique \emph{muted}
+indiquant si le son de l'élément audio est coupé ou non.
+
+
+\paragraph{Structuration }
+
+Les nouveaux éléments de HTML 5 spécifient donc une sémantique standard
+:
+\begin{itemize}
+\item SECTION : représente une section générique dans un document, c'est-à-dire un regroupement de contenu par thématique.
+\item ARTICLE : représente un contenu autonome dans une page, facilite l'inclusion
+de plusieurs sous-documents.
+\item NAV : représente une section de liens vers d'autres pages ou des fragments
+de cette page
+\item ASIDE : représente une section de la page dont le contenu est indirectement
+lié à ce qui l'entoure et qui pourrait être séparé de cet environnement
+\item HEADER : représente un groupe d'introduction ou une aide à la navigation.
+Il peut contenir des éléments de titre, mais aussi d'autres éléments
+tels qu'un logo, un formulaire de recherche, etc.
+\item FOOTER : représente le pied de page, ou de la section, ou de la racine
+de sectionnement la plus proche
+\end{itemize}
+La figure \ref{html5_role} montre un découpage explicite de la structure
+avec HTML 5 en opposition au découpage implicite de HTML 4 montré dans
+la figure \ref{div_role}.
+
+\begin{figure}[htb]
+\begin{center}
+\lstset{ 
+  basicstyle=\footnotesize, frame=tb,
+  xleftmargin=.25\textwidth, xrightmargin=.25\textwidth
+}
+\begin{lstlisting}[frame=single, language=html]
+<body>
+	<header></header>
+	<nav></nav>
+	<section>
+		<article></article>
+		<article></article>
+	</section>
+	<aside></aside>
+	<footer></footer>
+</body>
+\end{lstlisting}
+
+\includegraphics[width=0.5\linewidth]{img/architecture_Geekos_HTML5-293x300.jpg}
+
+\caption{Exemple d'attribution de rôle\label{html5_role}}
+\end{center}
+\end{figure}
+
+\subsection{ARIA}
+
+ARIA (Acessible Rich Internet Application) \cite{ARIA} est la spécification
+d'une ontologie décrivant une interface graphique. Elle fournit des
+informations sur la structuration d'un document et plus généralement
+elle décrit les éléments qui composent une interface au moyen d'un ensemble
+de rôles, d'états et de propriétés.
+
+
+\paragraph{Rôle}
+
+Les rôles permettent d'identifier la fonction de chaque élément d'une
+interface. Ils sont regroupés en trois catégories :
+\begin{itemize}
+\item Widget Roles : référence un ensemble de widget prédéfinis (alertdialog,
+button, slider, scrollbar, menu, etc.)
+\item Document Structure Roles : décrit les structures qui organisent un
+document (article, definition, entête, ect.)
+\item Landmark Roles : décrit les régions principales d'une interface graphique
+(main, navigation, search, etc.)
+\end{itemize}
+
+\paragraph{États et propriétés}
+
+ARIA prend en compte l'aspect dynamique et interactif des éléments
+d'une interface. Elle permet d'associer des états et des propriétés
+aux éléments d'une interface. Un état est une configuration unique
+d'un objet. Par exemple, on peut définir l'état d'un bouton par l'état
+\emph{aria-checked }qui peut prendre trois propriétés suivant l'interaction
+avec l'utilisateur : \emph{true - false - mixed} . Dans le cas d'une
+checkbox, \emph{true} indique si la checkbox est cochée, \emph{false}
+si elle ne l'est pas et \emph{mixed} dans le cas d'un ensemble de checkbox
+indique que certaines sont cochées.
+
+Aria prévoit même un système d'annotation pour les objets ayant des
+comportements asynchrones. Par exemple, on peut indiquer par une annotation qu'un élément
+se met à jour de manière autonome.
+
+
+\subsection{Discussion}
+
+L'étude ci-dessus présente de manière sommaire les concepts des langages
+ HTML 4, 5 et de la norme ARIA. Au regard de notre problématique, nous pouvons
+voir quelques perspectives à la conception d'un méta-modèle.
+
+HTML 4 fournit une sémantique pour décrire les éléments textuels
+d'une page et ses hyperliens. Cependant le mécanisme de structuration
+fourni est trop générique et ambigu. En effet,
+il n'est pas possible de délimiter explicitement les éléments d'une
+page par thématique. Le mécanisme d'imbrication hiérarchise le contenu
+alors qu'un élément n'est pas forcement sous-section de l'élément
+qui l'imbrique. Une page web contient des éléments qui ne sont pas
+en rapport avec le contenu d'un document, mais plutôt avec le site
+web (\emph{e.g.} menu de navigation, un logo, etc.).
+
+HTML 5 semble combler ces limites en apportant de nouveaux éléments
+lexicaux amenant une sémantique plus riche et surtout standard sur
+la structure d'une page et la nature du contenu. Elle
+permet donc de modéliser les limites de chaque partie d'une page suivant
+sa thématique (\emph{e.g.} <SECTION>). Elle permet de décrire un contenu non-linéaire
+(\emph{e.g.} <ASIDE>) et introduit également des balises pour la description
+d'éléments propres à une page web comme des menus de navigation, bannière,
+logo, etc.	
+
+La norme ARIA intègre plus d'éléments pour décrire une page web et
+notamment une description du comportement des éléments d'une page web
+particulièrement utiles avec le développement des éléments graphiques
+appelés widget.
+
+Un méta-modèle basé sur la syntaxe de HTML 5 semble être un compromis
+intéressant entre HTML 4 et ARIA. HTML 4 est peu adapté à l'expression
+de transformations reflétant l'intention d'un lecteur et ARIA est trop
+riche au regard de nos besoins immédiats. Les spécifications
+de HTML 4 sont disponibles sous forme de DTD%
+\footnote{Document Type Definition}%
+. Une DTD est un document décrivant la grammaire d'un
+langage. Il est simple d'en construire un méta-modèle. HTML 5 n'étant
+pas encore au rang de standard, aucune DTD n'est encore disponible,
+seule une définition exhaustive des éléments lexicaux et leurs fonctions
+est fournie par le W3C. Il n'y pas de grammaire clairement spécifiée.
+La tâche de réalisation d'un méta-modèle semble complexe pour HTML
+5. Aria fournit, quant à lui, un modèle UML%
+\footnote{Unified Modeling Language}%
+. UML est un langage
+de modélisation graphique à base de pictogrammes%
+\footnote{wikipédia}%
+. Ce modèle UML est pour nous un méta-modèle directement
+exploitable. Ainsi nous pourrons utiliser le modèle fourni par ARIA
+pour la construction d'un méta-modèle. Ce dernier serait restreint
+aux éléments de description d'un document (\emph{Document
+Structure Roles}) et ({\emph{Landmark
+Roles}). Suivant l'évolution de nos besoins de transformation
+nous pourrions facilement intégrer d'autres aspects, notamment les
+widget et comportements asynchrones des éléments d'une page. Ce méta-modèle
+intégrera les éléments de HTML 4, en particulier ceux décrivant le
+contenu textuel non modélisé avec ARIA (\emph{e.g.} paragraphe).}
+
+
+\section{Extraction de structure\label{sec:Extraction-de-structure}}
+
+
+\subsection{Introduction}
+
+L'extraction correspond au processus de transformation 1 de la figure\textcolor{red}{{}
+}\ref{transfo_endogene}. On veut extraire les éléments
+de la structure d'une page qui correspondent aux différentes briques
+conformes aux éléments d'un méta-modèle de page défini a priori.
+La problématique est due au langage de conception des pages web qui
+manque de sémantique, rendant un processus d'extraction automatique
+difficile.
+
+En effet, la conception des pages web s'articule autour d'un langage
+pour décrire la structure du document (HTML) et d'un langage pour
+décrire la mise en forme du document (CSS). Les pages sont constituées
+d\textquoteright{}éléments hétérogènes : une page est constituée d'un
+ou plusieurs contenus principaux, d'un menu de navigation, de publicité,
+etc... Chacun de ces éléments représente une sous-structure de la
+page. Lorsque l'on regarde une page web depuis un navigateur, on constate
+que ces éléments sont structurés de façon sémantique, ils sont organisés
+selon leur sens. La difficulté dans la tâche d'extraction de la structure
+d'une page est due au manque d'expressivité du langage HTML. La norme actuelle
+de HTML (HTML 4) ne fournit pas de moyen de délimiter les éléments
+du document en fonction de leur sémantique. Par exemple, on ne peut
+pas délimiter de manière explicite la structure d'un menu dans une
+page avec ce langage. Le constat est que l'information de la structure
+d'une page apparaît principalement dans la mise en page. La structure
+d'une page est explicitée à travers l'utilisation de polices, de couleurs
+ou plus généralement d\textquoteright{}éléments visuels pour caractériser
+les contenus qui ont la même signification.
+
+Une approche étudiée dans la tâche d'extraction
+de la structure est un processus de segmentation. Ce dernier permet
+de découper une page en régions, on peut ainsi délimiter le contenu
+d'une page de façon explicite. Nous avons étudié également des approches
+de reconnaissance de structure syntaxique et fonctionnelle.
+
+
+\subsection{Segmentation de contenu}
+
+Comme présenté dans la section \ref{sub:HTML-4}, HTML
+4 fournit une sémantique neutre avec la balise <DIV>. On ne sait
+pas si elle délimite une section, sous-section ou si elle est utilisée 
+pour appliquer un style. Le sens n'en est connu que par le concepteur
+de la page. La compréhension de la structure d'une page est alors implicite.
+Les auteurs de l'article \enquote{Extracting content structure for web pages
+based on visual representation} \cite{cai2003extracting} proposent 
+une approche pour rendre explicite la structure de la page.
+
+
+\paragraph{Approche segmentation visuelle\label{sub:Approche-segmentation-visuelle}}
+
+L'approche proposée par les auteurs \cite{cai2003extracting} présente
+un algorithme de partitionnement basé sur les éléments de mise en
+forme des pages web. Le partitionnement extrait une structure qui regroupe
+les éléments d'une page sémantiquement proches en bloc (\emph{e.g.} figure
+\ref{vips_partitionnement}). Le postulat est que les éléments d'une
+page possédant des caractéristiques de mise en forme proches, tels
+que la police, la couleur, la taille, sont sémantiquement proches.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/VIPS-partionnement.jpg}
+
+\caption{Exemple de partitionnement, (a) page (b) DOM de la page \cite{cai2003extracting}\label{vips_partitionnement}}
+\end{figure}
+
+
+L'algorithme exploite le DOM%
+\footnote{Document Object Model%
+} de la page web. Le DOM est une API%
+\footnote{Application Programming Interface%
+} pour les documents HTML (ou plus généralement XML). Il fournit une
+représentation arborescente d'un document et les moyens d'accéder
+à son contenu et sa mise en forme. 
+
+Le processus de segmentation, figure \ref{vips-process}, se décompose
+en trois phases : un processus d'extraction de blocs, un processus
+de détection de séparateur et un processus de reconstruction. 
+
+Le processus d'extraction détecte les éléments du niveau courant du
+DOM susceptibles de former un contenu cohérent. Cette détection repose
+sur des séparateurs explicites : on sait que certains éléments délimitent
+le contour d'un contenu (par exemple les balises <DIV>). Mais elle repose également
+sur une fonction de distance visuelle comparant les n\oe uds parents
+et frères du n\oe ud courant : une balise <DIV> a de grandes chances de
+délimiter un contenu sémantiquement différent du n\oe ud parent si la
+couleur de fond est différente de celle de ce dernier. Pour chaque
+n\oe ud, l'algorithme vérifie s'il forme un bloc ou non. Si oui, il
+associe un degré de cohérence au bloc. Ce degré de cohérence est un
+indicateur de l'importance sémantique du bloc. Si non, il est appliqué
+le même processus aux enfants du n\oe ud. Quand tous les n\oe uds du bloc
+courant sont extraits, ils sont mis dans un pool. 
+
+Des séparateurs entre les blocs sont ensuite détectés. L'algorithme
+détecte ici des séparateurs implicites, c'est-à-dire n'apparaissant
+pas dans la structure HTML. Les séparateurs implicites sont les espaces
+entre les blocs d'un pool. Un poids est attribué à chaque séparateur
+suivant son importance (par exemple, plus l'espacement entre deux
+blocs est grand, plus le poids sera élevé). Ce poids est un indicateur
+de différence sémantique entre les blocs adjacents. Plus le poids du
+séparateur est élevé entre deux blocs, plus leur contenu sera sémantiquement
+éloigné.
+
+Une construction hiérarchique des blocs est créée. Cette construction
+hiérarchique repose sur le degré de cohérence attribué à chaque bloc. 
+
+Pour chaque nouveau bloc de la structure hiérarchique construite,
+l'algorithme teste le degré de cohérence attribué par rapport à un
+seuil de cohérence défini. Ce seuil est défini suivant la granularité
+de la structure que l'on veut en sortie de l'algorithme. Si le degré
+de cohérence n'est pas supérieur au seuil de cohérence, le bloc est
+de nouveau proportionné. La structure finale est construite après que
+tous les blocs soient traités. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=300px]{img/VIPS-processus.jpg}
+
+\caption{Algorithme de segmentation \cite{cai2003extracting} \label{vips-process}}
+\end{figure}
+
+En conclusion, l'algorithme regroupe les éléments d'une page en structure ayant une sémantique forte. Cette méthode nous permet de délimiter les différentes régions d'une page. Cependant l'inconvénient est que l'algorithme ne nous permet pas de connaître le rôle associé à chaque sous-structure isolée dans la page.
+
+\subsection{Compréhension de contenu}
+
+La segmentation du contenu n'est pas suffisante dans
+le processus de transformation. Pour construire notre modèle de page,
+nous avons besoin de faire correspondre les éléments d'une page web
+aux éléments du méta-modèle intermédiaire qui contient des concepts plus abstraits ou ayant un sens plus fort. Comme soulevé dans la section
+\ref{sub:HTML-4}, la sémantique des éléments de structuration est
+neutre. On ne connaît pas le rôle des conteneurs génériques <DIV>.
+On ne peut pas faire correspondre les éléments d'une page directement
+avec les éléments d'un méta-modèle contenant des concepts du type de ceux que l'on trouve en HTML 5.
+
+On propose d'étudier plusieurs approches pour reconnaître
+les sous-structures composant une page. Une première approche est
+une analyse syntaxique. On s'intéresse aux processus exploités en
+bio-informatique pour isoler des structures dans des séquences génomiques
+et déterminer quelles sont leurs fonctions. On s'intéresse également
+à une analyse fonctionnelle des structures en analysant leurs
+propriétés.
+
+
+\subsubsection{Analyse syntaxique}
+
+
+\paragraph{Similarité de séquence}
+
+L'un des postulats de base en bio-informatique est que deux séquences génomiques similaires correspondent à deux protéines présentant la même fonction \cite{Comparing_multiple_RNA_secondary}.
+En d'autres termes, trouver des séquences ayant des similitudes (syntaxiques)
+est un signe de proximité fonctionnelle. Appliqué à une page web,
+cela signifie que par exemple la structure syntaxique d'un menu d'une
+page web A est similaire à la structure syntaxique d'un menu d'une
+page web B. Il semble cohérent d'appliquer ce postulat à une page
+web. En effet, la publication de contenu sur le web se standardise
+par l'intermédiaire des scripts \cite{vieira2006fast}. Ceux-ci génèrent
+des pages de manière automatique et standardisée (Wordpress, joomla,
+etc). En construisant une séquence représentative d'un élément de
+notre méta-modèle, il devrait être possible de déterminer la fonction
+d'un fragment de page web. Pour déterminer la similarité de deux séquences,
+les bio-informaticiens utilisent le concept d'alignement \cite{sobel1986multiple}.
+\begin{defn*}
+L'alignement est la mise en correspondance de deux séquences. Soit
+deux séquences X1 de taille n et Y1 de taille m dont la valeur est définie dans le même
+alphabet fini $\Lambda$. Un alignement est une correspondance entre
+les lettres de la première séquence et celles de la deuxième, sans
+en changer l'ordre, et en autorisant éventuellement des \enquote{trous}.
+\end{defn*}
+\begin{figure}[H]
+\centering
+
+G A A T C \_ T G A C
+
+C A \_ \_ C G T \_ A \_
+
+\caption{Alignement possible des séquences X1=GAATCTGAC,Y1=CACGTA}
+\end{figure}
+
+
+~\\La mise en correspondance repose sur trois types d'opérations
+élémentaires : la substitution, l'insertion, suppression. Plusieurs combinaisons
+d'alignements existent. Lorsque l'on souhaite comparer la similitude
+de deux séquences, la meilleure solution est celle qui minimise le
+nombre d'opérations d'insertions et de suppressions.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=300px]{img/operation_alignement_sequence.jpg}
+
+\caption{opérations d'alignements de séquence}
+\end{figure}
+
+
+Il existe deux types d'alignements : local et global. 
+
+
+\subparagraph{L'alignement global }
+
+L'alignement global est conçu pour comparer des séquences sur toute
+leur longueur. Une méthode optimale pour trouver un alignement global
+maximal de chaîne de caractères est l'algorithme de Needleman-Wunsch
+\cite{needleman1970general}. 
+
+
+\subparagraph{L'alignement local }
+
+L'alignement local est conçu pour rechercher dans la séquence A des
+régions semblables à la séquence B (ou à des parties de la séquence
+B). Une méthode pour trouver un alignement local maximal de chaîne
+de caractères est l'algorithme de Smith \& Waterman \cite{smith1981identification}. 
+
+~\\
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=200px]{img/Global-local-alignment.png}
+
+\caption{Comparaison  de séquences par alignement global et local \label{comp-align}}
+\end{figure}
+
+
+Comme on le voit dans la figure \ref{comp-align} l'alignement global
+tente d'aligner les séquences sur toute leur longueur, tandis que
+l'alignement local se focalise sur les zones de forte homologie. L'alignement
+global est adapté à la comparaison de deux fragments de taille approximativement
+égales. Alors que l'alignement local permet de faire correspondre
+un fragment dans une plus grande séquence.
+
+
+\paragraph{Similarité d'arbre}
+Sur le web, une page web est accessible et manipulable
+sous la forme d'une structure arborescente que l'on appelle DOM (\emph{cf.}
+section \ref{sub:Approche-segmentation-visuelle}). Une autre approche
+dans l'étude de similarité de structure est la comparaison d'arbre.
+Cette
+approche consiste à trouver la plus petite ou la moins coûteuse séquence
+d'opérations d'édition (substitution, suppression et insertion) qui
+permet la transformation d'un arbre vers un autre. 
+
+Notons $\Lambda$ un n\oe ud vide. Une opération d'édition est écrite
+$b\rightarrow c$ , où b et c sont soit un n\oe ud, soit $\Lambda$.
+ 
+\begin{itemize}
+\item $b\rightarrow c$ est une opération de substitution si $b\neq\Lambda$
+et $c\neq\Lambda$
+\item une opération de suppression si $b\neq\Lambda\doteq c$
+\item une opération d'insertion si $b=\Lambda\neq c$
+\end{itemize}
+Pour exprimer une séquence d'opérations élémentaires qui transforment 
+l'arbre, on utilise le concept de mapping, introduit par \cite{tai1979tree}.
+Un mapping établit une correspondance un-à-un entre les n\oe uds de deux
+arbres ordonnés et qui préserve l'ordre des n\oe uds. 
+
+~\\
+\begin{defn*}
+Un Mapping $M$ de l'arbre T1 vers l'arbre T2 est un ensemble de paires 
+ordonnées d'entiers (i, j), $1\leqslant i\leqslant n1$, $1\leq j\leq n2$,
+satisfaisant les conditions suivantes, pour tous $(i1,j1),(i2,j2)\in M$:\end{defn*}
+\begin{itemize}
+\item i1=i2 si et seulement si j1=j2 (one-to-one condition)
+\item t1{[}i1{]} est à gauche de t1{[}i2{]}, si est seulement si t2{[}j1{]}
+est à gauche de t2{[}j2{]} (préservation de l'ordre des n\oe uds frères)
+\item t1{[}i1{]} est un ancêtre de t1{[}i2{]} si et seulement si t2{[}j1{]}
+est un ancêtre de t2{[}j2{]} (préservation de l'ordre des ancêtres)
+\end{itemize}
+~\\
+\begin{defn*}
+Soit M un mapping entre les arbres T1 et T2 décrivant des opérations
+de modification. S est l'ensemble de paires $(i,j)\in M$, D l'ensemble
+des n\oe uds T1{[}i{]} n'ayant pas de paire $(i,j)\in M$ , et I l'ensemble
+des n\oe uds T2{[}j{]} n'ayant pas de paire $(i,j)\in M$. Le coût du
+mapping est donné par $|S|p+|I|q+|D|r$, où p est le coût des substitutions
+non identiques, q est le coût des insertions (1), r est le coût d'une
+suppression (1), le coût des substitutions identiques est 0. ~\\
+\end{defn*}
+
+Plusieurs classes de mapping existent, la différence se situe sur les restrictions des opérations autorisées dans le mapping. Les quatre principales sont : la distance d'alignement, la distance de sous arbre-isolé, la distance ascendante, la distance descendante \cite{wang2001finding}. \cite{vieira2006fast} utilise un mapping de distance descendante pour isoler des sous-structures communes entre plusieurs pages afin d'en identifier des patterns (motif représentatif d'une structure). Cette approche semble intéressante pour partionner une page d'après notre méta-modèle intermédiaire (qui est lui-même un arbre).
+
+
+\subsubsection{Analyse fonctionnelle\label{sub:Analyse-fonctionnelle}}
+
+L'article ``Function-based object model towards website adaptation''
+\cite{chen2001function} propose une analyse des fonctions d'un élément
+d'une page. Cette approche repose sur une segmentation
+du contenu d'une page a priori pour identifier chaque élément. Cette
+segmentation est similaire à celle de la section \ref{sub:Approche-segmentation-visuelle}.
+Les éléments isolés par cette segmentation sont vus comme des objets
+possédant des propriétés (type d'agencement, nombre d'hyperliens, \emph{etc}.).
+Les auteurs proposent un modèle : Function-based object. Ce modèle
+est une classification de chaque élément d'une page. Cette classification
+se fait sur la valeur des propriétés de chaque objet. Les principales
+propriétés spécifiées sont basées sur la présentation (type de média,
+agencement, \emph{etc.}), les hyperliens (le nombre d'hyperliens, les pages vers lesquelles ils pointent), 
+l'interaction avec l'utilisateur (uniquement affichage, soumission
+de contenu?). L'extraction des propriétés fonctionnelles est faite 
+principalement par analyse de la nature des balises et des attributs
+associés aux balises. Suivant la valeur des propriétés, les objets
+sont rangés dans différentes catégories : objet de type informatif,
+de navigation, d'interaction, de décoration, etc. L'analyse de la
+catégorie d'un objet se fait au moyen d'un arbre de décision (\emph{e.g.}
+figure \ref{arbre_decision}).
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=200px]{img/arbre_decision.jpg}
+
+\caption{Exemple d'arbre de décision basique\label{arbre_decision}}
+\end{figure}
+
+
+
+\subsection{Discussion}
+
+L'alignement de séquence locale peut sembler une bonne approche. On
+peut comparer directement une séquence du méta-modèle à la page pour
+trouver la zone qui s'en approche le plus. Du point de vue de la complexité,
+pour deux séquences de taille m et n la complexité de l'algorithme
+de Smith \& Waterman est $\mathcal{O}(nm)$. A l'échelle d'une page
+web le temps de calcul est acceptable. Aucune solution basée sur ce genre d'approche
+appliquée aux données du web n'a été trouvée. On peut cependant prendre
+en compte qu'une page web est fournie par les navigateurs web sous
+la forme d'une structure arborescente. Cette solution implique donc
+un pré-traitement (aplatissement d'arbre). Cette solution paraît
+efficace pour trouver un élément de notre méta-modèle, mais trop complexe
+si l'on souhaite aligner tous les éléments de notre méta-modèle dans
+une page.
+La similarité d'arbre paraît plus naturelle comme approche. D'un point
+de vue complexité, soit \emph{T1} arbre de la page et \emph{T2} l'arbre
+du méta-modèle, et \emph{d} un entier une distance définie, un mapping
+basé sur un distance descendante aurait un coût théorique de $\mathcal{O}(d^2+|T1|+|T2|)$.
+La taille des données en entrée rend cette solution acceptable.
+
+Les deux approches présentent un inconvénient majeur, elles sont trop
+dépendantes de la représentation sous-jacente des données.\emph{ }Les
+données publiées par HTML sont des formats de données semi-structurées
+\cite{wisniewski2007modele}. Il n'y a pas de syntaxe formelle pour décrire
+un type de donnée. Un menu peut être écrit avec différentes syntaxes
+(\emph{e.g.} figure \ref{menu_html4}). Cela complexifie une solution basée
+sur une analyse syntaxique. Une solution mise en oeuvre par \cite{chang2001iepad}
+est une translation des éléments d'une page vers une représentation
+plus abstraite. Suivant leur classe d'appartenance les balises sont
+remplacées par un type plus générique (\emph{e.g.} figure \ref{translation_balise}),
+par exemple les éléments <UL>, <OL>, <DL> sont différents types de
+liste, ils seraient remplacés par un type plus générique <LISTS>.
+Les solutions basées sur une analyse syntaxique requièrent la conception
+d'un pattern. La conception de ce genre de pattern est une opération
+coûteuse \cite{vieira2006fast,chang2001iepad}.
+
+L'approche par analyse fonctionnelle (section \ref{sub:Analyse-fonctionnelle})
+semble limiter les inconvénients de l'analyse syntaxique. D'après les
+résultats de l'expérimentation faite dans l'article, l'approche fonctionne
+bien. Les éléments de la page sont bien identifiés conformément au
+modèle défini. Cependant le modèle est rustique et ne couvre pas
+tous nos besoins. Les auteurs de l'approche décrivent leur méthodologie
+pour la conception des différents objets du modèle. Nous devrions
+pouvoir l'étendre facilement à nos besoins.
+
+
+
+\begin{figure}[htb]
+
+\lstset{ 
+  basicstyle=\footnotesize, frame=tb,
+  xleftmargin=.1\textwidth, xrightmargin=.1\textwidth
+}
+\begin{lstlisting}[frame=single, language=html]
+<div class='menu'>     
+	<ol><a href='#'><span>Home</span></a></ol>     
+	<ol><a href='#'><span>About</span></a></ol>     
+	<ol><a href='#'><span>Services</span></a></ol>     
+	<ol><a href='#'><span>Contact</span></a></ol> 
+</div>
+\end{lstlisting}
+
+\lstset{ 
+  basicstyle=\footnotesize, frame=tb,
+  xleftmargin=.1\textwidth, xrightmargin=.1\textwidth
+}
+\begin{lstlisting}[frame=single, language=html]
+<div class='menu'>
+<ul>    
+	<li><a href='#'>Home</a></li>     
+	<li><a href='#'>About</a></li>     
+	<li><a href='#'>Services</a></li>     
+	<li><a href='#'>Contact</a></li>
+</ul>
+</div>
+\end{lstlisting}
+
+\caption{Exemple de différentes conceptions de menu\label{menu_html4}}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=300px]{img/translation_balise.jpg}
+
+\caption{Classification de balises\label{translation_balise} \cite{chang2001iepad}}
+
+
+\end{figure}
+
+
+\newpage
+
+
+\section{Conclusion et futurs travaux}
+Cette bibliographique nous a permis de cerner
+les avantages d'un processus dirigé par les modèles dans l'environnement des pages web. Au travers de l'étude d'un possible support à la réalisation
+d'un méta-modèle, nous avons synthétisé les principaux concepts des langages de publication existants sur le web. Cette partie était nécessaire
+à la compréhension de ces langages et de leurs futures évolutions. 
+Elle a également été l'amorce pour
+cerner la difficulté du traitement de la reconnaissance de types de structures et de leurs rôles dans une page de manière automatique.
+Ceci nous a permis d'étudier des solutions existantes et d'explorer d'autres pistes possibles à l'extraction de structures d'intérêt. Cependant d'autres approches peuvent encore être étudiées, notamment des approches stochastiques avec une application des Réseaux Bayésiens pour reconnaître le rôle d'une structure par une classification définie a priori.
+Des techniques de reconnaissance de formes issues du domaine du traitement des images semblent très intéressantes. En effet, ces techniques cherchent à regrouper des éléments (pixels) en structures de haut niveau (des objets). Cette problématique ressemble fortement aux problèmes liés à l'extraction de structure dans l'environnement actuel des pages web mais ne sont pas applicables directement car les données en entrée ne sont pas les mêmes. En traitement d'image, les données en entrée sont des matrices, ici nous manipulons des arbres. 
+
+La suite des travaux va se diriger vers la conception d'un méta-modèle intermédiaire basé sur des éléments du modèle de ARIA. Puis nous définirons un processus d'extraction de structures et de leurs rôles dans une page web
+ conformes au méta-modèle intermédiaire. Ce processus s' appuiera sur l'algorithme vu en section  \ref{sub:Approche-segmentation-visuelle} et sur une technique d'analyse fonctionnelle vue en section \ref{sub:Analyse-fonctionnelle}. Nous nous emploierons par la suite  à l'étude
+et à la réalisation d'un protocole d'acquisition des souhaits de personnalisation
+d'une page web. Ce protocole présente un grand intérêt pour nous puisque
+c'est grâce à cette partie que nous souhaitons rendre le web plus
+accessible aux personnes en situation de handicap visuel, en leur mettant
+à disposition un outil capable d'adapter une page web
+de façon personnalisée.
+
+
+
+\bibliographystyle{plain}
+\bibliography{biblio}
+\end{document}

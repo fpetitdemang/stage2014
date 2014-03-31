@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="aria" nsURI="http://aria/1.0" nsPrefix="aria">
+  <eSubpackages name="EPackageAria">
+    <eClassifiers xsi:type="ecore:EClass" name="Roletype">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aria-atomic"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EClass0"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Structure" eSuperTypes="#//EPackageAria/Roletype"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="#//EPackageAria/Structure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Separator" eSuperTypes="#//EPackageAria/Structure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Presentation" eSuperTypes="#//EPackageAria/Structure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Document" eSuperTypes="#//EPackageAria/Structure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//EPackageAria/Section"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Article" eSuperTypes="#//EPackageAria/Document #//EPackageAria/Region"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Landmark" eSuperTypes="#//EPackageAria/Region"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Banner" eSuperTypes="#//EPackageAria/Landmark"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Main" eSuperTypes="#//EPackageAria/Landmark"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//EPackageAria/Landmark"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Navigation" eSuperTypes="#//EPackageAria/Landmark"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Complementary" eSuperTypes="#//EPackageAria/Landmark"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ContentInfo" eSuperTypes="#//EPackageAria/Landmark"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Groupe" eSuperTypes="#//EPackageAria/Section"/>
+  </eSubpackages>
+</ecore:EPackage>

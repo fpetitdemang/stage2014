@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_NYJgYLNxEeOz_PcWcHrfig" type="EcoreTools" name="aria" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_OefdYLNxEeOz_PcWcHrfig" type="1002">
+    <children xmi:type="notation:Node" xmi:id="_OehSkLNxEeOz_PcWcHrfig" type="4006"/>
+    <children xmi:type="notation:Node" xmi:id="_Oeh5oLNxEeOz_PcWcHrfig" type="5003">
+      <children xmi:type="notation:Node" xmi:id="_SDVdILNxEeOz_PcWcHrfig" type="2003">
+        <children xmi:type="notation:Node" xmi:id="_SDWrQLNxEeOz_PcWcHrfig" type="4002"/>
+        <children xmi:type="notation:Node" xmi:id="_SDWrQbNxEeOz_PcWcHrfig" type="5004">
+          <styles xmi:type="notation:DrawerStyle" xmi:id="_SDWrQrNxEeOz_PcWcHrfig"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_SDWrQ7NxEeOz_PcWcHrfig"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_SDWrRLNxEeOz_PcWcHrfig"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_SDXSULNxEeOz_PcWcHrfig" type="5005">
+          <styles xmi:type="notation:DrawerStyle" xmi:id="_SDXSUbNxEeOz_PcWcHrfig"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_SDXSUrNxEeOz_PcWcHrfig"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_SDXSU7NxEeOz_PcWcHrfig"/>
+        </children>
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_SDVdIbNxEeOz_PcWcHrfig" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+        <element xmi:type="ecore:EClass" href="aria.ecore#//EPackageAria/EClassRoleType"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SDVdIrNxEeOz_PcWcHrfig" x="88" y="58" width="190" height="178"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Oeh5obNxEeOz_PcWcHrfig"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Oeh5orNxEeOz_PcWcHrfig"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Oeh5o7NxEeOz_PcWcHrfig"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_OefdYbNxEeOz_PcWcHrfig" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
+    <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_OefdYrNxEeOz_PcWcHrfig"/>
+    <element xmi:type="ecore:EPackage" href="aria.ecore#//EPackageAria"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OefdY7NxEeOz_PcWcHrfig" x="5" y="10" width="878" height="538"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_NYJgYbNxEeOz_PcWcHrfig"/>
+  <element xmi:type="ecore:EPackage" href="aria.ecore#/"/>
+</notation:Diagram>

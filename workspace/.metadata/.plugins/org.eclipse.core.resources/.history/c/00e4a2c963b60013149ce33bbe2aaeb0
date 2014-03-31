@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="aria" nsURI="http://aria/1.0" nsPrefix="aria">
+  <eSubpackages name="EPackageAria">
+    <eClassifiers xsi:type="ecore:EClass" name="Roletype" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aria-atomic"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EClass0"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Structure" abstract="true" eSuperTypes="#//EPackageAria/Roletype"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Section" abstract="true" eSuperTypes="#//EPackageAria/Structure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Separator" eSuperTypes="#//EPackageAria/Structure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Presentation" eSuperTypes="#//EPackageAria/Structure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Document" eSuperTypes="#//EPackageAria/Structure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//EPackageAria/Section"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Article" eSuperTypes="#//EPackageAria/Document #//EPackageAria/Region"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Landmark" abstract="true" eSuperTypes="#//EPackageAria/Region"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Banner" eSuperTypes="#//EPackageAria/Landmark"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Main" eSuperTypes="#//EPackageAria/Landmark"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//EPackageAria/Landmark"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Navigation" eSuperTypes="#//EPackageAria/Landmark"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Complementary" eSuperTypes="#//EPackageAria/Landmark"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ContentInfo" eSuperTypes="#//EPackageAria/Landmark"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Groupe" eSuperTypes="#//EPackageAria/Section"/>
+    <eClassifiers xsi:type="ecore:EClass" name="sectionHead" abstract="true" eSuperTypes="#//EPackageAria/Structure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Heading" eSuperTypes="#//EPackageAria/sectionHead #//EPackageAria/Gridcell">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aria-level"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Columnheader" eSuperTypes="#//EPackageAria/sectionHead #//EPackageAria/Gridcell"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Gridcell" eSuperTypes="#//EPackageAria/Section"/>
+    <eClassifiers xsi:type="ecore:EClass" name="listitem" eSuperTypes="#//EPackageAria/Section"/>
+    <eClassifiers xsi:type="ecore:EClass" name="list" eSuperTypes="#//EPackageAria/Region"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Select"/>
+    <eClassifiers xsi:type="ecore:EClass" name="listbox" eSuperTypes="#//EPackageAria/list #//EPackageAria/Select"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Menu" eSuperTypes="#//EPackageAria/list #//EPackageAria/Select"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Menubar" eSuperTypes="#//EPackageAria/Menu"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Radiogroup" eSuperTypes="#//EPackageAria/Section"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Combobox" eSuperTypes="#//EPackageAria/Section"/>
+  </eSubpackages>
+</ecore:EPackage>
