@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="css" nsURI="http://css/1.0" nsPrefix="css">
+  <eSubpackages name="CSS">
+    <eClassifiers xsi:type="ecore:EClass" name="Boite">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="possede" eType="#//CSS/Style"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="possede" eType="#//CSS/Agencement"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="display"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="position"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="top"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="right"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bottom"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="left"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="float"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="clear"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="z-index"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Style"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Agencement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Texte"/>
+  </eSubpackages>
+</ecore:EPackage>

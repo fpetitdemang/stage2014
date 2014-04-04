@@ -23,7 +23,7 @@
 		</list>
 	</section>
 	<section name="EditorSelectionDialog">
-		<item value="true" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
+		<item value="false" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
 	</section>
 	<section name="ImportExportAction">
 	</section>
