@@ -1,0 +1,610 @@
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[french]{article}
+\usepackage[T1]{fontenc}
+ \usepackage[french]{babel}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose}
+\usepackage{color}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{glossaries}
+\makeglossaries
+
+
+\usepackage[babel=true]{csquotes}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ \theoremstyle{definition}
+ \newtheorem*{defn*}{\protect\definitionname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{framed}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Pour introduire des commentaires
+
+\newcommand{\nb}[2]{
+    \fbox{\bfseries\sffamily\scriptsize#1}
+    {\sf\small\textit{#2}}
+}
+
+\newcommand\cn[1]{\nb{MM}{#1}}
+\newcommand\mh[1]{\nb{MH}{#1}}
+\newcommand\mm[1]{\nb{MM}{#1}}
+\newcommand\yb[1]{\nb{YB}{#1}}
+\newcommand\xd[1]{\nb{YB}{#1}}
+\newcommand\flb[1]{\nb{FP}{#1}}
+
+\makeatother
+
+\usepackage{babel}
+\usepackage{fancyheadings}
+\providecommand{\definitionname}{Definition}
+
+\begin{document}
+%\pagenumbering{roman}
+\pagestyle{fancyplain}
+\thispagestyle{empty}
+\noindent
+\begin{center}
+\large{\texttt{Académie de Montpellier}}\\
+\Large{\texttt{Université Montpellier II}}\\
+\large{\texttt{Sciences et Techniques du Languedoc}}\\
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\Huge{{ÉTUDE BIBLIOGRAPHIQUE DE\\}}
+ \vspace{1.0cm}
+\Huge{\textbf{STAGE RECHERCHE MASTER M2}}
+\normalsize
+\begin{center}
+\vspace{1.0cm}
+
+effectuée au Laboratoire d'Informatique de Robotique\\
+et de Micro-électronique de Montpellier
+\end{center}
+
+\vspace{2mm}
+%\Large{\textbf{prénom NOM}}
+
+\vspace{0.1cm}
+\normalsize
+
+\vspace{3mm}
+
+\large{Spécialité} : \textbf{AIGLE}\\
+%\Large{Formation Doctorale} : \textbf{Informatique}\\
+%\large{{\'E}cole Doctorale} : \textbf{Information, Structures, Systèmes}
+\vspace{1.0cm}
+
+\LARGE{\textbf{Personnalisation de page web : application à l'amélioration de l'accessibilité du web}}
+\vspace{2mm}
+
+\begin{center}
+  par \textbf{franck~PETITDEMANGE}
+\end{center}
+
+\vspace{2mm}
+
+
+
+\vspace{2cm}
+
+Date : \textbf{17 mars 2014}
+
+\vspace{0.5cm}
+
+Sous la direction de \textbf{Marianne~HUCHARD, Michel~MEYNARD, Yoann~BONAVERO}
+
+\vspace{5mm}
+
+%\begin{table}[hbt]
+%\begin{center}
+%\begin{tabular}{ l l l}
+%Messieurs & {\em } & Rapporteurs\\
+%& {\em } & \\
+%& {\em } & \\
+%\\
+%Messieurs& {\em } & Examinateurs \\
+%& {\em } & \\
+%& {\em } & \\
+%\\
+%Monsieur & {\em Evripidis BAMPIS} &  Directeur de thèse\\
+%& {\em  X} & \\
+%\end{tabular}
+%\end{center}
+%\end{table}
+
+%\vspace{.7cm}
+
+
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+
+\section{Méta-modèle de page web\label{sec:Modele-de-page}}
+
+\subsection{HTML 4\label{sub:HTML-4}}
+
+HTML 4 \cite{HTML_4} est un langage permettant la publication de
+contenu sur le web. C'est le langage standard actuel des pages web.
+Il permet de structurer le contenu et de lui associer une mise en
+forme. Le contenu peut être du texte, des images, ou plus généralement
+du multimédia. Ce contenu est organisé de manière hiérarchique en
+le découpant en section et sous-section. 
+
+
+\paragraph{Contenu}
+
+Le contenu principal décrit dans les pages HTML 4
+est un contenu textuel. Il peut également contenir du multimédia comme
+des images, des vidéos et applets (des programmes qui sont automatiquement
+chargés puis lancés sur la machine de l'utilisateur). L'inclusion
+de contenu multimédia se fait par l'élément générique : <OBJECT>. Il
+possède une collection d'attributs prédéfinis qui décrivent l'objet inclus
+dans la page. Le principal étant \emph{type }décrivant
+le type de contenu des données (\emph{e.g.} figure \ref{balise_object}). La valeur de ces attributs n'est pas prédéfinie. Elle est interprétée 
+librement par la machine qui charge la page web. 
+
+\begin{figure}[H]
+\lstset{
+  basicstyle=\footnotesize, frame=tb,
+  xleftmargin=.2\textwidth, xrightmargin=.2\textwidth
+}
+\begin{lstlisting}[frame=single, language=html,]
+<object data="data/test.mpg" type="video/mpeg">
+	Ceci est une vidéo
+</object>
+\end{lstlisting}
+\caption{Exemple contenu multimédia\label{balise_object}}
+\end{figure}
+
+
+\paragraph{Structuration générique}
+
+HTML 4 propose un mécanisme générique pour la composition de contenu
+formant la structure des pages web. Ce mécanisme gravite autour des
+éléments de type <DIV> et de leurs attributs respectifs : \emph{id} et \emph{class}.
+
+
+\subparagraph{DIV}
+
+Signifiant division, la balise DIV est utilisée comme conteneur générique, il peut
+contenir n'importe quel élément. Il est exploité pour :
+\begin{itemize}
+\item regrouper les éléments pour leur appliquer un style (une mise en forme
+particulière).
+\item signaler une section ou une sous-section. 
+\end{itemize}
+
+\subparagraph{id et class}
+
+Chaque élément peut se voir attribuer un identifiant ou une classe
+d'appartenance. \emph{id} assigne un nom à un élément. Ce nom est
+unique dans le document. \emph{class} au contraire, assigne un ou
+plusieurs noms de classe à un élément. Un nom de classe peut être
+partagé par plusieurs instances d'éléments. Les identifiants et les
+classes sont des suites de caractères quelconques décidées arbitrairement
+par l'auteur du document.
+
+~\\
+
+Les éléments DIV utilisés conjointement avec les attributs \emph{id} et \emph{class}
+sont au c\oe ur du mécanisme générique de structuration d'un document.
+DIV permet de diviser le contenu d'un document en sections et sous-sections 
+(\emph{e.g.} figure \ref{div_sectionnement}) pour décrire sa structure. Les
+balises <DIV> ayant une sémantique neutre, c'est l'auteur du contenu
+qui attribue (de manière arbitraire) un nom de \emph{class} ou un
+\emph{id}. L'\emph{id}
+ou la \emph{class} est associé à
+une mise en forme définie a priori. La mise en forme est définie au
+travers d'un langage : CSS\cite{CSS} que l'on appelle feuille de style.
+CSS permet d'appliquer un ensemble de règles de style ou un agencement des éléments
+dans l'espace de la page. Par exemple, l'auteur peut
+déclarer une classe ``aside'' et définir que les éléments appartenant
+à la classe ``aside'' doivent être placés sur le côté droit de la
+page avec un fond blanc. Ce mécanisme est illustré par la figure \ref{div_role}. L'auteur associe à chaque <DIV> une 
+\emph{class}
+ou un \emph{id} auquel s'applique
+une mise en page et une mise en forme définies par l'auteur dans une
+feuille de style CSS.
+
+\begin{figure}[htb]
+\lstset{
+  basicstyle=\footnotesize, frame=tb,
+  xleftmargin=.25\textwidth, xrightmargin=.25\textwidth
+}
+\begin{lstlisting}[frame=single, language=html]
+<body>
+	<div id="header" ></div>
+	<div id="navigation_bar"></div>
+	<div class="aside"></div>
+	<div class="section">
+		<div class="article"></div>
+		<div class="article"></div>
+	</div>
+	<div class="aside"></div>
+	<div id="footer"></div>
+</body>
+\end{lstlisting}
+
+\centering
+\includegraphics[width=0.5\linewidth]{img/architecture_Geekos_HTML4-294x300.jpg}
+
+\caption{Architecture page web HTML 4\label{div_role}}
+\end{figure}
+
+
+\begin{figure}[htb]
+\lstset{
+  basicstyle=\footnotesize, frame=tb,
+  xleftmargin=.15\textwidth, xrightmargin=.15\textwidth
+}
+\begin{lstlisting}[frame=single, language=html]
+<body>
+<div class="section" id="elephants-foret" >
+	<h1>Les éléphants des forêts</h1> 
+	<p>Dans cette partie, nous abordons le sujet 
+moins connu des éléphants des forêts.</p>
+	<div class="sous-section" id="habitat-foret" > 
+	<h2>L'habitat</h2> 
+	<p>Les éléphants des forêts ne vivent pas 
+dans les arbres mais au milieu d'eux.</p>
+	</div> 
+</div>
+</body>
+\end{lstlisting}
+
+\caption{Exemple découpage en sections et sous-sections \label{div_sectionnement}}
+\end{figure}
+
+
+\paragraph{Méta-modèle}
+La figure \ref{metamodele_HTML4} présente les éléments principaux de construction d'une page web avec HTML 4.
+\begin{itemize}
+\item Chaque élément hérite de la méta-classe Élément. Cela permet d'associer un identifiant unique à chaque élément ainsi qu'un ensemble de classe.
+\item Les éléments en bloc sont l'ensemble des éléments dans une page qui forment un bloc structurel (\emph{e.g.} un paragraphe). 
+\item Les éléments en-ligne définissent des éléments qui ne forment pas de blocs structurels. Par exemple la balise strong ne définit pas un bloc structurel de la page mais indique que l'élément qu'elle encapsule est un mot important dans un texte. De manière générale les éléments en-ligne servent à attribuer une sémantique aux éléments textuelles. 
+\item La relation de composition entre les éléments en bloc, spécifie que les éléments en bloc peuvent contenir des éléments en-ligne mais pas l'inverse.
+Les relation de composition réflexive de l'élément en bloc spécifie qu'un élément en bloc peut contenir d'autre élément en bloc, il en est de même pour les éléments en-ligne.
+
+
+\end{itemize}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.7\linewidth]{img/metamodele/HTML4.png}
+
+\caption{Méta-modèle HTML 4\label{metamodele_HTML4}}
+\end{figure}
+
+
+
+
+
+\subsection{HTML 5}
+
+HTML 5 \cite{HTML_5} étend HTML 4 en apportant de nouveaux éléments
+lexicaux. Ces nouveaux éléments apportent une sémantique standard et de plus haut niveau. Elle permet notamment d'expliciter la structure d'une page.
+
+
+\paragraph{Contenu}
+
+HTML 5 fournit de nouveaux éléments comme <VIDEO>,
+<AUDIO> avec un ensemble d'attributs propres à chaque balise (a contrario
+de l'élément <OBJECT> de HTML 4). Les attributs spécifiques permettent
+de renseigner l'état d'un élément. Par exemple, la balise <AUDIO>
+possède un attribut spécifique \emph{muted}
+indiquant si le son de l'élément audio est coupé ou non.
+
+
+\paragraph{Structuration}
+
+Les nouveaux éléments de HTML 5 spécifient donc une sémantique standard
+:
+\begin{itemize}
+\item SECTION : représente une section générique dans un document, c'est-à-dire un regroupement de contenu par thématique.
+\item ARTICLE : représente un contenu autonome dans une page, facilite l'inclusion
+de plusieurs sous-documents.
+\item NAV : représente une section de liens vers d'autres pages ou des fragments
+de cette page
+\item ASIDE : représente une section de la page dont le contenu est indirectement
+lié à ce qui l'entoure et qui pourrait être séparé de cet environnement
+\item HEADER : représente un groupe d'introduction ou une aide à la navigation.
+Il peut contenir des éléments de titre, mais aussi d'autres éléments
+tels qu'un logo, un formulaire de recherche, etc.
+\item FOOTER : représente le pied de page, ou de la section, ou de la racine
+de sectionnement la plus proche
+\end{itemize}
+La figure \ref{html5_role} montre un découpage explicite de la structure
+avec HTML 5 en opposition au découpage implicite de HTML 4 montré dans
+la figure \ref{div_role}.
+
+\begin{figure}[htb]
+\begin{center}
+\lstset{ 
+  basicstyle=\footnotesize, frame=tb,
+  xleftmargin=.25\textwidth, xrightmargin=.25\textwidth
+}
+\begin{lstlisting}[frame=single, language=html]
+<body>
+	<header></header>
+	<nav></nav>
+	<section>
+		<article></article>
+		<article></article>
+	</section>
+	<aside></aside>
+	<footer></footer>
+</body>
+\end{lstlisting}
+
+\includegraphics[width=0.5\linewidth]{img/architecture_Geekos_HTML5-293x300.jpg}
+
+\caption{Exemple d'attribution de rôle\label{html5_role}}
+\end{center}
+\end{figure}
+
+
+\paragraph{Méta-modèle}
+La figure \ref{metamodele_HTML5} présente les éléments principaux de construction d'une page web avec HTML 5.
+\begin{itemize}
+\item La méta-classe Sectioning définit le contenu comme des éléments qui créent une nouvelle section dans le plan d'un document. Ils définissent également la portée des éléments d'entête (Header) et de pied de page (Footer).
+\item La méta-classe Header définit le contenu comme des éléments d'introduction. Par exemple pour un page web, un logo ou pour une section, un titre. Les sous classe de Header sont des éléments de titre introduisant des sections. 
+\item La méta-classe Footer définit le contenu comme étant des éléments de pied de page ou de section.
+\item La méta-classe Phrasing définit le contenu textuelle. 
+\item La méta-classe Embedded définit un contenu importé dans une page. C'est le cas par exemple des éléments de type <video> qui sont sous classe de la méta-classe Embedded (elle est également sous-classe de la méta-classe Interactive).
+\item La méta-classe Interactive définit le contenu interactif dans une page.
+\end{itemize}
+
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.9\linewidth]{img/metamodele/HTML5.png}
+
+\caption{Méta-modèle HTML 5\label{metamodele_HTML5}}
+\end{figure}
+
+
+\subsection{CSS }
+
+CSS est un langage de feuille de style qui permet aux auteurs des
+pages web de lier du style aux éléments HTML. Le style définit comment
+afficher un élément (ex. les polices de caractères, l'espacement,
+couleurs, \emph{etc.}). CSS permet ainsi de séparer la présentation
+du style du contenu (\emph{cf. }figure \ref{css-font}). L'avantage
+est une simplification de l'édition et de la maintenance d'une page
+web.
+
+\begin{figure}[htb]
+\begin{center} 
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.1\textwidth, 
+	xrightmargin=.1\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<style>
+p.serif{font-family:"Times New Roman",Times,serif;} 
+p.sansserif{font-family:Arial,Helvetica,sans-serif;} 
+</style> 
+
+<body> 
+<p class="serif">Ceci est un paragraphe 
+avec un style de font Times New Roman font.</p> 
+<p class="sansserif">Ceci est un paragraphe 
+avec un style de font the Arial font.</p>
+</body> 
+</html>
+\end{lstlisting}
+\includegraphics[width=0.9\linewidth]{img/metamodele/css-font.png}
+\caption{Exemple CSS\label{css-font}} \end{center} \end{figure}
+
+
+\paragraph{Modèle de boîte}
+
+CSS génère pour chaque élément de l'arbre du document (DOM) une boîte
+rectangulaire. Les boîtes rectangulaire sont conformes à un modèle
+de boîte et sont agencées suivant un modèle de mise en forme décrit
+en section \ref{sub:Mod=0000E8le-de-mise}
+
+Chaque boîte possède ainsi une aire de contenu (\emph{e.g} une texte,
+une image, \emph{etc.}) entourée en option par une aire d'espacement,
+une aire de bordure et une aire de marge (\emph{e.g }figure \ref{css-modeleboite}).
+
+\begin{figure}[htb]
+\begin{center} 
+\includegraphics[width=0.5\linewidth]{img/metamodele/css-modeleboite.png}
+\caption{Modèle de boîte\label{css-modeleboite}} \end{center} \end{figure}
+
+
+\paragraph{Modèle de mise en forme\label{sub:Mod=0000E8le-de-mise}}
+
+Chaque boîte se voit attribuer un type qui affecte en partie son positionnement.
+Les deux principaux types sont les \emph{boîtes en bloc }et \emph{les
+boîte en-ligne}. Les éléments de type bloc sont des éléments dont
+le rendu visuel forme un bloc (\emph{e.g }figure \ref{css-enligne}
+avec l'élément de paragraphe <p>). Les éléments de type en-ligne sont
+des éléments qui n'ont pas la forme de blocs de contenu (\emph{e.g
+}figure \ref{css-enligne} avec l'élément <strong>). Les boîtes en-ligne
+sont placées horizontalement, l'une après l'autre, en commençant en
+haut du bloc conteneur. Les blocs conteneurs sont des boîtes qui encapsulent
+d'autres boîtes. Les boîtes en-bloc sont placées l'un après l'autre,
+verticalement, en commençant en haut du bloc conteneur. Le schéma
+de positionnement décrit est appelé \emph{flux normal}.
+
+\begin{figure}[htb]
+\begin{center} 
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.1\textwidth, 
+	xrightmargin=.1\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<p>Avant de faire le truc X il est 
+<strong>nécessaire</strong> de faire le truc Y avant.
+</p> 
+\end{lstlisting}
+\caption{Exemple élément en-line\label{css-enligne}} \end{center} \end{figure}
+
+Une fois le \emph{flux normal} calculé, il est possible de le modifier. 
+
+Un premier mécanisme possible est le positionnement relatif. La position
+de la boîte est exprimée en propriété de décalage par rapport à son
+bloc conteneur : 
+\begin{itemize}
+\item 'top' : définit le décalage du bord haut de la marge d'une boîte sous
+le bord haut de la boîte du bloc conteneur. 
+\item 'right' : définit le décalage du bord droit de la marge d'une boîte
+à gauche du bord droit de la boîte du bloc conteneur. 
+\item 'bottom' : définit le décalage du bord bas de la marge d'une boîte
+au-dessus du bord bas de la boîte du bloc conteneur. 
+\item 'left' : définit le décalage du bord gauche de la marge d'une boîte
+à droite du bord gauche de la boîte du bloc conteneur. 
+\end{itemize}
+Un deuxieme mécanisme est le positionnement flottant. Une boîte flottante
+est déplacée vers la gauche ou la droite sur la ligne courante du
+\emph{flux normal}. Le contenu du document s'écoule alors le long
+des flancs de cette dernière.
+
+Un troisième mécanisme est le positionnement absolu. La boîte est
+retirée du \emph{flux normal} et est positionnée par rapport à son
+bloc conteneur. La différence avec le positionnement relatif est que
+le positionnement de la boîte n'a aucun effet sur les boîtes du même
+niveau de parenté. Ces boîtes peuvent, ou non, cacher les autres boîte.
+
+
+\paragraph{Avant-plan et d'arrière-plan}
+
+Les propriétés CSS permettent aux auteurs la spécification d'une couleur
+d'avant-plan et d'arrière-plan pour un élément. La couleur d'arrière-plan
+peut être une couleur ou une image . L'arrière-plan correspond aux
+aires de contenu et, d'espacement et de bordure. Le couleur d'avant-plan
+correspond à la couleur du contenu de texte d'un élément. 
+
+
+\paragraph{Les polices}
+
+CSS permet de pouvoir spécifier l'utilisation de plusieurs représentation
+pour les caractères textuelles : \emph{la} \emph{police}. Une liste
+exaustive de propriètés permettent de spécifier la police d'un élément
+contenu dans une boîte. On peut spécifier par exemple une famille
+de police (serif, sans-serif), le style de la police (italic, oblique),
+la taille, \emph{ect.}
+
+
+\paragraph{Les textes}
+
+CSS définies la représentation visuelle des caractères, des caractères
+blancs, des mots et des paragraphes. On peut spécifié un alinéa pour
+la première ligne du texte dans un bloc ('text-indent'), l'alignement
+d'un contenu en-ligne dans un élément de type bloc ('text-align'),
+le comportement de l'espacement entre les caractères du texte ('letter-spacing'),
+\emph{ect.}
+
+
+
+
+
+
+
+\section{Réalisation}
+\subsection{Méta-modèle}
+\subsubsection{Modèle de contenu}
+Relation de composition? En raison de la grande souplesse du langage, on ne fait pas apparaître le relation de composition dans le modèle de contenu, mais plutôt dans le modèle de mise en forme.
+La spécification de composition des balises en ligne et en bloc est annulé par les possibilités de CSS permettent de modifier la nature en faisant passé une balise de en bloc a en ligne.
+ 
+\subsubsection{Modèle de mise en forme}
+L'étude des spécification de la norme CSS nous a amené à la réalisation
+d'un méta-modèle (\emph{cf.} figure \ref{css-metamodele}) restreint aux aspects des principaux éléments de
+présentation conforme aux souhaits de transformation. Les spécifications
+de mise en forme n'apparaîssent pas dans le méta-modèle, il n'est
+pas prévu d'integrer pour la durée du stage l'expression des besoins
+sur l'agencement des éléments. Les éléments les plus important sont
+les couleurs d'arrière plan et du texte qui seront le support à l'expression
+des souhaits constrastes (de couleurs) ainsi qu'au module de calcule.
+
+\begin{figure}[htb]
+\begin{center} 
+\includegraphics[width=\linewidth]{img/metamodele/CSS.png}
+\caption{Méta-modèle\label{css-metamodele}} \end{center} \end{figure}
+
+
+\paragraph{Méta-classe Box}
+
+La méta-classe \emph{Box} décrit le concept de bloc conteneur au travers
+de la relation de composition. La propriété Display sert à définir
+le type de boîte ( \emph{inline} et \emph{block}). Ce genre de propriété
+pourrait nous permettre l'expression du besoin d'afficher un menu
+horizontalement ou vericalement. La propriété Margin spécifie l'espacement
+du bord extérieur de la boîte. Elle nous permettra de mieu marquer
+la séparation entre les différents types de contenu. 
+
+
+\paragraph{Méta-classe Style}
+
+La méta-classe \emph{Style} des boîtes de CSS décrit les boîtes rectangulaires
+qui sont générées pour les éléments de l'arbre du document (\emph{cf.
+}figure \ref{css-modeleboite}). La méta-classe \emph{Style} décrit
+:
+\begin{itemize}
+\item padding : l'air d'espacement, 
+\item border-width épaisseur de bordure,
+\item \emph{border-style} : style de la bordure,
+\item border-color : la couleur de bordure,
+\item border-{[}color, image{]}\emph{ }: arière-plan .
+\end{itemize}
+
+\paragraph{Méta-classe Texte}
+
+La méta-classe \emph{Texte} décrit la répresentation visuelle des
+caractères, mots et paragraphes contenuent dans une boîte. Par exemple,
+la proprièté \emph{letter-spacing }spécifie l'espace entre les lettres
+:
+\begin{itemize}
+\item text-indent : décrit un alinea 
+\item text-align : décrit un alignement. Exemple de valeur possible : alignement
+de texte à gauche, droite, centré, \emph{ect}.
+\item decoration : décrit un trait en-dessous, trait au-dessus, rayure et
+clignotement
+\item text-shadow : décrit des effets d'ombrage appliquer au texte
+\item letter-spacing : décrit l'espacement entre les mots
+\item word-spacing : décrit l'espacement entre les mots
+\item text-transform : décrit les effets de capitalisation dans le texte.
+Par exemple la valeur \emph{uppercase} définit que les lettres de
+chaque mots soient en majuscule, \emph{lowercase} décrit l'inverse.
+\item color : décrit la couleur du texte
+\end{itemize}
+
+\paragraph{Méta-classe Police}
+
+La méta-classe \emph{Police }décrit la représentation visuelle des
+caractères : 
+\begin{itemize}
+\item font-family : décrit le noms de familles génériques de la police du
+texte (\emph{e.g new century schoolbook})
+\item font-style : style de la police (\emph{e.g italic})
+\item font-weight : décrit la graisse de la police
+\item font-size : décrit la taille de la police\end{itemize}
+
+
+
+\bibliographystyle{plain}
+\bibliography{biblio}
+\end{document}

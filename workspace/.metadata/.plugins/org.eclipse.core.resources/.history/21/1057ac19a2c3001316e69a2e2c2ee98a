@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="html4" nsURI="http://html4/1.0" nsPrefix="html4">
+  <eSubpackages name="HTML4">
+    <eClassifiers xsi:type="ecore:EClass" name="Element">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Id"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="IsInstance" eType="#//HTML4/Class"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Class">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Label"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Bloc" eSuperTypes="#//HTML4/Element">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//HTML4/Bloc"
+          eOpposite="#//HTML4/Bloc/EReference1"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//HTML4/Bloc"
+          containment="true" eOpposite="#//HTML4/Bloc/EReference0"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InLine" eSuperTypes="#//HTML4/Element"/>
+  </eSubpackages>
+</ecore:EPackage>

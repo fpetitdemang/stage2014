@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_rSHpkMOzEeOnivq5CnvwVA" type="EcoreTools" name="HTML5" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_r3oKYMOzEeOnivq5CnvwVA" type="1002">
+    <children xmi:type="notation:Node" xmi:id="_r3oxcMOzEeOnivq5CnvwVA" type="4006"/>
+    <children xmi:type="notation:Node" xmi:id="_r3oxccOzEeOnivq5CnvwVA" type="5003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_r3oxcsOzEeOnivq5CnvwVA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_r3oxc8OzEeOnivq5CnvwVA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_r3oxdMOzEeOnivq5CnvwVA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_r3oKYcOzEeOnivq5CnvwVA" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
+    <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_r3oKYsOzEeOnivq5CnvwVA"/>
+    <element xmi:type="ecore:EPackage" href="HTML5.ecore#//HTML5"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r3oKY8OzEeOnivq5CnvwVA" width="933" height="453"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_rSHpkcOzEeOnivq5CnvwVA"/>
+  <element xmi:type="ecore:EPackage" href="HTML5.ecore#/"/>
+</notation:Diagram>

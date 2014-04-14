@@ -69,8 +69,7 @@ Widget
 \end_layout
 
 \begin_layout Standard
-C'est une composant graphique dans une page web (bouton, liste déroulant,
- tableau, 
+Elément graphique dans une page web (bouton, liste déroulant, tableau, 
 \emph on
 etc.
 \emph default
@@ -445,8 +444,7 @@ Option
 \end_layout
 
 \begin_layout Standard
-Eléments sélectionnables dans une liste.
- Il est forcement contenu dans un élément de type listbox.
+Elément sélectionnable dans une liste.
 \end_layout
 
 \begin_layout Standard
@@ -717,7 +715,24 @@ Ul (unorder list)
 \end_layout
 
 \begin_layout Standard
-Liste non ordonnée d'éléments
+Liste non ordonnée d'éléments (
+\emph on
+e.g 
+\emph default
+figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{metaclass-unorderlist}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -932,7 +947,9 @@ end{lstlisting}
 
 
 \backslash
-caption{Exemple de liste non-ordonnée} 
+caption{Exemple de liste non-ordonnée 
+\backslash
+label{metaclass-unorderlist}} 
 \backslash
 end{center} 
 \backslash
@@ -1315,7 +1332,7 @@ Command
 \end_layout
 
 \begin_layout Standard
-Eléments qui exécutent des actions mais ne reçoivent pas d'informatione
+Eléments qui exécutent des actions mais ne reçoivent pas d'informations
  en entrée.
 \end_layout
 
@@ -1694,7 +1711,25 @@ Indique qu'une instance est cochable.
 checkbox.
 
 \emph default
- Par exemple, lorsqu' il y' a au moins un élément coché et un non coché.
+ Par exemple, lorsqu' il y' a au moins un élément coché et un non coché
+ (
+\emph on
+e.g 
+\emph default
+figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{metaclass-checkbox}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -1945,7 +1980,24 @@ Radio
 Radio est une instance cochable.
  Il fait toujours partie d'une liste d'élément d'au moins deux éléments.
  Il présente la contrainte que l'on ne peut sélectionner qu'un seul élément
- parmi la liste de choix auquel il appartient.
+ parmi la liste de choix auquel il appartient (
+\emph on
+e.g 
+\emph default
+figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{metaclasse-radio}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -2156,7 +2208,7 @@ linewidth]{imgmetamodel/radio.png}
 \backslash
 caption{Exemple de radio 
 \backslash
-label{html5_role}} 
+label{metaclasse-radio}} 
 \backslash
 end{center} 
 \backslash
@@ -2449,8 +2501,8 @@ ref{meta-classe_select}
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -2801,8 +2853,6 @@ cf.
  
 \emph default
 figure 
-\lang english
-
 \begin_inset ERT
 status open
 
@@ -2959,9 +3009,9 @@ Eléments de structuration dans une page web.
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -3087,9 +3137,9 @@ Elements qui définissent un état logique (sémantique) d'un texte, en oppositi
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -3124,7 +3174,7 @@ Abstrait
 \begin_inset Text
 
 \begin_layout Plain Layout
-Oui
+Non
 \end_layout
 
 \end_inset
@@ -3460,22 +3510,21 @@ Section
 \begin_layout Standard
 Aria définit une section comme une unité de confinement structurelle dans
  une page.
- Le sens n'est pas assez claire, on spécifie dans notre méta-modèle que
- les éléments héritant de section définissent des limites au contenu qu'il
- englogbe.
+ On spécifie dans notre méta-modèle que les éléments héritant de section
+ définissent des limites au contenu qu'il englogbe.
  Ils fournissent un environnement contextuelle, c'est à dire une portée
  sémantique aux éléments.
- Par exemple, les éléments de titre se rapportent à l'élement de section
+ Par exemple, les éléments de titre se rapportent à l'élement de région
  qui l'a introduit.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
+<column alignment="center" valignment="top" width="0pt">
+<row endhead="true">
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -3587,7 +3636,7 @@ ListItem
 \end_layout
 
 \begin_layout Standard
-Un élément seul dans une liste.
+Un élément dans une liste.
  Il est contenu dans une 
 \emph on
 listitem
@@ -3598,10 +3647,10 @@ listitem
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
+<row endhead="true">
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -3719,10 +3768,10 @@ Element regroupant une collection logique de widget.
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
+<row endhead="true">
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -3976,10 +4025,10 @@ Un groupement thématique dans une page.
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
+<row endhead="true">
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -4073,7 +4122,7 @@ Alignement HTML
 \begin_inset Text
 
 \begin_layout Plain Layout
-<fieldset>
+<section>
 \end_layout
 
 \end_inset
@@ -4099,10 +4148,10 @@ Element rajouter au méta-modèle de aria.
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
+<row endhead="true">
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -4362,10 +4411,10 @@ ref{meta-classe_grid}
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
+<row endhead="true">
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -4505,10 +4554,10 @@ ref{meta-classe_grid}
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
+<row endhead="true">
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -4648,10 +4697,10 @@ ref{meta-classe_grid}
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
+<row endhead="true">
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -4763,12 +4812,11 @@ Grid
 \end_layout
 
 \begin_layout Standard
-Aria spécifie cet élément comme un contenu interactif organisé car il permet
- d'organiser la navigation dans les données qu'il structure, notamment la
- navigation dans l'interface graphique de la page.
- Dans un premier temps nous nous interessons plûtot à la présentation qu'a
- la navigation.
- Nous spécifions la norme Aria de 
+Aria spécifie cet élément comme un contenu interactif car il permet d'organiser
+ la navigation dans les données qu'il structure.
+ Il peut spécifier notamment un agencement structuré de l'interface graphique
+ d'une page.
+ Nous réduisons la norme Aria de 
 \emph on
 Grid
 \emph default
@@ -4798,10 +4846,10 @@ ref{meta-classe_grid}
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
+<row endhead="true">
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -5116,32 +5164,22 @@ end{figure}
 \end_layout
 
 \begin_layout Paragraph
-Document 
-\end_layout
-
-\begin_layout Standard
-Définit le contenu comme un document possedant des éléments de titre, en-tête
- et pied de page.
- Pas besoin dans le méta-modèle section suffit!?
-\end_layout
-
-\begin_layout Paragraph
-Présentation
-\end_layout
-
-\begin_layout Standard
-??????
-\end_layout
-
-\begin_layout Paragraph
 Separator
 \end_layout
 
 \begin_layout Standard
+Élément qui marque une division dans le contenu d'une section.
+ Il de mieux signaler le contenu sémantiquent différent.
+ Ce sont des séparateurs visuelles (lignes de pixels horizontales ou verticales
+ entre deux éléments).
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -5177,129 +5215,7 @@ Abstrait
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Super Classe
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Sous Classe
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Alignement HTML
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-SectionHead
-\end_layout
-
-\begin_layout Standard
-Élément qui résument ou décrivent brièvement le sujet introduit par une
- région.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Caractéritique
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Valeur
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Abstrait
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Oui
+Non
 \end_layout
 
 \end_inset
@@ -5339,6 +5255,128 @@ Sous Classe
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alignement HTML
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+<hr>
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+SectionHead
+\end_layout
+
+\begin_layout Standard
+Élément qui résument ou décrivent brièvement le sujet introduit par une
+ région.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Caractéritique
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valeur
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Abstrait
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Oui
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Super Classe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Structure
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sous Classe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 Heading
 \end_layout
 
@@ -5377,14 +5415,14 @@ Heading
 \end_layout
 
 \begin_layout Standard
-Définit des éléments de titre
+Définit des éléments titre
 \end_layout
 
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -5498,15 +5536,15 @@ Landmark
 \end_layout
 
 \begin_layout Standard
-Principaux éléments d'une page web
+Eléments structurels courant dans une page web.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -5581,7 +5619,7 @@ Sous Classe
 \begin_inset Text
 
 \begin_layout Plain Layout
-Heading
+Banner, Main, Form, Navigation, Complementary, ContentInfo, Application
 \end_layout
 
 \end_inset
@@ -5626,9 +5664,9 @@ Pour faire l'analogie avec l'entête d'un document, on parle de bannière
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -5663,7 +5701,7 @@ Abstrait
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Non
 \end_layout
 
 \end_inset
@@ -5683,7 +5721,7 @@ Super Classe
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Landmark
 \end_layout
 
 \end_inset
@@ -5723,7 +5761,7 @@ Alignement HTML
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+<header>
 \end_layout
 
 \end_inset
@@ -5741,11 +5779,16 @@ Application
 \end_layout
 
 \begin_layout Standard
+Contenu applicatif dans la page.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -5780,7 +5823,7 @@ Abstrait
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Non
 \end_layout
 
 \end_inset
@@ -5800,7 +5843,7 @@ Super Classe
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Landmark
 \end_layout
 
 \end_inset
@@ -5820,7 +5863,7 @@ Sous Classe
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Audio, Video
 \end_layout
 
 \end_inset
@@ -5840,7 +5883,7 @@ Alignement HTML
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+<header>
 \end_layout
 
 \end_inset
@@ -5858,10 +5901,16 @@ Complementary
 \end_layout
 
 \begin_layout Standard
+Région d'un document conçut comme étant complémentaire au contenu principal
+ du document auquel il est associé.
+ Il conserve une signification même si il est séparer du contenu principale.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -5897,7 +5946,7 @@ Abstrait
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Non
 \end_layout
 
 \end_inset
@@ -5917,7 +5966,7 @@ Super Classe
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Landmark
 \end_layout
 
 \end_inset
@@ -5957,7 +6006,7 @@ Alignement HTML
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+<ASIDE>
 \end_layout
 
 \end_inset
@@ -5975,10 +6024,15 @@ ContentInfo
 \end_layout
 
 \begin_layout Standard
+Région d'un document contenant des informations sur celui-ci.
+ Par exemple le copyrights associé à un document.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -6014,7 +6068,7 @@ Abstrait
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Non
 \end_layout
 
 \end_inset
@@ -6034,7 +6088,7 @@ Super Classe
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Landmark
 \end_layout
 
 \end_inset
@@ -6092,10 +6146,40 @@ Form
 \end_layout
 
 \begin_layout Standard
+Région qui contenant une collection d'élément formant un formulaire.
+ Les éléments sont généralement une collection de 
+\emph on
+command, input 
+\emph default
+qui permettent une interaction avec l'utilisateur.
+ Les interactions permettre d'envoyer des informations à un agent en vu
+ d'un traitement et eventuellement d'un traitement (
+\emph on
+cf.
+ 
+\emph default
+figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{meta-classe_form}
+\end_layout
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -6131,7 +6215,7 @@ Abstrait
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Non
 \end_layout
 
 \end_inset
@@ -6151,7 +6235,7 @@ Super Classe
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Landmark
 \end_layout
 
 \end_inset
@@ -6191,7 +6275,7 @@ Alignement HTML
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+<form>
 \end_layout
 
 \end_inset
@@ -6204,15 +6288,186 @@ Alignement HTML
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[htb]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{    
+\end_layout
+
+\begin_layout Plain Layout
+
+	basicstyle=
+\backslash
+footnotesize, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	frame=tb,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	xleftmargin=.1
+\backslash
+textwidth, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	xrightmargin=.1
+\backslash
+textwidth 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single, language=html] 
+\end_layout
+
+\begin_layout Plain Layout
+
+ <FORM action="http://unsite.com/inscription">     
+\end_layout
+
+\begin_layout Plain Layout
+
+<P>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <h3>Inscription</h3>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <LABEL for="prenom">Prénom : </LABEL>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <INPUT type="text" id="prenom"><BR>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <LABEL for="nom">Nom : </LABEL>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <INPUT type="text" id="nom"><BR>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <LABEL for="email">e-mail : </LABEL>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <INPUT type="text" id="email"><BR>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <INPUT type="radio" name="genre" value="homme">H<BR>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <INPUT type="radio" name="genre" value="femme">F<BR>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <INPUT type="submit" value="E"> <INPUT type="reset">
+\end_layout
+
+\begin_layout Plain Layout
+
+  </P>
+\end_layout
+
+\begin_layout Plain Layout
+
+ </FORM>
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=0.5
+\backslash
+linewidth]{imgmetamodel/form.png}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Exemple de Form 
+\backslash
+label{meta-classe_form}} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Paragraph
 Main
 \end_layout
 
 \begin_layout Standard
+Le contenu principale d'un document.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -6248,7 +6503,7 @@ Abstrait
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Non
 \end_layout
 
 \end_inset
@@ -6268,7 +6523,7 @@ Super Classe
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Landmark
 \end_layout
 
 \end_inset
@@ -6326,10 +6581,34 @@ Navigation
 \end_layout
 
 \begin_layout Standard
+Région contenant une collection de lien navigable vers des ressources internes
+ ou externe.
+ Par exemple le menu de navigation d'une page web (
+\emph on
+cf.
+ 
+\emph default
+figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{meta-classe_navigation}
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -6365,7 +6644,7 @@ Abstrait
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Non
 \end_layout
 
 \end_inset
@@ -6385,7 +6664,7 @@ Super Classe
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Landmark
 \end_layout
 
 \end_inset
@@ -6425,7 +6704,7 @@ Alignement HTML
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+<nav>
 \end_layout
 
 \end_inset
@@ -6438,121 +6717,123 @@ Alignement HTML
 
 \end_layout
 
-\begin_layout Paragraph
-Texte
-\end_layout
-
 \begin_layout Standard
-Enssemble de méta-classes qui définissent du contenu textuelle.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Caractéritique
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Valeur
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Abstrait
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
 
+
+\backslash
+begin{figure}[htb]
 \end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Super Classe
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
 \begin_layout Plain Layout
 
+
+\backslash
+begin{center} 
 \end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Sous Classe
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
 \begin_layout Plain Layout
 
+
+\backslash
+lstset{    
 \end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Alignement HTML
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
 \begin_layout Plain Layout
 
+	basicstyle=
+\backslash
+footnotesize, 
 \end_layout
 
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+\begin_layout Plain Layout
+
+	frame=tb,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	xleftmargin=.1
+\backslash
+textwidth, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	xrightmargin=.1
+\backslash
+textwidth 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single, language=html] 
+\end_layout
+
+\begin_layout Plain Layout
+
+<nav>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <ul>
+\end_layout
+
+\begin_layout Plain Layout
+
+    <li><a href="#">Accueil</a></li>
+\end_layout
+
+\begin_layout Plain Layout
+
+    <li><a href="#">À propos</a></li>
+\end_layout
+
+\begin_layout Plain Layout
+
+    <li><a href="#">Contact</a></li>
+\end_layout
+
+\begin_layout Plain Layout
+
+  </ul>
+\end_layout
+
+\begin_layout Plain Layout
+
+</nav>
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Exemple Navigation 
+\backslash
+label{meta-classe_navigation}} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
 
 \end_inset
 

@@ -1,0 +1,900 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{listings}
+\usepackage{graphicx}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+CSS
+\end_layout
+
+\begin_layout Subsection
+Introduction 
+\end_layout
+
+\begin_layout Standard
+CSS est un langage de feuille de style qui permet aux auteurs des pages
+ web de lier du style aux éléments HTML.
+ Le style définit comment afficher un élément (ex.
+ les polices de caractères, l'espacement, couleurs, 
+\emph on
+etc.
+\emph default
+).
+ CSS permet ainsi de séparer la présentation du style du contenu (
+\emph on
+cf.
+ 
+\emph default
+figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{css-font}
+\end_layout
+
+\end_inset
+
+).
+ L'avantage est une simplification de l'édition et de la maintenance d'une
+ page web.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[htb]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{    
+\end_layout
+
+\begin_layout Plain Layout
+
+	basicstyle=
+\backslash
+footnotesize, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	frame=tb,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	xleftmargin=.1
+\backslash
+textwidth, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	xrightmargin=.1
+\backslash
+textwidth 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single, language=html] 
+\end_layout
+
+\begin_layout Plain Layout
+
+<style>
+\end_layout
+
+\begin_layout Plain Layout
+
+p.serif{font-family:"Times New Roman",Times,serif;} 
+\end_layout
+
+\begin_layout Plain Layout
+
+p.sansserif{font-family:Arial,Helvetica,sans-serif;} 
+\end_layout
+
+\begin_layout Plain Layout
+
+</style> 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<body> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<p class="serif">Ceci est un paragraphe 
+\end_layout
+
+\begin_layout Plain Layout
+
+avec un style de font Times New Roman font.</p> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<p class="sansserif">Ceci est un paragraphe 
+\end_layout
+
+\begin_layout Plain Layout
+
+avec un style de font the Arial font.</p>
+\end_layout
+
+\begin_layout Plain Layout
+
+</body> 
+\end_layout
+
+\begin_layout Plain Layout
+
+</html>
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=0.9
+\backslash
+linewidth]{imgcss/css-font.png}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Exemple CSS
+\backslash
+label{css-font}} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Modèle de boîte
+\end_layout
+
+\begin_layout Standard
+CSS génère pour chaque élément de l'arbre du document (DOM) une boîte rectangula
+ire.
+ Les boîtes rectangulaire sont conformes à un modèle de boîte et sont agencées
+ suivant un modèle de mise en forme décrit en section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Modèle-de-mise"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Chaque boîte possède ainsi une aire de contenu (
+\emph on
+e.g
+\emph default
+ une texte, une image, 
+\emph on
+etc.
+\emph default
+) entourée en option par une aire d'espacement, une aire de bordure et une
+ aire de marge (
+\emph on
+e.g 
+\emph default
+figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{css-modeleboite}
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[htb]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=0.5
+\backslash
+linewidth]{imgcss/css-modeleboite.png}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Modèle de boîte
+\backslash
+label{css-modeleboite}} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Modèle de mise en forme
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Modèle-de-mise"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Chaque boîte se voit attribuer un type qui affecte en partie son positionnement.
+ Les deux principaux types sont les 
+\emph on
+boîtes en bloc 
+\emph default
+et 
+\emph on
+les boîte en-ligne
+\emph default
+.
+ Les éléments de type bloc sont des éléments dont le rendu visuel forme
+ un bloc (
+\emph on
+e.g 
+\emph default
+figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{css-enligne}
+\end_layout
+
+\end_inset
+
+ avec l'élément de paragraphe <p>).
+ Les éléments de type en-ligne sont des éléments qui n'ont pas la forme
+ de blocs de contenu (
+\emph on
+e.g 
+\emph default
+figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{css-enligne}
+\end_layout
+
+\end_inset
+
+ avec l'élément <strong>).
+ Les boîtes en-ligne sont placées horizontalement, l'une après l'autre,
+ en commençant en haut du bloc conteneur.
+ Les blocs conteneurs sont des boîtes qui encapsulent d'autres boîtes.
+ Les boîtes en-bloc sont placées l'un après l'autre, verticalement, en commençan
+t en haut du bloc conteneur.
+ Le schéma de positionnement décrit est appelé 
+\emph on
+flux normal
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[htb]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{    
+\end_layout
+
+\begin_layout Plain Layout
+
+	basicstyle=
+\backslash
+footnotesize, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	frame=tb,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	xleftmargin=.1
+\backslash
+textwidth, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	xrightmargin=.1
+\backslash
+textwidth 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single, language=html] 
+\end_layout
+
+\begin_layout Plain Layout
+
+<p>Avant de faire le truc X il est 
+\end_layout
+
+\begin_layout Plain Layout
+
+<strong>nécessaire</strong> de faire le truc Y avant.
+\end_layout
+
+\begin_layout Plain Layout
+
+</p> 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Exemple élément en-line
+\backslash
+label{css-enligne}} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Une fois le 
+\emph on
+flux normal
+\emph default
+ calculé, il est possible de le modifier.
+ 
+\end_layout
+
+\begin_layout Standard
+Un premier mécanisme possible est le positionnement relatif.
+ La position de la boîte est exprimée en propriété de décalage par rapport
+ à son bloc conteneur : 
+\end_layout
+
+\begin_layout Itemize
+'top' : définit le décalage du bord haut de la marge d'une boîte sous le
+ bord haut de la boîte du bloc conteneur.
+ 
+\end_layout
+
+\begin_layout Itemize
+'right' : définit le décalage du bord droit de la marge d'une boîte à gauche
+ du bord droit de la boîte du bloc conteneur.
+ 
+\end_layout
+
+\begin_layout Itemize
+'bottom' : définit le décalage du bord bas de la marge d'une boîte au-dessus
+ du bord bas de la boîte du bloc conteneur.
+ 
+\end_layout
+
+\begin_layout Itemize
+'left' : définit le décalage du bord gauche de la marge d'une boîte à droite
+ du bord gauche de la boîte du bloc conteneur.
+ 
+\end_layout
+
+\begin_layout Standard
+Un deuxieme mécanisme est le positionnement flottant.
+ Une boîte flottante est déplacée vers la gauche ou la droite sur la ligne
+ courante du 
+\emph on
+flux normal
+\emph default
+.
+ Le contenu du document s'écoule alors le long des flancs de cette dernière.
+\end_layout
+
+\begin_layout Standard
+Un troisième mécanisme est le positionnement absolu.
+ La boîte est retirée du 
+\emph on
+flux normal
+\emph default
+ et est positionnée par rapport à son bloc conteneur.
+ La différence avec le positionnement relatif est que le positionnement
+ de la boîte n'a aucun effet sur les boîtes du même niveau de parenté.
+ Ces boîtes peuvent, ou non, cacher les autres boîte.
+\end_layout
+
+\begin_layout Subsection
+Avant-plan et d'arrière-plan
+\end_layout
+
+\begin_layout Standard
+Les propriétés CSS permettent aux auteurs la spécification d'une couleur
+ d'avant-plan et d'arrière-plan pour un élément.
+ La couleur d'arrière-plan peut être une couleur ou une image .
+ L'arrière-plan correspond aux aires de contenu et, d'espacement et de bordure.
+ Le couleur d'avant-plan correspond à la couleur du contenu de texte d'un
+ élément.
+ 
+\end_layout
+
+\begin_layout Subsection
+Les polices
+\end_layout
+
+\begin_layout Standard
+CSS permet de pouvoir spécifier l'utilisation de plusieurs représentation
+ pour les caractères textuelles : 
+\emph on
+la
+\emph default
+ 
+\emph on
+police
+\emph default
+.
+ Une liste exaustive de propriètés permettent de spécifier la police d'un
+ élément contenu dans une boîte.
+ On peut spécifier par exemple une famille de police (serif, sans-serif),
+ le style de la police (italic, oblique), la taille, 
+\emph on
+ect.
+\end_layout
+
+\begin_layout Subsection
+Les textes
+\end_layout
+
+\begin_layout Standard
+CSS définies la représentation visuelle des caractères, des caractères blancs,
+ des mots et des paragraphes.
+ On peut spécifié un alinéa pour la première ligne du texte dans un bloc
+ ('text-indent'), l'alignement d'un contenu en-ligne dans un élément de
+ type bloc ('text-align'), le comportement de l'espacement entre les caractères
+ du texte ('letter-spacing'), 
+\emph on
+ect.
+\end_layout
+
+\begin_layout Subsection
+Méta-modèle
+\end_layout
+
+\begin_layout Standard
+L'étude des spécification de la norme CSS nous a amené à la réalisation
+ d'un méta-modèle restreint aux aspects des principaux éléments de présentation
+ conforme aux souhaits de transformation.
+ Les spécifications de mise en forme n'apparaîssent pas dans le méta-modèle,
+ il n'est pas prévu d'integrer pour la durée du stage l'expression des besoins
+ sur l'agencement des éléments.
+ Les éléments les plus important sont les couleurs d'arrière plan et du
+ texte qui seront le support à l'expression des souhaits constrastes (de
+ couleurs) ainsi qu'au module de calcule.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[htb]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width=
+\backslash
+linewidth]{imgcss/css-metamodele.png}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Méta-modèle
+\backslash
+label{css-modeleboite}} 
+\backslash
+end{center} 
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Méta-classe Box
+\end_layout
+
+\begin_layout Standard
+La méta-classe 
+\emph on
+Box
+\emph default
+ décrit le concept de bloc conteneur au travers de la relation de composition.
+ La propriété Display sert à définir le type de boîte ( 
+\emph on
+inline
+\emph default
+ et 
+\emph on
+block
+\emph default
+).
+ Ce genre de propriété pourrait nous permettre l'expression du besoin d'afficher
+ un menu horizontalement ou vericalement.
+ La propriété Margin spécifie l'espacement du bord extérieur de la boîte.
+ Elle nous permettra de mieu marquer la séparation entre les différents
+ types de contenu.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Méta-classe Style
+\end_layout
+
+\begin_layout Standard
+La méta-classe 
+\emph on
+Style
+\emph default
+ des boîtes de CSS décrit les boîtes rectangulaires qui sont générées pour
+ les éléments de l'arbre du document (
+\emph on
+cf.
+ 
+\emph default
+figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{css-modeleboite}
+\end_layout
+
+\end_inset
+
+).
+ La méta-classe 
+\emph on
+Style
+\emph default
+ décrit :
+\end_layout
+
+\begin_layout Itemize
+padding : l'air d'espacement, 
+\end_layout
+
+\begin_layout Itemize
+border-width épaisseur de bordure,
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+border-style
+\emph default
+ : style de la bordure,
+\end_layout
+
+\begin_layout Itemize
+border-color : la couleur de bordure,
+\end_layout
+
+\begin_layout Itemize
+border-[color, image]
+\emph on
+ 
+\emph default
+: arière-plan .
+\end_layout
+
+\begin_layout Paragraph
+Méta-classe Texte
+\end_layout
+
+\begin_layout Standard
+La méta-classe 
+\emph on
+Texte
+\emph default
+ décrit la répresentation visuelle des caractères, mots et paragraphes contenuen
+t dans une boîte.
+ Par exemple, la proprièté 
+\emph on
+letter-spacing 
+\emph default
+spécifie l'espace entre les lettres :
+\end_layout
+
+\begin_layout Itemize
+text-indent : décrit un alinea 
+\end_layout
+
+\begin_layout Itemize
+text-align : décrit un alignement.
+ Exemple de valeur possible : alignement de texte à gauche, droite, centré,
+ 
+\emph on
+ect
+\emph default
+.
+\end_layout
+
+\begin_layout Itemize
+decoration : décrit un trait en-dessous, trait au-dessus, rayure et clignotement
+\end_layout
+
+\begin_layout Itemize
+text-shadow : décrit des effets d'ombrage appliquer au texte
+\end_layout
+
+\begin_layout Itemize
+letter-spacing : décrit l'espacement entre les mots
+\end_layout
+
+\begin_layout Itemize
+word-spacing : décrit l'espacement entre les mots
+\end_layout
+
+\begin_layout Itemize
+text-transform : décrit les effets de capitalisation dans le texte.
+ Par exemple la valeur 
+\emph on
+uppercase
+\emph default
+ définit que les lettres de chaque mots soient en majuscule, 
+\emph on
+lowercase
+\emph default
+ décrit l'inverse.
+\end_layout
+
+\begin_layout Itemize
+color : décrit la couleur du texte
+\end_layout
+
+\begin_layout Paragraph
+Méta-classe Police
+\end_layout
+
+\begin_layout Standard
+La méta-classe 
+\emph on
+Police 
+\emph default
+décrit la représentation visuelle des caractères : 
+\end_layout
+
+\begin_layout Itemize
+font-family : décrit le noms de familles génériques de la police du texte
+ (
+\emph on
+e.g new century schoolbook
+\emph default
+)
+\end_layout
+
+\begin_layout Itemize
+font-style : style de la police (
+\emph on
+e.g italic
+\emph default
+)
+\end_layout
+
+\begin_layout Itemize
+font-weight : décrit la graisse de la police
+\end_layout
+
+\begin_layout Itemize
+font-size : décrit la taille de la police
+\end_layout
+
+\end_body
+\end_document

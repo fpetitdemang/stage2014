@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="html5" nsURI="http://html5/1.0" nsPrefix="html5">
+  <eSubpackages name="HTML5">
+    <eClassifiers xsi:type="ecore:EClass" name="Flux"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Interactive" eSuperTypes="#//HTML5/Flux"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Sectioning" eSuperTypes="#//HTML5/Flux"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Header" eSuperTypes="#//HTML5/Flux #//HTML5/Phrasing">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="environnement" eType="#//HTML5/Sectioning"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Level"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Phrasing" eSuperTypes="#//HTML5/Flux"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Embedded" eSuperTypes="#//HTML5/Flux"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Article&lt;article>" eSuperTypes="#//HTML5/Sectioning"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Aside&lt;aside>" eSuperTypes="#//HTML5/Sectioning"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Navigation&lt;nav>" eSuperTypes="#//HTML5/Sectioning"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Section&lt;section>" eSuperTypes="#//HTML5/Sectioning"/>
+    <eClassifiers xsi:type="ecore:EClass" name=""/>
+  </eSubpackages>
+</ecore:EPackage>

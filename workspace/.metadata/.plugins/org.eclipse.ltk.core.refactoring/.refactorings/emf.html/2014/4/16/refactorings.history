@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;emf.html/model/HTML5.png&apos; to &apos;HTML5_V1.png&apos;" description="Rename resource &apos;HTML5.png&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="model/HTML5.png" name="HTML5_V1.png" stamp="1397467220651" updateReferences="true"/>
+</session>

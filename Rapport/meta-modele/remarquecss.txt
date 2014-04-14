@@ -1,0 +1,23 @@
+style : 
+	- background-image peut servir à specifier ce que l'on supprime
+	- margin (marge ou bord exterieur)est dans la norme CSS est décrit comme une propriété de style de la boîte mais dans l'utilisation elle sert plutot comme proprieté de positionnement. 
+
+!! propriétés de positionnement 
+	ex : souhait de positionnment : disparition des boites, deplacement vers des zones moins plutot que de masquer, linérisation du contenu (surtout pour les supports audio). 
+	On va pas traiter cela mais padding et margin important pour separateur
+
+Mieux mettre les éléments abstraits en évidence
+
+Réflexion sur le méta-modèle.
+Commencer la redaction du rapport : justification du méta-modèle 
+	on se base sur ARIA 
+		-> travaux futur : en se basant sur les aria, on pourra l'étendre plus facilement, on va pouvoir exprimer des preferences sur le comportement des éléments 
+		-> reprend les éléments de HTML 5 qui nous interesse
+		-> L'élément SECTION de ARIA est le plus important. on vat pour fournir un environnement contextuelle aux éléments ce qui va faciliter le calcule de contraste entre les éléments
+		-> ARIA est un standard fournit par un acteur majeur de web W3C, ce qui implique qu'il est peut être beaucoup suivit. Le standard de description semble être beaucoup utilisé.
+
+
+
+Suite des opération : 
+	utiliser extension greasemonkey pour implémenter VIPS
+	regarder les restriction sur le droit, notamment sur l'integration websocket?

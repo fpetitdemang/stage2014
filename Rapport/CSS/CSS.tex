@@ -1,0 +1,233 @@
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{listings}
+\usepackage{graphicx}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\section{CSS}
+
+
+\subsection{Introduction }
+
+CSS est un langage de feuille de style qui permet aux auteurs des
+pages web de lier du style aux éléments HTML. Le style définit comment
+afficher un élément (ex. les polices de caractères, l'espacement,
+couleurs, \emph{etc.}). CSS permet ainsi de séparer la présentation
+du style du contenu (\emph{cf. }figure \ref{css-font}). L'avantage
+est une simplification de l'édition et de la maintenance d'une page
+web.
+
+\begin{figure}[htb]
+\begin{center} 
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.1\textwidth, 
+	xrightmargin=.1\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<style>
+p.serif{font-family:"Times New Roman",Times,serif;} 
+p.sansserif{font-family:Arial,Helvetica,sans-serif;} 
+</style> 
+
+<body> 
+<p class="serif">Ceci est un paragraphe 
+avec un style de font Times New Roman font.</p> 
+<p class="sansserif">Ceci est un paragraphe 
+avec un style de font the Arial font.</p>
+</body> 
+</html>
+\end{lstlisting}
+\includegraphics[width=0.9\linewidth]{imgcss/css-font.png}
+\caption{Exemple CSS\label{css-font}} \end{center} \end{figure}
+
+
+\subsection{Modèle de boîte}
+
+CSS génère pour chaque élément de l'arbre du document (DOM) une boîte
+rectangulaire. Les boîtes rectangulaire sont conformes à un modèle
+de boîte et sont agencées suivant un modèle de mise en forme décrit
+en section \ref{sub:Mod=0000E8le-de-mise}
+
+Chaque boîte possède ainsi une aire de contenu (\emph{e.g} une texte,
+une image, \emph{etc.}) entourée en option par une aire d'espacement,
+une aire de bordure et une aire de marge (\emph{e.g }figure \ref{css-modeleboite}).
+
+\begin{figure}[htb]
+\begin{center} 
+\includegraphics[width=0.5\linewidth]{imgcss/css-modeleboite.png}
+\caption{Modèle de boîte\label{css-modeleboite}} \end{center} \end{figure}
+
+
+\subsection{Modèle de mise en forme\label{sub:Mod=0000E8le-de-mise}}
+
+Chaque boîte se voit attribuer un type qui affecte en partie son positionnement.
+Les deux principaux types sont les \emph{boîtes en bloc }et \emph{les
+boîte en-ligne}. Les éléments de type bloc sont des éléments dont
+le rendu visuel forme un bloc (\emph{e.g }figure \ref{css-enligne}
+avec l'élément de paragraphe <p>). Les éléments de type en-ligne sont
+des éléments qui n'ont pas la forme de blocs de contenu (\emph{e.g
+}figure \ref{css-enligne} avec l'élément <strong>). Les boîtes en-ligne
+sont placées horizontalement, l'une après l'autre, en commençant en
+haut du bloc conteneur. Les blocs conteneurs sont des boîtes qui encapsulent
+d'autres boîtes. Les boîtes en-bloc sont placées l'un après l'autre,
+verticalement, en commençant en haut du bloc conteneur. Le schéma
+de positionnement décrit est appelé \emph{flux normal}.
+
+\begin{figure}[htb]
+\begin{center} 
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.1\textwidth, 
+	xrightmargin=.1\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<p>Avant de faire le truc X il est 
+<strong>nécessaire</strong> de faire le truc Y avant.
+</p> 
+\end{lstlisting}
+\caption{Exemple élément en-line\label{css-enligne}} \end{center} \end{figure}
+
+Une fois le \emph{flux normal} calculé, il est possible de le modifier. 
+
+Un premier mécanisme possible est le positionnement relatif. La position
+de la boîte est exprimée en propriété de décalage par rapport à son
+bloc conteneur : 
+\begin{itemize}
+\item 'top' : définit le décalage du bord haut de la marge d'une boîte sous
+le bord haut de la boîte du bloc conteneur. 
+\item 'right' : définit le décalage du bord droit de la marge d'une boîte
+à gauche du bord droit de la boîte du bloc conteneur. 
+\item 'bottom' : définit le décalage du bord bas de la marge d'une boîte
+au-dessus du bord bas de la boîte du bloc conteneur. 
+\item 'left' : définit le décalage du bord gauche de la marge d'une boîte
+à droite du bord gauche de la boîte du bloc conteneur. 
+\end{itemize}
+Un deuxieme mécanisme est le positionnement flottant. Une boîte flottante
+est déplacée vers la gauche ou la droite sur la ligne courante du
+\emph{flux normal}. Le contenu du document s'écoule alors le long
+des flancs de cette dernière.
+
+Un troisième mécanisme est le positionnement absolu. La boîte est
+retirée du \emph{flux normal} et est positionnée par rapport à son
+bloc conteneur. La différence avec le positionnement relatif est que
+le positionnement de la boîte n'a aucun effet sur les boîtes du même
+niveau de parenté. Ces boîtes peuvent, ou non, cacher les autres boîte.
+
+
+\subsection{Avant-plan et d'arrière-plan}
+
+Les propriétés CSS permettent aux auteurs la spécification d'une couleur
+d'avant-plan et d'arrière-plan pour un élément. La couleur d'arrière-plan
+peut être une couleur ou une image . L'arrière-plan correspond aux
+aires de contenu et, d'espacement et de bordure. Le couleur d'avant-plan
+correspond à la couleur du contenu de texte d'un élément. 
+
+
+\subsection{Les polices}
+
+CSS permet de pouvoir spécifier l'utilisation de plusieurs représentation
+pour les caractères textuelles : \emph{la} \emph{police}. Une liste
+exaustive de propriètés permettent de spécifier la police d'un élément
+contenu dans une boîte. On peut spécifier par exemple une famille
+de police (serif, sans-serif), le style de la police (italic, oblique),
+la taille, \emph{ect.}
+
+
+\subsection{Les textes}
+
+CSS définies la représentation visuelle des caractères, des caractères
+blancs, des mots et des paragraphes. On peut spécifié un alinéa pour
+la première ligne du texte dans un bloc ('text-indent'), l'alignement
+d'un contenu en-ligne dans un élément de type bloc ('text-align'),
+le comportement de l'espacement entre les caractères du texte ('letter-spacing'),
+\emph{ect.}
+
+
+\subsection{Méta-modèle}
+
+L'étude des spécification de la norme CSS nous a amené à la réalisation
+d'un méta-modèle restreint aux aspects des principaux éléments de
+présentation conforme aux souhaits de transformation. Les spécifications
+de mise en forme n'apparaîssent pas dans le méta-modèle, il n'est
+pas prévu d'integrer pour la durée du stage l'expression des besoins
+sur l'agencement des éléments. Les éléments les plus important sont
+les couleurs d'arrière plan et du texte qui seront le support à l'expression
+des souhaits constrastes (de couleurs) ainsi qu'au module de calcule.
+
+\begin{figure}[htb]
+\begin{center} 
+\includegraphics[width=\linewidth]{imgcss/css-metamodele.png}
+\caption{Méta-modèle\label{css-modeleboite}} \end{center} \end{figure}
+
+
+\paragraph{Méta-classe Box}
+
+La méta-classe \emph{Box} décrit le concept de bloc conteneur au travers
+de la relation de composition. La propriété Display sert à définir
+le type de boîte ( \emph{inline} et \emph{block}). Ce genre de propriété
+pourrait nous permettre l'expression du besoin d'afficher un menu
+horizontalement ou vericalement. La propriété Margin spécifie l'espacement
+du bord extérieur de la boîte. Elle nous permettra de mieu marquer
+la séparation entre les différents types de contenu. 
+
+
+\paragraph{Méta-classe Style}
+
+La méta-classe \emph{Style} des boîtes de CSS décrit les boîtes rectangulaires
+qui sont générées pour les éléments de l'arbre du document (\emph{cf.
+}figure \ref{css-modeleboite}). La méta-classe \emph{Style} décrit
+:
+\begin{itemize}
+\item padding : l'air d'espacement, 
+\item border-width épaisseur de bordure,
+\item \emph{border-style} : style de la bordure,
+\item border-color : la couleur de bordure,
+\item border-{[}color, image{]}\emph{ }: arière-plan .
+\end{itemize}
+
+\paragraph{Méta-classe Texte}
+
+La méta-classe \emph{Texte} décrit la répresentation visuelle des
+caractères, mots et paragraphes contenuent dans une boîte. Par exemple,
+la proprièté \emph{letter-spacing }spécifie l'espace entre les lettres
+:
+\begin{itemize}
+\item text-indent : décrit un alinea 
+\item text-align : décrit un alignement. Exemple de valeur possible : alignement
+de texte à gauche, droite, centré, \emph{ect}.
+\item decoration : décrit un trait en-dessous, trait au-dessus, rayure et
+clignotement
+\item text-shadow : décrit des effets d'ombrage appliquer au texte
+\item letter-spacing : décrit l'espacement entre les mots
+\item word-spacing : décrit l'espacement entre les mots
+\item text-transform : décrit les effets de capitalisation dans le texte.
+Par exemple la valeur \emph{uppercase} définit que les lettres de
+chaque mots soient en majuscule, \emph{lowercase} décrit l'inverse.
+\item color : décrit la couleur du texte
+\end{itemize}
+
+\paragraph{Méta-classe Police}
+
+La méta-classe \emph{Police }décrit la représentation visuelle des
+caractères : 
+\begin{itemize}
+\item font-family : décrit le noms de familles génériques de la police du
+texte (\emph{e.g new century schoolbook})
+\item font-style : style de la police (\emph{e.g italic})
+\item font-weight : décrit la graisse de la police
+\item font-size : décrit la taille de la police\end{itemize}
+
+\end{document}
