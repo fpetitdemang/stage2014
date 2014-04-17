@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  14 APR 2014 12:43
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  16 APR 2014 08:58
 entering extended mode
  %&-line parsing enabled.
 **rapport.tex
@@ -483,7 +483,7 @@ File: img/metamodele/HTML4.png Graphic file (type png)
 
 <use img/metamodele/HTML4.png>
 
-LaTeX Warning: Citation `HTML_5' on page 5 undefined on input line 300.
+LaTeX Warning: Citation `HTML_5' on page 5 undefined on input line 304.
 
 [5 <./img/metamodele/HTML4.png>]
 <img/architecture_Geekos_HTML5-293x300.jpg, id=38, 294.09875pt x 301.125pt>
@@ -493,21 +493,21 @@ File: img/architecture_Geekos_HTML5-293x300.jpg Graphic file (type jpg)
 <img/metamodele/HTML5.png, id=39, 626.34pt x 295.85532pt>
 File: img/metamodele/HTML5.png Graphic file (type png)
 
-<use img/metamodele/HTML5.png>
-<img/metamodele/css-font.png, id=40, 455.7025pt x 63.23625pt>
+<use img/metamodele/HTML5.png> [6]
+<img/metamodele/css-font.png, id=43, 455.7025pt x 63.23625pt>
 File: img/metamodele/css-font.png Graphic file (type png)
 
-<use img/metamodele/css-font.png> [6]
+<use img/metamodele/css-font.png>
 <img/metamodele/css-modeleboite.png, id=44, 434.62375pt x 318.18875pt>
 File: img/metamodele/css-modeleboite.png Graphic file (type png)
 
 <use img/metamodele/css-modeleboite.png> [7 <./img/architecture_Geekos_HTML5-29
-3x300.jpg>] [8 <./img/metamodele/HTML5.png>]
-<img/metamodele/CSS.png, id=53, 649.67719pt x 362.10281pt>
+3x300.jpg>] [8 <./img/metamodele/HTML5.png>] [9 <./img/metamodele/css-font.png>
+] <img/metamodele/CSS.png, id=57, 649.67719pt x 362.10281pt>
 File: img/metamodele/CSS.png Graphic file (type png)
 
-<use img/metamodele/CSS.png> [9 <./img/metamodele/css-font.png>] [10 <./img/met
-amodele/css-modeleboite.png (PNG copy)>]
+<use img/metamodele/CSS.png> [10 <./img/metamodele/css-modeleboite.png (PNG cop
+y)>]
 No file rapport.bbl.
 
 Package glossaries Warning: No \printglossary or \printglossaries found.
@@ -521,11 +521,11 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  7039 strings out of 495061
  95125 string characters out of 1182620
- 205484 words of memory out of 3000000
+ 203484 words of memory out of 3000000
  10053 multiletter control sequences out of 15000+50000
  20496 words of font info for 51 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 35i,12n,74p,1071b,1559s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,11n,74p,1071b,1559s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk> </home/
 franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0800.600pk> </home/franck/.te
 xmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/franck/.texmf-var/fo
@@ -541,9 +541,9 @@ ur/jknappen/ec/ecbx2488.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappe
 n/ec/ecrm2488.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1
 440.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk>
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on rapport.pdf (11 pages, 358323 bytes).
+Output written on rapport.pdf (11 pages, 361271 bytes).
 PDF statistics:
- 570 PDF objects out of 1000 (max. 8388607)
+ 577 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

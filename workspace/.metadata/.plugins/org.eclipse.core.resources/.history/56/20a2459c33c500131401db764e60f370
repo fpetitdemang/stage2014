@@ -335,7 +335,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_yOTCccO8EeOnivq5CnvwVA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_yOTCcsO8EeOnivq5CnvwVA" fontColor="4210752" fontName="Ubuntu" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="HTML4.ecore#//HTML4/InLine/child"/>
+    <element xmi:type="ecore:EReference" href="HTML4.ecore#//HTML4/InLine/enfant"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yOTCc8O8EeOnivq5CnvwVA" points="[-8, 0, -23, -18]$[-8, -21, -23, -39]$[70, -21, 55, -39]$[70, 10, 55, -8]$[16, 10, 1, -8]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K650MMO_EeOnivq5CnvwVA" id="(0.8431372549019608,0.023809523809523808)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K650McO_EeOnivq5CnvwVA" id="(0.9901960784313726,0.4523809523809524)"/>

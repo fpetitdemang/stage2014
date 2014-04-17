@@ -273,13 +273,17 @@ dans les arbres mais au milieu d'eux.</p>
 
 
 \paragraph{Méta-modèle}
-La figure \ref{metamodele_HTML4} présente les éléments principaux de construction d'une page web avec HTML 4.
+La figure \ref{metamodele_HTML4} présente les éléments principaux de construction d'une page web suivant la spécification de HTML 4.
 \begin{itemize}
-\item Chaque élément hérite de la méta-classe Élément. Cela permet d'associer un identifiant unique à chaque élément ainsi qu'un ensemble de classe.
-\item Les éléments en bloc sont l'ensemble des éléments dans une page qui forment un bloc structurel (\emph{e.g.} un paragraphe). 
-\item Les éléments en-ligne définissent des éléments qui ne forment pas de blocs structurels. Par exemple la balise strong ne définit pas un bloc structurel de la page mais indique que l'élément qu'elle encapsule est un mot important dans un texte. De manière générale les éléments en-ligne servent à attribuer une sémantique aux éléments textuelles. 
-\item La relation de composition entre les éléments en bloc, spécifie que les éléments en bloc peuvent contenir des éléments en-ligne mais pas l'inverse.
-Les relation de composition réflexive de l'élément en bloc spécifie qu'un élément en bloc peut contenir d'autre élément en bloc, il en est de même pour les éléments en-ligne.
+\item Chaque élément hérite de la méta-classe \emph{Element}. Cela permet d'associer un identifiant unique à chaque élément ainsi qu'un ensemble de classe.
+\item Les éléments  \emph{Bloc} sont l'ensemble des éléments dans une page qui forment un bloc structurel (\emph{e.g.} un paragraphe). 
+\item Les éléments \emph{InLine} définissent des éléments qui ne forment pas de blocs structurels. Par exemple la balise \emph{strong} ne définit pas un bloc structurel de la page mais indique que l'élément qu'elle encapsule est un mot important dans un texte. De manière générale les éléments \emph{InLine} servent à attribuer une sémantique aux éléments textuels. 
+\item La relation de composition entre les éléments \emph{Bloc}, spécifie que les éléments \emph{Bloc} peuvent contenir des éléments \emph{InLine} mais pas l'inverse.
+La relation de composition réflexive de l'élément \emph{Bloc} spécifie qu'un élément en bloc peut contenir d'autre élément \emph{Bloc}, il en est de même pour les éléments \emph{InLine}.
+\item Les éléments de type \emph{Header} spécifient des éléments de titre. Ils introduisent le titre d'une section ou sous-section.
+\item  Les éléments de type \emph{Div} spécifient une division structurelle : une section, sous section. En pratique elle est également utilisée pour signaler des regroupements d'élément afin de leurs appliquer une mise en forme.
+\item Les éléments de type \emph{Paragraph} forment une composition logique d'éléments textuels
+\item Les éléments de type \emph{Object} spécifient l'inclusion d'un contenu multimédia ou un programme. 
 
 
 \end{itemize}
