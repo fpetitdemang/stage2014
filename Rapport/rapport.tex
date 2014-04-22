@@ -60,7 +60,7 @@
 \vspace{1cm}
 
 \begin{center}
-\Huge{{ÉTUDE BIBLIOGRAPHIQUE DE\\}}
+\Huge{{MÉMOIRE DE\\}}
  \vspace{1.0cm}
 \Huge{\textbf{STAGE RECHERCHE MASTER M2}}
 \normalsize
@@ -97,7 +97,7 @@ et de Micro-électronique de Montpellier
 
 \vspace{2cm}
 
-Date : \textbf{17 mars 2014}
+%Date : \textbf{17 mars 2014}
 
 \vspace{0.5cm}
 
@@ -242,7 +242,7 @@ feuille de style CSS.
 \end{lstlisting}
 
 \centering
-\includegraphics[width=0.5\linewidth]{img/architecture_Geekos_HTML4-294x300.jpg}
+\includegraphics[width=0.8\linewidth]{img/architecture_Geekos_HTML4-294x300.jpg}
 
 \caption{Architecture page web HTML 4\label{div_role}}
 \end{figure}
@@ -273,17 +273,17 @@ dans les arbres mais au milieu d'eux.</p>
 
 
 \paragraph{Méta-modèle}
-La figure \ref{metamodele_HTML4} présente les éléments principaux de construction d'une page web suivant la spécification de HTML 4.
+La figure \ref{metamodele_HTML4} modélise les éléments principaux de construction d'une page web suivant la spécification de HTML 4.
 \begin{itemize}
-\item Chaque élément hérite de la méta-classe \emph{Element}. Cela permet d'associer un identifiant unique à chaque élément ainsi qu'un ensemble de classe.
-\item Les éléments  \emph{Bloc} sont l'ensemble des éléments dans une page qui forment un bloc structurel (\emph{e.g.} un paragraphe). 
-\item Les éléments \emph{InLine} définissent des éléments qui ne forment pas de blocs structurels. Par exemple la balise \emph{strong} ne définit pas un bloc structurel de la page mais indique que l'élément qu'elle encapsule est un mot important dans un texte. De manière générale les éléments \emph{InLine} servent à attribuer une sémantique aux éléments textuels. 
+\item Chaque élément hérite de la méta-classe \textbf{Element}. Cela permet d'associer un identifiant unique à chaque élément ainsi qu'un ensemble de classe.
+\item Les éléments de la méta-classe \textbf{Bloc} sont l'ensemble des éléments dans une page qui forment un bloc structurel (\emph{e.g.} un paragraphe). 
+\item Les éléments de la méta-classe \textbf{InLine} définissent des éléments qui ne forment pas de blocs structurels. Par exemple la balise \emph{strong} ne définit pas un bloc structurel de la page mais indique que l'élément qu'elle encapsule est un mot important dans un texte. De manière générale les éléments \emph{InLine} servent à attribuer une sémantique aux éléments textuels. 
 \item La relation de composition entre les éléments \emph{Bloc}, spécifie que les éléments \emph{Bloc} peuvent contenir des éléments \emph{InLine} mais pas l'inverse.
 La relation de composition réflexive de l'élément \emph{Bloc} spécifie qu'un élément en bloc peut contenir d'autre élément \emph{Bloc}, il en est de même pour les éléments \emph{InLine}.
-\item Les éléments de type \emph{Header} spécifient des éléments de titre. Ils introduisent le titre d'une section ou sous-section.
-\item  Les éléments de type \emph{Div} spécifient une division structurelle : une section, sous section. En pratique elle est également utilisée pour signaler des regroupements d'élément afin de leurs appliquer une mise en forme.
-\item Les éléments de type \emph{Paragraph} forment une composition logique d'éléments textuels
-\item Les éléments de type \emph{Object} spécifient l'inclusion d'un contenu multimédia ou un programme. 
+\item Les éléments de la méta-classe \textbf{Header} spécifient des éléments de titre. Ils introduisent le titre d'une section ou sous-section.
+\item  Les éléments de la méta-classe \textbf{Div} spécifient une division structurelle : une section, sous section. En pratique elle est également utilisée pour signaler des regroupements d'élément afin de leurs appliquer une mise en forme.
+\item Les éléments de la méta-classe \textbf{Paragraph} forment une composition logique d'éléments textuels
+\item Les éléments de la méta-classe \textbf{Object} spécifient l'inclusion d'un contenu multimédia ou un programme. 
 
 
 \end{itemize}
@@ -364,14 +364,14 @@ la figure \ref{div_role}.
 
 
 \paragraph{Méta-modèle}
-La figure \ref{metamodele_HTML5} présente les éléments principaux de construction d'une page web avec HTML 5.
+La figure \ref{metamodele_HTML5} modélise les concepts principaux de construction d'une page web avec HTML 5.
 \begin{itemize}
-\item La méta-classe Sectioning définit le contenu comme des éléments qui créent une nouvelle section dans le plan d'un document. Ils définissent également la portée des éléments d'entête (Header) et de pied de page (Footer).
-\item La méta-classe Header définit le contenu comme des éléments d'introduction. Par exemple pour un page web, un logo ou pour une section, un titre. Les sous classe de Header sont des éléments de titre introduisant des sections. 
-\item La méta-classe Footer définit le contenu comme étant des éléments de pied de page ou de section.
-\item La méta-classe Phrasing définit le contenu textuelle. 
-\item La méta-classe Embedded définit un contenu importé dans une page. C'est le cas par exemple des éléments de type <video> qui sont sous classe de la méta-classe Embedded (elle est également sous-classe de la méta-classe Interactive).
-\item La méta-classe Interactive définit le contenu interactif dans une page.
+\item La méta-classe \textbf{Sectioning} définit le contenu comme des éléments qui créent une nouvelle section dans le plan d'un document. Ils définissent également la portée des éléments d' en-tête (Header) et de pied de page (Footer). Elle encapsule les concepts de division de HTML 4 (<DIV>).
+\item La méta-classe \textbf{Header} définit le contenu comme des éléments d'introduction. Par exemple pour un page web, un logo ou pour une section, un titre. Les sous classe de Header sont des éléments de titre introduisant des sections, ce sont les mêmes concepts de titre que pour HTML 4. 
+\item La méta-classe \textbf{Footer} définit le contenu comme étant des éléments de pied de page ou de section.
+\item La méta-classe \textbf{Phrasing} définit le contenu textuelle, elle encapsule le concept de balise \emph{Inline} de HTML 4. 
+\item La méta-classe \textbf{Embedded} définit un contenu importé dans une page. C'est le cas par exemple des éléments de type <video> qui sont sous classe de la méta-classe Embedded (elle est également sous-classe de la méta-classe Interactive). Elle encapsule les concepts de \emph{Object} de HTML 4.
+\item La méta-classe \textbf{Interactive} définit le contenu interactif dans une page. Par exemple, la balise <a> qui définit une navigation vers une autre ressource.
 \end{itemize}
 
 
@@ -382,6 +382,66 @@ La figure \ref{metamodele_HTML5} présente les éléments principaux de constructio
 
 \caption{Méta-modèle HTML 5\label{metamodele_HTML5}}
 \end{figure}
+
+\subsection{ARIA}
+\newglossaryentry{ontologie}
+{
+  name=Ontologie,
+  description={En philosophie, l'ontologie est l'étude de l'être en tant qu'être, c'est-à-dire l'étude des propriétés générales de ce qui existe. Par analogie, le terme est repris en informatique et en science de l'information, où une ontologie est l'ensemble structuré des termes et concepts représentant le sens d'un champ d'informations \cite{wikipedia}}
+} 
+
+ARIA (Acessible Rich Internet Application) \cite{ARIA} est la spécification
+d'une \gls{ontologie} décrivant une interface graphique. Elle fournit des
+informations sur la structuration d'un document et plus généralement
+elle décrit les éléments qui composent une interface au moyen d'un ensemble
+de rôles, d'états et de propriétés.
+
+
+\paragraph{Rôle}
+
+Les rôles permettent d'identifier la fonction de chaque élément d'une
+interface. Ils sont regroupés en trois catégories :
+\begin{itemize}
+\item Widget Roles : définit un ensemble de widget (alertdialog,
+button, slider, scrollbar, menu, etc.)
+\item Document Structure Roles : décrit les structures qui organisent un
+document (article, definition, entête, ect.)
+\item Landmark Roles : décrit les régions principales d'une interface graphique
+(main, navigation, search, etc.)
+\end{itemize}
+
+\paragraph{États et propriétés}
+
+ARIA prend en compte l'aspect dynamique et interactif des éléments
+d'une interface. Elle permet d'associer des états et des propriétés
+aux éléments d'une interface. Un état est une configuration unique
+d'un objet. Par exemple, on peut définir l'état d'un bouton par l'état
+\emph{aria-checked }qui peut prendre trois propriétés suivant l'interaction
+avec l'utilisateur : \emph{true - false - mixed} . Dans le cas d'une
+checkbox, \emph{true} indique si la checkbox est cochée, \emph{false}
+si elle ne l'est pas et \emph{mixed} dans le cas d'un ensemble de checkbox
+indique que certaines sont cochées.
+
+Aria prévoit même un système d'annotation pour les objets ayant des
+comportements asynchrones. Par exemple, on peut indiquer par une annotation qu'un élément
+se met à jour de manière autonome.
+
+
+\paragraph{Méta-modèle}
+La figure \ref{} modélise les principales méta-classe de la norme ARIA. On distingue deux groupes.
+Un premier groupe pour la description des éléments d'interactions qui hérite de la méta-classe \textbf{Widget}  :
+\begin{itemize}
+\item La méta-classe \textbf{Composite} indique qu'un élément graphique possède des éléments navigables. Elle permet d'organiser la navigation à l' intérieure d'un \emph{Wigdet}.
+\item  La méta-classe \textbf{Input} définit des éléments qui permettent des saisies de la part d'un utilisateur.
+\item La méta-classe \textbf{Command} définit des éléments qui réalisent des actions. Par exemple, l'envoie de données vers un serveur.
+\end{itemize}
+Un deuxième groupe pour les éléments de structuration qui héritent de la méta-classe \textbf{Structure} 
+\begin{itemize}
+\item La méta-classe \textbf{Section} définit les éléments qui définissent une unité de confinement structurelle
+dans une page.
+\item La méta-classe \textbf{Sectionhead} définit les éléments qui introduisent des titres. 
+\item La méta-classe \textbf{Landmark} définit les principaux points d?intérêts dans une page. Par exemple, la banniere d'une page, les formulaires, le contenu principal.
+\end{itemize}
 
 
 \subsection{CSS }
@@ -529,10 +589,23 @@ le comportement de l'espacement entre les caractères du texte ('letter-spacing')
 
 
 \section{Réalisation}
+\subsection{Introduction}
+La conception du méta-modèle est double. S'affranchir de la diversité de représentation des onnées, support à,l'expression des souhaits, 
+La conception du modèle de contenu associe une sémantique aux structures syntaxiques des langage de publication de contenu.
 \subsection{Méta-modèle}
 \subsubsection{Modèle de contenu}
 Relation de composition? En raison de la grande souplesse du langage, on ne fait pas apparaître le relation de composition dans le modèle de contenu, mais plutôt dans le modèle de mise en forme.
 La spécification de composition des balises en ligne et en bloc est annulé par les possibilités de CSS permettent de modifier la nature en faisant passé une balise de en bloc a en ligne.
+
+\begin{figure}[htb]
+\begin{center} 
+\includegraphics[width=\linewidth]{img/metamodele/modele-contenu-widget.png}
+\caption{Méta-modèle\label{widget-metamodele}} \end{center} \end{figure}
+
+\begin{figure}[htb]
+\begin{center} 
+\includegraphics[width=\linewidth]{img/metamodele/modele-contenu-structure.png}
+\caption{Méta-modèle\label{widget-metamodele}} \end{center} \end{figure}
  
 \subsubsection{Modèle de mise en forme}
 L'étude des spécification de la norme CSS nous a amené à la réalisation
@@ -607,7 +680,9 @@ texte (\emph{e.g new century schoolbook})
 \item font-weight : décrit la graisse de la police
 \item font-size : décrit la taille de la police\end{itemize}
 
+\newpage
 
+\printglossaries
 
 \bibliographystyle{plain}
 \bibliography{biblio}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ariaa" nsURI="http://ariaa/1.0" nsPrefix="ariaa">
+  <eSubpackages name="Aria">
+    <eClassifiers xsi:type="ecore:EClass" name="Roletype"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Widget" eSuperTypes="#//Aria/Roletype"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Composite" eSuperTypes="#//Aria/Widget">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="" eType="#//Aria/Widget"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//Aria/Widget"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Command" eSuperTypes="#//Aria/Widget"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Structure" eSuperTypes="#//Aria/Roletype"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="#//Aria/Structure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="#//Aria/Structure"/>
+  </eSubpackages>
+</ecore:EPackage>

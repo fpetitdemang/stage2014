@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  16 APR 2014 08:58
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  22 APR 2014 09:33
 entering extended mode
  %&-line parsing enabled.
 **rapport.tex
@@ -477,55 +477,80 @@ Overfull \hbox (4.2461pt too wide) in paragraph at lines 237--238
 <img/architecture_Geekos_HTML4-294x300.jpg, id=27, 295.1025pt x 301.125pt>
 File: img/architecture_Geekos_HTML4-294x300.jpg Graphic file (type jpg)
 
-<use img/architecture_Geekos_HTML4-294x300.jpg> [4 <./img/architecture_Geekos_H
-TML4-294x300.jpg>] <img/metamodele/HTML4.png, id=31, 518.6878pt x 332.74312pt>
+<use img/architecture_Geekos_HTML4-294x300.jpg>
+Overfull \hbox (4.15118pt too wide) in paragraph at lines 285--286
+[]\T1/cmr/m/n/10 Les élé-ments de la méta-classe \T1/cmr/bx/n/10 Para-graph \T1
+/cmr/m/n/10 for-ment une com-po-si-tion logique d'élé-ments textuels 
+ []
+
+<img/metamodele/HTML4.png, id=28, 518.6878pt x 332.74312pt>
 File: img/metamodele/HTML4.png Graphic file (type png)
 
 <use img/metamodele/HTML4.png>
 
-LaTeX Warning: Citation `HTML_5' on page 5 undefined on input line 304.
+LaTeX Warning: Citation `HTML_5' on page 4 undefined on input line 304.
 
-[5 <./img/metamodele/HTML4.png>]
-<img/architecture_Geekos_HTML5-293x300.jpg, id=38, 294.09875pt x 301.125pt>
+[4]
+<img/architecture_Geekos_HTML5-293x300.jpg, id=33, 294.09875pt x 301.125pt>
 File: img/architecture_Geekos_HTML5-293x300.jpg Graphic file (type jpg)
 
 <use img/architecture_Geekos_HTML5-293x300.jpg>
-<img/metamodele/HTML5.png, id=39, 626.34pt x 295.85532pt>
+<img/metamodele/HTML5.png, id=34, 626.34pt x 287.57437pt>
 File: img/metamodele/HTML5.png Graphic file (type png)
 
-<use img/metamodele/HTML5.png> [6]
-<img/metamodele/css-font.png, id=43, 455.7025pt x 63.23625pt>
+<use img/metamodele/HTML5.png>
+
+LaTeX Warning: Citation `ARIA' on page 5 undefined on input line 393.
+
+[5]
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 431.
+
+<img/metamodele/css-font.png, id=38, 455.7025pt x 63.23625pt>
 File: img/metamodele/css-font.png Graphic file (type png)
 
 <use img/metamodele/css-font.png>
-<img/metamodele/css-modeleboite.png, id=44, 434.62375pt x 318.18875pt>
+<img/metamodele/css-modeleboite.png, id=39, 434.62375pt x 318.18875pt>
 File: img/metamodele/css-modeleboite.png Graphic file (type png)
 
-<use img/metamodele/css-modeleboite.png> [7 <./img/architecture_Geekos_HTML5-29
-3x300.jpg>] [8 <./img/metamodele/HTML5.png>] [9 <./img/metamodele/css-font.png>
-] <img/metamodele/CSS.png, id=57, 649.67719pt x 362.10281pt>
+<use img/metamodele/css-modeleboite.png> [6] [7]
+<img/metamodele/modele-contenu-widget.png, id=47, 417.05812pt x 427.5975pt>
+File: img/metamodele/modele-contenu-widget.png Graphic file (type png)
+
+<use img/metamodele/modele-contenu-widget.png>
+<img/metamodele/modele-contenu-structure.png, id=48, 700.86844pt x 458.46281pt>
+File: img/metamodele/modele-contenu-structure.png Graphic file (type png)
+<use img/metamodele/modele-contenu-structure.png>
+<img/metamodele/CSS.png, id=49, 649.67719pt x 362.10281pt>
 File: img/metamodele/CSS.png Graphic file (type png)
 
-<use img/metamodele/CSS.png> [10 <./img/metamodele/css-modeleboite.png (PNG cop
-y)>]
+<use img/metamodele/CSS.png> [8] [9] (./rapport.gls
+
+LaTeX Warning: Citation `wikipedia' on page 10 undefined on input line 5.
+
+)
 No file rapport.bbl.
-
-Package glossaries Warning: No \printglossary or \printglossaries found.
-This document will not have a glossary.
-
-[11 <./img/metamodele/CSS.png>] (./rapport.aux)
+[10] [11 <./img/architecture_Geekos_HTML4-294x300.jpg>] [12 <./img/metamodele/H
+TML4.png>] [13 <./img/architecture_Geekos_HTML5-293x300.jpg>] [14 <./img/metamo
+dele/HTML5.png> <./img/metamodele/css-font.png>] [15 <./img/metamodele/css-mode
+leboite.png (PNG copy)>] [16 <./img/metamodele/modele-contenu-widget.png>]
+[17 <./img/metamodele/modele-contenu-structure.png>] [18 <./img/metamodele/CSS.
+png>] (./rapport.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 7039 strings out of 495061
- 95125 string characters out of 1182620
- 203484 words of memory out of 3000000
- 10053 multiletter control sequences out of 15000+50000
+ 7076 strings out of 495061
+ 96005 string characters out of 1182620
+ 228500 words of memory out of 3000000
+ 10085 multiletter control sequences out of 15000+50000
  20496 words of font info for 51 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 35i,11n,74p,1071b,1559s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,12n,74p,1071b,1559s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk> </home/
 franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0800.600pk> </home/franck/.te
 xmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/franck/.texmf-var/fo
@@ -541,9 +566,9 @@ ur/jknappen/ec/ecbx2488.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappe
 n/ec/ecrm2488.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1
 440.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk>
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on rapport.pdf (11 pages, 361271 bytes).
+Output written on rapport.pdf (18 pages, 439530 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
+ 608 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
