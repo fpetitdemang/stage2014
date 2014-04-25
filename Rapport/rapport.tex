@@ -11,6 +11,7 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{glossaries}
+\usepackage[toc,page]{appendix}
 \makeglossaries
 
 
@@ -132,6 +133,9 @@ Sous la direction de \textbf{Marianne~HUCHARD, Michel~MEYNARD, Yoann~BONAVERO}
 \tableofcontents
 
 \newpage
+
+
+
 
 
 
@@ -680,6 +684,1214 @@ texte (\emph{e.g new century schoolbook})
 \item font-weight : décrit la graisse de la police
 \item font-size : décrit la taille de la police\end{itemize}
 
+\section{Méta-modèle des rôles }
+
+\begin{appendices} 
+
+\section{Méta-modèle de Contenu}
+\paragraph{Widget}
+
+Élément graphique dans une page web (bouton, liste déroulant, tableau,
+\emph{etc.}). Il peut définir des éléments et un contenu interactif
+(\emph{e.g }formulaire d'inscription, bar de recherche, fils d'actualité). 
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Oui\tabularnewline
+\hline 
+Super Classe & Role\tabularnewline
+\hline 
+Sous Classe & Composite, Input, Command\tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Composite}
+
+Un élément composite est une composition d'éléments. Il représente un lien
+d' agrégation fort entre deux éléments, c'est à dire que si l'on supprime
+une classe agrégée la classe composite est détruite.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Oui\tabularnewline
+\hline 
+Super Classe & Widget\tabularnewline
+\hline 
+Sous Classe & Select\tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Input }
+
+L'ensemble des éléments permettant des entrées utilisateurs.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Oui\tabularnewline
+\hline 
+Super Classe & Widget\tabularnewline
+\hline 
+Sous Classe & Checkbox, Option, Select, Textbox\tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Option}
+
+Elément sélectionnable dans une liste.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Oui\tabularnewline
+\hline 
+Super Classe & Input\tabularnewline
+\hline 
+Sous Classe & Radio\tabularnewline
+\hline 
+Alignement HTML & <option>\tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Select}
+
+Élément permettant à l'utilisateur de faire des sélections parmi
+un ensemble de choix. 
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Oui\tabularnewline
+\hline 
+Super Classe & Composite, Group, Input \tabularnewline
+\hline 
+Sous Classe & Combobox, Listbox, RadioGroup\tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Command}
+
+Élément qui exécute des actions mais ne reçoit pas d'informations
+en entrée.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Oui\tabularnewline
+\hline 
+Super Classe & Widget\tabularnewline
+\hline 
+Sous Classe & Bouton, Lien\tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Button}
+
+Élément graphique qui déclenche une action. Typiquement un bouton
+de validation d'un formulaire.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Command\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <button>\tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Link}
+
+Définit une référence interactive vers une ressource interne ou externe
+à la page. Les navigateurs implémentent un comportement de navigation.
+Par exemple, une navigation vers une ressource interne peut être dans
+une page se déplacer de l'élément d'en-tête à l'élément de pied de
+page. Une navigation externe la page peut être un changement de page.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Command\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <a>, <link>\tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Checkbox}
+
+Indique qu'une instance est cochable. Trois valeurs sont possibles
+(vraie-faux-mixte), indiquant si l'élément est coché ou non. La valeur
+mixte est utilisée dans le contexte d'un groupe d'instance de type
+\emph{checkbox.} Par exemple, lorsqu' il y' a au moins un élément
+coché et un non coché (\emph{e.g }figure \ref{metaclass-checkbox}).
+
+\begin{longtable}{|l|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Input\tabularnewline
+\hline 
+Sous Classe & Radiobox\tabularnewline
+\hline 
+Propriété & checked {[}vraie, faux, mixte{]}\tabularnewline
+\hline 
+Alignement HTML & <input type= 'checkbox' />\tabularnewline
+\hline 
+\end{longtable}
+
+\begin{figure}[htb]
+\begin{center} 
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.2\textwidth, 
+	xrightmargin=.2\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<input type="checkbox">I have a bike<br> 
+<input type="checkbox">I have a car 
+\end{lstlisting}
+\includegraphics[width=0.5\linewidth]{img/metamodele/checkbox.png}
+\caption{Exemple de checkbox\label{metaclass-checkbox}} \end{center} \end{figure}
+
+
+\paragraph{Radio}
+
+Radio est une instance cochable. Il fait toujours partie d'une liste
+d'élément d'au moins deux éléments. Il présente la contrainte que
+l'on ne peut sélectionner qu'un seul élément parmi la liste de choix
+auquel il appartient (\emph{e.g }figure \ref{metaclasse-radio}).
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Checkbox, Option\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <input type=\textquotedbl{}radio\textquotedbl{}/>\tabularnewline
+\hline 
+\end{longtable}
+
+\begin{figure}[htb]
+\begin{center}
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.2\textwidth, 
+	xrightmargin=.2\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<input type="radio">Male<br> 
+<input type="radio">Female
+\end{lstlisting}
+\includegraphics[width=0.5\linewidth]{img/metamodele/radio.png}
+\caption{Exemple de radio \label{metaclasse-radio}} \end{center} \end{figure}
+
+
+\paragraph{RadioGroup}
+
+C'est une collection logique d'élément Radio. Dans html, la collection
+logique est exprimée par l'attribut name (\emph{eg }figure \ref{meta-classe_radiogroup})
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Select\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+\begin{figure}[htb]
+\begin{center} 
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.2\textwidth, 
+	xrightmargin=.2\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<input type="radio" name="vin">rouge
+<input type="radio" name="vin">blanc
+<input type="radio" name="vin">rose
+\end{lstlisting}
+\includegraphics[width=0.5\linewidth]{img/metamodele/radiogroup.png}
+\caption{Exemple de Radiogroup \label{meta-classe_radiogroup}} \end{center} \end{figure}
+
+
+\paragraph{Listbox}
+
+Wigdet qui permet de sélectionner un ou plusieurs élément dans une
+liste de choix(\emph{e.g }figure \ref{meta-classe_select}). 
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & List, Select\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <SELECT>\tabularnewline
+\hline 
+\end{longtable}
+
+\begin{figure}[htb]
+\begin{center} 
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.2\textwidth, 
+	xrightmargin=.2\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<select>   
+  <option value="volvo">Volvo</option>   
+  <option value="saab">Saab</option>   
+  <option value="opel">Opel</option>   
+  <option value="audi">Audi</option> 
+</select>
+\end{lstlisting}
+\includegraphics[width=0.25\linewidth]{img/metamodele/select.png}
+\caption{Exemple de Select \label{meta-classe_select}} \end{center} \end{figure}
+
+
+\paragraph{Combobox}
+
+Élément qui permet de remplir un champ texte selon des options présentées
+dans une liste déroulante.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Select\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & \emph{cf. }figure \ref{meta-classe_combobox}\tabularnewline
+\hline 
+\end{longtable}
+
+\begin{figure}[htb]
+\begin{center} 
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.2\textwidth, 
+	xrightmargin=.2\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<input type=text list=browsers >
+<datalist id=browsers >
+   <option> Google
+   <option> IE9
+   <option> Firefox
+</datalist>
+\end{lstlisting}
+\caption{Exemple de Combobox \label{meta-classe_combobox}} \end{center} \end{figure}
+
+
+\paragraph{Structure}
+
+Éléments de structuration dans une page web. Ce sont l'ensemble des
+éléments qui permettent d'organiser le contenu dans une page de manière
+logique.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Oui\tabularnewline
+\hline 
+Super Classe & Roletype\tabularnewline
+\hline 
+Sous Classe & Section, Sectionhead, Separator, Texte\tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{List}
+
+Les listes contiennent des éléments dont le rôle est \emph{listitem
+}ou des éléments dont le rôle est \emph{group} qui contiennent eux
+même des éléments \emph{listitem} (\emph{e.g }figure \ref{metaclass-orderlist}).
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & région\tabularnewline
+\hline 
+Sous Classe & Listbox, Ol, Ul\tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Ul (unorder list)}
+
+Liste non ordonnée d'éléments (\emph{e.g }figure \ref{metaclass-unorderlist}).
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & List\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <ul>\tabularnewline
+\hline 
+\end{longtable}
+
+\begin{figure}[htb]
+\begin{center} 
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.2\textwidth, 
+	xrightmargin=.2\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<ul>
+  <li>Cafe</li>
+  <li>Thé</li>
+  <li>Lait</li> 
+</ul>
+\end{lstlisting}
+\caption{Exemple de liste non-ordonnée \label{metaclass-unorderlist}} \end{center} \end{figure}
+
+
+\paragraph{OL(order list) }
+
+Liste ordonnée d'éléments
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & List\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <ol>\tabularnewline
+\hline 
+\end{longtable}
+
+\begin{figure}[htb]
+\begin{center} 
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.2\textwidth, 
+	xrightmargin=.2\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<ol>
+  <li>Cafe</li>
+  <li>Thé</li>
+  <li>Lait</li>
+</ol>
+\end{lstlisting}
+\includegraphics[width=0.5\linewidth]{img/metamodele/orderlist.png}
+\caption{Exemple de liste ordonnée\label{metaclass-orderlist}} \end{center} \end{figure}
+
+
+
+\paragraph{Texte}
+
+Elements qui définissent un état logique (sémantique) d'un texte,
+en opposition à un état physique (mise en forme). Cette partie se
+rajoute au méta-modèle de base de ARIA. Elle recense donc les éléments
+de HTML qui apportent un état logique. On exclut donc les éléments
+de mise en forme telles que <b> (bolt) qui traduisent un état physique
+(mise en forme) mais seront exprimés dans le méta-modèle de CSS. 
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Structure\tabularnewline
+\hline 
+Sous Classe & Emphase, Abbreviation, Strong, Cite\tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+\newpage
+
+
+\paragraph{Emphase}
+
+Mise en relief d'une partie du texte. Elle est généralement utilisé
+pour mettre en évidence un résumé d'article.
+
+
+\paragraph{Abbreviation}
+
+Définit une abreviation.
+
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.1\textwidth, 
+	xrightmargin=.1\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<p>Tony Blair est le premier 
+ministre de 
+la <abbr title="Grande-Bretagne">GB</abbr></p>  
+\end{lstlisting}
+\newpage
+
+\paragraph{Strong}
+
+Mot important dans un texte.
+
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.1\textwidth, 
+	xrightmargin=.1\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+<p>Avant de faire le truc X 
+il est <strong>nécessaire</strong> de faire le truc 
+Y avant.</p> 
+\end{lstlisting}
+
+
+
+\paragraph{Cite}
+
+Elément de citation.
+
+\lstset{    
+	basicstyle=\footnotesize, 
+	frame=tb,   
+	xleftmargin=.2\textwidth, 
+	xrightmargin=.2\textwidth 
+} 
+\begin{lstlisting}[frame=single, language=html] 
+Ce référerer à la 
+norme <cite>[ISO-0000]</cite> 
+\end{lstlisting}
+
+\newpage
+
+\paragraph{Section}
+
+Aria définit une section comme une unité de confinement structurelle
+dans une page. On spécifie dans notre méta-modèle que les éléments
+héritant de section définissent des limites au contenu qu'il englobe.
+Ils fournissent un environnement contextuelle, c'est à dire une portée
+sémantique aux éléments. Par exemple, les éléments de titre se rapportent
+à l'élément de section qui l'a introduit.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Oui\tabularnewline
+\hline 
+Super Classe & Structure\tabularnewline
+\hline 
+Sous Classe & Group, Region, Paragraph, Gridcell, Listitem\tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{ListItem}
+
+Un élément dans une liste. Il est contenu dans une \emph{listitem}.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Section\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <li>\tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Group}
+
+Élément regroupant une collection logique de widget (eg. figure \ref{meta-classe_group}).
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Section\tabularnewline
+\hline 
+Sous Classe & Select\tabularnewline
+\hline 
+Alignement HTML & <fieldset>\tabularnewline
+\hline 
+\end{longtable}
+
+%\begin{figure}[htb]
+%\begin{center} 
+%\lstset{    
+	%basicstyle=\footnotesize, 
+	%frame=tb,   
+	%xleftmargin=.1\textwidth, 
+	%xrightmargin=.1\textwidth 
+%} 
+%\begin{lstlisting}[frame=single, language=html] 
+%<form>  
+%<fieldset>   
+%Nom: <input type="text"><br>   
+%Email: <input type="text"><br>   
+%Date de naissance: <input type="text">  
+%</fieldset> 
+%</form> 
+%\end{lstlisting}
+%\includegraphics[width=1\linewidth]{imgmetamodel/group.png}
+%\caption{Exemple de Group \label{meta-classe_group}} \end{center} \end{figure}
+
+
+\paragraph{Region}
+
+Un groupement thématique dans une page. Éléments d'information sur
+une même thématique : représente une section générique d'un document.
+Fournit un environnement contextuel pour des éléments de titre, une
+entête et un pied de page.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Section\tabularnewline
+\hline 
+Sous Classe & Article, Landmark, List\tabularnewline
+\hline 
+Alignement HTML & <section>\tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Paragraphe}
+
+Élément rajouter au méta-modèle de aria. Définit une composition d'élément
+textuelle comme étant un paragraphe dans une page.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Section\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <p>\tabularnewline
+\hline 
+\end{longtable}
+
+%\begin{figure}[htb]
+%\begin{center} 
+%\lstset{    
+%	basicstyle=\footnotesize, 
+%	frame=tb,   
+%	xleftmargin=.1\textwidth, 
+%	xrightmargin=.1\textwidth 
+%} 
+%\begin{lstlisting}[frame=single, language=html] 
+%<p>Premier paragraphe du texte. 
+%J'aime les licornes beaucoup    
+%beaucoup beaucoup</p> 
+%<p>Deuxième paragraphe du texte. 
+%Et si j'en avais une apprivoisée    
+%je serais très contente.</p>
+%\end{lstlisting}
+%\caption{Exemple de Paragraphe \label{meta-classe_group}} \end{center} \end{figure}
+
+
+\paragraph{Gridcell}
+
+Cellule d'une élément \emph{Gridcell }(\emph{eg. }figure \ref{meta-classe_grid}).
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Section\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <td>\tabularnewline
+\hline 
+\end{longtable}
+
+\newpage
+
+\paragraph{Rowheader}
+
+Une cellule contenant des informations d'entête pour une ligne de
+\emph{Gridcell }(\emph{eg. }figure \ref{meta-classe_grid}).
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Section\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <th>\tabularnewline
+\hline 
+\end{longtable}
+
+\paragraph{Row}
+
+Une ligne dans un \emph{Gridcell }(\emph{eg. }figure \ref{meta-classe_grid}).
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Group\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <tr>\tabularnewline
+\hline 
+\end{longtable}
+
+\newpage
+
+\paragraph{Grid}
+
+Aria spécifie cet élément comme un contenu interactif car il permet
+d'organiser la navigation dans les données qu'il structure. Il peut
+spécifier notamment un agencement structuré de l'interface graphique
+d'une page. Nous réduisons la norme Aria de \emph{Grid} comme un élément
+qui contient des données tabulaires organisées en ligne et colonne
+(\emph{eg. }figure \ref{meta-classe_grid}). 
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\endhead
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Region\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <table>\tabularnewline
+\hline 
+\end{longtable}
+
+%\begin{figure}[htb]
+%\begin{center} 
+%\lstset{    
+%	basicstyle=\footnotesize, 
+%	frame=tb,   
+%	xleftmargin=.1\textwidth, 
+%	xrightmargin=.1\textwidth 
+%} 
+%\begin{lstlisting}[frame=single, language=html] 
+%<table style="width:300px"> 
+%<tr>
+%	<th>Nom</th>
+%	<th>Prenom</th>
+%	<th>Age</th> 
+%<tr>
+%<tr>   
+%	<td>Jill</td>   
+%	<td>Smith</td>		   
+%	<td>50</td>   
+%</tr> 
+%<tr>   
+%	<td>Eve</td>   
+%	<td>Jackson</td>		   
+%	<td>94</td> 
+%</tr> 
+%<tr>   
+%	<td>John</td>   
+%	<td>Doe</td>		   
+%	<td>80</td> 
+%</tr> 
+%</table>
+%\end{lstlisting}
+%\includegraphics[width=0.5\linewidth]{img/metamodele/table.png}
+%\caption{Exemple de Table \label{meta-classe_grid}} \end{center} \end{figure}
+
+
+\paragraph{Separator}
+
+Élément qui marque une division dans le contenu d'une section. Il permet
+de mieux signaler les contenus sémantiquement différents. Ce sont des séparateurs
+visuelles (lignes de pixels vides horizontales ou verticales entre deux
+éléments). 
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Structure\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <hr>\tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{SectionHead}
+
+Élément qui résume ou décrive brièvement le sujet introduit par
+une région.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Oui\tabularnewline
+\hline 
+Super Classe & Structure\tabularnewline
+\hline 
+Sous Classe & Heading\tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Heading}
+
+Définit un élément titre
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Oui\tabularnewline
+\hline 
+Super Classe & Sectionhead\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <H1,2,3,4,5,6>\tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Landmark}
+
+Éléments structurels courant dans une page web.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Oui\tabularnewline
+\hline 
+Super Classe & Region\tabularnewline
+\hline 
+Sous Classe & Banner, Main, Form, Navigation, Complementary, ContentInfo, Application\tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Banner}
+
+Pour faire l'analogie avec l'entête d'un document, on parle de bannière
+pour une page web.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Landmark\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <header>\tabularnewline
+\hline 
+\end{longtable}
+
+\newpage
+
+\paragraph{Application}
+
+Contenu applicatif dans la page. 
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Landmark\tabularnewline
+\hline 
+Sous Classe & Audio, Video\tabularnewline
+\hline 
+Alignement HTML & <header>\tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Complementary}
+
+Région d'un document conçut comme étant complémentaire au contenu
+principal du document auquel il est associé. Il conserve une signification
+même si il est séparer du contenu principale.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Landmark\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <ASIDE>\tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{ContentInfo}
+
+Région d'un document contenant des informations sur celui-ci. Par
+exemple le copyrights associé à un document.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Landmark\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Form}
+
+Région qui contenant une collection d'éléments formant un formulaire.
+Les éléments sont généralement une collection de \emph{command, input
+}qui permettent une interaction avec l'utilisateur. Les interactions
+permettre d'envoyer des informations à un agent en vu d'un traitement (\emph{cf. }figure \ref{meta-classe_form}). 
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Landmark\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <form>\tabularnewline
+\hline 
+\end{longtable}
+
+%\begin{figure}[htb]
+%\begin{center} 
+%\lstset{    
+%	basicstyle=\footnotesize, 
+%	frame=tb,   
+%	xleftmargin=.1\textwidth, 
+%	xrightmargin=.1\textwidth 
+%} 
+%\begin{lstlisting}[frame=single, language=html] 
+ %<FORM action="http://unsite.com/inscription">     
+%<P>
+ % <h3>Inscription</h3>
+  %<LABEL for="prenom">Prénom : </LABEL>
+   %         <INPUT type="text" id="prenom"><BR>
+  %<LABEL for="nom">Nom : </LABEL>
+   %         <INPUT type="text" id="nom"><BR>
+ % <LABEL for="email">e-mail : </LABEL>
+  %          <INPUT type="text" id="email"><BR>
+  %<INPUT type="radio" name="genre" value="homme">H<BR>
+  %<INPUT type="radio" name="genre" value="femme">F<BR>
+  %<INPUT type="submit" value="E"> <INPUT type="reset">
+  %</P>
+ %</FORM>
+%\end{lstlisting}
+%\includegraphics[width=0.5\linewidth]{img/metamodele/form.png}
+%\caption{Exemple de Form \label{meta-classe_form}} \end{center} \end{figure}
+
+
+\paragraph{Main}
+
+Le contenu principale dans une page.
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéristique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Landmark\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & \tabularnewline
+\hline 
+\end{longtable}
+
+
+\paragraph{Navigation}
+
+Région contenant une collection de lien navigable vers des ressources
+internes ou externes. Par exemple le menu de navigation d'une page
+web (\emph{cf.} figure \ref{meta-classe_navigation}).
+
+\begin{longtable}{|c|c|}
+\hline 
+Caractéritique & Valeur\tabularnewline
+\hline 
+\hline 
+Abstrait & Non\tabularnewline
+\hline 
+Super Classe & Landmark\tabularnewline
+\hline 
+Sous Classe & \tabularnewline
+\hline 
+Alignement HTML & <nav>\tabularnewline
+\hline 
+\end{longtable}
+
+%\begin{figure}[htb]
+%\begin{center} 
+%\lstset{    
+%	basicstyle=\footnotesize, 
+%	frame=tb,   
+%	xleftmargin=.1\textwidth, 
+%	xrightmargin=.1\textwidth 
+%} 
+%\begin{lstlisting}[frame=single, language=html] 
+%<nav>
+ % <ul>
+  %  <li><a href="#">Accueil</a></li>
+   % <li><a href="#">À propos</a></li>
+    %<li><a href="#">Contact</a></li>
+ % </ul>
+%</nav>
+%\end{lstlisting}
+%\caption{Exemple Navigation \label{meta-classe_navigation}} \end{center} \end{figure}
+
+\section{Méta-modèle de mise en forme}
+
+
+\paragraph{Méta-classe Boîte}
+
+La méta-classe \emph{Boîte} décrit les propriétés de positionnement
+ainsi que la relation entre les éléments de l'arbre du document au
+travers du lien de composition.
+\begin{itemize}
+\item Display : sert à définir le schéma de positionnement appliqué à la
+boîte. Les deux principaux étant \emph{inline} et \emph{block}. inline
+positionne les éléments sur la même ligne alors que \emph{block} positonne
+les éléments les un sous les autres. On peut l'utiliser pour définir
+un menu horizontal ou vertical.
+\item Margin (top, left, right, bottom) : spécifie l'espacement du bord
+extérieur de la boîte.
+\end{itemize}
+
+\paragraph{Méta-classe Style}
+
+La méta-classe \emph{Style} des boîtes de CSS décrit les boîtes rectangulaires
+qui sont générées pour les éléments de l'arbre du document (\emph{cf.
+}figure \ref{meta-classe_style}). La méta-classe \emph{Style} décrit
+:
+\begin{itemize}
+\item padding : l'air d'espacement (\emph{padding}), 
+\item border-width épaisseur de bordure,
+\item \emph{border-style} : style de la bordure,
+\item border-color : la couleur de bordure,
+\item border-{[}color, image{]}\emph{ }: arière-plan .
+\end{itemize}
+%\begin{figure}[htb]
+%\begin{center} 
+%\includegraphics[width=0.5\linewidth]{imgmetamodel/cssboxdim.png}
+%\caption{Modèle de boîte \label{meta-classe_style}} \end{center} \end{figure}
+
+
+\paragraph{Méta-classe Texte}
+
+La méta-classe \emph{Texte} décrit la répresentation visuelle des
+caractères, mots et paragraphes contenuent dans une boîte. Par exemple,
+la proprièté \emph{letter-spacing }spécifie l'espace entre les lettres
+:
+\begin{itemize}
+\item text-indent : décrit un alinea 
+\item text-align : décrit un alignement. Exemple de valeur possible : alignement
+de texte à gauche, droite, centré, \emph{ect}.
+\item decoration : décrit un trait en-dessous, trait au-dessus, rayure et
+clignotement
+\item text-shadow : décrit des effets d'ombrage appliquer au texte
+\item letter-spacing : décrit l'espacement entre les mots
+\item word-spacing : décrit l'espacement entre les mots
+\item text-transform : décrit les effets de capitalisation dans le texte.
+Par exemple la valeur \emph{uppercase} définit que les lettres de
+chaque mots soient en majuscule, \emph{lowercase} décrit l'inverse.
+\item color : décrit la couleur du texte
+\end{itemize}
+
+\paragraph{Méta-classe Police}
+
+La méta-classe \emph{Police }décrit la représentation visuelle des
+caractères : 
+\begin{itemize}
+\item font-family : décrit le noms de familles génériques de la police du
+texte (\emph{e.g new century schoolbook})
+\item font-style : style de la police (\emph{e.g italic})
+\item font-weight : décrit la graisse de la police
+\item font-size : décrit la taille de la police\end{itemize}
+
+\end{appendices} 
 \newpage
 
 \printglossaries

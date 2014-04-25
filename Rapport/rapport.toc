@@ -29,3 +29,53 @@
 \contentsline {paragraph}{M\'eta-classe Style}{8}
 \contentsline {paragraph}{M\'eta-classe Texte}{8}
 \contentsline {paragraph}{M\'eta-classe Police}{9}
+\contentsline {section}{\numberline {3}M\'eta-mod\`ele des r\^oles }{9}
+\contentsline {section}{Appendices}{9}
+\contentsline {section}{\numberline {A}M\'eta-mod\`ele de Contenu}{9}
+\contentsline {paragraph}{Widget}{9}
+\contentsline {paragraph}{Composite}{9}
+\contentsline {paragraph}{Input }{9}
+\contentsline {paragraph}{Option}{9}
+\contentsline {paragraph}{Select}{10}
+\contentsline {paragraph}{Command}{10}
+\contentsline {paragraph}{Button}{10}
+\contentsline {paragraph}{Link}{10}
+\contentsline {paragraph}{Checkbox}{11}
+\contentsline {paragraph}{Radio}{11}
+\contentsline {paragraph}{RadioGroup}{11}
+\contentsline {paragraph}{Listbox}{11}
+\contentsline {paragraph}{Combobox}{12}
+\contentsline {paragraph}{Structure}{12}
+\contentsline {paragraph}{List}{12}
+\contentsline {paragraph}{Ul (unorder list)}{12}
+\contentsline {paragraph}{OL(order list) }{12}
+\contentsline {paragraph}{Texte}{13}
+\contentsline {paragraph}{Emphase}{14}
+\contentsline {paragraph}{Abbreviation}{14}
+\contentsline {paragraph}{Strong}{15}
+\contentsline {paragraph}{Cite}{15}
+\contentsline {paragraph}{Section}{16}
+\contentsline {paragraph}{ListItem}{16}
+\contentsline {paragraph}{Group}{16}
+\contentsline {paragraph}{Region}{16}
+\contentsline {paragraph}{Paragraphe}{16}
+\contentsline {paragraph}{Gridcell}{17}
+\contentsline {paragraph}{Rowheader}{18}
+\contentsline {paragraph}{Row}{18}
+\contentsline {paragraph}{Grid}{19}
+\contentsline {paragraph}{Separator}{19}
+\contentsline {paragraph}{SectionHead}{19}
+\contentsline {paragraph}{Heading}{19}
+\contentsline {paragraph}{Landmark}{19}
+\contentsline {paragraph}{Banner}{20}
+\contentsline {paragraph}{Application}{21}
+\contentsline {paragraph}{Complementary}{21}
+\contentsline {paragraph}{ContentInfo}{21}
+\contentsline {paragraph}{Form}{21}
+\contentsline {paragraph}{Main}{21}
+\contentsline {paragraph}{Navigation}{22}
+\contentsline {section}{\numberline {B}M\'eta-mod\`ele de mise en forme}{22}
+\contentsline {paragraph}{M\'eta-classe Bo\IeC {\^\i }te}{22}
+\contentsline {paragraph}{M\'eta-classe Style}{22}
+\contentsline {paragraph}{M\'eta-classe Texte}{22}
+\contentsline {paragraph}{M\'eta-classe Police}{23}
