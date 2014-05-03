@@ -246,7 +246,7 @@ feuille de style CSS.
 \end{lstlisting}
 
 \centering
-\includegraphics[width=0.8\linewidth]{img/architecture_Geekos_HTML4-294x300.jpg}
+\includegraphics[width=0.5\linewidth]{img/architecture_Geekos_HTML4-294x300.jpg}
 
 \caption{Architecture page web HTML 4\label{div_role}}
 \end{figure}
@@ -380,13 +380,12 @@ La figure \ref{metamodele_HTML5} modélise les concepts principaux de constructio
 
 
 
-\begin{figure}[htb]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.9\linewidth]{img/metamodele/HTML5.png}
+\includegraphics[width=0.8\linewidth]{img/metamodele/HTML5.png}
 
 \caption{Méta-modèle HTML 5\label{metamodele_HTML5}}
 \end{figure}
-
 \subsection{ARIA}
 \newglossaryentry{ontologie}
 {
@@ -458,7 +457,7 @@ du style du contenu (\emph{cf. }figure \ref{css-font}). L'avantage
 est une simplification de l'édition et de la maintenance d'une page
 web.
 
-\begin{figure}[htb]
+\begin{figure}[H]
 \begin{center} 
 \lstset{    
 	basicstyle=\footnotesize, 
@@ -480,7 +479,7 @@ avec un style de font the Arial font.</p>
 </body> 
 </html>
 \end{lstlisting}
-\includegraphics[width=0.9\linewidth]{img/metamodele/css-font.png}
+\includegraphics[width=0.5\linewidth]{img/metamodele/css-font.png}
 \caption{Exemple CSS\label{css-font}} \end{center} \end{figure}
 
 
@@ -593,17 +592,30 @@ le comportement de l'espacement entre les caractères du texte ('letter-spacing')
 
 
 \section{Réalisation}
-\subsection{Introduction}
-La conception du méta-modèle est double. S'affranchir de la diversité de représentation des onnées, support à,l'expression des souhaits, 
-La conception du modèle de contenu associe une sémantique aux structures syntaxiques des langage de publication de contenu.
+
 \subsection{Méta-modèle}
+\subsubsection{Introduction}
+Le langage de publication de contenu actuel (HTML 4) fournit une composante syntaxique extrêmement souple. Il permet la construction d'un ensemble potentiellement infini de structure logique. HTML 4 est un langage de programmation neutre vis-à-vis de la sémantique,  ses formes logiques n'ont pas de sémantique standard. 
+L'utilisation d'un méta-modèle est double. 
+En premier lieu, nous souhaitons apporter une composante sémantique à ces dernières. Cette composante sémantique s'intéresse à la correspondance entre les entités définies par le concepteur d'une page web et les entités comprissent par le lecteur. Elle est essentielle pour l'expression des souhaits de personnalisation de l'utilisateur. 
+En second lieu, la conception du méta-modèle nous fournit une couche d'abstraction permettant de s'affranchir de la diversité de représentation des données. HTML 4 est un langage de publication de données dit semi-structurées, c'est à dire qu'une même données peut être construites de plusieurs façons. 
+
+\subsubsection{Souhaits de personnalisation}
+Une application visée par le sujet du stage est l'amélioration de l'accessibilité du web pour les personnes en situation de handicap visuel. La notion de personnalisation est une propriété importante. Chaque handicap visuel est spécifique, une modification augmentant l'accessibilité d'une page pourra pour une personne peut avoir un effet inverse chez une personne atteinte d'un autre handicap. Ci-dessous quelques souhaits de personnalisation (CITER D OU ILS VIENNENT): 
+\begin{itemize}
+\item Maîtriser le contraste des couleurs. Le contraste entre la couleur d'avant plan trop proche de la couleur arrière plan va donner lieu à de la dissimulation. Par exemple, la couleur du texte trop proche de la couleur de fond peut rendre ce texte inaccessible
+\item Spécifier le remplacement de certaine police de caractère. Des polices trop enjolivés peuvent rendre un texte difficile à déchiffrer
+\item Maîtriser l' échelle de la taille de police d'un texte. Certaine doivent zoomer sur des zones de la page pour avoir accès aux informations. Par exemple les éléments de titre sont définit avec une taille de police plus grande que le texte qu'il introduit. Avec le zoom la différence d?échelle rend le titre illisible.
+\item Mettre en évidence des régions de la page. Une page peut être surchargé d'informations visuels rendant par exemple inaccessible un certain zone importante. Par exemple un menu de navigation.
+\end{itemize} 
+
 \subsubsection{Modèle de contenu}
 Relation de composition? En raison de la grande souplesse du langage, on ne fait pas apparaître le relation de composition dans le modèle de contenu, mais plutôt dans le modèle de mise en forme.
 La spécification de composition des balises en ligne et en bloc est annulé par les possibilités de CSS permettent de modifier la nature en faisant passé une balise de en bloc a en ligne.
 
-\begin{figure}[htb]
+\begin{figure}[H]
 \begin{center} 
-\includegraphics[width=\linewidth]{img/metamodele/modele-contenu-widget.png}
+\includegraphics[width=0.5\linewidth]{img/metamodele/modele-contenu-widget.png}
 \caption{Méta-modèle\label{widget-metamodele}} \end{center} \end{figure}
 
 \begin{figure}[htb]
@@ -612,18 +624,11 @@ La spécification de composition des balises en ligne et en bloc est annulé par l
 \caption{Méta-modèle\label{widget-metamodele}} \end{center} \end{figure}
  
 \subsubsection{Modèle de mise en forme}
-L'étude des spécification de la norme CSS nous a amené à la réalisation
-d'un méta-modèle (\emph{cf.} figure \ref{css-metamodele}) restreint aux aspects des principaux éléments de
-présentation conforme aux souhaits de transformation. Les spécifications
-de mise en forme n'apparaîssent pas dans le méta-modèle, il n'est
-pas prévu d'integrer pour la durée du stage l'expression des besoins
-sur l'agencement des éléments. Les éléments les plus important sont
-les couleurs d'arrière plan et du texte qui seront le support à l'expression
-des souhaits constrastes (de couleurs) ainsi qu'au module de calcule.
+L'étude des spécification de la norme CSS nous a amené à la réalisation d'un méta-modèle (\emph{cf.} figure \ref{css-metamodele}) restreint aux aspects des principaux éléments. Les spécifications de positionnement n? apparaissent pas dans le méta-modèle.
 
-\begin{figure}[htb]
+\begin{figure}[H]
 \begin{center} 
-\includegraphics[width=\linewidth]{img/metamodele/CSS.png}
+\includegraphics[width=0.5\linewidth]{img/metamodele/CSS.png}
 \caption{Méta-modèle\label{css-metamodele}} \end{center} \end{figure}
 
 
@@ -633,8 +638,8 @@ La méta-classe \emph{Box} décrit le concept de bloc conteneur au travers
 de la relation de composition. La propriété Display sert à définir
 le type de boîte ( \emph{inline} et \emph{block}). Ce genre de propriété
 pourrait nous permettre l'expression du besoin d'afficher un menu
-horizontalement ou vericalement. La propriété Margin spécifie l'espacement
-du bord extérieur de la boîte. Elle nous permettra de mieu marquer
+horizontalement ou verticalement. La propriété Margin spécifie l'espacement
+du bord extérieur de la boîte. Elle permettra de mieux marquer
 la séparation entre les différents types de contenu. 
 
 
@@ -654,7 +659,7 @@ qui sont générées pour les éléments de l'arbre du document (\emph{cf.
 
 \paragraph{Méta-classe Texte}
 
-La méta-classe \emph{Texte} décrit la répresentation visuelle des
+La méta-classe \emph{Texte} décrit la représentation visuelle des
 caractères, mots et paragraphes contenuent dans une boîte. Par exemple,
 la proprièté \emph{letter-spacing }spécifie l'espace entre les lettres
 :
@@ -684,7 +689,6 @@ texte (\emph{e.g new century schoolbook})
 \item font-weight : décrit la graisse de la police
 \item font-size : décrit la taille de la police\end{itemize}
 
-\section{Méta-modèle des rôles }
 
 \begin{appendices} 
 
