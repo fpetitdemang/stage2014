@@ -1,0 +1,14 @@
+
+Extraction bloc 
+	résumer article "Discovering informative content"
+	résumer article "Informative-Content-Extraction-By-Using-Eifce" (moins prioritaire)
+Extraction sémantique
+	résumer article "Discovering informative content"
+	résumer article "Informative-Content-Extraction-By-Using-Eifce"
+	résumer article "Function based model towards web site adpation"
+	RDFa
+
+
+/*A finir*/
+	-> IMPLEMENTER isVirtualNode(node) 
+	-> REGLE 8 ET REGLE 8bis

@@ -595,27 +595,76 @@ le comportement de l'espacement entre les caractères du texte ('letter-spacing')
 
 \subsection{Méta-modèle}
 \subsubsection{Introduction}
-Le langage de publication de contenu actuel (HTML 4) fournit une composante syntaxique extrêmement souple. Il permet la construction d'un ensemble potentiellement infini de structure logique. HTML 4 est un langage de programmation neutre vis-à-vis de la sémantique,  ses formes logiques n'ont pas de sémantique standard. 
-L'utilisation d'un méta-modèle est double. 
-En premier lieu, nous souhaitons apporter une composante sémantique à ces dernières. Cette composante sémantique s'intéresse à la correspondance entre les entités définies par le concepteur d'une page web et les entités comprissent par le lecteur. Elle est essentielle pour l'expression des souhaits de personnalisation de l'utilisateur. 
-En second lieu, la conception du méta-modèle nous fournit une couche d'abstraction permettant de s'affranchir de la diversité de représentation des données. HTML 4 est un langage de publication de données dit semi-structurées, c'est à dire qu'une même données peut être construites de plusieurs façons. 
+Le langage de publication de contenu actuel (HTML 4) fournit une composante syntaxique extrêmement souple. Il permet la construction d'un ensemble potentiellement infini de structures logiques desquelles on peut associer une même sémantique. Par exemple, la figure \ref{menu_html4} présente deux structures logiques extraites d'une des pages du site web \textit{lemonde.fr} et d'une page des pages du site web \textit{www.eclipse.org}. D'autre part, HTML fournit une sémantique pour le contenu mais pas pour les structures logiques. D'après la figure \ref{menu_html4}, on sait que les éléments textuelles sont des liens de navigation, signalés par la balise \textit{<a>}, mais il n'y a pas d'information sémantique sur la structure qu'ils composent (une menu de navigation).
 
-\subsubsection{Souhaits de personnalisation}
-Une application visée par le sujet du stage est l'amélioration de l'accessibilité du web pour les personnes en situation de handicap visuel. La notion de personnalisation est une propriété importante. Chaque handicap visuel est spécifique, une modification augmentant l'accessibilité d'une page pourra pour une personne peut avoir un effet inverse chez une personne atteinte d'un autre handicap. Ci-dessous quelques souhaits de personnalisation (CITER D OU ILS VIENNENT): 
-\begin{itemize}
-\item Maîtriser le contraste des couleurs. Le contraste entre la couleur d'avant plan trop proche de la couleur arrière plan va donner lieu à de la dissimulation. Par exemple, la couleur du texte trop proche de la couleur de fond peut rendre ce texte inaccessible
-\item Spécifier le remplacement de certaine police de caractère. Des polices trop enjolivés peuvent rendre un texte difficile à déchiffrer
-\item Maîtriser l' échelle de la taille de police d'un texte. Certaine doivent zoomer sur des zones de la page pour avoir accès aux informations. Par exemple les éléments de titre sont définit avec une taille de police plus grande que le texte qu'il introduit. Avec le zoom la différence d?échelle rend le titre illisible.
-\item Mettre en évidence des régions de la page. Une page peut être surchargé d'informations visuels rendant par exemple inaccessible un certain zone importante. Par exemple un menu de navigation.
-\end{itemize} 
+La contribution de ce méta-modèle vient apporter une composante sémantique aux langages de publication du web.
+Cette sémantique s'intéresse à la correspondance entre les entités définies par le concepteur d'une page web et les entités comprissent par le lecteur. Elle est essentielle pour l'expression des souhaits de personnalisation de l'utilisateur. En second lieu, le méta-modèle nous fournit une couche d'abstraction permettant de s'affranchir de la diversité de représentation des données. 
+
+Le méta-modèle se décompose en deux parties. Une partie décrivant la sémantique des principales structures logiques utilisées dans la conception des pages. Une seconde partie pour la descriptions de la mise en forme associée à chaque élément du méta-modèle précédent. Cela va nous permettre de mieux intégrer l'accessibilité dans la personnalisation des pages web.
+
+\begin{figure}[htb]
+
+\lstset{ 
+  basicstyle=\footnotesize, frame=tb,
+  xleftmargin=.1\textwidth, xrightmargin=.1\textwidth
+}
+\begin{lstlisting}[frame=single, language=html]
+<div id="header-nav">
+<ul>
+	<li><a>Home</a></li> 
+	<li><a>Downloads</a></li> 
+	<li><a>Users</a></li> 
+	<li><a>Members</a></li> 
+	<li><a>Committers</a></li> 
+	<li><a>Resources</a></li> 
+	<li><a>Projects</a></li> 
+	<li><a>About Us</a></li> 
+</ul>
+</div>
+\end{lstlisting}
+
+\lstset{ 
+  basicstyle=\footnotesize, frame=tb,
+  xleftmargin=.1\textwidth, xrightmargin=.1\textwidth
+}
+\begin{lstlisting}[frame=single, language=html]
+<div>
+<p>
+	<a>Le Monde</a><a>Télérama</a>
+	<a>Le Monde diplomatique</a>
+	<a>Le Huffington Post</a>
+	<a>Courrier international</a>
+	<a>La Vie</a>
+	<a>au Jardin</a>
+</p>
+</div>
+\end{lstlisting}
+\caption{Exemple de différentes conceptions de menu avec HTML4\label{menu_html4}}
+\end{figure}
+
+\newpage
 
 \subsubsection{Modèle de contenu}
-Relation de composition? En raison de la grande souplesse du langage, on ne fait pas apparaître le relation de composition dans le modèle de contenu, mais plutôt dans le modèle de mise en forme.
-La spécification de composition des balises en ligne et en bloc est annulé par les possibilités de CSS permettent de modifier la nature en faisant passé une balise de en bloc a en ligne.
+Chaque élément va nous permettre de qualifier les éléments d'une page. Une première partie décrie les éléments de structuration. Les principales méta-classes sont :
+\begin{itemize}
+	\item Les méta-classes \textit{SECTION}, elles définissent un environnement aux éléments relatifs d'un documents (titres, pieds de page, en-têtes). Un titre déclaré dans un section se rapporte à la déclaration d'une élément de type \textit{SECTION} la plus proche. Ce concept d'environnement est introduit dans HTML5 par la balise de type <SECTION>.
+	\item Les méta-classes \textit{SECTIONHEAD} sont les éléments qui synthétisent un contenu. Il possède une portée locale, ceux-ci sont associées à l'élément de type \textit{SECTION} le plus proche. Cette méta-classe englobe par exemple les balises de titres définit dans HTML4 (\textit{e.g} <H1~H6>).
+	\item Les méta-classes \textit{REGION} correspondent à un regroupement par thématique des éléments qu'elles encapsulent, c'est à dire des éléments que l'on peut regrouper sur la base d'une information commune. Ce concept de regroupement par thématique est introduit dans HTML5 par la balise de type <SECTION>.
+	\item Les méta-classes \textit{LANDMARK} recensent les principales structures que l'on trouve dans une page web. Par exemple, la méta-classe \textit{NAVIGATION} pour les menus (correspond à la balise de type \textit{NAV} dans HTML 5) ou la méta-classe \textit{BANNER} pour la bannière d'une page web.
+\end{itemize}
 
-\begin{figure}[H]
+Un seconde partie de ce méta-modèle décrit les éléments d'interaction dans une page web. Les principales méta-classes sont :
+\begin{itemize}
+	\item Les méta-classe \textit{INPUT} sont les éléments qui permettent des entrées utilisateurs. Elles correspondent aux balises de type \textit{<input>} de HTML4. 
+	\item Les méta-classe \textit{COMMAND} sont les éléments qui exécutent des actions mais ne reçoivent pas d'information en entrée. Par exemple les balises de type \textit{<a>} déclenche une action de navigation ou une balise de type \textit{<button>} déclenche l'envoie de données d'un formulaire vers un serveur. 
+	\item Les méta-classe \textit{SELECT} sont les éléments qui permettent de faire des sélections parmi un ensemble de choix.
+\end{itemize}
+
+
+
+\begin{figure}[htb]
 \begin{center} 
-\includegraphics[width=0.5\linewidth]{img/metamodele/modele-contenu-widget.png}
+\includegraphics[width=\linewidth]{img/metamodele/modele-contenu-widget.png}
 \caption{Méta-modèle\label{widget-metamodele}} \end{center} \end{figure}
 
 \begin{figure}[htb]
@@ -624,70 +673,24 @@ La spécification de composition des balises en ligne et en bloc est annulé par l
 \caption{Méta-modèle\label{widget-metamodele}} \end{center} \end{figure}
  
 \subsubsection{Modèle de mise en forme}
-L'étude des spécification de la norme CSS nous a amené à la réalisation d'un méta-modèle (\emph{cf.} figure \ref{css-metamodele}) restreint aux aspects des principaux éléments. Les spécifications de positionnement n? apparaissent pas dans le méta-modèle.
+Le méta-modèle de mise en forme (\emph{cf.} figure \ref{css-metamodele}) est un support essentiel à l'expression des préférences, en particulier pour les préférences liées à l'accessibilité. Les principales méta-classe sont :
 
 \begin{figure}[H]
 \begin{center} 
-\includegraphics[width=0.5\linewidth]{img/metamodele/CSS.png}
+\includegraphics[width=\linewidth]{img/metamodele/CSS.png}
 \caption{Méta-modèle\label{css-metamodele}} \end{center} \end{figure}
 
-
-\paragraph{Méta-classe Box}
-
-La méta-classe \emph{Box} décrit le concept de bloc conteneur au travers
-de la relation de composition. La propriété Display sert à définir
-le type de boîte ( \emph{inline} et \emph{block}). Ce genre de propriété
-pourrait nous permettre l'expression du besoin d'afficher un menu
-horizontalement ou verticalement. La propriété Margin spécifie l'espacement
-du bord extérieur de la boîte. Elle permettra de mieux marquer
-la séparation entre les différents types de contenu. 
-
-
-\paragraph{Méta-classe Style}
-
-La méta-classe \emph{Style} des boîtes de CSS décrit les boîtes rectangulaires
-qui sont générées pour les éléments de l'arbre du document (\emph{cf.
-}figure \ref{css-modeleboite}). La méta-classe \emph{Style} décrit
-:
 \begin{itemize}
-\item padding : l'air d'espacement, 
-\item border-width épaisseur de bordure,
-\item \emph{border-style} : style de la bordure,
-\item border-color : la couleur de bordure,
-\item border-{[}color, image{]}\emph{ }: arière-plan .
+\item Les méta-classes \textit{Box} qui représentent le concept de bloc conteneur. Elles vont permettre d'exprimer des préférences sur l'accessibilité tels que l'espacement plus ou moins fort (propriété padding) avec les éléments connexes à cette dernière. Mais encore sur les contrastes avec la propriété de couleur d'arrière plan et la propriété de couleur de la méta-classe \textit{text}.
+
+
+\item Les méta-classes \textit{Text}  décrivent la représentation visuelle des
+caractères, mots et paragraphes contenus dans une boîte. Par exemple, la propriété \emph{letter-spacing }spécifie l'espace entre les lettres.
+
+\item Les méta-classes \textit{Méta-classe Police} décrivent la représentation visuelle des caractères. Dans le contexte de l'amélioration de l'accessibilité il être intéressant, par exemple, d'éviter certain type de font qui peuvent rendre un contenu plus illisible pour certaine pathologie.
+
 \end{itemize}
 
-\paragraph{Méta-classe Texte}
-
-La méta-classe \emph{Texte} décrit la représentation visuelle des
-caractères, mots et paragraphes contenuent dans une boîte. Par exemple,
-la proprièté \emph{letter-spacing }spécifie l'espace entre les lettres
-:
-\begin{itemize}
-\item text-indent : décrit un alinea 
-\item text-align : décrit un alignement. Exemple de valeur possible : alignement
-de texte à gauche, droite, centré, \emph{ect}.
-\item decoration : décrit un trait en-dessous, trait au-dessus, rayure et
-clignotement
-\item text-shadow : décrit des effets d'ombrage appliquer au texte
-\item letter-spacing : décrit l'espacement entre les mots
-\item word-spacing : décrit l'espacement entre les mots
-\item text-transform : décrit les effets de capitalisation dans le texte.
-Par exemple la valeur \emph{uppercase} définit que les lettres de
-chaque mots soient en majuscule, \emph{lowercase} décrit l'inverse.
-\item color : décrit la couleur du texte
-\end{itemize}
-
-\paragraph{Méta-classe Police}
-
-La méta-classe \emph{Police }décrit la représentation visuelle des
-caractères : 
-\begin{itemize}
-\item font-family : décrit le noms de familles génériques de la police du
-texte (\emph{e.g new century schoolbook})
-\item font-style : style de la police (\emph{e.g italic})
-\item font-weight : décrit la graisse de la police
-\item font-size : décrit la taille de la police\end{itemize}
 
 
 \begin{appendices} 
@@ -1829,72 +1832,46 @@ Alignement HTML & <nav>\tabularnewline
 \section{Méta-modèle de mise en forme}
 
 
-\paragraph{Méta-classe Boîte}
-
-La méta-classe \emph{Boîte} décrit les propriétés de positionnement
-ainsi que la relation entre les éléments de l'arbre du document au
-travers du lien de composition.
+\paragraph{Méta-classe Box}
+La méta-classe \emph{Box} décrit les propriétés de positionnement des éléments.  Les différentes propriétés sont :
 \begin{itemize}
-\item Display : sert à définir le schéma de positionnement appliqué à la
-boîte. Les deux principaux étant \emph{inline} et \emph{block}. inline
-positionne les éléments sur la même ligne alors que \emph{block} positonne
-les éléments les un sous les autres. On peut l'utiliser pour définir
-un menu horizontal ou vertical.
-\item Margin (top, left, right, bottom) : spécifie l'espacement du bord
-extérieur de la boîte.
+\item display : sert à définir le schéma de positionnement appliqué à la boîte. Les deux principaux étant \emph{inline} et \emph{block}. inline positionne les éléments sur la même ligne alors que \emph{block} positionne les éléments les un sous les autres. 
+\item margin (top, left, right, bottom) : spécifie l'espacement du bord extérieur de la boîte.
 \end{itemize}
 
 \paragraph{Méta-classe Style}
-
-La méta-classe \emph{Style} des boîtes de CSS décrit les boîtes rectangulaires
-qui sont générées pour les éléments de l'arbre du document (\emph{cf.
-}figure \ref{meta-classe_style}). La méta-classe \emph{Style} décrit
-:
+La méta-classe \emph{Style} décrit les boîtes rectangulaires qui sont générées pour les éléments de l'arbre du document (\emph{cf.}figure \ref{meta-classe_style}).  Les différentes propriétés sont :
 \begin{itemize}
-\item padding : l'air d'espacement (\emph{padding}), 
-\item border-width épaisseur de bordure,
-\item \emph{border-style} : style de la bordure,
-\item border-color : la couleur de bordure,
-\item border-{[}color, image{]}\emph{ }: arière-plan .
+	\item padding : l'air d'espacement (\emph{padding})
+	\item border-width épaisseur de bordure
+	\item \emph{border-style} : style de la bordure
+	\item border-color : la couleur de bordure
+	\item border-{[}color, image{]}\emph{ }: arière-plan
 \end{itemize}
-%\begin{figure}[htb]
-%\begin{center} 
-%\includegraphics[width=0.5\linewidth]{imgmetamodel/cssboxdim.png}
-%\caption{Modèle de boîte \label{meta-classe_style}} \end{center} \end{figure}
 
-
-\paragraph{Méta-classe Texte}
-
-La méta-classe \emph{Texte} décrit la répresentation visuelle des
-caractères, mots et paragraphes contenuent dans une boîte. Par exemple,
-la proprièté \emph{letter-spacing }spécifie l'espace entre les lettres
-:
+\paragraph{Méta-classe Text}
+La méta-classe \emph{Text} décrit la représentation visuelle des caractères, mots et paragraphes contenu dans une boîte. Les différentes propriétés sont :
 \begin{itemize}
-\item text-indent : décrit un alinea 
-\item text-align : décrit un alignement. Exemple de valeur possible : alignement
-de texte à gauche, droite, centré, \emph{ect}.
-\item decoration : décrit un trait en-dessous, trait au-dessus, rayure et
+	\item text-indent : décrit un alinéa 
+	\item text-align : décrit un alignement. Exemple de valeur possible : alignement de texte à gauche, droite, centré, \emph{ect}.
+	\item decoration : décrit un trait en-dessous, trait au-dessus, rayure et
 clignotement
-\item text-shadow : décrit des effets d'ombrage appliquer au texte
-\item letter-spacing : décrit l'espacement entre les mots
-\item word-spacing : décrit l'espacement entre les mots
-\item text-transform : décrit les effets de capitalisation dans le texte.
+	\item text-shadow : décrit des effets d'ombrage appliquer au texte
+	\item letter-spacing : décrit l'espacement entre les mots
+	\item word-spacing : décrit l'espacement entre les mots
+	\item text-transform : décrit les effets de capitalisation dans le texte.
 Par exemple la valeur \emph{uppercase} définit que les lettres de
 chaque mots soient en majuscule, \emph{lowercase} décrit l'inverse.
-\item color : décrit la couleur du texte
+	\item color : décrit la couleur du texte
 \end{itemize}
 
 \paragraph{Méta-classe Police}
-
-La méta-classe \emph{Police }décrit la représentation visuelle des
-caractères : 
+La méta-classe \emph{Police} décrit la représentation visuelle des caractères : 
 \begin{itemize}
-\item font-family : décrit le noms de familles génériques de la police du
-texte (\emph{e.g new century schoolbook})
-\item font-style : style de la police (\emph{e.g italic})
-\item font-weight : décrit la graisse de la police
-\item font-size : décrit la taille de la police\end{itemize}
-
+	\item font-family : décrit les noms de famille générique de la police du texte (\emph{e.g new century schoolbook})
+	\item font-style : style de la police (\emph{e.g italic})
+	\item font-weight : décrit la graisse de la police
+	\item font-size : décrit la taille de la police\end{itemize}
 \end{appendices} 
 \newpage
 
