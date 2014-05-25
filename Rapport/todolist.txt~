@@ -1,4 +1,10 @@
+Segmentation zone :
+	* rediger qlq chose sur les résultats? ou  exemple?? Expliquer utilisation de TABLE
+Mapping graphe :
+	* revoir cette partie de la biblio par rapport aux remarques des relecteurs
 Méta-modèle :
-	* découper métmodele des rôles à la UML (avec des classes qui se repètent)
-	* mettre descriptif détaillé dans un appendix
-	* faire une présentation du méta-modele
+	* découper métmodele des rôles à la UML avec CSS (avec des classes qui se repètent)
+	* relir appendix (il manque article???) 
+	* faire une présentation du méta-modele qui met en évidence les éléments du HTML4, HTML5 et ARIA réutilisé
+	* Etat de l'art - ARIA mettre une méta-modèle qui montre les landmark
+

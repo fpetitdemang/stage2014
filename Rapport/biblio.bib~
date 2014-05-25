@@ -1,0 +1,227 @@
+@MISC{bioappl,
+  title={{Universite de la Mediterranee Aix-Marseille II}},
+  author={Universite de la Mediterranee Aix-Marseille II},
+  publisher={Universite de la Mediterranee Aix-Marseille II},
+  year={2014},
+  HOWPUBLISHED={http://biologie.univ-mrs.fr/upload/p202/Cours3_alignement.pdf}
+}
+
+@inproceedings{kohlschutter2008densitometric,
+  title={A densitometric approach to web page segmentation},
+  author={Kohlsch{\"u}tter, Christian and Nejdl, Wolfgang},
+  booktitle={Proceedings of the 17th ACM conference on Information and knowledge management},
+  pages={1173--1182},
+  year={2008},
+  organization={ACM}
+}
+
+@article{wang2001finding,
+  title={{Finding similar consensus between trees: an algorithm and a distance hierarchy}},
+  author={Wang, Jason TL and Zhang, Kaizhong},
+  journal={Pattern Recognition},
+  volume={34},
+  number={1},
+  pages={127--137},
+  year={2001},
+  publisher={Elsevier}
+}
+
+@phdthesis{saada2013,
+  title={{Exploiting Model Transformation Examples for Easy Model Transformation Handling}},
+  author={Hajer Saada},
+  year={2113},
+  school={Universit{\'e} Montpellier 2}
+}
+@article{wisniewski2007modele,
+  title={Mod{\`e}le probabiliste pour l'extraction de structures dans les documents web},
+  author={Wisniewski, Guillaume and Maes, Francis and Denoyer, Ludovic},
+  journal={Document num{\'e}rique},
+  volume={10},
+  number={1},
+  pages={89--107},
+  year={2007},
+  publisher={Lavoisier}
+}
+@inproceedings{chang2001iepad,
+  title={{IEPAD: information extraction based on pattern discovery}},
+  author={Chang, Chia-Hui and Lui, Shao-Chen},
+  booktitle={Proceedings of the 10th international conference on World Wide Web},
+  pages={681--688},
+  year={2001},
+  organization={ACM}
+}
+
+@article{sobel1986multiple,
+  title={{A multiple sequence alignment program}},
+  author={Sobel, Eric and Martinez, Hugo M},
+  journal={Nucleic acids research},
+  volume={14},
+  number={1},
+  pages={363--374},
+  year={1986},
+  publisher={Oxford Univ Press}
+}
+
+@article{shapiro1990comparing,
+  title={{Comparing multiple RNA secondary structures using tree comparisons}},
+  author={Shapiro, Bruce A and Zhang, Kaizhong},
+  journal={Computer applications in the biosciences: CABIOS},
+  volume={6},
+  number={4},
+  pages={309--318},
+  year={1990},
+  publisher={Oxford Univ Press}
+}
+
+@inproceedings{vieira2006fast,
+  title={A fast and robust method for web page template detection and removal},
+  author={Vieira, Karane and da Silva, Altigran S and Pinto, Nick and de Moura, Edleno S and Cavalcanti, Joao and Freire, Juliana},
+  booktitle={Proceedings of the 15th ACM international conference on Information and knowledge management},
+  pages={258--267},
+  year={2006},
+  organization={ACM}
+}
+
+@article{ducasse70software,
+  title={{Software Architecture Reconstruction: a Process-Oriented Taxonomy}},
+  author={Ducasse, St{\'e}phane and Pollet, Damien},
+  journal={system},
+  volume={70},
+  pages={88}
+}
+
+@inproceedings{chen2001function,
+  title={{Function-based object model towards website adaptation}},
+  author={Chen, Jinlin and Zhou, Baoyao and Shi, Jin and Zhang, Hongjiang and Fengwu, Qiu},
+  booktitle={Proceedings of the 10th international conference on World Wide Web},
+  pages={587--596},
+  year={2001},
+  organization={ACM}
+}
+
+@inproceedings{tichelaar2000famix,
+  title={{Famix and xmi}},
+  author={Tichelaar, Sander and Ducasse, St{\'e}phane and Demeyer, Serge},
+  booktitle={Reverse Engineering, 2000. Proceedings. Seventh Working Conference on},
+  pages={296--298},
+  year={2000},
+  organization={IEEE}
+}
+
+@article{Kleppe_et_al,
+  title={{MDA explained: the model driven architecture: practice and promise}},
+  author={Kleppe, Anneke G and Warmer, Jos B and Bast, Wim},
+  year={2003},
+  publisher={Addison-Wesley Professional}
+}
+
+@inproceedings{czarnecki2003classification,
+  title={{Classification of model transformation approaches}},
+  author={Czarnecki, Krzysztof and Helsen, Simon},
+  booktitle={Proceedings of the 2nd OOPSLA Workshop on Generative Techniques in the Context of the Model Driven Architecture},
+  volume={45},
+  number={3},
+  pages={1--17},
+  year={2003}
+}
+
+@article{Comparing_multiple_RNA_secondary,
+  title={{Comparing multiple RNA secondary structures using tree comparisons}},
+  author={Bruc A.Shapiro, Kaizhong Zhang},
+  journal={CABIOS},
+  %volume={},
+  %number={},
+  pages={309-318},
+  year={1990},
+  publisher={CABIOS}
+}
+
+@article{needleman1970general,
+  title={{A general method applicable to the search for similarities in the amino acid sequence of two proteins}},
+  author={Needleman, Saul B and Wunsch, Christian D},
+  journal={Journal of molecular biology},
+  volume={48},
+  number={3},
+  pages={443--453},
+  year={1970},
+  publisher={Elsevier}
+}
+
+@article{smith1981identification,
+  title={{Identification of common molecular subsequences}},
+  author={Smith, Temple F and Waterman, Michael S},
+  journal={Journal of molecular biology},
+  volume={147},
+  number={1},
+  pages={195--197},
+  year={1981},
+  publisher={Elsevier}
+}
+
+@incollection{cai2003extracting,
+  title={{Extracting content structure for web pages based on visual representation}},
+  author={Cai, Deng and Yu, Shipeng and Wen, Ji-Rong and Ma, Wei-Ying},
+  booktitle={Web Technologies and Applications},
+  pages={406--417},
+  year={2003},
+  publisher={Springer}
+}bibtex cour
+
+
+@ONLINE{CSS,
+  title={{Cascading Style Sheets}},
+  author={World Wide Web Consortium and others},
+  year={2010},
+  publisher={World Wide Web Consortium},
+  HOWPUBLISHED = {http://www.w3.org/Style/CSS/}
+}
+
+
+@ONLINE{ARIA,
+  title={{Accessible Rich Internet Applications 1.0}},
+  author={World Wide Web Consortium and others},
+  year={2014},
+  publisher={World Wide Web Consortium},
+  HOWPUBLISHED = {http://www.w3.org/WAI/intro/aria}
+}
+
+
+@ONLINE{HTML_4,
+  title={{HTML 4.01 specification}},
+  author={World Wide Web Consortium and others},
+  year={1999},
+  publisher={World Wide Web Consortium},
+  HOWPUBLISHED={http://www.w3.org/TR/REC-html40/}
+}
+
+@ONLINE{HTML_5,
+  title={{HTML 5 Specification}},
+  author={World Wide Web Consortium and others},
+  publisher={World Wide Web Consortium},
+  year={2014},
+  publisher={World Wide Web Consortium},
+  HOWPUBLISHED={http://www.w3.org/TR/html5/}
+}
+
+
+@article{tai1979tree,
+  title={{The tree-to-tree correction problem}},
+  author={Tai, Kuo-Chung},
+  journal={Journal of the ACM (JACM)},
+  volume={26},
+  number={3},
+  pages={422--433},
+  year={1979},
+  publisher={ACM}
+}
+
+@article{Takana,
+  title={{The Tree-to-Tree editing distance problem}},
+  author={E. Takana, K. Takana},
+  %journal={},
+  %volume={10},
+  %number={3},
+  pages={221--241},
+  year={1998},
+  publisher={Int. J. Pattern Recognition Artif. Intell. 2}
+}

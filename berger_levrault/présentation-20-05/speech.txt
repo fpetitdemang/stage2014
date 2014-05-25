@@ -1,0 +1,37 @@
+//DIAPO ELMENT STRUCTURATTION
+
+HTML4 mélange les éléments de mise en forme et de structuration
+HMTL4 pas de sémantique pour les éléments de structuration
+
+SECTIONHEAD -> Element de titre
+SECTION -> Unité de confinement
+REGION -> regroupement thématque dans une page
+LANDMARK -> principale région que l'on retrouve dans une page
+
+//DIAPO ELEMENT D INTERACTION
+interaction entre l'utilisateur et la page web
+INPUT -> Décrit les éléments qui décrivent des entrées utilisateur
+COMMAND -> Excute des actions
+SELECT -> Décrit les éléments qui peuvent faire des sélections parmi un ensemble de choix 
+
+//DIAPO ELEMENT MISE EN FORME
+BOXSTYLE décrit les blocs conteneurs de CSS : décrit les bordures, l'espacement entre les blocs, la couleur d'arriere plan
+POLICE police décrit la représentation des caractères ()
+TEXTE décrit les propriétés sur le texte (espacement des lettres, couleur de texte)
+BOX propriétés de d'affichage
+
+//DIAPO INSTANCE
+Préférence sur l'accessibilité : 
+	constraste des couleurs
+	
+
+
+//DIAPO DEMARCHE GENERALE
+réaliser un découpage de la structure de la page pour en extraire les blocs qui ont une sémantique pour l'utilisateur
+algorithme de segmentation basé sur des heuristiques qui prennent en compte les propriétés de mise en forme
+Pour chaque bloc extrait on va réappliquer le processus de segmentation pour isoler les éléments qui le structure et en inferer une sémantique
+
+//DIAPO HEURISTIQUE
+inline : 
+breakline : provoque un retour à la ligne dans le flux de contenu
+

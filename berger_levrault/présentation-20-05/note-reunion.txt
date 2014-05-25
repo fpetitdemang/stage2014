@@ -1,0 +1,19 @@
+//Etat de l'art général : 
+Ma partie dans l'état de l'art = Adaptations de pages Web (pour l’accessibilité)
+ + qlq lignes sur l'article d'adaptation de document légataire 
+ + article bibliographie
+note : faire trois à quatre phrase par article 
+
+//REMARQUE
+* intergrer dans le schema un modele des préférences
+* dans le cas de page conforme à HTML5 -> extraction plus simple
+* réfléchir aux moyens d'expression des préférences (contraintes : personne pas spécialiste de l'informatique, handicap visuel), approche par l'exemple -> personnes ne connaissent pas leurs pathologie
+//
+analyse seulement de l'image : perte des informations de sémantique et structurel des éléments 
+
+//
+Distinction accesibilité du contenu sémantique (pour les machines = pour les outils d'accessibilité) & accesibilité visuelle (pour les utilisateurs)
+
+//
+regarder les licences pour livrer mon code à Berger-Levrault
+redaction code  

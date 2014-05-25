@@ -12,6 +12,7 @@
 \usepackage{amssymb}
 \usepackage{glossaries}
 \usepackage[toc,page]{appendix}
+\usepackage{wrapfig}
 \makeglossaries
 
 
@@ -137,7 +138,59 @@ Sous la direction de \textbf{Marianne~HUCHARD, Michel~MEYNARD, Yoann~BONAVERO}
 
 
 
+\section{Extraction de contenu}
+Les processus de d'extraction de contenu recherche sont un support à la classification de document. Les pages web possèdent un contenu informatif que l'on souhaite classifier. Une page web est constitué d'un contenu hétérogène et pas représentatif du contenu de la page. Par exemple un menu de navigation ou la bannière d'une page ne sont pas des informations utiles pour la classification d'une page. On souhaite récuperer le contenu informatif de la page, qui apporte une information. C'est la motivation des différentes approches proposé ci-dessous. Les approches ci-dessous propose des méthodes afin d'identifier les différentes structure logique dans la page et d'inféré des certaines propriétés pour en attribuer une sémantique. 
+ La majorité des processus décrit vise à identifier dans une page web le contenu qui décrit une page dans un but d'indexation. Ces processus souhaitent éliminer le \emph{bruit} de ce processus, c'est à dire ne pas prendre en compte les éléments qui ne définissent pas le contenu d'une page d'un point de vue informatique. Par exemple, les menus, une bannière, des pieds de pages.
 
+\subsection{Segmentation par zone}
+Les auteurs de \cite{kovacevic2002recognition} proposent dans leur papier une segmentation des pages web par zone. Cette approche  représente les objets HTML par leurs coordonnées cartésiennes et la zone dans laquelle ils sont localisés. L'objectif étant d'améliorer le traitement des informations d'une page web. Dans le contexte de classification de page web, les mots définissants le mieux une page web sont les mots qui se rapprochent le plus de centre le page. L'hypothèse est fondée sur le faite que dans un but d'ergonomie les concepteurs de page web suivent un même modèle de présentation. Les auteurs partitionnent une page suivant ce modèle de présentation en se basant sur une observation empirique de la conception des pages (\emph{cf. figure}\ref{zones-interets}) : 
+\begin{itemize}
+	\item une entête correspondant à l'emplacement de la bannière d'une page (\emph{H}), 
+	\item un pied de page (\emph{F})
+	\item une marge latérale gauche contenant des menus  (\emph{LF}) 
+	\item une marge latérale droite contenant des menus (\emph{LR}) 
+	\item du centre de la page encapsulant le contenu principal de la page ((\emph{C}))
+\end{itemize}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.48\textwidth]{img/zone-interet.jpg}
+\caption{Position des zones d'intérêts dans une page \label{zones-interets}}
+\end{figure} 
+La figure \ref{zones-interets} modélise le partitionnement suggéré par les auteurs avec \emph{W1} et \emph{W2} définissant respectivement \emph{LF} et \emph{LR}. Chacune d'elle représente 30\% de la largeur de la page. \emph{H1} et \emph{H2} définissent \emph{H} et \emph{F} avec un hauteur de 200px pour \emph{H} et 150px pour \emph{F}. 
+La méthode propose une représentation des objets HTML dans un système de coordonnées cartésiennes. Les coordonnées sont calculées au moyen d'un moteur de rendu graphique. Il est à noter que tel qu'il est décrit dans l'article, le moteur de rendu graphique ne prend pas en compte la surcouche CSS. 
+En se basant sur ce modèle de représentation, des heuristiques sont déterminées afin de segmenter la page suivant le partitionnement de page proposé. 
+\begin{description}
+\item[Heuristique 1 :] \emph{H} se compose des noeuds  étiquetés par TABLE est complètement inclus dans la zone \emph{H1} 
+\item[Heuristique 2 :] \emph{LM} est constitué de tous les noeuds étiquetés par TABLE ou TD qui ne n'appartiennent pas \emph{H} et sont strictement inclus dans \emph{W1}
+\item[Heuristique 3 :] \emph{RM} est constitué de tous les noeuds étiquetés par TABLE ou TD qui ne n'appartiennent pas la \emph{H, LM} est sont strictement inclus dans \emph{W2}
+\item[Heuristique 4 :] \emph{F} est constitué de tous les noeuds étiquétés par table qui ne sont pas contenu dans \emph{H, LM, RM} et qui sont strictement inclus dans \emph{H2} 
+\item[Heuristique 5 :] \emph{C} est constitué de tous les noeuds qui n'appartiennent pas à \emph{H, LM, RM, F}
+\end{description}
+
+Les heuristiques se basent sur essentiellement sur les étiquettes TABLE qui sont exploités pour la mise en forme des objets HTML dans la page. Cette méthodologie de conception n'est plus utilisé. Ce sont les éléments étiquetés par DIV qui remplissent ce rôle d'agencement des éléments dans les pages.
+
+
+\subsection{Segmentation densitométrique}
+Pour l'identification des différentes structures dans la page, les auteurs se basent sur l'analyse de la répartition de la densité textuelle dans une page. L'hypothèse des auteurs est que la densité des différents blocs de textes du DOM est une propriété qui suffisante pour segmenter la page en segment représentatifs des différentes structures logiques. 
+
+La première étape consiste à identifier les différents segments textuelle de la page. Les auteurs ne prennent pas en compte la sémantique des balises HTML dans le découpage. Le découpage se fait sur l'analyse des changement dans le flux de texte. Par exemple si le flux indique passe d'une sequence de phrase courte à une sequence de phrase longue, cela signale un nouveau segment. Typique si on analyse une sequence de texte courte comme \emph{Accueille, New, Contact} et une sequence de texte longue va donner naissance à deux nouveaux segments.
+Pour chaque segment (bloc) identifier par le processus ci-dessous. Les auteurs vont calculer une densité textuelle. Cette propriété correspond au ratio ci-dessous :
+\[ p(b_{x}) = \frac{Nombre De Mots Dans b_{x}}{Nombre De Lignes Dans b_{x}} \]
+Les jetons correspondent à une séquence contingente de caractères n'étant pas des caractères d'espacement.Le nombre de ligne est calculé par division du nombre total de caractères dans les blocs par 80. 80 étant une valeur fixée par les auteurs, elle correspond à la taille d'une phrase moyenne (dans les pays anglophones).
+
+Un seconde étape, permettant de trouver les blocs de la page, consiste à fusionner les segments voisins en comparant leur densité textuelle
+La décision de fusionner les blocs est prise en comparant la densité textuelle des blocs adjacents, en se basant sur la fonction définit ci-dessous :  
+\[ \Delta p(b_{x}, b_{y}) = \frac{|p(b_{x}) - p(b_{y})|}{max(p(b_{x}), p(b_{y}))} \]
+Si la fonction delta est en dessous d'un certain seuil $Smax$ les blocs adjacents sont fusionnés. La fusion de segment consiste ici à joindre les lignes des blocs \emph{x} et \emph{y} en un nouveau bloc \emph{z}. La fonction boucle tant qu'elle trouve des blocs adjacents qui ne respectent pas un seuil définit à priori.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{img/densitometric-segmantation.png}
+\caption{Segmentation densitométrique \cite{kohlschutter2008densitometric} \label{seg-densitometrique}}
+\end{figure}
+
+\subsection{Segmentation par indice visuel}
 
 \section{Méta-modèle de page web\label{sec:Modele-de-page}}
 
@@ -598,7 +651,7 @@ le comportement de l'espacement entre les caractères du texte ('letter-spacing')
 Le langage de publication de contenu actuel (HTML 4) fournit une composante syntaxique extrêmement souple. Il permet la construction d'un ensemble potentiellement infini de structures logiques desquelles on peut associer une même sémantique. Par exemple, la figure \ref{menu_html4} présente deux structures logiques extraites d'une des pages du site web \textit{lemonde.fr} et d'une page des pages du site web \textit{www.eclipse.org}. D'autre part, HTML fournit une sémantique pour le contenu mais pas pour les structures logiques. D'après la figure \ref{menu_html4}, on sait que les éléments textuelles sont des liens de navigation, signalés par la balise \textit{<a>}, mais il n'y a pas d'information sémantique sur la structure qu'ils composent (une menu de navigation).
 
 La contribution de ce méta-modèle vient apporter une composante sémantique aux langages de publication du web.
-Cette sémantique s'intéresse à la correspondance entre les entités définies par le concepteur d'une page web et les entités comprissent par le lecteur. Elle est essentielle pour l'expression des souhaits de personnalisation de l'utilisateur. En second lieu, le méta-modèle nous fournit une couche d'abstraction permettant de s'affranchir de la diversité de représentation des données. 
+Cette sémantique s'intéresse à la correspondance entre les entités définies par le concepteur d'une page web et les entités comprissent par le lecteur. Elle est essentielle pour l'expression des souhaits de personnalisation de l'utilisateur. En second lieu, le méta-modèle nous fournit une couche d'abstraction permettant de s'affranchir de la diversité de représentation des données. Puis un séparation strict en les éléments de mise en forme et de structuration. 
 
 Le méta-modèle se décompose en deux parties. Une partie décrivant la sémantique des principales structures logiques utilisées dans la conception des pages. Une seconde partie pour la descriptions de la mise en forme associée à chaque élément du méta-modèle précédent. Cela va nous permettre de mieux intégrer l'accessibilité dans la personnalisation des pages web.
 
@@ -692,6 +745,10 @@ caractères, mots et paragraphes contenus dans une boîte. Par exemple, la proprié
 \end{itemize}
 
 
+\subsection{Extraction des éléments du méta-modèle dans une page web}
+Les approches par d'extraction des éléments par comparaison de sous-structure dans des collections de documents ne permettent pas l'extraction de toute les structures dans une page, l'extraction est partielle.
+
+Choix d'une segmentation descendante qui va permettre d'intégrer les nouvelles évolutions des langages de publication (HTML5 et RDFa). 
 
 \begin{appendices} 
 

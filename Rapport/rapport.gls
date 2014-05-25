@@ -2,5 +2,5 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{O}\relax \glsresetentrylist %
 \glossaryentryfield{ontologie}{\glsnamefont{Ontologie}}{En philosophie, l'ontologie est l'étude de l'être en tant qu'être, c'est-à-dire l'étude des propriétés générales de ce qui existe. Par analogie, le terme est repris en informatique et en science de l'information, où une ontologie est l'ensemble structuré des termes et concepts représentant le sens d'un champ d'informations \cite {wikipedia}}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter{page}\glsnumberformat{5}}}%
+		\setentrycounter{page}\glsnumberformat{12}}}%
 \end{theglossary}\glossarypostamble

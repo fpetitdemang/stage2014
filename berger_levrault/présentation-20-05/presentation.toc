@@ -1,0 +1,12 @@
+\beamer@endinputifotherversion {3.10pt}
+\select@language {french}
+\beamer@sectionintoc {1}{M\IeC {\'e}ta-mod\IeC {\`e}le}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{M\IeC {\'e}ta-mod\IeC {\`e}le \IeC {\'e}l\IeC {\'e}ments structuration}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{M\IeC {\'e}ta-mod\IeC {\`e}le \IeC {\'e}l\IeC {\'e}ments d'interaction}{4}{0}{1}
+\beamer@subsectionintoc {1}{3}{M\IeC {\'e}ta-mod\IeC {\`e}le \IeC {\'e}l\IeC {\'e}ments de mise en forme}{5}{0}{1}
+\beamer@subsectionintoc {1}{4}{Instance M\IeC {\'e}ta-mod\IeC {\`e}le}{6}{0}{1}
+\beamer@sectionintoc {2}{Extraction structure}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{D\IeC {\'e}marche g\IeC {\'e}n\IeC {\'e}rale}{8}{0}{2}
+\beamer@subsectionintoc {2}{2}{Heuristiques}{9}{0}{2}
+\beamer@subsectionintoc {2}{3}{R\IeC {\'e}sultats}{10}{0}{2}
+\beamer@subsectionintoc {2}{4}{Difficult\IeC {\'e}s}{13}{0}{2}
