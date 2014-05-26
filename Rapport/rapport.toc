@@ -2,80 +2,83 @@
 \contentsline {section}{\numberline {1}Extraction de contenu}{3}
 \contentsline {subsection}{\numberline {1.1}Segmentation par zone}{3}
 \contentsline {subsection}{\numberline {1.2}Segmentation densitom\'etrique}{4}
-\contentsline {subsection}{\numberline {1.3}Segmentation par indice visuel}{5}
-\contentsline {section}{\numberline {2}M\'eta-mod\`ele de page web}{5}
-\contentsline {subsection}{\numberline {2.1}HTML 4}{5}
-\contentsline {paragraph}{Contenu}{5}
+\contentsline {subsection}{\numberline {1.3}Segmentation par indice visuel}{6}
+\contentsline {subsection}{\numberline {1.4}Synth\`ese}{6}
+\contentsline {paragraph}{Segmentation par zone}{6}
+\contentsline {section}{\numberline {2}M\'eta-mod\`ele de page web}{6}
+\contentsline {subsection}{\numberline {2.1}HTML 4}{6}
+\contentsline {paragraph}{Contenu}{6}
 \contentsline {paragraph}{Structuration g\'en\'erique}{6}
 \contentsline {subparagraph}{DIV}{6}
-\contentsline {subparagraph}{id et class}{6}
-\contentsline {paragraph}{M\'eta-mod\`ele}{6}
-\contentsline {subsection}{\numberline {2.2}HTML 5}{8}
+\contentsline {subparagraph}{id et class}{7}
+\contentsline {paragraph}{M\'eta-mod\`ele}{7}
+\contentsline {subsection}{\numberline {2.2}HTML 5}{7}
 \contentsline {paragraph}{Contenu}{8}
-\contentsline {paragraph}{Structuration}{9}
+\contentsline {paragraph}{Structuration}{8}
 \contentsline {paragraph}{M\'eta-mod\`ele}{9}
 \contentsline {subsection}{\numberline {2.3}ARIA}{11}
 \contentsline {paragraph}{R\^ole}{11}
 \contentsline {paragraph}{\'Etats et propri\'et\'es}{11}
-\contentsline {paragraph}{M\'eta-mod\`ele}{11}
-\contentsline {subsection}{\numberline {2.4}CSS }{11}
+\contentsline {paragraph}{M\'eta-mod\`ele}{12}
+\contentsline {subsection}{\numberline {2.4}CSS }{12}
 \contentsline {paragraph}{Mod\`ele de bo\IeC {\^\i }te}{12}
-\contentsline {paragraph}{Mod\`ele de mise en forme}{12}
-\contentsline {paragraph}{Avant-plan et d'arri\`ere-plan}{13}
-\contentsline {paragraph}{Les polices}{13}
-\contentsline {paragraph}{Les textes}{13}
+\contentsline {paragraph}{Mod\`ele de mise en forme}{13}
+\contentsline {paragraph}{Avant-plan et d'arri\`ere-plan}{14}
+\contentsline {paragraph}{Les polices}{14}
+\contentsline {paragraph}{Les textes}{14}
 \contentsline {section}{\numberline {3}R\'ealisation}{14}
 \contentsline {subsection}{\numberline {3.1}M\'eta-mod\`ele}{14}
 \contentsline {subsubsection}{\numberline {3.1.1}Introduction}{14}
 \contentsline {subsubsection}{\numberline {3.1.2}Mod\`ele de contenu}{15}
 \contentsline {subsubsection}{\numberline {3.1.3}Mod\`ele de mise en forme}{16}
-\contentsline {subsection}{\numberline {3.2}Extraction des \'el\'ements du m\'eta-mod\`ele dans une page web}{17}
-\contentsline {section}{Appendices}{17}
-\contentsline {section}{\numberline {A}M\'eta-mod\`ele de Contenu}{17}
-\contentsline {paragraph}{Widget}{17}
-\contentsline {paragraph}{Composite}{17}
-\contentsline {paragraph}{Input }{17}
-\contentsline {paragraph}{Option}{17}
-\contentsline {paragraph}{Select}{18}
-\contentsline {paragraph}{Command}{18}
-\contentsline {paragraph}{Button}{18}
-\contentsline {paragraph}{Link}{18}
-\contentsline {paragraph}{Checkbox}{18}
-\contentsline {paragraph}{Radio}{19}
-\contentsline {paragraph}{RadioGroup}{19}
-\contentsline {paragraph}{Listbox}{19}
-\contentsline {paragraph}{Combobox}{19}
-\contentsline {paragraph}{Structure}{20}
-\contentsline {paragraph}{List}{20}
-\contentsline {paragraph}{Ul (unorder list)}{20}
-\contentsline {paragraph}{OL(order list) }{20}
-\contentsline {paragraph}{Texte}{21}
-\contentsline {paragraph}{Emphase}{22}
-\contentsline {paragraph}{Abbreviation}{22}
-\contentsline {paragraph}{Strong}{23}
-\contentsline {paragraph}{Cite}{23}
-\contentsline {paragraph}{Section}{24}
-\contentsline {paragraph}{ListItem}{24}
-\contentsline {paragraph}{Group}{24}
-\contentsline {paragraph}{Region}{24}
-\contentsline {paragraph}{Paragraphe}{24}
-\contentsline {paragraph}{Gridcell}{25}
-\contentsline {paragraph}{Rowheader}{26}
-\contentsline {paragraph}{Row}{26}
-\contentsline {paragraph}{Grid}{27}
-\contentsline {paragraph}{Separator}{27}
-\contentsline {paragraph}{SectionHead}{27}
-\contentsline {paragraph}{Heading}{27}
-\contentsline {paragraph}{Landmark}{27}
-\contentsline {paragraph}{Banner}{28}
-\contentsline {paragraph}{Application}{29}
-\contentsline {paragraph}{Complementary}{29}
-\contentsline {paragraph}{ContentInfo}{29}
-\contentsline {paragraph}{Form}{29}
-\contentsline {paragraph}{Main}{29}
-\contentsline {paragraph}{Navigation}{30}
-\contentsline {section}{\numberline {B}M\'eta-mod\`ele de mise en forme}{30}
-\contentsline {paragraph}{M\'eta-classe Box}{30}
-\contentsline {paragraph}{M\'eta-classe Style}{30}
-\contentsline {paragraph}{M\'eta-classe Text}{30}
-\contentsline {paragraph}{M\'eta-classe Police}{30}
+\contentsline {subsubsection}{\numberline {3.1.4}Instance du m\'eta-mod\`ele}{18}
+\contentsline {subsection}{\numberline {3.2}Extraction des \'el\'ements du m\'eta-mod\`ele dans une page web}{18}
+\contentsline {section}{Appendices}{18}
+\contentsline {section}{\numberline {A}M\'eta-mod\`ele de Contenu}{18}
+\contentsline {paragraph}{Widget}{18}
+\contentsline {paragraph}{Composite}{19}
+\contentsline {paragraph}{Input }{19}
+\contentsline {paragraph}{Option}{19}
+\contentsline {paragraph}{Select}{19}
+\contentsline {paragraph}{Command}{19}
+\contentsline {paragraph}{Button}{20}
+\contentsline {paragraph}{Link}{20}
+\contentsline {paragraph}{Checkbox}{20}
+\contentsline {paragraph}{Radio}{20}
+\contentsline {paragraph}{RadioGroup}{21}
+\contentsline {paragraph}{Listbox}{21}
+\contentsline {paragraph}{Combobox}{21}
+\contentsline {paragraph}{Structure}{21}
+\contentsline {paragraph}{List}{22}
+\contentsline {paragraph}{Ul (unorder list)}{22}
+\contentsline {paragraph}{OL(order list) }{22}
+\contentsline {paragraph}{Texte}{22}
+\contentsline {paragraph}{Emphase}{23}
+\contentsline {paragraph}{Abbreviation}{23}
+\contentsline {paragraph}{Strong}{24}
+\contentsline {paragraph}{Cite}{24}
+\contentsline {paragraph}{Section}{25}
+\contentsline {paragraph}{ListItem}{25}
+\contentsline {paragraph}{Group}{25}
+\contentsline {paragraph}{Region}{25}
+\contentsline {paragraph}{Paragraphe}{25}
+\contentsline {paragraph}{Gridcell}{26}
+\contentsline {paragraph}{Rowheader}{27}
+\contentsline {paragraph}{Row}{27}
+\contentsline {paragraph}{Grid}{28}
+\contentsline {paragraph}{Separator}{28}
+\contentsline {paragraph}{SectionHead}{28}
+\contentsline {paragraph}{Heading}{28}
+\contentsline {paragraph}{Landmark}{28}
+\contentsline {paragraph}{Banner}{29}
+\contentsline {paragraph}{Application}{30}
+\contentsline {paragraph}{Complementary}{30}
+\contentsline {paragraph}{ContentInfo}{30}
+\contentsline {paragraph}{Form}{30}
+\contentsline {paragraph}{Main}{30}
+\contentsline {paragraph}{Navigation}{31}
+\contentsline {section}{\numberline {B}M\'eta-mod\`ele de mise en forme}{31}
+\contentsline {paragraph}{M\'eta-classe Box}{31}
+\contentsline {paragraph}{M\'eta-classe Style}{31}
+\contentsline {paragraph}{M\'eta-classe Text}{31}
+\contentsline {paragraph}{M\'eta-classe Police}{31}

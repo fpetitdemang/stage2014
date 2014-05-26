@@ -13,6 +13,7 @@
 \usepackage{glossaries}
 \usepackage[toc,page]{appendix}
 \usepackage{wrapfig}
+\usepackage{comment}
 \makeglossaries
 
 
@@ -139,11 +140,13 @@ Sous la direction de \textbf{Marianne~HUCHARD, Michel~MEYNARD, Yoann~BONAVERO}
 
 
 \section{Extraction de contenu}
-Les processus de d'extraction de contenu recherche sont un support à la classification de document. Les pages web possèdent un contenu informatif que l'on souhaite classifier. Une page web est constitué d'un contenu hétérogène et pas représentatif du contenu de la page. Par exemple un menu de navigation ou la bannière d'une page ne sont pas des informations utiles pour la classification d'une page. On souhaite récuperer le contenu informatif de la page, qui apporte une information. C'est la motivation des différentes approches proposé ci-dessous. Les approches ci-dessous propose des méthodes afin d'identifier les différentes structure logique dans la page et d'inféré des certaines propriétés pour en attribuer une sémantique. 
+Les processus de d'extraction de contenu recherche sont un support à la classification de document. Les pages web possèdent un contenu informatif que l'on souhaite classifier. Une page web est constitué d'un contenu hétérogène et pas représentatif du contenu de la page. Par exemple un menu de navigation ou la bannière d'une page ne sont pas des informations utiles pour la classification d'une page. On souhaite récupérer le contenu informatif de la page, qui apporte une information. C'est la motivation des différentes approches proposé ci-dessous. Les approches ci-dessous propose des méthodes afin d'identifier les différentes structure logique dans la page et d'inféré des certaines propriétés pour en attribuer une sémantique. 
  La majorité des processus décrit vise à identifier dans une page web le contenu qui décrit une page dans un but d'indexation. Ces processus souhaitent éliminer le \emph{bruit} de ce processus, c'est à dire ne pas prendre en compte les éléments qui ne définissent pas le contenu d'une page d'un point de vue informatique. Par exemple, les menus, une bannière, des pieds de pages.
+ L'objectif étant d'améliorer le traitement des informations d'une page web. Dans le contexte de classification de page web, les mots définissants le mieux une page web sont les mots qui se rapprochent le plus de centre le page.
+ IDENTIFIER LES STRUCTURES LOGIQUES
 
 \subsection{Segmentation par zone}
-Les auteurs de \cite{kovacevic2002recognition} proposent dans leur papier une segmentation des pages web par zone. Cette approche  représente les objets HTML par leurs coordonnées cartésiennes et la zone dans laquelle ils sont localisés. L'objectif étant d'améliorer le traitement des informations d'une page web. Dans le contexte de classification de page web, les mots définissants le mieux une page web sont les mots qui se rapprochent le plus de centre le page. L'hypothèse est fondée sur le faite que dans un but d'ergonomie les concepteurs de page web suivent un même modèle de présentation. Les auteurs partitionnent une page suivant ce modèle de présentation en se basant sur une observation empirique de la conception des pages (\emph{cf. figure}\ref{zones-interets}) : 
+Les auteurs de \cite{kovacevic2002recognition} proposent dans leur papier une segmentation des pages web par zone. Cette approche  s'intéressent aux données cartésiennes des objets HTML.  L'idée étant que les concepteurs de page web suivent un même pattern de présentation ce qui permet de faire un regroupement des objets HTML suivant leur localisation. Les auteurs proposent un pattern de page web construit suivant une observation empirique (\emph{cf. figure}\ref{zones-interets}). Le modèle construit est le suivant : 
 \begin{itemize}
 	\item une entête correspondant à l'emplacement de la bannière d'une page (\emph{H}), 
 	\item un pied de page (\emph{F})
@@ -157,9 +160,13 @@ Les auteurs de \cite{kovacevic2002recognition} proposent dans leur papier une se
 \includegraphics[width=0.48\textwidth]{img/zone-interet.jpg}
 \caption{Position des zones d'intérêts dans une page \label{zones-interets}}
 \end{figure} 
-La figure \ref{zones-interets} modélise le partitionnement suggéré par les auteurs avec \emph{W1} et \emph{W2} définissant respectivement \emph{LF} et \emph{LR}. Chacune d'elle représente 30\% de la largeur de la page. \emph{H1} et \emph{H2} définissent \emph{H} et \emph{F} avec un hauteur de 200px pour \emph{H} et 150px pour \emph{F}. 
-La méthode propose une représentation des objets HTML dans un système de coordonnées cartésiennes. Les coordonnées sont calculées au moyen d'un moteur de rendu graphique. Il est à noter que tel qu'il est décrit dans l'article, le moteur de rendu graphique ne prend pas en compte la surcouche CSS. 
-En se basant sur ce modèle de représentation, des heuristiques sont déterminées afin de segmenter la page suivant le partitionnement de page proposé. 
+
+La figure \ref{zones-interets} modélise le partitionnement définit par les auteurs avec \emph{W1} et \emph{W2} définissant respectivement \emph{LF} et \emph{LR}. Chacune d'elle représente 30\% de la largeur de la page. \emph{H1} et \emph{H2} définissent \emph{H} et \emph{F} avec un hauteur de 200px pour \emph{H} et 150px pour \emph{F}. 
+
+Les coordonnées des objets sont calculées au moyen d'un moteur de rendu graphique. Il est à noter que tel qu'il est décrit dans l'article, le moteur de rendu graphique ne prend pas en compte la surcouche CSS. 
+
+En se basant sur ce modèle de représentation, des heuristiques sont déterminées afin de regrouper les objets HTML de la page suivant le partitionnement de page proposé ci-dessus. Ces heuristiques sont construite sur l'identification de noeuds de type \emph{TABLE} dont la surface est incluse dans les zones du modèle.  
+\begin{comment}
 \begin{description}
 \item[Heuristique 1 :] \emph{H} se compose des noeuds  étiquetés par TABLE est complètement inclus dans la zone \emph{H1} 
 \item[Heuristique 2 :] \emph{LM} est constitué de tous les noeuds étiquetés par TABLE ou TD qui ne n'appartiennent pas \emph{H} et sont strictement inclus dans \emph{W1}
@@ -167,22 +174,45 @@ En se basant sur ce modèle de représentation, des heuristiques sont déterminées 
 \item[Heuristique 4 :] \emph{F} est constitué de tous les noeuds étiquétés par table qui ne sont pas contenu dans \emph{H, LM, RM} et qui sont strictement inclus dans \emph{H2} 
 \item[Heuristique 5 :] \emph{C} est constitué de tous les noeuds qui n'appartiennent pas à \emph{H, LM, RM, F}
 \end{description}
+Remarque : Les heuristiques se basent sur essentiellement sur les étiquettes TABLE qui sont exploités pour la mise en forme des objets HTML dans la page. Cette méthodologie de conception n'est plus utilisé. Ce sont les éléments étiquetés par DIV qui remplissent ce rôle d'agencement des éléments dans les pages.
+\end{comment}
 
-Les heuristiques se basent sur essentiellement sur les étiquettes TABLE qui sont exploités pour la mise en forme des objets HTML dans la page. Cette méthodologie de conception n'est plus utilisé. Ce sont les éléments étiquetés par DIV qui remplissent ce rôle d'agencement des éléments dans les pages.
+
+À partir l'évaluation d'un corpus de 515 pages web, les résultats expérimentaux (publiés en 2002) montrent que le modèle proposé par les auteurs correspond bien à un modèle de présentation représentatif des pages web. Une note de \emph{Bon} est attribuée aux zones dont les objets HTML sont à plus de 50\% correctement étiquetés, c'est à dire que par exemple les éléments classifier comme bannière correspondent bien à une bannière. Une note de \emph{Excellent} est attribuée aux zones dont les objets HTML sont à plus de 90\% correctement étiquetés. Une note de \emph{Mauvais} est attribuée lorsque les critères précédents ne sont pas satisfaits
+
+\begin{center}
+\begin{tabular}{c c c c c c}
+	\hline
+		& Bannière & Footer & Menu lat. gauche & Menu lat. droit  \\ \hline
+	Mauvais & 41\% & 30\% & 21\% & 19\%\\
+	Bon & 10\% & 15\% & 3\% & 2\% \\
+	Excellent & 49\% & 55\% & 76\% & 23\% \\ 
+	\hline	 
+\end{tabular}
+\end{center}
+
+D'après les auteurs 20\% des mauvais résultats sont dû au moteur de rendu graphique utilisé qui construit une mauvaise représentation des objets HTML. Les positions de ceux-ci ne correspondent pas à la position réelle qu'ils devraient avoir. Les 80\% restant, toujours selon les auteurs, devraient pouvoir être diminué en développant de meilleurs heuristiques.  
+
+\begin{comment}
+	Le modèle de présentation est bon. Les heuristiques définit ne sont pas bonne : repose sur les balise <table>. On va pouvoir le réutiliser retrouver des éléments de notre méta-modèle correspondant au modèle
+\end{comment}  
 
 
 \subsection{Segmentation densitométrique}
-Pour l'identification des différentes structures dans la page, les auteurs se basent sur l'analyse de la répartition de la densité textuelle dans une page. L'hypothèse des auteurs est que la densité des différents blocs de textes du DOM est une propriété qui suffisante pour segmenter la page en segment représentatifs des différentes structures logiques. 
+Pour l'identification des différentes structures dans la page, les auteurs se basent sur l'analyse de la répartition de la densité textuelle dans une page. L'hypothèse des auteurs est que la densité des différents blocs de textes du DOM est une propriété qui suffisante pour proposer une segmentation de page représentatifs des différentes structures logiques. 
 
-La première étape consiste à identifier les différents segments textuelle de la page. Les auteurs ne prennent pas en compte la sémantique des balises HTML dans le découpage. Le découpage se fait sur l'analyse des changement dans le flux de texte. Par exemple si le flux indique passe d'une sequence de phrase courte à une sequence de phrase longue, cela signale un nouveau segment. Typique si on analyse une sequence de texte courte comme \emph{Accueille, New, Contact} et une sequence de texte longue va donner naissance à deux nouveaux segments.
+La première étape consiste à identifier les différents segments textuelle de la page. Les auteurs ne prennent pas en compte la sémantique des balises HTML dans le découpage. La page est vue comme une sequence d'élément textuelle entrelacé de tag HTML. Certain tag HTML sont segmentent le flux textuelle et d'autres non. Cette décision est prise (non pas d'après la sémantique des balises) d'après le rythme des séquences de texte dans le flux. Par exemple si le flux passe d'une sequence de texte courte à une sequence de texte longue cela signale un nouveau segment. Par exemple, si on analyse une sequence de texte courte comme \emph{<a>Accueille</a><a>New</a><a>Contact</a>} suivit d'une sequence de texte longue comme \emph{<p>Une sequence de texte beaucoup plus longue</p>} va donner naissance à deux nouveaux segments.
 Pour chaque segment (bloc) identifier par le processus ci-dessous. Les auteurs vont calculer une densité textuelle. Cette propriété correspond au ratio ci-dessous :
 \[ p(b_{x}) = \frac{Nombre De Mots Dans b_{x}}{Nombre De Lignes Dans b_{x}} \]
-Les jetons correspondent à une séquence contingente de caractères n'étant pas des caractères d'espacement.Le nombre de ligne est calculé par division du nombre total de caractères dans les blocs par 80. 80 étant une valeur fixée par les auteurs, elle correspond à la taille d'une phrase moyenne (dans les pays anglophones).
+Les jetons correspondent à une séquence contingente de caractères n'étant pas des caractères d'espacement. Le nombre de ligne correspond au nombre de découpage de blocs de 80 caractères possibles dans le segment traité. 80 étant une valeur fixée par les auteurs, elle correspond à la taille d'une phrase moyenne (pour les pays anglophones).
 
-Un seconde étape, permettant de trouver les blocs de la page, consiste à fusionner les segments voisins en comparant leur densité textuelle
-La décision de fusionner les blocs est prise en comparant la densité textuelle des blocs adjacents, en se basant sur la fonction définit ci-dessous :  
+La seconde étape permet de construire des blocs dans la page correspondant à la structuration logique de la page. Cette construction consiste à fusionner les blocs contingents en comparant leur densité respectif. La fonction est définit ci-dessous :
 \[ \Delta p(b_{x}, b_{y}) = \frac{|p(b_{x}) - p(b_{y})|}{max(p(b_{x}), p(b_{y}))} \]
+Ce processus est répété tant que la fonction définit ci-dessus ne satisfait pas un certain seuil. Cela conduit à la construction de blocs de forte granularité correspondant à la structuration logique de la page.
+
+\begin{comment}
 Si la fonction delta est en dessous d'un certain seuil $Smax$ les blocs adjacents sont fusionnés. La fusion de segment consiste ici à joindre les lignes des blocs \emph{x} et \emph{y} en un nouveau bloc \emph{z}. La fonction boucle tant qu'elle trouve des blocs adjacents qui ne respectent pas un seuil définit à priori.
+\end{comment}
 
 \begin{figure}[htb]
 \centering
@@ -190,7 +220,26 @@ Si la fonction delta est en dessous d'un certain seuil $Smax$ les blocs adjacent
 \caption{Segmentation densitométrique \cite{kohlschutter2008densitometric} \label{seg-densitometrique}}
 \end{figure}
 
+\begin{comment}
+	il reste encore à approfondir 
+\end{comment}
+
+
+
+
 \subsection{Segmentation par indice visuel}
+\subsection{Synthèse}
+
+\begin{tabular}{ | l | l | l | l | l | l | l |}
+	\hline
+   Méthodes & Globale & Locale & Qualitative & Quantitative & Ascendante & Descendante\\ \hline
+   Mapping &  & \checkmark &  &  &  & \\ \hline
+   Segmentation zone & \checkmark &  &  &  &  & \\ \hline
+   Segmentation densitométrique & \checkmark &  &  &  &  &\\ \hline
+   Segmentation indice visuel & \checkmark &  &  &  &  & \\ \hline
+ \end{tabular}
+ 
+ \paragraph{Segmentation par zone} approche quantitative le pattern ne correspond pas aux modèles de toutes les pages.
 
 \section{Méta-modèle de page web\label{sec:Modele-de-page}}
 
@@ -651,7 +700,7 @@ le comportement de l'espacement entre les caractères du texte ('letter-spacing')
 Le langage de publication de contenu actuel (HTML 4) fournit une composante syntaxique extrêmement souple. Il permet la construction d'un ensemble potentiellement infini de structures logiques desquelles on peut associer une même sémantique. Par exemple, la figure \ref{menu_html4} présente deux structures logiques extraites d'une des pages du site web \textit{lemonde.fr} et d'une page des pages du site web \textit{www.eclipse.org}. D'autre part, HTML fournit une sémantique pour le contenu mais pas pour les structures logiques. D'après la figure \ref{menu_html4}, on sait que les éléments textuelles sont des liens de navigation, signalés par la balise \textit{<a>}, mais il n'y a pas d'information sémantique sur la structure qu'ils composent (une menu de navigation).
 
 La contribution de ce méta-modèle vient apporter une composante sémantique aux langages de publication du web.
-Cette sémantique s'intéresse à la correspondance entre les entités définies par le concepteur d'une page web et les entités comprissent par le lecteur. Elle est essentielle pour l'expression des souhaits de personnalisation de l'utilisateur. En second lieu, le méta-modèle nous fournit une couche d'abstraction permettant de s'affranchir de la diversité de représentation des données. Puis un séparation strict en les éléments de mise en forme et de structuration. 
+Cette sémantique s'intéresse à la correspondance entre les entités définies par le concepteur d'une page web et les entités comprissent par le lecteur. Elle est essentielle pour l'expression des souhaits de personnalisation de l'utilisateur. En second lieu, le méta-modèle nous fournit une couche d'abstraction permettant de s'affranchir de la diversité de représentation des données. 
 
 Le méta-modèle se décompose en deux parties. Une partie décrivant la sémantique des principales structures logiques utilisées dans la conception des pages. Une seconde partie pour la descriptions de la mise en forme associée à chaque élément du méta-modèle précédent. Cela va nous permettre de mieux intégrer l'accessibilité dans la personnalisation des pages web.
 
@@ -695,20 +744,23 @@ Le méta-modèle se décompose en deux parties. Une partie décrivant la sémantique 
 \caption{Exemple de différentes conceptions de menu avec HTML4\label{menu_html4}}
 \end{figure}
 
-\newpage
-
 \subsubsection{Modèle de contenu}
-Chaque élément va nous permettre de qualifier les éléments d'une page. Une première partie décrie les éléments de structuration. Les principales méta-classes sont :
+La conception de cette partie du méta-modèle repose sur les éléments de langage de :
+\begin{itemize}
+	\item HTML4 décrivant les noeuds de contenu, 
+	\item HTML5 décrivant les structures logiques
+	\item ARIA décrivant les structures logiques n'apparaissant pas dans HTML5 mais que l'on retrouve dans la conception des pages (Bannière, Contenu principal) ainsi que les éléments d'interactions d'une page web. 
+\end{itemize}
+Chaque élément du méta-modèle (\emph{cf.} figure \ref{modele-metamodele} et \ref{widget-metamodele}) construit va nous permettre de qualifier les éléments d'une page. Une première partie décrie les éléments de structuration et contenu. Les principales méta-classes sont :
 \begin{itemize}
 	\item Les méta-classes \textit{SECTION}, elles définissent un environnement aux éléments relatifs d'un documents (titres, pieds de page, en-têtes). Un titre déclaré dans un section se rapporte à la déclaration d'une élément de type \textit{SECTION} la plus proche. Ce concept d'environnement est introduit dans HTML5 par la balise de type <SECTION>.
 	\item Les méta-classes \textit{SECTIONHEAD} sont les éléments qui synthétisent un contenu. Il possède une portée locale, ceux-ci sont associées à l'élément de type \textit{SECTION} le plus proche. Cette méta-classe englobe par exemple les balises de titres définit dans HTML4 (\textit{e.g} <H1~H6>).
 	\item Les méta-classes \textit{REGION} correspondent à un regroupement par thématique des éléments qu'elles encapsulent, c'est à dire des éléments que l'on peut regrouper sur la base d'une information commune. Ce concept de regroupement par thématique est introduit dans HTML5 par la balise de type <SECTION>.
-	\item Les méta-classes \textit{LANDMARK} recensent les principales structures que l'on trouve dans une page web. Par exemple, la méta-classe \textit{NAVIGATION} pour les menus (correspond à la balise de type \textit{NAV} dans HTML 5) ou la méta-classe \textit{BANNER} pour la bannière d'une page web.
+	\item Les méta-classes \textit{LANDMARK} recensent les principales structures que l'on trouve dans une page web. Par exemple, la méta-classe \textit{NAVIGATION} pour les menus (correspond à la balise de type \textit{NAV} dans HTML 5) ou la méta-classe \textit{BANNER} pour la bannière d'une page web (provient de ARIA).
 \end{itemize}
-
 Un seconde partie de ce méta-modèle décrit les éléments d'interaction dans une page web. Les principales méta-classes sont :
 \begin{itemize}
-	\item Les méta-classe \textit{INPUT} sont les éléments qui permettent des entrées utilisateurs. Elles correspondent aux balises de type \textit{<input>} de HTML4. 
+	\item Les méta-classes \textit{INPUT} sont les éléments qui permettent des entrées utilisateurs. Elles correspondent aux balises de type \textit{<input>} de HTML4. 
 	\item Les méta-classe \textit{COMMAND} sont les éléments qui exécutent des actions mais ne reçoivent pas d'information en entrée. Par exemple les balises de type \textit{<a>} déclenche une action de navigation ou une balise de type \textit{<button>} déclenche l'envoie de données d'un formulaire vers un serveur. 
 	\item Les méta-classe \textit{SELECT} sont les éléments qui permettent de faire des sélections parmi un ensemble de choix.
 \end{itemize}
@@ -717,16 +769,16 @@ Un seconde partie de ce méta-modèle décrit les éléments d'interaction dans une p
 
 \begin{figure}[htb]
 \begin{center} 
-\includegraphics[width=\linewidth]{img/metamodele/modele-contenu-widget.png}
-\caption{Méta-modèle\label{widget-metamodele}} \end{center} \end{figure}
+\includegraphics[width=.5\linewidth]{img/metamodele/modele-contenu-widget.png}
+\caption{Méta-modèle interaction\label{modele-metamodele}} \end{center} \end{figure}
 
 \begin{figure}[htb]
 \begin{center} 
-\includegraphics[width=\linewidth]{img/metamodele/modele-contenu-structure.png}
-\caption{Méta-modèle\label{widget-metamodele}} \end{center} \end{figure}
+\includegraphics[width=.9\linewidth]{img/metamodele/modele-contenu-structure.png}
+\caption{Méta-modèle contenu\label{widget-metamodele}} \end{center} \end{figure}
  
 \subsubsection{Modèle de mise en forme}
-Le méta-modèle de mise en forme (\emph{cf.} figure \ref{css-metamodele}) est un support essentiel à l'expression des préférences, en particulier pour les préférences liées à l'accessibilité. Les principales méta-classe sont :
+Le méta-modèle de mise en forme (\emph{cf.} figure \ref{css-metamodele}) repose sur les éléments du langage CSS. Cette partie est un support essentiel à l'expression des préférences, en particulier pour les préférences liées à l'accessibilité. Les principales méta-classe sont :
 
 \begin{figure}[H]
 \begin{center} 
@@ -734,7 +786,7 @@ Le méta-modèle de mise en forme (\emph{cf.} figure \ref{css-metamodele}) est un 
 \caption{Méta-modèle\label{css-metamodele}} \end{center} \end{figure}
 
 \begin{itemize}
-\item Les méta-classes \textit{Box} qui représentent le concept de bloc conteneur. Elles vont permettre d'exprimer des préférences sur l'accessibilité tels que l'espacement plus ou moins fort (propriété padding) avec les éléments connexes à cette dernière. Mais encore sur les contrastes avec la propriété de couleur d'arrière plan et la propriété de couleur de la méta-classe \textit{text}.
+\item Les méta-classes \textit{Box} qui représentent le concept de bloc conteneur. Elles vont permettre d'exprimer des préférences sur l'accessibilité tels que l'espacement plus ou moins fort (propriété padding) avec les éléments connexes à cette dernière. Mais encore sur les contrastes avec la propriété de couleur d'arrière plan et la propriété de couleur de la méta-classe \textit{Text}.
 
 
 \item Les méta-classes \textit{Text}  décrivent la représentation visuelle des
@@ -743,6 +795,15 @@ caractères, mots et paragraphes contenus dans une boîte. Par exemple, la proprié
 \item Les méta-classes \textit{Méta-classe Police} décrivent la représentation visuelle des caractères. Dans le contexte de l'amélioration de l'accessibilité il être intéressant, par exemple, d'éviter certain type de font qui peuvent rendre un contenu plus illisible pour certaine pathologie.
 
 \end{itemize}
+
+\subsubsection{Instance du méta-modèle}
+Une application direct de la personnalisation de page est la possibilité de rendre celle-ci plus accessible à un utilisateur en situation de    déficience visuelle. L'élaboration de ce méta-modèle permet de prendre en compte ces aspects. 
+Sans être exhaustive, plusieurs configurations peuvent rendre un contenu inaccessible, par exemple : 
+\begin{itemize}
+	\item des contrastes de couleur trop proche entre un texte et son arrière plan peuvent rendre ce texte illisible. Des combinaisons de couleurs doivent être évité. 
+	\item certaine région de la page ne sont pas utilises à la compréhension du contenu et surchargent visuellement cette dernière. Une telle surcharge peut rendre inaccessible les informations pertinentes. Un utilisateur peut souhaiter masquer les menus de navigation, la bannière et ne mettre en avant que les contenus informatifs.
+	\item dans des cas basse vision, des utilisateurs vont devoir zoomer fortement sur contenu d'une page. Dans ce contexte une trop forte différence de entre la taille du texte et son titre rend le titre illisible. Un utilisateur peut exprimer une préférence sur la différence de contraste maximum qu'il peut y avoir entre un texte et ces éléments de titre
+\end{itemize} 
 
 
 \subsection{Extraction des éléments du méta-modèle dans une page web}
