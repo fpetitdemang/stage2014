@@ -1,5 +1,18 @@
 \begin{thebibliography}{1}
 
+\bibitem{cai2003extracting}
+Deng Cai, Shipeng Yu, Ji-Rong Wen, and Wei-Ying Ma.
+\newblock {Extracting content structure for web pages based on visual
+  representation}.
+\newblock In {\em Web Technologies and Applications}, pages 406--417. Springer,
+  2003.
+
+\bibitem{chen2001function}
+Jinlin Chen, Baoyao Zhou, Jin Shi, Hongjiang Zhang, and Qiu Fengwu.
+\newblock {Function-based object model towards website adaptation}.
+\newblock In {\em Proceedings of the 10th international conference on World
+  Wide Web}, pages 587--596. ACM, 2001.
+
 \bibitem{HTML_4}
 World Wide~Web Consortium et~al.
 \newblock {HTML 4.01 specification}.
@@ -32,23 +45,5 @@ Milos Kovacevic, Michelangelo Diligenti, Marco Gori, and Veljko Milutinovic.
   possible application in a page classification.
 \newblock In {\em Data Mining, 2002. ICDM 2003. Proceedings. 2002 IEEE
   International Conference on}, pages 250--257. IEEE, 2002.
-
-\bibitem{tai1979tree}
-Kuo-Chung Tai.
-\newblock {The tree-to-tree correction problem}.
-\newblock {\em Journal of the ACM (JACM)}, 26(3):422--433, 1979.
-
-\bibitem{vieira2006fast}
-Karane Vieira, Altigran~S da~Silva, Nick Pinto, Edleno~S de~Moura, Joao
-  Cavalcanti, and Juliana Freire.
-\newblock A fast and robust method for web page template detection and removal.
-\newblock In {\em Proceedings of the 15th ACM international conference on
-  Information and knowledge management}, pages 258--267. ACM, 2006.
-
-\bibitem{wang2001finding}
-Jason~TL Wang and Kaizhong Zhang.
-\newblock {Finding similar consensus between trees: an algorithm and a distance
-  hierarchy}.
-\newblock {\em Pattern Recognition}, 34(1):127--137, 2001.
 
 \end{thebibliography}

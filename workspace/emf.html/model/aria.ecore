@@ -4,7 +4,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Composite" eSuperTypes="#//EPackageAria/Widget.1"/>
   <eSubpackages name="EPackageAria">
     <eClassifiers xsi:type="ecore:EClass" name="Roletype" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aria-atomic"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//EPackageAria/Roletype"
+          eOpposite="#//EPackageAria/Roletype/childs"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="childs" upperBound="-1"
+          eType="#//EPackageAria/Roletype" containment="true" eOpposite="#//EPackageAria/Roletype/parent"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EClass0"/>
     <eClassifiers xsi:type="ecore:EClass" name="Structure" abstract="true" eSuperTypes="#//EPackageAria/Roletype"/>
@@ -23,11 +26,11 @@
     <eClassifiers xsi:type="ecore:EClass" name="ContentInfo" eSuperTypes="#//EPackageAria/Landmark"/>
     <eClassifiers xsi:type="ecore:EClass" name="Groupe" eSuperTypes="#//EPackageAria/Section"/>
     <eClassifiers xsi:type="ecore:EClass" name="sectionHead" abstract="true" eSuperTypes="#//EPackageAria/Structure"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Heading" eSuperTypes="#//EPackageAria/sectionHead #//EPackageAria/Gridcell">
+    <eClassifiers xsi:type="ecore:EClass" name="Heading" eSuperTypes="#//EPackageAria/sectionHead #//EPackageAria/Tablecell">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="arialevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Columnheader" eSuperTypes="#//EPackageAria/sectionHead #//EPackageAria/Gridcell"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Gridcell" eSuperTypes="#//EPackageAria/Section"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Columnheader" eSuperTypes="#//EPackageAria/sectionHead #//EPackageAria/Tablecell"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Tablecell" eSuperTypes="#//EPackageAria/Section"/>
     <eClassifiers xsi:type="ecore:EClass" name="Listitem" eSuperTypes="#//EPackageAria/Section"/>
     <eClassifiers xsi:type="ecore:EClass" name="List" abstract="true" eSuperTypes="#//EPackageAria/Region"/>
     <eClassifiers xsi:type="ecore:EClass" name="Select" abstract="true" eSuperTypes="#//EPackageAria/Command #//EPackageAria/Composite #//EPackageAria/Group #//Composite"/>
@@ -39,9 +42,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="Widget" abstract="true" eSuperTypes="#//EPackageAria/Roletype"/>
     <eClassifiers xsi:type="ecore:EClass" name="Command" abstract="true" eSuperTypes="#//EPackageAria/Widget #//EPackageAria/Widget.1"/>
     <eClassifiers xsi:type="ecore:EClass" name="Input" abstract="true" eSuperTypes="#//EPackageAria/Widget #//EPackageAria/Widget.1"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Checkbox" eSuperTypes="#//EPackageAria/Input">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aria-checked"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Checkbox" eSuperTypes="#//EPackageAria/Input"/>
     <eClassifiers xsi:type="ecore:EClass" name="Option" eSuperTypes="#//EPackageAria/Input"/>
     <eClassifiers xsi:type="ecore:EClass" name="Slider" eSuperTypes="#//EPackageAria/Input #//EPackageAria/Range"/>
     <eClassifiers xsi:type="ecore:EClass" name="Range"/>
@@ -59,7 +60,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="Audio" eSuperTypes="#//EPackageAria/Application"/>
     <eClassifiers xsi:type="ecore:EClass" name="Video" eSuperTypes="#//EPackageAria/Application"/>
     <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//EPackageAria/Document"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Rowheader" eSuperTypes="#//EPackageAria/sectionHead #//EPackageAria/Gridcell"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Rowheader" eSuperTypes="#//EPackageAria/sectionHead #//EPackageAria/Tablecell"/>
     <eClassifiers xsi:type="ecore:EClass" name="Paragraph" eSuperTypes="#//EPackageAria/Section"/>
     <eClassifiers xsi:type="ecore:EClass" name="Emphasis" eSuperTypes="#//EPackageAria/Text"/>
     <eClassifiers xsi:type="ecore:EClass" name="Text" abstract="true" eSuperTypes="#//EPackageAria/Structure"/>
@@ -72,6 +73,9 @@
     <eClassifiers xsi:type="ecore:EClass" name="Strong" eSuperTypes="#//EPackageAria/Text"/>
     <eClassifiers xsi:type="ecore:EClass" name="OrderList" eSuperTypes="#//EPackageAria/List"/>
     <eClassifiers xsi:type="ecore:EClass" name="Unorderlist" eSuperTypes="#//EPackageAria/List"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Row" eSuperTypes="#//EPackageAria/Group"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Tablerow" eSuperTypes="#//EPackageAria/Section"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//EPackageAria/Region"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TableRow" eSuperTypes="#//EPackageAria/Group"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//EPackageAria/Section"/>
   </eSubpackages>
 </ecore:EPackage>

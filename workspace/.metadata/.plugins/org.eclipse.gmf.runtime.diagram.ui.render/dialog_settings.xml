@@ -2,8 +2,8 @@
 <section name="Workbench">
 	<section name="CopyToImageDialog">
 		<item value="png" key="CopyToImageDialog.imageFormat"/>
-		<item value="/home/franck/stage2014/berger_levrault/présentation-20-05/img" key="CopyToImageDialog.folder"/>
-		<item value="false" key="CopyToImageDialog.exportToHTML"/>
+		<item value="/home/franck/stage2014/Rapport/meta-modele/imgmetamodel" key="CopyToImageDialog.folder"/>
 		<item value="false" key="CopyToImageDialog.overwriteExisting"/>
+		<item value="false" key="CopyToImageDialog.exportToHTML"/>
 	</section>
 </section>

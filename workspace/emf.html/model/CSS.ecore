@@ -3,14 +3,11 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="css" nsURI="http://css/1.0" nsPrefix="css">
   <eSubpackages name="CSS">
     <eClassifiers xsi:type="ecore:EClass" name="Box">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="style" lowerBound="1"
-          eType="#//CSS/Boxstyle"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//CSS/Boxstyle">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData"/>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="possede" eType="#//CSS/Agencement"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="display"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//CSS/Box"
-          eOpposite="#//CSS/Box/enfant"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="enfant" upperBound="-1"
-          eType="#//CSS/Box" containment="true" eOpposite="#//CSS/Box/parent"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="police" eType="#//CSS/Police"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="texte" eType="#//CSS/Textestyle"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="margin-top"/>
@@ -55,6 +52,15 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="font-style"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="font-weight"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="font-size"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Roletype" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//CSS/Roletype"
+          eOpposite="#//CSS/Roletype/childs"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="childs" upperBound="-1"
+          eType="#//CSS/Roletype" eOpposite="#//CSS/Roletype/parent">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="formatting" eType="#//CSS/Box"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

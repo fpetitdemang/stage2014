@@ -23,45 +23,45 @@ You're missing a field name---line 231 of file biblio.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "wikipedia"
-You've used 9 entries,
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            554 strings with 5461 characters,
-and the built_in function-call counts, 3237 in all, are:
-= -- 332
-> -- 141
-< -- 3
-+ -- 57
+            546 strings with 5318 characters,
+and the built_in function-call counts, 3102 in all, are:
+= -- 319
+> -- 139
+< -- 4
++ -- 55
 - -- 46
-* -- 189
-:= -- 508
-add.period$ -- 30
-call.type$ -- 9
-change.case$ -- 46
+* -- 171
+:= -- 475
+add.period$ -- 28
+call.type$ -- 8
+change.case$ -- 43
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 121
-empty$ -- 269
+cite$ -- 8
+duplicate$ -- 123
+empty$ -- 256
 format.name$ -- 46
-if$ -- 715
+if$ -- 702
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 5
-newline$ -- 48
-num.names$ -- 18
-pop$ -- 67
+int.to.str$ -- 8
+missing$ -- 4
+newline$ -- 43
+num.names$ -- 16
+pop$ -- 71
 preamble$ -- 1
-purify$ -- 37
+purify$ -- 35
 quote$ -- 0
-skip$ -- 109
+skip$ -- 112
 stack$ -- 0
-substring$ -- 201
-swap$ -- 41
-text.length$ -- 3
+substring$ -- 177
+swap$ -- 49
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 36
+type$ -- 32
 warning$ -- 0
-while$ -- 31
-width$ -- 10
-write$ -- 100
+while$ -- 28
+width$ -- 9
+write$ -- 90
 (There were 2 error messages)
