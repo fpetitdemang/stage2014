@@ -2,66 +2,68 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: rapport.aux
 The style file: plain.bst
 Database file #1: biblio.bib
-You're missing a field name---line 142 of file biblio.bib
+You're missing a field name---line 147 of file biblio.bib
  :   
  :   %volume={},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "CSS" isn't style-file defined
---line 181 of file biblio.bib
+--line 186 of file biblio.bib
 Warning--entry type for "ARIA" isn't style-file defined
---line 190 of file biblio.bib
+--line 195 of file biblio.bib
 Warning--entry type for "HTML_4" isn't style-file defined
---line 199 of file biblio.bib
+--line 204 of file biblio.bib
 Warning--entry type for "HTML_5" isn't style-file defined
---line 207 of file biblio.bib
-Warning--I'm ignoring HTML_5's extra "publisher" field
 --line 212 of file biblio.bib
-You're missing a field name---line 231 of file biblio.bib
+Warning--I'm ignoring HTML_5's extra "publisher" field
+--line 217 of file biblio.bib
+You're missing a field name---line 236 of file biblio.bib
  :   
  :   %journal={},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "wikipedia"
-You've used 8 entries,
+Warning--empty journal in wininformative
+Warning--empty year in wininformative
+You've used 9 entries,
             2118 wiz_defined-function locations,
-            546 strings with 5318 characters,
-and the built_in function-call counts, 3102 in all, are:
-= -- 319
-> -- 139
+            549 strings with 5453 characters,
+and the built_in function-call counts, 3337 in all, are:
+= -- 339
+> -- 152
 < -- 4
-+ -- 55
-- -- 46
-* -- 171
-:= -- 475
-add.period$ -- 28
-call.type$ -- 8
-change.case$ -- 43
++ -- 60
+- -- 50
+* -- 186
+:= -- 517
+add.period$ -- 30
+call.type$ -- 9
+change.case$ -- 48
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 123
-empty$ -- 256
-format.name$ -- 46
-if$ -- 702
+cite$ -- 11
+duplicate$ -- 133
+empty$ -- 273
+format.name$ -- 50
+if$ -- 747
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 4
-newline$ -- 43
-num.names$ -- 16
-pop$ -- 71
+int.to.str$ -- 9
+missing$ -- 5
+newline$ -- 47
+num.names$ -- 18
+pop$ -- 80
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 39
 quote$ -- 0
-skip$ -- 112
+skip$ -- 119
 stack$ -- 0
-substring$ -- 177
+substring$ -- 182
 swap$ -- 49
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 32
-warning$ -- 0
-while$ -- 28
-width$ -- 9
-write$ -- 90
+type$ -- 36
+warning$ -- 2
+while$ -- 30
+width$ -- 10
+write$ -- 97
 (There were 2 error messages)

@@ -46,4 +46,9 @@ Milos Kovacevic, Michelangelo Diligenti, Marco Gori, and Veljko Milutinovic.
 \newblock In {\em Data Mining, 2002. ICDM 2003. Proceedings. 2002 IEEE
   International Conference on}, pages 250--257. IEEE, 2002.
 
+\bibitem{wininformative}
+Chaw~Su Win and Mie Mie~Su Thwin.
+\newblock Informative content extraction by using eifce [effective informative
+  content extractor].
+
 \end{thebibliography}

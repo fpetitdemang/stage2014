@@ -15,6 +15,18 @@
 \usepackage{wrapfig}
 \usepackage{comment}
 \usepackage{natbib}
+\usepackage{lscape}
+
+\usepackage{hyperref}
+\hypersetup{%
+colorlinks,%
+citecolor=black,%
+filecolor=black,%
+linkcolor=black,%
+urlcolor=black%
+}
+
+
 \makeglossaries
 
 
@@ -172,7 +184,7 @@ En se basant sur ce modèle de représentation, des heuristiques sont déterminées 
 \begin{center}
 \begin{tabular}{c c c c c c}
 	\hline
-		& Bannière & Footer & Menu lat. gauche & Menu lat. droit  \\ \hline
+		& Bannière & Pied de page & Menu latéral gauche & Menu latéral droit  \\ \hline
 	Mauvais & 41\% & 30\% & 21\% & 19\%\\
 	Bon & 10\% & 15\% & 3\% & 2\% \\
 	Excellent & 49\% & 55\% & 76\% & 23\% \\ 
@@ -213,7 +225,7 @@ Si la fonction delta est en dessous d'un certain seuil $Smax$ les blocs adjacent
 
 
 
-\subsection{Segmentation par indice visuel}
+\subsection{Segmentation par indice visuel \label{sub:vips}}
 L'approche proposée par les auteurs \cite{cai2003extracting} présente
 un algorithme de partitionnement basé sur les éléments de mise en
 forme des pages web. Le partitionnement extrait une structure qui regroupe
@@ -302,38 +314,52 @@ En conclusion, l'algorithme regroupe les éléments d'une page en structure ayant 
  
 \section{Inférence de structures}
 \subsection{Approche fonctionnelle} 
-\citep{chen2001function} propose une approche afin de découvrir la fonctionnalité des éléments composant une page web. Les différents éléments peuvent soit être des objets basiques ou soit des objets composites. Les objets basiques et composites sont le résultat d'un prétraitement (non décrit dans le papier) qui retourne la page sous forme d'une structure arborescente dont les feuilles forment des objets basiques et les noeuds ayant des descendants forment des objets plus complexes appelés objets composites. Une fois construite cette structure, les auteurs proposent d'élaborer des fonctions afin de déterminer la sémantique des objets. Les fonctions sont construites par rapport à un modèle classifiant les différents propriétés fonctionnelles des objets et décrivant la relation des objets formant des objets composites. L'hypothèse est que chaque objet au travers de ces fonctionnalités reflète l'intention de son auteur, c'est à dire ça sémantique.
+\citep{chen2001function} propose une approche afin de découvrir la fonctionnalité des éléments composant une page web. Les différents éléments sont des objets qui apportent une information ou réalise une action. Ces objets peuvent soit être des objets basiques ou soit des objets composites. Les objets basiques et composites sont le résultat d'un prétraitement (non décrit dans le papier) qui retourne une structure arborescente dont les feuilles forment des objets basiques et les noeuds ayant des descendants forment des objets composites. Afin de qualifier chaque noeuds les auteurs proposent un ensemble de propriété pour attribuer une classe à chaque objet (basique et composite).
+L'hypothèse est que chaque objet au travers de ces fonctionnalités reflète l'intention de son auteur, c'est à dire ça sémantique.
 
-Un objet basique peut, par exemple, apporter une information, déclencher une action de navigation ou simplement rendre plus esthétique la page. Les auteurs proposent les propriétés fonctionnelles décrites ci-dessous : 
+La structures des objets basiques est décrit d'après les propriétés fonctionnelles ci-dessous : 
 \begin{description}
-	\item[Présentation]: l'agencement (\emph{e.g} alignement gauche), le type de média (\emph{e.g} Texte, image) 
-	\item[Sémantème]: la sémantique associée par le HTML
-	\item[Décoration]: dans quelle mesure l'objet sert à l'amélioration de l'esthétisme de la page
-	\item[Hyperlien]: l'objet possède t il des hyperliens et où pointent ils? vers un autre objet? vers une autre page? 
+	\item[Présentation]: l'agencement (\emph{e.g} alignement gauche), le type de média (\emph{e.g} texte, image). 
+	\item[Sémantème]: la sémantique associée par le HTML. Par exemple la balise \emph{h1} définit un titre
+	\item[Décoration]: une valeur entre 0 et 1 qui définit dans quelle mesure l'objet sert à l'amélioration de l'esthétisme de la page (lignes, séparateurs, et les objets avec des couleurs d'arrière plan). 
+	\item[Hyperlien]: l'objet possède t il des hyperliens? et où pointent-ils vers (domaine)? 
 	\item[Interaction]: Les types d'interactions de l'objet. Affichage, soumission d'informations, sélections etc.
 \end{description}
+Les propriétés listées précédemment sont calculées d'après l'analyse du code HTML. Par exemple l'attribut \emph{href} (spécifie la destination d'un lien) est utilisé pour calculer la propriété d'hyperlien. 
 
-Les objets composites sont des objets qui ensembles réalisent une fonction. Ils sont définis suivant la relation des objets, le composant,  entre eux. Ces relations sont classées ainsi :
+ 
+Les objets composites sont donc une composition d'objet basique et/ou composite. Ils sont caractérisés par les propriétés décrites plus haut et les relations des objets qui le composent. Ces relations sont classées ainsi :
 \begin{description}
 	\item[Relation de Classification] : 
 		\begin{itemize}
-			\item Complémentaire : les enfants de la racine sont complémentaires à la réalisation de la fonction 
-			\item Parallèle : les enfants de la racine ont une importance égale à la réalisation du but et possède les mêmes propriétés
-			\item Table : Les enfants de la racine peuvent être classifier vers un enfant racine parallèle
-		\end{itemize}
-	\item[Relation de présentation] : 
+			\item Complémentaire : les enfants de la racine de l'objet composite sont complémentaires à la réalisation de la fonction. Ils ne possèdent pas les même propriétés basiques.
+			\item Parallèle : les enfants de la racine de l'objet composite ont une importance égale à la réalisation du but. Ils possèdent les mêmes propriétés basiques
+			%\item Table : Les enfants de la racine de l'objet composite peuvent être classifier vers suivant un tableau à deux dimensions.
+			\item Spatio/temporelle : ordre de présentation des objets dans le temps (ordre d'apparition) et l'espace().  
+	\end{itemize}
 \end{description}
 
-Les objets spécifiques sont des objets propres à un environnement, on leur associe une catégorie.
+Une fois les propriétés ci-dessus établies, les auteurs définissent un ensemble de classes pour les objets :
+\begin{description}
+	\item [Informatif] : objets qui présentent le contenu informatif 
+	\item [Navigation] : objets qui déclenche une navigation
+	\item [Interaction] : objets qui fournissent des interactions avec l'utilisateur 
+	\item [Décoration] : objets qui remplissent un rôle esthétique (puce de liste, séparateur, \emph{etc.})
+\end{description}
+La classe des objets basiques est déterminée simplement par la valeur de ces propriétés. Un objet basique informatif est possède un contenu textuel important, une image (taille significatif par rapport à l'objet). La classe des objets composites intègre les propriétés de relation. Par exemple, on peut définir un menu (appartenant à la classe des objets de navigation.) comme suit : un objets composites dont les enfants de la racine sont des objet de navigation parallèle (même propriété), le nombre d'enfant navigable est supérieur à un certain seuil \emph{Hmin} et la propriété de texte est inférieur à un seuil \emph{Lmax}
 
-Exemple d'une fonction pour la détection des bars de navigation :
-\begin{itemize}
-	\item Les enfants de la racine sont des objets de navigation tel que NN/NR ne soient pas inférieur à Hmin, NN est le nombre total d'enfant de la racine navigable, et NR est le nombre total d'enfant racine
-	\item Les enfants de la racine doivent etre inférieur à Lmax
-	\item Text NNB 
-	\item Les enfants de la racine doivent avoir des propriétés similaire
-\end{itemize}
-\subsection{ITF-IDF}
+\subsection{Inférence du contenu informatif}
+Une page web possède différent contenu que l'on peut classifier comme contenu informatif et contenu non informatif.
+\subsubsection{??}
+Les auteurs \citep{wininformative} propose un algorithme pour l'extraction du contenu informatif dans une page web. L'approche simule comment un utilisateur trouve le contenu informatif dans la page. Le contenu informatif est identifié comme étant les blocs contenant le plus de contenu textuels. L'algorithme se décompose en trois étapes :
+\begin{enumerate}
+	\item Extraction des blocs sémantiques dans la page. Cette partie repose sur une méthode de segmentation similaire à l'algorithme présenté en section \ref{sub:vips}.
+	\item Sélection des candidats. L'algorithme prend en entrée les blocs résultants de l'étape précédente. Pour chaque bloc est appliqué une fonction qui vérifie si il peut être candidat ou non à être un bloc informatif. Cette fonction s'intéresse aux propriétés textuelles, nombre d'hyperliens. Les détails du paramétrage de cette fonction ne sont pas précisés dans l'article.  
+	\item Élection des blocs informatifs. L'algorithme prend en entrée la sortie de l'étape précédente.
+	Dans un premier temps, pour chaque bloc est calculé une valeur signalant l'importance de son contenu informatif.
+	\[ f(b_{x}) = \frac{TailleDuBlocb_{x}}{DistanceEntreLeCentreDeb_{x} EtLeCentreDelEcran} \]
+\end{enumerate}
+\subsubsection{TF-IDF}
 \chapter{Langage de publication de page web}
 \section{HTML 4\label{sub:HTML-4}}
 
@@ -350,7 +376,7 @@ Le contenu principal décrit dans les pages HTML 4
 est un contenu textuel. Il peut également contenir du multimédia comme
 des images, des vidéos et applets (des programmes qui sont automatiquement
 chargés puis lancés sur la machine de l'utilisateur). L'inclusion
-de contenu multimédia se fait par l'élément générique : <OBJECT>. Il
+de contenu multimédia se fait par l'élément générique : <object>. Il
 possède une collection d'attributs prédéfinis qui décrivent l'objet inclus
 dans la page. Le principal étant \emph{type }décrivant
 le type de contenu des données (\emph{e.g.} figure \ref{balise_object}). La valeur de ces attributs n'est pas prédéfinie. Elle est interprétée 
@@ -403,7 +429,7 @@ Les éléments DIV utilisés conjointement avec les attributs \emph{id} et \emph{cl
 sont au c\oe ur du mécanisme générique de structuration d'un document.
 DIV permet de diviser le contenu d'un document en sections et sous-sections 
 (\emph{e.g.} figure \ref{div_sectionnement}) pour décrire sa structure. Les
-balises <DIV> ayant une sémantique neutre, c'est l'auteur du contenu
+balises <div> ayant une sémantique neutre, c'est l'auteur du contenu
 qui attribue (de manière arbitraire) un nom de \emph{class} ou un
 \emph{id}. L'\emph{id}
 ou la \emph{class} est associé à
@@ -483,10 +509,10 @@ lexicaux. Ces nouveaux éléments apportent une sémantique standard et de plus hau
 
 \paragraph{Contenu}
 
-HTML 5 fournit de nouveaux éléments comme <VIDEO>,
-<AUDIO> avec un ensemble d'attributs propres à chaque balise (a contrario
-de l'élément <OBJECT> de HTML 4). Les attributs spécifiques permettent
-de renseigner l'état d'un élément. Par exemple, la balise <AUDIO>
+HTML 5 fournit de nouveaux éléments comme <video>,
+<audio> avec un ensemble d'attributs propres à chaque balise (a contrario
+de l'élément <object> de HTML 4). Les attributs spécifiques permettent
+de renseigner l'état d'un élément. Par exemple, la balise <audio>
 possède un attribut spécifique \emph{muted}
 indiquant si le son de l'élément audio est coupé ou non.
 
@@ -753,20 +779,20 @@ Sans être exhaustive, plusieurs configurations peuvent rendre un contenu inacces
 \section{Méta-modèle}
 \subsection{Introduction \label{subsec-meta-intro}}
 
-HTML 4 fournit une sémantique, dans ces éléments de langage, pour le décrire des noeuds de contenu (image, texte) mais pas pour des structures logiques plus élaborées (article, menu, bannière etc.). On utilise structure logique dans le sens mathématique du terme, c'est à dire un ensemble muni de fonctions et de relations. Par exemple, la figure \ref{menu_html4} présente deux structures logiques extraites d'une des pages du site web \textit{lemonde.fr} et d'une page des pages du site web \textit{www.eclipse.org}. D'après cette figure, on sait que les éléments textuelles sont des liens de navigation signalés par la balise \textit{<a>}, mais il n'y a pas d'informations sémantiques sur la structure qu'ils composent (un menu de navigation). Ce premier point pause un problème pour l'expression de préférence sur de telles constructions. 
+HTML 4 fournit une sémantique pour définir des noeuds de contenu (image, texte) mais pas pour des structures logiques plus élaborées (article, menu, bannière etc.). On utilise structure logique dans le sens mathématique du terme, c'est à dire un ensemble muni de fonctions et de relations. Par exemple, la figure \ref{menu_html4} présente deux structures logiques extraites d'une des pages du site web \textit{lemonde.fr} et d'une page des pages du site web \textit{www.eclipse.org}. D'après cette figure, on sait que les éléments textuels sont des liens de navigation signalés par la balise \textit{<a href=...>}, mais il n'y a pas d'informations sémantiques sur la structure qu'ils composent (un menu de navigation). Ce premier point pause un problème pour l'expression de préférence sur de telles constructions. 
 
 
 Ce langage fournit une composante syntaxique extrêmement souple. On veut exprimer par composante syntaxique extrêmement souple le faite que HTML 4 autorise la construction d'un ensemble potentiellement infini de structures logiques. 
 D'autre part, le langage ne permet pas d'associer une sémantique explicite aux différentes structures logiques. La sémantique devient de ce fait implicite et est exprimée au travers de la mise en forme des structures.
 Cette configuration permet ainsi d'associer une même sémantique (implicite) à différentes structures logiques.
 %Cette sémantique est implicite puisqu'elle n'est pas exprimer par le langage mais au travers de la mise en forme est comprise par le lecteur. 
-Si l'on reprend la figure \ref{menu_html4}, on voit que l'on a deux structures logiques différentes ayant la même sémantique (un menu). %Cette diversité pause un problème pour le traitement de la page. 
+Si l'on reprend la figure \ref{menu_html4}, on voit que l'on a deux structures logiques différentes ayant la même sémantique (un menu). Cette diversité pose des difficultés pour l'extraction de structure (section \ref{sec:extraction}). 
 
 
-La contribution de ce méta-modèle vient apporter une composante sémantique aux langages de publication du web.
+La contribution de ce méta-modèle vient apporter une composante (dimension) sémantique aux langages de publication du web.
 Cette sémantique s'intéresse à la correspondance entre les structures logiques définies par le concepteur d'une page web et ce que comprend le lecteur. Dans un premier temps cette composante est essentielle pour l'expression des souhaits de personnalisation de l'utilisateur. En second lieu, le méta-modèle nous fournit une couche d'abstraction permettant de s'affranchir de la diversité de représentation des données. 
 
-Le méta-modèle se décompose en deux parties. Une partie décrivant la sémantique des principales structures logiques (section \ref{sub:Mod=0000E8le-de-mise}) utilisées dans la conception des pages. Une seconde partie pour la descriptions de la mise en forme associée à chaque élément du méta-modèle précédent. Cela va nous permettre de mieux intégrer l'accessibilité dans la personnalisation des pages web.
+Le méta-modèle se décompose en deux parties. Une partie décrivant la sémantique des principales structures logiques (section \ref{sub:Mod=0000E8le-de-mise}) utilisées dans la conception des pages. Une seconde partie pour la descriptions de la mise en forme associée à chaque élément du méta-modèle précédent.
 
 \begin{figure}[htb]
 
@@ -814,8 +840,8 @@ Le méta-modèle se décompose en deux parties. Une partie décrivant la sémantique 
 HTML 4 discrimine ces éléments de langage suivant que pendant l'affichage du flux de contenu les éléments produisent un retour à la ou non. On constate que le modèle de HTML 4 repose plutôt sur une description des aspects de mise en forme des éléments que sur la sémantique des structures construites.
 Nous proposons dans la figure \ref{metamodele_HTML4} un méta-modèle de HTML 4. Les principales méta-classes sont :
 \begin{itemize}
-	\item La méta-classe \emph{Bloc} dont les instances provoquent un retour à la ligne. Par exemple, une division (<DIV>) ou un paragraphe (<p>) génère un retour à la ligne
-	\item La méta-classe \emph{Inline} dont les instances ne provoquent pas de retour à la ligne. Par exemple, \emph{<p>Bonjour tous le <strong>monde<strong></p>}, la balise \emph{<strong>} ne provoque pas de retour à la ligne dans le paragraphe.
+	\item La méta-classe \emph{Bloc} dont les instances provoquent un retour à la ligne. Par exemple, une division (<div>) ou un paragraphe (<p>) génère un retour à la ligne
+	\item La méta-classe \emph{Inline} dont les instances ne provoquent pas de retour à la ligne. Par exemple, \emph{<p>Bonjour tous le <strong>monde</strong></p>}, la balise \emph{<strong>} ne provoque pas de retour à la ligne dans le paragraphe.
 \end{itemize}
 
 \begin{figure}[H]
@@ -826,14 +852,14 @@ Nous proposons dans la figure \ref{metamodele_HTML4} un méta-modèle de HTML 4. L
 \end{figure}
 
 \paragraph{Instance}
-HTML 4 décrit les structures logiques de plus haut niveau à l'aide de d'éléments structurelles générique (\emph{DIV}) et leur propriété de mise en forme (bloc/inline). Si l'on instancie le premier menu de la figure \ref{menu_html4}, on voit bien que HTML 4 ne possède pas un niveau d'expressivité suffisant pour exprimer une préférence, par exemple, sur un menu de navigation. 
+HTML 4 décrit les structures logiques de plus haut niveau à l'aide de d'éléments structurels générique (\emph{div}) et leurs propriétés de mise en forme (bloc/inline). Si l'on instancie le premier menu de la figure \ref{menu_html4}, on voit bien que HTML 4 ne possède pas un niveau d'expressivité suffisant pour exprimer une préférence, par exemple, sur un menu de navigation. 
 
 \subsubsection{HTML 5}
 \paragraph{Méta-modèle HTML 5}
 HTML 5 propose une classification plus élaborer qui ne se concentre plus sur les aspects de mise en forme mais sur la sémantique des différentes structures. Nous proposons dans la figure \ref{metamodele_HTML5} un méta-modèle de HTML 5. Ci-dessous les principales classes de balises : 
 
 \begin{itemize}
-\item Les instances de la méta-classe \textbf{Sectioning} définissent le contenu comme des éléments qui créent une nouvelle section dans le plan d'un document. Les instances de <SECTION>, <ARTICLE>, <NAV>, <ASIDE> héritent de cette dernière. 
+\item Les instances de la méta-classe \textbf{Sectioning} définissent le contenu comme des éléments qui créent une nouvelle section dans le plan d'un document. Les instances de <section>, <article>, <nav>, <aside> héritent de cette dernière. 
 
 %\item La méta-classe \textbf{Header} définit l'entête d'un document. Pour une page web cela correspond à la bannière.
 
@@ -847,27 +873,26 @@ HTML 5 propose une classification plus élaborer qui ne se concentre plus sur les
 \end{itemize}
 
 
-
+\begin{landscape}
 \begin{figure}[H]
 \centering
-\includegraphics[angle=90,scale=0.6]{img/metamodele/HTML5.png}
+\includegraphics[scale=0.6]{img/metamodele/HTML5.png}
 
 \caption{Méta-modèle HTML 5\label{metamodele_HTML5}}
 \end{figure}
-
-\newpage
+\end{landscape}
 
 \paragraph{Instance}
 Si l'on compare le méta-modèle de HTML 4 avec celui de HTML 5, on constate dans un premier temps que la mise en forme ne fait plus partie du méta-modèle. Dans un second temps il intègre des éléments de langage spécifique (et non plus générique) pour la description des structures construites. Si l'on instancie le premier menu de la figure \ref{menu_html4}, avec des éléments de HTML 5, il est possible d'exprimer, par exemple, une préférence sur l'accessibilité des menus de navigation dans une page. 
 
 Une préférences sur l'accessibilité serait, par exemple, que la taille du texte du menu de navigation soit supérieur à 15 pixels : 
-\begin{lstlisting}[frame={single}]
-navigation.style.size < 15px.
+\begin{lstlisting}[frame={single}, xleftmargin=.1\textwidth, xrightmargin=.1\textwidth]
+navigation.style.size < 15px
 \end{lstlisting}
 
 
 \subsection{Méta-modèle}
-\subsection{Modèle de contenu \label{subsec-modelcontenu}}
+\subsubsection{Modèle de contenu \label{subsec-modelcontenu}}
 La conception de cette partie du méta-modèle repose sur les éléments conceptuels identifiés dans la sous-section \ref{subsect-metamodelhtml} en étendant l'expressivité de notre méta-modèle aux \emph{Landmarks} de ARIA (Bannière, Contenu principal, \emph{etc.}) et aux éléments de langage décrivant les éléments d'interaction. 
 
 %\begin{comment}langage pas adapté à la description d'interface graphique mais plutot de document\end{comment}
@@ -897,25 +922,25 @@ Un seconde partie de ce méta-modèle décrit les éléments d'interaction dans une p
 \end{itemize}
 
 
-
+\begin{landscape}
 \begin{figure}[htb]
 \begin{center} 
-\includegraphics[width=.5\linewidth]{img/metamodele/modele-contenu-widget.png}
+\includegraphics[width=.7\linewidth]{img/metamodele/modele-contenu-widget.png}
 \caption{Méta-modèle interaction\label{modele-metamodele}} \end{center} \end{figure}
+\end{landscape}
 
-\newpage
-
+\begin{landscape}
 \begin{figure}[htb]
 \begin{center} 
 \includegraphics[width=.9\linewidth]{img/metamodele/modele-contenu-structure.png}
 \caption{Méta-modèle contenu\label{widget-metamodele}} \end{center} \end{figure}
- 
+ \end{landscape}
 \subsubsection{Modèle de mise en forme}
 Le méta-modèle de mise en forme (\emph{cf.} figure \ref{css-metamodele}) repose sur les éléments du langage CSS. Cette partie est un support essentiel à l'expression des préférences, en particulier pour les préférences liées à l'accessibilité. Les principales méta-classe sont :
 
 \begin{figure}[H]
 \begin{center} 
-\includegraphics[width=.7\linewidth]{img/metamodele/CSS.png}
+\includegraphics[width=\linewidth]{img/metamodele/CSS.png}
 \caption{Méta-modèle\label{css-metamodele}} \end{center} \end{figure}
 
 \begin{itemize}
@@ -933,7 +958,7 @@ caractères, mots et paragraphes contenus dans une boîte. Par exemple, la proprié
 
 
 
-\section{Extraction de structures}
+\section{Extraction de structures \label{sec:extraction}}
 \subsection{Introduction}
 Dans cette partie nous traitons de l'extraction des structures logiques dans une page. Nous nous intéressons à la sémantique de ces dernières dans le section \ref{sec-inference}.
 
@@ -1019,11 +1044,11 @@ La méthode choisit est une approche basée sur des découpages successives de la s
 Dans cette partie nous définissons notre vision des briques plus bas niveau de construction d'une page web. L'idée est de définir des concepts détachés des spécifications HTML qui vont nous permettre de prendre la décision de diviser ou non un noeud. En effet, les navigateurs implémentent les spécifications des langages pour au moment de la mise en forme. Cependant Les concepteurs des pages web peuvent tout à fait redéfinir ce comportement au moyen du langage CSS. 
 Nous proposons une classification des n\oe{}uds constituants une page web. 
 \begin{description}
-	\item[Noeuds conteneur] : l'ensemble des n\oe{}uds qui peuvent contenir d'autres n\oe{}uds (conteneur et donnée). Ils ont un rôle de structuration logique. Par exemple, \emph{<P>} peut structurer un ensemble de noeuds de données textuelles pour former un paragraphe.
-	\item[Noeuds de mise en forme] : l'ensemble des n\oe{}uds qui n'ont pas un rôle de structuration mais viennent signaler une mise en forme aux n\oe{}uds de données. Par exemple les balises \emph{STRONG} signalent de mettre en gras un texte mais ne structure pas les noeuds qu'elles encapsulent. Si les noeuds conteneurs décrivent une structure logique, les noeuds de mise en forme décrivent une structure physique.
-	\item[N\oe{}uds de données] : l'ensemble des n\oe{}uds qui contiennent un contenu atomique. Les contenus atomiques correspondent aux éléments multimédias dans la page :  texte, image, video, etc. On inclus les balises <IMG>, <OBJECT> et <H1-H6>
-	\item[N\oe{}uds de données virtuelles] : l'ensemble des n\oe{}uds qui contiennent des n\oe{}uds de données encapsulés par des n\oe{}uds de mise en forme. Par exemple, \emph{<P>Ceci est un paragraphe avec un <STRONG>n\oe{}euds de mise en forme</STRONG></P>}. \emph{P} est un n\oe{}ud virtuel
-	\item[N\oe{}uds description] : n\oe{}uds qui donnent des méta-informations sur une page. Par exemple, la balise \emph{<STYLE>} renseignent sur la feuille de style à appliquer à la page. Ce sont des balises utilisé pour renseigner le navigateur sur la page
+	\item[Noeuds conteneur] : l'ensemble des n\oe{}uds qui peuvent contenir d'autres n\oe{}uds (conteneur et donnée). Ils ont un rôle de structuration logique. Par exemple, \emph{<p>} peut structurer un ensemble de noeuds de données textuelles pour former un paragraphe.
+	\item[Noeuds de mise en forme] : l'ensemble des n\oe{}uds qui n'ont pas un rôle de structuration mais viennent signaler une mise en forme aux n\oe{}uds de données. Par exemple les balises \emph{<strong>} signalent de mettre en gras un texte mais ne structure pas les noeuds qu'elles encapsulent. Si les noeuds conteneurs décrivent une structure logique, les noeuds de mise en forme décrivent une structure physique.
+	\item[N\oe{}uds de données] : l'ensemble des n\oe{}uds qui contiennent un contenu atomique. Les contenus atomiques correspondent aux éléments multimédias dans la page :  texte, image, video, etc. On inclus les balises <img>, <object> et <h1-h6>
+	\item[N\oe{}uds de données virtuelles] : l'ensemble des n\oe{}uds qui contiennent des n\oe{}uds de données encapsulés par des n\oe{}uds de mise en forme. Par exemple, \emph{<P>Ceci est un paragraphe avec un <strong>n\oe{}euds de mise en forme</strong></P>}. \emph{P} est un n\oe{}ud virtuel
+	\item[N\oe{}uds description] : n\oe{}uds qui donnent des méta-informations sur une page. Par exemple, la balise \emph{<style>} renseignent sur la feuille de style à appliquer à la page. Ce sont des balises utilisé pour renseigner le navigateur sur la page
 	\item[N\oe{}uds visible] : l'ensemble des n\oe{}uds qui sont visibles au travers du navigateur 
 \end{description}
 \subsubsection{Heuristiques}
@@ -1077,6 +1102,7 @@ and get ACTF components!</p>
 \paragraph{Règle 9}
 
 \section{Inférence de structures \label{sec-inference}}
+La catégorie d'un objet composite est déterminé par les propriétés majeurs 
 \chapter{Validation}
 \chapter{Conclusion}
 

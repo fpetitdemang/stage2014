@@ -1,3 +1,13 @@
+@inproceedings{kovacevic2002recognition,
+  title={Recognition of Common Areas in a Web Page Using Visual Information: a possible application in a page classification},
+  author={Kovacevic, Milos and Diligenti, Michelangelo and Gori, Marco and Milutinovic, Veljko},
+  booktitle={Data Mining, 2002. ICDM 2003. Proceedings. 2002 IEEE International Conference on},
+  pages={250--257},
+  year={2002},
+  organization={IEEE}
+}
+
+
 @MISC{bioappl,
   title={{Universite de la Mediterranee Aix-Marseille II}},
   author={Universite de la Mediterranee Aix-Marseille II},
