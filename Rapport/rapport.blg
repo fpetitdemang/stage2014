@@ -25,45 +25,45 @@ I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "wikipedia"
 Warning--empty journal in wininformative
 Warning--empty year in wininformative
-You've used 9 entries,
+You've used 11 entries,
             2118 wiz_defined-function locations,
-            549 strings with 5453 characters,
-and the built_in function-call counts, 3337 in all, are:
-= -- 339
-> -- 152
-< -- 4
-+ -- 60
-- -- 50
-* -- 186
-:= -- 517
-add.period$ -- 30
-call.type$ -- 9
-change.case$ -- 48
+            562 strings with 5859 characters,
+and the built_in function-call counts, 4227 in all, are:
+= -- 431
+> -- 192
+< -- 5
++ -- 77
+- -- 64
+* -- 250
+:= -- 656
+add.period$ -- 37
+call.type$ -- 11
+change.case$ -- 61
 chr.to.int$ -- 0
-cite$ -- 11
-duplicate$ -- 133
-empty$ -- 273
-format.name$ -- 50
-if$ -- 747
+cite$ -- 13
+duplicate$ -- 167
+empty$ -- 341
+format.name$ -- 64
+if$ -- 939
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 5
-newline$ -- 47
-num.names$ -- 18
-pop$ -- 80
+int.to.str$ -- 11
+missing$ -- 7
+newline$ -- 57
+num.names$ -- 22
+pop$ -- 94
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 50
 quote$ -- 0
-skip$ -- 119
+skip$ -- 143
 stack$ -- 0
-substring$ -- 182
-swap$ -- 49
-text.length$ -- 4
+substring$ -- 250
+swap$ -- 61
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 36
+type$ -- 44
 warning$ -- 2
-while$ -- 30
-width$ -- 10
-write$ -- 97
+while$ -- 39
+width$ -- 13
+write$ -- 120
 (There were 2 error messages)

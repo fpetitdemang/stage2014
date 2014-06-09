@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{cai2003extracting}
 Deng Cai, Shipeng Yu, Ji-Rong Wen, and Wei-Ying Ma.
@@ -45,6 +45,18 @@ Milos Kovacevic, Michelangelo Diligenti, Marco Gori, and Veljko Milutinovic.
   possible application in a page classification.
 \newblock In {\em Data Mining, 2002. ICDM 2003. Proceedings. 2002 IEEE
   International Conference on}, pages 250--257. IEEE, 2002.
+
+\bibitem{tai1979tree}
+Kuo-Chung Tai.
+\newblock {The tree-to-tree correction problem}.
+\newblock {\em Journal of the ACM (JACM)}, 26(3):422--433, 1979.
+
+\bibitem{vieira2006fast}
+Karane Vieira, Altigran~S da~Silva, Nick Pinto, Edleno~S de~Moura, Joao
+  Cavalcanti, and Juliana Freire.
+\newblock A fast and robust method for web page template detection and removal.
+\newblock In {\em Proceedings of the 15th ACM international conference on
+  Information and knowledge management}, pages 258--267. ACM, 2006.
 
 \bibitem{wininformative}
 Chaw~Su Win and Mie Mie~Su Thwin.

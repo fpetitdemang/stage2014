@@ -1,5 +1,3 @@
-%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
-%% Do not edit unless you really know what you are doing.
 \documentclass[french]{book}
 \usepackage[T1]{fontenc}
  \usepackage[french]{babel}
@@ -54,13 +52,15 @@ urlcolor=black%
 \newcommand\mm[1]{\nb{MM}{#1}}
 \newcommand\yb[1]{\nb{YB}{#1}}
 \newcommand\xd[1]{\nb{YB}{#1}}
-\newcommand\flb[1]{\nb{FP}{#1}}
+\newcommand\fp[1]{\nb{FP}{#1}}
 
 \makeatother
 
 \usepackage{babel}
 \usepackage{fancyheadings}
 \providecommand{\definitionname}{Definition}
+
+
 
 \begin{document}
 %\pagenumbering{roman}
@@ -148,220 +148,35 @@ Sous la direction de \textbf{Marianne~HUCHARD, Michel~MEYNARD, Yoann~BONAVERO}
 \newpage
 
 \chapter{Introduction}
-\chapter{État de l'art}
+Le World Wide Web (www) est un réseau de ressources. Leur publication repose sur un langage universellement compréhensible et accepté par tous les ordinateurs : HTML. Historiquement conçu 
+pour faciliter l'échange d'articles dans la communauté scientifique,  la démocratisation du web a fait radicalement évoluer le contenu d'une page web, sans pour autant que le langage ne suive cette évolution. Le contenu des pages web est passé d'un contenu homogène, une page contenant un simple texte structuré, à un contenu hétérogène. De nos jours, les pages sont constituées de différentes structures organisant différentes informations. Les différentes structures peuvent être la bannière de la page qui renseigne sur l'identité du site, un menu de navigation qui présente l'organisation du site web, un article qui caractérisent l'information principale. La version 4  de HTML est le langage de publication le plus utilisé actuellement. Ce langage est complètement inadapté à la description d'un contenu hétérogène. Il n'y a aucune sémantique associée aux éléments de langage pour décrire les structures qui organisent les différentes informations dans une page : On ne peut pas annoter une structure comme étant un menu de navigation. Les effets sont que les concepteurs de pages web, grâce à la grande souplesse syntaxique du langage, conçoivent diverses structures pour décrire une information. Les structures ne respectent aucun schéma standard. L'analyse du contenu de la page est devenu impossible puisque chaque concepteur suit son propre schéma de conception. 
+
+La compréhension du contenu par un processus automatiques c'est ainsi complexifiée. Ce manque de compréhension du contenu des pages impactent par exemple les processus d'indexation des moteurs de recherche. Dans le contexte du stage on s'intéresse particulièrement à la compréhension du contenu pour les outils d'accessibilités destinés aux personnes en situation de handicap visuelles.
+
+La question de recherche posée par le stage s'intéresse au moyen d'inférer, par un processus automatiques, les différentes informations structurant une page web.
+Pour cela nous étudierons dans un premier temps l'environnement des pages web afin de conceptualiser les différents éléments constitutifs d'une page web. Cette étude se concrétisera par la réalisation d'un méta-modèle de page web. Nous validerons ce méta-modèle en évaluant l'expressivité de celui par la modélisation des préférences d'utilisateurs sur l'accessibilité des pages web, acquises par une étude sur l'accessibilité du web. 
+Une fois cette étape achevée nous élaborerons une méthode d'extraction des différents éléments constitutifs d'une page web qui sera complété par un processus d'annotation de ces éléments au regard du méta-modèle. La validation de l'approche consistera à vérifier la conformité des éléments extrait et annoter d'après les spécifications du méta-modèle construit. 
+
+La constat, qui oriente la direction de nos travaux, est que la structure d'une page est explicitée au moment de la mise en page (par la navigateur), c'est à dire par l'application des différents styles de mise en forme associés aux balises HTML. Nous pensons donc qu'il est possible d'exploiter la mise en forme associé élément de langage pour isoler les groupes qui structurent une information. Nous employons par la suite, structures logiques pour désigner un ensemble d'éléments qui mis en relation remplissent une fonction (\emph{e.g} un menu, barre de recherche). 
+
+Ce rapport ce structure comme suit. La chapitre \ref{chap:accessibilite} présente des préférences sur l'accessibilité.
+Le chapitre \ref{chap:etat} introduit tous d'abord une synthèse des langages de publication  que nous avons réalisé à partir des spécifications des différents langages de publication de contenu. Nous y présentons également  des approches existantes permettant d'isoler les différentes structures logiques et des moyens permettant d'associer une sémantique aux structures logiques identifiés. 
+Dans le chapitre \ref{chap:realisation} nous présentons le travail réalisé pendant le stage. Dans la première partie du chapitre nous présentons la réalisation de notre méta-modèle de page web. Dans la seconde partie du chapitre, nous proposons l'adaption d'une méthode pour pour identifier la structure d'une page au moyen d'un algorithme de segmentation basé sur des heuristiques. Cette méthode est complété par un processus d'annotation des structures extraites. Le chapitre \ref{chap:resultat} présentons et analysons les premiers résultats et une discutons de ceux-ci. Le chapitre \ref{chap:conclusion} présente la synthèse des travaux effectués et leurs perspectives.
+
+\chapter{Accessibilité \label{chap:accessibilite}}
+\fp{Cette partie sera complétée par l'intégration de préférences utilisateurs recueillies dans le rapport de stage de Yohan }
 
 
-\section{Extraction de structures}
-%\subsection{Correspondances de structure}
-%\subsubsection{Pat-Tree}
-\subsection{Mapping}
-%\subsection{Segmentation}
-\subsection{Segmentation par pattern de page}
-Les auteurs de \cite{kovacevic2002recognition} proposent dans leur papier une segmentation des pages web par zone. Cette approche  s'intéressent aux données cartésiennes des objets HTML.  L'idée étant que les concepteurs de page web suivent un même pattern de présentation ce qui permet de faire un regroupement des objets HTML suivant leur localisation. Les auteurs proposent un pattern de page web construit suivant une observation empirique (\emph{cf. figure}\ref{zones-interets}). Le modèle construit est le suivant : 
+différentes configurations peuvent rendre un contenu inaccessible, par exemple : 
 \begin{itemize}
-	\item une entête correspondant à l'emplacement de la bannière d'une page (\emph{H}), 
-	\item un pied de page (\emph{F})
-	\item une marge latérale gauche contenant des menus  (\emph{LF}) 
-	\item une marge latérale droite contenant des menus (\emph{LR}) 
-	\item du centre de la page encapsulant le contenu principal de la page ((\emph{C}))
-\end{itemize}
+	\item des contrastes de couleur trop proche entre un texte et son arrière plan peuvent rendre ce texte illisible. Des combinaisons de couleurs doivent être évité. 
+	\item certaine région de la page ne sont pas utilises à la compréhension du contenu et surchargent visuellement cette dernière. Une telle surcharge peut rendre inaccessible les informations pertinentes. Un utilisateur peut souhaiter masquer les menus de navigation, la bannière et ne mettre en avant que les contenus informatifs.
+	\item dans des cas basse vision, des utilisateurs vont devoir zoomer fortement sur contenu d'une page. Dans ce contexte une trop forte différence de entre la taille du texte et son titre rend le titre illisible. Un utilisateur peut exprimer une préférence sur la différence de contraste maximum qu'il peut y avoir entre un texte et ces éléments de titre
+\end{itemize} 
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.48\textwidth]{img/zone-interet.jpg}
-\caption{Position des zones d'intérêts dans une page \label{zones-interets}}
-\end{figure} 
-
-La figure \ref{zones-interets} modélise le partitionnement définit par les auteurs avec \emph{W1} et \emph{W2} définissant respectivement \emph{LF} et \emph{LR}. Chacune d'elle représente 30\% de la largeur de la page. \emph{H1} et \emph{H2} définissent \emph{H} et \emph{F} avec un hauteur de 200px pour \emph{H} et 150px pour \emph{F}. 
-
-Les coordonnées des objets sont calculées au moyen d'un moteur de rendu graphique. Il est à noter que tel qu'il est décrit dans l'article, le moteur de rendu graphique ne prend pas en compte la surcouche CSS. 
-
-En se basant sur ce modèle de représentation, des heuristiques sont déterminées afin de regrouper les objets HTML de la page suivant le partitionnement de page proposé ci-dessus. Ces heuristiques sont construite sur l'identification de noeuds de type \emph{TABLE} dont la surface est incluse dans les zones du modèle. 
-
-
-À partir l'évaluation d'un corpus de 515 pages web, les résultats expérimentaux (publiés en 2002) montrent que le modèle proposé par les auteurs correspond bien à un modèle de présentation représentatif des pages web. Une note de \emph{Bon} est attribuée aux zones dont les objets HTML sont à plus de 50\% correctement étiquetés, c'est à dire que par exemple les éléments classifier comme bannière correspondent bien à une bannière. Une note de \emph{Excellent} est attribuée aux zones dont les objets HTML sont à plus de 90\% correctement étiquetés. Une note de \emph{Mauvais} est attribuée lorsque les critères précédents ne sont pas satisfaits
-
-\begin{center}
-\begin{tabular}{c c c c c c}
-	\hline
-		& Bannière & Pied de page & Menu latéral gauche & Menu latéral droit  \\ \hline
-	Mauvais & 41\% & 30\% & 21\% & 19\%\\
-	Bon & 10\% & 15\% & 3\% & 2\% \\
-	Excellent & 49\% & 55\% & 76\% & 23\% \\ 
-	\hline	 
-\end{tabular}
-\end{center}
-
-D'après les auteurs 20\% des mauvais résultats sont dû au moteur de rendu graphique utilisé qui construit une mauvaise représentation des objets HTML. Les positions de ceux-ci ne correspondent pas à la position réelle qu'ils devraient avoir. Les 80\% restant, toujours selon les auteurs, devraient pouvoir être diminué en développant de meilleurs heuristiques.
-
-\subsection{Segmentation par densitométrique}
-Les auteurs cherchent à distinguer les différentes informations qui structurent la page en se basant sur l'analyse de la répartition de la densité textuelle dans une page. L'hypothèse des auteurs est que la densité des différents blocs de textes du DOM est une propriété suffisante pour identifier la structure logique d' une page. 
-
-La première étape consiste à identifier les différents segments textuelle atomique de la page. Les auteurs ne prennent pas en compte la sémantique des balises HTML dans le découpage. La page est vue comme une sequence d'élément textuelle entrelacé de tag HTML. Certain tag HTML segmentent le flux textuelle et d'autres non. Cette décision est prise (non pas d'après la sémantique des balises) d'après le rythme des séquences de texte dans le flux. Par exemple si le flux passe d'une sequence de texte courte à une sequence de texte longue cela signale un nouveau segment. Par exemple, si on analyse une sequence de texte courte comme \emph{<a>Accueille</a><a>New</a><a>Contact</a>} suivit d'une sequence de texte longue comme \emph{<p>Une sequence de texte beaucoup plus longue</p>} va donner naissance à deux nouveaux segments.
-Pour chaque segment (bloc) identifier par le processus ci-dessous. Les auteurs vont calculer une densité textuelle. Cette propriété correspond au ratio ci-dessous :
-\[ p(b_{x}) = \frac{Nombre De Mots Dans b_{x}}{Nombre De Lignes Dans b_{x}} \]
-Les jetons correspondent à une séquence contingente de caractères n'étant pas des caractères d'espacement. Le nombre de ligne correspond au nombre de découpage de blocs de 80 caractères possibles dans le segment traité. 80 étant une valeur fixée par les auteurs, elle correspond à la taille d'une phrase moyenne (pour les pays anglophones).
-
-La seconde étape permet de construire des blocs dans la page correspondant à la structuration logique de la page. Cette construction consiste à fusionner les blocs contingents en comparant leur densité respectif. La fonction est définit ci-dessous :
-\[ \Delta p(b_{x}, b_{y}) = \frac{|p(b_{x}) - p(b_{y})|}{max(p(b_{x}), p(b_{y}))} \]
-Ce processus est répété tant que la fonction définit ci-dessus ne satisfait pas un certain seuil. Cela conduit à la construction de blocs de forte granularité correspondant à la structuration logique de la page.
-
-
-
-\begin{comment}
-Si la fonction delta est en dessous d'un certain seuil $Smax$ les blocs adjacents sont fusionnés. La fusion de segment consiste ici à joindre les lignes des blocs \emph{x} et \emph{y} en un nouveau bloc \emph{z}. La fonction boucle tant qu'elle trouve des blocs adjacents qui ne respectent pas un seuil définit à priori.
-\end{comment}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{img/densitometric-segmantation.png}
-\caption{Segmentation densitométrique \cite{kohlschutter2008densitometric} \label{seg-densitometrique}}
-\end{figure}
-
-\begin{comment}
-	il reste encore à approfondir 
-\end{comment}
-
-
-
-
-\subsection{Segmentation par indice visuel \label{sub:vips}}
-L'approche proposée par les auteurs \cite{cai2003extracting} présente
-un algorithme de partitionnement basé sur les éléments de mise en
-forme des pages web. Le partitionnement extrait une structure qui regroupe
-les éléments d'une page sémantiquement proches en bloc (\emph{e.g.} figure
-\ref{vips_partitionnement}). Le postulat est que les éléments d'une
-page possédant des caractéristiques de mise en forme proches, tels
-que la police, la couleur, la taille, sont sémantiquement proches.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=300px]{img/VIPS-partionnement.jpg}
-
-\caption{Exemple de partitionnement, (a) page (b) DOM de la page \cite{cai2003extracting}\label{vips_partitionnement}}
-\end{figure}
-
-
-L'algorithme exploite le DOM%
-\footnote{Document Object Model%
-} de la page web. Le DOM est une API%
-\footnote{Application Programming Interface%
-} pour les documents HTML (ou plus généralement XML). Il fournit une
-représentation arborescente d'un document et les moyens d'accéder
-à son contenu et sa mise en forme. 
-
-Le processus de segmentation, figure \ref{vips-process}, se décompose
-en trois phases : un processus d'extraction de blocs, un processus
-de détection de séparateur et un processus de reconstruction. 
-
-Le processus d'extraction détecte les éléments du niveau courant du
-DOM susceptibles de former un contenu cohérent. Cette détection repose
-sur des séparateurs explicites : on sait que certains éléments délimitent
-le contour d'un contenu (par exemple les balises <DIV>). Mais elle repose également
-sur une fonction de distance visuelle comparant les n\oe uds parents
-et frères du n\oe ud courant : une balise <DIV> a de grandes chances de
-délimiter un contenu sémantiquement différent du n\oe ud parent si la
-couleur de fond est différente de celle de ce dernier. Pour chaque
-n\oe ud, l'algorithme vérifie s'il forme un bloc ou non. Si oui, il
-associe un degré de cohérence au bloc. Ce degré de cohérence est un
-indicateur de l'importance sémantique du bloc. Si non, il est appliqué
-le même processus aux enfants du n\oe ud. Quand tous les n\oe uds du bloc
-courant sont extraits, ils sont mis dans un pool. 
-
-Des séparateurs entre les blocs sont ensuite détectés. L'algorithme
-détecte ici des séparateurs implicites, c'est-à-dire n'apparaissant
-pas dans la structure HTML. Les séparateurs implicites sont les espaces
-entre les blocs d'un pool. Un poids est attribué à chaque séparateur
-suivant son importance (par exemple, plus l'espacement entre deux
-blocs est grand, plus le poids sera élevé). Ce poids est un indicateur
-de différence sémantique entre les blocs adjacents. Plus le poids du
-séparateur est élevé entre deux blocs, plus leur contenu sera sémantiquement
-éloigné.
-
-Une construction hiérarchique des blocs est créée. Cette construction
-hiérarchique repose sur le degré de cohérence attribué à chaque bloc. 
-
-Pour chaque nouveau bloc de la structure hiérarchique construite,
-l'algorithme teste le degré de cohérence attribué par rapport à un
-seuil de cohérence défini. Ce seuil est défini suivant la granularité
-de la structure que l'on veut en sortie de l'algorithme. Si le degré
-de cohérence n'est pas supérieur au seuil de cohérence, le bloc est
-de nouveau proportionné. La structure finale est construite après que
-tous les blocs soient traités. 
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=300px]{img/VIPS-processus.jpg}
-
-\caption{Algorithme de segmentation \cite{cai2003extracting} \label{vips-process}}
-\end{figure}
-
-En conclusion, l'algorithme regroupe les éléments d'une page en structure ayant une sémantique forte. Cette méthode nous permet de délimiter les différentes régions d'une page. Cependant l'inconvénient est que l'algorithme ne nous permet pas de connaître le rôle associé à chaque sous-structure isolée dans la page.
-
-\subsection{Synthèse}
-
-\begin{tabular}{ | l | l | l | l | l | l | l |}
-	\hline
-   Méthodes & Globale & Locale & Qualitative & Quantitative & Ascendante & Descendante\\ \hline \hline
-   Mapping &  & \checkmark &  &  &  & \\ \hline
-   Segmentation zone & \checkmark &  &  &  &  & \\ \hline
-   Segmentation densitométrique & \checkmark &  &  &  &  &\\ \hline
-   Segmentation indice visuel & \checkmark &  &  &  &  & \\ \hline
- \end{tabular}
- 
- %\paragraph{Segmentation par zone} approche quantitative le pattern ne correspond pas aux modèles de toutes les pages.
- 
- 
-\section{Inférence de structures}
-\subsection{Approche fonctionnelle} 
-\citep{chen2001function} propose une approche afin de découvrir la fonctionnalité des éléments composant une page web. Les différents éléments sont des objets qui apportent une information ou réalise une action. Ces objets peuvent soit être des objets basiques ou soit des objets composites. Les objets basiques et composites sont le résultat d'un prétraitement (non décrit dans le papier) qui retourne une structure arborescente dont les feuilles forment des objets basiques et les noeuds ayant des descendants forment des objets composites. Afin de qualifier chaque noeuds les auteurs proposent un ensemble de propriété pour attribuer une classe à chaque objet (basique et composite).
-L'hypothèse est que chaque objet au travers de ces fonctionnalités reflète l'intention de son auteur, c'est à dire ça sémantique.
-
-La structures des objets basiques est décrit d'après les propriétés fonctionnelles ci-dessous : 
-\begin{description}
-	\item[Présentation]: l'agencement (\emph{e.g} alignement gauche), le type de média (\emph{e.g} texte, image). 
-	\item[Sémantème]: la sémantique associée par le HTML. Par exemple la balise \emph{h1} définit un titre
-	\item[Décoration]: une valeur entre 0 et 1 qui définit dans quelle mesure l'objet sert à l'amélioration de l'esthétisme de la page (lignes, séparateurs, et les objets avec des couleurs d'arrière plan). 
-	\item[Hyperlien]: l'objet possède t il des hyperliens? et où pointent-ils vers (domaine)? 
-	\item[Interaction]: Les types d'interactions de l'objet. Affichage, soumission d'informations, sélections etc.
-\end{description}
-Les propriétés listées précédemment sont calculées d'après l'analyse du code HTML. Par exemple l'attribut \emph{href} (spécifie la destination d'un lien) est utilisé pour calculer la propriété d'hyperlien. 
-
- 
-Les objets composites sont donc une composition d'objet basique et/ou composite. Ils sont caractérisés par les propriétés décrites plus haut et les relations des objets qui le composent. Ces relations sont classées ainsi :
-\begin{description}
-	\item[Relation de Classification] : 
-		\begin{itemize}
-			\item Complémentaire : les enfants de la racine de l'objet composite sont complémentaires à la réalisation de la fonction. Ils ne possèdent pas les même propriétés basiques.
-			\item Parallèle : les enfants de la racine de l'objet composite ont une importance égale à la réalisation du but. Ils possèdent les mêmes propriétés basiques
-			%\item Table : Les enfants de la racine de l'objet composite peuvent être classifier vers suivant un tableau à deux dimensions.
-			\item Spatio/temporelle : ordre de présentation des objets dans le temps (ordre d'apparition) et l'espace().  
-	\end{itemize}
-\end{description}
-
-Une fois les propriétés ci-dessus établies, les auteurs définissent un ensemble de classes pour les objets :
-\begin{description}
-	\item [Informatif] : objets qui présentent le contenu informatif 
-	\item [Navigation] : objets qui déclenche une navigation
-	\item [Interaction] : objets qui fournissent des interactions avec l'utilisateur 
-	\item [Décoration] : objets qui remplissent un rôle esthétique (puce de liste, séparateur, \emph{etc.})
-\end{description}
-La classe des objets basiques est déterminée simplement par la valeur de ces propriétés. Un objet basique informatif est possède un contenu textuel important, une image (taille significatif par rapport à l'objet). La classe des objets composites intègre les propriétés de relation. Par exemple, on peut définir un menu (appartenant à la classe des objets de navigation.) comme suit : un objets composites dont les enfants de la racine sont des objet de navigation parallèle (même propriété), le nombre d'enfant navigable est supérieur à un certain seuil \emph{Hmin} et la propriété de texte est inférieur à un seuil \emph{Lmax}
-
-\subsection{Inférence du contenu informatif}
-Une page web possède différent contenu que l'on peut classifier comme contenu informatif et contenu non informatif.
-\subsubsection{??}
-Les auteurs \citep{wininformative} propose un algorithme pour l'extraction du contenu informatif dans une page web. L'approche simule comment un utilisateur trouve le contenu informatif dans la page. Le contenu informatif est identifié comme étant les blocs contenant le plus de contenu textuels. L'algorithme se décompose en trois étapes :
-\begin{enumerate}
-	\item Extraction des blocs sémantiques dans la page. Cette partie repose sur une méthode de segmentation similaire à l'algorithme présenté en section \ref{sub:vips}.
-	\item Sélection des candidats. L'algorithme prend en entrée les blocs résultants de l'étape précédente. Pour chaque bloc est appliqué une fonction qui vérifie si il peut être candidat ou non à être un bloc informatif. Cette fonction s'intéresse aux propriétés textuelles, nombre d'hyperliens. Les détails du paramétrage de cette fonction ne sont pas précisés dans l'article.  
-	\item Élection des blocs informatifs. L'algorithme prend en entrée la sortie de l'étape précédente.
-	Dans un premier temps, pour chaque bloc est calculé une valeur signalant l'importance de son contenu informatif.
-	\[ f(b_{x}) = \frac{TailleDuBlocb_{x}}{DistanceEntreLeCentreDeb_{x} EtLeCentreDelEcran} \]
-\end{enumerate}
-\subsubsection{TF-IDF}
-\chapter{Langage de publication de page web}
-\section{HTML 4\label{sub:HTML-4}}
+\chapter{État de l'art \label{chap:etat}}
+\section{Langage de publication de page web \label{chap-langage}}
+\subsection{HTML 4\label{sub:HTML-4}}
 
 HTML 4 \cite{HTML_4} est un langage permettant la publication de
 contenu sur le web. C'est le langage standard actuel des pages web.
@@ -501,7 +316,7 @@ dans les arbres mais au milieu d'eux.</p>
 
 
 
-\section{HTML 5}
+\subsection{HTML 5}
 
 HTML 5 \cite{HTML_5} étend HTML 4 en apportant de nouveaux éléments
 lexicaux. Ces nouveaux éléments apportent une sémantique standard et de plus haut niveau. Elle permet notamment d'expliciter la structure d'une page.
@@ -565,7 +380,7 @@ la figure \ref{div_role}.
 
 
 
-\section{ARIA}
+\subsection{ARIA}
 \newglossaryentry{ontologie}
 {
   name=Ontologie,
@@ -626,7 +441,7 @@ dans une page.
 \end{itemize}
 \end{comment}
 
-\section{CSS }
+\subsection{CSS }
 
 CSS est un langage de feuille de style qui permet aux auteurs des
 pages web de lier du style aux éléments HTML. Le style définit comment
@@ -763,35 +578,294 @@ la première ligne du texte dans un bloc ('text-indent'), l'alignement
 d'un contenu en-ligne dans un élément de type bloc ('text-align'),
 le comportement de l'espacement entre les caractères du texte ('letter-spacing'),
 \emph{ect.}
-
-
-
-
-\chapter{Accessibilité}
-Une application direct de la personnalisation de page est la possibilité de rendre celle-ci plus accessible à un utilisateur en situation de    déficience visuelle. L'élaboration de ce méta-modèle permet de prendre en compte ces aspects. 
-Sans être exhaustive, plusieurs configurations peuvent rendre un contenu inaccessible, par exemple : 
+\section{Extraction de structures}
+%\subsection{Correspondances de structure}
+%\subsubsection{Pat-Tree}
+\subsection{Mapping \label{sub:mapping}}
+Un opération de mapping est une opération qui identifie une correspondance entre deux structures, ici des arbres. Une page HTML peut être vue comme un arbre dont les sommets sont étiquetés et ordonnés. Nous donnons ci-dessous une définition formelle d'un mapping (introduite par \citep{tai1979tree}).
+~\\
+\begin{defn*}
+Un Mapping $M$ de l'arbre T1 vers l'arbre T2 est un ensemble de paires 
+ordonnées d'entiers (i, j), $1\leqslant i\leqslant n1$, $1\leq j\leq n2$,
+satisfaisant les conditions suivantes, pour tous $(i1,j1),(i2,j2)\in M$:\end{defn*}
 \begin{itemize}
-	\item des contrastes de couleur trop proche entre un texte et son arrière plan peuvent rendre ce texte illisible. Des combinaisons de couleurs doivent être évité. 
-	\item certaine région de la page ne sont pas utilises à la compréhension du contenu et surchargent visuellement cette dernière. Une telle surcharge peut rendre inaccessible les informations pertinentes. Un utilisateur peut souhaiter masquer les menus de navigation, la bannière et ne mettre en avant que les contenus informatifs.
-	\item dans des cas basse vision, des utilisateurs vont devoir zoomer fortement sur contenu d'une page. Dans ce contexte une trop forte différence de entre la taille du texte et son titre rend le titre illisible. Un utilisateur peut exprimer une préférence sur la différence de contraste maximum qu'il peut y avoir entre un texte et ces éléments de titre
-\end{itemize} 
-\chapter{Réalisation}
+\item i1=i2 si et seulement si j1=j2 (one-to-one condition)
+\item t1{[}i1{]} est à gauche de t1{[}i2{]}, si est seulement si t2{[}j1{]}
+est à gauche de t2{[}j2{]} (préservation de l'ordre des n\oe uds frères)
+\item t1{[}i1{]} est un ancêtre de t1{[}i2{]} si et seulement si t2{[}j1{]}
+est un ancêtre de t2{[}j2{]} (préservation de l'ordre des ancêtres)
+\end{itemize}
+La première condition établie qu'une arête ne peut apparaître pas plus d'une fois dans le mapping, la seconde condition impose une préservation de l'ordre des noeuds frère et la dernière impose une relation d'héritage entre les noeuds de l'arbre. La figure \ref{mapping} illustre un mapping entre deux arbres.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.48\textwidth]{img/mapping.jpg}
+\caption{Mapping entre deux arbres étiquetés et ordonnés \label{mapping}}
+\end{figure} 
+De manière intuitive, un mapping est la description d'une suite d'opérations d'édition (substitution, suppression et insertion) qui permet la transformation d'un arbre vers un autre. Les opérations d'édition se définissent ainsi :  
+
+Notons $\Lambda$ un n\oe ud vide. Une opération d'édition est écrite $b\rightarrow c$ , où b et c sont soit un n\oe ud, soit $\Lambda$. Alors :
+ 
+\begin{itemize}
+\item $b\rightarrow c$ est une opération de substitution si $b\neq\Lambda$
+et $c\neq\Lambda$
+\item une opération de suppression si $b\neq\Lambda\doteq c$
+\item une opération d'insertion si $b=\Lambda\neq c$
+\end{itemize}
+
+En appliquant différente restriction sur les opérations d'édition dans un mapping, plusieurs classes de mapping se distinguent modélisant différentes applications pratiques. Notamment le mapping descendant qui restreint les opérations de suppression et d'insertion qui ne peuvent avoir lieu que sur les feuilles de l'arbre. 
+
+\begin{defn*}
+Un Mapping $M$ de l'arbre T1 vers l'arbre T2 est descendant si seulement toute les paires $(i1,i2)\in M$ il y'a aussi une paire  $(parent(i1),parent(i2))\in M$
+\end{defn*}
+
+{\color{red}{A compléter...}}
+Cette classe de mapping d'identifier les sous-structures communes entre deux arbres. Cette propriété est exploité dans une approche proposée par \citep{vieira2006fast} pour identifier des structures dans une page web. L'observation des auteurs est le contenu des pages web est généré par des scripts des auteurs est que les scripts de génération de contenu qui réutilise les mêmes modèle pour structurer certain type de contenu, en particulier les bannieres, menu, et plus généralement les contenus peu important dans une page (du point de vu de l'information apporté). La démarche est la suivante, à partir d'un échantillons de page web les auteurs identifies les sous structures commune des pages au moyen d'un mapping descendant. A partir du mapping entre les pages, les auteurs construisent ainsi des patterns.
+\subsection{Segmentation}
+Dans cette partie nous introduisons plusieurs approches de segmentation. Dans le contexte des pages web, une opération de segmentation consiste à rassembler des objets HTML (noeuds du DOM de page web) suivant des propriétés prédéfinies. Le but étant de proposer une structure pour la page web traité.
+\subsubsection{Segmentation par pattern de page \label{subsub:seg-pattern}}
+Les auteurs de \cite{kovacevic2002recognition} proposent dans leur papier une segmentation suivant un pattern présentation défini à priori. Cette approche  s'intéressent aux données cartésiennes des objets HTML dans une page web. L'idée étant que les concepteurs de page web suivent un même pattern de présentation ce qui permet de faire un regroupement des objets HTML suivant leurs localisations. 
+
+Sur la base d'une étude empirique d'une Les auteurs proposent un pattern de présentation de page web (\emph{cf. figure}\ref{zones-interets}). Le modèle construit est le suivant : 
+\begin{itemize}
+	\item une entête correspondant à l'emplacement de la bannière d'une page (\emph{H}), 
+	\item un pied de page (\emph{F})
+	\item une marge latérale gauche contenant des menus  (\emph{LF}) 
+	\item une marge latérale droite contenant des menus (\emph{LR}) 
+	\item du centre de la page encapsulant le contenu principal de la page ((\emph{C}))
+\end{itemize}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.48\textwidth]{img/zone-interet.jpg}
+\caption{Pattern de mise en forme de page web \label{zones-interets}}
+\end{figure} 
+
+La figure \ref{zones-interets} modélise le partitionnement définit par les auteurs avec \emph{W1} et \emph{W2} définissant respectivement la marge contenant les menus latérales gauches et la marge contenant les menus latérales droits. Chacune d'elle représente 30\% de la largeur de la page. \emph{H1} et \emph{H2} définissent respectivement l'entête de la page et le pied de page avec un hauteur de 200px pour \emph{H} et 150px pour \emph{F}. 
+
+Les coordonnées des objets sont calculées au moyen d'un moteur de rendu graphique. 
+
+En se basant sur ce modèle de représentation, des heuristiques sont déterminées afin de regrouper les objets HTML de la page suivant le partitionnement de page proposé ci-dessus. Ces heuristiques sont construite sur l'identification de noeuds de type \emph{TABLE} dont la surface est incluse dans les zones du modèle. 
+
+
+À partir l'évaluation d'un corpus de 515 pages web, les résultats expérimentaux (publiés en 2002) montrent que le modèle proposé par les auteurs correspond bien à un modèle de présentation représentatif des pages web. Une note de \emph{Bon} est attribuée aux zones dont les objets HTML sont à plus de 50\% correctement étiquetés, c'est à dire que par exemple les éléments classifier comme bannière correspondent bien à une bannière. Une note de \emph{Excellent} est attribuée aux zones dont les objets HTML sont à plus de 90\% correctement étiquetés. Une note de \emph{Mauvais} est attribuée lorsque les critères précédents ne sont pas satisfaits
+
+\begin{center}
+\begin{tabular}{c c c c c c}
+	\hline
+		& Bannière & Pied de page & Menu latéral gauche & Menu latéral droit  \\ \hline
+	Mauvais & 41\% & 30\% & 21\% & 19\%\\
+	Bon & 10\% & 15\% & 3\% & 2\% \\
+	Excellent & 49\% & 55\% & 76\% & 23\% \\ 
+	\hline	 
+\end{tabular}
+\end{center}
+
+D'après les auteurs 20\% des mauvais résultats sont dû au moteur de rendu graphique utilisé qui construit une mauvaise représentation des objets HTML. Les positions de ceux-ci ne correspondent pas à la position réelle qu'ils devraient avoir. Les 80\% restant, toujours selon les auteurs, devraient pouvoir être diminué en développant de meilleurs heuristiques.
+
+\subsubsection{Segmentation par densitométrie textuelle \label{subsub:seg-densito}}
+Les auteurs cherchent à distinguer les différentes informations qui structurent la page en se basant sur l'analyse de la répartition de la densité textuelle dans une page. L'hypothèse des auteurs est que la densité des différents blocs de textes du DOM est une propriété suffisante pour identifier la structure logique d' une page. 
+
+La première étape consiste à identifier les différents segments textuelles atomique de la page. La page est vue comme une sequence d'élément caractères entrelacés de tag HTML. Certain tag HTML segmentent le flux textuelle et d'autres non. Cette décision est prise (non pas d'après la sémantique des balises) d'après le rythme des séquences de caractères dans le flux. Par exemple si le flux passe d'une sequence de caractères courtes à une sequence de caractères longue cela signale un nouveau segment. Par exemple, si on analyse une sequence de texte courte comme \emph{<a>Accueille</a><a>New</a><a>Contact</a>} suivit d'une sequence de texte longue comme \emph{<p>Une sequence de texte beaucoup plus longue</p>} va donner naissance à deux nouveaux segments.
+Pour chaque segment (bloc) identifié par le processus ci-dessous. Les auteurs vont calculer une densité textuelle. Cette propriété correspond au ratio ci-dessous :
+\[ p(b_{x}) = \frac{Nombre De Mots Dans b_{x}}{Nombre De Lignes Dans b_{x}} \]
+Les jetons correspondent à une séquence contingente de caractères n'étant pas des caractères d'espacement. Le nombre de ligne correspond au nombre de découpage de blocs de 80 caractères possibles dans le segment traité. 80 étant une valeur fixée par les auteurs, elle correspond à la taille d'une phrase moyenne (pour les pays anglophones).
+
+La seconde étape permet de construire des blocs dans la page correspondant à la structuration logique de la page à partir des segments identifiés dans l'étape précédente. Cette construction consiste à fusionner les blocs contingents en comparant leur densité respectif. La fonction est définit ci-dessous :
+\[ \Delta p(b_{x}, b_{y}) = \frac{|p(b_{x}) - p(b_{y})|}{max(p(b_{x}), p(b_{y}))} \]
+Ce processus de grossissement est répété tant que la fonction définit ci-dessus ne satisfait pas un certain seuil. Cela conduit à la construction de blocs de forte granularité correspondant à la structuration logique de la page.
+
+
+
+\begin{comment}
+Si la fonction delta est en dessous d'un certain seuil $Smax$ les blocs adjacents sont fusionnés. La fusion de segment consiste ici à joindre les lignes des blocs \emph{x} et \emph{y} en un nouveau bloc \emph{z}. La fonction boucle tant qu'elle trouve des blocs adjacents qui ne respectent pas un seuil définit à priori.
+\end{comment}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{img/densitometric-segmantation.png}
+\caption{Segmentation densitométrique \cite{kohlschutter2008densitometric} \label{seg-densitometrique}}
+\end{figure}
+
+\begin{comment}
+	il reste encore à approfondir 
+\end{comment}
+
+
+
+
+\subsubsection{Segmentation par indice visuel \label{sub:vips}}
+L'approche proposée par les auteurs \cite{cai2003extracting} présente
+un algorithme de partitionnement basé sur les éléments de mise en
+forme des pages web. Le partitionnement extrait une structure qui regroupe
+les éléments d'une page sémantiquement proches en bloc (\emph{e.g.} figure
+\ref{vips_partitionnement}). Le postulat est que les éléments d'une
+page possédant des caractéristiques de mise en forme proches, tels
+que la police, la couleur, la taille, sont sémantiquement proches.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/VIPS-partionnement.jpg}
+
+\caption{Exemple de partitionnement, (a) page (b) DOM de la page \cite{cai2003extracting}\label{vips_partitionnement}}
+\end{figure}
+
+
+L'algorithme exploite le DOM%
+\footnote{Document Object Model%
+} de la page web. Le DOM est une API%
+\footnote{Application Programming Interface%
+} pour les documents HTML (ou plus généralement XML). Il fournit une
+représentation arborescente d'un document et les moyens d'accéder
+à son contenu et sa mise en forme. 
+
+Le processus de segmentation, figure \ref{vips-process}, se décompose
+en trois phases : un processus d'extraction de blocs, un processus
+de détection de séparateur et un processus de reconstruction. 
+
+Le processus d'extraction détecte les éléments du niveau courant du
+DOM susceptibles de former un contenu cohérent. Cette détection repose
+sur des séparateurs explicites : on sait que certains éléments délimitent
+le contour d'un contenu (par exemple les balises <DIV>). Mais elle repose également
+sur une fonction de distance visuelle comparant les n\oe uds parents
+et frères du n\oe ud courant : une balise <DIV> a de grandes chances de
+délimiter un contenu sémantiquement différent du n\oe ud parent si la
+couleur de fond est différente de celle de ce dernier. Pour chaque
+n\oe ud, l'algorithme vérifie s'il forme un bloc ou non. Si oui, il
+associe un degré de cohérence au bloc. Ce degré de cohérence est un
+indicateur de l'importance sémantique du bloc. Si non, il est appliqué
+le même processus aux enfants du n\oe ud. Quand tous les n\oe uds du bloc
+courant sont extraits, ils sont mis dans un pool. 
+
+Des séparateurs entre les blocs sont ensuite détectés. L'algorithme
+détecte ici des séparateurs implicites, c'est-à-dire n'apparaissant
+pas dans la structure HTML. Les séparateurs implicites sont les espaces
+entre les blocs d'un pool. Un poids est attribué à chaque séparateur
+suivant son importance (par exemple, plus l'espacement entre deux
+blocs est grand, plus le poids sera élevé). Ce poids est un indicateur
+de différence sémantique entre les blocs adjacents. Plus le poids du
+séparateur est élevé entre deux blocs, plus leur contenu sera sémantiquement
+éloigné.
+
+Une construction hiérarchique des blocs est créée. Cette construction
+hiérarchique repose sur le degré de cohérence attribué à chaque bloc. 
+
+Pour chaque nouveau bloc de la structure hiérarchique construite,
+l'algorithme teste le degré de cohérence attribué par rapport à un
+seuil de cohérence défini. Ce seuil est défini suivant la granularité
+de la structure que l'on veut en sortie de l'algorithme. Si le degré
+de cohérence n'est pas supérieur au seuil de cohérence, le bloc est
+de nouveau proportionné. La structure finale est construite après que
+tous les blocs soient traités. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=300px]{img/VIPS-processus.jpg}
+
+\caption{Algorithme de segmentation \cite{cai2003extracting} \label{vips-process}}
+\end{figure}
+
+En conclusion, l'algorithme regroupe les éléments d'une page en structure ayant une sémantique forte. Cette méthode nous permet de délimiter les différentes régions d'une page. Cependant l'inconvénient est que l'algorithme ne nous permet pas de connaître le rôle associé à chaque sous-structure isolée dans la page.
+%Traiter la compléxité
+
+\subsection{Synthèse}
+
+%\begin{tabular}{ | l | l | l | l | l |}
+%	\hline
+ %  		   & Globale & Locale & \\ \hline \hline
+  % Mapping &  &  &  & \\ \hline
+   %Segmentation par zone & \checkmark &  & \checkmark & \\ \hline
+   %Segmentation par densitométrie &  &  &  & \\ \hline
+   %Segmentation par indice visuel &  &  &  & \\ \hline
+%\end{tabular}
+ %\faire une synthèse sur les différents modes de reprénsentation des objets HTML (définition des segments)
+ L'approche par correspondance de structure (section \ref{sub:mapping}) entre les pages permet d'isoler seulement des fragments de pages, la structure globale de la page n'apparaît pas . Les approches par segmentation sont plus intéressante car elle propose un découpage de la page reflétant une structure. 
+ La segmentation par pattern (section \ref{subsub:seg-pattern}) est une approche efficace dans la plupart des cas. Cependant toutes les pages web ne suivent pas le même modèle de mise en forme. La segmentation par densitométrie (section \ref{subsub:seg-densito}) est une méthode indépendant du pattern de mise en forme de la page. Le problème avec cette approche est qu'elle ne prend pas en compte les possibles écarts entre la structure décrite par HTML et le rendu finale. C'est à dire que des noeuds du DOM peuvent être proches du la structure du DOM et avec l'application de propriété de mise en forme, très éloigné avec le rendu visuel en particulier avec les propriétés de positionnement absolue décrite en section \ref{sub:Mod=0000E8le-de-mise}. La segmentation par indice visuel (section \ref{sub:vips}) qui comble les faibles des deux méthode précédentes. L'inconvénient de cette approche se situe au niveau de l'algorithme du calcule des séparateur qui présente une grande complexité.
+\fp{Je vais rajouter la complexité du calcule des séparateurs}
+
+
+
+ 
+\section{Annotation de structures}
+\subsection{Approche fonctionnelle} 
+\citep{chen2001function} propose une approche afin de découvrir la fonctionnalité des éléments composant une page web. Les différents éléments sont des objets qui apportent une information ou réalise une action. Ces objets peuvent soit être des objets basiques ou soit des objets composites. Les objets basiques et composites sont le résultat d'un prétraitement (non décrit dans le papier) qui retourne une structure arborescente dont les feuilles forment des objets basiques et les noeuds ayant des descendants forment des objets composites. Afin de qualifier chaque noeuds les auteurs proposent un ensemble de propriété pour attribuer une classe à chaque objet (basique et composite).
+L'hypothèse est que chaque objet au travers de ces fonctionnalités reflète l'intention de son auteur, c'est à dire ça sémantique.
+
+La structures des objets basiques est décrit d'après les propriétés fonctionnelles ci-dessous : 
+\begin{description}
+	\item[Présentation]: l'agencement (\emph{e.g} alignement gauche), le type de média (\emph{e.g} texte, image). 
+	\item[Sémantème]: la sémantique associée par le HTML. Par exemple la balise \emph{h1} définit un titre
+	\item[Décoration]: une valeur entre 0 et 1 qui définit dans quelle mesure l'objet sert à l'amélioration de l'esthétisme de la page (lignes, séparateurs, et les objets avec des couleurs d'arrière plan). 
+	\item[Hyperlien]: l'objet possède t il des hyperliens? et où pointent-ils vers (domaine)? 
+	\item[Interaction]: Les types d'interactions de l'objet. Affichage, soumission d'informations, sélections etc.
+\end{description}
+Les propriétés listées précédemment sont calculées d'après l'analyse du code HTML. Par exemple l'attribut \emph{href} (spécifie la destination d'un lien) est utilisé pour calculer la propriété d'hyperlien. 
+
+ 
+Les objets composites sont donc une composition d'objet basique et/ou composite. Ils sont caractérisés par les propriétés décrites plus haut et les relations des objets qui le composent. Ces relations sont classées ainsi :
+\begin{description}
+	\item[Relation de Classification] : 
+		\begin{itemize}
+			\item Complémentaire : les enfants de la racine de l'objet composite sont complémentaires à la réalisation de la fonction. Ils ne possèdent pas les même propriétés basiques.
+			\item Parallèle : les enfants de la racine de l'objet composite ont une importance égale à la réalisation du but. Ils possèdent les mêmes propriétés basiques
+			%\item Table : Les enfants de la racine de l'objet composite peuvent être classifier vers suivant un tableau à deux dimensions.
+			\item Spatio/temporelle : ordre de présentation des objets dans le temps (ordre d'apparition) et l'espace().  
+	\end{itemize}
+\end{description}
+
+Une fois les propriétés ci-dessus établies, les auteurs définissent un ensemble de classes pour les objets :
+\begin{description}
+	\item [Informatif] : objets qui présentent le contenu informatif 
+	\item [Navigation] : objets qui déclenche une navigation
+	\item [Interaction] : objets qui fournissent des interactions avec l'utilisateur 
+	\item [Décoration] : objets qui remplissent un rôle esthétique (puce de liste, séparateur, \emph{etc.})
+\end{description}
+La classe des objets basiques est déterminée simplement par la valeur de ces propriétés. Un objet basique informatif est possède un contenu textuel important, une image (taille significatif par rapport à l'objet). La classe des objets composites intègre les propriétés de relation. Par exemple, on peut définir un menu (appartenant à la classe des objets de navigation.) comme suit : un objets composites dont les enfants de la racine sont des objet de navigation parallèle (même propriété), le nombre d'enfant navigable est supérieur à un certain seuil \emph{Hmin} et la propriété de texte est inférieur à un seuil \emph{Lmax}
+
+\subsection{Inférence du contenu informatif}
+Une page web possède différent contenu que l'on peut classifier comme contenu informatif et contenu non informatif. Un contenu informatif est un contenu qui apporte une information dans dans la page. 
+Une premiere phase est le découpage de la page en bloc, ce découpage se base sur les balises table (l'approche ne traite que les site organisées avec les balises tabulaires)
+Pour chaque bloc les auteurs extraits les mots clés (caractéristiques des blocs) 
+\subsubsection{Inférence basée sur la localisation}
+La vision des auteurs est que les blocs informatifs sont plutot des blocs qui se concentrent sur le centre de l'écran.
+Les auteurs \citep{wininformative} propose un algorithme pour l'extraction du contenu informatif dans une page web. L'approche simule comment un utilisateur trouve le contenu informatif dans la page. Le contenu informatif est identifié comme étant les blocs contenant le plus de contenu textuels. L'algorithme se décompose en trois étapes :
+\begin{enumerate}
+	\item Extraction des blocs sémantiques dans la page. Cette partie repose sur une méthode de segmentation similaire à l'algorithme présenté en section \ref{sub:vips}.
+	\item Sélection des candidats. L'algorithme prend en entrée les blocs résultants de l'étape précédente. Pour chaque bloc est appliqué une fonction qui vérifie si il peut être candidat ou non à être un bloc informatif. Cette fonction s'intéresse aux propriétés textuelles, nombre d'hyperliens. Les détails du paramétrage de cette fonction ne sont pas précisés dans l'article.  
+	\item Élection des blocs informatifs. L'algorithme prend en entrée la sortie de l'étape précédente.
+	Dans un premier temps, pour chaque bloc est calculé une valeur signalant l'importance de son contenu informatif.
+	\[ f(b_{x}) = \frac{TailleDuBlocb_{x}}{DistanceEntreLeCentreDeb_{x} EtLeCentreDelEcran} \]
+\end{enumerate}
+\subsubsection{Inférence basée sur la fréquence de répétition}
+\begin{comment}
+La vision des auteurs est que les contenus informatifs sont des parties distingues dans une page alors que les contenu non informatifs sont des partis redondante 
+Calcule une valeur d'entropie pour chaque bloc. Cette valeur d'entropie permet de partionner l'ensemble des blocs soit en bloc informatif, soit en bloc non-informatif suivant un seuil déterminé. 
+Le calcule de la valeur d'entropie est réalisé suivant le disttribution des mot clès dans le cluster de page
+\end{comment}
+\fp{Intégration d'un article sur l'identification du contenu informatif dans une page. Propose le calcule d'une valeur d'entropie basée sur une mesure nommée TF-IDF permettant le partitionnement des structures logiques en contenu informatif ou non informatif}
+
+\subsection{Synthèse}
+\fp{intégration d'une synthèse}
+
+
+
+
+\chapter{Réalisation \label{chap:realisation}}
 \section{Méta-modèle}
 \subsection{Introduction \label{subsec-meta-intro}}
 
-HTML 4 fournit une sémantique pour définir des noeuds de contenu (image, texte) mais pas pour des structures logiques plus élaborées (article, menu, bannière etc.). On utilise structure logique dans le sens mathématique du terme, c'est à dire un ensemble muni de fonctions et de relations. Par exemple, la figure \ref{menu_html4} présente deux structures logiques extraites d'une des pages du site web \textit{lemonde.fr} et d'une page des pages du site web \textit{www.eclipse.org}. D'après cette figure, on sait que les éléments textuels sont des liens de navigation signalés par la balise \textit{<a href=...>}, mais il n'y a pas d'informations sémantiques sur la structure qu'ils composent (un menu de navigation). Ce premier point pause un problème pour l'expression de préférence sur de telles constructions. 
+HTML 4 fournit une sémantique pour définir des noeuds de contenu (image, texte) mais pas pour des structures logiques plus élaborées (article, menu, bannière etc.). Par exemple, la figure \ref{menu_html4} présente deux structures logiques extraites d'une des pages du site web \textit{lemonde.fr} et d'une page des pages du site web \textit{www.eclipse.org}. D'après cette figure, on sait que les éléments textuels sont des liens de navigation signalés par la balise \textit{<a href=...>}, mais il n'y a pas d'informations sémantiques sur la structure qu'ils composent (un menu de navigation). Ce premier point pause un problème pour l'expression de préférence sur de telles constructions. 
 
-
-Ce langage fournit une composante syntaxique extrêmement souple. On veut exprimer par composante syntaxique extrêmement souple le faite que HTML 4 autorise la construction d'un ensemble potentiellement infini de structures logiques. 
+\begin{comment}
+HTML 4 possède une composante syntaxique extrêmement souple. On veut exprimer par composante syntaxique extrêmement souple le faite que HTML 4 autorise la construction d'un ensemble potentiellement infini de structures logiques. La sémantique de ces structures n'est pas exprimé au par HTML mais plutôt par CSS  
 D'autre part, le langage ne permet pas d'associer une sémantique explicite aux différentes structures logiques. La sémantique devient de ce fait implicite et est exprimée au travers de la mise en forme des structures.
-Cette configuration permet ainsi d'associer une même sémantique (implicite) à différentes structures logiques.
-%Cette sémantique est implicite puisqu'elle n'est pas exprimer par le langage mais au travers de la mise en forme est comprise par le lecteur. 
+Cette configuration permet ainsi d'associer une même sémantique (implicite) à différentes structures logiques. 
 Si l'on reprend la figure \ref{menu_html4}, on voit que l'on a deux structures logiques différentes ayant la même sémantique (un menu). Cette diversité pose des difficultés pour l'extraction de structure (section \ref{sec:extraction}). 
-
+\end{comment}
 
 La contribution de ce méta-modèle vient apporter une composante (dimension) sémantique aux langages de publication du web.
 Cette sémantique s'intéresse à la correspondance entre les structures logiques définies par le concepteur d'une page web et ce que comprend le lecteur. Dans un premier temps cette composante est essentielle pour l'expression des souhaits de personnalisation de l'utilisateur. En second lieu, le méta-modèle nous fournit une couche d'abstraction permettant de s'affranchir de la diversité de représentation des données. 
 
+ 
 Le méta-modèle se décompose en deux parties. Une partie décrivant la sémantique des principales structures logiques (section \ref{sub:Mod=0000E8le-de-mise}) utilisées dans la conception des pages. Une seconde partie pour la descriptions de la mise en forme associée à chaque élément du méta-modèle précédent.
 
 \begin{figure}[htb]
@@ -837,7 +911,7 @@ Le méta-modèle se décompose en deux parties. Une partie décrivant la sémantique 
 \subsection{Méta-modèle HTML 4 et  5 \label{subsect-metamodelhtml}}
 \subsubsection{HTML 4}
 \paragraph{Méta-modèle HTML 4}
-HTML 4 discrimine ces éléments de langage suivant que pendant l'affichage du flux de contenu les éléments produisent un retour à la ou non. On constate que le modèle de HTML 4 repose plutôt sur une description des aspects de mise en forme des éléments que sur la sémantique des structures construites.
+HTML 4 discrimine ces éléments de langage suivant que pendant l'affichage du flux de contenu les éléments produisent un retour à la ou non (\emph{cf.} section \ref{sub:Mod=0000E8le-de-mise}). Le modèle de HTML 4 repose plutôt sur une description des aspects de mise en forme des éléments que sur la sémantique des structures construites.
 Nous proposons dans la figure \ref{metamodele_HTML4} un méta-modèle de HTML 4. Les principales méta-classes sont :
 \begin{itemize}
 	\item La méta-classe \emph{Bloc} dont les instances provoquent un retour à la ligne. Par exemple, une division (<div>) ou un paragraphe (<p>) génère un retour à la ligne
@@ -847,12 +921,13 @@ Nous proposons dans la figure \ref{metamodele_HTML4} un méta-modèle de HTML 4. L
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{img/metamodele/HTML4.png}
-
 \caption{Méta-modèle HTML 4\label{metamodele_HTML4}}
 \end{figure}
 
 \paragraph{Instance}
-HTML 4 décrit les structures logiques de plus haut niveau à l'aide de d'éléments structurels générique (\emph{div}) et leurs propriétés de mise en forme (bloc/inline). Si l'on instancie le premier menu de la figure \ref{menu_html4}, on voit bien que HTML 4 ne possède pas un niveau d'expressivité suffisant pour exprimer une préférence, par exemple, sur un menu de navigation. 
+HTML 4 délimitent les structures logiques de plus haut niveau à l'aide de d'éléments structurels générique (\emph{div}) et leurs propriétés de mise en forme (bloc/inline). Si l'on instancie le premier menu de la figure \ref{menu_html4}, on voit bien que HTML 4 ne possède pas un niveau d'expressivité suffisant pour exprimer une préférence, par exemple, sur un menu de navigation. 
+
+{\color{red} faire un schéma}
 
 \subsubsection{HTML 5}
 \paragraph{Méta-modèle HTML 5}
@@ -862,7 +937,6 @@ HTML 5 propose une classification plus élaborer qui ne se concentre plus sur les
 \item Les instances de la méta-classe \textbf{Sectioning} définissent le contenu comme des éléments qui créent une nouvelle section dans le plan d'un document. Les instances de <section>, <article>, <nav>, <aside> héritent de cette dernière. 
 
 %\item La méta-classe \textbf{Header} définit l'entête d'un document. Pour une page web cela correspond à la bannière.
-
 %\item La méta-classe \textbf{Footer} définit le contenu comme étant des éléments de pied de page dans un document.
 
 \item Les instances de la méta-classe \textbf{Phrasing} définissent les éléments de langage qui peuvent définissent un texte. Par exemple, la méta-classe \emph{Strong} définit un texte important. 
@@ -883,12 +957,14 @@ HTML 5 propose une classification plus élaborer qui ne se concentre plus sur les
 \end{landscape}
 
 \paragraph{Instance}
-Si l'on compare le méta-modèle de HTML 4 avec celui de HTML 5, on constate dans un premier temps que la mise en forme ne fait plus partie du méta-modèle. Dans un second temps il intègre des éléments de langage spécifique (et non plus générique) pour la description des structures construites. Si l'on instancie le premier menu de la figure \ref{menu_html4}, avec des éléments de HTML 5, il est possible d'exprimer, par exemple, une préférence sur l'accessibilité des menus de navigation dans une page. 
+Si l'on compare le méta-modèle de HTML 4 avec celui de HTML 5, on constate dans un premier temps que la mise en forme ne fait plus partie du méta-modèle. Le concept d'élément en bloc et en-ligne est délégué à CSS. Dans un second temps il intègre des éléments de langage spécifique (et non plus générique) pour la description des structures construites. Si l'on instancie le premier menu de la figure \ref{menu_html4}, avec des éléments de HTML 5, il est possible d'exprimer, par exemple, une préférence sur l'accessibilité des menus de navigation dans une page. 
 
 Une préférences sur l'accessibilité serait, par exemple, que la taille du texte du menu de navigation soit supérieur à 15 pixels : 
 \begin{lstlisting}[frame={single}, xleftmargin=.1\textwidth, xrightmargin=.1\textwidth]
 navigation.style.size < 15px
 \end{lstlisting}
+
+{\color{red} faire un schéma}
 
 
 \subsection{Méta-modèle}
@@ -944,27 +1020,37 @@ Le méta-modèle de mise en forme (\emph{cf.} figure \ref{css-metamodele}) repose 
 \caption{Méta-modèle\label{css-metamodele}} \end{center} \end{figure}
 
 \begin{itemize}
-\item Les méta-classes \textit{Box} qui représentent le concept de bloc conteneur. Elles vont permettre d'exprimer des préférences sur l'accessibilité tels que l'espacement plus ou moins fort (propriété padding) avec les éléments connexes à cette dernière. Mais encore sur les contrastes avec la propriété de couleur d'arrière plan et la propriété de couleur de la méta-classe \textit{Text}.
+\item Les méta-classes \textit{BOX} qui représentent le concept de bloc conteneur. Elles vont permettre d'exprimer des préférences sur l'accessibilité tels que l'espacement plus ou moins fort (propriété padding) avec les éléments connexes à cette dernière. Mais encore sur les contrastes avec la propriété de couleur d'arrière plan et la propriété de couleur de la méta-classe \textit{Text}.
 
 
-\item Les méta-classes \textit{Text}  décrivent la représentation visuelle des
+\item Les méta-classes \textit{TEXT}  décrivent la représentation visuelle des
 caractères, mots et paragraphes contenus dans une boîte. Par exemple, la propriété \emph{letter-spacing }spécifie l'espace entre les lettres.
 
-\item Les méta-classes \textit{Méta-classe Police} décrivent la représentation visuelle des caractères. Dans le contexte de l'amélioration de l'accessibilité il être intéressant, par exemple, d'éviter certain type de font qui peuvent rendre un contenu plus illisible pour certaine pathologie.
+\item Les méta-classes \textit{POLICE} décrivent la représentation visuelle des caractères. Dans le contexte de l'amélioration de l'accessibilité il être intéressant, par exemple, d'éviter certain type de font qui peuvent rendre un contenu plus illisible pour certaine pathologie.
 
 \end{itemize}
 
 \subsubsection{Instance du méta-modèle}
-
-
+\subsection{Discussion}
+La réalisation de ce méta-modèle répond aux premiers besoins identifiés pour l'expression de souhait de personnalisation de page web pour en améliorer l'accessibilité.  
+On peut tout à fait exprimer des contraintes sur le contraste d'un texte 
+\begin{lstlisting}[frame={single}, xleftmargin=.1\textwidth, xrightmargin=.1\textwidth]
+context Paragraph	inv :
+	if self.style.color = red then
+		self.style.background-color != green
+\end{lstlisting}
+Exprimer des sur des structures plus haut niveau
+\begin{lstlisting}[frame={single}, xleftmargin=.1\textwidth, xrightmargin=.1\textwidth]
+	Banner.style.display = hidden 
+\end{lstlisting}
 
 \section{Extraction de structures \label{sec:extraction}}
 \subsection{Introduction}
-Dans cette partie nous traitons de l'extraction des structures logiques dans une page. Nous nous intéressons à la sémantique de ces dernières dans le section \ref{sec-inference}.
+Dans cette partie nous traitons de l'extraction des structures logiques dans une page. Nous nous intéresserons à la sémantique de ses dernières dans le section \ref{sec-inference}.
 
-Le DOM d'une page web est constituée d'un ensemble de structures logiques. Ces structures logiques sont un ensemble d'éléments qui mis en relation remplissent une fonction (\emph{e.g} un menu, barre de recherche). Ces structures logiques ne sont pas annotées de manière explicite dans le DOM de la page. Nous voulons dire par explicite qu'il n'y pas d'annotations standards pour identifier et qualifier une structure dans un environnement hétérogène. Ces structures apparaissent de manière implicites lors de l'application des propriétés de mise en page par le navigateur (couleurs d'arrière plan, typographie, etc.). 
+Le DOM d'une page web est constituée d'un ensemble de structures logiques. Nous employons structures logiques pour désigner un ensemble d'éléments qui mis en relation remplissent une fonction (\emph{e.g} un menu, barre de recherche). Ces structures logiques ne sont pas annotées de manière standard dans le DOM de la page. Nous voulons dire par explicite qu'il n'y pas d'annotations standards pour identifier et qualifier une structure. Cette annotation est connu que par la concepteur au travers de l'annotation Ces structures apparaissent de manière implicites lors de l'application des propriétés de mise en page par le navigateur (couleurs d'arrière plan, typographie, etc.). 
 
-L'extraction de ces structures pose ainsi problème quand le contenu est hétérogène. En effet, dans le cas où le contenu est homogène on peut facilement extraire les différentes structures logiques d'après l'annotation des noeuds. Si l'on regarde le listing \ref{lst:homogene} on a un contenu homogène (un document), les spécifications de HTML4 suffises à l'extraction des structures logiques. L'exemple est un document constitué d'une première division qui est l'introduction, puis une seconde division qui est une section. En revanche, avec un contenu hétérogène on ne peut plus se baser sur les spécifications de HTML4. Si l'on regarde le listing \ref{lst:heterogene}, la page se composent d'une bannière, d'un document, d'un menu, etc. Du point de vue de notre méta-modèle ce sont des contenus hétérogènes que l'on souhaite extraire. Cela n'est pas possible en se basant uniquement sur la sémantique de HTML4.
+Une première difficulté provient de l'hétérogénéité du contenu. Une page définit plusieurs contenu (bannière, pied de page, article, \emph{etc.}). Si l'on regarde le listing \ref{lst:heterogene}, dans le contexte de notre méta-modèle, on doit identifier trois structures logiques différentes : une bannière, un document, un menu. Les éléments de langages de HTML 4 ne permettent pas de signaler les différents contenu dans une page.
 
 \lstset{language=HTML}
 \begin{lstlisting}[frame=single, caption={Exemple contenu homogène}, label={lst:homogene}]
@@ -982,29 +1068,33 @@ L'extraction de ces structures pose ainsi problème quand le contenu est hétérogè
 \end{lstlisting}
 
 \begin{lstlisting}[frame=single, caption={Exemple contenu hétérogène}, label={lst:heterogene}]
-<div>
-<div id='banner'></div>
-<div id='menu-principal'></div>
-<div id='document'>
-  <div>
-	<h1>Introduction</h1>
-	<p>une longue introduction (...)</p>
-  </div>
-  <div>
-	<h1>Section 1</h1>
-	<p>un long paragraphe (...)</p>
-	<p>un second long paragraphe (...)</p>
-  </div>
+<div id=page>
+ <div id='banner'></div>
+ <div id='menu-principal'></div>
+ <div id='document'>
+   <div>
+	 <h1>Introduction</h1>
+	 <p>une longue introduction (...)</p>
+   </div>
+   <div>
+	 <h1>Section 1</h1>
+	 <p>un long paragraphe (...)</p>
+	 <p>un second long paragraphe (...)</p>
+   </div>
 </div>
 <div id='footer'></div>
 </div>
 \end{lstlisting}
-D'autre part les concepteurs de page web ne tiennent pas toujours compte des spécifications des langages dans la création des pages. Donnons deux exemples. Dans le listing \ref{lst:monde} on constate que l'étiquette \emph{P} n'est pas utilisée pour structurer un textes en paragraphe mais pour structurer des liens de navigation en menu. Dans le listing \ref{lst:google-style} on voit que les étiquettes \emph{DIV} ne sont utilisées pour indiquer une division mais pour faire de la mise en forme. 
+
+Une seconde difficulté est la diversité des structures (\emph{cf.} section \ref{subsec-meta-intro}) complexifie la solution puisqu'on ne peut pas utiliser de méthodes basés sur la correspondance de structures.
+
+D'autre part les concepteurs de page web ne tiennent pas toujours compte des spécifications des langages dans la création des pages. Donnons deux exemples. Dans le listing \ref{lst:monde} on constate que l'étiquette \emph{P} n'est pas utilisée pour structurer un textes en paragraphe mais pour structurer des liens de navigation en menu. Dans le listing \ref{lst:google-style} on voit que les étiquettes \emph{DIV} ne sont utilisées pour indiquer une division mais pour faire de la mise en forme (en appliquant un style). 
 
   
 \begin{lstlisting}[frame=single, language=html, caption={Extrait menu lemonde.fr}, label={lst:monde}]
 <p>
-	<a href='...'>Le Monde</a><a>Télérama</a>
+	<a href='...'>Le Monde</a>
+	<a href='...'>Télérama</a>
 	<a href='...'>Le Monde diplomatique</a>
 	<a href='...'>Le Huffington Post</a>
 	<a href='...'>Courrier international</a>
@@ -1024,48 +1114,58 @@ D'autre part les concepteurs de page web ne tiennent pas toujours compte des spé
 </div>
 \end{lstlisting}
 
-La diversité des structures (\emph{cf.} section \ref{subsec-meta-intro}) complexifie la solution puisqu'on ne peut pas utiliser de méthodes basés sur la correspondance de structures.
 
-Dans notre contexte nous devons prendre en compte une notion de granularité dans les différentes structure logique que l'on peut identifier. En effet, dans notre méta-modèle, une bannière est une structure logique, mais on peut décomposée en structure logique plus fine. La bannière des pages web intègre souvant dans leur contenu des menus et outils de recherche que nous souhaitons extraire.
+Dans notre contexte nous devons prendre en compte une notion de granularité dans les différentes structure logique que l'on peut identifier. En effet, dans notre méta-modèle, une bannière est une structure logique, mais on peut décomposée en structure logique plus fine. La bannière des pages web intègre dans leur structures des menus et des bars de recherche que nous souhaitons extraire.
 
 Toute ces contraintes posent le cadre de l'élaboration de notre méthode d'extraction des structures logiques dans une page. 
-/*comparer l'existant et expliquer le choix de la méthode*/
-/*note segmentation ascendante, d'identifier des sous structure???*/
+Plusieurs approches sont décrites dans l'état de l'art ()
+La segmentation par pattern est un bonne approche. On constate que dans la conception de page web que même si elle au niveau de la conception (niveau html) elles sont très différentes à l'étape de la mise en forme (publication), elles suivent un même pattern de présentation. L'inconvénient de cette approche est que la granularité des structures identifier est trop forte et que toute les pages web ne sont pas basées sur le même pattern de présentation. 
+%La approche densitométrie une approche par fusion ne semble pas super!!! 
 
 
-Pour la conception des différentes heuristiques nous émettons l'hypothèse, comme \citep{cai2003extracting}, qu'elles doivent intégrer les propriétés de mise en forme associées aux n?uds du DOM. Notre point de vu est que le lecteur (Humain) va reconnaître les différentes structures qui composent la page principalement les aspect de présentations (typographie, zone de couleur, agencement dans la page, \emph{etc.}). Notre méthode prend en compte ces caractéristiques.
-
-Nous proposons ainsi plusieurs concept pour l'élaboration d'heuristiques. 
+Pour la conception des différentes heuristiques nous émettons l'hypothèse, comme \citep{cai2003extracting}, qu'elles doivent intégrer les propriétés de mise en forme associées aux neuds du DOM. Dans un premier temps nous proposons ainsi plusieurs concept pour l'élaboration d'heuristiques. Ces concepts définissent une modèle de page web intégrant les aspects de mise en forme et de structuration des éléments  
 
 \subsection{Méthode}
 \subsubsection{Description modèle de page}
-La méthode choisit est une approche basée sur des découpages successives de la structures de la page. Depuis la racine de la structure d'une page, on va parcourir (suivant un parcours infixe) la structure de la page. Pour chaque noeud parcouru on va soit l'annoter comme une structure logique, soit le diviser. Ces décisions sont prises sur la base d'heuristiques définies a priori. Dans le premier cas, on attribue un degrés de cohérence à la structure. Dans le second cas, on continu la parcours. Si le Degrés de cohérence du bloc est inférieur à un certain seuil, alors on applique récursivement le même processus.
+La méthode choisit est un processus itérative basée sur des découpages successives de la structures de la page. Depuis la racine de la structure d'une page, on va parcourir (suivant un parcours préfixé) ses noeuds. Pour chaque noeud parcouru on va soit l'annoter comme une structure logique, soit le diviser. Ces décisions sont prises sur la base d'heuristiques définies a priori. Dans le premier cas on rappliquer le processus de découpage, dans le second cas on continue la parcours. Les itérations sont stoppés lorsque tous les noeuds atomiques sont identifié. Le résultat est la construction d'un arbre reflétant la composition des structures dans la page. Cette structures nous permet par la suite d'appliquer des algorithmes permettant d'inférer une sémantique aux noeuds de l'arbre.
 
-Dans cette partie nous définissons notre vision des briques plus bas niveau de construction d'une page web. L'idée est de définir des concepts détachés des spécifications HTML qui vont nous permettre de prendre la décision de diviser ou non un noeud. En effet, les navigateurs implémentent les spécifications des langages pour au moment de la mise en forme. Cependant Les concepteurs des pages web peuvent tout à fait redéfinir ce comportement au moyen du langage CSS. 
-Nous proposons une classification des n\oe{}uds constituants une page web. 
+Nous définissons ci-dessous les concepts utiles à l'élaboration des heuristiques.   
+Nous proposons une classification des noeuds (d'après\citep{cai2003extracting}, une fonction de distance visuel et de calcule du poids d'une n\oe{}euds : 
 \begin{description}
-	\item[Noeuds conteneur] : l'ensemble des n\oe{}uds qui peuvent contenir d'autres n\oe{}uds (conteneur et donnée). Ils ont un rôle de structuration logique. Par exemple, \emph{<p>} peut structurer un ensemble de noeuds de données textuelles pour former un paragraphe.
-	\item[Noeuds de mise en forme] : l'ensemble des n\oe{}uds qui n'ont pas un rôle de structuration mais viennent signaler une mise en forme aux n\oe{}uds de données. Par exemple les balises \emph{<strong>} signalent de mettre en gras un texte mais ne structure pas les noeuds qu'elles encapsulent. Si les noeuds conteneurs décrivent une structure logique, les noeuds de mise en forme décrivent une structure physique.
-	\item[N\oe{}uds de données] : l'ensemble des n\oe{}uds qui contiennent un contenu atomique. Les contenus atomiques correspondent aux éléments multimédias dans la page :  texte, image, video, etc. On inclus les balises <img>, <object> et <h1-h6>
-	\item[N\oe{}uds de données virtuelles] : l'ensemble des n\oe{}uds qui contiennent des n\oe{}uds de données encapsulés par des n\oe{}uds de mise en forme. Par exemple, \emph{<P>Ceci est un paragraphe avec un <strong>n\oe{}euds de mise en forme</strong></P>}. \emph{P} est un n\oe{}ud virtuel
-	\item[N\oe{}uds description] : n\oe{}uds qui donnent des méta-informations sur une page. Par exemple, la balise \emph{<style>} renseignent sur la feuille de style à appliquer à la page. Ce sont des balises utilisé pour renseigner le navigateur sur la page
-	\item[N\oe{}uds visible] : l'ensemble des n\oe{}uds qui sont visibles au travers du navigateur 
+	\item[N\oe{}uds conteneur] : l'ensemble des n\oe{}uds qui peuvent contenir d'autres n\oe{}uds (conteneurs et données). Ils ont un rôle de structuration logique. Par exemple, \emph{<p>} peut structurer un ensemble de n\oe{}uds de données textuelles pour former un paragraphe. 
+	\item[Noeuds de mise en forme] : l'ensemble des n\oe{}uds qui n'ont pas un rôle de structuration mais viennent signaler une mise en forme aux n\oe{}uds de données. Par exemple les balises \emph{<strong>} signalent de mettre en gras un texte mais ne structure pas les noeuds qu'elles encapsulent. Si les noeuds conteneurs décrivent une structure logique, les n\oe{}uds de mise en forme décrivent une structure physique.
+	\item[N\oe{}uds de contenus] : l'ensemble des n\oe{}uds qui contiennent un contenu atomique. Les contenus atomiques correspondent aux éléments multimédias dans la page :  texte, image, video, etc. On inclus les balises <img>, <object> et <h1-h6>
+	\item[N\oe{}uds de contenus virtuelles] : l'ensemble des n\oe{}uds qui contiennent des n\oe{}uds de contenu encapsulés par des n\oe{}uds de mise en forme. Par exemple, \emph{<P>Ceci est un paragraphe avec un <strong>n\oe{}euds de mise en forme</strong></P>}. \emph{P} est un n\oe{}ud virtuel
+	\item[N\oe{}uds de descriptions] : n\oe{}uds qui donnent des méta-informations sur une page. Par exemple, la balise \emph{<style>} renseignent sur la feuille de style à appliquer à la page. Ce sont des balises utilisé pour renseigner le navigateur sur la page
+	\item[N\oe{}uds visibles] : l'ensemble des n\oe{}uds qui sont visibles au travers du navigateur 
+	\item[Fonction de distance visuelle] : cette fonction compare les propriétés de mise en forme associée à chaque noeuds pour déterminer si ils sont visuellement distant ou non. Par exemple, la fonction renvoie vraie si le n\oe{}uds ne partagent pas les mêmes propriétés :
+	\begin{itemize}
+		\item d'arrière-plan
+		\item de bordure
+		%\item avant-plan, police, 
+		\item etc.
+	\end{itemize}	 
+	\item[Taille du n\oe{}uds] : pour chaque n\oe{}ud, nous calculons taille. Le calcule de la taille prend en compte les éléments contenu par le noeud et sa position dans le DOM. $ Taille(b_{x}) = \frac{TailleDuNoeud_{x}}{100} * TailleDuNoeudRacine $
 \end{description}
 \subsubsection{Heuristiques}
-L'élaboration des différentes heuristiques ci-dessous reposent sur les concepts décrient précédemment et intègrent une fonction de distance visuelle qui prend en compte les propriétés associées à chaque n\oe{}eud telles que la couleurs d'arrière plan ou encore les propriétés de bordure des n\oe{}uds. Nous définissons également une taille pour chaque noeud, cette taille est calculée suivant la somme du poids de chacun des descendants du n\oe{}uds puis est pondérée suivant son niveau dans la structure de la page. 
+L'élaboration des différentes heuristiques ci-dessous reposent sur les concepts décrient précédemment.
+
 \begin{description}
-	\item[règle 1] : Si le n\oe{}uds n'est pas un n\oe{}uds de données et qu'il ne possède pas de n\oe{}uds valide alors on traite pas ce noeud
-	\item[règle 2] : Si le n\oe{}uds possède un seul enfant valide et cette enfant n'est pas un noeud de données alors on parcours ce n\oe{}uds 
-	\item[règle 3] : Si les enfants du n\oe{}uds sont des n\oe{}uds de données ou des n\oe{}uds de données virtuelles alors on annote ce n\oe{}uds comme formant une structure logique. Nous lui attribuons un degrés de cohérence de 10.
-	\item[règle 4] : Si l'un des enfants du n\oe{}uds est un n\oe{}uds de conteneur alors on parcours ce n\oe{}uds
-	\item[règle 5] : Si l'un des enfants du n\oe{}uds est étiqueté par \emph{HR} alors on extrait les premiers n\oe{}udss valides successeurs et prédécesseurs comme des structures logiques de chaque enfant étiqueté par \emph{HR}
+	\item[règle 1] : Si le n\oe{}uds n'est pas un n\oe{}uds de contenus et qu'il ne possède pas de n\oe{}uds valide alors on ne traite pas ce noeud. 
+	\item[règle 2] : Si le n\oe{}uds possède un seul enfant valide et cette enfant n'est pas un n\oe{}uds de données alors on parcours ce n\oe{}uds 
+	\item[règle 3] : Si les enfants du n\oe{}uds sont des n\oe{}uds de données ou des n\oe{}uds de données virtuelles alors on annote ce n\oe{}uds comme formant une structure logique.
+	\item[règle 4] : Si l'un des enfants du n\oe{}uds est un n\oe{}uds conteneur alors on parcours ce n\oe{}uds et que ça taille est inférieur à un certain seuil alors on parcours.
+	\item[règle 5] : Si l'un des enfants du n\oe{}uds est étiqueté par \emph{HR} alors on extrait les premiers n\oe{}uds valides successeurs et prédécesseurs comme des structures logiques de chaque enfant étiqueté par \emph{HR}
 	\item[règle 6] : Si la somme des enfants visibles de la surface du n\oe{}uds est supérieurs à ce dernier, alors on parcours le n\oe{}uds	
-	\item[règle 7] : Si le premier enfant valide du noeud est un noeud de titre alors on alors on extrait ce n\oe{}uds comme une structure logique. Le Degrès de cohérence est calculé suivant le type de noeud pondéré par l'importance du noeud. 
+	\item[règle 7] : Si le premier enfant valide du n\oe{}uds est un n\oe{}uds de titre alors on alors on extrait ce n\oe{}uds comme une structure logique.
 	\item[règle 8] : Si la fonction de distance visuelle est vérifiée (renvoie vraie) pour au moins un enfant du n\oe{}uds alors on parcours ce neoud
-	\item[règle 9] : Si le plus grand enfant valide est plus petit qu'un seuil prédéfini alors on extrait ce n\oe{}uds comme une structure logique
+	\item[règle 9] : Si le plus grand enfant valide est plus petit qu'un seuil prédéfini alors on extrait ce n\oe{}uds comme une structure logique.
+	\item[règle 10] : par défaut nous parcourons le n\oe{}ud.
 \end{description}
 
-\paragraph{Règle 2} La règle 2 permet de découvrir des structures logiques plus intéressantes dans une page. D'après l'exemple \ref{lst:google}, cette règle va permettre d'atteindre le noeud \emph{center} contenant la page la bannière et la bar de recherche. Les balises \emph{DIV} sont détourné de leur sémantique de division de contenu pour être utilisé pour appliquer différents styles sur un élément \ref{lst:google-style}. La règle 2 permet de parcourir l'arbre de la page jusqu'à la structure logique.
+\paragraph{Règle 1} Cette règle élimine les noeuds qui 
+
+\paragraph{Règle 2} La règle 2 permet de découvrir des structures logiques plus intéressantes dans une page. D'après l'exemple \ref{lst:google}, cette règle va permettre d'atteindre le noeud \emph{center} contenant la bannière de la page et la bar de recherche.
 \lstset{language=HTML}
 \begin{lstlisting}[frame=single, caption={Pattern page d'accueil google.fr}, label={lst:google} ] 
 <span id='body'>
@@ -1077,7 +1177,7 @@ L'élaboration des différentes heuristiques ci-dessous reposent sur les concepts 
 \end{lstlisting}
 
 
-\paragraph{Règle 3} La règle 3 nous permet de récupérer les noeuds de données. La règle donne le degrés de cohérence maximum, 10.
+\paragraph{Règle 3} La règle 3 nous permet de récupérer les noeuds de données. Ce sont les noeuds que l'on considère comme atomique.
 \lstset{language=HTML}
 \begin{lstlisting}[frame=single, caption={Extrait de www.eclipse.org/actf/}, label={lst:eclipse-style} ] 
 <p>ACTF 1.1 including Visualization SDK is now available. 
@@ -1085,10 +1185,12 @@ Please visit <a href="downloads/index.php">downloads page</a>
 and get ACTF components!</p>
 \end{lstlisting}
 
-\paragraph{Règle 4} Si l'on reprend \ref{lst:google} après l'application de la règle 2 on va découvrir des structure logique plus intéressante qui sont le bannière de la page d' accueil de GOOGLE et la bar de recherche.
+\paragraph{Règle 4} Si l'on reprend \ref{lst:google} après l'application de la règle 2 on va découvrir des structures logiques plus intéressantes qui sont le bannière de la page d' accueil de GOOGLE et la bar de recherche.
 
-\paragraph{Règle 5} 
-\paragraph{Règle 6} Dans \ref{lst:wikipedia} le noeud \emph{mw-navigation} n'est pas un noeud 
+%\paragraph{Règle 5} La balise HR est employé pour séparer des contenu
+%\begin{lstlisting}[language=HTML, frame=single, caption={}, label={lst:}]
+%\end{lstlisting}
+\paragraph{Règle 6} Dans \ref{lst:wikipedia} le noeud \emph{mw-navigation} est un 
 \lstset{language=HTML}
 \begin{lstlisting}[frame=single, caption={Pattern wikipedia.fr}, label={lst:wikipedia}]
 <div id="mw-navigation">
@@ -1097,14 +1199,40 @@ and get ACTF components!</p>
 </div>
 \end{lstlisting}
 
-\paragraph{Règle 7}
-\paragraph{Règle 8}
-\paragraph{Règle 9}
+\paragraph{Règle 7} Les balises de titre sont utilisés pour introduire un nouveau contenu.
+\begin{lstlisting}[language=HTML, frame=single, caption={pattern eclipse.org/actf}, label={lst:}]
+<div class="sideitem">
+ <h6>Related links</h6>
+  <ul>
+  <li><a href="...">Project proposal</a></li> 
+  <li><a href="...">Creation Review Slides </a></li>
+  <li><a href="...">1.0 Release &amp; Graduation Review</a></li> 
+  </ul>
+ </div>
+\end{lstlisting}
+\paragraph{Règle 8} Dans l'exemple \ref{lst:eclipse} l'heuristique va extraire la structure qui correspond au menu grâce à la fonction de distance qui va identifier une distance visuelle. 
+\begin{lstlisting}[language=HTML, frame=single, caption={pattern eclipse.fr}, label={lst:eclipse}]
+<body>
+ <div id="header-menu">
+	<div id="header-nav" style="background=..."></div>
+	<div id="header-utils"></div>
+ </div>
+</body>
+\end{lstlisting}
+\paragraph{Règle 9} Dans l'exemple \ref{lst:legibase} 
+\begin{lstlisting}[language=HTML, frame=single, caption={pattern legibase.htm}, label={lst:legibase}]
+<div class="blockMenuGauche taille-relatif=5">
+ <div class="menuGaucheInact taille-relatif=5"><a href=""></a></div>
+ <div class="menuGaucheInact taille-relatif=5"><a href=""></a></div>
+ <div class="menuGaucheInact taille-relatif=5"><a href=""></a></div>
+ <div class="menuGaucheInact taille-relatif=5"><a href=""></a></div>
+</div>
+\end{lstlisting}
 
-\section{Inférence de structures \label{sec-inference}}
+\section{Annotation de structures \label{sec-realisation}}
 La catégorie d'un objet composite est déterminé par les propriétés majeurs 
-\chapter{Validation}
-\chapter{Conclusion}
+\chapter{Résultats \label{chap:resultat}}
+\chapter{Conclusion \label{chap:conclusion}}
 
 \begin{appendices} 
 
