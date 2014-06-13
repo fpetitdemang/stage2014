@@ -1,0 +1,44 @@
+\begin{thebibliography}{1}
+
+\bibitem{chang2001iepad}
+Chia-Hui Chang and Shao-Chen Lui.
+\newblock {IEPAD: information extraction based on pattern discovery}.
+\newblock In {\em Proceedings of the 10th international conference on World
+  Wide Web}, pages 681--688. ACM, 2001.
+
+\bibitem{chen2001function}
+Jinlin Chen, Baoyao Zhou, Jin Shi, Hongjiang Zhang, and Qiu Fengwu.
+\newblock {Function-based object model towards website adaptation}.
+\newblock In {\em Proceedings of the 10th international conference on World
+  Wide Web}, pages 587--596. ACM, 2001.
+
+\bibitem{kohlschutter2008densitometric}
+Christian Kohlsch{\"u}tter and Wolfgang Nejdl.
+\newblock A densitometric approach to web page segmentation.
+\newblock In {\em Proceedings of the 17th ACM conference on Information and
+  knowledge management}, pages 1173--1182. ACM, 2008.
+
+\bibitem{kovacevic2002recognition}
+Milos Kovacevic, Michelangelo Diligenti, Marco Gori, and Veljko Milutinovic.
+\newblock Recognition of common areas in a web page using visual information: a
+  possible application in a page classification.
+\newblock In {\em Data Mining, 2002. ICDM 2003. Proceedings. 2002 IEEE
+  International Conference on}, pages 250--257. IEEE, 2002.
+
+\bibitem{lin2002discovering}
+Shian-Hua Lin and Jan-Ming Ho.
+\newblock Discovering informative content blocks from web documents.
+\newblock In {\em Proceedings of the eighth ACM SIGKDD international conference
+  on Knowledge discovery and data mining}, pages 588--593. ACM, 2002.
+
+\bibitem{wininformative}
+Chaw~Su Win and Mie Mie~Su Thwin.
+\newblock Informative content extraction by using eifce [effective informative
+  content extractor].
+
+\bibitem{zayani2010adaptation}
+Corinne~Amel Zayani, Ikram Amous, and Andr{\'e} P{\'e}ninou.
+\newblock Adaptation visuelle de documents l{\'e}gataires.
+\newblock {\em Document num{\'e}rique}, 12(1):11--29, 2010.
+
+\end{thebibliography}

@@ -1,0 +1,3304 @@
+\documentclass[french,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[english,frenchb]{babel}
+\usepackage[xindy]{glossaries}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage[babel=true]{csquotes}
+\usepackage{fancyhdr}
+\usepackage[rgb]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,snakes,calc,chains,arrows,through,intersections}
+\usepackage{tikz-uml}
+\usepackage{verbatim}
+\usepackage{lscape}
+\usepackage{listings}
+\hypersetup{%
+colorlinks,%
+citecolor=black,%
+filecolor=black,%
+linkcolor=black,%
+urlcolor=black%
+}
+\addtolength{\voffset}{-1.8cm}
+\addtolength{\textheight}{3.6cm}
+\addtolength{\hoffset}{-1.5cm}
+\addtolength{\textwidth}{3cm}
+\setlength{\itemsep}{30pt}
+\definecolor{featureBckColor}{rgb}{0.8,0.8,1}
+\newif\ifhighresolution
+\highresolutiontrue
+\newif\iffirstxa
+\newif\iffirstxr
+% A B C rayon
+\def\arctroispoints#1#2#3#4{
+\begin{scope}
+\path[clip] (#1) -- (#2) -- (#3);
+\node[fill, circle, inner sep=#4] at(#1) {};
+\end{scope}
+}
+% un boite pour l’auteur de la citation
+%\newsavebox{\auteurcitation}
+%\newsavebox{\boitecitation}
+%\newenvironment{extrait}[1]{%
+% \savebox{\auteurcitation}{#1}%
+% \begin{lrbox}{\boitecitation}%
+% \begin{minipage}{.8\linewidth}%
+% \setlength{\parindent}{10pt}%
+% \small\slshape\og{}~}%
+% { \fg{}~%
+% \par\nopagebreak\vspace{0.4cm}\hfill\usebox{\auteurcitation}%
+% \end{minipage}%
+% \end{lrbox}%
+% \begin{center}%
+% \usebox{\boitecitation}%
+% \end{center}%
+%}%
+\usepackage{amsthm} % pushQED, popQED
+\newenvironment{extrait}[1]{%
+\pushQED{#1}\begin{center}\begin{minipage}{0.8\linewidth}%
+\setlength{\parindent}{10pt}\slshape\og}%
+{\fg\end{minipage}\\\vspace{0.4cm}%
+\nopagebreak\begin{minipage}{0.9\linewidth}
+\hfill\small\popQED\end{minipage}\\\vspace{0.2cm}\end{center}}
+\def\myfont#1{\fontfamily{#1}\selectfont}
+\makeatletter\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}\makeatother
+\def\lastname#1{\myfont{jkpss}\textsc{#1}\myfont{cmr}}
+\begin{document}
+%\begin{titlepage}
+%\begin{minipage}{0.5\textwidth}
+%\begin{flushleft}
+%\includegraphics[width=4cm]{./images/Logo-UM2.png}
+%\end{flushleft}
+%\end{minipage}
+%\begin{minipage}{0.5\textwidth}
+%\begin{flushright}
+%\includegraphics[width=4cm]{./images/Logo-LIRMM.jpg}
+%\end{flushright}
+%\end{minipage}
+%\vspace{2cm}
+% \begin{center}
+%\huge {Université Montpellier 2}
+%\Large
+%\\Master 2 Informatique
+%\\Stage de recherche
+%\vspace{1cm}
+% \hrule height 0.2ex
+% \vspace{0.4cm}\Huge Accessibilité Numérique\vspace{0.4cm}
+% \hrule height 0.1ex
+% \vspace{1cm}
+% \large{Yoann BONAVERO}\\
+%\vspace{2cm}
+%Encadrement : LIRMM - Équipe MAREL\\ Marianne Huchard et Michel Meynard
+% \end{center}
+%\end{titlepage}
+\thispagestyle{empty}
+\noindent
+\begin{center}
+\large{\texttt{Académie de Montpellier}}\\
+\Large{\texttt{Université Montpellier \rom{2}}}\\
+\large{\texttt{Sciences et Techniques du Languedoc}}\\
+\end{center}
+\vspace{1cm}
+\begin{center}
+\Huge{\textbf{M{\'E}MOIRE DE STAGE DE\\}}
+\vspace{1.0cm}
+\Huge{\textbf{MASTER M2}}
+\normalsize
+\begin{center}
+\vspace{1.0cm}
+effectué au Laboratoire d'Informatique, de Robotique\\ et de Micro-électronique de Montpellier\\
+\end{center}
+\vspace{2mm}
+\vspace{0.1cm}
+\normalsize
+\vspace{3mm}
+\large{Spécialité} : \textbf{Professionnelle et Recherche unifiée en Informatique}\\
+\vspace{1.0cm}
+\hrule height 0.2ex
+\vspace{0.5cm}
+\begin{huge}
+\lastname{L'accessibilité numérique\\pour les personnes déficientes visuelles}
+\end{huge}
+\vspace{0.6cm}
+\hrule height 0.2ex
+\vspace{8mm}
+\Large
+\begin{center}
+par \textbf{Yoann \lastname{Bonavero}}
+\end{center}
+\vspace{2mm}
+\vspace{6.4cm}
+Date de soutenance : \textbf{22 Juin 2012}\\
+\vspace{1.8cm}
+Sous la direction de \\ \textbf{Marianne \lastname{Huchard} et Michel \lastname{Meynard}}
+\vspace{5mm}
+\end{center}
+\newpage\thispagestyle{empty}
+\strut
+\newpage\thispagestyle{empty}
+\begin{center}
+\huge Remerciements
+\end{center}
+Je tiens tout particulièrement à remercier Mme Marianne Huchard pour avoir pris le temps de
+m'écouter et de me proposer de construire un sujet autour d'un domaine, non étudié dans
+ce laboratoire, qui me tiens vraiment à cœur.\\
+Je remercie également M. Michel Meynard qui s'est associé afin de compléter le groupe et
+apporter ses compétences dans le domaine des architectures Web. Mais aussi le laboratoire,
+LIRMM,
+d'accueil et sont personnel qui m'ont permis de bien m'intégrer dans les locaux en
+mettant en œuvre tout ce qu'il fallait afin de compenser mon handicap visuel. Je remercie aussi
+l'ensemble de l'équipe pédaguogique qui a permis d'assurer une bonne formation.\\
+Enfin mes remerciements se portent aux personnes et associations qui m'ont apporté leur
+soutien et des informations précieuses pour l'avancée de ce travail de recherche. La
+Fédération des Aveugles et Amblyopes de France Gard-Lozère (FAAF) m'a permis
+de prendre contact avec des personnes en situation de handicap enfin de les mettre à
+contribution. Mme Mountaz Hascoët m'a beaucoup aidé dans son domaine (les interfaces
+homme-machine) et m'a ouvert des pistes de recherche. Pour finir, je remercie M. Thibaut Possompe
+(thésard) qui m'a aidé dans ma réflexion sur la ré-ingénierie logicielle.
+\newpage\thispagestyle{empty}
+\strut
+\newpage
+\setcounter{page}{1}
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\printglossaries
+\glsaddall
+\makeglossaries
+\newglossaryentry {symptome}{
+name=symptôme,
+description={Trouble ressenti par un individu},
+plural=symptômes
+}
+\newglossaryentry {signe}{
+name=signe,
+description={Trouble observable par un individu externe},
+plural=signes
+}
+\newglossaryentry {api}{
+name=API,
+description={"Application Programming Interface", constitue un ensemble de fonctions/procédures
+pour l'utilisation simplifiée d'éléments de plus bas niveau},
+plural=APIs
+}
+\newglossaryentry {pmr}{
+name=PMR,
+description={Personne à Mobilité Réduite},
+plural=PMR
+}
+\newglossaryentry {tic}{
+name=TIC,
+description={Technologies de l'Information et de la Communication},
+plural=TIC
+}
+\newglossaryentry {technologieassistance}{
+name={technologie d'assistance},
+description={Technologies de l'Information et de la Communication},
+plural={Technologies d'assistance}
+}
+\hyphenation{handi-cap}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand\headrulewidth{.8pt}
+\renewcommand\footrulewidth{.5pt}
+\fancyhead[L]{}
+\fancyhead[R]{\leftmark}
+\fancyhead[L]{Chapitre \thechapter}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\today}
+\chapter{Introduction - Définition générale et application au logiciel}
+\section{L'accessibilité}
+On peut définir l'accessibilité comme suit :
+\begin{extrait}{Wikipedia}
+L’accessibilité désigne le caractère possible de la liberté de déplacement dans
+l'espace, d'utilisation d'outils, et de compréhension. À ne pas confondre avec l’ergonomie
+et l’utilisabilité. Un des principaux aspects de l'accessibilité est spécifique aux handicaps,
+mais d'autres aspects existent. Ce terme est aussi utilisé dans la Convention relative aux
+droits des personnes handicapées
+\end{extrait}
+\vspace{0.4cm}
+Cette définition s'applique tout aussi bien à la voirie, aux transports, aux bâtiments
+qu'au monde du numérique. L'accessibilité numérique se définit comme étant la mise à
+disposition
+%M remplacer ce qui suit
+%de toute personne, indépendamment de leur matériel, de leur
+%infrastructure réseau,
+%de leur logiciel, de leur emplacement géographique ou leurs aptitudes physiques et/ou mentales,
+%des ressources numériques.
+%M par ceci
+des ressources numériques à toute personne, indépendamment de son matériel, de
+son infrastructure réseau, de son logiciel, de son emplacement géographique ou
+de ses aptitudes physiques et/ou mentales.
+\newline
+De ce fait l'accessibilité numérique couvre par exemple :
+\begin{itemize}\setlength{\itemsep}{0.4\baselineskip}
+\item la téléphonie mobile à partir de la troisième génération. Concernant la conception matérielle, logicielle et de services.
+\item la télévision numérique (TNT, ...) et la radio numérique (RNT, ...). Cela concerne la conception du matériel et des services mais aussi la compatibilité et les normes.
+\item les communications numériques à large bande.
+\item etc\dots \\
+\end{itemize}
+La prise en compte de ces différents aspects, dans la conception et le développement de matériels,
+applications ou services, a été dans le passé qualifiée de \enquote{peu intéressante} simplement
+parce ceux-ci ne visaient qu'un public bien trop ciblé. Depuis quelques années ces aspects reviennent
+sur le devant et sont de plus en plus mis en avant et pris en compte dans les phases de conception
+et de développement. Contrairement aux idées reçues du passé l'accessibilité bénéficierait à un
+grand nombre de personnes, par exemple, prendre en compte la déficience auditive pourra bénéficier
+aux utilisateurs dont le système audio est en muet ou éteint. En Europe l'accessibilité numérique
+est considérée comme une obligation citoyenne.
+\newline
+\section{L'accessibilité Web}
+Internet est un outil en pleine expansion et il est de plus en plus présent dans la vie quotidienne
+de toute personne. Cet outil a un grand potentiel notamment concernant l'accès à la culture, à
+l'information et aux services pour les personnes à mobilité réduite (\gls{pmr}). Il offre en
+effet des services, tels que la consultation de compte bancaire ou bien le
+commerce en ligne, identiques
+à des prestations nécessitant un déplacement qui pourrait engendrer des difficultés.\\
+Toutefois, l'utilisation à domicile
+%M l'utilisation à domicile
+de ces prestations ne signifie pas que ces services sont accessibles.
+Effectivement, tous ces services sont proposés à leurs usagers par le biais d'interfaces Web, ces
+dernières pouvant à leur tour générer des problèmes d'accessibilité.\\
+Le Web dispose d'un certain nombre de standards concernant l'accessibilité (Braillenet,
+AccessiWeb \cite{AccessiWeb}, \dots). Ces standards sont apparus depuis plusieurs années et
+font en permanence l'objet de réajustements et d'extensions afin de répondre aux besoins
+perpétuellement en évolution de la population.
+\newline
+Le World Wide Web Consortium (W3C) est un organisme international qui dispose
+%M édicte
+d'une importante
+base d'informations sous formes de recommandations
+%M sous formes de recommandations
+. Il fournit notamment un numbre important de règles, à suivre, dites essentielles
+pour avoir un site conforme et accessible. Il existe également une manuel (WCAG
+\cite{WCAG2})
+%M je préfère un guide ou un manuel
+permettant de guider les developpeurs dans leur travail.
+\newline
+Les standards ont pour but commun de mettre une grande distance entre le contenu d'un site (texte,
+images, \dots) et sa mise en forme (emplacement, disposition, taille, couleurs, \dots).
+Ce qui va avoir pour avantage de permettre la mise en place de plusieurs
+interfaces utilisateurs adaptées au contexte d'utilisation (sur un ordinateur de bureau, un PDA,
+un téléphone mobile, etc). Il peut également y avoir une interface pour imprimante qui réalise
+la mise en forme du texte en supprimant tout ce qui est autour comme par exemple les menus.
+Cela permet d'imprimer un contenu de site Web directement depuis le navigateur, sans avoir à
+utiliser un quelconque logiciel de traitement de texte, pour remettre en forme le tout avant de
+lancer l'impression. De cette manière il est tout à fait envisageable de disposer
+d'une interface légère et aérée répondant aux recommandations et règlementations d'accessibilité.
+\newline
+Il existe un écart important entre le domaine public et le domaine privé dans ce cadre
+d'accessibilité des sites Internet. Le RGAA (Référentiel Général d'Accessibilité pour les
+Administrations \cite{RGAA}) couplé au décret \emph{n\degre 2009-546 du 14 mai 2009} et à la
+loi \emph{2005-102 du 11 février 2005 pour l'égalité des droits et des chances, la participation
+et la citoyenneté des personnes handicapées}, permet de rendre progressivement tous les sites
+Internet du domaine public accessibles.
+\section{Applications locales}
+Le terme d'application locale désigne ici l'ensemble des applications fonctionnant de manière
+indépendante du Web sur une machine. Les logiciels sont, au même titre que les sites Web, des
+applications qui peuvent poser des difficultés d'accessibilité. Mais à la différence des sites
+Web, pour lesquels un grand nombre de ressources sur le sujet sont disponibles, l'accessibilité
+des logiciels n'est pas autant règlementée ou normalisée. Il est difficile de trouver des normes,
+standards ou simples recommandations qui s'y appliquent spécifiquement.\\
+Il existe tout de même, en fonction des systèmes d'exploitation, des ressources réalisées par
+leur groupe de conception et de développement respectif, qui indiquent une marche à suivre permettant
+de réaliser une application accessible. Ces ressources contiennent également une liste de
+recommandations sur les bonnes ou mauvaises pratiques à mettre en œuvre. Certains outils
+de développement sont à utiliser et d'autres, au contraire, sont à éviter. C'est en effet le genre
+d'informations que l'on
+%M devrait se proocurer lors du ...
+devrait se procurer lors du développement d'une application accessible
+pour un système d'exploitation donné, en prenant la peine de se documenter sur le sujet.
+\section{Solutions actuelles et orientations}
+Deux cas se distinguent. Le premier concerne les handicaps \enquote{légers} et donc tous les individus
+accédant directement aux applications sans l'aide des \glspl{technologieassistance}.
+Pour ces personnes c'est la qualité de l'application qui détermine le confort d'utilisation.
+\newline
+Le second cas se réfère aux personnes ayant besoin d'adaptations spécifiques pour compenser leur
+handicap.
+Ici, les solutions proposées sont basées sur des applications tierces qui sont ajoutées
+sur le système d'exploitation. Par communication avec l'interface des applications
+auxquelles l'utilisateur souhaite accéder, elles permettent de lui donner les informations
+nécessaires à la manipulation \enquote{normale} de l'application sous une autre forme qu'il sera
+en mesure d'exploiter.
+\newline
+En résumé, le numérique accessible se dirige vers le développement d'applications légèrement
+adaptatives permettant l'accès aux handicaps légers. D'autre part, il tend à laisser les applications
+tierces de compensation accéder aux différentes données d'interface, afin de les traiter et de
+les transmettre sous une forme adéquate, en fonction des handicaps et des besoins.
+\newline
+Selon une estimation \cite{appelaccessgnu}, environ 85\%
+%M il faut citer la référence
+des applications ne se conforment pas aux standards d'accessibilité et aux
+recommandations. C'est autant d'applications qui vont engendrer des problèmes
+avec les lecteurs d'écran et autres technologies d'assistance, c'est-à-dire
+qu'elles sont difficilement voire même non accessibles.
+\section{Le handicap}
+\begin{extrait}{Selon la loi \emph{n\degre 2005-102 du 11 février 2005}}
+Constitue un handicap, au sens de la présente loi, toute limitation d'activité ou restriction
+de participation à la vie en société subie dans son environnement par une personne en raison
+d'une altération substantielle, durable ou définitive d'une ou plusieurs fonctions physiques,
+sensorielles, mentales, cognitives ou psychiques, d'un polyhandicap ou d'un trouble de santé
+invalidant.
+\end{extrait}
+D'après \emph{le rapport mondial sur le handicap} de l’OMS \cite{OMSRapport},
+plus d’un milliard de personnes vivent avec un handicap sous une forme ou une
+autre, et plus de 200 millions d’entre elles ont de très grandes difficultés
+fonctionnelles. Le nombre de personnes en situation de handicap ne cesse
+d'augmenter, notamment avec la croissance de la population mondiale. Beaucoup
+d'enfants naissent avec un handicap, mais ce n'est pas la totalité des personnes
+adultes reconnues handicapées. Les accidents de la route, les conflits
+(guerres), les opérations médicales à risque, les maladies etc, peuvent donner
+lieu à un ou plusieurs types de handicap : moteur, sensoriel, mental, cognitif
+ou psychologique.
+\section{Les enjeux}
+L'accessibilité numérique est un enjeu majeur pour l’égalité des droits et des chances face aux
+\gls{tic} (Technologies de l'information et de la Communication). En particulier, elle vise
+à faciliter ou permettre l’utilisation des logiciels et la
+navigation ainsi que l’interaction sur les sites Web. L’accessibilité numérique concerne les
+personnes ayant des déficiences visuelles, auditives, physiques, cognitives ou neurologiques,
+mais elle répond également aux besoins d’accessibilité des utilisateurs seniors.
+Elle progresse grâce à des initiatives du secteur public telles que les
+récents textes de loi (référentiel RGAA \cite{RGAA}, décret \emph{n\degre 2009-546 du 14 mai 2009}
+qui met en application l'article 47 de la loi \emph{n\degre 2005-102 du 11 février 2005 pour
+l'égalité des droits et des chances}), et grâce à des initiatives du secteur associatif et privé telles
+que la définition de normes (WCAG2.0 \cite{WCAG2}, labellisation AccessiWeb \cite{AccessiWeb}).
+\newline
+Plus concrètement, Internet est un outil de grande importance dans la vie de chacun d’entre nous,
+et qui ne cesse d’augmenter. Il permet d’informer, de communiquer et d’interagir avec des
+services publics ou privés. Le commerce en ligne, la consultation de son compte bancaire, la
+déclaration et le paiement des impôts sont des exemples d’utilisation quotidienne du réseau.
+Permettre l'accessibilité de ces divers services et autres utilisations d'internet qu'il est
+possible d'imaginer, bénificierait evidemment aux personnes en situation de handicap, mais aussi
+aux nombreuses personnes ayant de grandes difficultés mais n'étant pas reconnues comme handicapées
+pour diverses raisons,
+et par conséquent n'étant pas comptabilisées dans les chiffres officiels.
+Dans le cadre du développement Web il est montré que lorsqu'un site est développé en respect
+des règles et recommandations d'accessibilité alors, il dispose d'un avantage non négligeable en
+terme de qualité d'information, de référencement (par exemple sur les moteurs de recherche).\\
+L'accessibilité s'intéresse aussi à l'architecture d'un site Internet et à
+l'organisation des informations qu'il est possible d'y trouver. Cette partie de
+l'accessiblité apporterait donc des bénéfices pas seulement aux personnes en situation de handicap. \\
+Les enjeux de l'accessibilité numérique sont nombreux (politique, économique,
+social \dots) et sont de plus en plus présents. L'accessibilité numérique tend
+en fin de compte à servir toute personne qu'elle soit valide ou non.
+\section{Limites et axes directeurs}
+Dans le cadre de ce travail de recherche, plusieurs handicaps vont être mis en avant
+et décrits. Néanmoins seul le handicap visuel, qui pose le plus de difficultés dans l'accessibilité
+à l'outil informatique, va être traité. Cela ne signifie évidemment pas que les autres formes
+de handicaps ne sont pas importantes ou intéressantes, mais simplement qu'elles ne vont pas se
+traiter de la même manière et que tout ne peut pas être réalisé ici.
+Le parcours rapide des autres handicaps (moteur, auditif, \dots), permet toutefois de se faire
+une idée sur les points de variabilité que la méthodologie devrait contenir.
+\newline
+Ce travail n'a pas pour objectif le développement d'une application aboutie et pleinement
+fonctionnelle. Il propose de faire une première analyse dans plusieurs domaines comme le
+handicap, la perception humaine, les outils de modélisation cohérents aux besoins etc\dots
+Il contribue également en ouvrant de larges pistes de recherche, en proposant des
+solutions comme une architecture logicielle répondant aux besoins précédemment définis.
+L'implémantation d'un prototype puis d'une version fonctionnelle est une étape qui suit
+un approfondissement des pistes ouvertes dans ce premier travail de recherche.
+Ce dernier a pour principaux objectifs la réalisation d'un état du domaine et
+l'identification des problématiques posées par celui-ci.\\
+Le chapitre \ref{chpprobetatart} pose les problèmatiques liées aux handicaps, en faisant
+remonter des difficultés et surtout des besoins importants notamment dans le gain
+d'autonomie sur l'outil informatique. Ce chapitre ouvre également un premier état de l'art
+sur les technologies d'assistance existantes, sur le comportement des applications en
+fonction du système d'exploitation sur lesquels elles se trouvent. Il fait aussi
+remonter des informations essentielles dans les choix des méthodologies d'adaptation,
+comme l'importance non négligeable du \enquote{contexte}.\\
+Viennent ensuite deux autres chapitres (\ref{chppathologies} et \ref{chpnotionscouleurs}),
+apportant un complément d'information à l'état de l'art précédent. Une étude du handicap
+visuel et principalement de ses \glspl{symptome} est menée pour en extraire des informations
+précieuses pour la suite. Le chapitre \ref{chpnotionscouleurs} apporte les définitions
+et informations de base qui permettent de comprendre plus aisément la suite de ce travail.\\
+Une étude de la faisabilité des différentes pistes ouvertes est réalisée, dans le chapitre
+\ref{chpfaisabilite}, afin de déterminer celles qui ne mènent à rien et celles qui sont
+les plus prometteuses. Ici trois axes sont mis en avant est examinés.\\
+Le cœur du travail se trouve dans le chapitre suivant (chapitre \ref{chpconceptionweb}).
+Il s'agit de la piste privilégiée par l'étude précédente. Il se nomme \enquote{Conception
+d'une application de ré-ingénierie de page Web} et propose à la fois une architecture qui
+répond aux divers besoins en accessibilité des personnes déficientes visuelles et la
+description d'une chaine de transformation (processus) complète. La première partie de cette
+dernière est explicitée en détail à l'aide modélisations (UML, features,\dots). La
+partie suivante fait l'objet de points de difficultés algorithmique et ouvre par conséquent
+des discussions sur les différentes façons de procéder.\\
+Le dernier chapitre (\ref{chpconclusion}) récapitule les différents travaux effectués et
+entamme une section citant plusieurs perspectives d'ouverture.
+\chapter{Problématiques et état de l'art}
+\label{chpprobetatart}
+\section{Les handicaps et leurs besoins}
+Les handicaps peuvent être regroupés en plusieurs grandes catégories (handicap visuel, moteur,
+auditif, \dots). Il est évident que ces catégories de handicaps sont assez différentes et par
+conséquent qu'elles vont générer des besoins qui leurs sont propres même si quelques unes d'entre
+elles seront plus ou moins similaires. Toutefois deux individus ayant un même handicap et
+donc se trouvant dans la même catégorie pourront avoir des besoins différents et spécifiques
+à l'évolution de leur pathologie.
+\newline
+Dans le cadre de l'informatique (OS, applications, services, ...) il est possible de définir un
+grand nombre de règles et recommandations que les concepteurs et développeurs vont devoir
+respecter s’ils souhaitent réaliser une application ou un service accessible.\\
+Tout au long du sujet nous nous focaliserons sur le handicap visuel sous toutes ses formes.
+Les catégories de handicaps citées précédemment ou même celles qui ne font pas partie du sujet,
+sont structurées de la même manière. Le handicap visuel est l'un de ceux qui dresse le plus de
+barrières pour l'accès à l'information numérique. C'est pour ces raisons que cet handicap
+servira de support tout au long de ce travail de recherche.
+\subsection{La déficience auditive}
+Le handicap auditif regroupe à la fois les personnes sourdes et les personnes
+malentendantes pouvant dans certains cas être équipées de dispositifs
+spécifiques leur permettent de maximiser l'utilisation du reste d'audition
+qu'elles ont. Tous ces éléments doivent être pris en compte. De ce fait toute
+notification pouvant être émise par une application et dont un
+%M supprimer l'étoile ?
+retour sonore
+est utilisé pour distinguer le type de message (erreur, avertissement,
+confirmation) doit comporter un élément visuel clairement distinctif. Autrement
+dit une signalétique claire et rapidement compréhensible doit être adoptée pour
+l'ensemble des interactions avec l'utilisateur. \newline
+Dans le cas où des indications de type \enquote{textuelles} sont données à l'utilisateur de manière
+verbale (par exemple dans le cadre d'un tutoriel), il faut que celles-ci puissent également
+être données de manières visuelle à l'écran ou sur tout autre dispositif adapté.
+\newline
+Pour les personnes qui sont équipées de dispositifs auditifs, le flux de données
+audio sortant de l'application doit pouvoir être intercepté soit directement par
+le système d'exploitation, soit par une application auxiliaire. Ceci donnera la
+possibilité en cas de besoin de traiter le son par exemple avec un logiciel de
+filtrage avant de le transmettre au dispositif standard audio ou à un dispositif
+adapté (boucle magnétique, etc...).
+\subsection{La déficience motrice}
+La déficience motrice se distingue sous différentes formes plus ou moins importantes. Des déficiences légères vont avoir pour effet de ralentir simplement les mouvements ou bien d'empêcher certains d'entre eux. D'autres plus profondes vont réduire quasiment ou même totalement la liberté de mouvement d'un individu qui devra dans ce cas là utiliser des systèmes annexes.
+Un des premiers points essentiels est la capacité d'utiliser les applications uniquement au clavier ou à la souris sans avoir à conjuguer les deux périphériques.
+\newline
+L'application doit également être en mesure d'utiliser pleinement des périphériques d'acquisition externe comme un système de pointage laser ou bien une puce qui se greffe au niveau des nerfs et qui permet par communication avec la machine d'utiliser le pointeur en imaginant le mouvement.
+\subsection{La déficience visuelle}
+La déficience visuelle est celle qui impacte le plus sur l'accessibilité des applications. Elle regroupe un très grand nombre de pathologies comme la myopie, la presbytie ou même les dégénérescences de la rétine comme la DMLA (Dégénérescence Maculaire Liée à l'Âge) ou bien la rétinite pigmentaire (RP).
+Les conséquences de toutes ces pathologies sur la vision et la perception des contrastes et couleurs sont très diverses.
+\newline
+Des altérations de la vision comme celle engendrée par le daltonisme sont très connues et des solutions existent. Si une application utilise des couleurs pour référencer un ou plusieurs éléments comme dans le cas d'une légende, il se peut que la personne perçoive deux couleurs différentes comme une seule et unique couleur, il lui sera donc impossible de repérer et différencier les éléments correspondants. Dans ce cas une solution simple est d'associer des formes ou motifs aux couleurs (hachures, triangles, cercles, etc).
+\newline
+Les personnes âgées sont sujettes à des dégénérescences de la rétine comme la
+DMLA. Elles vont être de la même façon que des personnes atteintes de myopie ou de presbytie, sensibles à la taille de la police de caractères utilisée ainsi qu'à la taille des éléments d'interaction entre l'application et l'utilisateur.
+Cette taille est importante puisque des déformations ou des zones de flou vont réduire la précision de la vision et par conséquent engendrer des difficultés de lecture et de ciblage des éléments avec le pointeur.
+\newline
+Concernant les rétinopathies comme la RP, un très grand nombre d'altérations de la vision différentes apparaissent. Des symptômes comme la perte de contraste de couleurs, la perte de la vision périphérique ou centrale, une hypersensibilité à la lumière (photophobie), des tremblements des yeux, font partie des nombreux \glspl{symptome} constatés chez les individus atteints par ces pathologies.
+Des solutions peuvent être apportées en fonction des symptômes.
+\newline
+La perte des contrastes de couleurs nécessite une différence entre les éléments importants, comme le texte et le fond, qui soit suffisante pour permettre une lecture correcte.
+\newline
+Le confort visuel des personnes ayant un champ de vision réduit peut être grandement accentué en regroupant en zone sémantique les éléments qui ont des points communs ou du moins qui \enquote{vont ensemble}.
+\newline
+Le problème d'hypersensibilité à la lumière ne pose pas trop de contraintes puisqu'il suffit de pouvoir ajuster la luminosité de l'affichage. Il est aussi fortement déconseillé d'utiliser des éléments \enquote{flash} pour attirer l'attention comme l'apparition brusque d'objets fortement contrastés et clignotant par exemple. Cela aurait pour effet d'éblouir la personne sans pour autant lui laisser le temps de s'y habituer puisque l'élément clignote. De plus ce genre d'apparition empêche la concentration de l'utilisateur et pose du coup d'autres problèmes.
+\newline
+La taille des éléments d'interaction va permettre aux personnes qui ont du mal à cibler
+et lire du fait d'un tremblement de l'œil ou d'une difficulté à synchroniser les deux yeux,
+de percevoir de manière plus nette les objets et d'augmenter leur taux de \enquote{clics valides}
+(éléments correctement pointés et cliqués).\\
+La déficience visuelle sera plus davantage approfondie dans le chapitre \ref{chppathologies}
+\section{Les technologies d'assistance}
+Les technologies d'assistance constituent un ensemble d'applications permettant d'adapter l'outil informatique aux personnes ayant une déficience. Ces applications ciblent pour la grande majorité la déficience visuelle.
+\subsection{Le lecteur d'écran}
+Un lecteur d’écran (de l'Anglais : screen reader) est un logiciel destiné aux personnes aveugles
+ou fortement malvoyantes. Ce logiciel a pour but de \enquote{lire les applications}. Autrement dit de
+récupérer les informations qui sont affichées à l'écran afin qu'elles puissent être transmises
+à l'utilisateur sous une autre forme qu'il sera en mesure d'exploiter. Pour récupérer ces
+informations le lecteur d'écran doit pouvoir communiquer avec chaque application
+%Y Ajout de la référence sur la figure suivante.
+(cf. figure \ref{integlecteur}).
+Cette communication est nécessaire puisque l'ensemble des informations utiles à une bonne
+compréhension ne sont pas forcément affichées puisqu'en temps \enquote{normal} la disposition suffit à
+comprendre.
+\newline
+\begin{wrapfigure}{r}{0.45\textwidth}
+\begin{center}
+\includegraphics[width=4cm]{./images/lctecran_boutons.jpg}
+\end{center}
+\caption{Boutons d'interface}
+\vspace{-1cm}
+\end{wrapfigure}
+Les petits boutons contenant une icône que l'on retrouve dans beaucoup d'applications sont un bon exemple d'éléments complètement visuels et dont l'information textuelle doit être récupérée dans la structure même de l'élément en question.\newline
+\vspace{1cm}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[in=180, out=0,
+node/.style={draw,rectangle, minimum height=1.1cm, text width=2cm, text badly centered,rounded corners},
+link/.style={-latex}
+]
+\node[minimum size=0] (origin) {};
+\node [node,left=2cm of origin,minimum height=4cm] (appli) {Application};
+\node[node,above=0.7cm of origin] (interface) {Interface graphique};
+\node[node,right=5cm of interface] (utilvalide){Utilisateur valide};
+\node[node,below=2cm of interface] (lecteur) {Lecteur d'écran};
+\node[right=2.5cm of lecteur,minimum height=0] (tmplecteur) {};
+\node[node,above=0 of tmplecteur] (vocale) {Synthèse vocale};
+\node[node,below=0 of tmplecteur] (braille) {Afficheur braille};
+\node[node,right=5cm of lecteur] (utilnv) {Utilisateur nonvoyant};
+\draw[link] (appli) edge (interface);
+\draw[link] (interface) -- (utilvalide);
+\draw[link] (interface) -- (lecteur);
+\draw[link] (lecteur) edge (vocale);
+\draw[link] (lecteur) edge (braille);
+\draw[link] (vocale) edge (utilnv);
+\draw[link] (braille) edge (utilnv);
+\end{tikzpicture}
+\caption{Intégration d'un lecteur d'écran}
+\label{integlecteur}
+\end{figure}
+%M Il faut référencer la figure du lecteur d'écran dans le texte...
+Un certain nombre de lecteurs d'écran sont disponibles, certains sont libres et d'autres commerciaux. JAWS est un lecteur d'écran intégrant une synthèse vocale (voir ci-après) qui est payant et limité à Windows. Sur cette même plateforme il y a NVDA (Non Visual Desktop Access), une version open source de lecteur d'écran et synthétiseur vocal. Pour ce qui est des systèmes Linux il existe par exemple Orca qui est une application libre.
+\subsubsection{Synthétiseur vocal}
+Un synthétiseur vocal est une application indépendante qui permet de retranscrire vocalement un texte lui étant donné.
+Un grand nombre de personnes unifient le lecteur d'écran et le synthétiseur vocal et pensent qu'il s'agit d'un seul et même programme, Alors qu'il s'agit bien de deux applications distinctes qui peuvent fonctionner l'une et l'autre individuellement.
+\newline
+De la même manière un synthétiseur vocal (aussi appelé moteur vocal) transforme simplement un
+texte en instructions sonores, c'est-à-dire que ce que l'on entend en sortie est une voix qui
+a été couplée au synthétiseur pour générer le son.
+\newline
+Il est donc possible de coupler le synthétiseur et une voix avec le lecteur d'écran afin d'obtenir un retour vocal de ce qui se trouve à l'écran.
+\newline
+Tout comme les lecteurs d'écran il existe plusieurs moteurs vocaux et plusieurs voix pour chacun d'entre eux. On peut citer le moteur sapi (la dernière version est la 5), ViaVoice, etc...
+Pour ce qui est des voix elles fonctionnent très souvent par paires. Pour une version donnée il y aura une voix masculine et une voix féminine, Une des dernières versions de voix pour le moteur sapi 4 était le pack \enquote{Virginie} et \enquote{Sébastien}.
+\subsubsection{Afficheur Braille}
+Un afficheur braille est un dispositif de sortie externe. Il permet la
+transformation d'un texte brut en Braille. L'afficheur est constitué de cellules
+Braille, ces cellules sont constituées des six points standards permettant de
+constituer l'alphabet Braille et de deux points supplémentaires permettant un
+ajout d'information sans perte de place (position du curseur, lettre en
+majuscule, etc). Ces deux points d'information supplémentaire ne sont présents
+que sur le matériel informatique, on ne trouvera jamais ces points sur du
+papier, des livre ou sur les boutons de commandes (ascenseurs). \newline
+Il existe deux grandes catégories d'afficheurs braille, ceux qui sont autonomes et les autres. Les afficheurs autonomes appelés aussi terminaux Braille embarquent avec eux un petit système d'exploitation et un clavier pour la saisie d'informations. Les autres afficheurs dit \enquote{dépendants} doivent être connectés à un ordinateur ou téléphone pour être manipulés depuis une application.
+\newline
+Indépendamment du type d'afficheur il en existe de dimensions différentes qui dépendent du nombre de cellules (caractères) Braille qui s'y trouve. Généralement ces afficheurs disposent de 40 cellules, mais on peut en trouver de 12 cellules (version portable) comme de 80 cellules.
+\newline
+Bien évidement il est possible de coupler ces afficheurs à un lecteur d'écran afin d'obtenir sous forme braille ce qui est à l'écran.
+\subsection{Le magnifier d'écran}
+%M ou MAGNIFIEUR ... ?
+Le magnifier d'écran du terme Anglais ``screen-magnifier'', est une application permettant d'adapter l'affichage de manière à ce que les personnes qui ont encore une acuité visuelle suffisante puissent accéder à l'outil informatique de manière visuelle. Ces applications tendent donc à adapter le maximum d'éléments visuels et cela de manière personnalisable.
+\subsubsection{Agrandissement}
+L'agrandissement aussi appelé zoom ou loupe permet de restituer à l'écran une version agrandie de l'affichage initial. Cet agrandissement peut se présenter généralement sous trois formes différentes. La première consiste en une petite zone autour du pointeur qui donne l'effet d'une loupe physique, la seconde forme est une zone fixe positionnée sur un des bords de l'écran et qui affiche une version agrandie de la zone où se trouve le pointeur. La dernière forme que l'on peut trouver est la version plein écran c'est-à-dire qu'une partie de l'affichage initial est extraite et reprojetée sur l'ensemble de l'écran (plus la partie initiale extraite est petite, plus le grossissement sera important). Certaines des applications disposant du grossissement proposent un lissage de police qui permet d'avoir un texte toujours très lisible même avec un grossissement important.
+\subsubsection{Traitement des couleurs}
+Les personnes déficientes visuelles sont souvent plus à l'aise avec certaines couleurs qu'avec d'autres. Le traitement de couleurs permet d'altérer l'affichage initial de sorte à rendre plus confortable la lecture. Cela peut se traduire par une inversion des couleurs (un des traitement les plus utilisés), qui va permettre de passer le fond de page blanc en fond noir avec un texte clair, cette modification offre une lisibilité bien plus importante aux personnes photophobes (hypersensibilité à la lumière). D'autres thèmes de couleurs sont disponibles dont un certain nombre qui se basent sur une couleur et qui utilisent simplement des variation de celle-ci (un peu comme un affichage en niveau de gris mais avec une couleur).
+\subsubsection{Le pointeur et le curseur}
+Le pointeur et le curseur sont deux éléments mobiles et posent souvent des problèmes de suivi. Certaines de ces applications proposent une solution de compensation par une modification de la taille, de la couleur, de la forme, en ajoutant un cercle autour du pointeur, en faisant apparaître une croix à l'écran représentant la position horizontale et verticale du pointeur et du curseur.
+\newline
+La distinction entre le pointeur et le curseur existe, le pointeur représente la flèche que l'on manipule depuis la souris tandis que le curseur représente la barre clignotante qui indique la position dans un traitement de texte.
+\subsubsection{Changement de contexte de lecture}
+Cette technique est surtout utilisée lors de navigations sur des sites Internet. En effet selon les pages sur lesquelles l'utilisateur est amené à chercher des informations, il peut avoir des difficultés de lecture dues à un usage important de teintes différentes ou bien à une surcharge d'informations. Le changement de contexte de lecture consiste tout simplement à rediriger le flot de données du site vers une application externe permettant de l'afficher plus confortablement. Cette sélection se réalise avec la souris en traçant un cadre englobant la partie à acquérir. Cette zone du site sera donc extraite et affichée dans une simple fenêtre, sans mise en forme, sans les couleurs de fond ni de texte, c'est simple un affichage de texte brut sur lequel le magnifier devient très efficace.
+\subsection{Unification}
+Un certain nombre de magnifier d'écran (surtout commerciaux) intègrent dans les versions récentes un lecteur d'écran avec synthèse vocale. Ce qui permet d'une part de réduire le coût économique et d'autre part d'augmenter la stabilité de ces application (plus de conflits entre le lecteur d'écran et le magnifier au niveau de l'interception des données). Le second avantage est une cohérence des raccourcis clavier entre eux (plus de raccourcis identique au deux applications).
+\section{Intégration de l'accessibilité selon les OS}
+\subsection{Microsoft Windows}
+Depuis la fin des années 90, Microsoft se penche sur le domaine de l'accessibilité. L'API MSAA
+(Microsoft Active Accessibility \cite{MSAA}) est implantée sur les systèmes d'exploitation
+Microsoft sortant à la fin de cette décennie. Cette API avait pour but d'améliorer la
+communication entre lecteurs d'écran (externes) et les applications développées pour Windows.
+Cette API a par la suite évolué en UIA (User Interface Automation \cite{UIA}) qui elle, a été
+implantée sur les systèmes plus récents comme Windows XP, Vista\dots \\
+Dans le dernier système d'exploitation de Microsoft (Windows 8 version non
+finale), cette API disparait au profit d'un lecteur d'écran à part entière connu
+sous le nom de \enquote{narrateur}. Microsoft a décidé de devenir actif dans le
+domaine de l'accessibilité grâce à son \enquote{narrateur}. Jusqu'alors,
+Microsoft laissait toute liberté aux éditeurs de lecteurs d'écran
+\enquote{externes} qui adaptaient comme ils le souhaitaient et surtout comme ils le pouvaient, les applications.\\
+Sur les systèmes d'exploitations de Microsoft pour le grand public les applications peuvent
+obtenir une certification Windows. Les applications qui souhaitent l'acquerir
+doivent répondre à cinq critères dans le cadre de l'accessibilité.\newline
+\begin{itemize}\setlength{\itemsep}{0.4\baselineskip}
+\item Prendre en charge les paramètres de taille, de couleur, de police et de mode d'entrée
+du Panneau de configuration. Les barres de menu, de titre et d'état ainsi que les bordures
+se redimensionnent toutes automatiquement lorsque l'utilisateur modifie les paramètres du
+Panneau de configuration. Aucune autre modification des contrôles ou du code n'est requise
+dans cette application.
+\item Prendre en charge le mode Contraste élevé.
+\item Fournir un accès à toutes les fonctionnalités par le clavier et la documentation
+correspondante.
+\item Exposer l'emplacement du focus clavier de façon visuelle et par programme.
+\item Éviter de communiquer des informations importantes uniquement par voie sonore.\\
+\end{itemize}
+Microsoft en plus de cet ensemble de règles, fournit une procédure de développement pas à pas
+d'une application accessible, en se basant sur un exemple simple d'une application de
+commande de pizza \cite{micprocdev}.\\
+Ces règles vont permettre d'avoir une accessibilité correcte à la base, pour les personnes ayant
+une déficience légère et n'utilisant pas d'application d'adaptation. Elles vont également
+permettre l'utilisation efficace d'applications tierces de compensation.
+\newline
+Sur ces systèmes d'exploitation l'accessibilité pour les personnes nécessitant une adaptation
+importante passe avant tout par une série d'applications \enquote{externes} qui, comme n'importe quelle
+autre application, doivent être installées par l'utilisateur. Ces applications disposent d'un
+intercepteur
+qui va permettre de récupérer les informations nécessaires à l'utilisation auprès des programmes
+auxquels il accéde, afin de les restituer sous une forme qui sera facilement utilisable pour lui.
+Le principal inconvénient est qu'avec cette approche toutes les données ne sont pas disponibles.
+Une application de CAO (Conception Assistée par Ordinateur), DAO (Dessin Assisté par Ordinateur)
+utilisée en dessin industriel par exemple, communique avec des couches extrêmement basses
+afin d'accéder plus rapidement à la carte vidéo/graphique, ce qui va avoir pour incidence de
+passer au travers de certaines applications d'adaptation.\\
+Un autre problème qui apparait est une certaine instabilité du système résultant de conflits
+entre ces applications proches du pilote graphique et d'autres applications également proches (jeux
+vidéo, modélisation 3D, simulation, lecteurs multimédia, etc). De plus, ces technologies d'assistance
+étant développées par des sociétés différentes et du fait qu'elle cherchent toutes à accéder aux mêmes
+informations, la compatibilité entre celles-ci est loin d'être garantie.\\
+Si un développeur veut réaliser une application accessible il lui faut connaître l'ensemble des
+éléments qui doivent être pris en charge et renseignés fournis par Microsoft, et insérer les
+mêmes dans son application.
+C'est un certain inconvénient puisque cela augmente fortement le temps de
+réalisation d'une application. Un IDE comme \enquote{Visual Studio} devrait être en mesure de simplifier
+cela, puisqu'il s'agit de l'IDE du système même. C'est-à-dire que pour l'évènement supplémentaire
+qui est déclenché quand l'utilisateur modifie ses préférences, il devrait être directement mis dans la
+boucle d'évènements qui est générée automatiquement lors de la création d'un nouveau projet sous
+\enquote{Visual Studio}. Des avertissements pourraient être affichés lors de la vérification du
+code ou de la compilation lorsque les noms ou descriptions des éléments (comme ceux des
+formulaires) ne sont pas renseignés.
+\subsection{Apple Mac OS}
+L'approche est très différente, puisqu'il s'agit d'avoir tout le matériel sortant d'usine qui soit
+accessible. Que ce soit les ordinateurs fixes, les ordinateurs portables comme les téléphones
+portables ou les tablettes, ils sont tous équipés d'un lecteur d'écran et d'un magnifier. Pour
+avoir cela l'adaptation est réalisée directement dans le noyau système. Les résultats en
+pratique sont bien meilleurs que sous Windows. La différence principale avec les applications
+d'adaptation que l'on peut trouver sous les systèmes Windows est qu'il n'est pas possible de
+\enquote{scripter} le lecteur d'écran pour permettre un accès à des parties inaccessibles
+d'une application.
+\subsection{Systèmes UNIX hors Mac}
+L'adaptation dépend fortement de la distribution utilisée et aussi de l'interface dont
+la personne va se servir. L'interface \enquote{Gnome} avec {enquote{Compiz} permet une adapation
+visuelle de l'écran en terme
+de couleur et de zoom. D'autres interfaces ne disposeront en aucune manière d'adaptations.
+Certaines distributions comme Ubuntu utilisant Gnome, embarque d'origine un lecteur d'écran et
+un magnifier accessibles à la fois depuis la version \enquote{Live} et sur la version installée.
+\subsection{Généralités}
+Sur les systèmes UNIX en général, l'ensemble des applications développées grâce
+à l'API du système sont accessibles sans difficultés, contrairement à Windows
+pour lequel on peut trouver des applications réalisées avec l'API WIN32 qui ne
+sont pas accessibles, alors qu'elles devraient l'être. Comme exemple de
+différence entre systèmes, l'application \enquote{Blender} de modélisation 3D
+est optimisée pour le rendu. Sous Windows cette application est inutilisable
+avec la quasi totalité des magnifiers d'écran puisque l'application injecte les
+données directement dans la carte graphique pour avoir de meilleures
+performances, et que le magnifier agit avant. Cette même application fonctionne
+très bien sous Linux et les magnifiers pré-installés ou non sur le système. Ce
+logiciel est effectivement très orienté graphisme et est utilisé par une
+proportion de la population assez faible. Mais le petit lecteur multimédia VLC
+qui est relativement connu et reconnu, se comporte exactement de la
+même manière. \\
+Au premier abord l'intégration dans le noyau aurait donc tendance à être relativement plus
+efficace et certainement plus pertinente mais empêche pour le moment les bénéfices pouvant
+être apportés par les scripts.
+\section{Étude du comportement d'applications basiques dans le contexte de l'accessibilité}
+\subsection{Les applications Java}
+Java a pour avantage de permettre le développement rapide d'application graphiques qui se
+veulent multi-plateformes. Il utilise des éléments graphiques qui sont des éléments standard dans
+chaque systèmes d'exploitation. Il tente également de s'intégrer au mieux au style visuel des OS en
+utilisant par exemple la barre de titre du système et non la sienne. \\
+Sous Unix les applications développées en Java intègrent la barre de titre
+du système d'exploitation lui même, mais les éléments composants le contenu de la fenêtre sont
+à priori dessinés par l'application. Les préférences utilisateurs ne sont pas
+prises en compte dans
+l'application, ni au chargement ni pendant l'exécution de celle-ci. Le fond de la fenêtre n'est
+lui non plus pas affecté par les changements de préférences de l'utilisateur dans les paramètres
+du système d'exploitation. \\
+Pour ce qui concerne l'accès au contenu de la fenêtre par les lecteurs d'écran,il n'y a pas de
+problème, toutes les informations sont bien retournées.
+%M supprimer ce qui suit !
+%(à tester avec plus d'éléments, de types
+%d'éléments différents)
+\subsection{Développement avec l'API WIN32}
+Le développement d'application en utilisant directement l'API Windows (WIN32) a l'avantage de
+donner des applications qui s'adaptent relativement bien aux préférences de l'utilisateur définies
+dans la configuration du système d'exploitation. Même si certaines instructions doivent être
+manuellement ajoutées pour rendre l'application complètement adaptable.
+\subsection{Développement avec l'API \enquote{LINUX}}
+Sur le même principe qu'avec l'API Windows, le développement d'applications avec l'API de
+Linux
+%M l'API est insuffisant ! il faudrait préciser l'API graphique et pour Unix
+%préciser X/Motif, pour Windows est-ce toujours les MFC ???
+permet d'avoir des applications nativement adaptables, même si des fonctionnalités
+doivent être ajoutés pendant le développement pour avoir une application pleinement adaptable.
+\subsection{Développement avec l'API Mac}
+Apple tend à avoir des produits accessibles dès la sortie de l'usine, on s'attend donc à ce que
+de petites applications très basiques se comportent de manière exemplaires. Par manque d'un support
+avec ce système d'exploitation il n'a pas été possible d'aller plus loin dans l'étude du
+comportement de ces applications.
+\section{Importance du contexte dans la compréhension}
+\label{sctcontexte}
+La forme, la disposition, les couleurs utilisées forment ce que l'on appelle un contexte.
+Ces choix ne sont pas fait au hasard, ils ont pour but de faciliter la compréhension et
+l'utilisation de l'outil. Lorsqu'une personne est atteinte d'une déficience visuelle, la
+perception du contexte peut en être plus ou moins altérée. Les logiciels d'assistances comme
+les lecteurs d'écran permettent d'obtenir l'information sous d'autres formes que visuelle, mais
+dans tout les cas, l'information est transcrite linéairement. Des études ont été réalisées sur
+la transcription de la disposition des éléments à l'écran pour que les personnes non-voyantes
+puissent avoir \enquote{sous la main} le contexte de présentation des différent composants
+\cite{theseyoussef}.\\
+Pour les personnes mal-voyantes, c'est un peu la même chose. Certain magnifier d'écran
+offrent un traitement de couleurs inversées un peu particulier. Le traitement
+\enquote{couleurs inversées}
+est un des plus utilisés surtout dans le cas de rétinite pigmentaire, ce traitement permet de
+réduire l'éblouissement. Une variante de ce traitement existe donc sur certains magnifiers,
+elle consiste en l'inversion de brillance, pour faire simple le blanc devient noir et le noir
+deviens blanc, mais les couleurs ne changent pratiquement pas. Cela permet d'une certaine manière
+de conserver un contexte. L'inconvénient et que le résultat n'est pas toujours lisible. Par
+exemple sur une page Web standard le fond est blanc et les liens sont bleu foncé, si on applique
+ce traitement, le fond devient noir et les liens restent bleu, le contraste entre ces deux
+éléments peut-être insuffisant pour certaines personnes.\\
+Les navigateurs proposent généralement un mode d'accessibilité. Il consiste,
+pour la plupart, à la désactivation de certain éléments comme la feuille de
+style ou les couleurs ou bien à forcer la mise en place d'une feuille de style
+prédéfinie. Cette solution est fonctionnelle mais ne permet pas de garder un
+contexte de couleurs et de style, seule la disposition reste inchangée dans le
+meilleurs des cas.\\
+L'objectif serait donc d'altérer l'apparence des applications tout en conservant le contexte tant
+au niveau de la disposition qu'au niveau des couleurs et styles d'affichages.
+\chapter{Les pathologies visuelles}
+\label{chppathologies}
+\section{Ensemble de pathologies support}
+Un certain nombre de pathologies visuelles sont qualifiées de \enquote{prioritaires} du fait du nombre de personnes atteintes et de la gravité de ces dernières. Ces pathologies peuvent être classées suivant plusieurs catégories selon qu'elles soient stables, dégénératives, qu'elles soient un simple défaut de vision ou bien une atteinte profonde de la vision.\\
+Cet ensemble va servir de support pour la classification et la modélisation d'adapatations pour la modification visuelle de l'affichage.\\
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+node/.style={draw,rectangle, minimum height=1.1cm, text width=2.6cm, text badly centered,rounded corners},
+link/.style={-latex}
+]
+\node [minimum height=2cm] (origin) {};
+\node[node,above=2cm of origin] (def) {Déficience visuelle};
+\node[node,left=0.8cm of origin.north] (defaut){Défauts de vision};
+\node[node,right=0.8cm of origin.south] (basse){Basse vision};
+\node[node,below=2cm of basse] (stable){Stable};
+\node[node,left=1.2cm of stable] (degen){Dégénérative};
+\node[below=2cm of defaut,minimum width=0.2cm] (tmpdef) {};
+\node[node,left=1.5cm of defaut] (myopie){Myopie};
+\node[node,below=0.2cm of myopie] (hypermetropie){Hypermétropie};
+\node[node,below=0.2cm of hypermetropie] (astigmatisme){Astigmatisme};
+\node[node,right=0.2cm of astigmatisme] (presbytie){Presbytie};
+\node[right=1.5cm of stable,minimum height=1.1cm, minimum width=2.6cm] (tmpstable) {};
+\node[node,below=0.2cm of tmpstable] (nevrite){Névrite optique};
+\node[node,below=0.2cm of nevrite] (glaucome){Glaucome};
+\node[node,left=0.2cm of glaucome] (hemianopsie){Hémianopsie homonyme};
+\node[node,left=1.5cm of degen] (rp){Rétinopathie pigmentaire};
+\node[node,below=0.2cm of rp] (rdiab){Rétinopathie diabétique};
+\node[node,below=0.2cm of rdiab] (cataracte){Cataracte};
+\node[node,right=0.2cm of cataracte] (dmla){DMLA};
+\node[node,right=0.2cm of dmla] (amaurose){Amaurose congénitale};
+\draw[link] (def) -- (defaut);
+\draw[link] (def) -- (basse);
+\draw[link] (basse) -- (stable);
+\draw[link] (basse) -- (degen);
+\draw[link] (defaut) -- (myopie);
+\draw[link] (defaut) -- (astigmatisme.north east);
+\draw[link] (defaut) -- (hypermetropie);
+\draw[link] (defaut) -- (presbytie);
+\draw[link] (stable) -- (glaucome.north west);
+\draw[link] (stable) -- (hemianopsie);
+\draw[link] (stable) -- (nevrite);
+\draw[link] (degen) -- (rp);
+\draw[link] (degen) -- (rdiab);
+\draw[link] (degen) -- (amaurose);
+\draw[link] (degen) -- (dmla);
+\draw[link] (degen) -- (cataracte.north east);
+\end{tikzpicture}
+\caption{Classification de l'ensemble des pathologies support}
+\end{figure}
+Cette classification à pour objectif d'améliorer la compréhension de la déficience visuelle et de garder en tête le type de pathologie que l'on traite et son comportement évolutif ou non.
+\section{Les relations pathologies - symptômes}
+Chacune des pathologies citées dans la section précédente implique un ensemble d'altérations à la fois sur la perception et sur le champ visuel. La liste qui suit n'est pas exhaustive mais recouvre la majorité des cas réels.\\
+Pour effectuer des modifications sur un affichage visuel afin de l'adapter à la déficience très particulière d'une personne, il est important de bien analyser le comportement, les causes et les \glspl{symptome} de la pathologie. Cette liste a pour objectif la création d'une image mentale de l'impact d'une pathologie sur la perception des couleurs, la perception des contrastes ou la modification du champ visuel que ce soit pour la vision de près ou bien pour la vision de loin. Cette représentation passe par de petites illustrations même si celles-ci ne sont là qu'à titre indicatif. Ces illustrations ne représentent pas strictement ce qu'une personne voit lorsqu'elle est atteinte par cette pathologie, puisqu'un phénomène de compensation entre en jeu et dépend de chaque individu.\\
+\newline
+\subsection{Les défauts de vision}
+Amétropie est le terme général qui désigne l'ensemble des troubles de réfraction oculaire. Ceux-ci peuvent être partiellement ou totalement corrigés par de l'optique.\\
+\begin{enumerate}
+\item La myopie
+\\Elle est souvent due à une distance entre la cornée et la rétine trop importante. Cela a pour effet de former l'image en avant de la rétine. Une personne atteinte de myopie sera en difficulté seulement en vision de loin et non pas en vision de près \cite{descpaterrrefrac}.
+\\La vision de loin est trouble, floue et nécessite un effort de concentration pour mieux percevoir les objets. La myopie peut être corrigée par des lentilles (verres, lentilles de contact).
+\newline
+\item L'hypermétropie
+\\A l'inverse de la myopie dans le cas d'une hypermétropie, la distance entre la cornée et la rétine est insuffisante, l'image se forme par conséquent en arrière de la rétine. La vision de loin est donc correcte et c'est la vision de près qui est affectée \cite{descpaterrrefrac}.
+\\Les \glspl{symptome} sont identiques à ceux de la myopie mais appliqués à la vision de près.
+\newline
+\item L'astigmatisme
+\\Elle est due à une mauvaise courbure de la cornée, celle-ci est de forme ovale au lieu d'être ronde. Dans ce cas pathologique, la vision de loin comme la vision de près en sont affectées.
+\\Cela a pour conséquence de rendre imprécise (floue, petits détails non visible) la vision de loin ainsi que celle de près.
+\newline
+\item La presbytie
+\\Il s'agit d'une altération du fonctionnement du cristallin, la déformation de ce dernier est limitée et amène à une formation de l'image en avant ou en arrière de la rétine selon le contexte (comme un appareil photo dont l'autofocus aurait un dysfonctionnement et n'arriverait pas à faire la mise au point correctement) \cite{descpaterrrefrac}.
+\\La vision de loin comme celle de près en sera affectée, il s'agit d'un manque de netteté, d'une image imprécise.\\
+\end{enumerate}
+\subsection{La basse vision}
+\begin{enumerate}
+\item La DMLA
+\\La dégénérescence Maculaire Liée à l'âge (DMLA) survient généralement sur un œil sein. Elle
+apparaît après l'âge de 50 ans et provoque des lésions sur la rétine maculaire. C'est-à-dire
+qu'elle attaque la partie responsable de la vision centrale \cite{descpatdmla}.\\
+\begin{figure}[H]
+\begin{minipage}{0.5\textwidth}
+\centering
+Originale \\ \vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/original.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+DMLA avancée\vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/DMLAavance.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}DMLA évoluée\vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/DMLAevolue.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Originale \enquote{texte}\\ \vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/originalText.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}DMLA avancée \enquote{texte}\\ \vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/DMLAavanceText.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}DMLA évoluée \enquote{texte}\\ \vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/DMLAevolueText.jpg}
+\end{minipage}
+\caption{Impact de la DMLA}
+\end{figure}
+Elle induit une déformation de la vision centrale (ondulation) ainsi que des troubles dans la perception des contrastes et des couleurs.
+\newline
+\item La cataracte
+\\La cataracte arrive le plus souvent avec l'âge, elle peut parfois se produire chez l'enfant ; dans ce cas, elle est congénitale. Il s'agit d'une opacification du cristallin qui entraine une diminution de la quantité de lumière qui atteint la rétine \cite{descpatcataracte}.\\
+\begin{figure}[H]
+\begin{minipage}{0.5\textwidth}
+\centering
+Originale \\ \vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/original.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+Cataracte\vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/cataracte.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Originale \enquote{texte}\\ \vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/originalText.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Cataracte \enquote{texte}\\ \vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/cataracteText.jpg}
+\end{minipage}
+\caption{Impact de la cataracte}
+\end{figure}
+Une baisse progressive de la vision est constatée surtout pour des distances importantes. Elle provoque également une diminution des contrastes, donne une impression d'un voile devant les yeux. Elle gébère aussi une augmentation de la sensibilité à la lumière et donc des éblouissements.
+\newline
+\item La rétinopathie diabétique
+\\Elle regroupe un ensemble de lésions de la rétine caractéristiques des personnes ayant un diabète sucre depuis plusieurs années. Dans les cas de rétinopathies diabétiques l'évolution est prédictible. Il y a en premier lieu apparition d'occlusions et de dilatations des vaisseaux sanguins de la rétine, puis, l'évolution continue avec une rétinopathie proliférative avec l'apparition de néo-vaisseaux. L'œdème qui peut apparaître dans les phases finales diminue considérablement la vision \cite{descpatretdiab}.\\
+\begin{figure}[H]
+\begin{minipage}{0.5\textwidth}
+\centering
+Originale \\ \vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/original.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+Rétinopathie diabétique\vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/maculaireDiabetique.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Originale \enquote{texte}\\ \vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/originalText.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Rétinopathie diabétique \enquote{texte}\\ \vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/maculaireDiabetiqueText.jpg}
+\end{minipage}
+\caption{Impact de la rétinopathie diabétique}
+\end{figure}
+\par
+La rétinopathie diabétique produit une perte de la vision des détails et engendre la présence de tâches mobiles sur la rétine dues à des rejets des vaisseaux sanguins.
+\newline
+\item Le glaucome
+\\Le glaucome est une perte acquise des cellules rétiniennes ganglionnaires à des niveaux bien plus importants qu'une perte \enquote{normale} due à l'âge. Le nerf optique est également atteint par une atrophie de ce dernier. Le glaucome mène à long terme à une déficience visuelle irréversible \cite{descpatglaucome}.\\
+\begin{figure}[H]
+\begin{minipage}{0.5\textwidth}
+\centering
+Originale \\ \vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/original.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+Glaucome évolué\vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/glaucomeevolue.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.6cm}Glaucome très évolué\vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/glaucometresevolue.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Originale \enquote{texte}\\ \vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/originalText.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Glaucome évolué \enquote{texte}\vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/glaucomeevolueText.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Glaucome très évolué \enquote{texte}\vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/glaucometresevolueText.jpg}
+\end{minipage}
+\caption{Impact du glaucome}
+\end{figure}
+Cette pathologie entraine une perte de la vision périphérique suivie de celle de la vision centrale.
+\newline
+\item La rétinopathie pigmentaire
+\\Il s'agit d'un terme qui regroupe un ensemble de maladies génétiques de l'œil, maladies qui affectent les photorécepteurs dont l'œil dispose (cônes, bâtonnets) ainsi que l'épithélium pigmentaire. Les premiers symptômes sont une baisse de la vision nocturne puis un rétrécissement du champ visuel, la perte de la vision centrale arrive en dernier. Cette dégénérescence est due à une mutation des cellules de la rétine. Si cette mutation atteint tous les types de cellules alors la perte de vision est totale (cécité).\\
+\begin{figure}[H]
+\begin{minipage}{0.5\textwidth}
+\centering
+Originale \\ \vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/original.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+Rétinopathie pigmentaire\vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/retinitePigmentaire.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Originale \enquote{texte}\\ \vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/originalText.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Rétinopathie pigmentaire \enquote{texte}\vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/retinitePigmentaireText.jpg}
+\end{minipage}
+\caption{Impact de la rétinite pigmentaire}
+\end{figure}
+La rétinopathie pigmentaire engendre une diminution progressive de la vision, une perte de la vision périphérique, une diminution des contrastes, une augmentation de la sensibilité à la lumière. L'adaptation au changement de lumière est difficile et procure une perte de la vision nocturne. Cette baisse progressive se termine une fois la cécité atteinte.
+\newline
+\item L'albinisme \\
+L'albinisme est une maladie génétique héréditaire qui est à
+l'origine d'une faible production de mélanine voire même une
+production nulle. Elle touche donc l'ensemble du corps humain et
+notamment l'iris et la rétine. Cette dernière a un déficit
+important en récepteurs et celui-ci est d'autant plus important que
+l'on se rapproche de la fovéa. Le nerf optique peut également
+présenter une hypoplasie et la distribution des fibres nerveuses
+entre les deux yeux est anormale. \\
+La vision de près est faible mais des aides visuelles permettent une
+acuité relativement correcte. La vision de loin est très diminuée
+(en dessous de $4/10^{ème}$) \newline
+\item La névrite optique
+\\Cette pathologie correspond à une inflammation du nerf optique pouvant entrainer une perte partielle ou bien totale de la vision. Cette inflammation du nerf peut se trouver en arrière de l'œil comme à la base du nerf au niveau du globe oculaire.\\
+\begin{figure}[H]
+\begin{minipage}{0.5\textwidth}
+\centering
+Originale \\ \vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/original.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+Névrite Optique\vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/nevriteOptique.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Orignale \enquote{texte}\\
+\includegraphics[width=4.4cm]{./images/pathologies/originalText.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Névrite Optique \enquote{texte}\vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/nevriteOptiqueText.jpg}
+\end{minipage}
+\caption{Impact de névrite optique}
+\end{figure}
+Des zones de non vue apparaissent dans le champ de vision, les couleurs et contrastes deviennent difficiles à distinguer tout comme les objets lorsqu'ils se trouvent en pleine lumière.
+\newline
+\item L'hémianopsie homonyme
+\\Cette pathologie est causée par une mauvaise transmission de l'information visuelle au cerveau. Des affections du cerveau incluant les tumeurs, les maladies inflammatoires ainsi que les traumatismes peuvent déclencher une hémianopsie. Elle est le plus souvent due à un accident vasculaire cérébral (AVC).\\
+\begin{figure}[H]
+\begin{minipage}{0.5\textwidth}
+\centering
+Originale \\ \vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/original.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+Hémianopsie\vspace{0.2cm}
+\includegraphics[width=6cm]{./images/pathologies/hemianopsie.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Orignale \enquote{texte}\\ \vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/originalText.jpg}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\centering
+\vspace{0.4cm}Hémianopsie \enquote{texte}\vspace{0.1cm}
+\includegraphics[width=4.4cm]{./images/pathologies/hemianopsieText.jpg}
+\end{minipage}
+\caption{Impact de l'Hémianopsie homonyme}
+\end{figure}
+Elle correspond à une perte de la moitié du champ visuel de la
+personne, et ce de manière symétrique aux deux yeux. Cette perte
+apparaît suivant un plan vertical, donc la vision sera soit altérée à
+gauche, soit à droite. Cela rend difficile la lecture et les personnes
+atteintes sont souvent surprises par des taches surgissant \enquote{de nulle part}.
+\\
+\end{enumerate}
+Cette liste non exhaustive recouvre un grand nombre de pathologies et \glspl{symptome} amenant des difficultés dans l'utilisation de l'outil informatique pour lesquelles on cherche à apporter des solutions cohérentes.
+\section{Définitions des relations symptômes - adaptations}
+La sous section précédente visite une petite partie des nombreuses pathologies visuelles afin
+d'obtenir un ensemble de \glspl{symptome} communs ou non à plusieurs pathologies.\\
+On constate que des pathologies différentes peuvent avoir des \glspl{symptome} identiques mais
+aussi que des individus atteints par un même type de déficience visuelle pourront avoir chacun un seul
+ou plusieurs \glspl{symptome}, liés à cette pathologie, qui ne seront pas forcément identiques aux
+autres personnes. Il est par conséquent plus pertinent de traiter des ensembles de
+\glspl{symptome} pour déterminer des adaptations cohérentes plutôt que d'utiliser les
+pathologies qui créeront de toute évidence des cycles et une redondance (doublons dans
+les \glspl{symptome}).\\
+La prochaine étape consistera donc à extraire tous les symptômes des pathologies afin d'obtenir un ensemble exhaustif.
+\subsection{Extraction des symptômes}
+La liste de \glspl{symptome} obtenue dans le tableau suivant par le
+biais de documents scientifiques, n'est pas exhaustive puisque
+d'autres \glspl{symptome} peuvent être induits par des pathologies
+connues à ce jour et non traitées ici. Néanmoins cette liste couvre
+un ensemble de \glspl{symptome} bien connus et répandus. Elle
+forme donc une base solide dans cette étude pour l'élaboration d'une
+méthodologie d'adaptation.\\
+Utiliser un ensemble support (ensemble réduit de \glspl{symptome}) permet de simplifier les
+traitements et d'obtenir un méthodologie moins étouffée par la surcharge d'informations.
+Cette méthodologie d'adpatation doit par conséquent prendre cet élément en compte, elle ne devra
+pas dépendre de ce nombre précis de \glspl{symptome} mais prendre en compte une liste qui sera
+ammenée à changer au fil du temps.
+L'ajout de \glspl{symptome} et par conséquent potentiellement d'adaptations pourra se faire par
+complément ou extension de la méthodologie mise en place. \\
+Le tableau suivant est une simplification de l'ensemble des informations récupérées précédemment.
+Il indique pour chaque pathologies les \glspl{symptome} qui peuvent lui être associés.
+Un \gls{symptome} qui est associé à une pathologie ne signifie pas que l'individu atteint par cette
+pathologie aura obligatoirement ce dernier, cela signifie simplement qu'il y a une probabilité
+importante qu'il l'exprime.
+\label{sctpathtableau}
+\begin{landscape}
+\begin{center}
+\small
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}
+\hline
+& myopie & hymetro & astygma & presbytie & DMLA & RetiniteP & RetiniteD & cataracte
+& albinisme & nevrite Opt
+\\ \hline
+FlouPrès & &X&X&X& & & & & & \\ \hline
+FaiblePrès & & & & &X& & & &X& \\ \hline
+FlouLoin &X& &X&X& & & & & & \\ \hline
+FaibleLoin & & & & &X& & &X&X& \\ \hline
+DeformCentrale & & & & &X& & & & & \\ \hline
+PerteCentrale & & & & & & &X& & & \\ \hline
+FaibleCentrale & & & & & & &X& & & \\ \hline
+PartielleCentrale & & & & &X& &X& & &X\\ \hline
+PbPerceptionContrastes & & & & &X& & & & &X\\ \hline
+DiminutionContrastes & & & & &X&X& &X& & \\ \hline
+PbPerceptionCouleurs & & & & &X& & & & & \\ \hline
+PertePériphérique & & & & & &X& & & & \\ \hline
+PerteVisionSupInf & & & & & & & & & & \\ \hline
+PerteVisionLaterale & & & & & & & & & & \\ \hline
+Eblouissement & & & & & &X& &X& &X\\ \hline
+PerteVision nocture & & & & & &X& & & & \\ \hline
+PbAdaptCgtLuminosité & & & & & &X& & & & \\ \hline
+TâchesMobiles & & & & & & &X& & & \\ \hline
+& hemiano & glcm & glcm PAO & glcm PAF & glcm cgnt & aniride & neurop Opt
+& Ptose PSup & Path macu &
+\\ \hline
+FlouPrès & & & & & & & & & &\\ \hline
+FaiblePrès & & & & & &X& & &X&\\ \hline
+FlouLoin & & & &X& & & & & &\\ \hline
+FaibleLoin & & & & & &X& & & &\\ \hline
+DeformCentrale & & & & & & & & & &\\ \hline
+PerteCentrale & &X& & & & & & & &\\ \hline
+FaibleCentrale & & & & & & & & & &\\ \hline
+PartielleCentrale & & & & & & & & &X&\\ \hline
+PbPerceptionContrastes & & & & & & & & & &\\ \hline
+DiminutionContrastes & & & & & & & & & &\\ \hline
+PbPerceptionCouleurs & & & & & & & & & &\\ \hline
+PertePériphérique & &X& & & & &X& & &\\ \hline
+PerteVisionSupInf & & & & & & & &X& &\\ \hline
+PerteVisionLaterale &X& & & & & & & & &\\ \hline
+Eblouissement & & & & & & & & & &\\ \hline
+PerteVision nocture & & & & & & & & & &\\ \hline
+PbAdaptCgtLuminosité & & & & & & & & & &\\ \hline
+TâchesMobiles & & & & & & & & & &\\ \hline
+\end{tabular}
+\end{center}
+\end{landscape}
+\newpage
+\small{
+Abréviations utilisées.\\
+\begin{tabular}{l l}
+\textbf{aglcm} & Glaucome\\
+\textbf{aglcm PAO} & Glaucome primitif à angle ouvert\\
+\textbf{aglcm PAF} & Glaucome primitif à angle fermé\\
+\textbf{aglcm cgnt} & Glaucome congénital\\
+\textbf{aneuro Opt} & Neuropathies optiques\\
+\textbf{apath} & Pathologies\\
+\textbf{ahémiano} & Hémianopsie\\
+\textbf{astigma} & Astigmatisme
+\end{tabular}}
+\normalsize
+\subsection{Classification des symtômes}
+\label{refpat}
+La \enquote{difficulté de perception des contrastes} et la \enquote{diminution des
+constrastes} sont deux \glspl{symptome} qui sont très proches et qui
+portent sur le même concept, celui du contraste. Un certain nombre
+d'autres éléments peuvent être regroupés selon un ensemble de concepts
+finis. Dans la majorité des cas, leur sémantique permet de les
+classer en groupes. Tous les \glspl{symptome} d'un même
+groupe vont pouvoir être traités par un mécanisme d'adaptation commun.\\
+Ce schéma représente un classement possible des différents \glspl{symptome} selon un nombre réduit
+de concepts fondamentaux.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[out=0,in=180,
+node/.style={draw,rectangle, minimum height=0.6cm, text width=3.8cm, text badly centered,rounded corners},
+link/.style={-latex}
+]
+\node[node] (neat) {Neatness};
+\node[node, right=5cm of neat.north east] (away) {Blur away};
+\node[node, right=5cm of neat.south east] (near) {Blur Near};
+\node[node,below=2cm of neat] (bright) {Brightness};
+\node[node, right=5cm of bright.south east] (adapt) {light changes adaptation};
+\node[node, above=0 of adapt] (dazzle) {Dazzle};
+\node[node,below=2cm of bright] (contrast) {Contrast};
+\node[node, right=5cm of contrast] (ctreduc) {Contrast reduction};
+\node[node, above=0 of ctreduc] (ctpercep) {Contrast perception};
+\node[node, below=0 of ctreduc] (ctcolor) {Color perception};
+\node[node,below=2cm of contrast] (blind) {Blind area};
+\node[node, right=5cm of blind.north east] (lcentral) {Central loss};
+\node[node, above=0 of lcentral] (lfloat) {Floatting objects};
+\node[node, right=5cm of blind.south east] (lperiph) {Perpheral loss};
+\node[node, below=0 of lperiph] (llate) {Lateral loss};
+\node[node,below=2cm of blind] (deform) {Deformation};
+\node[node, right=5cm of deform] (cdeform) {Central deformation};
+\path[draw,link] (blind) edge (lcentral.west);
+\path[draw,link] (blind) edge (lperiph.west);
+\path[draw,link] (blind) edge (lfloat.west);
+\path[draw,link] (blind) edge (llate.west);
+\path[draw,link] (contrast) edge (ctpercep.west);
+\path[draw,link] (contrast) edge (ctcolor.west);
+\path[draw,link] (contrast) edge (ctreduc.west);
+\path[draw,link] (neat) edge (away.west);
+\path[draw,link] (neat) edge (near.west);
+\path[draw,link] (deform) edge (cdeform.west);
+\path[draw,link] (bright) edge (dazzle.west);
+\path[draw,link] (bright) edge (adapt.west);
+\end{tikzpicture}
+\caption{Classification des symptômes}
+\end{figure}
+\newpage
+\subsection{Treillis de concepts}
+Les treillis constituent un type particulier de graphes qui se lisent de haut en bas et de bas
+en haut. ils représentent un ensemble de concepts liés par des relations binaires. Dans notre
+cas des pathologies visuelles, le treillis est réalisé à partir du tableau binaire
+pathologies/\glspl{symptome} (cf. section \ref{sctpathtableau}). Les pathologies visuelles
+sont \enquote{héritées} verticalement et les \glspl{symptome} sont \enquote{hérités} toujours
+verticalement mais dans l'autre sens.\\
+\begin{figure}[H]\centering
+\includegraphics[width=21.1cm,angle=90,origin=c]{./images/pathologies/treillis.jpg}
+\vspace{-0.2cm}
+\caption{Treillis de concept}
+\vspace{-1cm}
+\end{figure}
+L'analyse formelle de concepts sur les treillis (de Gallois) permet d'extraire des informations
+difficilement visibles sur un ensemble non trié de données. Les informations que l'on peut
+extraire sont par exemple des règles d'ordre général (sur l'ensemble fourni de données).\\
+De ce treillis de concepts construit à partir des données recueillies par l'analyse précédente
+des pathologies visuelles, il est possible d'en tirer plusieurs règles générales, principalement
+d'implication. \\
+\begin{itemize}
+\item On constate que les problèmes de perception des couleurs est lié aux problemes
+de perception des contrastes.
+\item Quand il y a une déformation centrale, il y a aussi un problème de
+perception des couleurs et donc un problème de perception des contrastes (point précédent).
+\item La perte de vision nocturne s'accompagne toujours de perte de vision périphérique.\\
+\end{itemize}
+Ainsi cela permettrait, après une description et une analyse plus
+complète, de prévoir des groupes d'adaptation qu'il est intéressant de
+proposer ensemble, plutôt que de laisser un utilisateur choisir les
+adaptations une par une. Étant donné la quantité d'adaptations possibles,
+si l'utilisateur doit les choisir une à une, alors cela va provoquer un
+énervement, un rejet ou autre qui va avoir pour conséquence des choix peu précis voire
+même un abandon.
+\chapter{Notions de bases sur les couleurs}
+\label{chpnotionscouleurs}
+La couleur est la perception subjective que possède l'œil pour une ou plusieurs fréquences d'ondes
+lumineuses, avec une amplitude donnée. La sensation de couleur, pour un être humain, correspond
+à un mélange pas forcément équitable des trois couleurs primaires rouge, bleue et verte, qui correspondent aux absorptions
+maximales pour chacun des types de cônes de la rétine. L'intensité totale perçue par ces
+cellules sensorielles correspond à la notion de luminosité (clair ou sombre), et les
+intensités relatives perçues restituent la couleur. Si les couleurs vives se démarquent
+des autres, la limite entre ces couleurs n'est pas précise. Pour l'œil humain, il y a un
+continuum de couleurs dans un espace à trois dimensions, ce qui rend difficile sa
+représentation sur une surface comme une feuille ou un écran d'ordinateur.
+\section{La perception}
+L'œil humain est constitué de plusieurs éléments qui, ensemble,
+permettent de voir. La partie importante dans la perception des
+couleurs est la rétine. Elle est constituée d'une multitude de cellules
+photoréceptrices. Ces cellules ne sont pas toutes identiques, elle sont
+spécialisées pour un but précis.\\
+Deux catégories de cellules tapissant la rétine existent, les cônes et
+les bâtonnets. Les batônnets sont responsables de la perception
+lumineuse (intensité), ce sont eux qui nous permettent de voir la
+nuit. Les cônes eux, sont responsables de la perception des couleurs.
+Il existe trois types de cônes, chacun d'entre eux permettant la perception
+d'une couleur.\\
+L'œil humain est capable de distinguer :
+\begin{itemize}\setlength{\itemsep}{0.4\baselineskip}
+\item les sources lumineuses, qui peuvent avoir une couleur ou non ;
+\item les couleurs pigmentaires ou chimiques car elles sont produites par
+la présence de colorant ou de pigment à l'intérieur de la matière
+observée. Ces colorants ou pigments absorbent une partie de la
+lubmière blanche arrivant sur l'objet et de ce fait ne permet la
+réfraction que d'une certaine partie du spectre lumineux. La
+peinture est un exemple de matière perçue comme étant de couleur
+grâce à des pigments.
+\item les couleurs structurelles ou physiques, provoquées par des
+phénomènes d'interférences liés à la structure microscopique de
+l'objet qui diffracte la lumière reçue, comme les ailes de papillon,
+les CDs et DVDs.
+\end{itemize}
+\newpage
+\section{Organisation des couleurs}
+\begin{wrapfigure}{r}{9.4cm}
+\centering
+\begin{tikzpicture}[scale=0.8]
+% Parametres :
+\ifhighresolution
+\xdef\xrresolution{80}
+\xdef\xaresolution{128}
+\else
+\xdef\xrresolution{4}
+\xdef\xaresolution{20}
+\fi
+\xdef\xradius{4}
+\xdef\xaoffset{88}
+% Code :
+\xdef\oldxr{0}
+\xdef\oldxa{0}
+\pgfmathparse{1/\xrresolution}
+\xdef\xrstep{\pgfmathresult}
+\firstxrtrue
+%\xdef\pos{0}
+\foreach \xr in {0,\xrstep,...,1} {
+\message{\xr}
+\iffirstxr
+\global\firstxrfalse
+\else
+% \pgfmathparse{\pos+1}
+% \xdef\pos{\pgfmathresult}
+\pgfmathparse{\xr-\oldxr}
+\xdef\xrdelta{\pgfmathresult}
+% \node at (7,5*\xr) {\pos{} \xrdelta};
+\pgfmathparse{1/(.75*\xaresolution*\xr+.25*\xaresolution)}
+\xdef\xastep{\pgfmathresult}
+\firstxatrue
+\foreach \xa in {0.0,\xastep,...,1.1} {
+\iffirstxa
+\global\firstxafalse
+\else
+\definecolor{currentcolor}{hsb}{\xa, \xr, 1}
+\pgfmathparse{\xa-\oldxa}
+\xdef\xadelta{\pgfmathresult}
+\draw[draw=none, fill=currentcolor]
+(-360*\oldxa+\xaoffset:\xradius*\oldxr) --
+(-360*\oldxa+\xaoffset:\xradius*\xr+\xradius*\xrdelta*.2) --
+(-360*\xa+\xaoffset-360*.2*\xadelta:\xradius*\xr+\xradius*\xrdelta*.2) --
+(-360*\xa+\xaoffset-360*.2*\xadelta:\xradius*\oldxr) --
+cycle;
+\fi
+\xdef\oldxa{\xa}
+}
+\fi
+\xdef\oldxr{\xr}
+}
+% Draw a circle with markings along the perimeter, indicating which angles
+% the hue function connects to certain colors.
+\draw (0, 0) circle (4.34cm);
+\foreach \x in {0, 30, ..., 330}
+\draw (-\x+90:4.34) -- (-\x+90:4.5) (-\x+90:5.0) node {$\x^\circ$};
+% Add labels with names of the primary and secondary colors.
+\foreach \x/\text in {0/red, 120/green, 240/blue}
+\draw (-\x+90:6.0) node {\text};
+\end{tikzpicture}
+\caption{Cercle chromatique}
+\end{wrapfigure}
+L'ensemble des couleurs, que ce soit des couleurs primaires ou bien des couleurs obtenues
+par mélange de ces trois couleurs primaires, peuvent être organisées sour la forme d'un cercle
+sur lequel les couleurs primaires sont disposées à 120\degre les unes par rapport aux autres.
+Ce cercle est appelé cercle chromatique et est utilisé dans beaucoup de domaines comme la
+peinture, le design, l'infographie etc\dots.\\
+Plusieurs représentations du cercle chromatique existent en fonction
+des trois couleurs de base qui sont utilisées, mais aussi du fait qu'on
+souhaite ou non représenter la saturation des
+couleurs.\\
+Dans ce dernier cas le cercle devient un \enquote{disque} le centre étant
+blanc et se dégradant vers la vouleur jusqu'à atteindre la saturation
+de celle-ci à l'extrémité (circonférence du
+disque).\\
+Concernant le \enquote{repère} de base (les trois couleurs utilisées
+pour les mélanges), deux groupes sont très souvent utilisés. Le
+premier est RVB (Rouge, Vert et Bleu) et le second est CMJ (Cyan,
+Magenta et Jaune). Dans la vie courante, on a l'habitude de parler et
+d'utiliser comme couleurs primaires, le rouge le vert et le bleu.
+Cependant un exemple simple existe puisque dans les imprimantes
+photos, on trouve fréquemment du cyan du magenta et du
+jaune. Ceci est également vérifié dans nombreux processus de photocomposition.
+\section{Quelques définitions}
+\subsubsection{Couleurs complémentaires}
+Deux couleurs sont complémentaires l'une de l'autre si leur mélange
+donne lieu à une absence de chromaticité (blanc, gris,
+noir). Autrement dit, la résultante de ce mélange est une couleur
+neutre. La couleur complémentaire se détermine facilement sur le
+cercle chromatique décrit ci-dessus, il s'agit pour une couleur donnée
+de la couleur diamétralement opposée. De cette manière le jaune sera
+le complémentaire du bleu de même que le cyan et le rouge seront
+complémentaires.
+\\
+\subsubsection{Les couleurs pures}
+Une couleur pure est une couleur qui n'a subi aucun ajout de noir ou
+de blanc. Plus formellement, c'est une couleur qui à la plus grande
+saturation parmi les couleurs d'une même teinte.\\
+Dans le cas du cercle chromatique décrit précédemment qui représente
+le niveau de saturation des couleurs, les couleurs pures se trouvent
+par conséquent à la périphérie (circonférence) de ce dernier. La
+circonférence du cercle représente par conséquent l'ensemble des
+couleurs pures possibles.
+\newpage
+\subsubsection{Le contraste}
+Le contraste entre deux couleurs permet de déterminer la distance qui
+les sépare. Il s'agit d'une grandeur numérique correspondant à la
+distance qui existe sur chaque
+composante primaire des couleurs. Elle est données par la formule suivante : \\
+\label{formulecontraste}
+\begin{center}
+$\displaystyle Diff = |rA - rB| + |gA - gB| + |bA - bB|$\\
+\vspace{0.4cm}
+\small
+\begin{minipage}{0.8\textwidth}
+With :
+\begin{center}\begin{minipage}{0.9\textwidth}
+$A$ and $B$ two colors\\
+$r$, $g$ and $b$ three color components red, green and blue
+\end{minipage}\end{center}
+\end{minipage}
+\end{center}
+\subsubsection{La brillance}
+Il s'agit d'une valeur numérique permettant de qualifier l'intensité
+lumineuse d'une couleur primaire ou non. Pour calculer cette valeur on
+utilise les valeurs de chaque composante de cette couleur auxquelles
+un coefficient est affeté. Ce coefficient provient du fait que les
+couleurs primaires ne sont pas ressenties de la même façon, le vert est
+plus
+lumineux que le rouge qui lui même est plus lumineux que le bleu.\\
+Selon les sources plusieurs coefficients sont donnés. Le W3C (World
+Wide Web Consortium) fournit un coefficient pour chaque composante et
+une formule pour déterminer la brillance
+d'une couleur en particulier.\\
+\begin{center}
+$\displaystyle Brigthness = \frac{(r \times 299) + (g \times 587) + (b \times 114)}{1000}$\\
+\vspace{0.4cm}
+\small
+\begin{minipage}{0.8\textwidth}
+With :
+\begin{center}\begin{minipage}{0.9\textwidth}
+$r$, $g$ and $b$ three color components red, green and blue.
+\end{minipage}\end{center}
+\end{minipage}
+\end{center}
+\chapter{Étude de faisabilité}
+\label{chpfaisabilite}
+\section{Lignes de produits logiciels}
+\subsection{Introduction et définition générale}
+Une ligne de produit logicielle peut être considérée comme un ensemble d'outils (composants logiciels, bibliothèques, méthodes, fonctions...) ainsi qu'une structure et des règles, qui vont permettre de concevoir une application répondant aux besoins d'un marché spécifique.
+\newline
+Que ce soit pour des logiciels applicatifs, des applications Web ou même des composants logiciels, les lignes de produits servent à définir leur architecture générale, et à spécifier les ressources communes.
+\newline
+Dans le cadre de la programmation orientée objet, une ligne de produit logicielle sera typiquement une collection de classes donnant une première architecture de l'application. La programmation d'une application à partir de cette ligne de produit se fera par le biais de l'héritage qui va permettre par spécialisation des classes existantes d'adapter celle-ci pour qu'elle puisse répondre aux besoins finaux.
+\newline
+La notion de lignes de produits est assez récente. Leur apparition a permis de réaliser un gain non négligeable en terme de productivité et de qualité de logiciel \cite{SPLstateart}.
+\newline
+Une des principales raisons de l'intérêt des développeurs et des entreprises pour les lignes de produits, concerne le gain considérable de temps, de productivité dû à la réutilisation. On ne développe plus depuis le début une application si elle entre dans un contexte proche d'une application que l'on a précédemment développée. Il est possible de reprendre ce qui à été réalisé pour l'application précédente et de l'intégrer dans la nouvelle.
+\newline
+Un exemple avec les mini-jeux d'arcades en 2D.
+Dans cette catégorie, les différents jeux présentent un certain nombre de
+similitudes tant au niveau de la jouabilité (gameplay) et du rendu à l'écran qu'au niveau programmation. Il est donc possible de leur trouver un certain nombre de points communs.
+L'ensemble de ces jeux vont devoir par exemple :
+\begin{itemize}\setlength{\itemsep}{0.4\baselineskip}
+\item Déplacer des objets
+\item Détecter des collisions
+\item Charger des images et/ou des sons
+\item Afficher un plateau de jeu
+\item Capturer les commandes de l'utilisateur
+\item etc...
+\end{itemize}
+Certains de ces points ne seront pas visibles par l'utilisateur comme le chargement de fichier (son ou image). Ce sont des opérations internes à l'application. D'autres sont en lien direct avec l'utilisateur, tout ce qui touche à l'affichage à l'écran d'éléments, de retour audio etc.
+\newline
+Tous ces points communs peuvent être regroupés et agencés afin de définir un
+cadre de travail clair, une ligne de produits, qui contiendra des composants,
+classes ou fonctions de chargement d'images ou de son définissant en quelque
+sorte les outils de base.
+%\subsection{L'inversion de contrôle}
+%Alors que les bibliothèques de fonctions "classiques" se comportent de manière totalement
+%passive, les lignes de produits ont pour effet d'être active et d'avoir la main sur
+%l'application. Les fonctionnalités que le développeur crée sont insérées à l'intérieur,
+%et seront appelées au moment voulu et rendront la main à la fin de leur exécution.
+%M je ne comprends pas !
+%Y À mon avis aucun intérêt de mettre cette partie.
+\subsection{Perspective pour l'accessibilité}
+Dans un souci d'unification et d'universalisation de l'accessibilité dans les logiciels et services, les lignes de produits seraient un moyen de formaliser le processus de fabrication.
+C'est-à-dire qu'il pourrait être intéressant de définir un ensemble d'outils ainsi que de méthodes permettant d'intégrer l'accessibilité directement dans le processus de conception et de développement des applications afin d'avoir en sortie une application respectant toutes les conditions. Le but étant d'éviter la révision d'application pour les rendre accessibles une fois le développement terminé,
+\newline
+Cette vision va d'une certaine manière à l'encontre de ce qui se fait aujourd'hui et de ce vers
+quoi on se dirige. Puisque ce sont les applications externes de compensation qui s'efforcent de
+suivre l'évolution des applications et systèmes d'exploitation pour rendre les logiciels
+accessibles. \\
+Cependant une des techniques des lignes de produit (les diagrammes de features) sera utilisée
+plus loin dans le processus d'adaptation des pages Web.
+\section{Ajout d'un plugin d'assistance à l'IDE Eclipse}
+Une des causes importante du manque d'accessibilité dans le cas d'applications classiques (les
+applications qui ne sont pas spécifiques à un domaine très précis), est le manque de rigueur et
+d'information au moment du développement. C'est-à-dire que toutes les informations relatives aux
+éléments graphiques, qui sont nécessaires à la compréhension de ces derniers, ne sont pas forcément
+renseignées. On est souvent confronté à plusieurs façons de réaliser une opération lorsque l'on
+développe, mais peut-être qu'une des deux est préférable vis-à-vis de l'accessibilité et ce n'est
+pas obligatoirement celle que l'on choisit puisque l'on n'a pas d'information sur les conséquences
+que cela peut avoir.\\
+Le but principal est de fournir aux développeurs une assistance continue tout au long du
+développement de leur applications. Intégrer l'accessibilité au moment du développement de
+l'application et un gain de temps considérable par rapport aux temps qu'il faut y passer pour
+réaliser les modifications à apporter après coup sur un projet déjà abouti.\\
+L'environnement de développement Eclipse servirait de support à la réalisation d'un prototype
+d'assistance au développement, pour permettre la conception et la réalisation d'autre plugins sous
+d'autre environnements de développement.
+\section{Simplification d'images et ré-ingénierie de pages Web}
+Indépendamment du fait que les sites Web respectent les règles et
+recommandations d'accessibilité, les images restent tout de même une part
+importante du contenu d'un site. Elles sont décrites dans la balise \enquote{alt} et
+donc accessibles au lecteurs d'écran. Il peut être intéressant de permettre aux
+personnes ayant une déficience visuelle suffisamment peu importante (qui leur permet encore de naviguer visuellement) d'accéder aux images et de les \enquote{décoder}.
+\subsection{La surcharge d'informations dans les images}
+Les images qui apparaissent sur les site pour illustrer un texte, pour montrer
+un objet ou tout simplement une photo sont parfois très chargées en éléments
+d'information. Cependant un certain nombre de ces éléments ne sont pas utiles à
+la perception et à la compréhension générale de l'image. Au contraire, ces
+éléments peuvent jouer le rôle inverse et perturber (brouiller) l'image. Il est
+donc possible d'enlever ces éléments des images.
+%M un exemble d'élément pertubateur ...
+\newline
+La surcharge d'information peut également se présenter sous la forme d'un trop grand nombre de couleurs présentes. Si une image possède plusieurs centaines de couleurs distinctes associées chacune à des objets de petite taille regroupés, il sera très difficile de comprendre l'image sans s'y perdre dedans.
+\subsection{Ambiguïtés et dissimulation dans les images}
+L'utilisation de couleurs relativement proches entre les éléments d'une même image va donner lieu à des dissimulations. Un objet pourra être fondu dans le décor ou bien être en partie caché par d'autre objets ce qui, par unification de cet objet avec ceux qui le masquent en partie, pourrait générer une ambiguïté et faire percevoir autre chose.
+\subsection{Hypothèses}
+La simplification d'images pourrait permettre aux personnes ayant une déficience visuelle et donc un perception réduite et particulière des couleurs, des formes ou de la luminosité, d'accéder à l'information visuelle et l'aider en la dirigeant vers ce qui est le plus important.
+\newline
+Cette approche rejoint d'une certaine manière le domaine de l'indexation d'images qui cherche également à simplifier les images pour en extraire l'essentiel et ainsi les classer.
+\newline
+Il serait peut-être possible d'étendre et/ou de compléter cette méthode par une
+simplification complète des pages d'un site Web.
+\newline
+Un nombre assez important de sites Web ne respectent pas les standard
+d'accessibilité et/ou proposent parfois des styles visuels mal appropriés. Il
+arrive de trouver des sites où le texte du corps de la page est en vert sur un
+fond de couleur rose, ou encore des textes blancs sur fond jaune ou
+inversement. Ce genre de configuration de couleurs ne convient pas du tout à la
+plupart des personnes déficientes visuelles. De plus les technologies
+d'assistance comme les magnifier d'écran ne sont pas vraiment capables
+d'améliorer le rendu puisqu'il sera par exemple possible d'inverser les couleurs
+mais le taux de contraste restera identique. \newline
+Il pourrait donc être intéressant d'effectuer une altération du code source de
+la page afin de \enquote{corriger} ces défauts. Il faudrait, en conséquence, prendre en
+compte la manière dont la personne perçoit les couleurs, les formes et la
+lumière pour adapter le code en conséquence.
+\chapter{Conception d'une application de ré-ingénierie de page Web}
+\label{chpconceptionweb}
+Il s'agit de mettre au point une application locale permettant de
+réaliser des traitement sur des flux HTML/CSS. C'est à dire d'avoir un
+certain nombre de fonctions de manipulation de flux HTML et CSS, qui,
+à partir d'un flux initial, effectuent des modifications au sein de la
+feuille de style du site en fonction des préférences de l'utilisateur.
+\newline
+\section{Définition d'une architecture générale}
+Une solution serait de scinder en deux parties distinctes
+\enquote{l'application}, en séparant le traitement des données de la
+liaison avec d'autres applications. \newline
+Dans le but de permettre une intégration à des technologies
+d'assistance existantes, mais aussi d'assurer une cohérence entre
+les différentes applications affichant des pages et contenus Web, la
+première partie isolera complètement la configuration de l'utilisateur
+(ses préférences) ainsi que le traitement des pages et contenus.
+\newline
+La seconde partie qui sera nommée par la suite \enquote{connecteurs},
+consiste en une série de \enquote{mini-applications} permettant de
+faire le lien entre la première partie et l'ensemble des applications
+affichant des pages Web. Cette partie devra donc assurer une
+communication avec l'autre afin de lui transmettre les flux HTML et
+CSS à modifier si nécessaire et les récupérer une fois traités pour
+les afficher.
+\section{Les connecteurs}
+\label{refconnecteurs}
+Les connecteurs permettant une liaison entre les différentes
+applications qui ont besoin d'afficher du contenu Web peuvent se
+décliner sous diverses formes. Soit par la conception de
+plugins/extensions qui permettent d'intégrer directement dans une
+application que l'on souhaite adapter, soit par le biais d'un serveur
+dit \enquote{proxy} qui permet de modifier
+les différents flux en amont, avant qu'il n'arrivent sur l'ordinateur. \\
+D'autre types de connecteurs peuvent être développés, il suffit
+simplement qu'il puissent communiquer avec l'application que l'on
+souhaite adapter et qu'il respecte le protocole de communication
+imposé par l'application centrale de traitement. Dans ce travail de
+recherche, seul les deux premières solutions évoquées seront présentées
+et explicitées.
+\subsection{Les plugins et extensions}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+node/.style={draw,rectangle,minimum size=1cm},
+link/.style={-latex}
+]
+\node[node,circle] (A) {Internet};
+\node[node,right=4cm of A,minimum width=4cm] (B) {Navigateurs};
+\node[node,below=0 of B] (C) {IE};
+\node[node,left=0cm of C] (D) {Firefox};
+\node[node,right=0cm of C] (E) {Safari};
+\node[node,right=0cm of E] (F) {Autres};
+\node[node,left=0cm of D] (G) {Opera};
+\node[node,fill=lightgray,below=4cm of B,minimum width=4cm] (pB) {Plugins};
+\node[node,fill=lightgray,above=0 of pB] (pC) {IE};
+\node[node,fill=lightgray,left=0cm of pC] (pD) {Firefox};
+\node[node,fill=lightgray,right=0cm of pC] (pE) {Safari};
+\node[node,fill=lightgray,right=0cm of pE] (pF) {Autres};
+\node[node,fill=lightgray,left=0cm of pD] (pG) {Opera};
+\node[node,fill=lightgray,left=2.5cm of pB,minimum height= 2cm,minimum width=4cm] (T) {Traitement local};
+\draw[link] (A) -- (B);
+\draw[link] (B) -- (A);
+\draw[link] (C.260) -- (pC.100);
+\draw[link] (D.260) -- (pD.100);
+\draw[link] (E.260) -- (pE.100);
+\draw[link] (F.260) -- (pF.100);
+\draw[link] (G.260) -- (pG.100);
+\draw[link,dashed] (pC.80) -- (C.280);
+\draw[link,dashed] (pD.80) -- (D.280);
+\draw[link,dashed] (pE.80) -- (E.280);
+\draw[link,dashed] (pF.80) -- (F.280);
+\draw[link,dashed] (pG.80) -- (G.280);
+\draw[link] (pB.177) -- (T.3);
+\draw[link,dashed] (T.-3) -- (pB.183);
+\node[node,below=2cm of pG,rectangle,minimum width=12cm, minimum height=1.5cm] (legende) {};
+\node[right=0.6cm of legende.west,minimum height=0] (tmpl) {};
+\node[node,above=0 of tmpl,minimum height=0.2cm](la) {};
+\node[node,fill=lightgray,below=0 of tmpl,minimum height=0.2cm](lb) {};
+\node[right=0.5cm of la] {Existant};
+\node[right=0.5cm of lb] {Ajouté};
+\node[left=6cm of legende.east,minimum height=0] (tmpr) {};
+\node[above=0 of tmpr,minimum size=0.2cm](ra) {};
+\node[below=0 of tmpr,minimum size=0.2cm](rb) {};
+\node[right=1cm of ra,minimum size=0.2cm] (rab) {};
+\node[right=1cm of rb,minimum size=0.2cm] (rbb) {};
+\draw[link] (ra) -- (rab);
+\draw[link,dashed] (rb) -- (rbb);
+\node[right=0.5cm of rab] {Non traité};
+\node[right=0.5cm of rbb] {Traité};
+\end{tikzpicture}
+\caption{Des plugins/Extensions comme connecteurs}
+\end{figure}
+Un très grande majorité de navigateurs assurent un support de plugin
+ou extension leur permettant d'ajouter des fonctionnalités au niveau
+des boutons, des menus, de la gestion des favoris et préférences mais
+aussi au niveau du contenu des pages. Cette solution permettrait
+d'adapter facilement tout les navigateurs puisqu'il s'agirait de faire
+un connecteur par navigateur. Cette opération est basique puisque
+qu'aucun traitement n'existe dans le connecteur même et qu'il ne fait
+que transférer un flux et le ré-injecter après réception.
+Ce type de connecteur offrirait l'avantage de pouvoir être activé et désactivé à souhait par l'utilisateur même pendant la navigation.
+\subsection{Le proxy}
+Cette solution pour la conception de connecteur vise à garantir le
+traitement des flux HTML et CSS pour l'ensemble des applications et
+non pas seulement les navigateurs Web. L'IDE bien connu \enquote{Eclipse}
+affiche lors de sa première ouverture un onglet de bienvenue avec un
+contenu HTML. Cette application n'étant pas un navigateur elle ne
+pourrait pas être affectée par les modifications (sauf si un plugin
+pour celle-ci est développé), mais certaines autres applications qui
+insèrent également du contenu Web dans un onglet ne supportent pas
+l'ajout de plugin.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+node/.style={draw,rectangle,minimum size=1cm},
+link/.style={-latex}
+]
+\node (origin) {};
+\node[node,circle,left=3cm of origin] (A) {Internet};
+\node[node,fill=lightgray, right=6cm of A.south,minimum height=3.5cm, minimum width=5cm] (proxy){Proxy};
+\node[node,below=2cm of proxy,minimum width=4cm] (B) {Navigateurs};
+\node[node,below=0 of B] (C) {IE};
+\node[node,left=0cm of C] (D) {Firefox};
+\node[node,right=0cm of C] (E) {Safari};
+\node[node,right=0cm of E] (F) {Autres};
+\node[node,left=0cm of D] (G) {Opera};
+\node[node,fill=lightgray,below=1cm of A,minimum width=4cm] (T) {Traitement local};
+\node [node,below=2cm of T,text width=5cm, text badly centered, minimum height=1.5cm] (othApp) {Autre types d'applications affichant du contenu Web};
+\draw[link] (A) -- (proxy.163);
+\draw[link] (proxy.163) -- (A);
+\draw[link,dashed] (proxy.267) -- (B.100);
+\draw[link] (B.80) -- (proxy.273);
+\draw[link,dashed] (T.4) -- (proxy.209);
+\draw[link] (proxy.213) -- (T.-3);
+%\draw[link,dashed] (proxy.267) -- (othApp);
+%\draw[link] (othApp) -- (proxy.273);
+\path[draw,link,dashed] (proxy.267) -- +(0,-0.8) -- +(-8.4,-0.8) -- (othApp);
+\path[draw,link] (othApp.76) -- +(0,1.28) -- +(8.4,1.28) -- (proxy.273);
+\node[node,below=7cm of origin,rectangle,minimum width=12cm, minimum height=1.5cm] (legende) {};
+\node[right=0.6cm of legende.west,minimum height=0] (tmpl) {};
+\node[node,above=0 of tmpl,minimum height=0.2cm](la) {};
+\node[node,fill=lightgray,below=0 of tmpl,minimum height=0.2cm](lb) {};
+\node[right=0.5cm of la] {Existant};
+\node[right=0.5cm of lb] {Ajouté};
+\node[left=6cm of legende.east,minimum height=0] (tmpr) {};
+\node[above=0 of tmpr,minimum size=0.2cm](ra) {};
+\node[below=0 of tmpr,minimum size=0.2cm](rb) {};
+\node[right=1cm of ra,minimum size=0.2cm] (rab) {};
+\node[right=1cm of rb,minimum size=0.2cm] (rbb) {};
+\draw[link] (ra) -- (rab);
+\draw[link,dashed] (rb) -- (rbb);
+\node[right=0.5cm of rab] {Non traité};
+\node[right=0.5cm of rbb] {Traité};
+\end{tikzpicture}
+\caption{Un proxy comme type de connecteur}
+\end{figure}
+Le proxy s'intercale entre les applications et la \enquote{connexion Internet}. De ce fait il voit
+passer toutes les requêtes entrantes et sortantes. Il lui suffit donc de laisser passer tous
+les paquets qui ne correspondent pas à des requêtes HTTP. Les paquets de requêtes HTTP pourront
+être redirigés vers l'application de traitement et être renvoyés, une fois les transformations
+faites, vers les applications.
+\section{L'application principale}
+L'application \enquote{principale} réprésente la partie effectuant le
+traitement au sens propre de la page Web par le biais de modifications
+apportées sur le flux de données. Elle est en charge de la réception
+des données en provenance des divers connecteurs indépendamment de
+leur type (plugins/extension pour navigateurs, proxy, ...)
+(cf. section \ref{refconnecteurs}) et de les traiter en fonction de
+préférences utilisateur pour finalement les retransmettre vers le
+connecteur qui se chargera de répercuter ces données modifiées.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+node/.style={draw,rectangle, minimum height=1.1cm, text width=2cm, text badly centered,rounded corners},
+link/.style={-latex}
+]
+\node [node,minimum height=3cm,minimum width=4cm] (appli) {Application principale};
+\node[above=1.4cm of appli] (entree) {Flux en entrée};
+\node[below=1.4cm of appli] (sortie){Flux en sortie};
+\node[node,left=2cm of appli.north west] (pref) {Préférences utilisateur};
+\node[node,right=2cm of appli.north east] (cmd) {Commandes temps réel};
+\draw[link] (entree) -- (appli);
+\draw[link] (pref) -- (appli);
+\draw[link] (cmd) -- (appli);
+\draw[link] (appli) -- (sortie);
+\end{tikzpicture}
+\caption{Fonctionnement général de l'application principale}
+\end{figure}
+Les commandes temps réel correspondent à des demandes de l'utilisateur
+au cours de l'exécution, par exemple avec des raccourcis clavier, permettant
+d'influencer le traitement des flux. Ces commandes pourront par
+exemple être : activer/désactiver le traitement, modifier un filtre,
+etc\dots\\
+Par cette architecture, toutes les applications dont l'utilisateur
+peut se servir seront traitées au niveau de leur flux de données HTML
+et CSS. Le traitement sera donc identique puisque qu'il sera toujours
+effectué par une application indépendante locale.
+\section{Plateforme de test}
+Il est important de disposer d'une plateforme permettant de visualiser
+le rendu final afin d'évaluer la qualité du traitement apporté auprès
+de personnes en situation de handicap par le biais de tests
+utilisateurs. La mise en place d'une plateforme permettant de réaliser
+ces fonctionnalités de traitement est assez complexe mais ne relève
+que de l'implémentation (méthodes, procédures, utilisation
+d'\glspl{api}) et non d'un travail de recherche.
+\\
+Dans cette mesure, un plugin permettant de simplifier la mise en œuvre
+sera utilisé. Il s'agit du plugin GreaseMonkey. Celui-ci sera donc
+utilisé pour appliquer le traitement sur des pages web dans un
+navigateur.
+\subsection{Le plugin GreaseMonkey}
+Ce plugin à l'avantage d'être multi-navigateurs c'est à dire qu'il
+possède plusieurs implémentations qui lui permettent d'être reconnu et
+de fonctionner sur un très grand nombre de navigateurs. Il fonctionne sur
+le principe de l'injection de script. Pour une page Web donnée, il
+insère à la fin de celle-ci une fois qu'elle est chargée,
+un script JavaScript afin qu'il s'exécute. \\
+L'ajout après le chargement complet de la page permet au script
+d'avoir accès au DOM complet de la page sans avoir d'erreur pour cause
+d'élément inexistant. L'inconvénient majeur de cette solution est
+le décalage entre l'affichage de la page et l'application du
+traitement. En effet les navigateurs actuels affichent la page Web au
+fur et à mesure de son chargement, le script de traitement n'étant
+ajouté qu'a la fin du chargement, les modifications sont apportées
+brutalement sur une page déjà affichée. \newline
+Les scripts utilisés par GreaseMonkey sont appelés scripts
+utilisateurs et doivent porter comme extension \enquote{.user.js} ce qui
+permet à GreaseMonkey de savoir qu'il s'agit d'un script lui étant
+destiné lors du chargement de celui-ci. L'ajout du script se fait
+tout simplement en ouvrant le fichier \enquote{.user.js} dans le navigateur,
+il est immédiatement reconnu et mis en place par GM (GreaseMonkey).
+\newline
+Par son fonctionnement, ce plugin évite la création d'un(e)
+extension/plugin complète pour le navigateur puisqu'un simple script
+suffit pour effectuer des tests. \newline
+Il est possible par la suite, grâce à des outils externes de
+transformer un script pour GreaseMonkey en une extension ou un plugin pour un
+navigateur donné. Cette technique pourrait donc être utilisée pour
+augmenter la vitesse de développement des différents connecteurs pour
+navigateurs. \newline
+\section{Modèles et processus d'adaptation}
+Cette section a principalement un but de documentation. Étant donné la
+complexité dans les règles d'inclusion des éléments de page Web, les
+modélisations de celles-ci sont multiples et dépendent de ce qu'on
+veut mettre en avant. De la même manière, le stockage de
+l'architecture d'une page
+particulière, dépend du navigateur.\\
+Des choix ont donc été effectués afin de simplifer les modélisations
+tout en étant pas trop éloigné de la réalité. Les modèles utilisés ont
+par conséquent un rôle de documentation. Une solution telle que la
+bibliothèque JavaScript \enquote{JQuery} permet d'effectuer des
+requêtes sur n'importe quel élément d'une page afin d'obtenir ses
+styles. Cet outil permet donc de passer outre certaines phases de
+transformation de modèles.
+\subsection{Modèle UML général de pages Web}
+\label{sctumlgeneral}
+Les pages Web sont décrites à l'aide du langage HTML et de langages
+dérivés comme le XHTML (HTML permettant un passage déterministe à la
+norme XML). Au fil de l'évolution de ces langages, de nouvelles
+possibilités s'offrent aux webmestres comme l'ajout récent d'une
+balise \enquote{<video>} (HTML5) permettant l'insertion d'une vidéo
+directement sur la page sans avoir à inclure de lecteurs multimédia au
+préalable. Les balises ont pour but de donner une sémantique au
+contenu. Elles sont également utilisées pour mettre en forme
+celui-ci et lui donner un style visuel (apparence). Ces langages
+possèdant un très grand nombre de balises et de règles d'inclusions, dans
+ce sujet, seules les balises ayant un grand impact sur l'apparence d'un
+site sont mises en avant ainsi que leurs relations entre elles.
+\\
+Quelques éléments basiques et très répandus sur les sites Web :
+\begin{itemize} \itemsep1em
+\item Bloc : (la balise <div>) Elle constitue un bloc sur la page qui
+peut contenir divers éléments comme des images, du texte et
+notamment d'autres blocs.
+\item Tableau : (la balise <table>) Les tableaux sont largement
+utilisés dans les pages Web et souvent même à tort. Ils peuvent
+contenir par exemple du texte, des images, et même des blocs ou
+encore des tableaux.
+\item Image : (la balise <img>) Elle représente une part importante de
+l'apparence d'une page. Les images sont même parfois essentielles à la
+compréhension d'un article ou commentaire.
+\item Title : (Les balises <h1><h2>..<h6>) La hiérarchie des titres de
+la page est mise en forme
+par le biais de cette ensemble de balises.\\
+\end{itemize}
+Certain de ces éléments peuvent contenir d'autres éléments qui
+pourront à leur tour en contenir de nouveaux, et cela récursivement
+jusqu'a atteindre un élément dit \enquote{vide} ou du texte.
+\\
+Le langage de modélisation UML permet par le biais des diagrammes de
+classes de formaliser les différents éléments avec leurs contraintes
+d'inclusions.
+Cette représentation contient une grande partie des éléments ayant un
+impact conséquent sur l'apparence d'une page. Tout les éléments ne
+sont néanmoins pas explicités puisqu'ils ne sont pas nécessaires à la
+compréhension de la méthodologie globale d'adaptation et qu'ils
+n'auraient pour seule conséquence que la surcharge du diagramme.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+node/.style={draw,rectangle, minimum height=1.1cm,font=\footnotesize, text width=2cm, text badly centered,rounded corners},
+link/.style={-latex}
+]
+\umlclass[x=-9.5,y=-2]{Attribute}{+ value : string}{}
+\umlemptyclass[x=-9.5,y=-5]{AttributeType}
+\umlemptyclass[x=-2,y=-0.4]{Node}
+\umlemptyclass[x=-5,y=-3]{Element}
+\umlemptyclass[x=-6,y=-6]{Container}
+\umlemptyclass[x=-2,y=-6]{Empty}
+\umlemptyclass[x=-10.98,y=-9]{Body}
+\umlemptyclass[x=-9.27,y=-9]{Title}
+\umlemptyclass[x=-9.27,y=-12]{H1}
+\umlemptyclass[x=-7.27,y=-12]{H2}
+\umlemptyclass[x=-5.27,y=-12]{H3}
+\umlemptyclass[x=-3.27,y=-12]{H4}
+\umlemptyclass[x=-1.27,y=-12]{H5}
+\umlemptyclass[x=0.73,y=-12]{H6}
+\umlemptyclass[x=-7.52,y=-9]{Div}
+\umlemptyclass[x=-5.77,y=-9]{Table}
+\umlemptyclass[x=-3.63,y=-9]{Paragraph}
+\umlemptyclass[x=-1.5,y=-9]{Link}
+\umlemptyclass[x=0.19,y=-9]{List}
+\umlemptyclass[x=1.95,y=-9]{Image}
+\umlVHVinherit[arm1=1]{Body}{Container}
+\umlVHVinherit[arm1=1]{Title}{Container}
+\umlVHVinherit[arm1=1]{Div}{Container}
+\umlVHVinherit[arm1=1]{Table}{Container}
+\umlVHVinherit[arm1=1.5]{Image}{Empty}
+\umlVHVinherit[arm1=1]{Link}{Container}
+\umlVHVinherit[arm1=1]{Paragraph}{Container}
+\umlVHVinherit[arm1=1]{List}{Container}
+\umlVHVinherit[arm1=1]{Container}{Element}
+\umlVHVinherit[arm1=1]{Empty}{Element}
+\umlVHVinherit[arm1=1]{H1}{Title}
+\umlVHVinherit[arm1=1]{H2}{Title}
+\umlVHVinherit[arm1=1]{H3}{Title}
+\umlVHVinherit[arm1=1]{H4}{Title}
+\umlVHVinherit[arm1=1]{H5}{Title}
+\umlVHVinherit[arm1=1]{H6}{Title}
+\umlemptyclass[x=0.6,y=-3]{Text}
+\umlVHVinherit[arm1=1]{Element}{Node}
+\umlVHVinherit[arm1=1]{Text}{Node}
+\umlVHuniaggreg[,anchor1=110,arg1=1,arg2=0..*,mult2=\{ordered\},pos2=1.6]{Element}{Node}
+\umlHVHuniaggreg[arg1=1,mult2=0..*,pos2=2.6]{Element}{Attribute}
+\umlunicompo[arg1=*,arg2=1]{Attribute}{AttributeType}
+\end{tikzpicture}
+\caption{Modèle général de page Web}
+\end{figure}
+Les éléments dits de type conteneur représentent la majorité des
+éléments disponibles. Ils mettent en place la hiérarchie d'une page en
+constituant un nœud interne de l'arbre DOM. Les éléments terminaux sont
+des feuilles de l'arbre de la page. Ils peuvent eux aussi agir sur
+l'apparence.
+\subsection{Caractéristiques visuelles associées}
+Chacun des éléments cités dans la section précédente possède des
+propriétés visuelles qui peuvent lui être exclusives ou non. De cette
+manière un tableau ou un bloc pourra posséder un fond coloré (arrière
+plan) tout comme le texte pourra avoir sa propre couleur. La famille
+de police est une propriété propre à un objet textuel. C'est sur ces
+diverses caractéristiques qu'il va être possible de jouer afin d'adapter
+des contenus.\\
+Ces caractéristiques peuvent être représentées sous la forme d'un
+arbre dont les feuilles vont être des caractéristiques basiques d'un
+élément (couleur, taille, disposition, \dots). De cette manière plusieurs
+éléments pourront avoir la caractéristique de taille de police, mais celles-ci
+seront indépendantes l'une de l'autre et pourront donc avec des valeurs
+différentes.\\
+Les ``diagrammes de features'' sont une représentation formelle qui permet
+de décrire des caractéristiques hiérarchiques. Quelques opérateurs
+logiques (et, ou), l'obligation ou non sur une caractéristique
+permettent d'étendre l'expressivité. Il est également possible de
+définir des contraintes à base de connecteurs logiques entre des
+caractéristiques \cite{FeaDiag}.
+\begin{figure}[H]
+\centering
+%\centering\includegraphics[width=12cm]{./images/GFM.jpg}
+\definecolor{featureBckColor}{rgb}{0.8,0.8,1}
+\begin{tikzpicture}[
+node/.style={draw,rectangle, minimum height=0.6cm,font=\small, minimum width=2cm, text badly centered,rounded corners},
+concret/.style={fill=featureBckColor},
+link/.style={-latex}
+]
+\node[node](gpm){Generic page feature model};
+\node[node,concret,below=1cm of gpm](image){ImageFeature};
+\node[minimum width=2cm,minimum height=0.8cm,below=2cm of gpm](tmp1){};
+\node[node,concret,left=2cm of tmp1] (background){Background};
+\node[node,concret,right=2cm of tmp1] (font){Font};
+\node[minimum height=0.8cm,below=2cm of background](tmp){};
+\node[node,concret,left=0.5cm of tmp](bckimg){BckImage};
+\node[node,concret,right=0.5cm of tmp](bckclr){BckColor};
+\node[node,concret,below=2cm of font](fontsize){FontSize};
+\node[node,concret,left=1cm of fontsize](fontstyle){FontStyle};
+\node[node,concret,right=1cm of fontsize](fontcolor){FontColor};
+\umlemptyclass[x=-4,y=1]{Element}
+\umlemptyclass[y=-3.6]{Image}
+\draw[link,dashed] (background) -- (Element);
+\draw[link,dashed] (font) |- (Element);
+\draw[link,dashed] (image) -- (Image);
+\draw[-o](gpm) -- (background.north);
+\draw[-o](gpm) -- (image.north);
+\draw[-o](gpm) -- (font.north);
+\draw[-*](font) -- (fontsize.north);
+\draw[-*](font) -- (fontstyle.north);
+\draw[-*](font) -- (fontcolor.north);
+\draw[-](background.south) -- (bckclr.north);
+\draw[-](background.south) -- (bckimg.north);
+\arctroispoints{background.south}{bckimg.north}{bckclr.north}{4mm};
+\node[node,below=3cm of font.south east,rectangle,minimum width=6cm, minimum height=0.8cm] (legende) {};
+\node[right=0.6cm of legende.west](tmpa) {};
+\node[right=1.2cm of tmpa] () {\small{Apply to}};
+\draw[link,dashed] (tmpa) -- +(1,0);
+\end{tikzpicture}
+\caption{Modèle général de caractéristiques visuelles}
+\end{figure}
+\subsection{Application sur une page Web test}
+\label{sctpagetest}
+Il est important et nécessaire de disposer d'une page Web simple qui va servir
+d'exemple et de support pour les différentes opérations qui vont
+être réalisées lors du processus d'adaptation.\\
+%M DONNER ICI LE CODE HTML DE LA PAGE TEST dans un verbatim
+Voici le code source HTML d'une page très simple avec peu d'éléments. On y distingue deux titres,
+le premier étant seul tout en haut de la page et représente le titre principal de celle-ci,
+le second se trouve dans un bloc il représente le titre du paragraphe qui le suit.
+Le titre contenu dans le bloc est d'un niveau inférieur à celui du haut de page, ce qui,
+constitue la hiérarchie des titres de la page.
+L'ensembles des balises comme les entêtes ont étaient supprimées dans le code puisqu'elles
+n'ont pas lieu d'être ici.
+Ce code constitue la page de test qui sera un support tout au long de ce chapitre.\\
+\begin{figure}[H]\centering
+\lstset{language=HTML}
+\begin{lstlisting}
+...
+<body>
+<h1 style="color:blue" >Titre de la page</h1>
+<div style="color:red">
+<h2>Titre de contenu</h2>
+<p>Paragraphe</p>
+</div>
+</body>
+...
+\end{lstlisting}
+\caption{Source HTML de la page de test}
+\label{sourceHTML}
+\end{figure}
+%Si, de manière générale, il n'est pas possible de représenter sous la
+%forme d'arbre la hiérarchie d'inclusion des éléments d'une page Web,
+%si on dispose d'une page en particulier, celle-ci
+%M Au contraire, toute page Web est représentée en interne par un arbre DOM
+%Y Je me suis mal exprimé il n'est pas possible de représenter toutes les pages sur un seul
+%arbre.
+Si de manière générale il n'est pas possible de représenter la hiérarchie d'inclusion de
+l'ensemble des pages par un arbre (cf. section \ref{sctumlgeneral}), lorsque l'on dispose d'une page en particulier,
+celle-ci peut être représentée par un et un seul arbre DOM (hiérarchie parent-enfants).
+La modélisation de cette page test se fait pas instanciation du
+diagramme de classe UML décrivant de manière générale les pages Web.
+\begin{figure}[H]
+\centering
+\definecolor{instanceBckColor}{rgb}{1,1,0.8}
+\begin{tikzpicture}[
+node/.style={draw,rectangle, minimum height=1.1cm, text width=2cm, text badly centered,rounded corners},
+link/.style={-latex},
+inst/.style={draw,rectangle,minimum width=2cm,minimum height=0.6cm,fill=instanceBckColor}
+]
+\node[inst] (bd) {\underline{bd:Body}};
+\node[inst,xshift=-3cm,yshift=-3cm] (h1) {\underline{h1:H1}};
+\node[inst,xshift=-3cm,yshift=-6cm] (t1) {\underline{t1:Text}};
+\node[inst,xshift=-5cm,yshift=-1.4cm,minimum width=4cm] (fs1) {\underline{style:Attribute}};
+\node[inst,minimum width=4cm,below=-0.02cm of fs1](fs1v){value = "color:blue"};
+\node[inst,xshift=3cm,yshift=-2cm] (b1) {\underline{b1:Block}};
+\node[inst,xshift=2cm,yshift=-4cm] (h2) {\underline{h2:H2}};
+\node[inst,xshift=2cm,yshift=-6cm] (t2) {\underline{t2:Text}};
+\node[inst,xshift=5cm,yshift=-4cm] (p1) {\underline{p1:Paragraph}};
+\node[inst,xshift=5cm,yshift=-6cm] (t3) {\underline{t3:Text}};
+\node[inst,xshift=5cm,yshift=-0.6cm,minimum width=4cm] (fs2) {\underline{style:Attribute}};
+\node[inst,minimum width=4cm,below=-0.02cm of fs2](fs2v){value = "color:red"};
+\umlHVunicompo{h1}{fs1v}
+\umlHVunicompo{b1}{fs2v}
+\umluniaggreg{bd}{h1}
+\umluniaggreg{bd}{b1}
+\umluniaggreg{b1}{p1}
+\umluniaggreg{b1}{h2}
+\umluniaggreg{h2}{t2}
+\umluniaggreg{p1}{t3}
+\umluniaggreg{h1}{t1}
+\end{tikzpicture}
+\caption{Diagramme d'instance de la page test}
+\end{figure}
+Les éléments HTML auxquels des attributs de style on étaient affectés,
+sont ici, dans ce diagramme d'instance, liés à des instances de la
+classe attribute. Le nom de l'instance représente le nom de l'attribut
+et la valeur de ce dernier est stockée en tant qu'attribut d'instance.\\
+Une fois l'arbre spécifique à la page test généré il est possible
+d'utiliser le modèle général de caractéristiques visuelles et de
+l'appliquer sur cette page test.
+\\
+Les nœuds de l'arbre décrivant la page vont se voir un à un affectés
+de toutes les caractéristiques présentes dans le \enquote{modèle général de
+caractéristiques visuelles} qui peuvent lui être associées. On obtient
+alors un nouvel arbre de caractéristiques qui est spécifique à la page
+test et dont les caractéristiques sont dupliquées pour être associées
+à chaque élément pouvant en être affecté.
+\\
+L'arbre qui est obtenu après cette manipulation est un arbre de feature
+(diagramme de feature). Plus concrêtement, si on prend l'exemple d'une
+voiture, une caractéristique du volant (revêtement cuir) fait du
+volant une caractéristique de la voiture elle-même. De cette manière
+une caractéristique de taille ou de couleur sur un titre fera de ce
+titre particulier une caractéristique de la page Web.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+node/.style={draw,rectangle, minimum height=0.6cm,font=\footnotesize, minimum width=1.6cm, text badly centered,rounded corners},
+concret/.style={fill=featureBckColor},
+link/.style={-latex}
+]
+\node[node](spm){Specific test page feature model};
+\node[node,concret,below=1cm of spm](body){F1\_Body};
+\node[node,concret,left=3.7cm of body.south] (background0){F6\_Background};
+\node[minimum height=0.8cm,below=1cm of background0](tmp0){};
+\node[node,concret,left=0.05cm of tmp0.center](bckimg0){F16\_BckImage};
+\node[node,concret,right=0.05cm of tmp0.center](bckclr0){F17\_BckColor};
+\node[node,concret,right=4.15cm of body.south] (font0){F7\_Font};
+\node[node,concret,below=2cm of font0](fontsize0){F18\_FontSize};
+\node[below=1.5cm of font0,minimum width=0.2cm, minimum height=0.8cm](tmpfont0){};
+\node[node,concret,left=0.2cm of tmpfont0.north east](fontstyle0){F19\_FontStyle};
+\node[node,concret,right=0.2cm of tmpfont0.north west](fontcolor0){F20\_FontColor};
+\node[below=3cm of body](tmpg){};
+\node[node,concret,left=0.8cm of tmpg] (title) {F2\_Title};
+\node[node,concret,below left=1.6cm of title.north west] (background){F8\_Background};
+\node[minimum height=0.8cm,below=1cm of background](tmp){};
+\node[node,concret,left=0.05cm of tmp.center](bckimg){F21\_BckImage};
+\node[node,concret,right=0.05cm of tmp.center](bckclr){F22\_BckColor};
+\node[node,concret,below=3cm of background] (font){F9\_Font};
+\node[node,concret,below=2cm of font](fontsize){F23\_FontSize};
+\node[below=1.5cm of font,minimum width=0.2cm, minimum height=0.8cm](tmpfont){};
+\node[node,concret,left=0.2cm of tmpfont.north east](fontstyle){F24\_FontStyle};
+\node[node,concret,right=0.2cm of tmpfont.north west](fontcolor){F25\_FontColor};
+\node[node,concret,right=0.8cm of tmpg] (block) {F3\_Block};
+\node[node,concret,below right=1.6cm of block.north east] (background4){F10\_Background};
+\node[minimum height=0.8cm,below=1cm of background4](tmp4){};
+\node[node,concret,left=0.05cm of tmp4.center](bckimg4){F26\_BckImage};
+\node[node,concret,right=0.05cm of tmp4.center](bckclr4){F27\_BckColor};
+\node[node,concret,below=3cm of background4] (font3){F11\_Font};
+\node[node,concret,below=2cm of font3](fontsize3){F28\_FontSize};
+\node[below=1.5cm of font3,minimum width=0.2cm, minimum height=0.8cm](tmpfont3){};
+\node[node,concret,left=0.2cm of tmpfont3.north east](fontstyle3){F29\_FontStyle};
+\node[node,concret,right=0.2cm of tmpfont3.north west](fontcolor3){F30\_FontColor};
+\node[node,concret,below=7cm of block] (title2) {F4\_Title};
+\node[node,concret, below right=1.6cm of title2.south east] (background2){F12\_Background};
+\node[minimum height=0.8cm,below=1cm of background2](tmp2){};
+\node[node,concret,left=0.05cm of tmp2.center](bckimg2){F31\_BckImage};
+\node[node,concret,right=0.05cm of tmp2.center](bckclr2){F32\_BckColor};
+\node[node,concret,below=3cm of background2] (font2){F13\_Font};
+\node[node,concret,below=2cm of font2](fontsize2){F33\_FontSize};
+\node[below=1.4cm of font2,minimum width=0.2cm, minimum height=0.8cm](tmpfont2){};
+\node[node,concret,left=0.2cm of tmpfont2.north east](fontstyle2){F34\_FontStyle};
+\node[node,concret,right=0.2cm of tmpfont2.north west](fontcolor2){F35\_FontColor};
+\node[node,concret,left=1.6cm of title2] (para) {F5\_Paragraph};
+\node[node,concret,below left=1.6cm of para.south west] (background3){F14\_Background};
+\node[minimum height=0.8cm,below=1cm of background3](tmp3){};
+\node[node,concret,left=0.05cm of tmp3.center](bckimg3){F36\_BckImage};
+\node[node,concret,right=0.05cm of tmp3.center](bckclr3){F37\_BckColor};
+\node[node,concret,below=3cm of background3] (font4){F15\_Font};
+\node[node,concret,below=2cm of font4](fontsize4){F38\_FontSize};
+\node[below=1.4cm of font4,minimum width=0.2cm, minimum height=0.8cm](tmpfont4){};
+\node[node,concret,left=0.2cm of tmpfont4.north east](fontstyle4){F39\_FontStyle};
+\node[node,concret,right=0.2cm of tmpfont4.north west](fontcolor4){F40\_FontColor};
+\begin{umlseqdiag}
+\umlobject[y=-5.5,class=Body]{bd}
+\umlobject[x=0,y=-7.5,class=Block]{b1}
+\umlobject[x=0,y=-9.5,class=H1]{h1}
+\umlobject[x=0,y=-14.5,class=H2]{h2}
+\umlobject[x=0,y=-16.5,class=Paragraph]{p1}
+\end{umlseqdiag}
+\draw(body.250) edge[-o,bend left] (background0.east);
+\draw(body.290) edge[-o,bend right] (font0.west);
+\draw(title.south) edge[-o,bend left] (background.east);
+\draw(title.south) edge[-o,bend left] (font.east);
+\draw(title2.south) edge[-o,bend right] (background2.west);
+\draw(title2.south) edge[-o,bend right] (font2.west);
+\draw(block.south) edge[-o,bend right] (background4.west);
+\path(block.south) -- +(0,-0.6) edge[-o,bend right] (font3.west);
+\draw(para.south) edge[-o,bend left] (background3.east);
+\draw(para.south) edge[-o,bend left] (font4.east);
+\draw[link,dashed] (body) -- (bd);
+\draw[link,dashed] (block) -- (b1.30);
+\draw[link,dashed] (title) -- (h1.150);
+\draw[link,dashed] (title2) -- (h2.30);
+\draw[link,dashed] (para) -- (p1.150);
+\draw[-o](spm) -- (body.north);
+\draw[-o](body.250) -- (title.north);
+\draw[-o](body.290) -- (block.north);
+\draw(block) -- +(0,-2) edge[-o,bend left] (para.north);
+\draw[-o](block) -- (title2.north);
+\draw[-*](font0) -- (fontsize0.north);
+\draw[-*](font0) -- (fontstyle0.north);
+\draw[-*](font0) -- (fontcolor0.north);
+\draw[-*](font) -- (fontsize.north);
+\draw[-*](font) -- (fontstyle.north);
+\draw[-*](font) -- (fontcolor.north);
+\draw[-*](font2) -- (fontsize2.north);
+\draw[-*](font2) -- (fontstyle2.north);
+\draw[-*](font2) -- (fontcolor2.north);
+\draw[-*](font3) -- (fontsize3.north);
+\draw[-*](font3) -- (fontstyle3.north);
+\draw[-*](font3) -- (fontcolor3.north);
+\draw[-*](font4) -- (fontsize4.north);
+\draw[-*](font4) -- (fontstyle4.north);
+\draw[-*](font4) -- (fontcolor4.north);
+\draw[-](background0.south) -- (bckclr0.north);
+\draw[-](background0.south) -- (bckimg0.north);
+\arctroispoints{background0.south}{bckimg0.north}{bckclr0.north}{4mm}
+\draw[-](background.south) -- (bckclr.north);
+\draw[-](background.south) -- (bckimg.north);
+\arctroispoints{background.south}{bckimg.north}{bckclr.north}{4mm}
+\draw[-](background2.south) -- (bckclr2.north);
+\draw[-](background2.south) -- (bckimg2.north);
+\arctroispoints{background2.south}{bckimg2.north}{bckclr2.north}{4mm}
+\draw[-](background3.south) -- (bckclr3.north);
+\draw[-](background3.south) -- (bckimg3.north);
+\arctroispoints{background3.south}{bckimg3.north}{bckclr3.north}{4mm}
+\draw[-](background4.south) -- (bckclr4.north);
+\draw[-](background4.south) -- (bckimg4.north);
+\arctroispoints{background4.south}{bckimg4.north}{bckclr4.north}{4mm}
+\end{tikzpicture}
+\caption{Modèle spécifique de la page test}
+\end{figure}
+Cet arbre donne l'ensemble des possibilités de configuration pour la
+page test. Cependant, étant donné que l'on dispose d'une page test
+effective, cela signifie que les choix ont déjà été faits par le
+développeur. Ce modèle va donc, par analyse du code source de la page
+test et de ses feuilles de style, être instancié afin de donner une
+configuration de la page en question. Les styles non spécifiés spécifiquement
+prennent des valeurs par défaut définies dans la norme HTML \cite{html4attributes}.
+\begin{figure}[H]
+\centering
+\definecolor{configBckColor}{rgb}{1,0.9,0.5}
+\begin{tikzpicture}[
+node/.style={draw,rectangle, minimum height=0.6cm,font=\footnotesize, minimum width=1.6cm, text badly centered,rounded corners},
+concret/.style={fill=configBckColor},
+link/.style={-latex}
+]
+\node[node](spm){Specific test page configuration};
+\node[node,concret,below=1cm of spm](body){F1\_Body};
+\node[node,concret,left=3.7cm of body.south] (background0){F6\_Background};
+\node[minimum height=0.8cm,below=1cm of background0](tmp0){};
+\node[node,concret,left=0.05cm of tmp0.center](bckimg0){\parbox{2.1cm}{\centering F16\_BckImage\\=""}};
+\node[node,concret,right=0.05cm of tmp0.center](bckclr0){\parbox{2.1cm}{\centering F17\_BckColor\\=""}};
+\node[node,concret,right=4.15cm of body.south] (font0){F7\_Font};
+\node[node,concret,below=2cm of font0](fontsize0){\parbox{2cm}{\centering F18\_FontSize\\="12"}};
+\node[below=1.5cm of font0,minimum width=0.2cm, minimum height=0.8cm](tmpfont0){};
+\node[node,concret,left=0.2cm of tmpfont0.north east](fontstyle0){\parbox{2cm}{\centering F19\_FontStyle\\="Arial"}};
+\node[node,concret,right=0.2cm of tmpfont0.north west](fontcolor0){\parbox{2cm}{\centering F20\_FontColor\\="black"}};
+\node[below=3cm of body](tmpg){};
+\node[node,concret,left=0.8cm of tmpg] (title) {F2\_Title};
+\node[node,concret,below left=1.6cm of title.north west] (background){F8\_Background};
+\node[minimum height=0.8cm,below=1cm of background](tmp){};
+\node[node,concret,left=0.05cm of tmp.center](bckimg){\parbox{2.1cm}{\centering F21\_BckImage\\=""}};
+\node[node,concret,right=0.05cm of tmp.center](bckclr){\parbox{2.1cm}{\centering F22\_BckColor\\=""}};
+\node[node,concret,below=3cm of background] (font){F9\_Font};
+\node[node,concret,below=2cm of font](fontsize){\parbox{2cm}{\centering F23\_FontSize\\="12"}};
+\node[below=1.5cm of font,minimum width=0.2cm, minimum height=0.8cm](tmpfont){};
+\node[node,concret,left=0.2cm of tmpfont.north east](fontstyle){\parbox{2cm}{\centering F24\_FontStyle\\="Arial"}};
+\node[node,concret,right=0.2cm of tmpfont.north west](fontcolor){\parbox{2cm}{\centering F25\_FontColor\\="blue"}};
+\node[node,concret,right=0.8cm of tmpg] (block) {F3\_Block};
+\node[node,concret,below right=1.6cm of block.north east] (background4){F10\_Background};
+\node[minimum height=0.8cm,below=1cm of background4](tmp4){};
+\node[node,concret,left=0.05cm of tmp4.center](bckimg4){\parbox{2.1cm}{\centering F26\_BckImage\\=""}};
+\node[node,concret,right=0.05cm of tmp4.center](bckclr4){\parbox{2.1cm}{\centering F27\_BckColor\\=""}};
+\node[node,concret,below=3cm of background4] (font3){F11\_Font};
+\node[node,concret,below=2cm of font3](fontsize3){\parbox{2cm}{\centering F28\_FontSize\\="12"}};
+\node[below=1.5cm of font3,minimum width=0.2cm, minimum height=0.8cm](tmpfont3){};
+\node[node,concret,left=0.2cm of tmpfont3.north east](fontstyle3){\parbox{2cm}{\centering F29\_FontStyle\\="Arial"}};
+\node[node,concret,right=0.2cm of tmpfont3.north west](fontcolor3){\parbox{2cm}{\centering F30\_FontColor\\="red"}};
+\node[node,concret,below=7cm of block] (title2) {F4\_Title};
+\node[node,concret, below right=1.6cm of title2.south east] (background2){F12\_Background};
+\node[minimum height=0.8cm,below=1cm of background2](tmp2){};
+\node[node,concret,left=0.05cm of tmp2.center](bckimg2){\parbox{2.1cm}{\centering F31\_BckImage\\=""}};
+\node[node,concret,right=0.05cm of tmp2.center](bckclr2){\parbox{2.1cm}{\centering F32\_BckColor\\=""}};
+\node[node,concret,below=3cm of background2] (font2){F13\_Font};
+\node[node,concret,below=2cm of font2](fontsize2){\parbox{2cm}{\centering F33\_FontSize\\="12"}};
+\node[below=1.4cm of font2,minimum width=0.2cm, minimum height=0.8cm](tmpfont2){};
+\node[node,concret,left=0.2cm of tmpfont2.north east](fontstyle2){\parbox{2cm}{\centering F34\_FontStyle\\="Arial"}};
+\node[node,concret,right=0.2cm of tmpfont2.north west](fontcolor2){\parbox{2cm}{\centering F35\_FontColor\\="red"}};
+\node[node,concret,left=1.6cm of title2] (para) {F5\_Paragraph};
+\node[node,concret,below left=1.6cm of para.south west] (background3){F14\_Background};
+\node[minimum height=0.8cm,below=1cm of background3](tmp3){};
+\node[node,concret,left=0.05cm of tmp3.center](bckimg3){\parbox{2.1cm}{\centering F36\_BckImage\\=""}};
+\node[node,concret,right=0.05cm of tmp3.center](bckclr3){\parbox{2.1cm}{\centering F37\_BckColor\\=""}};
+\node[node,concret,below=3cm of background3] (font4){F15\_Font};
+\node[node,concret,below=2cm of font4](fontsize4){\parbox{2cm}{\centering F38\_FontSize\\="12"}};
+\node[below=1.4cm of font4,minimum width=0.2cm, minimum height=0.8cm](tmpfont4){};
+\node[node,concret,left=0.2cm of tmpfont4.north east](fontstyle4){\parbox{2cm}{\centering F39\_FontStyle\\="Arial"}};
+\node[node,concret,right=0.2cm of tmpfont4.north west](fontcolor4){\parbox{2cm}{\centering F40\_FontColor\\="red"}};
+\begin{umlseqdiag}
+\umlobject[y=-5.5,class=Body]{bd}
+\umlobject[x=0,y=-7.5,class=Block]{b1}
+\umlobject[x=0,y=-9.5,class=H1]{h1}
+\umlobject[x=0,y=-14.5,class=H1]{h2}
+\umlobject[x=0,y=-16.5,class=Paragraph]{p1}
+\end{umlseqdiag}
+\draw(body.250) edge[link,bend left] (background0.east);
+\draw(body.290) edge[link,bend right] (font0.west);
+\draw(title.south) edge[link,bend left] (background.east);
+\draw(title.south) edge[link,bend left] (font.east);
+\draw(title2.south) edge[link,bend right] (background2.west);
+\draw(title2.south) edge[link,bend right] (font2.west);
+\draw(block.south) edge[link,bend right] (background4.west);
+\path(block.south) -- +(0,-0.6) edge[link,bend right] (font3.west);
+\draw(para.south) edge[link,bend left] (background3.east);
+\draw(para.south) edge[link,bend left] (font4.east);
+\draw[link,dashed] (body) -- (bd);
+\draw[link,dashed] (block) -- (b1.30);
+\draw[link,dashed] (title) -- (h1.150);
+\draw[link,dashed] (title2) -- (h2.30);
+\draw[link,dashed] (para) -- (p1.150);
+\draw[link](spm) -- (body.north);
+\draw[link](body.250) -- (title.north);
+\draw[link](body.290) -- (block.north);
+\path[draw](block) -- +(0,-2) edge[link,bend left] (para.north);
+\draw[link](block) -- (title2.north);
+\draw[link](font0) -- (fontsize0.north);
+\draw[link](font0) -- (fontstyle0.north);
+\draw[link](font0) -- (fontcolor0.north);
+\draw[link](font) -- (fontsize.north);
+\draw[link](font) -- (fontstyle.north);
+\draw[link](font) -- (fontcolor.north);
+\draw[link](font2) -- (fontsize2.north);
+\draw[link](font2) -- (fontstyle2.north);
+\draw[link](font2) -- (fontcolor2.north);
+\draw[link](font3) -- (fontsize3.north);
+\draw[link](font3) -- (fontstyle3.north);
+\draw[link](font3) -- (fontcolor3.north);
+\draw[link](font4) -- (fontsize4.north);
+\draw[link](font4) -- (fontstyle4.north);
+\draw[link](font4) -- (fontcolor4.north);
+\draw[link](background0.south) -- (bckclr0.north);
+\draw[link](background0.south) -- (bckimg0.north);
+\draw[link](background.south) -- (bckclr.north);
+\draw[link](background.south) -- (bckimg.north);
+\draw[link](background2.south) -- (bckclr2.north);
+\draw[link](background2.south) -- (bckimg2.north);
+\draw[link](background3.south) -- (bckclr3.north);
+\draw[link](background3.south) -- (bckimg3.north);
+\draw[link](background4.south) -- (bckclr4.north);
+\draw[link](background4.south) -- (bckimg4.north);
+\end{tikzpicture}
+\caption{Modèle de configuration de la page modèle}
+\end{figure}
+Dans ce schéma, toutes les caractéristiques visuelles présentes dans le
+diagramme précédent sont affectées d'une valeur. Cette valeur peut
+provenir de plusieurs sources. Soit le développeur a fixé cette valeur
+pour un élément en particulier, soit celui-ci ne l'a pas défini et
+provient d'un comportement par défaut de propagation des valeurs.
+\\
+On constate que les éléments n'ayant pas de valeur associée n'ont pas
+disparu et qu'il sont donc présents avec comme valeur une chaîne de
+caractères vide. Ceci correspond à un choix fait par plusieurs
+navigateurs lors de la récupération de valeurs d'attributs par le
+biais du langage JavaScript et/ou de bibliothèques de plus haut
+niveau.\\
+L'étape suivante reprend l'ensemble des des transformations réalisées
+dans cette section sous forme d'un schéma, en y ajouté les étapes suivantes
+jusqu'a arriver à modification finale. Le but étant de donner une vision
+concrète sur le procéssus de transformations complet.
+\subsection{Procédure d'adaptation}
+L'adaptation de l'apparence d'une page passe par une partie importante
+d'analyse de la page existante et de transformation des informations
+disponibles pour les rendre exploitables.\\
+La partie précédente (section \ref{sctpagetest}) suit le procéssus d'adaptation
+par la transformation et l'enchainement des modèles, jusqu'a arriver à une configuration
+de page Web. C'est sur cette configuration que les adaptations vont pouvoir être réalisées.
+Des transformations de la configuration par le biais de règles et tenant compte des
+préférences utilisateurs sont réalisées pour obtenir au final une adaptation de la
+configuration. Celle-ci qui en sortie de ce processus de transformation sera affichée à
+l'utiliateur.\\
+Ce processus d'adaptation comporte beaucoup d'étapes.Certaines d'entre elles, comme l'acquisition
+des informations de la page à adapter, les préférences de l'utilisateur, les données internes de
+transformation des modèles, peuvent être parallélisées. Ces étapes sont liées dans la figure
+\ref{figprocessus} directement à l'état initial. Néanmois ce processus reste globalement linéaire.
+\\
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+node/.style={draw,rectangle, minimum height=0.8cm, text width=3cm, font=\small,text badly centered},
+link/.style={-latex},
+hsep/.style={fill=black, minimum width = 3cm, minimum height=0.2cm},
+act/.style={rounded corners=12},
+dmnd/.style={draw,diamond,minimum size=1.6cm}
+]
+\umlstateinitial[name=initial]
+\node[hsep, below=0.6cm of initial] (ha) {};
+\node[node,act,below=1.4cm of ha] (adom){Get test page DOM};
+\node[node,act,right=1cm of adom](agpm){get general page model};
+\node[hsep,below=1cm of adom.south east] (hb) {};
+\node[node,act,below=0.6cm of hb](astpm){Extract specific test page model from DOM};
+\node[node,below=0.6cm of astpm](stpm){Specific test page model};
+\node[node,act,left=1cm of stpm](agpfm){Get generic page feature model};
+\node[hsep,below=1cm of stpm] (hc) {};
+\node[node,act,below=0.6cm of hc](astpfm){Expand Specific test page model with all features};
+\node[node,below=0.6cm of astpfm](stpfm){Specific test page features model};
+\node[hsep,below=1cm of stpfm] (hd) {};
+\node[node,act,left=1cm of stpfm](atpss){Get stylesheet and internal style of test page};
+\node[node,act,below=0.6cm of hd](atpcm){Generate a configuration model for the test page};
+\node[node,below=0.6cm of atpcm](tpcm){Test page configuration model};
+\node[node,act,left=1cm of tpcm](aup){Get user preferences};
+\node[hsep,below=1cm of tpcm] (he) {};
+\node[node,act,below=0.6cm of he](atps){Use rules tu transform test page style};
+\node[node,below=0.6cm of atps](ntps){New test page style};
+\umlstatefinal[name=end,x=0,y=-22.8]
+\draw[link](initial) -- (ha);
+\draw[link](ha) -- (adom);
+\path[draw,link](ha.342) -- +(0,-0.6) -| (agpm);
+\path[draw,link](agpm) -- +(0,-0.8) -| (hb.8);
+\path[draw,link](adom) -- +(0,-0.8) -| (hb.172);
+\draw[link](hb) -- (astpm);
+\draw[link](astpm) -- (stpm);
+\path[draw,link](stpm) -- +(0,-0.8) -| (hc.8);
+\path[draw,link](agpfm) -- +(0,-0.8) -| (hc.172);
+\draw[link](hc) -- (astpfm);
+\draw[link](astpfm) -- (stpfm);
+\path[draw,link](stpfm) -- +(0,-0.8) -| (hd.8);
+\draw[link](hd) -- (atpcm);
+\draw[link](atpcm) -- (tpcm);
+\path[draw,link](atpss) -- +(0,-0.8) -| (hd.172);
+\path[draw,link](tpcm) -- +(0,-0.8) -| (he.8);
+\path[draw,link](aup) -- +(0,-0.8) -| (he.172);
+\draw[link](he) -- (atps);
+\draw[link](atps) -- (ntps);
+\draw[link](ntps) |- (end);
+\node[minimum size=0.3cm,left=5.5cm of ha.south] (tmpa) {};
+\node[minimum size=0.3cm,below right=0.2cm of tmpa.south east] (tmpb) {};
+\node[minimum size=0.3cm,below right=0.2cm of tmpb.south east] (tmpc) {};
+\draw[-](ha.186) |- (tmpa.south);
+\draw[-](ha.189) |- (tmpb.south);
+\draw[-](ha.197) |- (tmpc.south);
+\draw[link](tmpa.south) |- (aup);
+\draw[link](tmpb.south) |- (atpss);
+\draw[link](tmpc.south) |- (agpfm);
+\end{tikzpicture}
+\caption{Description du processus d'adaptation}
+\label{figprocessus}
+\end{figure}
+%\begin{figure}[H]
+% \begin{tikzpicture}[
+% node/.style={draw,rectangle, minimum height=1.1cm, text width=3cm, font=\small,text badly centered,rounded corners},
+% link/.style={-latex},
+% dmnd/.style={draw,diamond,minimum size=1.6cm}
+% ]
+% \node[node](dom){DOM};
+% \node[dmnd,below=0.8cm of dom](dmd1){};
+% \node[node,left=0.8cm of dmd1](gpg){General page model};
+% \node[node,below=0.8cm of dmd1,fill=lightgray](spm){Specific page model};
+% \node[dmnd,below=0.8cm of spm](dmd2){};
+% \node[node,left=0.8cm of dmd2](gfm){Generic page feature model};
+% \node[node,below=0.8cm of dmd2,fill=lightgray](sfm){Specific page feature model};
+% \node[dmnd,below=0.8cm of sfm](dmd3){};
+% \node[node,left=0.8cm of dmd3](stylesheet){Stylesheet};
+% \node[node,below=0.8cm of dmd3,fill=lightgray](scm){Specific page configuration model};
+%
+% \node[node,right=2cm of dom](upref){User preferences};
+% \node[dmnd,below=0.8cm of upref](dmd4){};
+% \node[node,right=0.8cm of dmd4](gafm){Generic adaptation feature Model};
+% \node[node,below=0.8cm of dmd4,fill=lightgray](sam){User specific adaptation model};
+%
+% \node[dmnd,below right=0.8cm of scm](dmd5){};
+% \node[node,below=0.8cm of dmd5,fill=lightgray](npcm){New page configuration model};
+%
+%
+% \draw[link](dom) -- (dmd1);
+% \draw[link](gpg) -- (dmd1);
+% \draw[link](dmd1) -- (spm);
+% \draw[link](spm) -- (dmd2);
+% \draw[link](gfm) -- (dmd2);
+% \draw[link](dmd2) -- (sfm);
+% \draw[link](sfm) -- (dmd3);
+% \draw[link](stylesheet) -- (dmd3);
+% \draw[link](upref) -- (dmd4);
+% \draw[link](gafm) -- (dmd4);
+% \draw[link](dmd4) -- (sam);
+%
+% \draw[link](dmd3) -- (scm);
+% \draw[link](sam) |- (dmd5);
+% \draw[link](scm) |- (dmd5);
+% \draw[link](dmd5) -- (npcm);
+%
+% \end{tikzpicture}
+%\end{figure}
+\subsection{Les besoins d'adaptations}
+\subsubsection{Un cas concret}
+Voici trois réponses de personnes déficientes visuelle prises au
+hasard, à qui la question suivante a été posée : Quand vous naviguez
+sur internet et que vous arrivez sur un site difficilement accessible
+pour vous, qu'aimeriez vous changer pour améliorer sensiblement votre
+navigation ?
+\\
+\definecolor{bck1}{rgb}{0.85,0.85,0.85}
+Réponse 1 :
+\begin{center}
+\colorbox{bck1}{\begin{minipage}{0.9\textwidth} Lorsqu’il m’arrive
+de naviguer sur des sites difficilement accessibles pour moi,
+dans la majorité des cas mes difficultés proviennent des points
+suivants : le site internet donne de nombreuses informations
+agencées sur la page de façon hasardeuse et avec le zoom il est
+difficile d’accéder à toutes ces dernières sans devoir repasser
+plusieurs fois aux mêmes endroits et parfois même, certaines
+d’entre elles ne nous parviennent pas. Par exemple, lorsque les
+informations sont placées en colonne et quand il y a des
+titres en gros caractère, avec le zoom cela est compliqué car
+il est réglé en fonction de la taille du texte et les titres
+deviennent très grands et difficiles à lire. Autre problème,
+lorsque le contraste entre le texte et le fond n’est pas assez
+élevé, avec ou sans l’inversion de couleur, la lecture est très
+dure. En outre, lorsqu’une partie de la page n’a pas les mêmes
+couleurs qu’une autre, il faut parfois jongler entre
+l’activation et la désactivation de l’inversion de couleur et
+cela est fastidieux, par exemple si une partie de la page est
+écrite en blanc sur fond noir et une autre en noir sur fond
+blanc. Enfin, lorsque les liens hypertextes sont sur des images
+ou bien lorsque le texte est sous forme d’image, dans certains
+cas, cela peut devenir gênant.
+\end{minipage}}
+\end{center}
+\vspace{0.6cm}
+Réponse 2 :
+\begin{center}
+\colorbox{bck1}{\begin{minipage}{0.9\textwidth} Pour améliorer ma
+navigation Internet et pouvoir accéder plus aisément sur
+certains sites difficilement accessibles, j'aimerais bien que
+l'on puisse changer les contrastes et les couleurs de
+l'apparence du site, ou qu'il soit tout simplement bien
+contrasté à la base.
+%M ??? > >
+De plus, certaines mises en forme des textes et des images sont
+parfois complexes et un peu éparpillées sur l'ensemble de la
+page, alors qu'une mise en forme linéaire et claire serait bien
+plus confortable. Pour finir, ce qui est le plus énervant sur
+Internet, c'est les sites comportant des publicités ou des
+éléments dynamiques qui empèche la lecture par exemple d'un
+texte qui défilerait ou le visionage d'une photo ou d'une image
+qui bougerait ou clignoterait.
+\end{minipage}}
+\end{center}
+\vspace{0.6cm}
+Réponse 3 :
+\begin{center}
+\colorbox{bck1}{\begin{minipage}{0.9\textwidth} Voilà, lorsque je
+navigue sur les sites, ce qui me décourage de continuer sur un
+site c'est :
+\begin{itemize}\setlength{\itemsep}{0.4\baselineskip}
+\item la police de caractères qui n'est parfois pas assez simple ou
+plutôt trop enjolivée pour pouvoir lire facilement sans forcer.
+\item lorsque le texte est sur un fond d'écran et que du fait il
+devient illisible.
+\item toujours sur la lisibilité, il est parfois difficile, voire
+impossible, de lire par exemple "valider" ou \enquote{continuer} car ces mots
+sont en couleur dans un encadré qui, lui aussi, est en couleur et,
+même en utilisant les changements de contraste, cela ne se lit pas
+du premier coup.
+\item Il y a aussi des sites qui \enquote{envoient} des pub (ex : -
+60% sur...) qui vient se mettre
+sur ce que l'on est en train de lire et cela est fatiguant car on perd le fil de la lecture .\\
+\end{itemize}
+En résumé, il faudrait épurer les sites avec des caractères simples,
+un fond d'écran uniforme, des contrastes bien apropriés , et, si l'on
+veut personnaliser on peut enjoliver avec des images ou autre sur le
+contour, ce qui laisserait de la place au texte.
+\end{minipage}}
+\end{center}
+\vspace{0.6cm} Ces trois réponses, bien que non représentatives de
+l'ensemble des personnes en situation de handicap visuel, sont un élément
+essentiel pour comprendre et extraire des besoins réels. Les
+personnes intérrogées possèdent chacune une pathologie visuelle
+différente des autres ce qui permet d'avoir un ensemble de
+\enquote{difficultés} plus large et de coller au mieux à la réalité. De plus,
+les trois réponses vont pouvoir être comparées pour déterminer les
+points communs et les points de variation.
+\subsubsection{Analyse des réponses}
+La première étape de l'analyse consiste à extraire, de chacune des
+réponses données par les personnes interrogées, les difficultés
+rencontrées signalées. L'objectif étant de n'avoir que les
+informations
+nécessaires pour pouvoir les classifier.\\
+Réponse 1 :
+\begin{itemize}\setlength{\itemsep}{0.4\baselineskip}
+\item Quantité d'informations trop importante
+\item Agencement de l'information hasardeuse.
+(=> accès aux informations en plusieurs fois, ou inexistant (risque important de passer à côté))
+\item Difficulté à adapter le zoom à l'ensemble des tailles de police existante sur la page.
+\item Jongler avec plusieurs type de filtre de couleurs.
+\item Liens au dessus d'images et texte au format image.\\
+\end{itemize}
+Réponse 2 :
+\begin{itemize}\setlength{\itemsep}{0.4\baselineskip}
+\item Changer contraste et couleurs d'apparence de la page.
+\item Disposition et mise en forme du texte étalée.
+\item Publicités et éléments dynamiques (flash, clignotement).\\
+\end{itemize}
+Réponse 3 :
+\begin{itemize}\setlength{\itemsep}{0.4\baselineskip}
+\item Fioritures sur les polices de caractères.
+\item Texte sur un fond d'écran (sur une image).
+\item Difficultés en présence de textes colorés sur fond coloré.
+\item Perte du fil de la lecture quand publicités.\\
+\end{itemize}
+\subsubsection{Regroupement des difficultés}
+Les réponses données par les trois personnes à la question possèdent
+un certain nombre de points en communs soit exprimés exactement de la
+même façon, soit exprimés avec des termes et des formulations
+différents mais exprimant le même concept. Ce dernier point est
+souvent dû à un
+niveau de connaissance et de maîtrise de l'outil informatique différent.\\
+\begin{itemize}\setlength{\itemsep}{0.4\baselineskip}
+\item Quantité d'informations
+\item Disposition de l'information
+\item Mise en forme (style de caractère) du texte.
+\item Echelle de taille de police
+\item Uniformité selon les zones
+\item Lien et texte au dessus d'images
+\item Coloration des textes
+\item Publicités et autres éléments dynamiques\\
+\end{itemize}
+On constate qu'il y a certain nombre de points en communs mais aussi
+de différences. Les besoins en adaptation pour chaque personne ne
+sont pas réellement \enquote{uniques} ; d'autres personnes ont également des
+besoins identiques. C'est la combinaison des besoins en adaptation et
+des besoins plus spécifiques qui justifient la nécessité d'avoir
+une modélisation qui colle au plus près des
+déficiences visuelles.\\
+\subsection{Fusion des informations pour l'extraction d'adaptations}
+Cette partie à pour but de coupler les information obtenus par le cas
+pratique et les informations obtenues par l'extraction des
+\glspl{symptome} (cf. section \ref{refpat}) afin de
+déterminer un ensemble d'adaptations.\\
+\begin{figure}[H]
+\begin{center}
+\begin{tabular}{| l | c |}
+\hline
+Source de difficulté & Adaptation possible \rule[-7pt]{0pt}{20pt} \\
+\hline
+Taille du texte & \begin{minipage}{8cm}\medskip
+\begin{itemize}\item Taille minimale
+\item Taille maximale
+\item Ration taille min/max
+\medskip\end{itemize}\end{minipage}\\
+\hline
+Style texte & \begin{minipage}{8cm}\medskip
+\begin{itemize}\item Choix de la police
+\medskip\end{itemize}\end{minipage}\\
+\hline
+Disposition du Texte & \begin{minipage}{8cm}\medskip
+\begin{itemize}\item Degrès de inéarisation
+\medskip\end{itemize}\end{minipage}\\
+\hline
+Couleur du texte & \begin{minipage}{8cm}\medskip
+\begin{itemize}\item Suppression de la couleurs
+\item Adaptation selon le contraste
+\item Adaptation selon la brillance
+\medskip\end{itemize}\end{minipage}\\
+\hline
+Entre deux éléments & \begin{minipage}{8cm}\medskip
+\begin{itemize}\item Contraste minimum
+\item Bordure/lignes de distinction et guidage
+\medskip\end{itemize}\end{minipage}\\
+\hline
+Longueurs d'ondes & \begin{minipage}{8cm}\medskip
+\begin{itemize}\item Suppression de longueurs d'ondes
+\item Prévalence d'une longueur d'onde
+\medskip\end{itemize}\end{minipage}\\
+\hline
+Brillance & \begin{minipage}{8cm}\medskip
+\begin{itemize}\item Brillance maximale
+\item Brillance minimale
+\item Ration brillance min/max
+\item Uniforme sur la page
+\medskip\end{itemize}\end{minipage}\\
+\hline
+Elements dynamiques & \begin{minipage}{8cm}\medskip
+\begin{itemize}\item Taux de réduction
+\medskip\end{itemize}\end{minipage}\\
+\hline
+images & \begin{minipage}{8cm}\medskip
+\begin{itemize}\item Supression
+\item Taux de simplification
+\item Atténuation/augmentation de la Brillance
+\medskip\end{itemize}\end{minipage}\\
+\hline
+Lien au format texte & \begin{minipage}{8cm}\medskip
+\begin{itemize}\item Souligner
+\item Colorer
+\item Taux de contraste avec le texte et le fond
+\medskip\end{itemize}\end{minipage}\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Tableaux des adaptations}
+\end{figure}
+Les adaptations possibles représentent un ensemble de contraintes
+valuées que l'utilisateur peut choisir de placer ou non. Dans chaque
+ensemble, les contraintes ne sont pas toutes indépendantes, il peut
+par conséquent exister des conflits entre elles. Par exemple, pour la
+taille du texte il n'est pas possible de choisir à la fois une taille
+min, une taille max et un rapport entre la taille min et la taille max
+puisqu'on aura en quelque sorte deux ratios différents : celui donné
+directement par la contraintes de ratio et l'autre qui peut être
+calculé par le rapport de la taille max et de la taille
+min. L'utilisateur devra donc choisir l'une ou l'autre des notations.
+\subsection{Modèle d'adaptation}
+La réponse données dans la section précédente couplée à divers retours
+d'autres personnes déficientes
+visuelles a permis de réaliser le schéma d'adaptation simplifié suivant.\\
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+node/.style={draw,rectangle, minimum height=0.6cm,font=\footnotesize, minimum width=1.6cm, text badly centered,rounded corners},
+concret/.style={fill=featureBckColor},
+link/.style={-latex}
+]
+\node[node] (gam) {Generic adaptation model};
+\node[node,concret,below=1.5cm of gam] (brtness) {Brightness};
+\node[node,concret,below=1.5cm of brtness] (brtMax) {BrightnessMax};
+\node[node,concret,left=2.6cm of brtness] (contrast) {Contrast};
+\node[node,concret,below=1.5cm of contrast] (cmin) {ContrastMin};
+\node[node,concret,left=0.2cm of cmin] (rm) {RmHueList};
+\node[node,concret,right=0.2cm of cmin] (border) {AddBorder};
+\node[node,concret,right=2.4cm of brtness] (image) {Image};
+\node[node,concret,below=1.5cm of image] (simplify) {Simplify};
+\node[node,concret,left=0.2cm of simplify] (keep) {Display};
+\node[node,concret,right=0.2cm of simplify] (attenuate) {Attenuate};
+\draw[-o] (gam.south) -- (contrast.north);
+\draw[-o] (gam.south) -- (brtness.north);
+\draw[-o] (gam.south) -- (image.north);
+\draw[-o] (contrast.south) -- (cmin.north);
+\draw[-o] (contrast.south) -- (rm.north);
+\draw[-o] (contrast.south) -- (border.north);
+\draw[-o] (image.south) -- (keep.north);
+\draw[-o] (image.south) -- (simplify.north);
+\draw[-o] (image.south) -- (attenuate.north);
+\draw[-o] (brtness.south) -- (brtMax.north);
+\end{tikzpicture}
+\caption{Modèle de caractéristiques d'adaptations}
+\end{figure}
+Autrement dit, les principaux problèmes d'accessibilité sont dûs à
+trois éléments concrets : le contraste, la brillance et les
+images. Chacun de ces trois éléments possède un ou plusieurs points
+sur lesquels il est possible de jouer pour améliorer le rendu
+final. Avec comme exemple le contraste, fixer un contraste minimum,
+supprimer des teintes de couleurs particulières qui peuvent poser
+problèmes ou bien ajouter des bordure pour augmenter la distinction de
+certains éléments font partie des caractéristiques sur lesquelles il
+est possible de jouer pour bénéficier d'un confort supérieur.
+\subsection{Acquisition des préférences utilisateur}
+Adapter l'ensemble des pages existantes et n'importe quelle autre
+page future pour l'ensemble des personnes déficientes visuelles est
+de l'ordre de l'impossible. La raison en est simple, certaines
+modifications permettant d'augmenter le confort pour une déficience
+particulière pourra avoir l'effet inverse chez une personne atteinte
+d'une autre déficience. Une certaine prise de conscience de la
+manière dont l'utilisateur perçoit les choses et de la façon dont il
+compense ou adapte son outil de travail est donc nécessaire. \newline
+Une première phase va donc être dédiée à la qualification de son handicap et à
+la détermination des besoins réels en terme d'adaptation afin d'augmenter au
+mieux sont confort d'utilisation. Pour cela les choix pouvant être fait par
+l'utilisateur au moment de la configuration générale devront être clairs et très
+précis. De ce fait, l'ensemble des choix (options) disponibles pour paramétrer le
+traitement sera relativement important.
+\\
+Du fait du nombre important d'options pouvant être choisies par
+l'utilisateur, il est nécessaire d'effectuer une classification de ces options
+pour ne proposer à l'utilisateur que celles dont il est suceptible d'avoir
+besoin.
+\section{Points de difficultés algorithmique}
+En fonction des préférences utilisateurs, de l'architecture des pages, des
+styles choisis, etc\dots il n'est pas rare de se retrouver dans des situations de
+blocage.
+\subsection{Conflits de préférences utilisateurs}
+Les préférences utilisateurs représentent un outil permettant à l'utilisateur
+d'exprimer ses besoins et ses envies. Malheureusement celui-ci n'est pas
+conscient de ce que cela peut impliquer. Des choix fait à divers endroits et
+sans lien apparent direct entre eux vont pouvoir entrer en conflit. Autrement
+dit, deux choix A et B totalement indépendants peuvent être représentés chacun
+par un graphe distinct. Un choix C fait plus tard peut créer un lien non
+intuitif entre A et B et rendre le graphe d'ensemble connexe et donc ajouter une
+dépendance entre A et B et par conséquent des effets de bord.\\
+%M Qu'est-ce que ce graphe ? il faut le définir formellement !
+Soit $v1$, $v2$, ..., $v6$, des éléments de la page auxquels des valeurs sont associées,
+et $c1$, $c2$, $c3$ trois contraintes.
+Ici $v1$, $v2$, $v3$ avec la contrainte $c1$ et $v4$, $v5$, $v6$ avec la contrainte $c2$
+sont deux groupes indépendants d'éléments dépendants les uns des autres.
+L'ajout de la contrainte $c3$ entre deux éléments provenant chacun d'un groupe différent
+provoque une dépendance entre tous les éléments.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+node/.style={draw,circle, font=\footnotesize, minimum size=1cm, text badly centered},
+concret/.style={fill=featureBckColor},
+link/.style={-latex}
+]
+\node[node] (v1) {v1};
+\node[node,above right=2cm of v1.east] (v2) {$v2$};
+\node[node, below right=2cm of v1.east] (v3) {v3};
+\node[node,right=10cm of v1] (v4) {v4};
+\node[node,above left=2cm of v4.west] (v5) {v5};
+\node[node,below left=2cm of v4.west] (v6) {v6};
+\draw[-] (v1) -- node[above left=0.2cm]{c1} (v2);
+\draw[-] (v2) -- node[right=0.2cm]{c1} (v3);
+\draw[-] (v3) -- node[below left=0.2cm]{c1} (v1);
+\draw[-] (v4) -- node[above right=0.2cm]{c2} (v5);
+\draw[-] (v4) -- node[below right=0.2cm]{c2} (v6);
+\draw[-] (v3) -- node[above left=0.2cm]{c3} (v5);
+\end{tikzpicture}
+\caption{Conflits entre contraintes}
+%M définir Ci et Vi ainsi que les aretes !
+\end{figure}
+Ces conflits, entre les préférences de l'utilisateur, sont inévitables et
+constituent un point clé de l'adaptation. En cas de conflit entre des
+préférences utilisateurs, ce sont celles étant
+les plus prioritaires qui prennent le dessus sur les autres.
+Il exite plusieurs façons de représenter les préférences et leur priorité en fonction
+des besoins, Le livre \enquote{Working with Preferences: Less is More} \cite{kaci}
+parcourt un vaste ensemble de solutions et pose les problématiques majeures.\\
+%M il faudrait définir un modèle !
+Il existe un certain nombre d'algorithmes permettant d'extraire d'un ensemble de
+contraintes un ordre de priorité. Cependant, étant dans un environnement très
+spécifique, pour un même ensemble de préférences, deux utilisateurs voudront un
+résultat différent (des priorités différentes). Ces dernières devront donc être
+explicitées par l'utilisateur lui même.
+\subsection{Un exemple de contrainte : le contraste}
+Le contraste est une notion simple, il s'agit de comparer la couleur de deux
+éléments pour obtenir
+une valeur indiquant le taux de contraste entre ces deux éléments.\\
+Si une personne a une pathologie visuelle qui a comme \gls{symptome} la
+réduction de la perception de contrastes, alors celle-ci va fixer un taux de
+contraste minimum entre deux éléments qui lui
+permette de les distinguer facilement.\\
+Prenons le cas où, dans une page Web visitée, on trouve trois éléments
+importants qui sont liés chacun avec les deux autres (cf. schéma ci-dessous).
+Alors, un problème apparaît pour certaines valeurs du taux de contraste.\\
+\begin{figure}[H]
+\definecolor{clra}{rgb}{1,1,1}
+\definecolor{clra}{rgb}{1,1,1}
+\definecolor{clra}{rgb}{1,1,1}
+\centering
+\begin{tikzpicture}[
+node/.style={draw, dashed, rectangle, minimum height=1.4cm, minimum width=2.4cm},
+link/.style={-latex}
+]
+\node[node] (a) {};
+\node[node,above=0cm of a.north west](b){};
+\node[node,above=0cm of a.north east](c){};
+\end{tikzpicture}
+\caption{Conflit de contrastes}
+\end{figure}
+Dans ce cadre là, si l'utilisateur a demandé à avoir un contraste d'au moins
+51\%, aucune solution n'existe pour répondre à cette contrainte. Si on fixe le
+contraste maximum entre deux des objets, alors il est impossible de trouver une
+valeur pour le troisième qui soit supérieure à 51\% avec
+les deux précédents. Vu autrement, si pour un objet donné, on fixe
+51\% avec les deux autres qui
+sont en contact, alors ces deux autres auront un taux de contraste supérieur à
+100\%, ce qui est une aberration.\\
+\begin{figure}[H]
+\definecolor{clra}{rgb}{1,1,1}
+\definecolor{clrb}{rgb}{0,0,0}
+\definecolor{clrc}{rgb}{0.51,0.51,0.51}
+\centering
+\begin{tikzpicture}[
+node/.style={draw, dashed, rectangle, minimum height=1.4cm, minimum width=2.4cm},
+link/.style={-latex}
+]
+\node[node,fill=clrc] (a) {};
+\node[node,fill=clra, above=0cm of a.north west](b){};
+\node[node,fill=clrb, above=0cm of a.north east](c){};
+\node[right=0.5cm of a] (imp) {49\% ($<$ 51\%)};
+\draw[-] (imp.south west) -- (imp.north east);
+\node[left=0.5cm of a] () {51\%};
+\draw(b.north) edge[latex-latex, bend left] node[label=100\%](){} (c.north);
+\draw(c.320) edge[latex-latex, bend left] (a.east);
+\draw(a.west) edge[latex-latex, bend left] (b.220);
+\end{tikzpicture}
+\caption{Conflit avec un taux de contraste supérieur à 51\%}
+\end{figure}
+Une solution possible pour résoudre ce problème consiste à insérer un
+cadre/bordure autour d'un des éléments concernés, avec comme nouvelle contrainte
+que la borduire respecte un taux de contraste suffisant avec les autres
+éléments. On retrouve, par conséquent, la même impossibilité. Il faut donc non
+pas prendre en compte uniquement la bordure, mais aussi le remplissage de
+la forme. On pourra donc proposer comme solution une bordure ayant la couleur
+d'un des deux autres éléments et un remplissage de la couleur de l'autre élément
+comme sur le schéma qui suit.
+\begin{figure}[H]
+\definecolor{clra}{rgb}{1,1,1}
+\definecolor{clrb}{rgb}{0,0,0}
+\definecolor{clrc}{rgb}{0.51,0.51,0.51}
+\centering
+\begin{tikzpicture}[
+node/.style={draw, dashed, rectangle, minimum height=1.4cm, minimum width=2.4cm},
+link/.style={-latex}
+]
+\node[node,solid, draw=clrb,fill=clrb] (a) {};
+\node[node,solid, draw=clra,fill=clra,minimum height=1.2cm, minimum width=2.2cm] (aa) {};
+\node[node,fill=clra, above=0cm of a.north west](b){};
+\node[node,fill=clrb, above=0cm of a.north east](c){};
+\node[right=0.5cm of a] (imp) {$>$ 51\%};
+\node[left=0.5cm of a] () {$>$ 51\%};
+\draw(b.north) edge[latex-latex, bend left] node[label=100\%](){} (c.north);
+\draw(c.320) edge[latex-latex, bend left] (aa.center);
+\draw(a.west) edge[latex-latex, bend left] (b.220);
+\end{tikzpicture}
+\caption{Solution de bordures pourl e conflit de contrastes}
+\end{figure}
+\subsection{Les contrastes simultanés}
+On appelle contraste simultané, le phénomène qui a pour conséquence que pour une
+couleur donnée, l'œil humain exige d'une certaine manière sa complémentaire et
+ce, en même temps (simultanément).
+Si cette couleur n'est pas physiquement présente il la crée lui-même (virtuellement) et
+la projette là où il s'attend à la trouver.
+%M Je ne comprend pas cette création par l'oeil... virtuelle?
+\\
+De manière générale, plus la durée de fixation de la couleur prédominante est
+importante et plus celle-ci est intense (lumineuse), plus le phénomème de contraste
+simultané est marqué.\\
+L'effet de contraste simultané se produit entre une couleur et un gris mais
+aussi entre deux couleurs pures qui ne sont pas exactement complémentaires
+l'une de l'autre. Chacune des deux couleurs cherche à repousser l'autre du côté
+de sa complémentaire. Les couleurs paraissent alors
+dans un état d'excitation dynamique. Leur stabilité disparaît et elles vibrent.\\
+Il est possible d'atténuer ce phénomène de deux façons différentes selon si ce
+dernier se produit entre deux couleurs ou bien entre une couleur et un gris.
+Dans le cas où il se produit entre une couleur et un gris, il est possible de
+l'atténuer en teintant légèrement le gris avec la couleur qui lui est
+associée. Dans l'autre cas il suffit d'augmenter la distance d'une des deux
+couleurs avec le complémentaire de l'autre selon le cercle chromatique.\\
+Le contraste simultané n'est pas un phénoméne inconnu et non maîtrisé. Il peut
+être mesuré et ce de manière assez précise. \cite{simultContrast}. Il est donc
+possible de créer volontairement ce phénomène et de l'accentuer ou, au
+contraire, dans le cadre de ce sujet, de le réduire pour
+améliorer la facilité de lecture. \\
+Voici un exemple concret montrant le phénomène de contraste simultané. Deux
+images colorées dinstinctes possèdent chacune des rayures grises
+\textbf{indentiques}. Sur la vignette de gauche, la couleur rouge ayant pour
+complémentaire le bleu, les rayures grises paraissent légèrement
+bleuâtres. Tandis que sur la vignette de droite, la couleur bleu ayant pour
+complémentaire le rouge, les bandes grises paraissent rosâtres.\\
+\begin{figure}[H]
+\definecolor{clra}{rgb}{0.6,0.6,0.6}
+\definecolor{clrb}{rgb}{1,0,0}
+\definecolor{clrc}{rgb}{0.2,0.2,1}
+\centering
+\begin{tikzpicture}[
+node/.style={draw, dashed, rectangle, minimum height=1.4cm, minimum width=2.4cm},
+link/.style={-latex}
+]
+\begin{scope}
+\path [clip] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1);
+\foreach \x in {-1.7, -1.2, ..., 2}
+\node[rectangle, rotate=45, draw=none, fill=clra, minimum height=4cm,minimum width=1mm] (tmp) at (\x,0) {};
+\foreach \x in {-2, -1.5, ..., 2}
+\node[rectangle, rotate=45, draw=none, fill=clrb, minimum height=4cm,minimum width=1mm] (tmp) at (\x,0) {};
+\end{scope}
+\begin{scope}
+\path [clip] (7,-1) -- (7,1) -- (9,1) -- (9,-1);
+\foreach \x in {4.3, 4.8, ..., 10}
+\node[rectangle, rotate=45, draw=none, fill=clra, minimum height=4cm,minimum width=1mm] (tmp) at (\x,0) {};
+\foreach \x in {4, 4.5, ..., 10}
+\node[rectangle, rotate=45, draw=none, fill=clrc, minimum height=4cm,minimum width=1mm] (tmp) at (\x,0) {};
+\end{scope}
+\end{tikzpicture}
+\caption{Constraste simultanés}
+\end{figure}
+Même si une page ne génère pas ce phénomène par son jeu de couleurs utilisé,
+l'altération de cette page pour répondre à la contrainte de contraste peut
+entraîner ce dernier. D'où l'importance d'une méthode de calcul.
+\subsection{Impact de la brillance sur la perception}
+La brillance de la couleur d'une image impacte sur la façon de percevoir les
+objets notamment au niveau de leur dimension. Du fait de certaines propriétés de
+la lumière comme la réfraction,
+des objets refracteurs ne seront pas perçus de la même manière que des objets
+émetteurs de lumière. \\
+\begin{figure}[H]
+\definecolor{clra}{rgb}{0.6,0.6,0.6}
+\definecolor{clrb}{rgb}{1,0,0}
+\definecolor{clrc}{rgb}{0.2,0.2,1}
+\centering
+\begin{tikzpicture}[
+node/.style={draw, dashed, rectangle, minimum size=2cm},
+link/.style={-latex}
+]
+\node[node, draw=black, fill=black] (a) {};
+\node[node, draw=white, fill=white,minimum size=1cm] at(a.center) (b) {};
+\node[node, right=2cm of a,draw=white, fill=white] (c) {};
+\node[node, draw=black, fill=black,minimum size=1cm] at(c.center) (d) {};
+\end{tikzpicture}
+\caption{Perception des dimensions selon la couleur}
+\end{figure}
+Sur la vignette de gauche, le carré central (blanc) apparaît plus grand que le
+carré central (noir) de la vignette de droite, et pourtant, ils sont exactement
+de la même taille. L'œil ne percevant que la lumière, le noir correspondant à
+une absence de lumière, et étant donné que les tâches lumineuses ont tendance à
+affecter légèrement les récepteurs proches de ceux concernés sur la rétine, la
+zone blanche s'étale sur la zone noire donnant cette impression de
+taille différente. D'où le fait de dire que \enquote{le noir amincit}.\\
+Ce phénomène ne se produit pas qu'avec des formes géométriques, il se produit
+aussi pour du texte. Par conséquent un texte noir sur un fond blanc (affichage
+le plus répandu) paraîtra plus petit que le même texte en blanc sur un fond
+noir. Cela peut donc jouer sur la lisibilité du texte en plus du fait qu'un fond
+blanc lumineux peut générer une gêne, voire même un éblouissement.
+\section{Passage des préférences à un ensemble de contraintes}
+Les préférences de l'utilisateur peuvent être représentées sous la forme de
+contraintes portant sur une ou plusieurs variables. Ces dernières correspondent,
+dans une page Web, à des éléments HTML ou CSS.
+\subsection{Le contraste}
+\subsubsection{Contraste minimum}
+Il correspond a un taux minium de contraste entre deux éléments. Soit $e1$ et
+$e2$ deux éléments distincts de la page, $f_c$ la fonction qui calcule le
+contraste de deux éléments ($On$, cf. section \ref{formulecontraste}) et $Tmin$
+le taux minimum de
+contraste désiré.\\
+$$f_{c}(e1,e2) > Tmin$$
+\subsubsection{Contraste maximum}
+Cette préférence se traduit de la même manière que la précédente mais avec un
+taux maximum au lieu de minimum. Soit $e1$ et $e2$ deux éléments distincts de la
+page, $f_c$ la fonction qui calcule le contraste de deux éléments ($On$,
+cf. section \ref{formulecontraste}) et $Tmax$ le taux minimum de
+contraste désiré.\\
+$$f_{c}(e1,e2) < Tmax$$
+\subsubsection{Suppression de teintes}
+La suppression de certaines teintes non perçues par l'utilisateur peut faire
+partie de ses préférences. Elle peut se modéliser de la façon suivante : soit $e$
+un élément de la page et $f_h$ la fonction qui retourne vrai si la teinte est
+présente, faux sinon.\\
+$$f_h(e) = false$$\\
+Pour des raisons de traitement, cette fonction $f_h$ peut être transformée afin
+de retourner un pourcentage de la présence de cette teinte sur l'élément $e$. Le
+but serait alors de minimiser ce pourcentage.
+\subsection{La brillance}
+\subsubsection{Brillance maximale}
+La brillance est une propriété d'un élément qui peut être considérée comme sont
+intensité lumineuse perçue. Soit $g_{b}$ la fonction qui retourne la brillance
+moyenne d'un élément, $e$ un élément de la page et $Bmax$ la brillance maximale
+souhaitée par l'utilisateur.
+$$g_b(e) < Bmax$$
+\subsubsection{Brillance minimale}
+De la même façon que pour la brillance maximale, la préférence de brillance minimale se
+transforme en contrainte de la manière suivante. Soit $g_{b}$ la fonction qui retourne la brillance moyenne d'un élément, $e$ un élément
+de la page et $Bmin$ la brillance minimale que l'utilisateur souhaite avoir.
+$$g_b(e) < Bmin$$
+\subsection{Les images}
+\subsubsection{Suppression}
+Le choix de l'utilisateur quand à la suppression d'une image de la page
+originale peut se traduire comme suit. Soit $e$ un élément de type image de la
+page, $h_{supp}$ la fonction qui retourne vrai si l'image est masquée, faux
+sinon et $Chx_{supp}$ le choix (oui(vrai), non(faux)) de l'utilisateur.
+$$h_{supp}(e) \not= Chx_{supp}$$
+\subsection{Les autres préférences}
+Les nombreuses préférences utilisateurs définies précédemment, comme celles
+portant sur la taille et le style des polices de caractères, peuvent être
+transcrites sous forme de contraintes suivant le même principe. Ces quelques
+contraintes suffisent à elles seules à montrer la possible faisabilité ou non de
+procédures de determination de solutions correctes et optimales.\\
+%M démontrer est un peu fort
+\section{Résolution et détermination d'une solution optimale}
+La principale difficulté réside dans le fait d'avoir déjà des valeurs pour les
+variables et qu'elles doivent influencer les choix faits par la suite. Plusieurs
+solutions existent pour résoudre et trouver une solution à partir de variables
+et d'un ensemble de contraintes mais la présence de valeurs initiales et la
+prise en charge d'un contexte de transformation reste encore un point
+difficile.\\
+Voici néanmoins quelques méthodes ou algorithmes qui peuvent permettre d'arriver
+à des premiers résultats satisfaisants.
+%M assez corrects.
+En premier lieu on ne cherche pas à
+optimiser le rendu, les algorithmes présentés ci-dessous sont tous non linéaires
+et ont des complexités différentes. La première optimisation devra se faire dans
+la quantité d'informations transmises en entrée et par la simplification des
+contraintes.
+\subsection{Modélisation d'un CSP}
+La partie précédente montre qu'il est possible de convertir l'ensemble des
+préférences utilisateurs en un ensemble de contraintes s'appliquant à un ensemble
+fini de variables. Certaines des modélisations de contraintes pourraient
+nécessiter une adaptation pour être utilisées dans des solveurs de contraintes.
+La transformation de l'ensemble de préférences n'est pas complexe, la difficulté
+réside dans
+le fait de trouver une solution.\\
+Étant donné que dans une grande partie des cas, les utilisateurs sans le savoir
+choisiront des préférences conflictuelles un solveur de contraintes classique ne
+sera pas en mesure de trouver une solution puisque les contraintes seront toutes
+violées une à une et dès lors qu'un des
+domaines de valeurs des variables sera vidé, alors la recherche s'arrêtera.\\
+Il est possible de modéliser les préférences afin d'obtenir des contraintes qui
+représentent un coût. L'exécution de l'algorithme cherchant par conséquent à le
+minimiser. Le problème réside alors dans l'existence d'algorithmes permettant de
+résoudre le système alors qu'il y a des contraintes obligatoires, facultatives et
+des contraintes de coût.
+\subsection{Algorithme de programmation linéaire}
+Il s'agit de représenter l'ensemble des contraintes, découlant des préférences
+utilisateurs, sous la forme d'inégalités. A l'aide d'une fonction de gain il va
+être possible de maximiser
+celui-ci afin d'obtenir la meilleure transformation.\\
+Dans ce cas il s'agirait de maximiser le gain dans un espace à N-dimension, N
+étant le nombre de contraintes.
+\subsection{Skyline query}
+Cet algorithme peut être utilisé pour résoudre des systèmes de décision
+multi-critères. Il s'agit de trouver non pas une solution mais un ensemble de
+valeurs qui sont non comparables avec les seules informations dont le programme
+dispose en entrée. Une solution pourra être prise parmi cet
+ensemble en fonction des priorités définies par l'utilisateur \cite{skyline}.\\
+Cet algorithme pourrait être utilisé pour déterminer l'ensemble des valeurs déjà
+fixées de la page existante que l'on souhaite garder et qui vont impacter par la
+suite la \enquote{direction} des adaptations. Cette solution pourrait donc être utilisée
+pour une première analyse de la page qui entrerait dans le cadre de l'analyse du
+contexte général de celle-ci.
+\newpage
+\section{Résultats possibles}
+\begin{wrapfigure}{r}{7cm}\centering
+\includegraphics[width=7cm]{./images/nfboriginal.png}
+\vspace{-0.6cm}
+\caption{Page originale de la NFB}
+\label{nfboriginal}
+%\vspace{-0.4cm}
+\end{wrapfigure}
+Cette partie propose de visualiser des modifications apportées sur une page Web
+réelle. Ici la page de référence est celle de la NFB (National Federation of the
+Blind \cite{nfb}). Avec plus de 50 000 membres, la fédération nationale des
+aveugles constitue l'organisme, pour les personnes mal et non voyantes, le plus
+grand et le plus influent des États-Unis d'Amérique. La NFB améliore la vie des
+personnes aveugles par la sensibilisation, l'éducation, la recherche, la
+technologie et des programmes encourageant l'indépendance et la confiance en
+soi. Il est la force dirigeante dans le domaine de la cécité aujourd'hui et la
+voix des aveugles de la nation américaine. En Janvier 2004, la NFB a ouvert la
+\enquote{National Federation of the Blind Jernigan Institute}, le premier
+centre de recherche et de traitement des États-Unis pour les Aveugles dirigé par
+les Aveugles. Elle compte des associations affiliées dans chacun des cinquante
+états en plus Washington D.C. et Porto Rico, ainsi que plus de 700 antennes locales.\\
+La page d'accueil de leur site Internet comporte dans sa partie haute, quelques
+liens (contact, recherche, \dots), leur logo et un slogan accrocheur. Au-dessous
+de ce premier bandeau se trouve le menu très simple. C'est dans la partie basse
+que des difficultés peuvent apparaître. En effet, le corps de la page est
+affiché sous la forme de deux colonnes de contenu. Chacune d'entre elles possède
+un arrière plan et un texte coloré (cf. figure \ref{nfboriginal}). Ce choix de
+couleur provoque des difficultés de lecture chez certaines personnes atteintes de
+déficience visuelle.\\
+\begin{wrapfigure}{l}{7cm}\centering
+\includegraphics[width=7cm]{./images/nfbcontrast.png}
+\vspace{-0.6cm}
+\caption{Page adaptée pour le contraste}
+\label{nfbcontrast}
+\vspace{-0.8cm}
+\end{wrapfigure}
+Pour des pathologies comme la rétinite pigmentaire qui entraîne une diminution
+dans la perception des contrastes. La compensation doit donc se faire par le
+biais d'une augmentation du contraste à l'origine (la page Web). La figure
+ci-contre (figure \ref{nfbcontrast}) est une des multiples
+solutions possibles pour traiter cette contrainte de contraste.\\
+Le contexte a une importance et ne doit pas être mis de côté (cf. section
+\ref{sctcontexte}). La transformation effectuée ici tient par conséquent compte
+du contexte initial de la page. De cette manière, même si les couleurs sont
+modifiées, les couleurs originelles se retrouvent toujours. Le violet clair
+constituant l'intégralité du fond de la colonne de gauche est modifié afin
+d'avoir un contraste avec le texte qui soit suffisant pour la lecture de cette
+personne. Le texte étant de couleur claire il faut foncer l'arrière plan, un
+violet foncé est obtenu (il s'agit toujours d'un violet, le contexte est
+préservé). Quand à la colonne de droite dont l'arrière plan est un orange vif,
+ce dernier va se trouver éclairci pour rendre le texte sombre qui s'y trouve
+plus lisible. La couleur obtenue est un orange pastel proche du jaune. Au final,
+la lisibilité est accrue tout en gardant le contexte. \newline
+\begin{wrapfigure}{r}{7.6cm}\centering
+\includegraphics[width=7.6cm]{./images/nfbcontrastbrightness.png}
+\vspace{-0.6cm}
+\caption{Page adaptée pour le contraste}
+\label{nfbcontrastbrightness}
+\end{wrapfigure}
+Lorsque les pathologies n'induisent pas qu'une diminution des contrastes mais
+aussi une augmentation ou diminution de la sensibilité à la lumière, le fait
+d'avoir des éléments lumineux à proximité d'éléments sombres peut perturber la
+vision. C'est ce qu'il peut se passer ici, après la première modification pour
+répondre aux besoins de contrastes, avec une différence d'intensité lumineuse
+entre les deux colonnes. Celle de gauche est sombre (violet foncé) tandis que
+celle de droite est claire, lumineuse (orange pale).\\
+Un équilibrage de la brillance est donc nécessaire pour rendre plus confortable
+la lecture. Ce réajustement peut se faire soit avant, soit après la modification
+pour le contraste. Cela dépendra de la priorité que l'utilisateur accorde à
+chacune des ces deux contraintes. Dans cet exemple,
+la brillance est prise en compte après l'altération due à la contrainte de contraste.\\
+La colonne de gauche qui tranche par une brillance très faible en rapport au
+reste est modifiée en remplaçant son arrière plan par son complémentaire. Le
+fond devient donc vert très clair. Il faut donc maintenant vérifier si les
+éléments qui s'y trouvent à l'intérieur répondent aux
+contraintes.\\
+Le texte présent dans la colonne, ayant comme couleur le blanc, est
+illisible. Comme pour la
+couleur de fond, le complémentaire est donc utilisé pour transformer le texte blanc en texte noir.\\
+Les liens sont également devenus très peu lisibles après le changement de couleur
+de l'arrière plan puisqu'il était bleu. Plusieur solutions sont possibles pour
+résoudre cette difficulté. Il est possible d'éclaircir le bleu afin d'avoir un
+bleu ciel. Malheureusement le bleu est une des composantes du violet et même si
+il s'agit d'un bleu ciel cela peut-être difficile à lire pour certaines
+personnes. La solution choisie ici est d'utiliser la
+couleur complémentaire, les liens se trouvent donc en jaune.\\
+Cet exemple ne prend pas en charge la modification des images. D'où la
+répétition sans changements de l'image se trouvant au-dessous du menu. Ici,
+des choix ont été faits afin de montrer concrètement comment il est possible
+d'adapter des contenus Web pour les personnes ayant des difficultés de vision
+sans pour autant qu'elles soient reconnues handicapées. D'autres solutions existent
+et auraient tout aussi bien répondu à la problématique, des choix sont donc
+inévitables d'où l'importance de bien choisir ses préférences et d'avoir un
+algorithme qui fasse les \enquote{bons} choix.
+\chapter{Conclusion et perspectives}
+\label{chpconclusion}
+\subsection{Conclusion}
+Cette première analyse apporte un très grand nombre d'informations à la fois
+médicales, sociales et dans le domaine de l'informatique. Elle permet notamment
+une sensibilisation au handicap visuel et donne des éléments concrets qui aident
+à la compréhension de celui-ci.\\
+L'accessibilité numérique est un domaine dans lequel beaucoup de travail reste
+encore à réaliser. Des solutions techniques (logicielles ou matérielles) existent
+déjà depuis plusieurs années. Cependant, elles sont souvent hors de portée des
+usagers, soit parce qu'elles nécessitent un investissement financier important,
+soit parce qu'elles ne répondent pas totalement ou correctement aux besoins
+très spécifiques d'une personne en situation de handicap.\\
+Internet est un outil de plus en plus utilisé dans la vie de tous les
+jours. L'outil informatique a un très grand potentiel, il peut être très
+bénéfique dans l'accès à la culture, à
+l'information et aux services pour les personnes à mobilité réduite (PMR).\\
+Il existe un manque à ce niveau, les technologies d'assistance classiques
+utilisées tentent de répondre aux besoins en traitant de manière globale la
+partie visuelle des pages Web. En voici un exemple simple, si sur une page Web
+un texte est très peu contrasté avec son arrière plan, les filtres de couleurs,
+ne faisant pas la distinction entre le texte et le fond, n'auront que peu
+d'effets. Cette constatation amène à penser qu'il faut se pencher sur une autre
+façon de \enquote{voir les choses}. Il faudrait prendre le problème plus en
+amont et modifier le contenu visuel avant qu'il ne soit qu'une simple
+\enquote{image} (plus aucune sémantique) dans la
+fenêtre d'un navigateur. \\
+Ce travail de recherche se base sur un petit nombre d'éléments pour faciliter la
+compréhension générale même s'il laisse régulièrement entrevoir des
+informations plus complètes. Il a notamment permis, de déterminer une
+architecture générale d'application qui soit pertinente, d'élaborer un
+processus de traitement des données en provenance de pages Web, ainsi que
+l'explicitation et la modélisation de préférences utilisateurs et de contraintes.\\
+Le travail réalisé ici tente de se tenir au plus près des principes de la
+réutilisabilité. Les analyses et propositions faites concernant les contrastes
+visuels peuvent être appliquées à l'audition, il est possible de déterminer une
+fonction de contraste entre deux sons, et ainsi permettre une adaptation en
+fonction de la perception des personnes. Ce n'est pas le seul exemple, La
+brillance, qui représente l'intensité lumineuse, peut également être transposée
+sur les sons pour proposer une intensité sonore minimale, maximale ou bien
+un ratio entre les deux.\\
+\subsection{Perspectives}
+Ce travail a donc pour principal objectif de poser les premiers éléments d'une
+chaîne de transformation (adaptation) de contenus Web, vouée à s'étendre et
+s'enrichir au fil du temps. Différents points peuvent être envisagés à plus ou
+moins long terme afin d'obtenir tout d'abord un prototype viable et ainsi donner
+lieu à une version fonctionnelle.
+\begin{itemize}\setlength{\itemsep}{0.4\baselineskip}
+\item Étendre les adaptations visuelles à plus de types d'éléments de pages Web
+comme avec l'ajout progressif de nouveaux éléments au cours de l'évolution des
+normes HTML, mais aussi avec la prise en charge complète des images en terme
+de choix d'affichage, de simplification et d'atténuation.
+\item Avoir une notion de sémantique globale, c'est-à-dire être en mesure
+d'analyser une page Web dans sa totalité pour en extraire l'essentiel et
+donner des adaptations plus sémantiques/contextuelles que mécaniques et
+incohérentes avec le contenu réel de la page.
+\item Une évolution de l'adaptation au fur et à mesure de la navigation de
+l'internaute. Il est possible de donner le choix à l'utilisateur d'adapter le
+rendu visuel (les adaptations) durant sa navigation en fonction des sites sur
+lesquels il se trouve. Le but étant d'apprendre le comportement de
+l'utilisateur selon les sites (contexte général) afin de le reproduire
+sans qu'il n'ait à intervenir.\\
+\end{itemize}
+La participation au $6\ieme$ Forum Européen sur l'Accessibilité Numérique (26
+mars 2012 \cite{FEAN}) confirme les besoins croissants en accessibilité et la
+pertinence de ce travail de recherche avec les différentes pistes de poursuite.\\
+Un travail d'étude plus général sur la qualification de la vision humaine, sans
+limitation aux personnes en situation de handicap, pourrait permettre de dresser
+plusieurs profils visuels représentatifs de la population mondiale. Ces derniers
+pourraient servir à la suppression du phénomène de contraste simultané qui n'est
+pas lié au handicap visuel, mais qui en devient un.\\
+Quand à la représentation physique et mentale des graphes, il s'agit d'une
+problématique qui couvre à la fois les handicaps psychologiques, mentaux,
+cognitifs et visuels (sensoriels). L'acquisition d'un graphe, pour peu qu'il soit
+complexe, est une épreuve parfois insurmontable pour les personnes atteintes par
+ces handicaps. Une façon de procéder, qui va permettre de comprendre le graphe,
+est de trouver une sémantique à l'intérieur de celui-ci. La sémantique d'un
+graphe peut être due à sa forme, l'organisation de ses sommets, les formes
+géométriques liées à son dessin etc. La clusterisation d'un graphe est un
+moyen de \enquote{simplifier} le graphe afin de l'acquérir plus facilement sur le
+principe d'une arborescence.\\
+L'exploitation de toutes ces pistes pourrait mener à un prototype permetant un début
+d'adaptation et évoluant de manière incrémentale. La dernière partie sur l'acquisition des
+graphes est un point important. Il implique directement une analyse et une modélisation
+des préférences pour la visualisation du graphe.
+%M Il ne faut pas finir la-dessus !
+%M donner des perspectives en terme de :
+%- développement d'un prototype
+%- modélisation des préférences utilisateur pour la visualisation
+%- ...
+\newpage
+\bibliographystyle{is-plain}
+\bibliography{biblio}
+\newpage
+\section*{Autres références utiles}
+\begin{itemize}\setlength{\itemsep}{0.4\baselineskip}
+\item From product to product line using model matching and refactoring, Julia Rubin,
+Marsha Chechik
+\item Toward a UML profile for software product line, Tewfik Ziadi, Loïc Hélouët, Jean-Marc Jézéquel
+\item Software product line - State of the art, Jean-Christophe T RIGAUX, Patrick H EYMANS, FUNDP
+\item Ligne de produit logiciel et variabilité des modèles, Philippe Lahire
+\item L’accessibilité numérique aux personnes handicapées,
+\\ URL : http://www.neo-planete.com/2011/05/30/laccessibilite-numerique-aux-personnes-handicapees/
+\item Création pas à pas d'un appli Windows Accessible,
+\\URL : http://msdn.microsoft.com/fr-fr/library/cb35a5fw.aspx
+\item Développer des applications .NET et SharePoint accessibles avec UI Automation et ARIA,
+\\URL : http://blogs.developpeur.org/neodante/archive/2010/07/24/d-velopper-des-applications-net-et-sharepoint-accessibles-avec-ui-automation-et-aria.aspx
+\item How to Develop Accessible Linux Applications,
+\\URL : http://www.linuxdoc.org/HOWTO/Accessibility-Dev-HOWTO/index.html
+\item Appel à l'accessibilité GNU,
+\\URL : http://www.gnu.org/accessibility/accessibility.fr.html
+\item Accessibilité pour tous,
+\\URL : http://www.web-pour-tous.org/spip.php?rubrique47
+\item Improving web accessibility: a study of webmaster perceptions, Jonathan Lazar,
+Alfreda Dudley-Sponaugle, Kisha-Dawn Greenidge
+\end{itemize}
+\thispagestyle{plain}
+\newpage
+\thispagestyle{empty}
+\clearpage
+\vspace*{\stretch{1}}
+\selectlanguage{english}
+\begin{center}
+\Large Abstract
+\end{center}
+Visual impairement is a general term for a very large number of eyes conditions. These damages
+which are somewhat personal. In other words, independently of damages cause, each people has
+a specific degradation and compensation/adaptation.
+\\
+Nowadays there are a few assistives technologies to increase the quality of numérical hardware
+and software for visualy impaired people. Nevertheless all ressources aren't completely
+accessible for all and assistives technologies doesn't respond to the large needs set comes from
+all diversity of pathologies .
+Even if if law, standards and strong recomandations exist, developpers not keep in mind and
+not apply accessibility in their projects.
+For these reasons its highly relevant to process Numerical accessibility, for people who are
+visualy impaired and for all other kind of impairement, after products development.\\
+We offer to contribute, in this work, to elaborate a new way to process the digital
+accessibility problem. An analyse in medical domain et computer science domain is realized in
+order to determine the real needs of people and to validate or no the different research ways.
+After this, a first application architecture, which responding to constraints emerged by the
+previous analyse, isproposed. Each \enquote{clusters} of this architecture is detailed and
+modelised. Finaly other research ways are hightlignted.
+\vspace{2cm}
+\selectlanguage{frenchb}
+\begin{center}
+\Large Résumé
+\end{center}
+La déficience visuelle est un terme général qui englobe un nombre important d'atteintes de
+la vue. Des atteintes qui sont en quelque sorte personnelles, c'est-à-dire, qu'indépendamment
+de l'atteinte, chaque personne à une affection et une compensation qui lui est propre.
+\\
+Il existe aujourd'hui plusieurs technologies d'assistance visant à améliorer
+l'accès à l'outil informatique pour personnes en situation de handicap. Néanmoins toutes les
+ressources ne sont pas totalement accessibles à tous et les technologies d'assistance ne
+répondent pas à l'ensemble des besoins induits par la diversité des pahtologies.
+Même si des lois, des standards et de fortes recommandations existent les développeurs ne
+tiennent pas toujours compte de l'accessibilité dans leurs projets.
+il est par conséquent pertinent de traiter aussi, après coup, l'accessibilité numérique pour les
+personnes déficientes visuelles comme pour tout autre handicap.\\
+Nous proposons dans ce travail de contribuer à l'élaboration d'une nouvelle façon d'aborder cette
+problématique de l'accessibilité. Une analyse dans le domaine médical et informatique est réalisée
+pour définir les besoins réels et valider ou non les pistes ouvertes. Suite à cette première phase,
+une première architecture d'application, qui répond aux différentes contraintes provennant de
+l'analyse, est proposée. Chaque \enquote{cluster} de l'architecture est ensuite détaillé
+et modélisé. Pour finir de nouvelles piste de progression, sont mises en avant.
+\vspace*{\stretch{1}}
+\end{document} 

@@ -17,17 +17,16 @@ Warning--entry type for "HTML_5" isn't style-file defined
 --line 212 of file biblio.bib
 Warning--I'm ignoring HTML_5's extra "publisher" field
 --line 217 of file biblio.bib
-You're missing a field name---line 236 of file biblio.bib
+You're missing a field name---line 245 of file biblio.bib
  :   
  :   %journal={},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "wikipedia"
 Warning--empty journal in wininformative
 Warning--empty year in wininformative
 You've used 11 entries,
             2118 wiz_defined-function locations,
-            562 strings with 5859 characters,
+            561 strings with 5850 characters,
 and the built_in function-call counts, 4227 in all, are:
 = -- 431
 > -- 192

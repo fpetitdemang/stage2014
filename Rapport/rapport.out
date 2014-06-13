@@ -1,5 +1,5 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}
-\BOOKMARK [0][-]{chapter.2}{Accessibilit\351 }{}
+\BOOKMARK [0][-]{chapter.2}{Accessibilit\351 et contexte du stage }{}
 \BOOKMARK [0][-]{chapter.3}{\311tat de l'art }{}
 \BOOKMARK [1][-]{section.3.1}{Langage de publication de page web }{chapter.3}
 \BOOKMARK [2][-]{subsection.3.1.1}{HTML 4}{section.3.1}
@@ -9,23 +9,26 @@
 \BOOKMARK [1][-]{section.3.2}{Extraction de structures}{chapter.3}
 \BOOKMARK [2][-]{subsection.3.2.1}{Mapping }{section.3.2}
 \BOOKMARK [2][-]{subsection.3.2.2}{Segmentation}{section.3.2}
-\BOOKMARK [2][-]{subsection.3.2.3}{Synth\350se}{section.3.2}
+\BOOKMARK [2][-]{subsection.3.2.3}{Synth\350se }{section.3.2}
 \BOOKMARK [1][-]{section.3.3}{Annotation de structures}{chapter.3}
 \BOOKMARK [2][-]{subsection.3.3.1}{Approche fonctionnelle}{section.3.3}
 \BOOKMARK [2][-]{subsection.3.3.2}{Inf\351rence du contenu informatif}{section.3.3}
 \BOOKMARK [2][-]{subsection.3.3.3}{Synth\350se}{section.3.3}
 \BOOKMARK [0][-]{chapter.4}{R\351alisation }{}
-\BOOKMARK [1][-]{section.4.1}{M\351ta-mod\350le}{chapter.4}
-\BOOKMARK [2][-]{subsection.4.1.1}{Introduction }{section.4.1}
-\BOOKMARK [2][-]{subsection.4.1.2}{M\351ta-mod\350le HTML 4 et 5 }{section.4.1}
-\BOOKMARK [2][-]{subsection.4.1.3}{M\351ta-mod\350le}{section.4.1}
-\BOOKMARK [2][-]{subsection.4.1.4}{Discussion}{section.4.1}
+\BOOKMARK [1][-]{section.4.1}{M\351ta-mod\350le }{chapter.4}
+\BOOKMARK [2][-]{subsection.4.1.1}{M\351ta-mod\350le HTML 4 et 5 }{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.2}{M\351ta-mod\350le con\347u pour le projet}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.3}{Discussion}{section.4.1}
 \BOOKMARK [1][-]{section.4.2}{Extraction de structures }{chapter.4}
 \BOOKMARK [2][-]{subsection.4.2.1}{Introduction}{section.4.2}
 \BOOKMARK [2][-]{subsection.4.2.2}{M\351thode}{section.4.2}
 \BOOKMARK [1][-]{section.4.3}{Annotation de structures }{chapter.4}
 \BOOKMARK [0][-]{chapter.5}{R\351sultats }{}
+\BOOKMARK [1][-]{section.5.1}{Extraction}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.1.1}{}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.2}{}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.3}{?}{section.5.1}
 \BOOKMARK [0][-]{chapter.6}{Conclusion }{}
-\BOOKMARK [0][-]{section*.39}{Appendices}{}
-\BOOKMARK [1][-]{section.a..1}{M\351ta-mod\350le de Contenu}{section*.39}
-\BOOKMARK [1][-]{section.a..2}{M\351ta-mod\350le de mise en forme}{section*.39}
+\BOOKMARK [0][-]{section*.64}{Appendices}{}
+\BOOKMARK [1][-]{section.a..1}{M\351ta-mod\350le de Contenu}{section*.64}
+\BOOKMARK [1][-]{section.a..2}{M\351ta-mod\350le de mise en forme}{section*.64}

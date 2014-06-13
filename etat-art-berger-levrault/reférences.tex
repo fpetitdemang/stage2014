@@ -1,0 +1,43 @@
+\documentclass[french]{book}
+\usepackage[T1]{fontenc}
+ \usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\geometry{verbose}
+\usepackage{color}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{glossaries}
+\usepackage[toc,page]{appendix}
+\usepackage{wrapfig}
+\usepackage{comment}
+\usepackage{natbib}
+\usepackage{lscape}
+
+\begin{document}
+\section{Détection d'objets HTML}
+\paragraph*{Mapping de structures} \citep{chang2001iepad} propose une méthode de mapping entre les pages web pour en isoler des sous-structures communes que l'on pourra identifier comme des objets. L'inconvénient est que l'on ne peut découvrir qu'une partie des objets dans les pages web avec cette approche. 
+
+\paragraph*{Segmentation par Pattern} \citep{kovacevic2002recognition} propose un partitionnement d'une page web après génération de celle-ci par un moteur graphique sur la base d'un modèle de présentation défini a priori. Le modèle de présentation correspond à un pattern de mise en forme "standard" des pages web : header, footer, menu lat. gauche, menu lat. droit. 
+
+\paragraph*{Segmentation par densitométrie} \citep{lin2002discovering} propose un partitionnement d'une page d'après la variation de densité textuelle de chaque segment textuelle.
+
+\paragraph*{Segmentation par indice visuelle} \citep{kohlschutter2008densitometric} propose un partitionnement d'une page en fonction des propriétés de mise en forme associées à chaque noeud du DOM. L'approche propose un découpage de la page de la racine jusqu'aux feuilles du DOM sur la base d'heuristiques et d'un algorithme de fusion des noeuds du DOM.
+
+\section{Annotation d'objets} 
+
+\paragraph*{annotation basée sur les fonctionnalités} \citep{chen2001function} proposent un modèle de représentation des objets HTML à partir duquel on peut construire des fonctions pouvant détecter la sémantique des objets dans une page. La découverte des objets repose sur prétraitement similaire à \citep{kohlschutter2008densitometric} découpant la page.
+
+\paragraph*{annotation basé sur la localisation} Les auteurs proposent d'annoter les objets comme étant informatifs. Cette décision est prise d'après la taille et la position de chaque objet dans la page \citep{wininformative}. 
+
+\paragraph*{annotation basé sur la répétition} Les auteurs proposes un partitionnement des objets comme étant informatif ou non en calculant une valeur d'entropie pour chaque bloc \citep{lin2002discovering}.
+\
+
+\section{Adaptation}
+La consultation de fonds documents de type légataires présente une grande quantité d'information. Leurs consultations impliquent une surcharge cognitive pour les lecteurs. Les auteurs de l'article \citep{zayani2010adaptation} propose une approche pour réduire cette surcharge en appliquant des adaptations de structure et de présentation du contenu suivant des préférences des utilisateurs. Ces préférences prennent en compte les informations qui intéressent le lecteur et leur présentation. Cette acquisition se fait par l'analyse de son comportement au travers l'interface de navigation des documents. 
+
+
+\bibliographystyle{plain}
+\bibliography{biblio}
+\end{document}
