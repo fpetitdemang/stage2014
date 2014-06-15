@@ -1,0 +1,34 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\author{Franck Petitdemange}
+\begin{document}
+\section{Détection d'objets HTML}
+\paragraph*{Mapping de structures} \cite{vieira2006fast} propose une méthode de mapping entre les pages web pour en isoler des sous-structures communes que l'on pourra identifier comme des objets. L'inconvénient est que l'on ne peut découvrir qu'une partie des objets dans les pages web avec cette approche. 
+
+\paragraph*{Segmentation par Pattern} \cite{kovacevic2002recognition} propose un partitionnement d'une page web après génération de celle-ci par un moteur graphique sur la base d'un modèle de présentation défini a priori. Le modèle de présentation correspond à un pattern de mise en forme "standard" des pages web : header, footer, menu lat. gauche, menu lat. droit. 
+
+\paragraph*{Segmentation par densitométrie} \cite{kohlschutter2008densitometric} propose un partitionnement d'une page d'après la variation de densité textuelle de chaque segment textuelle.
+
+\paragraph*{Segmentation par indice visuelle} \cite{cai2003extracting} propose un partitionnement d'une page en fonction des propriétés de mise en forme associées à chaque noeud du DOM. L'approche propose un découpage de la page depuis la racine jusqu'aux feuilles. Le découpage du DOM est réalisé sur la base d'heuristiques et d'un algorithme de fusion des noeuds du DOM.
+
+\section{Annotation d'objets HTML} 
+
+\paragraph*{annotation basée sur les fonctionnalités} \cite{chen2001function} proposent un modèle de représentation des objets HTML à partir duquel on peut construire des fonctions pouvant détecter la sémantique des objets dans une page. La découverte des objets repose sur un prétraitement (découpage) similaire à \cite{cai2003extracting}.
+
+\paragraph*{annotation basé sur la localisation} Les auteurs proposent d'annoter les objets comme étant informatifs ou non-informatif. Cette décision est prise d'après la taille et la position de chaque objet dans la page \cite{wininformative}. 
+
+\paragraph*{annotation basé sur la répétition} Les auteurs proposes un partitionnement des objets comme étant informatif ou non en calculant une valeur d'entropie pour chaque bloc \cite{lin2002discovering} grâce à une mesure : ITF-DF.
+\
+
+\section{Adaptation de documents numériques}
+La consultation de fonds documents de type légataires présente une grande quantité d'information. Leurs consultations impliquent une surcharge cognitive pour les lecteurs. Les auteurs de l'article \cite{zayani2010adaptation} propose une approche pour réduire cette surcharge en appliquant des adaptations de structurelle et de présentation du contenu suivant les préférences des utilisateurs. Ces préférences prennent en compte les informations qui intéressent le lecteur. Cette acquisition se fait par l'analyse de son comportement au travers l'interface de navigation des documents. 
+
+
+\bibliographystyle{plain}
+\bibliography{biblio}
+\end{document}

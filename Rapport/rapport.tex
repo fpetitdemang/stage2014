@@ -109,7 +109,6 @@ et de Micro-électronique de Montpellier
 %\Large{Formation Doctorale} : \textbf{Informatique}\\
 %\large{{\'E}cole Doctorale} : \textbf{Information, Structures, Systèmes}
 \vspace{1.0cm}
-
 \LARGE{\textbf{Inférence de la structure d'une page web en vue d'améliorer son accessibilité}}
 \vspace{2mm}
 
@@ -205,9 +204,9 @@ La version 4  de HTML est le langage de publication le plus utilisé actuellement
 
 La compréhension du contenu par un processus automatiques s'est ainsi complexifiée. Ce manque de compréhension du contenu des pages impacte par exemple les processus d'indexation des moteurs de recherche. Dans le contexte du stage on s'intéresse particulièrement à la compréhension du contenu pour les outils d'accessibilité destinés aux personnes en situation de handicap visuel.
 
-La question de recherche posée par le stage s'intéresse au moyen d'inférer, par un processus automatique, les différentes informations structurant une page web.
+La question de recherche posée par le stage s'intéresse au moyen d'inférer, par un processus automatique, les différentes informations structurants une page web. Cette question intéresse des travaux de thèse en cours de réalisation sur l'accessibilité du web. Une des contributions visées par cette thèse est d'adapter le contenu d'une page aux déficiences visuelles d'un utilisateur. C'est ce processus d'adaptation qui implique le besoin de comprendre le contenu d'une page.
 %expliquer le sujet par rapport au travaux de yoann
-Pour cela nous étudions dans un premier temps l'environnement des pages web afin de conceptualiser les différents éléments constitutifs de celles-ci. Cette étude se concrétise par la réalisation d'un méta-modèle de page web. Nous validons ce méta-modèle en évaluant son expressivité par la modélisation des préférences d'utilisateurs sur l'accessibilité des pages web.
+Pour aborder cette problématique, nous étudions dans un premier temps l'environnement des pages web afin de conceptualiser les différents éléments constitutifs de celles-ci. Cette étude se concrétise par la réalisation d'un méta-modèle de page web. Nous validons ce méta-modèle en évaluant son expressivité par la modélisation des préférences d'utilisateurs sur l'accessibilité des pages web.
 Une fois cette étape achevée nous élaborons une méthode d'extraction des différents éléments constitutifs d'une page web. Cette méthode est complétée par un processus d'annotation de ces éléments d'après notre méta-modèle. La validation de l'approche consiste à vérifier la conformité des éléments extraits et leurs annotations d'après les spécifications du méta-modèle construit. 
 
 La grande souplesse syntaxique de HTML 4 amène deux problèmes. Le premier est une diversité de structure dans la représentation des informations d'une page (\emph{e.g} on peut représenter un menu de dix façons différentes). Ce premier point écarte une approche basée sur la reconnaissance de pattern. Le second problème de la syntaxe souple est qu'il est possible de construire une page qui ne respectent pas les spécifications de la \gls{W3C}. Ce point implique ne peut pas effectuer un découpage du DOM, pour extraire les différents contenus, seulement en respectant la sémantique associée aux étiquettes HTML (d'après la norme de la \gls{W3C}). D'autre part, la construction des pages web repose également sur un langage pour décrire la mise en forme. Le problème est un possible écart entre la structure du DOM et la structure de la page au moment de l'affichage dans le navigateur. %Le problème est que la structure de la page décrite avec HTML peut être divergeant par rapport à la structure finale. 
@@ -223,7 +222,7 @@ Ce stage s'inscrit dans le contexte d'une thèse en cours de réalisation sur l'ac
 %Pour un traitement automatique les expression de ces préférences ont besoin d'être modélisé. Nous L'orientation du stage s'intéresse en premier lieu aux handicaps visuelles. Cette catégorie regroupe un très grand nombre de pathologies comme la myopie ou la presbytie. Ces pathologies impactent la vision et la perception des contrastes et couleurs.
 %Par exemple, , ainsi une mauvaise combinaison de couleur peuvent rendre un contenu illisible. Par exemple, la couleur d'un texte dont la couleur de fond est trop proche peut rendre le texte inaccessible. Les personnes âgées sont sujettes à des dégénérescences de la rétine ce qui entraîne une diminution de la vue. Ces catégories de personne deviennent plus sensibles à la taille des polices de caractère. Des caractères trop petits vont engendrer des difficultés de lecture.
 
-La figure \ref{workflow-adaptation} présente le processus global d'adaptation de pages web. Ce processus d'adaptation est une proposition faite dans ce stage pour faciliter le traitement des préférences de l'utilisateur. Il s'agit d'un processus d'ingénierie dirigée par les modèles. L'idée est de s'intéresser à la conception des pages d'un point de vue particulier et plus abstrait. On ne manipule que les concepts qui nous intéressent pour modéliser les préférences utilisateurs. Le schéma présente des pages sources (pages web) conforme à un méta-modèle de HTML 4. Ce méta-modèle n'est pas un support adapté à l'expression de préférences, nous développons ce point de vu dans la section \ref{sec:meta-modele}. Le schéma décrit donc une première transformation d'une page source vers un modèle source conforme à un méta-modèle intermédiaire plus adapté à la modélisation de préférences. Une fois cette représentation plus abstraite construite une seconde étape de transformation intervient pour appliquer les préférences des utilisateurs. Une fois appliquée ces préférences une troisième transformation intervient pour générer une nouvelle page conforme aux préférences de personnalisation de l'utilisateur dans les outils d'accessibilité. Par rapport a ce schéma, notre le travail de ce stage se situe dans la réalisation du méta-modèle intermédiaire et dans la transformation d'une page web conforme à HTML 4 vers un modèle conforme au méta-modèle intermédiaire.
+La figure \ref{workflow-adaptation} présente le processus global d'adaptation de pages web. Ce processus d'adaptation est une proposition faite dans ce stage pour faciliter le traitement des préférences d'un utilisateur. Il s'agit d'un processus d'ingénierie dirigée par les modèles. L'idée est de s'intéresser à la conception des pages d'un point de vue particulier et plus abstrait. On ne manipule que les concepts qui nous intéressent pour modéliser les préférences utilisateurs. Le schéma présente des pages sources (pages web) conforme à un méta-modèle de HTML 4. Ce méta-modèle n'est pas un support adapté à l'expression de préférences, nous développons ce point de vu dans la section \ref{sec:meta-modele}. Le schéma décrit donc une première transformation d'une page source vers un modèle source conforme à un méta-modèle intermédiaire plus adapté à la modélisation de préférences. Une fois cette représentation plus abstraite construite une seconde étape de transformation intervient pour appliquer les préférences des utilisateurs. Une fois appliquée ces préférences une troisième transformation intervient pour générer une nouvelle page conforme aux préférences de personnalisation de l'utilisateur dans les outils d'accessibilité. Par rapport à ce schéma, le contribution de ce stage se situe dans la réalisation du méta-modèle intermédiaire et dans l'extraction des éléments du méta-modèle intermédiaire dans une page web conforme à HTML 4.
 
 \begin{figure}[h]
 \centering
@@ -238,10 +237,7 @@ Ci-dessous nous présentons plusieurs types (non-exhaustives) de problèmes redond
 	\item[Problèmes de contrastes :] Des pathologies comme le daltonisme entraînent la perte de la perception des contrastes. Des couleurs trop proches entre un texte et son arrière plan peuvent rendre ce texte illisible. 
 \end{description}
 
-Le méta-modèle 
-
-
-%D'après ces quelques éléments on peut en déduire certaine préférence qui par leur modélisation validerons notre méta-modèle. La surchage visuelle implique  
+D'après ces quelques éléments on peut en déduire certaines préférences qui par leurs modélisations validerons notre méta-modèle. Par exemple les problèmes de surcharge visuelle peuvent être prise en compte en masquant les éléments de la page qui n'intéressent pas le lecteur (\emph{e.g} bannière, pied de page, menu). Les problèmes de police qui dans l'exemple donnés vont être exprimés par une contrainte de différence de taille maximale entre les éléments de titre et le corps du texte qu'il l'introduit. Les contrastes seront traités par une restriction sur certaines combinaisons de couleur entre un texte (arrière-plan) et son arrière plan.
 
 
 
@@ -1172,46 +1168,46 @@ Plusieurs méthodes sont décrites dans l'état de l'art qui présente une synthèse 
 
 \subsection{Méthode}
 \subsubsection{Description modèle de page}
-La méthode choisit est un processus itérative basée sur des découpages successives de la structures de la page. Depuis la racine de la structure d'une page, on va parcourir (suivant un parcours préfixé) ses n\oe{}uds. Pour chaque n\oe{}ud parcouru on va soit l'annoter comme une structure logique, soit le diviser. Ces décisions sont prises sur la base d'heuristiques définies a priori. Dans le premier cas on rappliquer le processus de découpage, dans le second cas on continue le parcours. Les itérations sont stoppées lorsque tous les n\oe{}uds atomiques sont identifiés. Le résultat est la construction d'un arbre reflétant la composition des structures dans la page. %Cette structures nous permet par la suite d'appliquer des algorithmes permettant d'inférer une sémantique aux n\oe{}uds de l'arbre.
+La méthode choisie est un processus itératif basée sur des découpages successifs de la structure de la page. Depuis la racine de la structure d'une page, on va parcourir (suivant un parcours préfixé) ses n\oe{}uds. Pour chaque n\oe{}ud parcouru on va soit l'annoter comme une structure logique, soit le diviser. Ces décisions sont prises sur la base d'heuristiques définies a priori. Dans le premier cas on ré-appliquer le processus de découpage, dans le second cas on continue le parcours. Les itérations sont stoppées lorsque tous les n\oe{}uds atomiques sont identifiés. Le résultat est la construction d'un arbre reflétant la composition des structures dans la page. %Cette structures nous permet par la suite d'appliquer des algorithmes permettant d'inférer une sémantique aux n\oe{}uds de l'arbre.
 
 Nous définissons ci-dessous les concepts utiles à l'élaboration des heuristiques.   
-Nous proposons une classification des n\oe{}uds (étendue de \citep{cai2003extracting}, une fonction de distance visuelle et de calcule du poids d'une n\oe{}euds : 
+Nous proposons une classification des n\oe{}uds (étendue de \citep{cai2003extracting}, une fonction de distance visuelle et de calcul du poids d'une n\oe{}euds : 
 \begin{description}
 	\item[N\oe{}uds conteneur] : l'ensemble des n\oe{}uds qui peuvent contenir d'autres n\oe{}uds (conteneurs et données). Ils ont un rôle de structuration logique. Par exemple, \emph{<p>} peut structurer un ensemble de n\oe{}uds de données textuelles pour former un paragraphe. Ils correspondent aux n\oe{}uds avec la propriété display de CSS (display : 'bloc')
 	 
-	\item[n\oe{}uds de mise en forme] : l'ensemble des n\oe{}uds qui n'ont pas un rôle de structuration mais viennent signaler une mise en forme aux n\oe{}uds de données. Par exemple les balises \emph{<strong>} signalent de mettre en gras un texte mais ne structure pas les n\oe{}uds qu'elles encapsulent. Si les n\oe{}uds conteneurs décrivent une structure logique, les n\oe{}uds de mise en forme décrivent une structure physique. Ils correspondent aux n\oe{}uds avec la propriété display de CSS (display : 'inline')
+	\item[n\oe{}uds de mise en forme] : l'ensemble des n\oe{}uds qui n'ont pas un rôle de structuration mais viennent signaler une mise en forme aux n\oe{}uds de données. Par exemple les balises \emph{<strong>} signalent de mettre en gras un texte mais ne structurent pas les n\oe{}uds qu'elles encapsulent. Si les n\oe{}uds conteneurs décrivent une structure logique, les n\oe{}uds de mise en forme décrivent une structure physique. Ils correspondent aux n\oe{}uds avec la propriété display de CSS (display : 'inline')
 	
-	\item[N\oe{}uds de contenus] : l'ensemble des n\oe{}uds qui contiennent un contenu atomique. Les contenus atomiques correspondent aux éléments multimédias dans la page :  texte, image, video, etc. On inclus les balises <img>, <object> et <h1-h6>
+	\item[N\oe{}uds de contenus] : l'ensemble des n\oe{}uds qui contiennent un contenu atomique. Les contenus atomiques correspondent aux éléments multimédias dans la page :  texte, image, video, etc. On inclut les balises <img>, <object> et <h1-h6>
 	
 	\item[N\oe{}uds de contenus virtuelles] : l'ensemble des n\oe{}uds qui contiennent des n\oe{}uds de contenu encapsulés par des n\oe{}uds de mise en forme. Par exemple, \emph{<P>Ceci est un paragraphe avec un <strong>n\oe{}euds de mise en forme</strong></P>}. \emph{P} est un n\oe{}ud virtuel
 	
-	\item[N\oe{}uds de descriptions] : n\oe{}uds qui donnent des méta-informations sur une page. Par exemple, la balise \emph{<style>} renseignent sur la feuille de style à appliquer à la page. Ce sont des balises utilisé pour renseigner le navigateur sur la page
+	\item[N\oe{}uds de descriptions] : n\oe{}uds qui donnent des méta-informations sur une page. Par exemple, la balise \emph{<style>} renseigne sur la feuille de style à appliquer à la page. Ce sont des balises utilisé pour renseigner le navigateur sur la page
 	
-	\item[N\oe{}uds visibles] : l'ensemble des n\oe{}uds qui sont visibles au travers du navigateur (exclus les noeuds de description) 
+	\item[N\oe{}uds visibles] : l'ensemble des n\oe{}uds qui sont visibles au travers du navigateur (en excluant les noeuds de description) 
 	
-	\item[Fonction de distance visuelle ] : cette fonction compare les propriétés de mise en forme associées à chaque n\oe{}uds pour déterminer si ils sont visuellement distant ou non. Par exemple, la fonction renvoie vraie si le n\oe{}uds ne partagent pas les mêmes propriétés :
+	\item[Fonction de distance visuelle ] : cette fonction compare les propriétés de mise en forme associées à chaque n\oe{}ud pour déterminer s'ils sont visuellement distants ou non. Par exemple, la fonction renvoie vraie si les n\oe{}uds ne partagent pas les mêmes propriétés :
 	\begin{itemize}
 		\item d'arrière-plan
 		\item de bordure
 		%\item avant-plan, police, 
 		\item etc.
 	\end{itemize}	 
-	\item[Taille du n\oe{}uds] : pour chaque n\oe{}ud, nous calculons taille. Le calcule de la taille prend en compte les éléments contenu par le n\oe{}ud et sa position dans le DOM. 
+	\item[Taille du n\oe{}uds] : pour chaque n\oe{}ud, nous calculons une taille. Le calcul de la taille prend en compte les éléments contenus par le n\oe{}ud et leurs positions dans le DOM. 
 	
-	$ Taille(b_{x}) = \frac{TailleDunoeud_{x}}{100} * TailleDunoeudRacine $
+	$ TailleRelative(x) = \frac{TailleDunoeud_{x}}{100} * TailleDuNoeudRacine $
 \end{description}
 \subsubsection{Heuristiques}
-L'élaboration des différentes heuristiques ci-dessous repose sur les concepts décrient précédemment.
+L'élaboration des différentes heuristiques ci-dessous repose sur les concepts décrits précédemment.
 
 \begin{description}
-	\item[règle 1] : Si le n\oe{}ud n'est pas un n\oe{}uds de contenu et qu'il ne possède pas de n\oe{}uds valident alors on ne traite pas ce n\oe{}ud
-	\item[règle 2] : Si le n\oe{}ud possède un seul enfant valide et cet enfant n'est pas un n\oe{}uds de données alors on parcours ce n\oe{}ud
+	\item[règle 1] : Si le n\oe{}ud n'est pas un n\oe{}ud de contenu et qu'il ne possède pas de n\oe{}uds valide alors on ne traite pas ce n\oe{}ud
+	\item[règle 2] : Si le n\oe{}ud possède un seul enfant valide et cet enfant n'est pas un n\oe{}ud de données alors on parcourt ce n\oe{}ud
 	\item[règle 3] : Si les enfants du n\oe{}ud sont des n\oe{}uds de données ou des n\oe{}uds de données virtuelles alors on annote ce n\oe{}ud comme formant une structure logique
-	\item[règle 4] : Si l'un des enfants du n\oe{}ud est un n\oe{}ud conteneur et que sa taille est inférieure à un certain seuil alors on parcours alors on parcours ce n\oe{}ud
+	\item[règle 4] : Si l'un des enfants du n\oe{}ud est un n\oe{}ud conteneur et que sa taille est inférieure à un certain seuil alors on parcourt alors on parcours ce n\oe{}ud
 	\item[règle 5] : Si l'un des enfants du n\oe{}ud est étiqueté par \emph{HR} alors on extrait les premiers n\oe{}uds valides successeurs et prédécesseurs comme des structures logiques de chaque enfant étiqueté par \emph{HR}
-	\item[règle 6] : Si la somme des enfants visibles de la surface du n\oe{}ud est supérieur à ce dernier, alors on parcours le n\oe{}ud	
-	\item[règle 7] : Si le premier enfant valide du n\oe{}ud est un n\oe{}ud de titre alors on alors on extrait ce n\oe{}ud comme une structure logique
-	\item[règle 8] : Si la fonction de distance visuelle est vérifiée (renvoie vraie) pour au moins un enfant du n\oe{}ud alors on parcours ce n\oe{}ud et on extrait comme structure logique le n\oe{}ud qui a vérifié la fonction de distance
+	\item[règle 6] : Si la somme de la valeur de la surface des enfants visibles du n\oe{}ud est supérieure à ce dernier, alors on parcourt le n\oe{}ud	
+	\item[règle 7] : Si le premier enfant valide du n\oe{}ud est un n\oe{}ud de titre alors on alors extrait ce n\oe{}ud comme une structure logique
+	\item[règle 8] : Si la fonction de distance visuelle est vérifiée (renvoie vrai) pour au moins un enfant du n\oe{}ud alors on parcourt ce n\oe{}ud et on extrait comme structure logique le n\oe{}ud qui a vérifié la fonction de distance
 	\item[règle 9] : Si le plus grand enfant valide est plus petit qu'un seuil prédéfini alors on extrait ce n\oe{}ud comme une structure logique
 	\item[règle 10] : par défaut nous parcourons le n\oe{}ud
 \end{description}
@@ -1230,7 +1226,7 @@ L'élaboration des différentes heuristiques ci-dessous repose sur les concepts dé
 \end{lstlisting}
 
 
-\paragraph{Règle 3} La règle 3 nous permet de récupérer les n\oe{}uds de données. Ce sont les n\oe{}uds que l'on considère comme atomique.
+\paragraph{Règle 3} La règle 3 nous permet de récupérer les n\oe{}uds de données. Ce sont les n\oe{}uds que l'on considère comme atomiques.
 \lstset{language=HTML}
 \begin{lstlisting}[frame=single, caption={Extrait de www.eclipse.org/actf/}, label={lst:eclipse-style} ] 
 <p>ACTF 1.1 including Visualization SDK is now available. 
@@ -1238,7 +1234,7 @@ Please visit <a href="downloads/index.php">downloads page</a>
 and get ACTF components!</p>
 \end{lstlisting}
 
-\paragraph{Règle 4} Si l'on reprend \ref{lst:google} après l'application de la règle 2 on va découvrir des structures logiques plus intéressantes qui sont le bannière de la page d' accueil de GOOGLE et la bar de recherche.
+\paragraph{Règle 4} Si l'on reprend \ref{lst:google} après l'application de la règle 2 on va découvrir des structures logiques plus intéressantes qui sont la bannière de la page d'accueil de GOOGLE et la barre de recherche.
 
 %\paragraph{Règle 5} La balise HR est employé pour séparer des contenu
 %\begin{lstlisting}[language=HTML, frame=single, caption={}, label={lst:}]
@@ -1311,67 +1307,112 @@ Sur la base de ces éléments on peut décrire, au regard du modèle \citep{chen2001
 \paragraph{Complentary}
 La méta-classe complementary fournit un contenu complémentaire à la page. Elle correspond à un ensemble de lien de navigation qui pointent sur des pages fournissant une information complémentaire. Le modèle de \citep{chen2001function} ne permet pas de discriminer cette objets dans une page. Il manque une information de localisation. Le menu complementaire à ainsi tendance à ce être localisé en bas de la page.
   
-\chapter{Résultats \label{chap:resultat}}
-\fp{Je vais mettre des exemples de découpages successives sur plusieurs pages et mettre en avant que le découpage est cohérent avec la sémantique du contenu + mettre en avant l'amélioration avec VIPS car on implémente pas le calcule des séparateurs qui est très coûteux}
+\chapter{Expérimentations et résultats \label{chap:resultat}}
+Dans cette partie du rapport nous présentons les résultats de notre méthode. Notre méthode est implémentée par un script Javascript qui est injecté à la fin du chargement d'une page sur le navigateur web. L'injection du script se fait par l'intermédiaire du pluging GreaceMonkey installé sur notre navigateur web. 
 
 \section{Extraction}
-\subsection{}
-\begin{figure}
+La figure \ref{img:page-berger} présente une page passée en entrée de notre algorithme. La structure de cette page se décrit comme suit : une bannière, un menu de navigation principal, un menu de secondaire (marge latérale gauche), un contenu principal, un contenu publicitaire (marge latérale droite). La figure \ref{img:segmentation-page-berger} montre visuellement le découpage effectué dans le DOM par rapport aux éléments de la page affichée dans le navigateur web. On peut constater que les structures extraites au premier tour correspondent bien à la structuration logique de la page décrite précédemment.
+
+\begin{figure}[htb]
 \centering
 \begin{subfigure}[H]{0.5\textwidth}
-	\includegraphics[width=\textwidth]{img/page_berger.png}
+	\fbox{\includegraphics[width=\textwidth]{img/page_berger.png}}
 	\caption{Avant segmentation}
+	\label{img:page-berger}
 \end{subfigure}
 \begin{subfigure}[H]{0.5\textwidth}
-	\includegraphics[width=\textwidth]{img/segmentation_page_berger.png}
+	\fbox{\includegraphics[width=\textwidth]{img/segmentation_page_berger.png}}
 	\caption{Après segmentation}
+	\label{img:segmentation-page-berger}
 \end{subfigure}
+\caption{Application du processus de segmentation sur une page web de Berger-Levrault}
+\label{img:processus-segmentation}
 \end{figure}
-\subsection{}
-\tikzstyle{every node}=[draw=black,thick,anchor=west]
-\tikzstyle{selected}=[draw=red,fill=red!30]
-\tikzstyle{optional}=[dashed,fill=gray!50]
-\begin{tikzpicture}[%
-  grow via three points={one child at (0.5,-0.7) and
-  two children at (0.5,-0.7) and (0.5,-1.4)},
-  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-  \node {html}
-    child { node {head}}		
-    child { node {body}
-	    child { node {div}
-	    		child { node {div}}}
-    };
-\end{tikzpicture}
 
-\subsection{?}
+La figure \ref{img:decoupage-banniere} détail de manière plus spécifique le découpage du DOM de la page en se focalisant sur la bannière. On constate que le découpage effectué est toujours bien conforme à la sémantique que contenu (\emph{cf.} figure \ref{img:decoupage-banniere}). La figure \ref{img:dom-segmentation-berger} schématise le DOM de la page web. Les noeuds contenant trois points de suspensions correspondent à une application successive de la règle 2. Les structures \emph{S1, S1\_2, S1\_3, S1\_3\_1 et S1\_3\_2} sont découvertes par la règle 9 et la structure \emph{S1\_1} est découverte par la règle 3. 
+
+\begin{figure}[htb]
+\centering
+\begin{subfigure}{\textwidth}
+\fbox{\includegraphics[width=\textwidth]{img/banner_berger.png}}
+\caption{Avant segmentation}
+\label{img:banniere-berger-levrault}
+\end{subfigure}
+
+\begin{subfigure}{\textwidth}
+\fbox{\includegraphics[width=\textwidth]{img/segmentation_banner_berger.png}}
+\caption{Après segmentation}
+\label{img:segmentation-berger-levrault}
+\end{subfigure}
+
+\begin{subfigure}{\textwidth}
+\fbox{\begin{tikzpicture}
+        \node [draw] {BODY}	
+        			child { node[draw] {...}}
+        			child { 	node[draw] {...} 
+        				child[sibling distance=5cm] {node[draw] {DIV}
+	    					child { node[draw]{TD}
+	    						child { node[draw]{A}
+	    							edge from parent node{S1\_1}}}
+	    					child { node[draw]{TD}
+	    						child{ node[draw]{...}
+	    							child {node[draw]{DIV}
+	    							edge from parent node{S1\_2}}}}
+	    					child{ node[draw]{TD}
+	    						child{ node[draw]{DIV}
+	    							edge from parent node{S1\_3\_1}}
+	    						child{ node[draw]{...}
+	    							child{ node[draw]{DIV}
+	    									edge from parent node{S1\_3\_2}}}
+									edge from parent node{S1\_3}}
+	    								edge from parent node{S1}}}
+	    			child { node[draw]{...}};
+\end{tikzpicture}}
+\caption{DOM segmentation}
+\label{img:dom-segmentation-berger}
+\end{subfigure}
+\caption{Découpage détail}
+\label{img:decoupage-banniere}
+\end{figure}
+
+\section{Annotation}
+Un fois la segmentation de la page effectuée nous en construisons une nouvelle structure arborescente de la page. Chaque noeuds de cette structure référence un noeuds du DOM de la page web résultant du découpage de la phase précédente. Puis conforment aux modèles proposés par \citep{chen2001function} nous annotons le en commençant depuis les feuilles en remontant vers la racine en objet. \ref{img:arbre} illustre un fragment de la structure correspond à la bannière. Le noeud NAV correspond à la structure \emph{1\_3\_1} de la figure \ref{img:decoupage-banniere}, les feuilles du noeud correspond aux découpages de cette structure qui à été partionner suivant les quatre lien de navigation.
+Le noeud BAN est typé car l'algorithme à trouvé une noeud de type INFO-IMG, INTER et NAV.
+\begin{figure}
+\centering
 \begin{tikzpicture}[
     fact/.style={rectangle, draw=none, rounded corners=1mm, fill=blue, drop shadow,
         text centered, anchor=north, text=white},
-    state/.style={circle, draw=none, fill=orange, circular drop shadow,
+    state/.style={rectangle, draw=none, fill=orange, drop shadow,
         text centered, anchor=north, text=white},
     leaf/.style={circle, draw=none, fill=red, circular drop shadow,
         text centered, anchor=north, text=white},
     level distance=0.5cm, growth parent anchor=south
 ]
 
-\node (State00) [state] {$CO$} [->]
+\node [state] {BAN} [->, sibling distance=3cm]
         child{
-            node (State01) [state] {$CO$}
-            child {  
-            		node (State22) [leaf] {$BO$}}
-            	child {
-            		node (State23) [leaf] {$BO$}}
-		}
+            node [state] {INFO-IMG}}
 		child{
-            node (State02) [state] {$CO$}
-            child {  
-            		node (State24) [leaf] {$BO$}}
-            	child {
-            		node (State25) [leaf] {$BO$}}
-		};
-
+            node [state] {INFO}}
+        child{
+        		node [state] {CO}
+        		child { node [state] {INTER}}
+        		child { node [state] {NAV}
+        				child { node [leaf] {NO}}
+        				child { node [leaf] {NO}}
+        				child { node [leaf] {NO}}
+        				child { node [leaf] {NO}}}}
+		            
+;
 
 \end{tikzpicture}
+\caption{Structure intermédiaire}
+\label{img:arbre}
+\end{figure}
+
+\section{Discussion}
+\fp{montrer quelques exemples de mauvais découpage et mettre en avant des pistes de solutions}
 
 \chapter{Conclusion \label{chap:conclusion}}
 
