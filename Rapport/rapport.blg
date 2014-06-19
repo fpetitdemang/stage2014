@@ -2,68 +2,66 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: rapport.aux
 The style file: plain.bst
 Database file #1: biblio.bib
-You're missing a field name---line 169 of file biblio.bib
+You're missing a field name---line 175 of file biblio.bib
  :   
  :   %volume={},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "CSS" isn't style-file defined
---line 208 of file biblio.bib
+--line 214 of file biblio.bib
 Warning--entry type for "ARIA" isn't style-file defined
---line 217 of file biblio.bib
+--line 223 of file biblio.bib
 Warning--entry type for "HTML_4" isn't style-file defined
---line 226 of file biblio.bib
+--line 232 of file biblio.bib
 Warning--entry type for "HTML_5" isn't style-file defined
---line 234 of file biblio.bib
+--line 240 of file biblio.bib
 Warning--I'm ignoring HTML_5's extra "publisher" field
---line 239 of file biblio.bib
-You're missing a field name---line 267 of file biblio.bib
+--line 245 of file biblio.bib
+You're missing a field name---line 273 of file biblio.bib
  :   
  :   %journal={},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--empty school in bon2013
-Warning--empty journal in wininformative
-Warning--empty year in wininformative
-You've used 14 entries,
+You've used 13 entries,
             2118 wiz_defined-function locations,
-            575 strings with 6529 characters,
-and the built_in function-call counts, 5066 in all, are:
-= -- 516
-> -- 224
+            572 strings with 6394 characters,
+and the built_in function-call counts, 4831 in all, are:
+= -- 496
+> -- 211
 < -- 6
-+ -- 90
-- -- 74
-* -- 297
-:= -- 799
-add.period$ -- 46
-call.type$ -- 14
-change.case$ -- 73
++ -- 85
+- -- 70
+* -- 282
+:= -- 757
+add.period$ -- 44
+call.type$ -- 13
+change.case$ -- 68
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 206
-empty$ -- 407
-format.name$ -- 74
-if$ -- 1115
+cite$ -- 14
+duplicate$ -- 196
+empty$ -- 390
+format.name$ -- 70
+if$ -- 1070
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 8
-newline$ -- 72
-num.names$ -- 28
-pop$ -- 110
+int.to.str$ -- 13
+missing$ -- 7
+newline$ -- 68
+num.names$ -- 26
+pop$ -- 101
 preamble$ -- 1
-purify$ -- 61
+purify$ -- 57
 quote$ -- 0
-skip$ -- 172
+skip$ -- 165
 stack$ -- 0
-substring$ -- 289
+substring$ -- 284
 swap$ -- 72
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
-warning$ -- 3
-while$ -- 48
-width$ -- 16
-write$ -- 152
+type$ -- 52
+warning$ -- 1
+while$ -- 46
+width$ -- 15
+write$ -- 145
 (There were 2 error messages)

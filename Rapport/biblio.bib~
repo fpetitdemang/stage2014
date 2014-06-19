@@ -5,6 +5,14 @@
   school={PhD thesis, Ecole des Mines de Nantes}
 }
 
+@inproceedings{bonavero2014web,
+  title={Web Page Personalization to Improve e-accessibility for Visually Impaired People},
+  author={Bonavero, Yoann and Huchard, Marianne and Meynard, Michel},
+  booktitle={WEB 2014, The Second International Conference on Building and Exploring Web Based Environments},
+  pages={40--45},
+  year={2014}
+}
+
 @phdthesis{bon2013,
     title={Une approche bas{\'e}e sur les pr{\'e}f{\'e}rences et la satisfaction de contraintes pour am{\'e}liorer l accessibilit{\'e} pour les personnes d{\'e}ficientes visuelles},
     author={Yoann Bonnavero},

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  18 JUN 2014 23:12
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  19 JUN 2014 23:21
 entering extended mode
  %&-line parsing enabled.
 **rapport.tex
@@ -568,6 +568,14 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
 \arrowsize=\dimen176
 ))
+(/usr/share/texmf-texlive/tex/latex/acronym/acronym.sty
+Package: acronym 2009/01/25 v1.34 Support for acronyms (Tobias Oetiker)
+
+(/usr/share/texmf-texlive/tex/latex/bigfoot/suffix.sty
+Package: suffix 2006/07/15 1.5 Variant command support
+)
+\AC@clearlist=\toks42
+)
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
 
@@ -651,7 +659,7 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 \Fld@menulength=\count133
 \Field@Width=\dimen178
 \Fld@charsize=\dimen179
-\Field@toks=\toks42
+\Field@toks=\toks43
 Package hyperref Info: Hyper figures OFF on input line 4377.
 Package hyperref Info: Link nesting OFF on input line 4382.
 Package hyperref Info: Hyper index ON on input line 4385.
@@ -672,11 +680,11 @@ Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
 \Fld@listcount=\count137
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 35.
+Package hyperref Info: Option `colorlinks' set `true' on input line 37.
 \glo@main@file=\write6
 \openout6 = `rapport.glo'.
 
-Package glossaries Info: Writing glossary file rapport.glo on input line 38.
+Package glossaries Info: Writing glossary file rapport.glo on input line 40.
 
 (/usr/share/texmf-texlive/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2009/09/23 v4.4c context-sensitive quotations
@@ -694,7 +702,7 @@ Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
 \csq@qlevel=\count142
 \csq@maxlvl=\count143
 \csq@tshold=\count144
-\csq@ltx@everypar=\toks43
+\csq@ltx@everypar=\toks44
 
 (/usr/share/texmf-texlive/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2009/09/23 v4.4c csquotes generic definitions
@@ -710,7 +718,7 @@ Package csquotes Info: Enabling multilingual support.
 (/usr/share/texmf-texlive/tex/latex/listings/listings.sty
 \lst@mode=\count145
 \lst@gtempboxa=\box43
-\lst@token=\toks44
+\lst@token=\toks45
 \lst@length=\count146
 \lst@currlwidth=\dimen180
 \lst@column=\count147
@@ -765,26 +773,30 @@ Package fancyheadings Warning: Please stop using fancyheadings!
 \f@ncyO@erf=\skip66
 \f@ncyO@olf=\skip67
 \f@ncyO@orf=\skip68
-)) (./rapport.aux)
+)) (./rapport.aux
+
+LaTeX Warning: Label `lst:wikipedia' multiply defined.
+
+)
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Info: Redefining \degres on input line 75.
-LaTeX Info: Redefining \dots on input line 75.
-LaTeX Info: Redefining \up on input line 75.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Info: Redefining \degres on input line 77.
+LaTeX Info: Redefining \dots on input line 77.
+LaTeX Info: Redefining \up on input line 77.
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -838,11 +850,11 @@ driver: pdftex
 \scratchbox=\box45
 \nofMPsegments=\count154
 \nofMParguments=\count155
-\everyMPshowfont=\toks45
+\everyMPshowfont=\toks46
 \MPscratchCnt=\count156
 \MPscratchDim=\dimen189
 \MPnumerator=\count157
-\everyMPtoPDFconversion=\toks46
+\everyMPtoPDFconversion=\toks47
 )
 (/usr/share/texmf-texlive/tex/latex/glossaries/dict/glossaries-dictionary-Engli
 sh.dict
@@ -857,7 +869,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-Package hyperref Info: Link coloring ON on input line 75.
+Package hyperref Info: Link coloring ON on input line 77.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -867,8 +879,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count158
 )
-LaTeX Info: Redefining \ref on input line 75.
-LaTeX Info: Redefining \pageref on input line 75.
+LaTeX Info: Redefining \ref on input line 77.
+LaTeX Info: Redefining \pageref on input line 77.
  (./rapport.out)
 (./rapport.out)
 \@outlinefile=\write7
@@ -876,7 +888,7 @@ LaTeX Info: Redefining \pageref on input line 75.
 
 \AtBeginShipoutBox=\box46
 \c@lstlisting=\count159
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 81.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 83.
  (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ) [1
@@ -884,7 +896,7 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 \openout3 = `rapport.ist'.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (3.51817pt too wide) in paragraph at lines 165--167
+Overfull \hbox (3.51817pt too wide) in paragraph at lines 166--168
 []\T1/cmr/m/n/10 Je re-mer-cie égale-ment les mem-bres du jury et en par-ti-c-u
 lier mes rap-por-teurs Rodolphe Giroudeau,
  []
@@ -901,11 +913,11 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [7])
+))
 \tf@toc=\write8
 \openout8 = `rapport.toc'.
 
-
+ [7]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.1638pt.
@@ -916,17 +928,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \tf@lof=\write9
 \openout9 = `rapport.lof'.
 
-
-No file rapport.gls.
-[9
+ (./rapport.gls [9
 
 ] [10
 
+]) [11
+
+] [12
+
 ]
 Chapitre 1.
-[11] [12]
+[13] [14]
 Chapitre 2.
-<img/transformation_endogene_1.jpg, id=338, 681.5061pt x 540.5796pt>
+<img/transformation_endogene_1.jpg, id=322, 681.5061pt x 540.5796pt>
 File: img/transformation_endogene_1.jpg Graphic file (type jpg)
 
 <use img/transformation_endogene_1.jpg>
@@ -936,10 +950,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Underfull \vbox (badness 1325) has occurred while \output is active []
 
- [13
+ [15
 
 ]
-[14 <./img/transformation_endogene_1.jpg>] [15] [16
+[16 <./img/transformation_endogene_1.jpg>] [17] [18
 
 ]
 Chapitre 3.
@@ -948,151 +962,241 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-) [17]
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
+) [19]
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
 
  []
 
+Package acronym Info: Label `acro:CSS' newly defined as it shall be overridden
+although it is yet undefined on input line 347.
 
-Overfull \hbox (4.2461pt too wide) in paragraph at lines 363--364
+Overfull \hbox (4.2461pt too wide) in paragraph at lines 369--370
 [][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (4.2461pt too wide) in paragraph at lines 364--365
+Overfull \hbox (4.2461pt too wide) in paragraph at lines 370--371
 [][][][][][][][][][][][][][][][][] 
  []
 
-<img/architecture_Geekos_HTML4-294x300.jpg, id=377, 295.1025pt x 301.125pt>
+<img/architecture_Geekos_HTML4-294x300.jpg, id=361, 295.1025pt x 301.125pt>
 File: img/architecture_Geekos_HTML4-294x300.jpg Graphic file (type jpg)
 
 <use img/architecture_Geekos_HTML4-294x300.jpg>
-<img/architecture_Geekos_HTML5-293x300.jpg, id=381, 294.09875pt x 301.125pt>
+<img/architecture_Geekos_HTML5-293x300.jpg, id=365, 294.09875pt x 301.125pt>
 File: img/architecture_Geekos_HTML5-293x300.jpg Graphic file (type jpg)
 
-<use img/architecture_Geekos_HTML5-293x300.jpg> [18] [19 <./img/architecture_Ge
+<use img/architecture_Geekos_HTML5-293x300.jpg> [20] [21 <./img/architecture_Ge
 ekos_HTML4-294x300.jpg>]
-<img/metamodele/css-font.png, id=412, 455.7025pt x 63.23625pt>
+<img/metamodele/css-font.png, id=396, 455.7025pt x 63.23625pt>
 File: img/metamodele/css-font.png Graphic file (type png)
 
 <use img/metamodele/css-font.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
-<img/metamodele/css-modeleboite.png, id=435, 434.62375pt x 318.18875pt>
+ [22]
+<img/metamodele/css-modeleboite.png, id=419, 434.62375pt x 318.18875pt>
 File: img/metamodele/css-modeleboite.png Graphic file (type png)
 
-<use img/metamodele/css-modeleboite.png> [21 <./img/metamodele/css-font.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 668--670
+<use img/metamodele/css-modeleboite.png> [23 <./img/metamodele/css-font.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 674--676
 
  []
 
-<img/mapping.jpg, id=460, 756.8275pt x 412.54124pt>
+<img/mapping.jpg, id=444, 756.8275pt x 412.54124pt>
 File: img/mapping.jpg Graphic file (type jpg)
  <use img/mapping.jpg>
-[22] [23] <img/zone-interet.jpg, id=486, 483.8075pt x 586.19pt>
+[24] [25] <img/zone-interet.jpg, id=471, 483.8075pt x 586.19pt>
 File: img/zone-interet.jpg Graphic file (type jpg)
 
-<use img/zone-interet.jpg> [24]
-<img/densitometric-segmantation.png, id=496, 1029.8475pt x 381.425pt>
+<use img/zone-interet.jpg> [26]
+<img/densitometric-segmantation.png, id=481, 1029.8475pt x 381.425pt>
 File: img/densitometric-segmantation.png Graphic file (type png)
 
 <use img/densitometric-segmantation.png>
-<img/VIPS-partionnement.jpg, id=501, 1115.16624pt x 427.5975pt>
+<img/VIPS-partionnement.jpg, id=486, 1115.16624pt x 427.5975pt>
 File: img/VIPS-partionnement.jpg Graphic file (type jpg)
 
-<use img/VIPS-partionnement.jpg> [25 <./img/VIPS-partionnement.jpg>]
-<img/VIPS-processus.jpg, id=514, 865.2325pt x 249.93375pt>
+<use img/VIPS-partionnement.jpg> [27 <./img/VIPS-partionnement.jpg>]
+<img/VIPS-processus.jpg, id=498, 865.2325pt x 249.93375pt>
 File: img/VIPS-processus.jpg Graphic file (type jpg)
 
-<use img/VIPS-processus.jpg>
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 863.
-
- (/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [26] [27] [28] [29 <./img/architecture_Geekos_HTML5-293x300.jpg>] [30 <./img/
-metamodele/css-modeleboite.png (PNG copy)> <./img/mapping.jpg>] [31 <./img/zone
--interet.jpg> <./img/densitometric-segmantation.png>] [32 <./img/VIPS-processus
-.jpg>]
-Chapitre 4.
-[33
-
-] <img/metamodele/HTML4.png, id=585, 524.71031pt x 332.74312pt>
-File: img/metamodele/HTML4.png Graphic file (type png)
-
-<use img/metamodele/HTML4.png> [34 <./img/metamodele/HTML4.png>] [35]
-<img/metamodele/HTML5.png, id=602, 830.35219pt x 253.69781pt>
-File: img/metamodele/HTML5.png Graphic file (type png)
-
-<use img/metamodele/HTML5.png> [36
-
- <./img/metamodele/HTML5.png>] [37
+<use img/VIPS-processus.jpg> [28] [29] [30 <./img/architecture_Geekos_HTML5-293
+x300.jpg>] [31 <./img/metamodele/css-modeleboite.png (PNG copy)> <./img/mapping
+.jpg>] [32 <./img/zone-interet.jpg> <./img/densitometric-segmantation.png>]
+[33 <./img/VIPS-processus.jpg>] [34
 
 ]
-<img/metamodele/modele-contenu-widget.png, id=622, 465.23813pt x 417.05812pt>
+Chapitre 4.
+[35] <img/metamodele/HTML4.png, id=563, 524.71031pt x 332.74312pt>
+File: img/metamodele/HTML4.png Graphic file (type png)
+
+<use img/metamodele/HTML4.png> [36 <./img/metamodele/HTML4.png>] [37]
+<img/metamodele/HTML5.png, id=581, 830.35219pt x 253.69781pt>
+File: img/metamodele/HTML5.png Graphic file (type png)
+
+<use img/metamodele/HTML5.png> [38
+
+ <./img/metamodele/HTML5.png>] [39
+
+]
+<img/metamodele/modele-contenu-widget.png, id=600, 465.23813pt x 417.05812pt>
 File: img/metamodele/modele-contenu-widget.png Graphic file (type png)
 
-<use img/metamodele/modele-contenu-widget.png> [38 <./img/metamodele/modele-con
+<use img/metamodele/modele-contenu-widget.png> [40 <./img/metamodele/modele-con
 tenu-widget.png>]
-<img/metamodele/modele-contenu-structure.png, id=628, 910.90312pt x 504.38437pt
+<img/metamodele/modele-contenu-structure.png, id=606, 910.90312pt x 504.38437pt
 >
 File: img/metamodele/modele-contenu-structure.png Graphic file (type png)
- <use img/metamodele/modele-contenu-structure.png> [39
+ <use img/metamodele/modele-contenu-structure.png> [41
 
 
 
  <./img/metamodele/modele-contenu-structure.png>]
-<img/metamodele/CSS.png, id=635, 649.67719pt x 429.85594pt>
+<img/metamodele/CSS.png, id=613, 649.67719pt x 429.85594pt>
 File: img/metamodele/CSS.png Graphic file (type png)
 
-<use img/metamodele/CSS.png> [40
+<use img/metamodele/CSS.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42
 
  <./img/metamodele/CSS.png>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 1110.
- [41] [42] [43]
-[44] [45] [46] [47] [48] [49] [50
+nput line 1115.
+ [43] [44] [45] [46]
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1250--1250
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1250--1250
+
+ []
+
+
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1262--1262
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1262--1262
+
+ []
+
+[47]
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1273--1273
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1273--1273
+
+ []
+
+
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1283--1283
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1283--1283
+
+ []
+
+[48]
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1293--1293
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1293
+
+ []
+
+
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1307--1307
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1307
+
+ []
+
+
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1319--1319
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1319--1319
+
+ []
+
+
+Overfull \hbox (8.89749pt too wide) in paragraph at lines 1321--1322
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (8.89749pt too wide) in paragraph at lines 1322--1323
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (8.89749pt too wide) in paragraph at lines 1323--1324
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (8.89749pt too wide) in paragraph at lines 1324--1325
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[49] [50] [51] [52
 
 ]
 Chapitre 5.
-<img/page_berger.png, id=835, 749.80125pt x 702.625pt>
+<img/page_berger.png, id=822, 749.80125pt x 702.625pt>
 File: img/page_berger.png Graphic file (type png)
 
 <use img/page_berger.png>
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1391--1392
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1412--1413
 [][] 
  []
 
-<img/segmentation_page_berger.png, id=836, 749.80125pt x 702.625pt>
+<img/segmentation_page_berger.png, id=823, 749.80125pt x 702.625pt>
 File: img/segmentation_page_berger.png Graphic file (type png)
 
 <use img/segmentation_page_berger.png>
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1396--1397
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1417--1418
 [][] 
  []
 
-<img/banner_berger.png, id=840, 1008.76875pt x 128.48pt>
+<img/banner_berger.png, id=827, 1008.76875pt x 128.48pt>
 File: img/banner_berger.png Graphic file (type png)
 
 <use img/banner_berger.png>
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1409--1410
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1431--1432
 [][] 
  []
 
-<img/segmentation_banner_berger.png, id=841, 1008.76875pt x 128.48pt>
+<img/segmentation_banner_berger.png, id=828, 1008.76875pt x 128.48pt>
 File: img/segmentation_banner_berger.png Graphic file (type png)
 
 <use img/segmentation_banner_berger.png>
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1415--1416
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1437--1438
 [][] 
  []
 
-[51] [52 <./img/page_berger.png> <./img/segmentation_page_berger.png>] [53 <./i
-mg/banner_berger.png> <./img/segmentation_banner_berger.png>] [54]
-Chapitre 6.
-(./rapport.bbl [55
+[53] [54] [55] [56 <./img/page_berger.png> <./img/segmentation_page_berger.png>
+] [57 <./img/banner_berger.png> <./img/segmentation_banner_berger.png>]
+[58
 
-] [56
+]
+Chapitre 6.
+(./rapport.bbl [59] [60
 
 ]
 Underfull \hbox (badness 3701) in paragraph at lines 41--44
@@ -1100,286 +1204,244 @@ Underfull \hbox (badness 3701) in paragraph at lines 41--44
 net Ap-pli-ca-tions 1.0.
  []
 
-[57]) [58] [59
+[61]) [62] [63
 
 
-] [60]
-Underfull \vbox (badness 10000) detected at line 1530
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1574
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1594
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1615
- []
-
-
+] [64]
 Underfull \vbox (badness 10000) detected at line 1636
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1680
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1700
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1721
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1742
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [61]
-Underfull \vbox (badness 10000) detected at line 1657
+ [65]
+Underfull \vbox (badness 10000) detected at line 1763
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1681
+Underfull \vbox (badness 10000) detected at line 1787
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1707
+Underfull \vbox (badness 10000) detected at line 1813
  []
 
-<img/metamodele/checkbox.png, id=915, 301.125pt x 49.18375pt>
+<img/metamodele/checkbox.png, id=916, 301.125pt x 49.18375pt>
 File: img/metamodele/checkbox.png Graphic file (type png)
 
-<use img/metamodele/checkbox.png> [62 <./img/metamodele/checkbox.png>]
-Underfull \vbox (badness 10000) detected at line 1745
+<use img/metamodele/checkbox.png> [66 <./img/metamodele/checkbox.png>]
+Underfull \vbox (badness 10000) detected at line 1851
  []
 
-<img/metamodele/radio.png, id=932, 301.125pt x 58.2175pt>
+<img/metamodele/radio.png, id=933, 301.125pt x 58.2175pt>
 File: img/metamodele/radio.png Graphic file (type png)
 
 <use img/metamodele/radio.png>
-Underfull \vbox (badness 10000) detected at line 1781
+Underfull \vbox (badness 10000) detected at line 1887
  []
 
-<img/metamodele/radiogroup.png, id=934, 302.12875pt x 74.2775pt>
+<img/metamodele/radiogroup.png, id=935, 302.12875pt x 74.2775pt>
 File: img/metamodele/radiogroup.png Graphic file (type png)
 
 <use img/metamodele/radiogroup.png>
-Underfull \vbox (badness 10000) detected at line 1818
+Underfull \vbox (badness 10000) detected at line 1924
  []
 
-[63 <./img/metamodele/radio.png> <./img/metamodele/radiogroup.png>]
-<img/metamodele/select.png, id=953, 112.42pt x 85.31876pt>
+[67 <./img/metamodele/radio.png> <./img/metamodele/radiogroup.png>]
+<img/metamodele/select.png, id=955, 112.42pt x 85.31876pt>
 File: img/metamodele/select.png Graphic file (type png)
 
 <use img/metamodele/select.png>
-Underfull \vbox (badness 10000) detected at line 1858
+Underfull \vbox (badness 10000) detected at line 1964
  []
 
-[64 <./img/metamodele/select.png>]
-Underfull \vbox (badness 10000) detected at line 1898
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1921
+[68 <./img/metamodele/select.png>]
+Underfull \vbox (badness 10000) detected at line 2004
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1942
+Underfull \vbox (badness 10000) detected at line 2026
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1979
+Underfull \vbox (badness 10000) detected at line 2047
  []
 
-<img/metamodele/orderlist.png, id=979, 303.1325pt x 73.27374pt>
+
+Underfull \vbox (badness 10000) detected at line 2084
+ []
+
+<img/metamodele/orderlist.png, id=981, 303.1325pt x 73.27374pt>
 File: img/metamodele/orderlist.png Graphic file (type png)
 
 <use img/metamodele/orderlist.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
-Underfull \vbox (badness 10000) detected at line 2022
+ [69]
+Underfull \vbox (badness 10000) detected at line 2127
  []
 
-[66 <./img/metamodele/orderlist.png>] [67] [68]
-Underfull \vbox (badness 10000) detected at line 2108
- []
-
-
-Underfull \vbox (badness 10000) detected at line 2129
+[70 <./img/metamodele/orderlist.png>] [71] [72]
+Underfull \vbox (badness 10000) detected at line 2213
  []
 
 
-LaTeX Warning: Reference `meta-classe_group' on page 69 undefined on input line
- 2134.
-
-
-Underfull \vbox (badness 10000) detected at line 2150
+Underfull \vbox (badness 10000) detected at line 2234
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2192
+Underfull \vbox (badness 10000) detected at line 2255
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2211
+Underfull \vbox (badness 10000) detected at line 2297
  []
 
 
-Overfull \hbox (4.28485pt too wide) in paragraph at lines 2216--2218
- \T1/cmr/bx/n/10 Para-graphe[] \T1/cmr/m/n/10 Élé-ment ra-jouter au méta-modèle
- de aria. Définit une com-po-si-tion d'élé-ment textuelle
+Underfull \vbox (badness 10000) detected at line 2316
+ []
+
+
+Overfull \hbox (6.38881pt too wide) in paragraph at lines 2321--2323
+ \T1/cmr/bx/n/10 Para-graphe[] \T1/cmr/m/n/10 Élé-ment ajouté au méta-modèle de
+ ARIA. Définit une com-po-si-tion d'élé-ments textuels
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69]
-Underfull \vbox (badness 10000) detected at line 2233
+ [73]
+Underfull \vbox (badness 10000) detected at line 2338
  []
 
 
-LaTeX Warning: Reference `meta-classe_grid' on page 70 undefined on input line 
-2256.
-
-
-Underfull \vbox (badness 10000) detected at line 2272
+Underfull \vbox (badness 10000) detected at line 2377
  []
 
-[70]
-
-LaTeX Warning: Reference `meta-classe_grid' on page 71 undefined on input line 
-2279.
-
-
-Underfull \vbox (badness 10000) detected at line 2295
+[74]
+Underfull \vbox (badness 10000) detected at line 2400
  []
 
 
-LaTeX Warning: Reference `meta-classe_grid' on page 71 undefined on input line 
-2299.
-
-
-Underfull \vbox (badness 10000) detected at line 2315
+Underfull \vbox (badness 10000) detected at line 2420
  []
 
-[71]
-
-LaTeX Warning: Reference `meta-classe_grid' on page 72 undefined on input line 
-2321.
-
-
-Underfull \vbox (badness 10000) detected at line 2337
+[75]
+Underfull \vbox (badness 10000) detected at line 2441
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2395
+Underfull \vbox (badness 10000) detected at line 2499
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2416
+Underfull \vbox (badness 10000) detected at line 2520
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2436
+Underfull \vbox (badness 10000) detected at line 2540
  []
 
 
-Overfull \hbox (10.22707pt too wide) in alignment at lines 2443--2456
+Overfull \hbox (10.22707pt too wide) in alignment at lines 2547--2560
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2456
+Underfull \vbox (badness 10000) detected at line 2560
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [72]
-Underfull \vbox (badness 10000) detected at line 2477
+ [76]
+Underfull \vbox (badness 10000) detected at line 2581
  []
 
-[73]
-Underfull \vbox (badness 10000) detected at line 2498
- []
-
-
-Underfull \vbox (badness 10000) detected at line 2518
+[77]
+Underfull \vbox (badness 10000) detected at line 2602
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2539
+Underfull \vbox (badness 10000) detected at line 2622
  []
 
 
-LaTeX Warning: Reference `meta-classe_form' on page 74 undefined on input line 
-2547.
-
-
-Underfull \vbox (badness 10000) detected at line 2562
+Underfull \vbox (badness 10000) detected at line 2643
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2609
+Underfull \vbox (badness 10000) detected at line 2666
  []
 
 
-Overfull \vbox (3.42575pt too high) has occurred while \output is active []
-
-
-[74]
-
-LaTeX Warning: Reference `meta-classe_navigation' on page 75 undefined on input
- line 2616.
-
-
-Underfull \vbox (badness 10000) detected at line 2631
+Underfull \vbox (badness 10000) detected at line 2713
  []
 
 
-LaTeX Warning: Reference `meta-classe_style' on page 75 undefined on input line
- 2663.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[75] [76] (./rapport.aux)
+ [78]
+Underfull \vbox (badness 10000) detected at line 2735
+ []
 
-LaTeX Warning: There were undefined references.
+[79] [80] (./rapport.aux)
 
- )
-(\end occurred inside a group at level 1)
+LaTeX Warning: There were multiply-defined labels.
 
-### simple group (level 1) entered at line 1002 ({)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 21272 strings out of 495061
- 359937 string characters out of 1182620
- 493833 words of memory out of 3000000
- 23442 multiletter control sequences out of 15000+50000
- 27466 words of font info for 60 fonts, out of 3000000 for 9000
+ 21388 strings out of 495061
+ 360529 string characters out of 1182620
+ 504284 words of memory out of 3000000
+ 23535 multiletter control sequences out of 15000+50000
+ 23579 words of font info for 55 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 56i,22n,92p,1352b,2048s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.
-600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0900.600pk> </h
-ome/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx0700.600pk> </home/franck
-/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/franck/.texmf-va
-r/fonts/pk/ljfour/jknappen/ec/ecbx0800.600pk> </home/franck/.texmf-var/fonts/pk
-/ljfour/jknappen/ec/ecrm0800.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jk
-nappen/ec/ecbx1440.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/
-eccc1000.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.6
-00pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </ho
-me/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsl1000.600pk> </home/franck/
-.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/franck/.texmf-var
-/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk> </home/franck/.texmf-var/fonts/pk/
-ljfour/jknappen/ec/ecrm1728.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jkn
-appen/ec/ecbx1728.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
-cbx1200.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.60
-0pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </hom
-e/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/franck/.
-texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2488.600pk> </home/franck/.texmf-var/
-fonts/pk/ljfour/jknappen/ec/ectt1440.600pk> </home/franck/.texmf-var/fonts/pk/l
-jfour/jknappen/ec/ectt1200.600pk></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
-xmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/
-public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
-nts/symbols/msam10.pfb>
-Output written on rapport.pdf (76 pages, 1419342 bytes).
+ 56i,22n,92p,1358b,1937s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/
+franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/franck/.te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0800.600pk> </home/franck/.texmf-var/fo
+nts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/franck/.texmf-var/fonts/pk/ljf
+our/jknappen/ec/ecbx1440.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknapp
+en/ec/eccc1000.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
+2074.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk
+> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsl1000.600pk> </home/f
+ranck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/franck/.tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk> </home/franck/.texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/franck/.texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecbx1728.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecbx1200.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1
+200.600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk>
+ </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/fr
+anck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2488.600pk> </home/franck/.texm
+f-var/fonts/pk/ljfour/jknappen/ec/ectt1440.600pk> </home/franck/.texmf-var/font
+s/pk/ljfour/jknappen/ec/ectt1200.600pk></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public
+/amsfonts/symbols/msam10.pfb>
+Output written on rapport.pdf (80 pages, 1407986 bytes).
 PDF statistics:
- 2010 PDF objects out of 2073 (max. 8388607)
- 497 named destinations out of 1000 (max. 500000)
- 533 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1980 PDF objects out of 2073 (max. 8388607)
+ 518 named destinations out of 1000 (max. 500000)
+ 469 words of extra memory for PDF output out of 10000 (max. 10000000)
 

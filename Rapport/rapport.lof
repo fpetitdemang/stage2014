@@ -1,36 +1,35 @@
 \select@language {french}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Processus d'adaptation d'une page web \relax }}{14}{figure.caption.3}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Processus d'adaptation d'une page web \relax }}{16}{figure.caption.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Exemple contenu multim\'edia\relax }}{17}{figure.caption.5}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Architecture page web HTML 4\relax }}{19}{figure.caption.9}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Exemple d\'ecoupage en sections et sous-sections \relax }}{20}{figure.caption.10}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Exemple CSS\relax }}{21}{figure.caption.16}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Exemple de partitionnement, (a) page (b) DOM de la page \cite {cai2003extracting}\relax }}{25}{figure.caption.31}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Exemple d'attribution de r\^ole\relax }}{29}{figure.caption.13}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Mod\`ele de bo\IeC {\^\i }te\relax }}{30}{figure.caption.18}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Exemple d'\'el\'ement en-line\relax }}{30}{figure.caption.20}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Mapping entre deux arbres \'etiquet\'es et ordonn\'es \relax }}{30}{figure.caption.24}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Pattern de mise en forme de page web \relax }}{31}{figure.caption.26}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Segmentation densitom\'etrique \cite {kohlschutter2008densitometric} \relax }}{31}{figure.caption.29}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Algorithme de segmentation \cite {cai2003extracting} \relax }}{32}{figure.caption.32}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Exemple contenu multim\'edia\relax }}{19}{figure.caption.7}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Architecture page web HTML 4\relax }}{21}{figure.caption.12}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Exemple d\'ecoupage en sections et sous-sections \relax }}{22}{figure.caption.13}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Exemple CSS\relax }}{23}{figure.caption.19}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Exemple de partitionnement, (a) page (b) DOM de la page \cite {cai2003extracting}\relax }}{27}{figure.caption.34}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Exemple d'attribution de r\^ole\relax }}{30}{figure.caption.16}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Mod\`ele de bo\IeC {\^\i }te\relax }}{31}{figure.caption.21}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Exemple d'\'el\'ement en-line\relax }}{31}{figure.caption.23}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Mapping entre deux arbres \'etiquet\'es et ordonn\'es \relax }}{31}{figure.caption.27}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Pattern de mise en forme de page web \relax }}{32}{figure.caption.29}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Segmentation densitom\'etrique \cite {kohlschutter2008densitometric} \relax }}{32}{figure.caption.32}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Algorithme de segmentation \cite {cai2003extracting} \relax }}{33}{figure.caption.35}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces M\'eta-mod\`ele HTML 4\relax }}{34}{figure.caption.37}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces M\'eta-mod\`ele HTML 5\relax }}{36}{figure.caption.41}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces M\'eta-mod\`ele interaction\relax }}{38}{figure.caption.44}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces M\'eta-mod\`ele contenu\relax }}{39}{figure.caption.45}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces M\'eta-mod\`ele\relax }}{40}{figure.caption.47}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Exemple de diff\'erentes conceptions de menu avec HTML4\relax }}{42}{figure.caption.49}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces M\'eta-mod\`ele HTML 4\relax }}{36}{figure.caption.38}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces M\'eta-mod\`ele HTML 5\relax }}{38}{figure.caption.42}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces M\'eta-mod\`ele interaction\relax }}{40}{figure.caption.45}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces M\'eta-mod\`ele contenu\relax }}{41}{figure.caption.46}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces M\'eta-mod\`ele\relax }}{42}{figure.caption.48}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Exemple de diff\'erentes conceptions de menu avec HTML4\relax }}{45}{figure.caption.50}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Application du processus de segmentation sur une page web de Berger-Levrault\relax }}{52}{figure.caption.64}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces D\'ecoupage d\'etail\relax }}{53}{figure.caption.65}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Structure interm\'ediaire\relax }}{54}{figure.caption.66}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Application du processus de segmentation sur une page web de Berger-Levrault\relax }}{56}{figure.caption.69}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces D\'ecoupage d\'etail\relax }}{57}{figure.caption.71}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Exemple de checkbox\relax }}{62}{figure.caption.77}
-\contentsline {figure}{\numberline {2}{\ignorespaces Exemple de radio \relax }}{63}{figure.caption.79}
-\contentsline {figure}{\numberline {3}{\ignorespaces Exemple de radiogroup \relax }}{63}{figure.caption.81}
-\contentsline {figure}{\numberline {4}{\ignorespaces Exemple de select \relax }}{64}{figure.caption.83}
-\contentsline {figure}{\numberline {5}{\ignorespaces Exemple de combobox \relax }}{64}{figure.caption.85}
-\contentsline {figure}{\numberline {6}{\ignorespaces Exemple de liste non-ordonn\'ee \relax }}{65}{figure.caption.89}
-\contentsline {figure}{\numberline {7}{\ignorespaces Exemple de liste ordonn\'ee\relax }}{66}{figure.caption.91}
+\contentsline {figure}{\numberline {1}{\ignorespaces Exemple de checkbox\relax }}{66}{figure.caption.85}
+\contentsline {figure}{\numberline {2}{\ignorespaces Exemple de radio \relax }}{67}{figure.caption.87}
+\contentsline {figure}{\numberline {3}{\ignorespaces Exemple de radiogroup \relax }}{67}{figure.caption.89}
+\contentsline {figure}{\numberline {4}{\ignorespaces Exemple de select \relax }}{68}{figure.caption.91}
+\contentsline {figure}{\numberline {5}{\ignorespaces Exemple de combobox \relax }}{68}{figure.caption.93}
+\contentsline {figure}{\numberline {6}{\ignorespaces Exemple de liste non-ordonn\'ee \relax }}{69}{figure.caption.97}
+\contentsline {figure}{\numberline {7}{\ignorespaces Exemple de liste ordonn\'ee\relax }}{70}{figure.caption.99}

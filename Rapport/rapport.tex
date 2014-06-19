@@ -25,6 +25,8 @@
 \usetikzlibrary{trees}
 \usetikzlibrary{positioning,shadows,arrows}
 
+\usepackage{acronym} 
+
 \usepackage{hyperref}
 \hypersetup{%
 colorlinks,%
@@ -161,8 +163,9 @@ Sous la direction de \textbf{Marianne~HUCHARD, Michel~MEYNARD et Yoann~BONAVERO}
 \end{center}
 Je remercie mes encadrants Marianne Huchard, Michel Meynard et Yoann Bonavero pour leur patience, leur disponibilité ainsi que leurs précieux conseils qui ont guidé ma démarche dans ce travail de recherche. 
 
+Je remercie également les membres du jury et en particulier mes rapporteurs Rodolphe Giroudeau, Mathieu Lafourcade et  Philippe Vismara pour le temps accordé à
+la lecture du rapport et dont les remarques éclairées me seront bien utiles.
 
-Je remercie également les membres du jury et en particulier mes rapporteurs Rodolphe Giroudeau, Mathieu Lafourcade et  Philippe Vismara pour leurs conseils éclairés.
 \vspace*{\stretch{1}}
 
 \newpage\thispagestyle{empty}
@@ -173,6 +176,7 @@ Je remercie également les membres du jury et en particulier mes rapporteurs Rodo
 \newpage\thispagestyle{empty}
 \begin{center}
 \huge Résumé
+
 \end{center}
 
 \newpage\thispagestyle{empty}
@@ -187,9 +191,11 @@ Je remercie également les membres du jury et en particulier mes rapporteurs Rodo
 \glsaddall
 \makeglossaries
 
+\acrodef{CSS}[CSS]{Cascading Style Sheets}
+
 \newglossaryentry{pattern}
 {
-	name=Pattern
+	name=Pattern,
 	description={Le mot anglais pattern  est utilisé pour désigner un modèle, une structure, un motif}
 }
 
@@ -231,17 +237,17 @@ Pour définir notre méthodologie, le constat, qui oriente la direction de nos tra
 
 Ce rapport se structure comme suit. Le chapitre \ref{chap:accessibilite} présente des préférences d'utilisateurs sur l'accessibilité. Ces préférences sont extraites de travaux réalisés antérieurement à ce stage.
 Le chapitre \ref{chap:etat} présente un état de l'art. Il introduit tout d'abord une synthèse des langages de publication  que nous avons réalisée à partir des spécifications des différents standards. Nous y présentons également des approches existantes permettant d'isoler les différentes structures logiques ainsi que des solutions pouvant leur associer une sémantique. 
-Dans le chapitre \ref{chap:realisation} nous présentons la contribution de notre stage. Dans la première partie du chapitre nous proposons un méta-modèle de page web créé. Dans la seconde partie du chapitre, nous proposons l'adaptation d'une méthode de la littérature pour identifier la structure d'une page. Cette approche fonctionne sur la base d'un algorithme de segmentation basé sur des heuristiques que nous avons développées. Cette méthode est complétée par un processus d'annotation des structures extraites de la phase précédente. Le chapitre \ref{chap:resultat} présente et analyse les premiers résultats et une discussion de ceux-ci. Pour finir le chapitre \ref{chap:conclusion} présente une synthèse des travaux effectués et leurs perspectives.
+Dans le chapitre \ref{chap:realisation} nous présentons la contribution de notre stage. Dans la première partie du chapitre nous proposons un méta-modèle de page web créé. Dans la seconde partie du chapitre, nous proposons l'adaptation d'une méthode de la littérature pour identifier la structure d'une page. Cette approche fonctionne sur la base d'un algorithme de segmentation basé sur des heuristiques que nous avons développées. Cette méthode est complétée par un processus d'annotation des structures extraites de la phase précédente. Le chapitre \ref{chap:resultat} présente et analyse les premiers résultats et une discussion de ceux-ci. Pour conclure le chapitre \ref{chap:conclusion} présente une synthèse des travaux effectués et leurs perspectives.
 
 
 \chapter{Accessibilité et contexte du stage \label{chap:accessibilite}}
-Ce stage s'inscrit dans le contexte d'une thèse en cours de réalisation sur l'accessibilité numérique \citep{bon2013}. L'un des objectifs de la thèse est prendre en compte les préférences d'un utilisateur en situation de déficience visuel par un processus d'adaptation de pages web automatisée. L'accessibilité désigne le caractère possible de la liberté de déplacement dans l'espace, d'utilisation d'outils, et de compréhension. Appliqué aux pages web l'accessibilité signifie la capacité d'accéder aux informations contenues sur dans une page et d'interagir avec. Certains handicaps peuvent brider l'accessibilité. Les handicaps peuvent être physiques, sensoriels (visuels, auditifs...), cognitifs, mentales ou
- psychiques. La thèse se concentre sur les handicaps visuelles. Le constat de l'état de l'art réalisé (dans la thèse) met en évidence que les outils existants pour améliorer l'accessibilité d'une page ne prennent pas en compte le profil des utilisateurs. Les outils sont peu personnalisables et possèdent des fonctionnalités d'accessibilité très génériques. Ce point pose problème car certains types d'adaptation qui rendent accessible un contenu pour une personne peut rendre ce même contenu inaccessible pour d'autres personnes. De plus certaines adaptations résolvant le problème sur une partie d'une page peuvent créer des difficultés ailleurs. Cette configuration implique le besoin de prendre en compte les préférences d'un utilisateur.
+Ce stage s'inscrit dans le contexte d'une thèse en cours de réalisation sur l'accessibilité numérique \citep{bon2013}. L'un des objectifs de la thèse est prendre en compte les préférences d'un utilisateur en situation de déficience visuel par un processus d'adaptation de pages web automatisée. L'accessibilité désigne le caractère possible de la liberté de déplacement dans l'espace, d'utilisation d'outils, et de compréhension. Appliqué aux pages web l'accessibilité signifie la capacité d'accéder aux informations contenues dans une page et d'interagir avec. Certains handicaps peuvent brider l'accessibilité. Les handicaps peuvent être physiques, sensoriels (visuels, auditifs...), cognitifs, mentales ou
+ psychiques. La thèse se concentre sur les handicaps visuelles. Le constat de l'état de l'art réalisé (dans la thèse) met en évidence que les outils existants pour améliorer l'accessibilité d'une page ne prennent pas en compte le profil des utilisateurs. Les outils sont peu personnalisables et possèdent des fonctionnalités d'accessibilité très génériques. Ce point pose problème car certains types d'adaptation qui rendent accessible un contenu pour une personne peut rendre ce même contenu inaccessible pour d'autres personnes. De plus, certaines adaptations résolvant le problème sur une partie d'une page peuvent créer des difficultés ailleurs. Cette configuration implique le besoin de prendre en compte les préférences d'un utilisateur.
 %Pour un traitement automatique les expression de ces préférences ont besoin d'être modélisé. Nous L'orientation du stage s'intéresse en premier lieu aux handicaps visuelles. Cette catégorie regroupe un très grand nombre de pathologies comme la myopie ou la presbytie. Ces pathologies impactent la vision et la perception des contrastes et couleurs.
 %Par exemple, , ainsi une mauvaise combinaison de couleur peuvent rendre un contenu illisible. Par exemple, la couleur d'un texte dont la couleur de fond est trop proche peut rendre le texte inaccessible. Les personnes âgées sont sujettes à des dégénérescences de la rétine ce qui entraîne une diminution de la vue. Ces catégories de personne deviennent plus sensibles à la taille des polices de caractère. Des caractères trop petits vont engendrer des difficultés de lecture.
 
-La figure \ref{workflow-adaptation} présente le processus global d'adaptation de pages web. Ce processus d'adaptation est une proposition faite dans ce stage pour faciliter le traitement des préférences d'un utilisateur. Il s'agit d'un processus d'ingénierie dirigée par les modèles. L'idée est de s'intéresser à la conception des pages d'un point plus abstrait ce qui offre une solution au problème du traitement des différents formats de données du web (diversité de représentation des données). D'autre part on ne manipule que les concepts qui nous intéressent pour modéliser les préférences utilisateurs. 
-Le schéma présente des pages sources (pages web) conformes à un méta-modèle de HTML 4. Ce méta-modèle n'est pas un support adapté à l'expression de préférences, nous développons ce point de vu dans la section \ref{sec:meta-modele}. Le schéma décrit donc une première transformation d'une page source vers un modèle source conforme à un méta-modèle intermédiaire plus adapté à la modélisation de préférences. Une fois cette représentation plus abstraite construite une seconde étape de transformation intervient pour appliquer les préférences des utilisateurs. Une fois ces préférences appliquées une troisième transformation intervient pour générer une nouvelle page conforme aux préférences de personnalisation de l'utilisateur dans les outils d'accessibilité. Par rapport à ce schéma, le contribution de ce stage se situe dans la réalisation du méta-modèle intermédiaire et dans l'extraction des éléments du méta-modèle intermédiaire dans une page web conforme à HTML 4.
+La figure \ref{workflow-adaptation} présente le processus global d'adaptation de pages web. Ce processus d'adaptation est une proposition faite dans ce stage pour faciliter le traitement des préférences d'un utilisateur. Il s'agit d'un processus d'ingénierie dirigée par les modèles. L'idée est de s'intéresser à la conception des pages d'un point plus abstrait ce qui offre une solution au problème du traitement des différents formats de données du web (diversité de représentation des données). D'autre part, on ne manipule que les concepts qui nous intéressent pour modéliser les préférences utilisateurs. 
+Le schéma présente des pages sources (pages web) conformes à un méta-modèle de HTML 4. Ce méta-modèle n'est pas un support adapté à l'expression de préférences, nous développons ce point de vu dans la section \ref{sec:meta-modele}. Le schéma décrit donc une première transformation d'une page source vers un modèle source conforme à un méta-modèle intermédiaire plus adapté à la modélisation de préférences. Une fois cette représentation plus abstraite, construite une seconde étape de transformation intervient pour appliquer les préférences des utilisateurs. Une fois ces préférences appliquées, une troisième transformation intervient pour générer une nouvelle page conforme aux préférences de personnalisation de l'utilisateur dans les outils d'accessibilité. Par rapport à ce schéma, l contribution de ce stage se situe dans la réalisation du méta-modèle intermédiaire et dans l'extraction des éléments du méta-modèle intermédiaire dans une page web conforme à HTML 4.
 
 \begin{figure}[h]
 \centering
@@ -251,14 +257,14 @@ Le schéma présente des pages sources (pages web) conformes à un méta-modèle de H
 
 Ci-dessous nous présentons plusieurs types (non-exhaustives) de problèmes redondants dans l'accessibilité des pages web : 
 \begin{description}
-	\item[Problèmes de surcharge visuelle :] Des pathologies impliquant une base vision qui nécessitent l'utilisation de fort zoom sur une page. Si la page web contient trop d'informations, la navigation dans le site devient difficile. En effet, le lecteur n'a accès qu'à un fragment de la page. La réduction de la vision globale implique un effort de concentration pour se représenter le contexte générale afin de se situer. Si la page est très fournie en information il doit mémoriser et positionner mentalement beaucoup d'éléments à chaque déplacements.
+	\item[problèmes de surcharge visuelle :] des pathologies impliquant une base vision qui nécessitent l'utilisation de fort zoom sur une page. Si la page web contient trop d'informations, la navigation dans le site devient difficile. En effet, le lecteur n'a accès qu'à un fragment de la page. La réduction de la vision globale implique un effort de concentration pour se représenter le contexte général afin de se situer. Si la page est très fournie en information il doit mémoriser et positionner mentalement beaucoup d'éléments à chaque déplacements.
 	
-	\item[Problèmes de polices de caractère :] Les personnes âgées sont sujettes à des dégénérescences de la rétine ce qui entraîne une diminution de la précision de la vue. Ces catégories de personne deviennent plus sensibles à la taille des polices de caractère. Pour rendre accessible le texte, les outils d'accessibilité augmentent la taille des caractères. La trop grande différence de taille entre les caractères du corps d'un texte et les éléments de titre les rendent alors illisibles.
+	\item[problèmes de polices de caractère :] les personnes âgées sont sujettes à des dégénérescences de la rétine ce qui entraîne une diminution de la précision de la vue. Ces catégories de personne deviennent plus sensibles à la taille des polices de caractère. Pour rendre accessible le texte, les outils d'accessibilité augmentent la taille des caractères. La trop grande différence de taille entre les caractères du corps d'un texte et les éléments de titre les rendent alors illisibles.
 	
-	\item[Problèmes de contrastes :] Des pathologies comme le daltonisme entraînent une distorsion dans la perception des couleurs et potentiellement un contraste plus faible que celui d'origine. Des couleurs trop proches entre un texte et son arrière plan peuvent rendre ce texte illisible. 
+	\item[problèmes de contrastes :] des pathologies comme le daltonisme entraînent une distorsion dans la perception des couleurs et potentiellement un contraste plus faible que celui d'origine. Des couleurs trop proches entre un texte et son arrière plan peuvent rendre ce texte illisible. 
 \end{description}
 
-D'après ces quelques éléments on peut en déduire certaines préférences qui par leur modélisation valideront notre méta-modèle. Par exemple les problèmes de surcharge visuelle peuvent être prises en compte en masquant les éléments de la page qui n'intéressent pas le lecteur (\emph{e.g} bannière, pied de page, menu). Les problèmes de police qui dans l'exemple donné vont être exprimés par une contrainte de différence de taille maximale entre les éléments de titre et le corps du texte qu'il introduit. Les contrastes seront traités par une restriction sur certaines combinaisons de couleur entre un texte (arrière-plan) et son arrière plan.
+D'après ces quelques éléments on peut en déduire certaines préférences qui par leur modélisation valideront notre méta-modèle. Par exemple les problèmes de surcharge visuelle peuvent être pris en compte en masquant les éléments de la page qui n'intéressent pas le lecteur (\emph{e.g} bannière, pied de page, menu). Les problèmes de police qui dans l'exemple donné vont être exprimés par une contrainte de différence de taille maximale entre les éléments de titre et le corps du texte qu'il introduit. Les contrastes seront traités par une restriction sur certaines combinaisons de couleur entre un texte (avant-plan) et son arrière plan.
 
 
 
@@ -338,8 +344,8 @@ qui attribue (de manière arbitraire) un nom de \emph{class} ou un
 \emph{id}. L'\emph{id}
 ou la \emph{class} est associé à
 une mise en forme définie a priori. La mise en forme est définie au
-travers d'un langage : CSS \cite{CSS} que l'on appelle feuille de style.
-CSS permet d'appliquer un ensemble de règles de style ou un agencement des éléments
+travers d'un langage : \ac{CSS} \cite{CSS} que l'on appelle feuille de style.
+\ac{CSS} permet d'appliquer un ensemble de règles de style ou un agencement des éléments
 dans l'espace de la page. Par exemple, l'auteur peut
 déclarer une classe ``aside'' et définir que les éléments appartenant
 à la classe ``aside'' doivent être placés sur le côté droit de la
@@ -347,7 +353,7 @@ page avec un fond blanc. Ce mécanisme est illustré par la figure \ref{div_role}.
 \emph{class}
 ou un \emph{id} auquel s'applique
 une mise en page et une mise en forme définies par l'auteur dans une
-feuille de style CSS.
+feuille de style \ac{CSS}.
 
 \begin{figure}[htb]
 \lstset{
@@ -525,11 +531,11 @@ dans une page.
 \end{itemize}
 \end{comment}
 
-\subsection{CSS }
+\subsection{CSS}
 
-CSS est un langage de feuille de style qui permet aux auteurs des
+\ac{CSS} est un langage de feuille de style qui permet aux auteurs des
 pages web de lier du style aux éléments HTML. Le style définit comment
-afficher un élément (ex. les polices de caractères, l'espacement, les couleurs, \emph{etc.}). CSS permet ainsi de séparer la présentation
+afficher un élément (ex. les polices de caractères, l'espacement, les couleurs, \emph{etc.}). \ac{CSS} permet ainsi de séparer la présentation
 du style du contenu (\emph{cf. }figure \ref{css-font}). L'avantage
 est une simplification de l'édition et de la maintenance d'une page
 web.
@@ -639,7 +645,7 @@ niveau de parenté. Ces boîtes peuvent, ou non, cacher les autres boîtes.
 Les propriétés CSS permettent aux auteurs la spécification d'une couleur
 d'avant-plan et d'arrière-plan pour un élément. La couleur d'arrière-plan
 peut être une couleur ou une image. L'arrière-plan correspond aux
-aires de contenu et, d'espacement et de bordure. Le couleur d'avant-plan
+aires de contenu, d'espacement et de bordure. La couleur d'avant-plan
 correspond à la couleur du contenu de texte d'un élément. 
 
 
@@ -668,7 +674,7 @@ Cette partie de l'état de l'art s'intéresse aux travaux permettant la découverte
 Une opération de mapping est une opération qui identifie une correspondance entre deux structures, ici des arbres. Une page HTML peut-être vue comme un arbre dont les sommets sont étiquetés et ordonnés. Nous donnons ci-dessous une définition formelle d'un mapping (introduite par \citep{tai1979tree}).
 ~\\
 \begin{defn*}
-Soit $T_{x}$ un arbre et soit $t_{x}[i]$ le i i-ième sommet de $T_{x}$ dans un parcours préfixe. Un Mapping $M$ de l'arbre $T_{1}$ de taille $n_{1}$ vers l'arbre $T_{2}$ de taille $n_{2}$ est un ensemble de paires 
+Soit $T_{x}$ un arbre et soit $t_{x}[i]$ le i-ième sommet de $T_{x}$ dans un parcours préfixe. Un Mapping $M$ de l'arbre $T_{1}$ de taille $n_{1}$ vers l'arbre $T_{2}$ de taille $n_{2}$ est un ensemble de paires 
 ordonnées d'entiers (i, j), $1\leqslant i\leqslant n1$, $1\leq j\leq n2$,
 satisfaisant les conditions suivantes, pour tous $(i1,j1),(i2,j2)\in M$:\end{defn*}
 \begin{itemize}
@@ -678,7 +684,7 @@ est à gauche de $t_{2}{[}j_{2}{]}$ (préservation de l'ordre des n\oe uds frères)
 \item $t_{1}{[}i_{1}{]}$ est un ancêtre de $t_{1}{[}i_{2}{]}$ si et seulement si $t_{2}{[}j_{1}{]}$
 est un ancêtre de $t_{2}{[}j_{2}{]}$ (préservation de l'ordre des ancêtres)
 \end{itemize}
-La première condition établit qu'une paire de sommet ne peut apparaître pas plus d'une fois dans le mapping, la seconde condition impose une préservation de l'ordre des n\oe{}uds frère et la dernière impose une relation d'héritage entre les n\oe{}uds de l'arbre. La figure \ref{mapping} illustre un mapping entre deux arbres.
+La première condition établit qu'une paire de sommet ne peut apparaître plus d'une fois dans le mapping. La seconde condition impose une préservation de l'ordre des n\oe{}uds frères et la dernière impose une relation d'héritage entre les n\oe{}uds de l'arbre. La figure \ref{mapping} illustre un mapping entre deux arbres.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.48\textwidth]{img/mapping.jpg}
@@ -695,8 +701,8 @@ et $c\neq\Lambda$
 \item une opération d'insertion si $b=\Lambda\neq c$
 \end{itemize}
 
-En appliquant différentes restrictions sur les opérations d'édition dans un mapping, plusieurs classes de mapping se peuvent se distinguer modélisant différentes applications pratiques. 
-Les auteurs de \citep{vieira2006fast} définissent une classe de mapping particulière, un mapping descendant restrictif. Ce derniers restreint les opérations d'édition aux les feuilles de l'arbre. Ce mapping permet d'identifier les sous-structures communes entre deux arbres. 
+En appliquant différentes restrictions sur les opérations d'édition dans un mapping, plusieurs classes de mapping peuvent se distinguer modélisant différentes applications pratiques. 
+Les auteurs de \citep{vieira2006fast} définissent une classe de mapping particulière : un mapping descendant restrictif. Ce derniers restreint les opérations d'édition aux les feuilles de l'arbre. Ce mapping permet d'identifier les sous-structures communes entre deux arbres. 
 
 \begin{defn*}
 Un Mapping $M$ de l'arbre $T_{1}$ vers l'arbre $T_{2}$ est descendant si pour toute paire $(i_{1},i_{2})\in M$ il y a aussi une paire  $(parent(i_{1}),parent(i_{2}))\in M$
@@ -705,16 +711,16 @@ Un Mapping $M$ de l'arbre $T_{1}$ vers l'arbre $T_{2}$ est descendant si pour to
 \begin{defn*}
 Un Mapping descendant $M$ de l'arbre T1 vers l'arbre T2 est restrictif si et seulement si $(i_{1},i_{2})\in M$ telle que $t_{1}[i_{1}]\ne t_{2}[i_{2}]$ il n'y a pas de descendant de $i_{1}$ ou $i_{2}$ dans $M$
 \end{defn*}
-Dans leur approche  \citep{vieira2006fast} s'intéressent à l'élimination de certaines structures logiques (publicités, bannières, etc.) dégradant les résultats des algorithmes des moteurs de recherche. Le postulat étant que les scripts de publication de contenu automatique génèrent, pour les structures nuisibles (bannière, publicité,\emph{etc.}), les mêmes constructions d'une page à l'autre. 
-Les auteurs s'intéressent à l'identification des structures logiques dans les pages web au moyen de construction de template matchant ces structures. La construction des templates repose sur un processus de mapping descendant restrictif à partir d'un échantillon de pages issu d'une collection de page. L'algorithme proposé par les auteurs construit des templates correspondant aux sous-structures communes identifiées par mapping descendant restrictif entre les pages web. Soit une constante $MaxPage$, le nombre de pages pour construire un template (en moyenne une douzaine) et n la taille d'un arbre, la construction d'un template coûte $O(n^{2})$. L'opération de recherche d'un template dans une page coûte $O(n)$.
+Dans leur approche  \citep{vieira2006fast} s'intéresse à l'élimination de certaines structures logiques (publicités, bannières, etc.) dégradant les résultats des algorithmes des moteurs de recherche. Le postulat étant que les scripts de publication de contenu automatique génèrent, pour les structures nuisibles (bannière, publicité,\emph{etc.}), les mêmes constructions d'une page à l'autre. 
+Les auteurs s'intéressent à l'identification des structures logiques dans les pages web au moyen de construction de template matchant ces structures. La construction des templates repose sur un processus de mapping descendant restrictif à partir d'un échantillon de pages issu d'une collection de page. L'algorithme proposé par les auteurs construit des templates correspondant aux sous-structures communes identifiées par mapping descendant restrictif entre les pages web. Soit une constante $MaxPage$, le nombre de pages pour construire un template (en moyenne une douzaine) et $n$ la taille d'un arbre. La construction d'un template coûte $O(n^{2})$. L'opération de recherche d'un template dans une page coûte $O(n)$.
 \subsection{Segmentation}
-Dans cette partie nous introduisons plusieurs approches de segmentation. Dans le contexte des pages web, une opération de segmentation consiste à rassembler les n\oe{}uds du DOM suivant des propriétés prédéfinies. Le but étant de proposer une structure pour la page web traitée.
+Dans cette partie, nous introduisons plusieurs approches de segmentation. Dans le contexte des pages web, une opération de segmentation consiste à rassembler les n\oe{}uds du DOM suivant des propriétés prédéfinies. Le but étant de proposer une structure pour la page web traitée.
 
 
 
 
 \subsubsection{Segmentation par pattern de page \label{subsub:seg-pattern}}
-Les auteurs de \cite{kovacevic2002recognition} proposent dans leur papier une segmentation suivant un pattern présentation défini a priori. Cette approche  s'intéresse aux coordonnées cartésiennes des structures logiques dans une page web. L'idée étant que les concepteurs de page web suivent un même pattern de présentation ce qui permet de faire un regroupement des structures logiques suivant leur localisation. 
+Les auteurs de \cite{kovacevic2002recognition} proposent dans leur papier une segmentation suivant un pattern de présentation défini a priori. Cette approche  s'intéresse aux coordonnées cartésiennes des structures logiques dans une page web. L'idée étant que les concepteurs de page web suivent un même pattern de présentation, ce qui permet de faire un regroupement des structures logiques suivant leur localisation. 
 
 Sur la base d'observation, les auteurs proposent un pattern de présentation de page web (\emph{cf. figure} \ref{zones-interets}). Le modèle construit est le suivant : 
 \begin{itemize}
@@ -731,14 +737,14 @@ Sur la base d'observation, les auteurs proposent un pattern de présentation de p
 \caption{Pattern de mise en forme de page web \label{zones-interets}}
 \end{figure} 
 
-La figure \ref{zones-interets} modélise le partitionnement défini par les auteurs avec \emph{W1} et \emph{W2} définissant respectivement la marge contenant les menus latéraux gauches et la marge contenant les menus latéraux droits. Chacune d'elle représente 30\% de la largeur de la page. \emph{H1} et \emph{H2} définissent respectivement l'entête de la page et le pied de page avec un hauteur de 200px pour \emph{H} et 150px pour \emph{F}. 
+La figure \ref{zones-interets} modélise le partitionnement défini par les auteurs avec \emph{W1} et \emph{W2} définissant respectivement la marge contenant les menus latéraux gauches et la marge contenant les menus latéraux droits. Chacune d'elle représente 30\% de la largeur de la page. \emph{H1} et \emph{H2} définissent respectivement l'entête de la page et le pied de page avec une hauteur de 200px pour \emph{H} et 150px pour \emph{F}. 
 
 Les coordonnées des structures sont calculées au moyen d'un moteur de rendu graphique. 
 
 En se basant sur ce modèle de représentation, des heuristiques sont déterminées afin de regrouper les n\oe{}uds du DOM de la page suivant le partitionnement de page proposé ci-dessus. %Ces heuristiques sont construites sur l'identification de n\oe{}uds de type \emph{TABLE} dont la surface est incluse dans les zones du modèle. 
 
 
-À partir l'évaluation d'un corpus de 515 pages web, les résultats expérimentaux (publiés en 2002) montrent que le modèle proposé par les auteurs correspond bien à un modèle de présentation représentatif des pages web. Une note de \emph ph{Bon} est attribuée aux zones dont les objets HTML sont à plus de 50\% correctement étiquetés, c'est-à-dire que par exemple les éléments classifiés comme bannière correspondent bien à une bannière. Une note de \emph{Excellent} est attribuée aux zones dont les objets HTML sont à plus de 90\% correctement étiquetés. Une note de \emph{Mauvais} est attribuée lorsque les critères précédents ne sont pas satisfaits
+À partir de l'évaluation d'un corpus de 515 pages web, les résultats expérimentaux (publiés en 2002) montrent que le modèle proposé par les auteurs correspond bien à un modèle de présentation représentatif des pages web. Une note de \emph ph{Bon} est attribuée aux zones dont les objets HTML sont à plus de 50\% correctement étiquetés, c'est-à-dire que par exemple les éléments classifiés comme bannière correspondent bien à une bannière. Une note de \emph{Excellent} est attribuée aux zones dont les objets HTML sont à plus de 90\% correctement étiquetés. Une note de \emph{Mauvais} est attribuée lorsque les critères précédents ne sont pas satisfaits
 
 \begin{center}
 \begin{table}
@@ -764,7 +770,7 @@ La première étape consiste à identifier les différents segments textuels atomiqu
 Pour chaque segment (bloc) identifié par le processus ci-dessous, les auteurs vont calculer une densité textuelle $p(b_{x})$ avec $b_{x}$ un segment. Cette propriété correspond au ratio ci-dessous :
 \[ p(b_{x}) = \frac{Nombre De Mots Dans b_{x}}{Nombre De Lignes Dans b_{x}} \]
 %Les jetons correspondent à une séquence contingente de caractères n'étant pas des caractères d'espacement. 
-Le nombre de lignes correspond aux nombres de séquences de 80 caractères possibles dans le segmenparticipe t traité. 80 étant une valeur fixée par les auteurs, elle correspond à la taille d'une phrase moyenne (pour les pays anglophones).
+Le nombre de lignes correspond aux nombres de séquences de 80 caractères possibles dans le segment traité. 80 étant une valeur fixée par les auteurs, elle correspond à la taille d'une phrase moyenne (pour les pays anglophones).
 
 La seconde étape permet de construire des blocs dans la page correspondant à la structuration logique de la page à partir des segments identifiés dans l'étape précédente. Cette construction consiste à fusionner les blocs contingents en comparant leurs densités respectives. La fonction est définie ci-dessous :
 \[ \Delta p(b_{x}, b_{y}) = \frac{|p(b_{x}) - p(b_{y})|}{max(p(b_{x}), p(b_{y}))} \]
@@ -859,14 +865,14 @@ tous les blocs soient traités.
 %\end{tabular}
  %\faire une synthèse sur les différents modes de reprénsentation des objets HTML (définition des segments)
  L'approche par correspondance de structure (section \ref{sub:mapping}) entre les pages permet d'isoler seulement des fragments de page, la structure globale de celle-ci n'apparaît pas. Les approches par segmentation sont plus intéressantes car elles proposent un découpage reflétant une structure globale. 
- La segmentation par pattern (section \ref{subsub:seg-pattern}) est une approche efficace dans la plupart des cas. Cependant toutes les pages web ne suivent pas le même modèle de présentation. La segmentation par densitométrie (section \ref{subsub:seg-densito}) est une méthode indépendante du pattern de présentation de la page. Cependant, le problème avec cette approche est qu'elle ne fournit pas le moyen de prendre en compte les possibles écarts entre la structure décrite par HTML et le rendu final. c'est-à-dire que des n\oe{}uds du DOM peuvent être proches de la structure du DOM puis avec l'application de propriétés de mise en forme, très éloignés avec le rendu visuel en particulier avec les propriétés de positionnements absolues décrites en section \ref{sub:Mod=0000E8le-de-mise}. La segmentation par indices visuels (section \ref{sub:vips}) comble les faiblesses des deux méthodes précédentes. L'inconvénient de cette approche se situe au niveau de l'algorithme de calcul des séparateurs qui est une opération coûteuse $O(n{2})$.
- \fp{Expliquer tous les inconvénients des séparate }
+ La segmentation par pattern (section \ref{subsub:seg-pattern}) est une approche efficace dans la plupart des cas. Cependant toutes les pages web ne suivent pas le même modèle de présentation. La segmentation par densitométrie (section \ref{subsub:seg-densito}) est une méthode indépendante du pattern de présentation de la page. Cependant, le problème avec cette approche est qu'elle ne fournit pas le moyen de prendre en compte les possibles écarts entre la structure décrite par HTML et le rendu final. C'est-à-dire que des n\oe{}uds du DOM peuvent être proches dans la structure du DOM puis avec l'application de propriétés de mise en forme, très éloignés avec le rendu visuel en particulier avec les propriétés de positionnements absolues décrites en section \ref{sub:Mod=0000E8le-de-mise}. La segmentation par indices visuels (section \ref{sub:vips}) comble les faiblesses des deux méthodes précédentes. L'inconvénient de cette approche se situe au niveau de l'algorithme de calcul des séparateurs qui est une opération coûteuse $O(n{2})$.
+%\fp{Expliquer tous les inconvénients des séparate }
 
 
  
-\section{Annotation de structures}
-\subsection{Approche fonctionnelle \label{subsec:approche-fonctionnelle}} 
-Les auteurs \citep{chen2001function} proposent une approche afin de découvrir la fonctionnalité des éléments composant une page web. Les différents éléments sont des objets qui apportent une information ou réalisent une action. Ces objets peuvent soit être des objets basiques ou soit des objets composites. Les objets basiques et composites sont le résultat d'un prétraitement (non décrit dans le papier) qui retourne une structure arborescente dont les feuilles forment des objets basiques et les n\oe{}uds ayant des descendants forment des objets composites. Afin de qualifier chaque n\oe{}ud les auteurs proposent un ensemble de propriétés pour attribuer une classe à chaque objet (basique et composite).
+\section{Annotation de structures \label{subsec:approche-fonctionnelle}}
+%\subsection{Approche fonctionnelle} 
+Les auteurs \citep{chen2001function} proposent une approche afin de découvrir la fonctionnalité des éléments composant une page web. Les différents éléments sont des objets qui apportent une information ou réalisent une action. Ces objets peuvent soit être des objets basiques ou bien des objets composites. Les objets basiques et composites sont le résultat d'un prétraitement (non décrit dans le papier) qui retourne une structure arborescente dont les feuilles forment des objets basiques et les n\oe{}uds ayant des descendants forment des objets composites. Afin de qualifier chaque n\oe{}ud, les auteurs proposent un ensemble de propriétés pour attribuer une classe à chaque objet (basique et composite).
 L'hypothèse est que chaque objet au travers de ces fonctionnalités reflète l'intention de son auteur, c'est-à-dire sa sémantique.
 
 La structure des objets basiques est décrie d'après les propriétés fonctionnelles ci-dessous : 
@@ -899,6 +905,7 @@ Une fois les propriétés ci-dessus établies, les auteurs définissent un ensemble 
 \end{description}
 Les classes des objets basiques sont déterminées simplement par la valeur de ces propriétés. Un objet basique informatif possède un contenu textuel important, une image (taille significative par rapport à l'objet). La classe des objets composites intègre les propriétés de relation. Par exemple, on peut définir un menu (appartenant à la classe des objets de navigation.) comme suit : un objet composite dont les enfants de la racine sont des objets de navigation parallèle (même propriété), le nombre d'enfants navigables est supérieur à un certain seuil \emph{Hmin} et la propriété de texte est inférieure à un seuil \emph{Lmax}
 
+\begin{comment}
 \subsection{Inférence du contenu informatif}
 Une page web possède différents contenus que l'on peut classifier comme contenu informatif et contenu non informatif. Un contenu informatif est un contenu qui apporte une information dans la page. %On peut dire qu'un contenu est informatif quand il caractérise une page. 
  
@@ -906,7 +913,7 @@ Une page web possède différents contenus que l'on peut classifier comme contenu 
 La vision des auteurs est que les blocs informatifs sont identifiables par leur localisation, ceux-ci se concentrent sur le centre de l'écran.
 Les auteurs \citep{wininformative} propose un algorithme pour l'extraction du contenu informatif dans une page web.  Le contenu informatif est identifié comme étant les blocs contenant le plus de contenus textuels et se situant au plus proche du centre de l'écran.
 \[ f(b_{x}) = \frac{TailleDuBlocb_{x}}{DistanceEntreLeCentreDeb_{x} EtLeCentreDelEcran} \]
-\begin{comment}
+
  L'algorithme se décompose en trois étapes :
 \begin{enumerate}
 	\item Extraction des blocs sémantiques dans la page. Cette partie repose sur une méthode de segmentation similaire à l'algorithme présenté en section \ref{sub:vips}.
@@ -914,19 +921,19 @@ Les auteurs \citep{wininformative} propose un algorithme pour l'extraction du co
 	\item Élection des blocs informatifs. L'algorithme prend en entrée la sortie de l'étape précédente.
 	Dans un premier temps, pour chaque bloc est calculé une valeur signalant l'importance de son contenu informatif.
 \end{enumerate}
-\end{comment}
+
 \subsubsection{Inférence basée sur la fréquence de répétition}
-\begin{comment}
+
 La vision des auteurs est que les contenus informatifs sont des parties distingues (singulière) dans une page alors que les contenus non informatifs sont des partis redondantes. 
 Calcule une valeur d'entropie pour chaque bloc. Cette valeur d'entropie permet de partionner l'ensemble des blocs soit en bloc informatif, soit en bloc non-informatif suivant un seuil déterminé. 
 Le calcule de la valeur d'entropie est réalisé suivant le distribution des mot clés dans un cluster de page (ensemble de page d'un site web)
 Une première phase est le découpage de la page en bloc, ce découpage se base sur les balises table (l'approche ne traite que les site organisées avec les balises tabulaires)
-\end{comment}
+
 \fp{Intégration d'un article sur l'identification du contenu informatif dans une page. Propose le calcule d'une valeur d'entropie basée sur une mesure nommée TF-IDF permettant le partitionnement des structures logiques en contenu informatif ou non informatif}
 
 \subsection{Synthèse}
 \fp{intégration d'une synthèse}
-
+\end{comment}
 
 \chapter{Réalisations \label{chap:realisation}}
 Ce chapitre présente les contributions de ce stage. La première contribution est la réalisation d'un méta-modèle de page web utile au processus d'adaptation de page web décrit en chapitre \ref{chap:accessibilite}. Puis nous décrivons la conception d'une méthode d'extraction des structures d'une page web et enfin des propositions pour annoter les structures extraites par des annotations conformes aux éléments de notre méta-modèle.
@@ -958,10 +965,9 @@ Nous proposons dans la figure \ref{metamodele_HTML4} un méta-modèle de HTML 4. L
 \caption{Méta-modèle HTML 4\label{metamodele_HTML4}}
 \end{figure}
 
-\paragraph{Instance}
+\paragraph{Expression de préférences}
 HTML 4 délimitent les structures logiques de plus haut niveau à l'aide d'éléments structurels génériques (\emph{div}) et leurs propriétés de mise en forme (bloc/inline). Si l'on instancie le premier menu de la figure \ref{menu_html4}, on voit bien que HTML 4 ne possède pas un niveau d'expressivité suffisant pour exprimer une préférence, par exemple, sur un menu de navigation. 
 
-\fp{faire un schéma}
 
 \subsubsection{HTML 5}
 \paragraph{Méta-modèle HTML 5}
@@ -990,7 +996,7 @@ HTML 5 propose une classification plus élaborée qui ne se concentre plus sur les
 \end{figure}
 \end{landscape}
 
-\paragraph{Instance}
+\paragraph{Expression de préférences}
 Si l'on compare le méta-modèle de HTML 4 avec celui de HTML 5, on constate dans un premier temps que la mise en forme ne fait plus partie du méta-modèle. Le concept d'éléments en bloc et en-ligne est délégué à CSS. Dans un second temps il intègre des éléments de langage spécifique (et non plus générique) pour la description des structures construites. Si l'on instancie le premier menu de la figure \ref{menu_html4}, avec des éléments de HTML 5, il est possible d'exprimer, par exemple, une préférence sur l'accessibilité des menus de navigation dans une page. 
 
 Une préférence sur l'accessibilité serait, par exemple, que la taille du texte du menu de navigation soit supérieure à 15 pixels : 
@@ -999,7 +1005,6 @@ context Navigation inv:
 	self.style.size < 15px
 \end{lstlisting}
 
-{\fp{faire un schéma}
 
 
 \subsection{Méta-modèle conçu pour le projet}
@@ -1015,7 +1020,7 @@ Les principales méta-classes de structures sont :
 	
 	\item Les instances de \textit{REGION} correspondent à un regroupement par thématique des éléments qu'elles encapsulent, c'est-à-dire des éléments que l'on peut regrouper sur la base d'une information commune.
 
-	\item Les instances de \textit{LANDMARK} précisent \textit{REGION} en proposant des thématiques récurrentes dans la conception des pages web actuelles. On a par exemple la méta-classe \textit{NAVIGATION} pour les menus ou la méta-classe \textit{BANNER} pour la bannière d'une page web.
+	\item Les instances de la classe \textit{LANDMARK} spécifient les instances de la classe \textit{REGION} en proposant des thématiques récurrentes dans la conception des pages web actuelles. On a par exemple la méta-classe \textit{NAVIGATION} pour les menus ou la méta-classe \textit{BANNER} pour la bannière d'une page web.
 		
 	\item Les instances de \textit{SECTIONHEAD} synthétisent le contenu d'instances de \textit{SECTION}. Elles possèdent une portée locale, celles-ci synthétises le contenu de l'instance de type \textit{SECTION} le plus proche. 
 
@@ -1064,8 +1069,8 @@ caractères, mots et paragraphes contenus dans une boîte. Par exemple, la proprié
 \item Les méta-classes \textit{POLICE} décrivent la représentation visuelle des caractères. Dans le contexte de l'amélioration de l'accessibilité il peut être intéressant, par exemple, d'éviter certains types de \emph{Font} qui peuvent rendre un contenu plus illisible pour certaines pathologies.
 \end{itemize}
 
-\subsubsection{Instance du méta-modèle}
-%On voit d'après les préférences exprimées ci-dessous que le méta-modèle permet d'exprimer des préférences contextualisées.
+\subsubsection{Expression de préférences}
+On voit d'après les préférences exprimées ci-dessous que le méta-modèle permet de formuler des préférences plus contextualisées. Le premier exemple exprime que le texte rouge d'un paragraphe du contenu principale ne peut pas avoir de fond vert. Le second exemple exprime que l'on veut masquer la bannière.
 \begin{lstlisting}[frame={single}, xleftmargin=.1\textwidth, xrightmargin=.1\textwidth]
 context Main inv:
 	if Paragraph.style.color = red implies
@@ -1077,7 +1082,7 @@ context Banner inv:
 	self.style.display = hidden 
 \end{lstlisting}
 \subsection{Discussion}
-La réalisation de ce méta-modèle répond aux premiers besoins identifiés pour l'expression de souhait de personnalisation de page web pour en améliorer l'accessibilité. Cependant d'autres aspects pourraient être modélisés comme une classification des pages web (\emph{e.g} actualité, commerce en ligne, \emph{etc.}). L'utilisateur pourrait exprimer des préférences sur la présentation du site suivant son type. Par exemple, pour un site d'actualité, présenter un sommaire des titres des articles. Le méta-modèle ne traite que des aspects de présentation dans une page web. Des perspectives seraient la réification des aspects de navigation (fils de lecture dans le contenu) et les aspects dynamiques (interaction des éléments de la page avec l'utilisateur). 
+La réalisation de ce méta-modèle répond aux premiers besoins identifiés pour l'expression de souhait de personnalisation de page web pour en améliorer l'accessibilité. Cependant, d'autres aspects pourraient être modélisés comme une classification des pages web (\emph{e.g} actualité, commerce en ligne, \emph{etc.}). L'utilisateur pourrait exprimer des préférences sur la présentation du site suivant son type. Par exemple, pour un site d'actualité, présenter un sommaire des titres des articles. Le méta-modèle ne traite que des aspects de présentation dans une page web. Des perspectives seraient la réification des aspects de navigation (fils de lecture dans le contenu) et les aspects dynamiques (interaction des éléments de la page avec l'utilisateur). 
 
 
 
@@ -1086,7 +1091,7 @@ La réalisation de ce méta-modèle répond aux premiers besoins identifiés pour l'e
 
 \section{Extraction de structures \label{sec:extraction}}
 \subsection{Introduction}
-Dans cette partie nous traitons de l'extraction des structures logiques dans une page. Nous nous intéresserons à leur signification dans la section \ref{sec:annotation}. Le DOM d'une page web est constitué d'un ensemble de structures logiques, qui sont des regroupements d'éléments qui remplissent une fonction dans la page. 
+Dans cette partie nous traitons l'extraction des structures logiques dans une page. Nous nous intéresserons à leur signification dans la section \ref{sec:annotation}. Le DOM d'une page web est constitué d'un ensemble de structures logiques, qui sont des regroupements d'éléments qui remplissent une fonction dans la page. 
 
 La première difficulté est que ces structures logiques ne sont pas annotées de manière explicite dans le DOM de la page. Nous voulons dire par là qu'il n'y pas d'annotations standards pour identifier et qualifier une structure. L'annotation se fait de manière implicite par l'attribution de classes d'appartenance (\emph{cf.} section \ref{html4-classe}) permettant au navigateur web d'associer des mises en forme aux n\oe{}uds du DOM. La sémantique des classes n'est alors connue que par le concepteur. 
 
@@ -1195,11 +1200,11 @@ Une quatrième difficulté est le possible écart dans la structure du DOM et le re
 \end{lstlisting}
 
 Toutes ces contraintes posent le cadre de l'élaboration de notre méthode d'extraction des structures logiques dans une page. 
-Plusieurs méthodes sont décrites dans l'état de l'art qui présente une synthèse des différentes approches (\emph{cf.} \ref{extraction-synthese}). Nous choisissons de tester et d'améliorer une approche qui s'intéresse aux propriétés de mise en forme pour proposer un regroupement des n\oe{}uds du DOM reflétant des structures logiques. En effet, notre constat est que la structure d'une page est explicitée au moment de la mise en page (par la navigateur).
+Plusieurs méthodes sont décrites dans l'état de l'art qui présente une synthèse des différentes approches (\emph{cf.} \ref{extraction-synthese}). Nous choisissons de tester et d'améliorer une approche qui s'intéresse aux propriétés de mise en forme pour proposer un regroupement des n\oe{}uds du DOM reflétant des structures logiques. En effet, notre constat est que la structure d'une page est explicitée au moment de la mise en page (par le navigateur).
 
-Les auteurs de l'approche \citep{cai2003extracting} propose un découpage du DOM en se basant sur l'élaboration d'heuristiques prenant en compte les propriétés de mise en forme. Cependant, la conception des heuristiques est fortement basée sur des pages web conçues suivant un pattern de conception reposant sur une organisation du contenu avec la balise TABLE. La balise TABLE est utilisée pour organiser l'interface de la page. Ce pattern de conception de page web est très peu utilisé actuellement. La raison principale est une grande ambiguïté dans l'interprétation du contenu (par une machine) puisque la sémantique de la balise TABLE a vocation de structurer une information et non l'organisation de la mise en page de la page. Nous supposons que la raison de cette évolution de la conception chez les développeurs est due au mauvais référencement par les moteurs de recherches que peuvent entraîner ces ambiguïtés. Ainsi l'application directe de ces heuristiques ne propose pas un découpage reflétant la structure logique d'une page dans la majorité des cas. %D'autre part, d'après les testes réalisés sur le mécanisme de calcule des séparateurs, ce dernier est peu efficace. Son fonctionnement 
+Les auteurs de l'approche \citep{cai2003extracting} proposent un découpage du DOM en se basant sur l'élaboration d'heuristiques prenant en compte les propriétés de mise en forme. Cependant, la conception des heuristiques est fortement basée sur des pages web conçues suivant un pattern de conception reposant sur une organisation du contenu avec la balise TABLE. La balise TABLE est utilisée pour organiser l'interface de la page. Ce pattern de conception de page web est très peu utilisé actuellement. La raison principale est une grande ambiguïté dans l'interprétation du contenu (par une machine) puisque la sémantique de la balise TABLE a vocation de structurer une information et non l'organisation de la mise en page de la page. Nous supposons que la raison de cette évolution de la conception chez les développeurs est due au mauvais référencement par les moteurs de recherches qui peuvent entraîner ces ambiguïtés. Ainsi, l'application directe de ces heuristiques ne propose pas un découpage reflétant la structure logique d'une page dans la majorité des cas. %D'autre part, d'après les testes réalisés sur le mécanisme de calcule des séparateurs, ce dernier est peu efficace. Son fonctionnement 
 
-Notre méthode essaie de prendre en compte de manière plus efficace la conception actuelle des pages web. Dans un premier temps nous proposons plusieurs concepts pour l'élaboration d'heuristiques. Ces concepts définissent un modèle de page web intégrant les aspects de mise en forme et de structuration des éléments qui sont le support de la définition des heuristiques.
+Notre méthode prend en compte de manière plus efficace la conception actuelle des pages web. Dans un premier temps, nous proposons plusieurs concepts pour l'élaboration d'heuristiques. Ces concepts définissent un modèle de page web intégrant les aspects de mise en forme et de structuration des éléments qui sont le support de la définition des heuristiques.
 
 \subsection{Méthode}
 \subsubsection{Description du modèle de page}
@@ -1223,11 +1228,11 @@ Nous proposons une classification des n\oe{}uds (étendue de \citep{cai2003extrac
 	
 	\item[Fonction de distance visuelle :] cette fonction compare les propriétés de mise en forme associées à chaque n\oe{}ud pour déterminer s'ils sont visuellement distants ou non. Par exemple, la fonction renvoie vrai si les n\oe{}uds ne partagent pas les mêmes propriétés :
 	\begin{itemize}
-		\item d'arrière-plan
-		\item de bordure
+		\item d'arrière-plan,
+		\item de bordure,
 		\item etc.
 	\end{itemize}	 
-	\item[Taille du n\oe{}ud :] Les auteurs \citep{cai2003extracting} définissent une taille pour chaque n\oe{}ud suivant l'étiquette HTML qui lui est associée. Pour certaine balise, la grande souplesse syntaxique fait qu'une taille basée sur les étiquettes HTML n'est pas significative. C'est la raison pour laquelle, nous calculons une taille qui prend en compte les éléments contenus par le n\oe{}ud et leurs positions dans le DOM. Cette mesure est particulièrement utile pour déterminer si \emph{div} est utilisée pour introduire une nouvelle structure ou non.	
+	\item[Taille du n\oe{}ud :] les auteurs \citep{cai2003extracting} définissent une taille pour chaque n\oe{}ud suivant l'étiquette HTML qui lui est associée. Pour certaines balises, la grande souplesse syntaxique fait qu'une taille basée sur les étiquettes HTML n'est pas significative. C'est la raison pour laquelle nous calculons une taille qui prend en compte les éléments contenus par le n\oe{}ud et leurs positions dans le DOM. Cette mesure est particulièrement utile pour déterminer si \emph{div} est utilisée pour introduire une nouvelle structure ou non.	
 	
 	$ TailleRelative(x) = \frac{TailleDunoeud_{x}}{100} * TailleDuNoeudRacine $
 \end{description}
@@ -1235,34 +1240,24 @@ Nous proposons une classification des n\oe{}uds (étendue de \citep{cai2003extrac
 L'élaboration des différentes heuristiques ci-dessous repose sur les concepts décrits précédemment.
 
 \begin{description}
-	\item[règle 1] : Si le n\oe{}ud n'est pas un n\oe{}ud de contenu et qu'il ne possède pas de n\oe{}uds valide alors on ne traite pas ce n\oe{}ud
-	\item[règle 2] : Si le n\oe{}ud possède un seul enfant valide et cet enfant n'est pas un n\oe{}ud de données alors on parcourt ce n\oe{}ud
-	\item[règle 3] : Si les enfants du n\oe{}ud sont des n\oe{}uds de données ou des n\oe{}uds de données virtuelles alors on annote ce n\oe{}ud comme formant une structure logique
-	\item[règle 4] : Si l'un des enfants du n\oe{}ud est un n\oe{}ud conteneur et que sa taille est inférieure à un certain seuil alors on parcourt alors on parcours ce n\oe{}ud
-	\item[règle 5] : Si l'un des enfants du n\oe{}ud est étiqueté par \emph{HR} alors on extrait les premiers n\oe{}uds valides successeurs et prédécesseurs comme des structures logiques de chaque enfant étiqueté par \emph{HR}
-	\item[règle 6] : Si la somme de la valeur de la surface des enfants visibles du n\oe{}ud est supérieure à ce dernier, alors on parcourt le n\oe{}ud
-	\item[règle 7] : Si le premier enfant valide du n\oe{}ud est un n\oe{}ud de titre alors on alors extrait ce n\oe{}ud comme une structure logique
-	\item[règle 8] : Si la fonction de distance visuelle est vérifiée (renvoie vrai) pour au moins un enfant du n\oe{}ud alors on parcourt ce n\oe{}ud et on extrait comme structure logique le n\oe{}ud qui a vérifié la fonction de distance
-	\item[règle 9] : Si le plus grand enfant valide est plus petit qu'un seuil prédéfini alors on extrait ce n\oe{}ud comme une structure logique
-	\item[règle 10] : par défaut nous parcourons le n\oe{}ud
-\end{description}
-
-\paragraph{} Sur les treize heuristiques de \citep{cai2003extracting} nous avons adapté les règles 1, 2, 3, 8, et 9 d'après les concepts spécifier plus haut simplement en remplaçant les concepts de n\oe{}uds textes et n\oe{}uds textes virtuels par nos concept de n\oe{}uds de contenus et n\oe{}uds de contenus virtuels. 
-
-
-\paragraph{Règle 2} La règle 2 permet de découvrir des structures logiques plus intéressantes dans une page. D'après l'exemple \ref{lst:google}, cette règle va permettre d'atteindre le n\oe{}ud \emph{center} contenant la bannière de la page et la barre de recherche.
+	\item[règle 1] : si le n\oe{}ud n'est pas un n\oe{}ud de contenu et qu'il ne possède pas de n\oe{}uds visible alors on ne traite pas ce n\oe{}ud.
+	\paragraph{} La règle 1 filtre principalement les n\oe{}uds de description et éventuellement des balises oubliées par le concepteur (erreurs).   
+	
+	
+	\item[règle 2] : si le n\oe{}ud possède un seul enfant visible et cet enfant n'est pas un n\oe{}ud de données alors on parcourt ce n\oe{}ud
+		\paragraph{} La règle 2 permet de découvrir des structures logiques plus intéressantes dans une page. D'après l'exemple \ref{lst:google}, cette règle va 				permettre d'atteindre le n\oe{}ud \emph{center} contenant la bannière de la page et la barre de recherche.
 \lstset{language=HTML}
 \begin{lstlisting}[frame=single, caption={Pattern page d'accueil google.fr}, label={lst:google} ] 
 <span id='body'>
  <center>
-    <div id='banner'>...</div>
-    <div id='search-bar'>...</div>
+   <div id='banner'>...</div>
+   <div id='search-bar'>...</div>
  </center>
 </span>
 \end{lstlisting}
-
-
-\paragraph{Règle 3} La règle 3 nous permet de récupérer les n\oe{}uds de données. Ce sont les n\oe{}uds que l'on considère comme atomiques.
+		
+	\item[règle 3] : si les enfants du n\oe{}ud sont des n\oe{}uds de données ou des n\oe{}uds de données virtuelles alors on annote ce n\oe{}ud comme formant une structure logique.
+	\paragraph{} La règle 3 nous permet de récupérer les n\oe{}uds de données. Ce sont les n\oe{}uds que l'on considère comme atomiques.
 \lstset{language=HTML}
 \begin{lstlisting}[frame=single, caption={Extrait de www.eclipse.org/actf/}, label={lst:eclipse-style} ] 
 <p>ACTF 1.1 including Visualization SDK is now available. 
@@ -1270,12 +1265,20 @@ Please visit <a href="downloads/index.php">downloads page</a>
 and get ACTF components!</p>
 \end{lstlisting}
 
-\paragraph{Règle 4} Si l'on reprend \ref{lst:google} après l'application de la règle 2 on va découvrir des structures logiques plus intéressantes qui sont la bannière de la page d'accueil de GOOGLE et la barre de recherche.
+	\item[règle 4] : si l'un des enfants du n\oe{}ud est un n\oe{}ud conteneur et que sa taille est inférieure à un certain seuil alors on parcourt ce n\oe{}ud
+	\paragraph{} Si l'on reprend \ref{lst:google} après l'application de la règle 2 on va découvrir des structures logiques plus intéressantes qui sont la bannière de la page d'accueil de GOOGLE et la barre de recherche.
 
-%\paragraph{Règle 5} La balise HR est employé pour séparer des contenu
-%\begin{lstlisting}[language=HTML, frame=single, caption={}, label={lst:}]
-%\end{lstlisting}
-\paragraph{Règle 6} Dans \ref{lst:wikipedia} le n\oe{}ud \emph{mw-navigation} est un n\oe{}ud qui regroupe deux menus de navigation pour leurs appliquer une style. Cette proximité des deux n\oe{}uds ne reflète pas le rendu final puisque après le mise en page les deux n\oe{}uds sont très éloignés (l'un dans l'entête de page, l'autre dans la marge gauche). On peut connaître cette information en regardant la surface des n\oe{}uds attribuées par le moteur graphique, en effet la surface du n\oe{}ud identifiée par \emph{mw-navigation} est inférieur à la somme de la surface des n\oe{}uds qu'il contient.
+	\item[règle 5] : si l'un des enfants du n\oe{}ud est étiqueté par \emph{hr} alors on extrait les premiers n\oe{}uds visibles successeurs et prédécesseurs comme des structures logiques de chaque enfant étiqueté par \emph{hr}.
+	\paragraph{} La balise \emph{hr} est employée pour marquer une séparation sémantique. Elle produit visuellement une ligne verticale dans le navigateur. Dans le listing \ref{lst:regle5}, on va extraire deux structures (les deux sections encapsulées par les balises \emph{div}). 
+\begin{lstlisting}[language=HTML, frame=single, caption={Exemple règle 5 }, label={lst:regle5}]
+<div>Ceci est une section sur une thématique 1.</div>
+<hr>
+<div>Ceci est une section sur une thématique 2</div>
+\end{lstlisting}
+
+	\item[règle 6] : si la somme des surfaces des enfants visibles du n\oe{}ud est supérieure à ce dernier, alors on parcourt le n\oe{}ud.
+	
+\paragraph{} Dans le listing \ref{lst:wikipedia} le n\oe{}ud \emph{mw-navigation} est un n\oe{}ud qui regroupe deux menus de navigation pour leur appliquer un style. Cette proximité des deux n\oe{}uds ne reflète pas le rendu final puisqu'après la mise en page les deux n\oe{}uds sont très éloignés (l'un dans l'entête de page, l'autre dans la marge gauche). On peut connaître cette information en regardant la surface des n\oe{}uds attribuée par le moteur graphique. En effet la surface du n\oe{}ud identifiée par \emph{mw-navigation} est inférieure à la somme de la surface des n\oe{}uds qu'il contient.
 \lstset{language=HTML}
 \begin{lstlisting}[frame=single, caption={Pattern wikipedia.fr}, label={lst:wikipedia}]
 <div id="mw-navigation">
@@ -1284,7 +1287,9 @@ and get ACTF components!</p>
 </div>
 \end{lstlisting}
 
-\paragraph{Règle 7} Les balises de titre sont utilisées pour introduire un nouveau contenu. Cela donne une indication sur l'introduction d'un nouveau contenu.
+	\item[règle 7] : si le premier enfant visible du n\oe{}ud est un n\oe{}ud de titre alors on extrait ce n\oe{}ud comme une structure logique.
+	
+\paragraph{} Les balises de titre sont utilisées pour introduire un nouveau contenu. Cela donne une indication sur l'introduction d'un nouveau contenu.
 \begin{lstlisting}[language=HTML, frame=single, caption={pattern eclipse.org/actf}, label={lst:}]
 <div class="sideitem">
  <h6>Related links</h6>
@@ -1295,7 +1300,10 @@ and get ACTF components!</p>
   </ul>
  </div>
 \end{lstlisting}
-\paragraph{Règle 8} Dans l'exemple \ref{lst:eclipse} l'heuristique va extraire la structure qui correspond au menu grâce à la fonction de distance qui va identifier une distance visuelle. Dans l'exemple ci-dessous le noeud identifié par \emph{header-nav} ne partage pas les mêmes propriétés d'arrière-plan.
+
+	\item[règle 8] : si la fonction de distance visuelle est vérifiée (renvoie vrai) pour au moins un enfant du n\oe{}ud alors on parcourt ce n\oe{}ud et on extrait comme structure logique le n\oe{}ud qui a vérifié la fonction de distance.
+	
+\paragraph{} Dans le listing \ref{lst:eclipse} l'heuristique va extraire la structure qui correspond au menu grâce à la fonction de distance qui va identifier une distance visuelle. Dans l'exemple ci-dessous le n\oe{}ud identifié par \emph{header-nav} ne partage pas les mêmes propriétés d'arrière-plan.
 \begin{lstlisting}[language=HTML, frame=single, caption={pattern eclipse.fr}, label={lst:eclipse}]
 <body>
  <div style="background:none" id="header-menu">
@@ -1304,7 +1312,10 @@ and get ACTF components!</p>
  </div>
 </body>
 \end{lstlisting}
-\paragraph{Règle 9} Dans l'exemple \ref{lst:legibase}, si les concepteurs respectaient les spécifications de HTML 4, ils auraient annotés le contenu comme une collection logique avec la balise \emph{ul} (indiquant une liste). Pour détecter ce genre de configuration on peut vérifier la taille du plus grand des enfants. Si celui-ci est faible alors on peut en déduire que les enfants de ce groupe de n\oe{}ud n'introduisent pas de nouvelles structures logiques.
+
+	\item[règle 9] : si la taille calculée du plus grand enfant visible est plus petite qu'un seuil prédéfini alors on extrait ce n\oe{}ud comme une structure logique.
+	
+\paragraph{} Dans l'exemple \ref{lst:legibase}, si les concepteurs respectaient les spécifications de HTML 4, ils auraient annoté le contenu comme une collection logique avec la balise \emph{ul} (indiquant une liste). Pour détecter ce genre de configuration on peut vérifier la taille du plus grand des enfants. Si celui-ci est faible alors on peut en déduire que les enfants de ce groupe de n\oe{}ud n'introduisent pas de nouvelles structures logiques.
 \begin{lstlisting}[language=HTML, frame=single, caption={pattern legibase.htm}, label={lst:legibase}]
 <div class="blockMenuGauche taille-relatif=5">
   <div class="menuGaucheInact taille-relatif=5"><a href=""></a></div>
@@ -1314,9 +1325,16 @@ and get ACTF components!</p>
 </div>
 \end{lstlisting}
 
+	\item[règle 10] : par défaut nous parcourons le n\oe{}ud.
+\end{description}
+
+\paragraph{} Sur les treize heuristiques de \citep{cai2003extracting} nous avons adapté les règles 1, 2, 3, 8, et 9 d'après les concepts spécifier plus haut, simplement en remplaçant les concepts de n\oe{}uds textes et n\oe{}uds textes virtuels par nos concept de n\oe{}uds de contenus et n\oe{}uds de contenus virtuels. D'après nos teste, les autres heuristiques présentées par les auteurs n'avaient pas d'impacts sur le découpage.
+
+
+
 \section{Annotation de structures \label{sec:annotation}}
-Dans la section \ref{sec:extraction} nous présentons une méthode permettant de partitionner une page. Le résultat est l'obtention d'une structure hiérarchique où chaque noeud correspond à un regroupement de noeuds ayant une sémantique ensemble. Une partie des noeuds de cette structure est directement aliénable avec notre méta-modèle. Cependant une partie ne l'est pas, c'est le cas des méta-classes : Article, Region, Navigation, Complementary, Banner, Main, ContentInfo,\emph{etc.}. Nous introduisons quelques pistes pour annoter une partie de ces éléments.
-Pour annoter les noeuds nous proposons d'utiliser l'approche proposée par \citep{chen2001function} (\emph{cf.} section \ref{subsec:approche-fonctionnelle}). D'après les fonctionnalités associées à chaque noeuds (à l'aide d'un arbre de décision) nous construisons des fonctions pour découvrir la sémantique des objets. Afin de faciliter cette découverte nous rajoutons une propriété sur la localisation d'une structure dans la  page  : position. En effet, nous supposons que la position des objets dans la page est discriminante car les concepteurs suivent plus ou moins un schéma standard dans la présentation des pages. L'information sur la localisation de l'objet dans la page est facilement fournit par le moteur de rendu graphique du navigateur. Les valeurs possibles que nous avons choisit sont celles proposées par le pattern de présentation des auteurs de \citep{kovacevic2002recognition} (\emph{cf.} section \ref{subsub:seg-pattern}): Bannière, Pied de page, Menu lat. gauche, Menu lat. droit. En effet, d'après les résultats du tableau \ref{tab:eval-pattern-presentation}, ce pattern de présentation est très représentatif des pages web.
+Dans la section \ref{sec:extraction} nous présentons une méthode permettant de partitionner une page. Le résultat est l'obtention d'une structure hiérarchique où chaque noeud correspond à un regroupement de n\oe{}uds apportant ensemble une même sémantique. Une partie des noeuds de cette structure est directement aliénable avec notre méta-modèle. Cependant une partie ne l'est pas, c'est le cas des méta-classes : Article, Region, Navigation, Complementary, Banner, Main, ContentInfo,\emph{etc.}. Nous introduisons quelques pistes pour annoter les structures extraites de manière à les assimiler aux éléments du méta-modèle.
+Pour annoter les n\oe{}uds nous proposons d'utiliser l'approche basée sur les propriétés fonctionnelles proposé par \citep{chen2001function} (\emph{cf.} section \ref{subsec:approche-fonctionnelle}). D'après les fonctionnalités associées à chaque n\oe{}uds (à l'aide d'un arbre de décision) nous construisons des fonctions pour découvrir la sémantique des objets. Afin de faciliter cette découverte nous rajoutons une propriété sur la localisation d'une structure dans la  page que nous nommerons "position". En effet, nous supposons que la position des objets dans la page est discriminante car les concepteurs suivent plus ou moins un schéma standard dans la présentation des pages. L'information sur la localisation de l'objet dans la page est facilement fournie par le moteur de rendu graphique du navigateur. Les valeurs possibles que nous avons choisi sont celles proposées par l'article sur la segmentation par pattern \citep{kovacevic2002recognition} (\emph{cf.} section \ref{subsub:seg-pattern}): Bannière, Pied de page, Menu lat. gauche, Menu lat. droit. En effet, d'après les résultats du tableau \ref{tab:eval-pattern-presentation}, ce pattern de présentation est très représentatif des pages web.
 %\paragraph{}
 %\begin{figure}
 %\centering
@@ -1352,38 +1370,41 @@ Pour annoter les noeuds nous proposons d'utiliser l'approche proposée par \citep
 On peut décrire un menu de navigation comme un objet composite dont la majorité des enfants de la racine sont des objets de navigation. 
 
 \paragraph{Banner} 
-En analysant visuellement une bannière on comprend qu'elle donne des renseignements générales sur la page que l'on est en train de consulter. Elle se localise en haut de la page et se compose le plus souvent : 
+En analysant visuellement une bannière on comprend qu'elle donne des renseignements généraux sur la page que l'on est en train de consulter. Elle se localise en haut de la page et se compose le plus souvent : 
 \begin{itemize}
-	\item d'un logo qui donne l'identité visuelle du site. 
+	\item d'un logo qui donne l'identité visuelle du site
 	\item d'un titre introduisant le domaine (adresse du site) ou résumant le contenu principal de la page
 	\item d'un menu de navigation qui peut être vu comme la description de l'ossature du site (présente les différentes pages du site web)
-	\item d'un formulaire soit pour recherche un contenu dans le site web soit pour se connecter à son compte utilisateur
+	\item d'un formulaire soit pour rechercher un contenu dans le site web soit pour se connecter à son compte utilisateur
 \end{itemize}
 
 Sur la base de ces éléments on peut décrire une bannière comme étant une composition d'objets :
 \begin{itemize}
-	\item d'objets simples de type \emph{Informative} qui peuvent avoir des propriétés de sémantème différentes : une image pour le logo, un titre.
-	\item d'objets composites de type \emph{Navigation} dont les éléments de navigation pointent sur le même domaine (espace de nom) que le site web.
+	\item d'objets simples de type \emph{Informative} qui peuvent avoir des propriétés de sémantème différentes : une image pour le logo, un titre
+	\item d'objets composites de type \emph{Navigation} dont les éléments de navigation pointent sur le même domaine (espace de nom) que le site web
 	\item d'objets de type \emph{Interactif} avec une propriété de sémantème formulaire   
 \end{itemize}
 Elle doit avoir une propriété de position égale à \emph{Bannière}.
 
 \paragraph{ContentInfo}
-La méta-classe \emph{ContentInfo} fournit un contenu relatif à la page. Elle correspond à un ensemble de lien de navigation qui pointent sur des pages fournissant une information sur la page (\emph{e.g} licence de publication de la page, politique de confidentialité,\emph{etc.} ). Traditionnellement ces informations sont placées en bas de page. On peut décrire une instance de \emph{ContentInfo} comme une composition d'objets de navigation avec la propriété de position égale à \emph{Pied de page}. 
+La méta-classe \emph{ContentInfo} fournit un contenu relatif à la page. Elle correspond à un ensemble de liens de navigation qui pointent sur des pages fournissant une information sur la page (\emph{e.g} licence de publication de la page, politique de confidentialité,\emph{etc.} ). Traditionnellement ces informations sont placées en bas de page. On peut décrire une instance de \emph{ContentInfo} comme une composition d'objets de navigation avec la propriété de position égale à \emph{Pied de page}. 
 
 \paragraph{Main}
-Par vacuité de valeur pour la propriété position, c'est-à-dire que l'objet n'a pas au moins l'une des valeurs définies (bannière, pied de page, menu lat. gauche, menu lat. droit) on qualifiera la structure encapsulant les noeuds n'ayant pas de valeur position comme instance de la méta-classe \emph{Main}. 
+Par vacuité de valeur pour la propriété position, c'est-à-dire que l'objet n'a pas au moins l'une des valeurs définies (bannière, pied de page, menu lat. gauche, menu lat. droit) on qualifiera la structure encapsulant les n\oe{}uds n'ayant pas de valeur position comme instance de la méta-classe \emph{Main}. 
 
-\subsection{Discussion}
-Les concepteurs de page web suivent implicitement des standards de présentation dans les pages. On remarque que les présentations sont plus ou moins les mêmes. Cependant chaque concepteurs intègrent ces propres variantes. L'inconvénient dans la conception de nos fonctions est qu'elles manques de plasticité. L'auteur de  \citep{gueheneuc2003cadre} se retrouve dans une configuration similaire.  Dans la conception des architectures logicielles, les concepteurs se basent sur des patterns architecturaux, des solutions standards à des problèmes de conception logiciel connus, pour construire l'architecture de leur logiciel. Les architectures logicielles conçut à partir de ces patterns en sont des variantes. \citep{gueheneuc2003cadre} souhaite reconnaître des motifs de conception architectural dans les logiciels pour cela il propose d'exploiter une approche basée sur la programmation par contraintes pour détecter des motifs de manière plus flexible. Les motifs sont décrits par un ensemble de contraintes, si aucun motif est détecté alors certaines contraintes sont relâchées. Ce mécanisme de relaxation des contraintes permet de supporter une identification complète ou approchée du motif recherché. %L'inconvénient est bien sûre que l'on ne détecte pas les bons éléments à cause d'une trop grande flexibilité. 
+\subsubsection{Discussion}
+Les concepteurs de page web suivent implicitement des standards de présentation dans les pages. On remarque que les présentations sont plus ou moins les mêmes. Cependant chaques concepteurs intègrent ces propres variantes. L'inconvénient dans la conception de nos fonctions est qu'elles manques de souplesse. L'auteur de  \citep{gueheneuc2003cadre} se retrouve dans une configuration similaire.  Dans la conception des architectures logicielles, les concepteurs se basent sur des patterns architecturaux, des solutions standards à des problèmes de conception logiciel connus, pour construire l'architecture de leur logiciel. Les architectures logicielles concuent à partir de ces patterns en sont des variantes. \citep{gueheneuc2003cadre} souhaite reconnaître des motifs de conception architecturaux dans les logiciels, pour cela il propose d'exploiter une approche basée sur la programmation par contraintes pour détecter des motifs de manière plus flexible. Les motifs sont décrits par un ensemble de contraintes, si aucun motif n'est détecté alors certaines contraintes sont relâchées. Ce mécanisme de relaxation des contraintes permet de supporter une identification complète ou approchée du motif recherché. %L'inconvénient est bien sûre que l'on ne détecte pas les bons éléments à cause d'une trop grande flexibilité. 
 La problématique de \citep{gueheneuc2003cadre} est vraiment très proche de ce que l'on souhaite faire, nous pensons que cette piste serait intéressante à expérimenter dans notre processus d'annotation.
 
 
 \chapter{Expérimentations et résultats \label{chap:resultat}}
-Dans cette partie du rapport nous présentons les résultats de notre algorithme. Celui-ci est implémenté par un script Javascript qui est injecté à la fin du chargement d'une page sur le navigateur web. L'injection du script se fait par l'intermédiaire du pluging GreaceMonkey installé sur notre navigateur web. L'expérimentation est réalisée dans un navigateur firefox version 21.0.
+Dans cette partie du rapport nous présentons les résultats de notre algorithme. Nous illustrons le déroulement de l'algorithme de manière visuelle sur une page web et dans la structure DOM de celle-ci. Nous nous intéressons à la performance de notre algorithme et aux points devant être améliorés.
+Notre algorithme est implémenté par un script Javascript qui est injecté à la fin du chargement d'une page sur le navigateur web. L'injection du script se fait par l'intermédiaire du pluging GreaceMonkey installé sur notre navigateur web. L'expérimentation est réalisée dans un navigateur firefox version 21.0.
+
 
 \section{Extraction}
-La figure \ref{img:page-berger} présente une page passée en entrée de notre algorithme. La structure de cette page se décrit comme suit : une bannière, un menu de navigation principal, un menu de secondaire (marge latérale gauche), un contenu principal, un contenu publicitaire (marge latérale droite). La figure \ref{img:segmentation-page-berger} montre visuellement le découpage effectué dans le DOM par rapport aux éléments de la page affichée dans le navigateur web. On peut constater que les structures extraites au premier tour correspondent bien à la structuration logique de la page décrite précédemment.
+\paragraph{}
+La figure \ref{img:page-berger} présente une page passée en entrée de notre algorithme. La structure de cette page se décrit comme suit : une bannière, un menu de navigation principal, un menu de secondaire (marge latérale gauche), un contenu principal, un contenu publicitaire (marge latérale droite). La figure \ref{img:segmentation-page-berger} montre visuellement le découpage effectué dans le DOM par rapport aux éléments de la page affiché dans le navigateur web. On peut constater que les structures extraites au premier tour correspondent bien à la structuration logique de la page décrite précédemment.
 
 \begin{figure}[htb]
 \centering
@@ -1401,7 +1422,8 @@ La figure \ref{img:page-berger} présente une page passée en entrée de notre algo
 \label{img:processus-segmentation}
 \end{figure}
 
-La figure \ref{img:decoupage-banniere} détail de manière plus spécifique le découpage du DOM de la page en se focalisant sur la bannière. On constate que le découpage effectué est toujours bien conforme à la sémantique que contenu (\emph{cf.} figure \ref{img:decoupage-banniere}). La figure \ref{img:dom-segmentation-berger} schématise le DOM de la page web. Les noeuds contenant trois points de suspensions correspondent à une application successive de la règle 2. Les structures \emph{S1, S1\_2, S1\_3, S1\_3\_1 et S1\_3\_2} sont découvertes par la règle 9 et la structure \emph{S1\_1} est découverte par la règle 3. 
+\paragraph{}
+La figure \ref{img:decoupage-banniere} détail de manière plus spécifique le découpage du DOM de la page en se focalisant sur la bannière. On constate que le découpage effectué est toujours bien conforme à la sémantique que contenu (\emph{cf.} figure \ref{img:decoupage-banniere}). La figure \ref{img:dom-segmentation-berger} schématise le DOM de la page web. Les n\oe{}uds contenant trois points de suspensions correspondent à une application successive de la règle 2. Les structures \emph{S1, S1\_2, S1\_3, S1\_3\_1 et S1\_3\_2} sont découvertes par la règle 9 et la structure \emph{S1\_1} est découverte par la règle 3. 
 
 \begin{figure}[htb]
 \centering
@@ -1447,14 +1469,87 @@ La figure \ref{img:decoupage-banniere} détail de manière plus spécifique le déco
 \label{img:decoupage-banniere}
 \end{figure}
 
-\subsection{Efficacité}
 
 
-\fp{voir des cas où le découpage n'est pas bon}
+\section{Analyse}
+\paragraph{}
+Pour analyser nos résultats, nous utilisons deux métriques. Une métrique de rappelle et une métrique de précision. Ce sont des mesures standards pour mesurer l'efficacité d'algorithme de recherche. Nous souhaitons mesurer l'efficacité de la recherche de structure dans une page web par notre méthode. 
 
-\section{Annotation}
+La métrique de rappel sera définie par le nombre de structures pertinentes trouvées au regard du nombre de structures pertinentes que possède la page. Nous mesurons cette métrique à chaque itération. Si la métrique est égale à un alors nous arrêtons les itérations car toutes les structures ont été trouvé. Cela va permettre de voir au bout de combien d'itération notre algorithme est efficace. 
+
+Dans la page de Berger-Levrault, nous mesurons l'efficacité de notre méthode pour détecter ses structures principales. Nous sélectionnons les structures suivantes comme échantillon :
+\begin{itemize}
+	\item Article
+	\item Banner
+	\item ContentInfo
+	\item Main
+	\item Navigation
+\end{itemize}
+
+La métrique de précision sera définie par le nombre des structures pertinentes trouvées sur le nombre de structures totales retournées. Nous mesurons cette métrique pour chacune des itérations nécessaire à la découverte de toutes les structures attendues. Cette mesure va impacter la rapidité de l'algorithme d'annotation si notre algorithme renvoie des structures non pertinentes.
+
+\begin{center}
+\begin{table}
+\begin{tabular}{c c c c c}
+	\hline
+	Classe de structure	 & Itération 1 & Itération 2 & Itération 3 & Itération 4  \\ \hline
+	Article  & 0 & 0 & 0 & 5\\
+	Banner  & 1 & 1 & 1 & 1\\
+	%Complementary  & 0 & 0 & 0 & 0\\
+	ContentInfo  & 0 & 1 & 1 & 1\\
+	Main  & 1 & 1 & 1 & 1\\
+	Navigation  & 2 & 2 & 3\\ \hline
+	Rappel : & 0.36 & 0.45 & 0.54 & 1\\
+	\hline	 
+\end{tabular}
+\caption{Métrique de rappel}
+\label{tab:metrique-rappel}
+\end{table}
+\end{center}
+
+A la première itération l'algorithme découvre la structure 3 (menu lat. gauche), la structure 2 (menu lat. droit) et la structure 4 (contenu principal) étant respectivement deux instances de \emph{Navigation} et une instance de \emph{Main}.
+A la seconde itération l'algorithme découvre la structure 1 et la structure 6 étant respectivement une instance de la classe \emph{Banner} et une instance de la classe \emph{ContentInfo}.
+A la troisième itération l'algorithme découvre la structure 1\_3\_1 correspondant à une instance de la classe \emph{Navigation}. Pour finir la dernière itération découvre les instances de la classe \emph{Article}.
+
+\begin{center}
+\begin{table}
+\begin{tabular}{c c c c c}
+	\hline
+	Classe de structure	& Itération 1 & Itération 2 & Itération 3 & Itération 4  \\ \hline
+	Article & 0 & 0 & 0 & 5\\
+	Banner & 1 & 1 & 1 & 1\\
+	ContentInfo & 0 & 1 & 1 & 1\\
+	Main & 0 & 1 & 1 & 1\\
+	Navigation & 2 & 2 & 3 & 3\\ 
+	Bruit & 0 & 5 & 37 & 7\\ \hline
+	Précision : & 1 & 0.5 & 0.66 & 0.61\\	
+	\hline	 
+\end{tabular}
+\caption{Métrique de précision}
+\label{tab:metrique-precision}
+\end{table}
+\end{center}
+
+\section{Discussion}
+Au vu des premiers résultats le nombre d'itérations peut sembler conséquent cependant il est difficile d'améliorer l'efficacité de l'algorithme pour une page sans dégrader le résultat de l'application de notre méthode sur d'autres pages. Nous remarquons que la précision de notre algorithme est très faible au delà du premier tour. Le bruit correspond aux structures découvertes n'appartenant pas à la classe des échantillons. La mesure sanctionne donc sévèrement notre algorithme alors qu'il renvoie tout de même des structures correspondant à des classes de notre méta-modèle. 
+D'autres points posent problème dans notre algorithme. En effet dans certaine configuration notre algorithme n'extrait pas les instances de la classe \emph{Article}. Si l'on regarde le listing \ref{lst:wikipedia} l'implémentation actuelle de notre algorithme ne permet pas de regrouper le corps de l'article avec son titre. Notre algorithme extrait quatre structures logiques au lieu d'en extraire seulement deux. 
+\begin{lstlisting}[language=HTML, frame=single, caption={pattern fr.wikipedia.org}, label={lst:wikipedia}]
+<div class="Main">
+  <div id="article-1-titre"></div>
+  <div id="article-1-corps"></div>
+  
+  <div id="article-2-titre"></div>
+  <div id="article-2-corps"></div>
+  
+  <div id="article-3-titre"></div>
+  <div id="article-3-corps"></div>
+</div>
+\end{lstlisting}
+
+%\section{Annotation}
 %Un fois la segmentation de la page effectuée nous en construisons une nouvelle structure arborescente de la page. Chaque noeuds de cette structure référence un noeuds du DOM de la page web résultant du découpage de la phase précédente. Puis conforment aux modèles proposés par \citep{chen2001function} nous annotons le en commençant depuis les feuilles en remontant vers la racine en objet. \ref{img:arbre} illustre un fragment de la structure correspond à la bannière. Le noeud NAV correspond à la structure \emph{1\_3\_1} de la figure \ref{img:decoupage-banniere}, les feuilles du noeud correspond aux découpages de cette structure qui à été partionner suivant les quatre lien de navigation.
 %Le noeud BAN est typé car l'algorithme à trouvé une noeud de type INFO-IMG, INTER et NAV.
+\begin{comment}
 \begin{figure}
 \centering
 \begin{tikzpicture}[
@@ -1490,10 +1585,21 @@ La figure \ref{img:decoupage-banniere} détail de manière plus spécifique le déco
 
 \section{Discussion}
 \fp{montrer quelques exemples de mauvais découpage et mettre en avant des pistes de solutions}
-
+\end{comment}
 \chapter{Conclusion \label{chap:conclusion}}
 
-\fp{synthèse du travail effectué et perspectives}
+En conclusion, lors de ce stage nous avons proposé un méta-modèle de page web en réponse à la diversité de représentation des éléments conceptuels dans une page. Ce méta-modèle possède un haut niveau d'expressivité comparé aux langages de publication des pages web couramment utilisés. Il répond aux besoins d'expressivités identifiés dans le cadre d'expression de préférences sur l'accessibilité. Il devra cependant être étendu à d'autres aspects que celui de la présentation d'une page web (\emph{e.g} navigation, dynamique).  
+
+Nous avons également adapté et implémenté une méthode basé sur l'analyse des propriétés de mise en forme pour extraire les différentes structures logiques d'une page web. Les premiers retours nous permette de partiellement valider notre hypothèse de départ sur la possibilité d'extraire la structure des pages d'après leur propriété de mise en forme. En effet notre approche doit être expérimenté sur un jeu de données plus larges et représentatifs que celui réalisé. En premier lieu pour valider notre approche et en second lieu pour mettre en relation nos résultats avec d'autres travaux. 
+
+Nous avons proposé des pistes pour annoter les structures extraites d'une page. Malheureusement par manque de temps nous n'avons pas pu les implémenter pour les tester. La suite des travaux devrait ce concentrer sur l'implémentation et l'évaluation de ces dernières.
+
+
+En résumé ce travail était axé sur la compréhension de la structure d'une page afin d'en comprendre le contenu. Nous avons mis en évidence que la propriété intrinsèque au monde du web est ça grande liberté et diversité dans ses moyens d'expression que l'on retrouve dans la conception des pages web. Les langages du web pour supporter toutes cette diversité et survivre dans ce milieu limite leur sémantique et on une composante syntaxique très souple. Le point délicat de notre approche était de proposer une solution capable de s'adapter à cette diversité de conception. Dans l'environnement technologique actuelle il n'est pas possible de prendre en compte cet aspect de manière sure. La diversité donnera toujours lieu à une exception qui fera échouer l'approche mise en place. 
+De nouveau langage comme RDF intègre eux une couche réflexive qui permet d'étendre de manière élégante leur sémantique. L'essor de ce genre de technologie devrait permettre d'améliorer significativement la compréhension du contenu de manière automatique et plus simple qu'actuellement et rendre le web plus accessible.  
+
+
+%\fp{synthèse du travail effectué et perspectives}
 %caractéristique du web et la liberté de faire -> difficile de concevoir des méthodes qui identifiera tous les cas
 %les technos évolue dans ce sens en offrant des langage plus adapté à la description des ressources du web Rdfa
 
@@ -1511,7 +1617,7 @@ La figure \ref{img:decoupage-banniere} détail de manière plus spécifique le déco
 
 Élément graphique dans une page web (bouton, liste déroulant, tableau,
 \emph{etc.}). Il peut définir des éléments et un contenu interactif
-(\emph{e.g }formulaire d'inscription, bar de recherche, fils d'actualité). 
+(\emph{e.g }formulaire d'inscription, barre de recherche, fils d'actualité). 
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -1663,7 +1769,7 @@ Définit une référence interactive vers une ressource interne ou externe
 à la page. Les navigateurs implémentent un comportement de navigation.
 Par exemple, une navigation vers une ressource interne peut être dans
 une page se déplacer de l'élément d'en-tête à l'élément de pied de
-page. Une navigation externe la page peut être un changement de page.
+page. Une navigation externe à la page peut être un changement de page.
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -1684,9 +1790,9 @@ Alignement HTML & <a>, <link>\tabularnewline
 \paragraph{Checkbox}
 
 Indique qu'une instance est cochable. Trois valeurs sont possibles
-(vraie-faux-mixte), indiquant si l'élément est coché ou non. La valeur
+(vrai-faux-mixte), indiquant si l'élément est coché ou non. La valeur
 mixte est utilisée dans le contexte d'un groupe d'instance de type
-\emph{checkbox.} Par exemple, lorsqu' il y' a au moins un élément
+\emph{checkbox.} Par exemple, lorsqu'il y a au moins un élément
 coché et un non coché (\emph{e.g }figure \ref{metaclass-checkbox}).
 
 \begin{longtable}{|l|c|}
@@ -1725,7 +1831,7 @@ Alignement HTML & <input type= 'checkbox' />\tabularnewline
 \paragraph{Radio}
 
 Radio est une instance cochable. Il fait toujours partie d'une liste
-d'élément d'au moins deux éléments. Il présente la contrainte que
+d'éléments d'au moins deux éléments. Il présente la contrainte que
 l'on ne peut sélectionner qu'un seul élément parmi la liste de choix
 auquel il appartient (\emph{e.g }figure \ref{metaclasse-radio}).
 
@@ -1762,7 +1868,7 @@ Alignement HTML & <input type=\textquotedbl{}radio\textquotedbl{}/>\tabularnewli
 
 \paragraph{RadioGroup}
 
-C'est une collection logique d'élément Radio. Dans html, la collection
+C'est une collection logique d'éléments Radio. Dans HTML, la collection
 logique est exprimée par l'attribut name (\emph{eg }figure \ref{meta-classe_radiogroup})
 
 \begin{longtable}{|c|c|}
@@ -1799,8 +1905,8 @@ Alignement HTML & \tabularnewline
 
 \paragraph{Listbox}
 
-Wigdet qui permet de sélectionner un ou plusieurs élément dans une
-liste de choix(\emph{e.g }figure \ref{meta-classe_select}). 
+Wigdet qui permet de sélectionner un ou plusieurs éléments dans une
+liste de choix (\emph{e.g }figure \ref{meta-classe_select}). 
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -1901,8 +2007,7 @@ Alignement HTML & \tabularnewline
 \paragraph{List}
 
 Les listes contiennent des éléments dont le rôle est \emph{listitem
-}ou des éléments dont le rôle est \emph{group} qui contiennent eux
-même des éléments \emph{listitem} (\emph{e.g }figure \ref{metaclass-orderlist}).
+}ou des éléments dont le rôle est \emph{group} qui contiennent eux-mêmes des éléments \emph{listitem} (\emph{e.g }figure \ref{metaclass-orderlist}).
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -2003,7 +2108,7 @@ Alignement HTML & <ol>\tabularnewline
 Éléments qui définissent un état logique (sémantique) d'un texte,
 en opposition à un état physique (mise en forme). Elle recense donc les éléments
 de HTML qui apportent un état logique. On exclut donc les éléments
-de mise en forme telles que <b> (bolt) qui traduisent un état physique
+de mise en forme tels que <b> (bolt) qui traduisent un état physique
 (mise en forme) mais seront exprimés dans le méta-modèle de CSS. 
 
 \begin{longtable}{|c|c|}
@@ -2032,7 +2137,7 @@ pour mettre en évidence un résumé d'article.
 
 \paragraph{Abbreviation}
 
-Définit une abreviation.
+Définit une abréviation.
 
 \lstset{    
 	basicstyle=\footnotesize, 
@@ -2087,9 +2192,9 @@ norme <cite>[ISO-0000]</cite>
 Définit une section comme une unité de confinement structurelle
 dans une page. On spécifie dans notre méta-modèle que les éléments
 héritant de section définissent des limites au contenu qu'il englobe.
-Ils fournissent un environnement contextuelle, c'est-à-dire une portée
+Ils fournissent un environnement contextuel, c'est-à-dire une portée
 sémantique aux éléments. Par exemple, les éléments de titre se rapportent
-à l'élément de section qui l'a introduit.
+à l'élément de section qui les ont introduits.
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -2114,7 +2219,7 @@ Un élément dans une liste. Il est contenu dans une \emph{listitem}.
 
 \begin{longtable}{|c|c|}
 \hline 
-Caractéritique & Valeur\tabularnewline
+Caractéristique & Valeur\tabularnewline
 \hline 
 \endhead
 \hline 
@@ -2131,7 +2236,7 @@ Alignement HTML & <li>\tabularnewline
 
 \paragraph{Group}
 
-Élément regroupant une collection logique d'éléments (eg. figure \ref{meta-classe_group}).
+Élément regroupant une collection logique d'éléments.
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -2177,7 +2282,7 @@ une même thématique : représente une section générique d'un document.
 
 \begin{longtable}{|c|c|}
 \hline 
-Caractéritique & Valeur\tabularnewline
+Caractéristique & Valeur\tabularnewline
 \hline 
 \endhead
 \hline 
@@ -2194,7 +2299,7 @@ Alignement HTML & <section>\tabularnewline
 
 \paragraph{Article}
 
-Contenu autonome dans un page
+Contenu autonome dans une page
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -2213,12 +2318,12 @@ Alignement HTML & <article>\tabularnewline
 
 \paragraph{Paragraphe}
 
-Élément rajouter au méta-modèle de aria. Définit une composition d'élément
-textuelle comme étant un paragraphe dans une page.
+Élément ajouté au méta-modèle de ARIA. Définit une composition d'éléments
+textuels comme étant un paragraphe dans une page.
 
 \begin{longtable}{|c|c|}
 \hline 
-Caractéritique & Valeur\tabularnewline
+Caractéristique & Valeur\tabularnewline
 \hline 
 \endhead
 \hline 
@@ -2253,7 +2358,7 @@ Alignement HTML & <p>\tabularnewline
 
 \paragraph{Tablecell}
 
-Cellule d'une élément \emph{Table} (\emph{eg. }figure \ref{meta-classe_grid}).
+Cellule d'une élément \emph{Table}).
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -2276,11 +2381,11 @@ Alignement HTML & <td>\tabularnewline
 \paragraph{Rowheader}
 
 Une cellule contenant des informations d'entête pour une ligne de
-\emph{Table}(\emph{eg. }figure \ref{meta-classe_grid}).
+\emph{Table}.
 
 \begin{longtable}{|c|c|}
 \hline 
-Caractéritique & Valeur\tabularnewline
+Caractéristique & Valeur\tabularnewline
 \hline 
 \endhead
 \hline 
@@ -2296,7 +2401,7 @@ Alignement HTML & <th>\tabularnewline
 
 \paragraph{Tablerow}
 
-Une ligne dans un \emph{Table}(\emph{eg. }figure \ref{meta-classe_grid}).
+Une ligne dans une \emph{Table}.
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -2317,12 +2422,11 @@ Alignement HTML & <tr>\tabularnewline
 \newpage
 
 \paragraph{Table}
-Élément qui contient des données tabulaires organisées en ligne et colonne
-(\emph{eg. }figure \ref{meta-classe_grid}). 
+Élément qui contient des données tabulaires organisées en ligne et colonne. 
 
 \begin{longtable}{|c|c|}
 \hline 
-Caractéritique & Valeur\tabularnewline
+Caractéristique & Valeur\tabularnewline
 \hline 
 \endhead
 \hline 
@@ -2376,7 +2480,7 @@ Alignement HTML & <table>\tabularnewline
 
 Élément qui marque une division dans le contenu d'une section. Il permet
 de mieux signaler les contenus sémantiquement différents. Ce sont des séparateurs
-visuelles (lignes de pixels vides horizontales ou verticales entre deux
+visuels (lignes de pixels vides horizontales ou verticales entre deux
 éléments). 
 
 \begin{longtable}{|c|c|}
@@ -2397,7 +2501,7 @@ Alignement HTML & <hr>\tabularnewline
 
 \paragraph{SectionHead}
 
-Élément qui résume ou décrive brièvement le sujet introduit par
+Élément qui résume ou décrit brièvement le sujet introduit par
 une section.
 
 \begin{longtable}{|c|c|}
@@ -2438,7 +2542,7 @@ Alignement HTML & <H1,2,3,4,5,6>\tabularnewline
 
 \paragraph{Landmark}
 
-Éléments structurels courant dans une page web.
+Éléments structurels courants dans une page web.
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -2500,7 +2604,7 @@ Alignement HTML & <header>\tabularnewline
 
 \paragraph{Complementary}
 
-Région d'un document conçut comme étant complémentaire au contenu du document auquel il est associé.
+Région d'un document conçue comme étant complémentaire au contenu du document auquel il est associé.
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -2521,7 +2625,7 @@ Alignement HTML & <ASIDE>\tabularnewline
 \paragraph{ContentInfo}
 
 Région d'un document contenant des informations sur celui-ci. Par
-exemple le copyrights associé à un document.
+exemple le copyright associé à un document.
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -2544,7 +2648,7 @@ Alignement HTML & \tabularnewline
 Élément qui contenant une collection d'éléments formant un formulaire.
 Les éléments sont généralement une collection de \emph{command, input
 }qui permettent une interaction avec l'utilisateur. Les interactions
-permettre d'envoyer des informations à un agent en vu d'un traitement (\emph{cf. }figure \ref{meta-classe_form}). 
+permettent d'envoyer des informations à un agent en vue d'un traitement. 
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -2591,7 +2695,7 @@ Alignement HTML & <form>\tabularnewline
 
 \paragraph{Main}
 
-Le contenu principale dans une page.
+Le contenu principal dans une page.
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -2611,9 +2715,9 @@ Alignement HTML & \tabularnewline
 
 \paragraph{Navigation}
 
-Région contenant une collection de lien navigable vers des ressources
+Région contenant une collection de liens navigables vers des ressources
 internes ou externes. Par exemple le menu de navigation d'une page
-web (\emph{cf.} figure \ref{meta-classe_navigation}).
+web.
 
 \begin{longtable}{|c|c|}
 \hline 
@@ -2660,28 +2764,28 @@ La méta-classe \emph{Box} décrit les propriétés de positionnement des éléments d
 \end{itemize}
 
 \paragraph{Méta-classe Style}
-La méta-classe \emph{Style} décrit les boîtes rectangulaires qui sont générées pour les éléments de l'arbre du document et leurs propriétés de positionnement (\emph{cf.}figure \ref{meta-classe_style}).  Les différentes propriétés sont :
+La méta-classe \emph{Style} décrit les boîtes rectangulaires qui sont générées pour les éléments de l'arbre du document et leurs propriétés de positionnement.  Les différentes propriétés sont :
 \begin{itemize}
-	\item padding : l'air d'espacement (\emph{padding})
-	\item border-width épaisseur de bordure
+	\item padding : l'aire d'espacement (\emph{padding})
+	\item border-width : épaisseur de bordure
 	\item border-style : style de la bordure
 	\item border-color : la couleur de bordure
-	\item border-{[}color, image{]}\emph{ }: arière-plan
+	\item border-{[}color, image{]}\emph{ }: arrière-plan
 \end{itemize}
 
 \paragraph{Méta-classe Text}
-La méta-classe \emph{Text} décrit la représentation visuelle des caractères, mots et paragraphes contenu dans une boîte. Les différentes propriétés sont :
+La méta-classe \emph{Text} décrit la représentation visuelle des caractères, mots et paragraphes contenus dans une boîte. Les différentes propriétés sont :
 \begin{itemize}
 	\item text-indent : décrit un alinéa 
 	\item text-align : décrit un alignement. Exemple de valeur possible : alignement de texte à gauche, droite, centré, \emph{ect}.
 	\item decoration : décrit un trait en-dessous, trait au-dessus, rayure et
 clignotement
-	\item text-shadow : décrit des effets d'ombrage appliquer au texte
+	\item text-shadow : décrit des effets d'ombrage appliqués au texte
 	\item letter-spacing : décrit l'espacement entre les mots
 	\item word-spacing : décrit l'espacement entre les mots
 	\item text-transform : décrit les effets de capitalisation dans le texte.
 Par exemple la valeur \emph{uppercase} définit que les lettres de
-chaque mots soient en majuscule, \emph{lowercase} décrit l'inverse.
+chaque mot soient en majuscule, \emph{lowercase} décrit l'inverse.
 	\item color : décrit la couleur du texte
 \end{itemize}
 
