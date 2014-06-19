@@ -1,0 +1,66 @@
+\begin{thebibliography}{10}
+
+\bibitem{cai2003extracting}
+Deng Cai, Shipeng Yu, Ji-Rong Wen, and Wei-Ying Ma.
+\newblock {Extracting content structure for web pages based on visual
+  representation}.
+\newblock In {\em Web Technologies and Applications}, pages 406--417. Springer,
+  2003.
+
+\bibitem{chen2001function}
+Jinlin Chen, Baoyao Zhou, Jin Shi, Hongjiang Zhang, and Qiu Fengwu.
+\newblock {Function-based object model towards website adaptation}.
+\newblock In {\em Proceedings of the 10th international conference on World
+  Wide Web}, pages 587--596. ACM, 2001.
+
+\bibitem{HTML_4}
+World Wide~Web Consortium et~al.
+\newblock {HTML 4.01 specification}.
+\newblock http://www.w3.org/TR/REC-html40/, 1999.
+
+\bibitem{CSS}
+World Wide~Web Consortium et~al.
+\newblock {Cascading Style Sheets}.
+\newblock http://www.w3.org/Style/CSS/, 2010.
+
+\bibitem{ARIA}
+World Wide~Web Consortium et~al.
+\newblock {Accessible Rich Internet Applications 1.0}.
+\newblock http://www.w3.org/WAI/intro/aria, 2014.
+
+\bibitem{HTML_5}
+World Wide~Web Consortium et~al.
+\newblock {HTML 5 Specification}.
+\newblock http://www.w3.org/TR/html5/, 2014.
+
+\bibitem{kohlschutter2008densitometric}
+Christian Kohlsch{\"u}tter and Wolfgang Nejdl.
+\newblock A densitometric approach to web page segmentation.
+\newblock In {\em Proceedings of the 17th ACM conference on Information and
+  knowledge management}, pages 1173--1182. ACM, 2008.
+
+\bibitem{kovacevic2002recognition}
+Milos Kovacevic, Michelangelo Diligenti, Marco Gori, and Veljko Milutinovic.
+\newblock Recognition of common areas in a web page using visual information: a
+  possible application in a page classification.
+\newblock In {\em Data Mining, 2002. ICDM 2003. Proceedings. 2002 IEEE
+  International Conference on}, pages 250--257. IEEE, 2002.
+
+\bibitem{tai1979tree}
+Kuo-Chung Tai.
+\newblock {The tree-to-tree correction problem}.
+\newblock {\em Journal of the ACM (JACM)}, 26(3):422--433, 1979.
+
+\bibitem{vieira2006fast}
+Karane Vieira, Altigran~S da~Silva, Nick Pinto, Edleno~S de~Moura, Joao
+  Cavalcanti, and Juliana Freire.
+\newblock A fast and robust method for web page template detection and removal.
+\newblock In {\em Proceedings of the 15th ACM international conference on
+  Information and knowledge management}, pages 258--267. ACM, 2006.
+
+\bibitem{wininformative}
+Chaw~Su Win and Mie Mie~Su Thwin.
+\newblock Informative content extraction by using eifce [effective informative
+  content extractor].
+
+\end{thebibliography}

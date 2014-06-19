@@ -1,0 +1,15 @@
+Segmentation indice visuel : 
+	*revoir définition du DOM (attention : pas API)
+Segmentation zone :
+	* rediger qlq chose sur les résultats? ou  exemple?? Expliquer utilisation de TABLE
+Mapping graphe :
+	* revoir cette partie de la biblio par rapport aux remarques des relecteurs
+
+Langage de publication : 
+	ARIA
+		* parler plus en détatail notamment des aspects dynamique et de navigation
+Méta-modèle :
+	* montrer méta-modèle de ARIA? (landamark)
+	* faire une présentation du méta-modele qui met en évidence les éléments du HTML4, HTML5 et ARIA réutilisé
+	* dans la partie réalisation mettre des exemples (preference sur l'accessibilité) d'instances du méta-modèle 
+

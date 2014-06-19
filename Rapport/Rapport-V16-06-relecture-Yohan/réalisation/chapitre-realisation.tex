@@ -1,0 +1,87 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usetikzlibrary{positioning,shadows,arrows}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\author{Franck Petitdemange}
+\begin{document}
+
+\begin{figure}
+\begin{subfigure}{0.3\textwidth}
+\begin{tikzpicture}
+        \node [draw] {BODY}	
+        			child { node[draw] {...}}
+        			child { 	node[draw] {...} 
+        				child[sibling distance=5cm] {node[draw] {DIV}
+	    					child { node[draw]{TD}
+	    						child { node[draw]{A}
+	    							edge from parent node{S1\_1\_1}}}
+	    					child { node[draw]{TD}
+	    						child{ node[draw]{...}
+	    							child {node[draw]{DIV}
+	    							edge from parent node{S1\_1\_2}}}}
+	    					child{ node[draw]{TD}
+	    						child{ node[draw]{DIV}
+	    							edge from parent node{S1\_1\_3\_1}}
+	    						child{ node[draw]{...}
+	    							child{ node[draw]{DIV}
+	    									edge from parent node{S1\_1\_3\_2}}}
+									edge from parent node{S1\_1\_3}}
+	    								edge from parent node{S1\_1}}}
+	    			child { node[draw]{...}};
+\end{tikzpicture}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{subfigure}{\textwidth}
+\fbox{\includegraphics[width=\textwidth]{../img/banner_berger.png}}
+\caption{Avant segmentation}
+\end{subfigure}
+
+\begin{subfigure}{\textwidth}
+\fbox{\includegraphics[width=\textwidth]{../img/segmentation_banner_berger.png}}
+\caption{Après segmentation}
+\end{subfigure}
+
+\begin{subfigure}{\textwidth}
+\fbox{\begin{tikzpicture}
+        \node [draw] {BODY}	
+        			child { node[draw] {...}}
+        			child { 	node[draw] {...} 
+        				child[sibling distance=5cm] {node[draw] {DIV}
+	    					child { node[draw]{TD}
+	    						child { node[draw]{A}
+	    							edge from parent node{S1\_1\_1}}}
+	    					child { node[draw]{TD}
+	    						child{ node[draw]{...}
+	    							child {node[draw]{DIV}
+	    							edge from parent node{S1\_1\_2}}}}
+	    					child{ node[draw]{TD}
+	    						child{ node[draw]{DIV}
+	    							edge from parent node{S1\_1\_3\_1}}
+	    						child{ node[draw]{...}
+	    							child{ node[draw]{DIV}
+	    									edge from parent node{S1\_1\_3\_2}}}
+									edge from parent node{S1\_1\_3}}
+	    								edge from parent node{S1\_1}}}
+	    			child { node[draw]{...}};
+\end{tikzpicture}}
+\caption{DOM segmentation}
+\end{subfigure}
+
+\end{figure}
+
+\end{document}

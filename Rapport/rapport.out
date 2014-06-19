@@ -11,10 +11,10 @@
 \BOOKMARK [2][-]{subsection.3.2.2}{Segmentation}{section.3.2}
 \BOOKMARK [2][-]{subsection.3.2.3}{Synth\350se }{section.3.2}
 \BOOKMARK [1][-]{section.3.3}{Annotation de structures}{chapter.3}
-\BOOKMARK [2][-]{subsection.3.3.1}{Approche fonctionnelle}{section.3.3}
+\BOOKMARK [2][-]{subsection.3.3.1}{Approche fonctionnelle }{section.3.3}
 \BOOKMARK [2][-]{subsection.3.3.2}{Inf\351rence du contenu informatif}{section.3.3}
 \BOOKMARK [2][-]{subsection.3.3.3}{Synth\350se}{section.3.3}
-\BOOKMARK [0][-]{chapter.4}{R\351alisation }{}
+\BOOKMARK [0][-]{chapter.4}{R\351alisations }{}
 \BOOKMARK [1][-]{section.4.1}{M\351ta-mod\350le }{chapter.4}
 \BOOKMARK [2][-]{subsection.4.1.1}{M\351ta-mod\350le HTML 4 et 5 }{section.4.1}
 \BOOKMARK [2][-]{subsection.4.1.2}{M\351ta-mod\350le con\347u pour le projet}{section.4.1}
@@ -23,11 +23,13 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{Introduction}{section.4.2}
 \BOOKMARK [2][-]{subsection.4.2.2}{M\351thode}{section.4.2}
 \BOOKMARK [1][-]{section.4.3}{Annotation de structures }{chapter.4}
+\BOOKMARK [2][-]{subsection.4.3.1}{Discussion}{section.4.3}
 \BOOKMARK [0][-]{chapter.5}{Exp\351rimentations et r\351sultats }{}
 \BOOKMARK [1][-]{section.5.1}{Extraction}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.1.1}{Efficacit\351}{section.5.1}
 \BOOKMARK [1][-]{section.5.2}{Annotation}{chapter.5}
 \BOOKMARK [1][-]{section.5.3}{Discussion}{chapter.5}
 \BOOKMARK [0][-]{chapter.6}{Conclusion }{}
-\BOOKMARK [0][-]{section*.64}{Appendices}{}
-\BOOKMARK [1][-]{section.a..1}{M\351ta-mod\350le de Contenu}{section*.64}
-\BOOKMARK [1][-]{section.a..2}{M\351ta-mod\350le de mise en forme}{section*.64}
+\BOOKMARK [0][-]{section*.68}{Appendices}{}
+\BOOKMARK [1][-]{section.a..1}{M\351ta-mod\350le de Contenu}{section*.68}
+\BOOKMARK [1][-]{section.a..2}{M\351ta-mod\350le de mise en forme}{section*.68}

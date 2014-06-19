@@ -1,5 +1,19 @@
 \begin{thebibliography}{10}
 
+\bibitem{bonavero2014web}
+Yoann Bonavero, Marianne Huchard, and Michel Meynard.
+\newblock Web page personalization to improve e-accessibility for visually
+  impaired people.
+\newblock In {\em WEB 2014, The Second International Conference on Building and
+  Exploring Web Based Environments}, pages 40--45, 2014.
+
+\bibitem{bon2013}
+Yoann Bonnavero.
+\newblock {\em Une approche bas{\'e}e sur les pr{\'e}f{\'e}rences et la
+  satisfaction de contraintes pour am{\'e}liorer l accessibilit{\'e} pour les
+  personnes d{\'e}ficientes visuelles}.
+\newblock PhD thesis, 2013.
+
 \bibitem{cai2003extracting}
 Deng Cai, Shipeng Yu, Ji-Rong Wen, and Wei-Ying Ma.
 \newblock {Extracting content structure for web pages based on visual
@@ -32,6 +46,12 @@ World Wide~Web Consortium et~al.
 World Wide~Web Consortium et~al.
 \newblock {HTML 5 Specification}.
 \newblock http://www.w3.org/TR/html5/, 2014.
+
+\bibitem{gueheneuc2003cadre}
+Yann-Ga{\"e}l Gu{\'e}h{\'e}neuc.
+\newblock {\em Un cadre pour la tra{\c{c}}abilit{\'e} des motifs de
+  conception}.
+\newblock PhD thesis, PhD thesis, Ecole des Mines de Nantes, 2003.
 
 \bibitem{kohlschutter2008densitometric}
 Christian Kohlsch{\"u}tter and Wolfgang Nejdl.

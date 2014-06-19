@@ -1,119 +1,123 @@
 \select@language {french}
-\contentsline {chapter}{\numberline {1}Introduction}{9}{chapter.1}
-\contentsline {chapter}{\numberline {2}Accessibilit\'e et contexte du stage }{11}{chapter.2}
-\contentsline {chapter}{\numberline {3}\'Etat de l'art }{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Langage de publication de page web }{13}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}HTML 4}{13}{subsection.3.1.1}
-\contentsline {paragraph}{Contenu}{13}{section*.4}
-\contentsline {paragraph}{Structuration g\'en\'erique}{13}{section*.6}
-\contentsline {subparagraph}{DIV}{13}{section*.7}
-\contentsline {subparagraph}{id et class }{14}{section*.8}
-\contentsline {subsection}{\numberline {3.1.2}HTML 5}{14}{subsection.3.1.2}
-\contentsline {paragraph}{Contenu}{14}{section*.11}
-\contentsline {paragraph}{Structuration}{14}{section*.12}
-\contentsline {subsection}{\numberline {3.1.3}ARIA}{15}{subsection.3.1.3}
-\contentsline {paragraph}{R\^ole}{15}{section*.14}
-\contentsline {paragraph}{\'Etats et propri\'et\'es}{16}{section*.15}
-\contentsline {subsection}{\numberline {3.1.4}CSS }{16}{subsection.3.1.4}
-\contentsline {paragraph}{Mod\`ele de bo\IeC {\^\i }te}{17}{section*.17}
-\contentsline {paragraph}{Mod\`ele de mise en forme}{17}{section*.19}
-\contentsline {paragraph}{Avant-plan et d'arri\`ere-plan}{18}{section*.21}
-\contentsline {paragraph}{Les polices}{18}{section*.22}
-\contentsline {paragraph}{Les textes}{18}{section*.23}
-\contentsline {section}{\numberline {3.2}Extraction de structures}{18}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Mapping }{18}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Segmentation}{19}{subsection.3.2.2}
-\contentsline {subsubsection}{Segmentation par pattern de page }{19}{section*.25}
-\contentsline {subsubsection}{Segmentation par densitom\'etrie textuelle }{20}{section*.27}
-\contentsline {subsubsection}{Segmentation par indice visuel }{21}{section*.29}
-\contentsline {subsection}{\numberline {3.2.3}Synth\`ese }{22}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Annotation de structures}{22}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Approche fonctionnelle}{22}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Inf\'erence du contenu informatif}{23}{subsection.3.3.2}
-\contentsline {subsubsection}{Inf\'erence bas\'ee sur la localisation}{24}{section*.32}
-\contentsline {subsubsection}{Inf\'erence bas\'ee sur la fr\'equence de r\'ep\'etition}{24}{section*.33}
-\contentsline {subsection}{\numberline {3.3.3}Synth\`ese}{24}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}R\'ealisation }{29}{chapter.4}
-\contentsline {section}{\numberline {4.1}M\'eta-mod\`ele }{29}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}M\'eta-mod\`ele HTML 4 et 5 }{29}{subsection.4.1.1}
-\contentsline {subsubsection}{HTML 4}{29}{section*.34}
-\contentsline {paragraph}{M\'eta-mod\`ele HTML 4}{29}{section*.35}
-\contentsline {paragraph}{Instance}{30}{section*.37}
-\contentsline {subsubsection}{HTML 5}{30}{section*.38}
-\contentsline {paragraph}{M\'eta-mod\`ele HTML 5}{30}{section*.39}
-\contentsline {paragraph}{Instance}{32}{section*.41}
-\contentsline {subsection}{\numberline {4.1.2}M\'eta-mod\`ele con\c cu pour le projet}{32}{subsection.4.1.2}
-\contentsline {subsubsection}{Mod\`ele de contenu }{32}{section*.42}
-\contentsline {subsubsection}{Mod\`ele de mise en forme}{35}{section*.45}
-\contentsline {subsubsection}{Instance du m\'eta-mod\`ele}{36}{section*.47}
-\contentsline {subsection}{\numberline {4.1.3}Discussion}{36}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Extraction de structures }{36}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Introduction}{36}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}M\'ethode}{39}{subsection.4.2.2}
-\contentsline {subsubsection}{Description mod\`ele de page}{39}{section*.49}
-\contentsline {subsubsection}{Heuristiques}{40}{section*.50}
-\contentsline {paragraph}{R\`egle 2}{40}{section*.51}
-\contentsline {paragraph}{R\`egle 3}{40}{section*.52}
-\contentsline {paragraph}{R\`egle 4}{41}{section*.53}
-\contentsline {paragraph}{R\`egle 6}{41}{section*.54}
-\contentsline {paragraph}{R\`egle 7}{41}{section*.55}
-\contentsline {paragraph}{R\`egle 8}{41}{section*.56}
-\contentsline {paragraph}{R\`egle 9}{42}{section*.57}
-\contentsline {section}{\numberline {4.3}Annotation de structures }{42}{section.4.3}
-\contentsline {paragraph}{Navigation}{42}{section*.58}
-\contentsline {paragraph}{Banner}{42}{section*.59}
-\contentsline {paragraph}{Complentary}{43}{section*.60}
-\contentsline {chapter}{\numberline {5}Exp\'erimentations et r\'esultats }{45}{chapter.5}
-\contentsline {section}{\numberline {5.1}Extraction}{45}{section.5.1}
-\contentsline {section}{\numberline {5.2}Annotation}{45}{section.5.2}
-\contentsline {section}{\numberline {5.3}Discussion}{46}{section.5.3}
-\contentsline {chapter}{\numberline {6}Conclusion }{51}{chapter.6}
-\contentsline {chapter}{Appendices}{53}{section*.64}
-\contentsline {section}{\numberline {.1}M\'eta-mod\`ele de Contenu}{55}{section.a..1}
-\contentsline {paragraph}{Widget}{55}{section*.65}
-\contentsline {paragraph}{Input }{55}{section*.66}
-\contentsline {paragraph}{Option}{55}{section*.67}
-\contentsline {paragraph}{Select}{55}{section*.68}
-\contentsline {paragraph}{Command}{55}{section*.69}
-\contentsline {paragraph}{Button}{56}{section*.70}
-\contentsline {paragraph}{Link}{56}{section*.71}
-\contentsline {paragraph}{Checkbox}{56}{section*.72}
-\contentsline {paragraph}{Radio}{56}{section*.74}
-\contentsline {paragraph}{RadioGroup}{57}{section*.76}
-\contentsline {paragraph}{Listbox}{57}{section*.78}
-\contentsline {paragraph}{Combobox}{58}{section*.80}
-\contentsline {paragraph}{Structure}{59}{section*.82}
-\contentsline {paragraph}{List}{59}{section*.83}
-\contentsline {paragraph}{Ul (unorder list)}{59}{section*.84}
-\contentsline {paragraph}{OL(order list) }{59}{section*.86}
-\contentsline {paragraph}{Text}{60}{section*.88}
-\contentsline {paragraph}{Emphase}{61}{section*.89}
-\contentsline {paragraph}{Abbreviation}{61}{section*.90}
-\contentsline {paragraph}{Strong}{62}{section*.91}
-\contentsline {paragraph}{Cite}{62}{section*.92}
-\contentsline {paragraph}{Section}{63}{section*.93}
-\contentsline {paragraph}{ListItem}{63}{section*.94}
-\contentsline {paragraph}{Group}{63}{section*.95}
-\contentsline {paragraph}{Region}{63}{section*.96}
-\contentsline {paragraph}{Article}{63}{section*.97}
-\contentsline {paragraph}{Paragraphe}{64}{section*.98}
-\contentsline {paragraph}{Tablecell}{64}{section*.99}
-\contentsline {paragraph}{Rowheader}{65}{section*.100}
-\contentsline {paragraph}{Tablerow}{65}{section*.101}
-\contentsline {paragraph}{Table}{66}{section*.102}
-\contentsline {paragraph}{Separator}{66}{section*.103}
-\contentsline {paragraph}{SectionHead}{66}{section*.104}
-\contentsline {paragraph}{Heading}{66}{section*.105}
-\contentsline {paragraph}{Landmark}{66}{section*.106}
-\contentsline {paragraph}{Banner}{67}{section*.107}
-\contentsline {paragraph}{Application}{68}{section*.108}
-\contentsline {paragraph}{Complementary}{68}{section*.109}
-\contentsline {paragraph}{ContentInfo}{68}{section*.110}
-\contentsline {paragraph}{Form}{68}{section*.111}
-\contentsline {paragraph}{Main}{68}{section*.112}
-\contentsline {paragraph}{Navigation}{69}{section*.113}
-\contentsline {section}{\numberline {.2}M\'eta-mod\`ele de mise en forme}{69}{section.a..2}
-\contentsline {paragraph}{M\'eta-classe Box}{69}{section*.114}
-\contentsline {paragraph}{M\'eta-classe Style}{69}{section*.115}
-\contentsline {paragraph}{M\'eta-classe Text}{69}{section*.116}
-\contentsline {paragraph}{M\'eta-classe Police}{69}{section*.117}
+\contentsline {chapter}{\numberline {1}Introduction}{11}{chapter.1}
+\contentsline {chapter}{\numberline {2}Accessibilit\'e et contexte du stage }{13}{chapter.2}
+\contentsline {chapter}{\numberline {3}\'Etat de l'art }{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}Langage de publication de page web }{17}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}HTML 4}{17}{subsection.3.1.1}
+\contentsline {paragraph}{Contenu}{17}{section*.4}
+\contentsline {paragraph}{Structuration g\'en\'erique}{17}{section*.6}
+\contentsline {subparagraph}{DIV}{17}{section*.7}
+\contentsline {subparagraph}{id et class }{18}{section*.8}
+\contentsline {subsection}{\numberline {3.1.2}HTML 5}{18}{subsection.3.1.2}
+\contentsline {paragraph}{Contenu}{18}{section*.11}
+\contentsline {paragraph}{Structuration}{18}{section*.12}
+\contentsline {subsection}{\numberline {3.1.3}ARIA}{19}{subsection.3.1.3}
+\contentsline {paragraph}{R\^ole}{19}{section*.14}
+\contentsline {paragraph}{\'Etats et propri\'et\'es}{20}{section*.15}
+\contentsline {subsection}{\numberline {3.1.4}CSS }{20}{subsection.3.1.4}
+\contentsline {paragraph}{Mod\`ele de bo\IeC {\^\i }te}{21}{section*.17}
+\contentsline {paragraph}{Mod\`ele de mise en forme}{21}{section*.19}
+\contentsline {paragraph}{Avant-plan et d'arri\`ere-plan}{22}{section*.21}
+\contentsline {paragraph}{Les polices}{22}{section*.22}
+\contentsline {paragraph}{Les textes}{22}{section*.23}
+\contentsline {section}{\numberline {3.2}Extraction de structures}{22}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Mapping }{22}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Segmentation}{23}{subsection.3.2.2}
+\contentsline {subsubsection}{Segmentation par pattern de page }{23}{section*.25}
+\contentsline {subsubsection}{Segmentation par densitom\'etrie textuelle }{24}{section*.28}
+\contentsline {subsubsection}{Segmentation par indice visuel }{25}{section*.30}
+\contentsline {subsection}{\numberline {3.2.3}Synth\`ese }{26}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Annotation de structures}{26}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Approche fonctionnelle }{26}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Inf\'erence du contenu informatif}{27}{subsection.3.3.2}
+\contentsline {subsubsection}{Inf\'erence bas\'ee sur la localisation}{28}{section*.33}
+\contentsline {subsubsection}{Inf\'erence bas\'ee sur la fr\'equence de r\'ep\'etition}{28}{section*.34}
+\contentsline {subsection}{\numberline {3.3.3}Synth\`ese}{28}{subsection.3.3.3}
+\contentsline {chapter}{\numberline {4}R\'ealisations }{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}M\'eta-mod\`ele }{33}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}M\'eta-mod\`ele HTML 4 et 5 }{33}{subsection.4.1.1}
+\contentsline {subsubsection}{HTML 4}{34}{section*.35}
+\contentsline {paragraph}{M\'eta-mod\`ele HTML 4}{34}{section*.36}
+\contentsline {paragraph}{Instance}{34}{section*.38}
+\contentsline {subsubsection}{HTML 5}{34}{section*.39}
+\contentsline {paragraph}{M\'eta-mod\`ele HTML 5}{34}{section*.40}
+\contentsline {paragraph}{Instance}{37}{section*.42}
+\contentsline {subsection}{\numberline {4.1.2}M\'eta-mod\`ele con\c cu pour le projet}{37}{subsection.4.1.2}
+\contentsline {subsubsection}{Mod\`ele de contenu }{37}{section*.43}
+\contentsline {subsubsection}{Mod\`ele de mise en forme}{40}{section*.46}
+\contentsline {subsubsection}{Instance du m\'eta-mod\`ele}{40}{section*.48}
+\contentsline {subsection}{\numberline {4.1.3}Discussion}{41}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Extraction de structures }{41}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Introduction}{41}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}M\'ethode}{44}{subsection.4.2.2}
+\contentsline {subsubsection}{Description du mod\`ele de page}{44}{section*.50}
+\contentsline {subsubsection}{Heuristiques}{45}{section*.51}
+\contentsline {paragraph}{}{45}{section*.52}
+\contentsline {paragraph}{R\`egle 2}{45}{section*.53}
+\contentsline {paragraph}{R\`egle 3}{46}{section*.54}
+\contentsline {paragraph}{R\`egle 4}{46}{section*.55}
+\contentsline {paragraph}{R\`egle 6}{46}{section*.56}
+\contentsline {paragraph}{R\`egle 7}{46}{section*.57}
+\contentsline {paragraph}{R\`egle 8}{47}{section*.58}
+\contentsline {paragraph}{R\`egle 9}{47}{section*.59}
+\contentsline {section}{\numberline {4.3}Annotation de structures }{47}{section.4.3}
+\contentsline {paragraph}{Navigation}{48}{section*.60}
+\contentsline {paragraph}{Banner}{48}{section*.61}
+\contentsline {paragraph}{ContentInfo}{48}{section*.62}
+\contentsline {paragraph}{Main}{48}{section*.63}
+\contentsline {subsection}{\numberline {4.3.1}Discussion}{48}{subsection.4.3.1}
+\contentsline {chapter}{\numberline {5}Exp\'erimentations et r\'esultats }{51}{chapter.5}
+\contentsline {section}{\numberline {5.1}Extraction}{51}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Efficacit\'e}{51}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Annotation}{51}{section.5.2}
+\contentsline {section}{\numberline {5.3}Discussion}{51}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclusion }{55}{chapter.6}
+\contentsline {chapter}{Appendices}{59}{section*.68}
+\contentsline {section}{\numberline {.1}M\'eta-mod\`ele de Contenu}{61}{section.a..1}
+\contentsline {paragraph}{Widget}{61}{section*.69}
+\contentsline {paragraph}{Input }{61}{section*.70}
+\contentsline {paragraph}{Option}{61}{section*.71}
+\contentsline {paragraph}{Select}{61}{section*.72}
+\contentsline {paragraph}{Command}{61}{section*.73}
+\contentsline {paragraph}{Button}{62}{section*.74}
+\contentsline {paragraph}{Link}{62}{section*.75}
+\contentsline {paragraph}{Checkbox}{62}{section*.76}
+\contentsline {paragraph}{Radio}{62}{section*.78}
+\contentsline {paragraph}{RadioGroup}{63}{section*.80}
+\contentsline {paragraph}{Listbox}{63}{section*.82}
+\contentsline {paragraph}{Combobox}{64}{section*.84}
+\contentsline {paragraph}{Structure}{65}{section*.86}
+\contentsline {paragraph}{List}{65}{section*.87}
+\contentsline {paragraph}{Ul (unorder list)}{65}{section*.88}
+\contentsline {paragraph}{OL(order list) }{65}{section*.90}
+\contentsline {paragraph}{Text}{66}{section*.92}
+\contentsline {paragraph}{Emphase}{67}{section*.93}
+\contentsline {paragraph}{Abbreviation}{67}{section*.94}
+\contentsline {paragraph}{Strong}{68}{section*.95}
+\contentsline {paragraph}{Cite}{68}{section*.96}
+\contentsline {paragraph}{Section}{69}{section*.97}
+\contentsline {paragraph}{ListItem}{69}{section*.98}
+\contentsline {paragraph}{Group}{69}{section*.99}
+\contentsline {paragraph}{Region}{69}{section*.100}
+\contentsline {paragraph}{Article}{69}{section*.101}
+\contentsline {paragraph}{Paragraphe}{70}{section*.102}
+\contentsline {paragraph}{Tablecell}{70}{section*.103}
+\contentsline {paragraph}{Rowheader}{71}{section*.104}
+\contentsline {paragraph}{Tablerow}{71}{section*.105}
+\contentsline {paragraph}{Table}{72}{section*.106}
+\contentsline {paragraph}{Separator}{72}{section*.107}
+\contentsline {paragraph}{SectionHead}{72}{section*.108}
+\contentsline {paragraph}{Heading}{72}{section*.109}
+\contentsline {paragraph}{Landmark}{72}{section*.110}
+\contentsline {paragraph}{Banner}{73}{section*.111}
+\contentsline {paragraph}{Application}{74}{section*.112}
+\contentsline {paragraph}{Complementary}{74}{section*.113}
+\contentsline {paragraph}{ContentInfo}{74}{section*.114}
+\contentsline {paragraph}{Form}{74}{section*.115}
+\contentsline {paragraph}{Main}{74}{section*.116}
+\contentsline {paragraph}{Navigation}{75}{section*.117}
+\contentsline {section}{\numberline {.2}M\'eta-mod\`ele de mise en forme}{75}{section.a..2}
+\contentsline {paragraph}{M\'eta-classe Box}{75}{section*.118}
+\contentsline {paragraph}{M\'eta-classe Style}{75}{section*.119}
+\contentsline {paragraph}{M\'eta-classe Text}{75}{section*.120}
+\contentsline {paragraph}{M\'eta-classe Police}{75}{section*.121}

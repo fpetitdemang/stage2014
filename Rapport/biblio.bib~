@@ -1,3 +1,17 @@
+@phdthesis{gueheneuc2003cadre,
+  title={Un cadre pour la tra{\c{c}}abilit{\'e} des motifs de conception},
+  author={Gu{\'e}h{\'e}neuc, Yann-Ga{\"e}l},
+  year={2003},
+  school={PhD thesis, Ecole des Mines de Nantes}
+}
+
+@phdthesis{bon2013,
+    title={Une approche bas{\'e}e sur les pr{\'e}f{\'e}rences et la satisfaction de contraintes pour am{\'e}liorer l accessibilit{\'e} pour les personnes d{\'e}ficientes visuelles},
+    author={Yoann Bonnavero},
+    institution={Laboratoire d Informatique, de Robotique et de Micro{\'e}lectronique de Montpellier},
+    year={2013}
+ }
+
 @inproceedings{kovacevic2002recognition,
   title={Recognition of Common Areas in a Web Page Using Visual Information: a possible application in a page classification},
   author={Kovacevic, Milos and Diligenti, Michelangelo and Gori, Marco and Milutinovic, Veljko},
@@ -216,6 +230,15 @@
   year={2014},
   publisher={World Wide Web Consortium},
   HOWPUBLISHED={http://www.w3.org/TR/html5/}
+}
+
+@ONLINE{RDFA,
+  title={{RDFA Specification}},
+  author={World Wide Web Consortium and others},
+  publisher={World Wide Web Consortium},
+  year={2013},
+  publisher={World Wide Web Consortium},
+  HOWPUBLISHED={http://www.w3.org/TR/rdfa-syntax/}
 }
 
 

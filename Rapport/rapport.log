@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  15 JUN 2014 10:08
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  18 JUN 2014 23:12
 entering extended mode
  %&-line parsing enabled.
 **rapport.tex
@@ -883,7 +883,13 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 
 \openout3 = `rapport.ist'.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Overfull \hbox (3.51817pt too wide) in paragraph at lines 165--167
+[]\T1/cmr/m/n/10 Je re-mer-cie égale-ment les mem-bres du jury et en par-ti-c-u
+lier mes rap-por-teurs Rodolphe Giroudeau,
+ []
+
+[3] [4] [5] [6
 
 ] (./rapport.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 5.
@@ -895,7 +901,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [5])
+) [7])
 \tf@toc=\write8
 \openout8 = `rapport.toc'.
 
@@ -906,420 +912,313 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] (./rapport.lof
-
-Package natbib Warning: Citation `cai2003extracting' on page 7 undefined on inp
-ut line 10.
-
-
-Package natbib Warning: Citation `kohlschutter2008densitometric' on page 7 unde
-fined on input line 16.
-
-
-Package natbib Warning: Citation `cai2003extracting' on page 7 undefined on inp
-ut line 17.
-
-)
+[8] (./rapport.lof)
 \tf@lof=\write9
 \openout9 = `rapport.lof'.
 
 
 No file rapport.gls.
-[7
+[9
 
-] [8
+] [10
 
 ]
 Chapitre 1.
-[9] [10]
+[11] [12]
 Chapitre 2.
-
-Overfull \hbox (0.58833pt too wide) in paragraph at lines 221--224
-[]\T1/cmr/m/n/10 Ce stage s'in-scrit dans le con-texte d'une thèse en cours de 
-réal-i-sa-tion sur l'ac-ces-si-bil-ité numérique.
- []
-
-<img/transformation_endogene_1.jpg, id=310, 681.5061pt x 540.5796pt>
+<img/transformation_endogene_1.jpg, id=338, 681.5061pt x 540.5796pt>
 File: img/transformation_endogene_1.jpg Graphic file (type jpg)
 
 <use img/transformation_endogene_1.jpg>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11
 
-] [12 <./img/transformation_endogene_1.jpg>]
+Underfull \vbox (badness 1325) has occurred while \output is active []
+
+ [13
+
+]
+[14 <./img/transformation_endogene_1.jpg>] [15] [16
+
+]
 Chapitre 3.
-
-Package natbib Warning: Citation `HTML_4' on page 13 undefined on input line 24
-9.
-
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-) [13
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 309--310
+) [17]
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
 
  []
 
 
-Package natbib Warning: Citation `CSS' on page 14 undefined on input line 320.
-
-
-Overfull \hbox (4.2461pt too wide) in paragraph at lines 342--343
+Overfull \hbox (4.2461pt too wide) in paragraph at lines 363--364
 [][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (4.2461pt too wide) in paragraph at lines 343--344
+Overfull \hbox (4.2461pt too wide) in paragraph at lines 364--365
 [][][][][][][][][][][][][][][][][] 
  []
 
-<img/architecture_Geekos_HTML4-294x300.jpg, id=338, 295.1025pt x 301.125pt>
+<img/architecture_Geekos_HTML4-294x300.jpg, id=377, 295.1025pt x 301.125pt>
 File: img/architecture_Geekos_HTML4-294x300.jpg Graphic file (type jpg)
 
 <use img/architecture_Geekos_HTML4-294x300.jpg>
-
-Package natbib Warning: Citation `HTML_5' on page 14 undefined on input line 38
-9.
-
-<img/architecture_Geekos_HTML5-293x300.jpg, id=341, 294.09875pt x 301.125pt>
+<img/architecture_Geekos_HTML5-293x300.jpg, id=381, 294.09875pt x 301.125pt>
 File: img/architecture_Geekos_HTML5-293x300.jpg Graphic file (type jpg)
 
-<use img/architecture_Geekos_HTML5-293x300.jpg> [14]
-
-Package natbib Warning: Citation `ARIA' on page 15 undefined on input line 453.
-
-
-[15 <./img/architecture_Geekos_HTML4-294x300.jpg>]
-<img/metamodele/css-font.png, id=367, 455.7025pt x 63.23625pt>
+<use img/architecture_Geekos_HTML5-293x300.jpg> [18] [19 <./img/architecture_Ge
+ekos_HTML4-294x300.jpg>]
+<img/metamodele/css-font.png, id=412, 455.7025pt x 63.23625pt>
 File: img/metamodele/css-font.png Graphic file (type png)
 
 <use img/metamodele/css-font.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
-<img/metamodele/css-modeleboite.png, id=390, 434.62375pt x 318.18875pt>
+ [20]
+<img/metamodele/css-modeleboite.png, id=435, 434.62375pt x 318.18875pt>
 File: img/metamodele/css-modeleboite.png Graphic file (type png)
 
-<use img/metamodele/css-modeleboite.png> [17 <./img/metamodele/css-font.png>]
-
-Package natbib Warning: Citation `tai1979tree' on page 18 undefined on input li
-ne 648.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 648--650
+<use img/metamodele/css-modeleboite.png> [21 <./img/metamodele/css-font.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 668--670
 
  []
 
-<img/mapping.jpg, id=414, 756.8275pt x 412.54124pt>
+<img/mapping.jpg, id=460, 756.8275pt x 412.54124pt>
 File: img/mapping.jpg Graphic file (type jpg)
  <use img/mapping.jpg>
-[18]
-
-Package natbib Warning: Citation `vieira2006fast' on page 19 undefined on input
- line 679.
-
-
-Package natbib Warning: Citation `kovacevic2002recognition' on page 19 undefine
-d on input line 694.
-
-[19] <img/zone-interet.jpg, id=434, 483.8075pt x 586.19pt>
+[22] [23] <img/zone-interet.jpg, id=486, 483.8075pt x 586.19pt>
 File: img/zone-interet.jpg Graphic file (type jpg)
 
-<use img/zone-interet.jpg> [20]
-<img/densitometric-segmantation.png, id=443, 1029.8475pt x 381.425pt>
+<use img/zone-interet.jpg> [24]
+<img/densitometric-segmantation.png, id=496, 1029.8475pt x 381.425pt>
 File: img/densitometric-segmantation.png Graphic file (type png)
 
 <use img/densitometric-segmantation.png>
-
-Package natbib Warning: Citation `kohlschutter2008densitometric' on page 21 und
-efined on input line 755.
-
-
-Package natbib Warning: Citation `kohlschutter2008densitometric' on page 21 und
-efined on input line 755.
-
-
-Package natbib Warning: Citation `cai2003extracting' on page 21 undefined on in
-put line 759.
-
-<img/VIPS-partionnement.jpg, id=445, 1115.16624pt x 427.5975pt>
+<img/VIPS-partionnement.jpg, id=501, 1115.16624pt x 427.5975pt>
 File: img/VIPS-partionnement.jpg Graphic file (type jpg)
 
-<use img/VIPS-partionnement.jpg>
-
-Package natbib Warning: Citation `cai2003extracting' on page 21 undefined on in
-put line 771.
-
-
-Package natbib Warning: Citation `cai2003extracting' on page 21 undefined on in
-put line 771.
-
-[21 <./img/VIPS-partionnement.jpg>]
-<img/VIPS-processus.jpg, id=455, 865.2325pt x 249.93375pt>
+<use img/VIPS-partionnement.jpg> [25 <./img/VIPS-partionnement.jpg>]
+<img/VIPS-processus.jpg, id=514, 865.2325pt x 249.93375pt>
 File: img/VIPS-processus.jpg Graphic file (type jpg)
 
 <use img/VIPS-processus.jpg>
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 863.
 
-Package natbib Warning: Citation `cai2003extracting' on page 22 undefined on in
-put line 820.
-
-
-Package natbib Warning: Citation `cai2003extracting' on page 22 undefined on in
-put line 820.
-
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 836.
-
-(/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
+ (/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-
-Package natbib Warning: Citation `chen2001function' on page 22 undefined on inp
-ut line 842.
-
-[22]
-
-Package natbib Warning: Citation `wininformative' on page 23 undefined on input
- line 880.
-
-[23] [24] [25 <./img/architecture_Geekos_HTML5-293x300.jpg>] [26 <./img/metamod
-ele/css-modeleboite.png (PNG copy)> <./img/mapping.jpg>] [27 <./img/zone-intere
-t.jpg> <./img/densitometric-segmantation.png>] [28 <./img/VIPS-processus.jpg>]
+) [26] [27] [28] [29 <./img/architecture_Geekos_HTML5-293x300.jpg>] [30 <./img/
+metamodele/css-modeleboite.png (PNG copy)> <./img/mapping.jpg>] [31 <./img/zone
+-interet.jpg> <./img/densitometric-segmantation.png>] [32 <./img/VIPS-processus
+.jpg>]
 Chapitre 4.
-<img/metamodele/HTML4.png, id=514, 524.71031pt x 332.74312pt>
+[33
+
+] <img/metamodele/HTML4.png, id=585, 524.71031pt x 332.74312pt>
 File: img/metamodele/HTML4.png Graphic file (type png)
 
-<use img/metamodele/HTML4.png> [29
-
-] [30 <./img/metamodele/HTML4.png>]
-<img/metamodele/HTML5.png, id=531, 830.35219pt x 253.69781pt>
+<use img/metamodele/HTML4.png> [34 <./img/metamodele/HTML4.png>] [35]
+<img/metamodele/HTML5.png, id=602, 830.35219pt x 253.69781pt>
 File: img/metamodele/HTML5.png Graphic file (type png)
 
-<use img/metamodele/HTML5.png> [31
+<use img/metamodele/HTML5.png> [36
 
- <./img/metamodele/HTML5.png>] [32
+ <./img/metamodele/HTML5.png>] [37
 
 ]
-<img/metamodele/modele-contenu-widget.png, id=550, 465.23813pt x 417.05812pt>
+<img/metamodele/modele-contenu-widget.png, id=622, 465.23813pt x 417.05812pt>
 File: img/metamodele/modele-contenu-widget.png Graphic file (type png)
 
-<use img/metamodele/modele-contenu-widget.png> [33 <./img/metamodele/modele-con
+<use img/metamodele/modele-contenu-widget.png> [38 <./img/metamodele/modele-con
 tenu-widget.png>]
-<img/metamodele/modele-contenu-structure.png, id=556, 910.90312pt x 504.38437pt
+<img/metamodele/modele-contenu-structure.png, id=628, 910.90312pt x 504.38437pt
 >
 File: img/metamodele/modele-contenu-structure.png Graphic file (type png)
- <use img/metamodele/modele-contenu-structure.png> [34
+ <use img/metamodele/modele-contenu-structure.png> [39
 
 
 
  <./img/metamodele/modele-contenu-structure.png>]
-<img/metamodele/CSS.png, id=563, 649.67719pt x 429.85594pt>
+<img/metamodele/CSS.png, id=635, 649.67719pt x 429.85594pt>
 File: img/metamodele/CSS.png Graphic file (type png)
 
-<use img/metamodele/CSS.png>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35
+<use img/metamodele/CSS.png> [40
 
  <./img/metamodele/CSS.png>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 1062.
- [36] [37]
-Underfull \vbox (badness 7064) has occurred while \output is active []
-
- [38]
-
-Package natbib Warning: Citation `cai2003extracting' on page 39 undefined on in
-put line 1174.
-
-[39] [40] [41]
-
-Package natbib Warning: Citation `chen2001function' on page 42 undefined on inp
-ut line 1283.
-
-
-Package natbib Warning: Citation `chen2001function' on page 42 undefined on inp
-ut line 1289.
-
-
-Package natbib Warning: Citation `chen2001function' on page 42 undefined on inp
-ut line 1300.
-
-
-Package natbib Warning: Citation `chen2001function' on page 42 undefined on inp
-ut line 1308.
-
-[42] [43] [44
+nput line 1110.
+ [41] [42] [43]
+[44] [45] [46] [47] [48] [49] [50
 
 ]
 Chapitre 5.
-<img/page_berger.png, id=754, 749.80125pt x 702.625pt>
+<img/page_berger.png, id=835, 749.80125pt x 702.625pt>
 File: img/page_berger.png Graphic file (type png)
 
 <use img/page_berger.png>
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1319--1320
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1391--1392
 [][] 
  []
 
-<img/segmentation_page_berger.png, id=755, 749.80125pt x 702.625pt>
+<img/segmentation_page_berger.png, id=836, 749.80125pt x 702.625pt>
 File: img/segmentation_page_berger.png Graphic file (type png)
 
 <use img/segmentation_page_berger.png>
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1324--1325
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1396--1397
 [][] 
  []
 
-<img/banner_berger.png, id=759, 1008.76875pt x 128.48pt>
+<img/banner_berger.png, id=840, 1008.76875pt x 128.48pt>
 File: img/banner_berger.png Graphic file (type png)
 
 <use img/banner_berger.png>
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1337--1338
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1409--1410
 [][] 
  []
 
-<img/segmentation_banner_berger.png, id=760, 1008.76875pt x 128.48pt>
+<img/segmentation_banner_berger.png, id=841, 1008.76875pt x 128.48pt>
 File: img/segmentation_banner_berger.png Graphic file (type png)
 
 <use img/segmentation_banner_berger.png>
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1343--1344
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1415--1416
 [][] 
  []
 
+[51] [52 <./img/page_berger.png> <./img/segmentation_page_berger.png>] [53 <./i
+mg/banner_berger.png> <./img/segmentation_banner_berger.png>] [54]
+Chapitre 6.
+(./rapport.bbl [55
 
-Package natbib Warning: Citation `chen2001function' on page 45 undefined on inp
-ut line 1379.
-
-[45] [46] [47 <./img/page_berger.png> <./img/segmentation_page_berger.png>]
-[48 <./img/banner_berger.png> <./img/segmentation_banner_berger.png>] [49]
-[50
+] [56
 
 ]
-Chapitre 6.
-[51] [52
+Underfull \hbox (badness 3701) in paragraph at lines 41--44
+[]\T1/cmr/m/n/10 World Wide Web Con-sor-tium et al.  Ac-ces-si-ble Rich In-ter-
+net Ap-pli-ca-tions 1.0.
+ []
 
-] [53
+[57]) [58] [59
 
-] [54]
-Underfull \vbox (badness 10000) detected at line 1444
+
+] [60]
+Underfull \vbox (badness 10000) detected at line 1530
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1488
+Underfull \vbox (badness 10000) detected at line 1574
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1508
+Underfull \vbox (badness 10000) detected at line 1594
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1529
+Underfull \vbox (badness 10000) detected at line 1615
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1550
+Underfull \vbox (badness 10000) detected at line 1636
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [55]
-Underfull \vbox (badness 10000) detected at line 1571
+ [61]
+Underfull \vbox (badness 10000) detected at line 1657
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1595
+Underfull \vbox (badness 10000) detected at line 1681
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1621
+Underfull \vbox (badness 10000) detected at line 1707
  []
 
-<img/metamodele/checkbox.png, id=835, 301.125pt x 49.18375pt>
+<img/metamodele/checkbox.png, id=915, 301.125pt x 49.18375pt>
 File: img/metamodele/checkbox.png Graphic file (type png)
 
-<use img/metamodele/checkbox.png> [56 <./img/metamodele/checkbox.png>]
-Underfull \vbox (badness 10000) detected at line 1659
+<use img/metamodele/checkbox.png> [62 <./img/metamodele/checkbox.png>]
+Underfull \vbox (badness 10000) detected at line 1745
  []
 
-<img/metamodele/radio.png, id=852, 301.125pt x 58.2175pt>
+<img/metamodele/radio.png, id=932, 301.125pt x 58.2175pt>
 File: img/metamodele/radio.png Graphic file (type png)
 
 <use img/metamodele/radio.png>
-Underfull \vbox (badness 10000) detected at line 1695
+Underfull \vbox (badness 10000) detected at line 1781
  []
 
-<img/metamodele/radiogroup.png, id=854, 302.12875pt x 74.2775pt>
+<img/metamodele/radiogroup.png, id=934, 302.12875pt x 74.2775pt>
 File: img/metamodele/radiogroup.png Graphic file (type png)
 
 <use img/metamodele/radiogroup.png>
-Underfull \vbox (badness 10000) detected at line 1732
+Underfull \vbox (badness 10000) detected at line 1818
  []
 
-[57 <./img/metamodele/radio.png> <./img/metamodele/radiogroup.png>]
-<img/metamodele/select.png, id=873, 112.42pt x 85.31876pt>
+[63 <./img/metamodele/radio.png> <./img/metamodele/radiogroup.png>]
+<img/metamodele/select.png, id=953, 112.42pt x 85.31876pt>
 File: img/metamodele/select.png Graphic file (type png)
 
 <use img/metamodele/select.png>
-Underfull \vbox (badness 10000) detected at line 1772
+Underfull \vbox (badness 10000) detected at line 1858
  []
 
-[58 <./img/metamodele/select.png>]
-Underfull \vbox (badness 10000) detected at line 1812
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1835
+[64 <./img/metamodele/select.png>]
+Underfull \vbox (badness 10000) detected at line 1898
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1856
+Underfull \vbox (badness 10000) detected at line 1921
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1893
+Underfull \vbox (badness 10000) detected at line 1942
  []
 
-<img/metamodele/orderlist.png, id=899, 303.1325pt x 73.27374pt>
+
+Underfull \vbox (badness 10000) detected at line 1979
+ []
+
+<img/metamodele/orderlist.png, id=979, 303.1325pt x 73.27374pt>
 File: img/metamodele/orderlist.png Graphic file (type png)
 
 <use img/metamodele/orderlist.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59]
-Underfull \vbox (badness 10000) detected at line 1936
- []
-
-[60 <./img/metamodele/orderlist.png>] [61] [62]
+ [65]
 Underfull \vbox (badness 10000) detected at line 2022
  []
 
-
-Underfull \vbox (badness 10000) detected at line 2043
+[66 <./img/metamodele/orderlist.png>] [67] [68]
+Underfull \vbox (badness 10000) detected at line 2108
  []
 
 
-LaTeX Warning: Reference `meta-classe_group' on page 63 undefined on input line
- 2048.
-
-
-Underfull \vbox (badness 10000) detected at line 2064
+Underfull \vbox (badness 10000) detected at line 2129
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2106
+LaTeX Warning: Reference `meta-classe_group' on page 69 undefined on input line
+ 2134.
+
+
+Underfull \vbox (badness 10000) detected at line 2150
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2125
+Underfull \vbox (badness 10000) detected at line 2192
  []
 
 
-Overfull \hbox (4.28485pt too wide) in paragraph at lines 2130--2132
+Underfull \vbox (badness 10000) detected at line 2211
+ []
+
+
+Overfull \hbox (4.28485pt too wide) in paragraph at lines 2216--2218
  \T1/cmr/bx/n/10 Para-graphe[] \T1/cmr/m/n/10 Élé-ment ra-jouter au méta-modèle
  de aria. Définit une com-po-si-tion d'élé-ment textuelle
  []
@@ -1327,137 +1226,130 @@ Overfull \hbox (4.28485pt too wide) in paragraph at lines 2130--2132
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63]
-Underfull \vbox (badness 10000) detected at line 2147
+ [69]
+Underfull \vbox (badness 10000) detected at line 2233
  []
 
 
-LaTeX Warning: Reference `meta-classe_grid' on page 64 undefined on input line 
-2170.
+LaTeX Warning: Reference `meta-classe_grid' on page 70 undefined on input line 
+2256.
 
 
-Underfull \vbox (badness 10000) detected at line 2186
+Underfull \vbox (badness 10000) detected at line 2272
  []
 
-[64]
+[70]
 
-LaTeX Warning: Reference `meta-classe_grid' on page 65 undefined on input line 
-2193.
-
-
-Underfull \vbox (badness 10000) detected at line 2209
- []
+LaTeX Warning: Reference `meta-classe_grid' on page 71 undefined on input line 
+2279.
 
 
-LaTeX Warning: Reference `meta-classe_grid' on page 65 undefined on input line 
-2213.
-
-
-Underfull \vbox (badness 10000) detected at line 2229
- []
-
-[65]
-
-LaTeX Warning: Reference `meta-classe_grid' on page 66 undefined on input line 
-2235.
-
-
-Underfull \vbox (badness 10000) detected at line 2251
+Underfull \vbox (badness 10000) detected at line 2295
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2309
+LaTeX Warning: Reference `meta-classe_grid' on page 71 undefined on input line 
+2299.
+
+
+Underfull \vbox (badness 10000) detected at line 2315
+ []
+
+[71]
+
+LaTeX Warning: Reference `meta-classe_grid' on page 72 undefined on input line 
+2321.
+
+
+Underfull \vbox (badness 10000) detected at line 2337
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2330
+Underfull \vbox (badness 10000) detected at line 2395
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2350
+Underfull \vbox (badness 10000) detected at line 2416
  []
 
 
-Overfull \hbox (10.22707pt too wide) in alignment at lines 2357--2370
+Underfull \vbox (badness 10000) detected at line 2436
+ []
+
+
+Overfull \hbox (10.22707pt too wide) in alignment at lines 2443--2456
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2370
+Underfull \vbox (badness 10000) detected at line 2456
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [66]
-Underfull \vbox (badness 10000) detected at line 2391
+ [72]
+Underfull \vbox (badness 10000) detected at line 2477
  []
 
-[67]
-Underfull \vbox (badness 10000) detected at line 2412
- []
-
-
-Underfull \vbox (badness 10000) detected at line 2432
+[73]
+Underfull \vbox (badness 10000) detected at line 2498
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2453
+Underfull \vbox (badness 10000) detected at line 2518
  []
 
 
-LaTeX Warning: Reference `meta-classe_form' on page 68 undefined on input line 
-2461.
-
-
-Underfull \vbox (badness 10000) detected at line 2476
+Underfull \vbox (badness 10000) detected at line 2539
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2523
+LaTeX Warning: Reference `meta-classe_form' on page 74 undefined on input line 
+2547.
+
+
+Underfull \vbox (badness 10000) detected at line 2562
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2609
  []
 
 
 Overfull \vbox (3.42575pt too high) has occurred while \output is active []
 
 
-[68]
+[74]
 
-LaTeX Warning: Reference `meta-classe_navigation' on page 69 undefined on input
- line 2530.
+LaTeX Warning: Reference `meta-classe_navigation' on page 75 undefined on input
+ line 2616.
 
 
-Underfull \vbox (badness 10000) detected at line 2545
+Underfull \vbox (badness 10000) detected at line 2631
  []
 
 
-LaTeX Warning: Reference `meta-classe_style' on page 69 undefined on input line
- 2577.
+LaTeX Warning: Reference `meta-classe_style' on page 75 undefined on input line
+ 2663.
 
-[69] [70]
-No file rapport.gls.
-No file rapport.bbl.
-
-Package natbib Warning: There were undefined citations.
-
-(./rapport.aux)
+[75] [76] (./rapport.aux)
 
 LaTeX Warning: There were undefined references.
 
  )
-(\end occurred inside a group at level 2)
+(\end occurred inside a group at level 1)
 
-### simple group (level 2) entered at line 972 ({)
-### simple group (level 1) entered at line 935 ({)
+### simple group (level 1) entered at line 1002 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21200 strings out of 495061
- 358529 string characters out of 1182620
- 501749 words of memory out of 3000000
- 23388 multiletter control sequences out of 15000+50000
+ 21272 strings out of 495061
+ 359937 string characters out of 1182620
+ 493833 words of memory out of 3000000
+ 23442 multiletter control sequences out of 15000+50000
  27466 words of font info for 60 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 56i,22n,92p,1489b,2080s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,22n,92p,1352b,2048s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.
 600pk> </home/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0900.600pk> </h
 ome/franck/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx0700.600pk> </home/franck
@@ -1485,9 +1377,9 @@ xmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/
 public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb>
-Output written on rapport.pdf (70 pages, 1386302 bytes).
+Output written on rapport.pdf (76 pages, 1419342 bytes).
 PDF statistics:
- 1903 PDF objects out of 2073 (max. 8388607)
- 481 named destinations out of 1000 (max. 500000)
- 517 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2010 PDF objects out of 2073 (max. 8388607)
+ 497 named destinations out of 1000 (max. 500000)
+ 533 words of extra memory for PDF output out of 10000 (max. 10000000)
 
