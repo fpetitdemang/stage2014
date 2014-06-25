@@ -1,8 +1,13 @@
 \beamer@endinputifotherversion {3.10pt}
 \select@language {french}
-\beamer@sectionintoc {1}{Contexte du stage}{2}{0}{1}
-\beamer@sectionintoc {2}{Introduction}{6}{0}{2}
-\beamer@sectionintoc {3}{\IeC {\'E}tat de l'art}{8}{0}{3}
-\beamer@subsectionintoc {3}{1}{\IeC {\'E}tude des Langages de publication}{8}{0}{3}
-\beamer@subsectionintoc {3}{2}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}{10}{0}{3}
-\beamer@sectionintoc {4}{R\IeC {\'e}alisation}{15}{0}{4}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{\IeC {\'E}tat de l'art}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{\IeC {\'E}tude des Langages de publication}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}{14}{0}{2}
+\beamer@sectionintoc {3}{R\IeC {\'e}alisation}{19}{0}{3}
+\beamer@subsectionintoc {3}{1}{M\IeC {\'e}ta-mod\IeC {\`e}le}{20}{0}{3}
+\beamer@subsectionintoc {3}{2}{Extraction structure}{24}{0}{3}
+\beamer@subsectionintoc {3}{3}{Annotation structure}{26}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{30}{0}{4}
+\beamer@subsectionintoc {4}{1}{R\IeC {\'e}sultats}{31}{0}{4}
+\beamer@subsectionintoc {4}{2}{Difficult\IeC {\'e}s et perspectives}{32}{0}{4}

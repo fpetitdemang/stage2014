@@ -1,0 +1,25 @@
+\frametitle {Évolution de la sémantique (1/2)}
+\begin{columns}
+\begin{column}{5cm}
+\begin{lstlisting}[frame=single, language=html]
+<ul class='menu'>
+ <li><a href=".">l1</li>
+ <li><a href=".">l2</li>
+</ul>
+<p class='menu'>
+ <a href=".">l1</a>
+ <a href=".">li2</a>
+</p>
+\end{lstlisting}
+\end{column}
+\begin{column}{5cm}
+\includegraphics[scale=0.4]{img/architecture_HTML4.jpg}
+\end{column}
+\end{columns}
+\begin{block}{HTML 4}
+\begin{itemize}
+\item Peu de sémantique
+\item Structure générique (DIV)
+\item Structure logique implicite
+\end{itemize}
+\end{block}

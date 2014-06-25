@@ -1,48 +1,87 @@
 \beamer@endinputifotherversion {3.10pt}
 \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
-\headcommand {\sectionentry {1}{Contexte du stage}{2}{Contexte du stage}{0}}
-\headcommand {\beamer@sectionpages {1}{1}}
-\headcommand {\beamer@subsectionpages {1}{1}}
-\headcommand {\slideentry {1}{0}{2}{2/3}{}{0}}
-\headcommand {\beamer@framepages {2}{3}}
-\headcommand {\slideentry {1}{0}{3}{4/4}{}{0}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\sectionentry {1}{Introduction}{3}{Introduction}{0}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\slideentry {1}{0}{3}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\slideentry {1}{0}{4}{4/4}{}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\slideentry {1}{0}{4}{5/5}{}{0}}
+\headcommand {\slideentry {1}{0}{5}{5/5}{}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\sectionentry {2}{Introduction}{6}{Introduction}{0}}
-\headcommand {\beamer@sectionpages {2}{5}}
-\headcommand {\beamer@subsectionpages {2}{5}}
-\headcommand {\slideentry {2}{0}{5}{6/6}{}{0}}
+\headcommand {\slideentry {1}{0}{6}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {2}{0}{6}{7/7}{}{0}}
+\headcommand {\slideentry {1}{0}{7}{7/7}{}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\sectionentry {3}{\IeC {\'E}tat de l'art}{8}{\IeC {\'E}tat de l'art}{0}}
-\headcommand {\beamer@sectionpages {6}{7}}
-\headcommand {\beamer@subsectionpages {6}{7}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{8}{\IeC {\'E}tude des Langages de publication}}\headcommand {\beamer@subsectionpages {8}{7}}
-\headcommand {\slideentry {3}{1}{1}{8/8}{\IeC {\'E}tude des Langages de publication}{0}}
+\headcommand {\sectionentry {2}{\IeC {\'E}tat de l'art}{8}{\IeC {\'E}tat de l'art}{0}}
+\headcommand {\beamer@sectionpages {3}{7}}
+\headcommand {\beamer@subsectionpages {3}{7}}
+\headcommand {\slideentry {2}{0}{8}{8/8}{}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\slideentry {3}{1}{2}{9/9}{\IeC {\'E}tude des Langages de publication}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{9}{\IeC {\'E}tude des Langages de publication}}\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\slideentry {2}{1}{1}{9/9}{\IeC {\'E}tude des Langages de publication}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{10}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}}\headcommand {\beamer@subsectionpages {8}{9}}
-\headcommand {\slideentry {3}{2}{1}{10/10}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}{0}}
-\headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {3}{2}{2}{11/11}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}{0}}
-\headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {3}{2}{3}{12/12}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}{0}}
+\headcommand {\slideentry {2}{1}{2}{10/11}{\IeC {\'E}tude des Langages de publication}{0}}
+\headcommand {\beamer@framepages {10}{11}}
+\headcommand {\slideentry {2}{1}{3}{12/12}{\IeC {\'E}tude des Langages de publication}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {3}{2}{4}{13/13}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}{0}}
+\headcommand {\slideentry {2}{1}{4}{13/13}{\IeC {\'E}tude des Langages de publication}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {3}{2}{5}{14/14}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{14}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}}\headcommand {\beamer@subsectionpages {9}{13}}
+\headcommand {\slideentry {2}{2}{1}{14/14}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\sectionentry {4}{R\IeC {\'e}alisation}{15}{R\IeC {\'e}alisation}{0}}
-\headcommand {\beamer@sectionpages {8}{14}}
-\headcommand {\beamer@subsectionpages {10}{14}}
-\headcommand {\slideentry {4}{0}{6}{15/15}{}{0}}
+\headcommand {\slideentry {2}{2}{2}{15/15}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\beamer@partpages {1}{15}}
-\headcommand {\beamer@subsectionpages {15}{15}}
-\headcommand {\beamer@sectionpages {15}{15}}
-\headcommand {\beamer@documentpages {15}}
-\headcommand {\def \inserttotalframenumber {14}}
+\headcommand {\slideentry {2}{2}{3}{16/16}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {2}{2}{4}{17/17}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {2}{2}{5}{18/18}{\IeC {\'E}tude de m\IeC {\'e}thodes d'extraction de structure}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\sectionentry {3}{R\IeC {\'e}alisation}{19}{R\IeC {\'e}alisation}{0}}
+\headcommand {\beamer@sectionpages {8}{18}}
+\headcommand {\beamer@subsectionpages {14}{18}}
+\headcommand {\slideentry {3}{0}{6}{19/19}{}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{20}{M\IeC {\'e}ta-mod\IeC {\`e}le}}\headcommand {\beamer@subsectionpages {19}{19}}
+\headcommand {\slideentry {3}{1}{1}{20/20}{M\IeC {\'e}ta-mod\IeC {\`e}le}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {3}{1}{2}{21/21}{M\IeC {\'e}ta-mod\IeC {\`e}le}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {3}{1}{3}{22/22}{M\IeC {\'e}ta-mod\IeC {\`e}le}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\slideentry {3}{1}{4}{23/23}{M\IeC {\'e}ta-mod\IeC {\`e}le}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{24}{Extraction structure}}\headcommand {\beamer@subsectionpages {20}{23}}
+\headcommand {\slideentry {3}{2}{1}{24/24}{Extraction structure}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {3}{2}{2}{25/25}{Extraction structure}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{26}{Annotation structure}}\headcommand {\beamer@subsectionpages {24}{25}}
+\headcommand {\slideentry {3}{3}{1}{26/26}{Annotation structure}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\slideentry {3}{3}{2}{27/27}{Annotation structure}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\slideentry {3}{3}{3}{28/28}{Annotation structure}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\slideentry {3}{3}{4}{29/29}{Annotation structure}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\sectionentry {4}{Conclusion}{30}{Conclusion}{0}}
+\headcommand {\beamer@sectionpages {19}{29}}
+\headcommand {\beamer@subsectionpages {26}{29}}
+\headcommand {\slideentry {4}{0}{5}{30/30}{}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{31}{R\IeC {\'e}sultats}}\headcommand {\beamer@subsectionpages {30}{30}}
+\headcommand {\slideentry {4}{1}{1}{31/31}{R\IeC {\'e}sultats}{0}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{32}{Difficult\IeC {\'e}s et perspectives}}\headcommand {\beamer@subsectionpages {31}{31}}
+\headcommand {\slideentry {4}{2}{1}{32/32}{Difficult\IeC {\'e}s et perspectives}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\beamer@partpages {1}{32}}
+\headcommand {\beamer@subsectionpages {32}{32}}
+\headcommand {\beamer@sectionpages {30}{32}}
+\headcommand {\beamer@documentpages {32}}
+\headcommand {\def \inserttotalframenumber {31}}

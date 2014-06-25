@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  23 JUN 2014 22:51
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  25 JUN 2014 19:58
 entering extended mode
  %&-line parsing enabled.
 **presentation.tex
@@ -1201,110 +1201,219 @@ LaTeX Info: Redefining \up on input line 18.
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 22.
 
-<img/Logo-lirmm.jpg, id=39, 532.99126pt x 261.97874pt>
-File: img/Logo-lirmm.jpg Graphic file (type jpg)
+<img/logo-lirmm.jpg, id=63, 532.99126pt x 261.97874pt>
+File: img/logo-lirmm.jpg Graphic file (type jpg)
 
-<use img/Logo-lirmm.jpg> [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+<use img/logo-lirmm.jpg> <img/logo-cnrs.jpg, id=64, 170.6375pt x 170.6375pt>
+File: img/logo-cnrs.jpg Graphic file (type jpg)
 
- <./img/Logo-lirmm.jpg>]
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 56.
+<use img/logo-cnrs.jpg> [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+ <./img/logo-lirmm.jpg> <./img/logo-cnrs.jpg>] (./presentation.toc) [2
+
+]
+(./presentation.toc) [3
+
+] [4
+
+] [5
+
+]
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 102.
+
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 56.
-
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 102
+.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 56.
-
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 102
+.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 56.
+(Font)              <10.95> on input line 102.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 56.
+(Font)              <8> on input line 102.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 56.
-LaTeX Font Info:    Try loading font information for U+msa on input line 56.
+(Font)              <6> on input line 102.
+LaTeX Font Info:    Try loading font information for U+msa on input line 102.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 56.
+LaTeX Font Info:    Try loading font information for U+msb on input line 102.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 56.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 102.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 56.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 102.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 56.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 102.
 
-<img/segmentation_page_berger.png, id=65, 749.80125pt x 702.625pt>
+<img/segmentation_page_berger.png, id=146, 749.80125pt x 702.625pt>
 File: img/segmentation_page_berger.png Graphic file (type png)
 
 <use img/segmentation_page_berger.png>
-Overfull \hbox (36.14658pt too wide) in paragraph at lines 56--56
+Overfull \hbox (14.4938pt too wide) in paragraph at lines 102--102
 [][]  
  []
 
-[2
+[6
 
- <./img/segmentation_page_berger.png>]
-File: img/segmentation_page_berger.png Graphic file (type png)
+ <./img/segmentation_page_berger.png>] [7
 
-<use img/segmentation_page_berger.png>
-Overfull \hbox (36.14658pt too wide) in paragraph at lines 56--56
-[][]  
- []
-
-[3
-
-] [4
-
-] (./presentation.toc) [5
-
-] (./presentation.toc) [6
-
-] [7
+] (./presentation.toc) [8
 
 ]
-<img/architecture_HTML4.jpg, id=149, 295.1025pt x 301.125pt>
-File: img/architecture_HTML4.jpg Graphic file (type jpg)
+\openout4 = `presentation.vrb'.
 
-<use img/architecture_HTML4.jpg>
-Overfull \hbox (33.73985pt too wide) in paragraph at lines 94--94
-[][]  
+
+(./presentation.vrb (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+)
+Overfull \hbox (15.4175pt too wide) in paragraph at lines 6--7
+[][][][][][][][][][][][][][][][][][][][] 
  []
 
-[8
+
+Overfull \hbox (15.4175pt too wide) in paragraph at lines 7--8
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+<img/architecture_HTML4.jpg, id=191, 295.1025pt x 301.125pt>
+File: img/architecture_HTML4.jpg Graphic file (type jpg)
+
+<use img/architecture_HTML4.jpg>) [9
 
  <./img/architecture_HTML4.jpg>]
-File: img/architecture_HTML4.jpg Graphic file (type jpg)
- <use img/architecture_HTML4.jpg>
-Overfull \hbox (33.73985pt too wide) in paragraph at lines 105--105
+<img/architecture_HTML5.jpg, id=204, 294.09875pt x 301.125pt>
+File: img/architecture_HTML5.jpg Graphic file (type jpg)
+
+<use img/architecture_HTML5.jpg>
+Overfull \hbox (4.78523pt too wide) in paragraph at lines 184--184
 [][]  
  []
 
-[9
+[10
 
-] [10
+ <./img/architecture_HTML5.jpg>]
+<img/architecture_ARIA.jpg, id=217, 294.09875pt x 301.125pt>
+File: img/architecture_ARIA.jpg Graphic file (type jpg)
 
-] [11
+<use img/architecture_ARIA.jpg>
+Overfull \hbox (4.78523pt too wide) in paragraph at lines 184--184
+[][]  
+ []
 
-] [12
+[11
+
+ <./img/architecture_ARIA.jpg>] [12
 
 ] [13
 
-] [14
+]
+<img/mapping.jpg, id=255, 558.085pt x 290.08376pt>
+File: img/mapping.jpg Graphic file (type jpg)
+ <use img/mapping.jpg>
+Overfull \hbox (25.16301pt too wide) in paragraph at lines 244--244
+[][]  
+ []
 
-] [15
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 244.
+[14
+
+ <./img/mapping.jpg>]
+<img/segmentation-pattern.jpg, id=268, 483.8075pt x 586.19pt>
+File: img/segmentation-pattern.jpg Graphic file (type jpg)
+
+<use img/segmentation-pattern.jpg>
+Overfull \hbox (2.8796pt too wide) in paragraph at lines 262--262
+[][]  
+ []
+
+[15
+
+ <./img/segmentation-pattern.jpg>] [16
+
+]
+<img/segmentation-vips.png, id=294, 1111.15125pt x 363.3575pt>
+File: img/segmentation-vips.png Graphic file (type png)
+
+<use img/segmentation-vips.png>
+Overfull \hbox (26.05807pt too wide) in paragraph at lines 285--285
+[][]  
+ []
+
+[17
+
+ <./img/segmentation-vips.png>]
+Overfull \vbox (8.82945pt too high) detected at line 300
+ []
+
+[18
+
+] (./presentation.toc) [19
+
+]
+<img/workflow-adaptation.jpg, id=344, 681.5061pt x 540.5796pt>
+File: img/workflow-adaptation.jpg Graphic file (type jpg)
+
+<use img/workflow-adaptation.jpg>
+Overfull \hbox (33.73688pt too wide) in paragraph at lines 326--326
+[][]  
+ []
+
+[20
+
+ <./img/workflow-adaptation.jpg>]
+<img/metamodele_structure.png, id=357, 910.90312pt x 504.38437pt>
+File: img/metamodele_structure.png Graphic file (type png)
+
+<use img/metamodele_structure.png> [21
+
+ <./img/metamodele_structure.png>]
+<img/metamodele_widget.png, id=372, 465.23813pt x 417.05812pt>
+File: img/metamodele_widget.png Graphic file (type png)
+
+<use img/metamodele_widget.png> [22
+
+ <./img/metamodele_widget.png>]
+<img/metamodele_CSS.png, id=387, 649.67719pt x 429.85594pt>
+File: img/metamodele_CSS.png Graphic file (type png)
+
+<use img/metamodele_CSS.png> [23
+
+ <./img/metamodele_CSS.png>] [24
+
+] [25
+
+] [26
+
+]
+[27
+
+] [28
+
+] [29
+
+] (./presentation.toc) [30
+
+] [31
+
+] [32
 
 ]
 \tf@nav=\write6
@@ -1318,20 +1427,23 @@ Overfull \hbox (33.73985pt too wide) in paragraph at lines 105--105
 
  (./presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 19394 strings out of 495061
- 358540 string characters out of 1182620
- 432243 words of memory out of 3000000
- 22026 multiletter control sequences out of 15000+50000
- 34111 words of font info for 41 fonts, out of 3000000 for 9000
+ 20051 strings out of 495061
+ 365519 string characters out of 1182620
+ 455126 words of memory out of 3000000
+ 22617 multiletter control sequences out of 15000+50000
+ 39690 words of font info for 43 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 49i,19n,62p,401b,967s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,19n,62p,401b,1661s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/sha
-re/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmss9.pfb>
-Output written on presentation.pdf (15 pages, 369261 bytes).
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmsso9.pfb>
+Output written on presentation.pdf (32 pages, 912862 bytes).
 PDF statistics:
- 271 PDF objects out of 1000 (max. 8388607)
- 37 named destinations out of 1000 (max. 500000)
- 154 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 566 PDF objects out of 1000 (max. 8388607)
+ 76 named destinations out of 1000 (max. 500000)
+ 246 words of extra memory for PDF output out of 10000 (max. 10000000)
 
