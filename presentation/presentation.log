@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  25 JUN 2014 19:58
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  26 JUN 2014 12:52
 entering extended mode
  %&-line parsing enabled.
 **presentation.tex
@@ -99,8 +99,8 @@ Package ifvtex Info: VTeX not detected.
 \Gm@even@mp=\dimen122
 \Gm@dimlist=\toks15
 )
-(/usr/share/texmf-texlive/tex/latex/base/size11.clo
-File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/share/texmf-texlive/tex/latex/extsizes/size9.clo
+File: size9.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
 )
 (/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
@@ -1016,6 +1016,82 @@ File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
 
+(/usr/share/texmf-texlive/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-texlive/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count170
+\c@ALG@rem=\count171
+\c@ALG@nested=\count172
+\ALG@tlm=\skip57
+\ALG@thistlm=\skip58
+\c@ALG@Lnr=\count173
+\c@ALG@blocknr=\count174
+\c@ALG@storecount=\count175
+\c@ALG@tmpcounter=\count176
+\ALG@tmplength=\skip59
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen196
+\captionmargin@=\dimen197
+\captionwidth=\dimen198
+\caption@indent=\dimen199
+\caption@parindent=\dimen200
+\caption@hangindent=\dimen201
+)
+\c@ContinuedFloat=\count177
+Package caption Info: beamer document class.
+Package caption Info: hyperref package is loaded.
+
+
+Package caption Warning: Hyperref support is turned off
+(caption)                because hyperref has stopped early.
+See the caption package documentation for explanation.
+
+Package caption Info: listings package is loaded.
+) (/usr/share/texmf-texlive/tex/latex/caption/subcaption.sty
+Package: subcaption 2008/08/31 v1.0b Adding subcaptions (AR)
+\c@subfigure=\count178
+\c@subtable=\count179
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees
+.code.tex
+File: tikzlibrarytrees.code.tex 2008/02/24 v2.10 (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryposit
+ioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshado
+ws.code.tex
+File: tikzlibraryshadows.code.tex 2008/01/13 v2.10 (rcs-revision 1.3)
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadin
+gs.code.tex
+File: tikzlibraryfadings.code.tex 2009/11/15 v2.10 (rcs-revision 1.2)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2008/02/07 v2.10 (rcs-revision 1.3)
+)))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrow
+s.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
+\arrowsize=\dimen202
+))
 (/usr/share/texmf/tex/latex/beamer/base/themes/theme/beamerthemeWarsaw.sty
 Package: beamerthemeWarsaw 2010/06/17  (rcs-revision d02a7cf4d8ae)
 
@@ -1036,21 +1112,21 @@ Package: beamercolorthemewhale 2010/06/17  (rcs-revision d02a7cf4d8ae)
 )) (./presentation.aux)
 \openout1 = `presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 27.
  (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1088,7 +1164,7 @@ driver: pdftex
 \marginparwidth 4.0pt
 \marginparsep   10.0pt
 \columnsep  10.0pt
-\skip\footins  10.0pt plus 4.0pt minus 2.0pt
+\skip\footins  8.0pt plus 4.0pt minus 2.0pt
 \hoffset 0.0pt
 \voffset 0.0pt
 \mag 1000
@@ -1097,18 +1173,18 @@ driver: pdftex
 -----------------------
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count170
-\scratchdimen=\dimen196
+\scratchcounter=\count180
+\scratchdimen=\dimen203
 \scratchbox=\box58
-\nofMPsegments=\count171
-\nofMParguments=\count172
+\nofMPsegments=\count181
+\nofMParguments=\count182
 \everyMPshowfont=\toks46
-\MPscratchCnt=\count173
-\MPscratchDim=\dimen197
-\MPnumerator=\count174
+\MPscratchCnt=\count183
+\MPscratchDim=\dimen204
+\MPnumerator=\count184
 \everyMPtoPDFconversion=\toks47
 ) ABD: EveryShipout initializing macros
-Package hyperref Info: Link coloring OFF on input line 18.
+Package hyperref Info: Link coloring OFF on input line 27.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -1116,57 +1192,57 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count175
+\c@section@level=\count185
 )
-LaTeX Info: Redefining \ref on input line 18.
-LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \ref on input line 27.
+LaTeX Info: Redefining \pageref on input line 27.
  (./presentation.out) (./presentation.out)
 \@outlinefile=\write5
 \openout5 = `presentation.out'.
 
 \AtBeginShipoutBox=\box59
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 18.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 27.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 18.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 27.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/lmr/m/n on input line 18.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 18.
+(Font)                  OT1/cmss/m/n --> T1/lmr/m/n on input line 27.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/bx/n on input line 18.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/bx/n on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/bx/n on input line 18.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 18.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/bx/n on input line 27.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 18.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 18.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 18.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 27.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 18.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 18.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 18.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 27.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 18.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 18.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 27.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 18.
+(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 27.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 18.
+(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/lmr/bx/n on input line 18.
+(Font)                  OT1/cmss/bx/n --> T1/lmr/bx/n on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/bx/n --> T1/lmss/bx/n on input line 18.
+(Font)                  T1/lmss/bx/n --> T1/lmss/bx/n on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 18.
+(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 18.
+(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 27.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/bx/n on input line 18.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/bx/n on input line 27.
 
 (/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-basic-dicti
 onary/translator-basic-dictionary-English.dict
@@ -1192,19 +1268,21 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \degres on input line 18.
-LaTeX Info: Redefining \dots on input line 18.
-LaTeX Info: Redefining \up on input line 18.
-\c@lstlisting=\count176
+LaTeX Info: Redefining \degres on input line 27.
+LaTeX Info: Redefining \dots on input line 27.
+LaTeX Info: Redefining \up on input line 27.
+\c@lstlisting=\count186
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
  (./presentation.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 22.
+(hyperref)                setting the option has no effect on input line 31.
 
-<img/logo-lirmm.jpg, id=63, 532.99126pt x 261.97874pt>
+<img/logo-lirmm.jpg, id=71, 532.99126pt x 261.97874pt>
 File: img/logo-lirmm.jpg Graphic file (type jpg)
 
-<use img/logo-lirmm.jpg> <img/logo-cnrs.jpg, id=64, 170.6375pt x 170.6375pt>
+<use img/logo-lirmm.jpg> <img/logo-cnrs.jpg, id=72, 170.6375pt x 170.6375pt>
 File: img/logo-cnrs.jpg Graphic file (type jpg)
 
 <use img/logo-cnrs.jpg> [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -1219,51 +1297,51 @@ File: img/logo-cnrs.jpg Graphic file (type jpg)
 ] [5
 
 ]
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 102.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 111.
 
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 102
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 111
 .
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 102
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 111
 .
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 102.
+(Font)              <9> on input line 111.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 102.
+(Font)              <6> on input line 111.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 102.
-LaTeX Font Info:    Try loading font information for U+msa on input line 102.
+(Font)              <5> on input line 111.
+LaTeX Font Info:    Try loading font information for U+msa on input line 111.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 102.
+LaTeX Font Info:    Try loading font information for U+msb on input line 111.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 102.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 102.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 111.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 102.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 111.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 111.
 
-<img/segmentation_page_berger.png, id=146, 749.80125pt x 702.625pt>
+<img/segmentation_page_berger.png, id=153, 749.80125pt x 702.625pt>
 File: img/segmentation_page_berger.png Graphic file (type png)
 
 <use img/segmentation_page_berger.png>
-Overfull \hbox (14.4938pt too wide) in paragraph at lines 102--102
+Overfull \hbox (14.4938pt too wide) in paragraph at lines 111--111
 [][]  
  []
 
@@ -1283,37 +1361,28 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-Overfull \hbox (15.4175pt too wide) in paragraph at lines 6--7
-[][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (15.4175pt too wide) in paragraph at lines 7--8
-[][][][][][][][][][][][][][][][][][][][] 
- []
-
-<img/architecture_HTML4.jpg, id=191, 295.1025pt x 301.125pt>
+<img/architecture_HTML4.jpg, id=198, 295.1025pt x 301.125pt>
 File: img/architecture_HTML4.jpg Graphic file (type jpg)
 
 <use img/architecture_HTML4.jpg>) [9
 
  <./img/architecture_HTML4.jpg>]
-<img/architecture_HTML5.jpg, id=204, 294.09875pt x 301.125pt>
+<img/architecture_HTML5.jpg, id=211, 294.09875pt x 301.125pt>
 File: img/architecture_HTML5.jpg Graphic file (type jpg)
 
 <use img/architecture_HTML5.jpg>
-Overfull \hbox (4.78523pt too wide) in paragraph at lines 184--184
+Overfull \hbox (4.78523pt too wide) in paragraph at lines 193--193
 [][]  
  []
 
 [10
 
  <./img/architecture_HTML5.jpg>]
-<img/architecture_ARIA.jpg, id=217, 294.09875pt x 301.125pt>
+<img/architecture_ARIA.jpg, id=224, 294.09875pt x 301.125pt>
 File: img/architecture_ARIA.jpg Graphic file (type jpg)
 
 <use img/architecture_ARIA.jpg>
-Overfull \hbox (4.78523pt too wide) in paragraph at lines 184--184
+Overfull \hbox (4.78523pt too wide) in paragraph at lines 193--193
 [][]  
  []
 
@@ -1324,23 +1393,23 @@ Overfull \hbox (4.78523pt too wide) in paragraph at lines 184--184
 ] [13
 
 ]
-<img/mapping.jpg, id=255, 558.085pt x 290.08376pt>
+<img/mapping.jpg, id=262, 558.085pt x 290.08376pt>
 File: img/mapping.jpg Graphic file (type jpg)
  <use img/mapping.jpg>
-Overfull \hbox (25.16301pt too wide) in paragraph at lines 244--244
+Overfull \hbox (25.16301pt too wide) in paragraph at lines 255--255
 [][]  
  []
 
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 244.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 255.
 [14
 
  <./img/mapping.jpg>]
-<img/segmentation-pattern.jpg, id=268, 483.8075pt x 586.19pt>
+<img/segmentation-pattern.jpg, id=275, 483.8075pt x 586.19pt>
 File: img/segmentation-pattern.jpg Graphic file (type jpg)
 
 <use img/segmentation-pattern.jpg>
-Overfull \hbox (2.8796pt too wide) in paragraph at lines 262--262
+Overfull \hbox (2.8796pt too wide) in paragraph at lines 273--273
 [][]  
  []
 
@@ -1349,71 +1418,115 @@ Overfull \hbox (2.8796pt too wide) in paragraph at lines 262--262
  <./img/segmentation-pattern.jpg>] [16
 
 ]
-<img/segmentation-vips.png, id=294, 1111.15125pt x 363.3575pt>
+<img/segmentation-vips.png, id=301, 1111.15125pt x 363.3575pt>
 File: img/segmentation-vips.png Graphic file (type png)
 
 <use img/segmentation-vips.png>
-Overfull \hbox (26.05807pt too wide) in paragraph at lines 285--285
-[][]  
+Overfull \hbox (26.05807pt too wide) in paragraph at lines 299--299
+[][][][]  
  []
 
 [17
 
- <./img/segmentation-vips.png>]
-Overfull \vbox (8.82945pt too high) detected at line 300
- []
-
-[18
+ <./img/segmentation-vips.png>] [18
 
 ] (./presentation.toc) [19
 
 ]
-<img/workflow-adaptation.jpg, id=344, 681.5061pt x 540.5796pt>
+<img/workflow-adaptation.jpg, id=351, 681.5061pt x 540.5796pt>
 File: img/workflow-adaptation.jpg Graphic file (type jpg)
 
 <use img/workflow-adaptation.jpg>
-Overfull \hbox (33.73688pt too wide) in paragraph at lines 326--326
+Overfull \hbox (33.73688pt too wide) in paragraph at lines 340--340
 [][]  
  []
 
 [20
 
  <./img/workflow-adaptation.jpg>]
-<img/metamodele_structure.png, id=357, 910.90312pt x 504.38437pt>
+<img/metamodele_structure.png, id=364, 910.90312pt x 504.38437pt>
 File: img/metamodele_structure.png Graphic file (type png)
 
 <use img/metamodele_structure.png> [21
 
  <./img/metamodele_structure.png>]
-<img/metamodele_widget.png, id=372, 465.23813pt x 417.05812pt>
+<img/metamodele_widget.png, id=379, 465.23813pt x 417.05812pt>
 File: img/metamodele_widget.png Graphic file (type png)
 
 <use img/metamodele_widget.png> [22
 
  <./img/metamodele_widget.png>]
-<img/metamodele_CSS.png, id=387, 649.67719pt x 429.85594pt>
+<img/metamodele_CSS.png, id=394, 649.67719pt x 429.85594pt>
 File: img/metamodele_CSS.png Graphic file (type png)
 
 <use img/metamodele_CSS.png> [23
 
- <./img/metamodele_CSS.png>] [24
+ <./img/metamodele_CSS.png>]
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 401.
+
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+
+LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <9> not available
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 401.
+
+[24
 
 ] [25
 
-] [26
+] <img/page_berger.png, id=437, 749.80125pt x 702.625pt>
+File: img/page_berger.png Graphic file (type png)
 
-]
+<use img/page_berger.png>
+Overfull \hbox (14.4938pt too wide) in paragraph at lines 433--433
+[][]  
+ []
+
+File: img/segmentation_page_berger.png Graphic file (type png)
+<use img/segmentation_page_berger.png>
+Overfull \hbox (14.4938pt too wide) in paragraph at lines 433--433
+[][]  
+ []
+
+[26
+
+ <./img/page_berger.png>]
+<img/banner_berger.png, id=452, 1008.76875pt x 128.48pt>
+File: img/banner_berger.png Graphic file (type png)
+
+<use img/banner_berger.png>
+<img/segmentation_banner_berger.png, id=453, 1008.76875pt x 128.48pt>
+File: img/segmentation_banner_berger.png Graphic file (type png)
+
+<use img/segmentation_banner_berger.png>
+Overfull \hbox (2.14308pt too wide) in paragraph at lines 443--443
+[][] 
+ []
+
+
+Overfull \hbox (2.14308pt too wide) in paragraph at lines 443--443
+[]  
+ []
+
 [27
 
-] [28
+ <./img/banner_berger.png> <./img/segmentation_banner_berger.png>] [28
 
-] [29
+]
+[29
 
-] (./presentation.toc) [30
+] [30
 
 ] [31
 
-] [32
+] (./presentation.toc) [32
+
+] [33
+
+] [34
+
+] [35
 
 ]
 \tf@nav=\write6
@@ -1427,23 +1540,24 @@ File: img/metamodele_CSS.png Graphic file (type png)
 
  (./presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 20051 strings out of 495061
- 365519 string characters out of 1182620
- 455126 words of memory out of 3000000
- 22617 multiletter control sequences out of 15000+50000
- 39690 words of font info for 43 fonts, out of 3000000 for 9000
+ 22092 strings out of 495061
+ 405628 string characters out of 1182620
+ 491703 words of memory out of 3000000
+ 24606 multiletter control sequences out of 15000+50000
+ 42469 words of font info for 44 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 49i,19n,62p,401b,1661s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmsso9.pfb>
-Output written on presentation.pdf (32 pages, 912862 bytes).
+ 56i,19n,69p,401b,1661s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr
+/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso9.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmsy9.pfb>
+Output written on presentation.pdf (35 pages, 1087405 bytes).
 PDF statistics:
- 566 PDF objects out of 1000 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
- 246 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 614 PDF objects out of 1000 (max. 8388607)
+ 80 named destinations out of 1000 (max. 500000)
+ 341 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,6 @@
 \frametitle {Évolution de la sémantique (1/2)}
 \begin{columns}
-\begin{column}{5cm}
+\begin{column}{5.5cm}
 \begin{lstlisting}[frame=single, language=html]
 <ul class='menu'>
  <li><a href=".">l1</li>
@@ -8,7 +8,7 @@
 </ul>
 <p class='menu'>
  <a href=".">l1</a>
- <a href=".">li2</a>
+ <a href=".">l2</a>
 </p>
 \end{lstlisting}
 \end{column}
@@ -19,7 +19,7 @@
 \begin{block}{HTML 4}
 \begin{itemize}
 \item Peu de sémantique
-\item Structure générique (DIV)
+\item Diversité de représentation
 \item Structure logique implicite
 \end{itemize}
 \end{block}

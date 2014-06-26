@@ -7,7 +7,5 @@
 \beamer@sectionintoc {3}{R\IeC {\'e}alisation}{19}{0}{3}
 \beamer@subsectionintoc {3}{1}{M\IeC {\'e}ta-mod\IeC {\`e}le}{20}{0}{3}
 \beamer@subsectionintoc {3}{2}{Extraction structure}{24}{0}{3}
-\beamer@subsectionintoc {3}{3}{Annotation structure}{26}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{30}{0}{4}
-\beamer@subsectionintoc {4}{1}{R\IeC {\'e}sultats}{31}{0}{4}
-\beamer@subsectionintoc {4}{2}{Difficult\IeC {\'e}s et perspectives}{32}{0}{4}
+\beamer@subsectionintoc {3}{3}{Annotation structure}{28}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{32}{0}{4}

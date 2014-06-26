@@ -1,4 +1,4 @@
-	\documentclass[]{beamer}
+\documentclass[9pt]{beamer}
  
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}
@@ -7,8 +7,17 @@
 \usepackage[french]{babel}
 \usepackage{tikz}
 \usepackage{listings}
+\usepackage{algpseudocode}
  %\useoutertheme[subsection=false]{smoothbars}
+ 
+ 
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usetikzlibrary{positioning,shadows,arrows}
 
 \usetheme{Warsaw}
 %\usetheme{Madrid}
@@ -16,7 +25,7 @@
 \setbeamertemplate{navigation symbols}{\insertframenumber/\,\inserttotalframenumber}
 
 \begin{document}
- %\hspace*{1cm} \insertframenumber\,/\,\inserttotalframenumber
+%\hspace*{1cm} \insertframenumber\,/\,\inserttotalframenumber
 \title[Inférence de la structure d'une page web]{Inférence de la structure d'une page web en vue d'améliorer son accessibilité}
 \subtitle[\ldots]{Encadré par : Y. Bonavero, M. Huchard et M. Meynard}
 \author[Franck PETITDEMANGE]{Franck PETITDEMANGE}
@@ -44,9 +53,9 @@
 
 \begin{frame}
 	\frametitle{Accessibilité du web}
-	\framesubtitle{Un enjeux sociétale important}
-	\begin{definition}{Accessibilité}
-	Capacité d'accéder aux informations contenues dans une page et d'interagir avec.
+	\framesubtitle{Un enjeu sociétal important}
+	\begin{definition}{Accessibilité : }
+	capacité d'accéder aux informations contenues dans une page et d'interagir avec.
 	\end{definition}
 	\begin{block}{Problèmes d'accessibilité (spécifique aux basses visions)}
 		\begin{itemize}
@@ -62,7 +71,7 @@
 \framesubtitle{Besoin de comprendre la structuration d'une page}
 	%\begin{columns}
 	%\begin{column}{5cm}
-	\begin{block}{Problèmes des outils accessibilité}
+	\begin{block}{Problèmes des outils d'accessibilité}
 	\begin{itemize}
 		\item Pas de traitement des couleurs locales
 		\item Pas de prise en compte des profils utilisateurs
@@ -134,7 +143,7 @@
 \begin{frame}[fragile]
 \frametitle{Évolution de la sémantique (1/2)}
 \begin{columns}
-	\begin{column}{5cm}
+	\begin{column}{5.5cm}
 \begin{lstlisting}[frame=single, language=html]
 <ul class='menu'>
  <li><a href=".">l1</li>
@@ -142,7 +151,7 @@
 </ul>
 <p class='menu'>
  <a href=".">l1</a>
- <a href=".">li2</a>
+ <a href=".">l2</a>
 </p>
 \end{lstlisting}
 	\end{column}
@@ -153,7 +162,7 @@
 	\begin{block}{HTML 4}
 	\begin{itemize}
 		\item Peu de sémantique
-		\item Structure générique (DIV)
+		\item Diversité de représentation
 		\item Structure logique implicite
 	\end{itemize}
 	\end{block}
@@ -215,6 +224,7 @@ HTML 4 langage actuellement le plus exploité. Les inconvénients sont :
 \begin{itemize}
 	\item la diversité de représentation d'une même structure logique
 	\item la faible expressivité au regard des concepts décrits dans les pages web
+	\item l'absence de structuration explicite
 \end{itemize}
 \end{block}
 \begin{block}{Notre approche}
@@ -231,7 +241,8 @@ HTML 4 langage actuellement le plus exploité. Les inconvénients sont :
 \begin{columns}
 	\begin{column}{5cm}
 	\begin{block}{Mapping descendant restrictif}
-		Permet de faire correspondre les plus grandes sous-structures communes entre deux arbres
+		Permet de faire correspondre les plus grandes sous-structures communes entre deux arbres.\\
+		%Conserve \textbf{l'ordre des frères}, \textbf{la relation d'héritage}, \textbf{mappe pas les descendants de couple n'ayant pas les mêmes étiquettes}
 	\end{block}
 	\begin{block}{Idée}
 		Identifier les structures logiques des pages web par correspondance
@@ -266,14 +277,14 @@ HTML 4 langage actuellement le plus exploité. Les inconvénients sont :
 \framesubtitle{par densitométrie textuelle \textit{(Kohlsch{\"u}tter et al, A densitometric approach to web page segmentation)}}
 
 \begin{block}{Étape 1 : identification de segments de petites tailles}	
-La page est vue comme une séquences de caractères entrelacés identifiés par des balises HTML. Les segments sont calculés d'après les variations dans le rythme des séquences.\\
+La page est vue comme une séquence de caractères entrelacés identifiés par des balises HTML. Les segments sont calculés d'après les variations dans le rythme des séquences pour lesquels on calcule une densité textuelle.\\
 Exemple : \\
 Ici deux segments seront calculés \\
-\textit{<a>lien</a>lien<a>lien</a><p>un paragraphe</p>}
+\textit{<a>lienA</a>lienB<a>lienC</a><p>un paragraphe</p>}
 \end{block}
 
 \begin{block}{Étape 2 : grossissement successif des segments par fusion}
-Les segments contingents dont la densité textuelle est proche sont fusionnées successivement.
+Les segments contigus dont la densité textuelle est proche sont fusionnées successivement.
 \end{block}
 
 \end{frame}
@@ -282,20 +293,23 @@ Les segments contingents dont la densité textuelle est proche sont fusionnées 
 \frametitle{Segmentation}
 \framesubtitle{par indice visuel \textit{(Cai et al., Extracting content structure for web pages based on visual representation)}}
 \includegraphics[scale=0.3]{img/segmentation-vips.png}
+\begin{block}{Idée}
+Regroupement par indice visuel
+\end{block}
 \end{frame}
 
 \begin{frame}
 \frametitle{Synthèse}
 \begin{block}{Les inconvénients}
 	\begin{itemize}
-		\item Mapping ne permet pas d'extraire la structure globale de la page
+		\item Le \emph{Mapping} ne permet pas d'extraire la structure globale de la page
 		\item La segmentation par pattern est trop dépendante de la présentation de la page
-		\item La segmentation par densitométrie ne prend pas en compte les écarts possible entre le DOM et le rendu final
-		\item Le calcule des séparateurs dans l'approche par indice visuel est une opération coûteuse $O(n^2)$
+		\item La segmentation par densitométrie ne prend pas en compte les écarts possibles entre le DOM et le rendu final
+		\item Le calcul des séparateurs dans l'approche par indice visuel est une opération coûteuse $O(n^2)$
 	\end{itemize}
 \end{block}
-\begin{block}{Notre approche : approche par segmentation par visuel}
-Propose un \textbf{découpage globale} de la page, \textbf{indépendant des patterns de présentation} et permet un \textbf{découpage fin} dans la structure d'une page.
+\begin{block}{Notre approche : approche par segmentation visuelle}
+Propose un \textbf{découpage global} de la page, \textbf{indépendant des patterns de présentation} et permet un \textbf{découpage fin} dans la structure d'une page.
 \end{block}
 \end{frame}
 
@@ -309,13 +323,13 @@ Propose un \textbf{découpage globale} de la page, \textbf{indépendant des patt
 
 \begin{frame}
 	\frametitle{Approche générale}
-	\framesubtitle{Une approche Ingénierie Dirigée par les Modèles}
+	\framesubtitle{Une approche d'Ingénierie Dirigée par les Modèles}
 	\begin{columns}
 		\begin{column}{4cm}
 			\begin{block}{Avantages}
 				\begin{itemize}
-					\item Meilleur expression des préférences
-					\item Indépendant de la diversité de représentation des informations
+					\item Meilleure expression des préférences
+					\item Écriture d'adaptation indépendante des langages
 				\end{itemize}
 			\end{block}
 		\end{column}
@@ -360,32 +374,174 @@ Propose un \textbf{découpage globale} de la page, \textbf{indépendant des patt
 \subsection{Extraction structure}
 \begin{frame}
 \frametitle{Démarche générale}
+\begin{algorithmic}
+%\State $arbreIntermediaire$
+
+\Function{ConstStructLog}{$noeudDom$, $noeudStructInter$}
+	\State $poolNoeuds\gets 0$\\ 
+	\Call {DivisionDom}{$noeudDom$, $poolNoeuds$}
+	\For {i in $poolNoeuds$}\\
+		\Call{AppendChild}{$arbreIntermediaire$, $poolNoeud[i]$}\\
+		\Call{ConstStructLog}{$poolNoeud[i]$,$arbreIntermediaire$}
+	\EndFor
+\EndFunction
+\end{algorithmic}
+\vspace{0.5cm}
+\begin{algorithmic}
+\Function{DivisionDom}{$noeudDom$, $poolNoeuds$}
+	\If {\Call{Divisible}{$noeudDom$} == TRUE}
+		\ForAll{Enfant de $noeudDom$}\\
+			\Call{DivisionDom}{$noeudDom$, $poolNoeuds$}		
+		\EndFor
+	\Else
+	\State $poolNoeuds\gets poolNoeuds+noeudDom$
+\EndIf
+\EndFunction
+\end{algorithmic}
 \end{frame}
 
 \begin{frame}
 \frametitle{Concepts et heuristiques}
+\begin{block}{Concepts}
+	\begin{description}
+		\item[N\oe{}uds conteneurs :]propriété CSS display égale à \emph{bloc} 
+		\item[N\oe{}uds de mise en forme :]propriété CSS display à \emph{inLine}
+		\item[Taille d'un n\oe{}ud :] taille relatif à sa position dans le DOM et à la somme du poids des n\oe{}uds qu'il contient
+		\item[Distance visuelle :] signale les changements de propriété de mise en forme des n\oe{}uds
+	\end{description}
+\end{block}
+\begin{block}{Règles}
+\begin{description}
+	\item[Règle 2 :] si le n\oe{}ud possède un seul enfant et que cet enfant n'est pas un n\oe{}ud de données alors on parcourt ce n\oe{}ud
+	\item[Règle 4 :] si l'un des enfants du n\oe{}ud est un n\oe{}ud conteneur et que sa taille est supérieure à un certain seuil alors on parcours ce n\oe{}ud
+	\item[Règle 8 :] si la fonction de distance visuelle est vérifiée pour l'un des n\oe{}uds enfants alors on parcourt ce n\oe{}ud et on extrait les enfants qui vérifient la fonction
+\end{description}
+\end{block}
 \end{frame}
-\subsection{Annotation structure}
-\begin{frame}
-\frametitle{Approche par fonctionnalité}
-\framesubtitle{Modèle orientée fonctionnalité}
-\end{frame}
-
-\begin{frame}
-\frametitle{Approche par fonctionnalité}
-\framesubtitle{fonctions de détection proposées}
-\end{frame}
-
 
 \begin{frame}
 	\frametitle{Processus d'extraction}
 	\framesubtitle{Segmentation globale page Berger-Levrault}
+	\begin{columns}
+		\begin{column}{5cm}
+			\fbox{\includegraphics[scale=0.2]{img/page_berger.png}}
+		\end{column}
+		\begin{column}{5cm}
+			\fbox{\includegraphics[scale=0.2]{img/segmentation_page_berger.png}}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Processus d'extraction}
 	\framesubtitle{Segmentation locale page Berger-Levrault}
+
+		\fbox{\includegraphics[scale=0.3]{img/banner_berger.png}}
+		\vspace{1cm}
+		\fbox{\includegraphics[scale=0.3]{img/segmentation_banner_berger.png}}	
+
 \end{frame}
+
+\subsection{Annotation structure}
+\begin{frame}
+\frametitle{Approche par fonctionnalité}
+\framesubtitle{Construction de fonction d'annotation \textit{(Chen et al., Function-based object model towards website adaptation)}}
+\begin{block}{}
+Classe de n\oe{}uds :
+\begin{itemize}
+	\item Informatif
+	\item Navigation
+	\item Interaction
+	\item Décoration
+\end{itemize}
+Chaque classe possède les propriétés : 
+\begin{itemize}
+\item Hyperlien
+\item Sémantème
+\item Décoration
+\item Alignement
+\item \textbf{Position}
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Approche par fonctionnalité}
+\framesubtitle{fonctions de détection proposées}
+\begin{block}{}
+	\begin{description}
+		\item[Banner :]
+		\item[ContentInfo :]
+	\end{description}
+\end{block}
+\end{frame}
+
+\begin{frame}
+
+\begin{tikzpicture}[
+    fact/.style={rectangle, draw=none, rounded corners=1mm, fill=blue, drop shadow,
+        text centered, anchor=north, text=white},
+    state/.style={rectangle, draw=none, fill=orange, drop shadow,
+        text centered, anchor=north, text=white},
+    fbo/.style={rectangle, draw=none, fill=red, drop shadow,
+        text centered, anchor=north, text=white},
+    leaf/.style={circle, draw=none, fill=red, circular drop shadow,
+        text centered, anchor=north, text=white},
+    level distance=0.5cm, growth parent anchor=south
+]
+
+\node [state] {...} [->, sibling distance=3cm]
+		child{ node [state] {CO}
+        child{
+            node [fbo] {BO}}
+        child{
+        		node [state] {CO}
+        		child { node [fbo] {CO}}
+        		child { node [state] {CO}
+        				child { node [fbo] {BO}}
+        				child { node [fbo] {BO}}
+        				child { node [fbo] {BO}}}}
+		child{
+            node [fbo] {BO}}}		            
+;
+
+\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}
+
+\begin{tikzpicture}[
+    fact/.style={rectangle, draw=none, rounded corners=1mm, fill=blue, drop shadow,
+        text centered, anchor=north, text=white},
+    state/.style={rectangle, draw=none, fill=orange, drop shadow,
+        text centered, anchor=north, text=white},
+    fbo/.style={rectangle, draw=none, fill=red, drop shadow,
+        text centered, anchor=north, text=white},
+    leaf/.style={circle, draw=none, fill=red, circular drop shadow,
+        text centered, anchor=north, text=white},
+    level distance=0.5cm, growth parent anchor=south
+]
+
+\node [state] {...} [->, sibling distance=3cm]
+		child{ node [state] {BAN}
+        child{
+            node [fbo] {INFO-IMG}}
+        child{
+        		node [state] {CO}
+        		child { node [fbo] {INTER}}
+        		child { node [state] {NAV}
+        				child { node [fbo] {NO}}
+        				child { node [fbo] {NO}}
+        				child { node [fbo] {NO}}}}
+		child{
+            node [fbo] {INFO-TITRE}}}		            
+;
+
+\end{tikzpicture}
+\end{frame}
+
 
 
 \section{Conclusion}
@@ -393,7 +549,19 @@ Propose un \textbf{découpage globale} de la page, \textbf{indépendant des patt
   \frametitle{Sommaire}
   \tableofcontents[currentsection, hideothersubsections]
 \end{frame}
-\subsection{Résultats}
+%\subsection{Résultats}
+\begin{frame}
+	\frametitle{Difficultés}
+	\begin{block}{Difficultés}
+		\begin{itemize}
+			\item Domaine de recherche éloigné des connaissances de l'équipe de recherche
+			\item Définir la problématique par rapport à la question de recherche (recherche de motifs d'intérêt dans un arbre DOM)
+			\item Recherche d'articles traitant de la problématique
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+%\subsection{Difficultés et perspectives}
 \begin{frame}
 	\frametitle{Résultats}
 	\begin{block}{Résultats}
@@ -408,20 +576,19 @@ Propose un \textbf{découpage globale} de la page, \textbf{indépendant des patt
 	\end{block}
 \end{frame}
 
-\subsection{Difficultés et perspectives}
 \begin{frame}
-	\frametitle{Difficultés et perspectives}
-	\begin{block}{Difficultés}
-		\begin{itemize}
-			\item Domaine de recherche éloigné des connaissances de l'équipe de recherche
-			\item Définir la problématique par rapport à la question de recherche (recherche de motifs d'intérêt dans un arbre DOM)
-			\item Recherche d'articles traitant de la problématique
-		\end{itemize}
-	\end{block}
-	\begin{block}{Perspectives}
+	\frametitle{Perspectives}
+		\begin{block}{Perspectives à court terme}
 		\begin{itemize}
 			\item Évaluation de la méthode d'extraction de structure
 			\item Implémentation, évaluation et élargissement du processus d'annotation
+		\end{itemize}
+	\end{block}
+	\begin{block}{Perspectives à long terme}
+		\begin{itemize}
+			\item Évaluation des modèles intermédiaires générés par le processus d'extraction et d'annotation sur un grand nombre de pages 
+			\item Acquisition des préférences utilisateurs
+			\item Intégrer les préférences utilisateurs dans le processus de transformation
 		\end{itemize}
 	\end{block}
 \end{frame}
