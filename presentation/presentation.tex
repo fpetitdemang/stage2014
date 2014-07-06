@@ -29,7 +29,7 @@
 \title[Inférence de la structure d'une page web]{Inférence de la structure d'une page web en vue d'améliorer son accessibilité}
 \subtitle[\ldots]{Encadré par : Y. Bonavero, M. Huchard et M. Meynard}
 \author[Franck PETITDEMANGE]{Franck PETITDEMANGE}
-\institute[LIRMM]{\includegraphics[scale=0.2]{img/logo-lirmm.jpg}\hspace{2cm}\includegraphics[scale=0.3]{img/logo-cnrs.jpg}}
+\institute[LIRMM]{\includegraphics[scale=0.4]{img/logo-bergerlevrault.jpg}\hspace{0.5cm}\includegraphics[scale=0.2]{img/logo-lirmm.jpg}\hspace{0.5cm}\includegraphics[scale=0.3]{img/logo-cnrs.jpg}}
 \date{26 juin 2014}
 %\setbeamertemplate{footline}[page number]
 
@@ -54,13 +54,13 @@
 \begin{frame}
 	\frametitle{Accessibilité du web}
 	\framesubtitle{Un enjeu sociétal important}
-	\begin{definition}{Accessibilité : }
-	capacité d'accéder aux informations contenues dans une page et d'interagir avec.
-	\end{definition}
+	\begin{block}{Définition}
+	\textbf{Accessibilité :} capacité d'accéder aux informations contenues dans une page et d'interagir avec.
+	\end{block}
 	\begin{block}{Problèmes d'accessibilité (spécifique aux basses visions)}
 		\begin{itemize}
 			\item Surcharge visuelle
-			\item Police de caractère
+			\item Police de caractères
 			\item Contraste de couleur
 		\end{itemize}
 	\end{block}
@@ -71,7 +71,7 @@
 \framesubtitle{Besoin de comprendre la structuration d'une page}
 	%\begin{columns}
 	%\begin{column}{5cm}
-	\begin{block}{Problèmes des outils d'accessibilité}
+	\begin{block}{Problèmes des outils d'accessibilité (spécifique aux basses visions)}
 	\begin{itemize}
 		\item Pas de traitement des couleurs locales
 		\item Pas de prise en compte des profils utilisateurs
@@ -79,7 +79,7 @@
 	\end{block}
 	\begin{block}{Besoin}
 	\begin{itemize}
-		\item Comprendre les informations structurant une page web
+		\item Comprendre les informations structurant une page web pour réaliser une adaptation basée sur cette structure
 	\end{itemize}
 	\end{block}
 	%\end{column}
@@ -175,7 +175,7 @@
 	\begin{block}{HTML 5}
 		\begin{itemize}
 			\item Structure logique explicitée
-			\item Sémantique pour décrire l'interface de la page est limitée
+			\item Sémantique pour décrire l'interface de la page limitée
 		\end{itemize}
 	\end{block}
 	\begin{block}{ARIA}
@@ -308,7 +308,7 @@ Regroupement par indice visuel
 		\item Le calcul des séparateurs dans l'approche par indice visuel est une opération coûteuse $O(n^2)$
 	\end{itemize}
 \end{block}
-\begin{block}{Notre approche : approche par segmentation visuelle}
+\begin{block}{Notre approche : segmentation visuelle}
 Propose un \textbf{découpage global} de la page, \textbf{indépendant des patterns de présentation} et permet un \textbf{découpage fin} dans la structure d'une page.
 \end{block}
 \end{frame}
@@ -459,23 +459,23 @@ Chaque classe possède les propriétés :
 \item Hyperlien
 \item Sémantème
 \item Décoration
-\item Alignement
+%\item Alignement
 \item \textbf{Position}
 \end{itemize}
 \end{block}
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Approche par fonctionnalité}
-\framesubtitle{fonctions de détection proposées}
-\begin{block}{}
-	\begin{description}
-		\item[Banner :]
-		\item[ContentInfo :]
-	\end{description}
-\end{block}
-\end{frame}
+%\begin{frame}
+%\frametitle{Approche par fonctionnalité}
+%\framesubtitle{fonctions de détection proposées}
+%\begin{block}{}
+%	\begin{description}
+%		\item[Banner :]
+%		\item[ContentInfo :]
+%	\end{description}
+%\end{block}
+%\end{frame}
 
 \begin{frame}
 
@@ -497,7 +497,7 @@ Chaque classe possède les propriétés :
             node [fbo] {BO}}
         child{
         		node [state] {CO}
-        		child { node [fbo] {CO}}
+        		child { node [fbo] {BO}}
         		child { node [state] {CO}
         				child { node [fbo] {BO}}
         				child { node [fbo] {BO}}
@@ -554,9 +554,9 @@ Chaque classe possède les propriétés :
 	\frametitle{Difficultés}
 	\begin{block}{Difficultés}
 		\begin{itemize}
-			\item Domaine de recherche éloigné des connaissances de l'équipe de recherche
+			\item Domaine de recherche éloigné des connaissances de l'équipe d'accueil
 			\item Définir la problématique par rapport à la question de recherche (recherche de motifs d'intérêt dans un arbre DOM)
-			\item Recherche d'articles traitant de la problématique
+			%\item Recherche d'articles traitant de la problématique
 		\end{itemize}
 	\end{block}
 \end{frame}
@@ -566,12 +566,10 @@ Chaque classe possède les propriétés :
 	\frametitle{Résultats}
 	\begin{block}{Résultats}
 		\begin{itemize}
-			\item Proposition d'une approche IDM  
-			\item État de l'art sur les langages de publication de page web
-			\item État de l'art des techniques d'extraction de structure
-			\item Proposition d'un méta-modèle
+			\item Proposition d'une approche IDM et élaboration d'un méta-modèle
+			\item État de l'art sur les langages de publication et des techniques d'extraction de structure de page web
 			\item Adaptation et implémentation d'une méthode pour extraire les structures d'une page
-			\item Proposition de pistes pour annoter les structures extraites  
+			\item Proposition de pistes pour annoter les structures extraites et début d'implémentation  
 		\end{itemize}
 	\end{block}
 \end{frame}
@@ -592,5 +590,7 @@ Chaque classe possède les propriétés :
 		\end{itemize}
 	\end{block}
 \end{frame}
+
+
  
 \end{document}

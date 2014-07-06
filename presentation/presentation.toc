@@ -8,4 +8,4 @@
 \beamer@subsectionintoc {3}{1}{M\IeC {\'e}ta-mod\IeC {\`e}le}{20}{0}{3}
 \beamer@subsectionintoc {3}{2}{Extraction structure}{24}{0}{3}
 \beamer@subsectionintoc {3}{3}{Annotation structure}{28}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{32}{0}{4}
+\beamer@sectionintoc {4}{Conclusion}{31}{0}{4}

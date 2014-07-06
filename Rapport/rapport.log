@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  20 JUN 2014 11:23
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.23)  29 JUN 2014 18:26
 entering extended mode
  %&-line parsing enabled.
 **rapport.tex
@@ -1513,7 +1513,7 @@ c/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
 m/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb><
 /usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
 texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on rapport.pdf (92 pages, 1429604 bytes).
+Output written on rapport.pdf (92 pages, 1429588 bytes).
 PDF statistics:
  2016 PDF objects out of 2073 (max. 8388607)
  530 named destinations out of 1000 (max. 500000)
